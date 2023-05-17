@@ -1,4 +1,4 @@
-package org.example;
+package ZombieApocalypse;
 
 public class Main { //ciao fra
     public static void main(String[] args) {
