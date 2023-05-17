@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Random;
 
 public class GraphicPanel extends JPanel {
-
+    //Disegna il mondo
     //private final CharacterView characterView = new CharacterView();
     private final int numeroImmagini=4;
     private final Image[] images=new Image[numeroImmagini];

@@ -3,8 +3,9 @@ package ZombieApocalypse.Model;
 import ZombieApocalypse.Settings;
 
 public class World {
+    //Tutti i blocchi disegnabili
     enum Block { TERRAIN}
-
+    //Mondo e posizione del player
     private final Block[][] world = new Block[Settings.WORLD_SIZE][Settings.WORLD_SIZE];
     private int playerPositionX = 0;
     private int playerPositionY = 0;
@@ -12,7 +13,7 @@ public class World {
     public World() {
         generateWorld();
     }
-
+    //Per adesso, dopo caricare il mondo da file
     private void generateWorld() {
         for(int i = 0; i < world.length; i++) {
             for(int j = 0; j < world[i].length; j++) {
