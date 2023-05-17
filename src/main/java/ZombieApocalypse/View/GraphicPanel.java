@@ -17,7 +17,7 @@ public class GraphicPanel extends JPanel {
     public GraphicPanel()  {
         try{
         for(int i=0; i<numeroImmagini; i++){
-            String c=String.valueOf(i);
+            String c=String.valueOf(i); //ok
             images[i]= ImageIO.read(getClass().getResourceAsStream("AmbienteDiGioco/Terreno/Terreno"+c+".png"));
             images[i]=images[i].getScaledInstance(Settings.CELL_SIZE, Settings.CELL_SIZE, Image.SCALE_SMOOTH);
 
