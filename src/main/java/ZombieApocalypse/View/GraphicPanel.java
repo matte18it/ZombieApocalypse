@@ -12,13 +12,14 @@ import java.util.Random;
 public class GraphicPanel extends JPanel {
 
     //private final CharacterView characterView = new CharacterView();
-    private final int numeroImmagini=5;
+    private final int numeroImmagini=6;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
         try{
-        for(int i=0; i<numeroImmagini; i++){
-            String c=String.valueOf(i); //ok
-            images[i]= ImageIO.read(getClass().getResourceAsStream("AmbienteDiGioco/Terreno/Terreno"+c+".png"));
+        for(int i=1; i<numeroImmagini; i++){
+            String c=String.valueOf(i);
+            images[i]= ImageIO.read(getClass().getResourceAsStream("/AmbienteDiGioco/Terreno/Terreno"+c+".png"));
+
             images[i]=images[i].getScaledInstance(Settings.CELL_SIZE, Settings.CELL_SIZE, Image.SCALE_SMOOTH);
 
         }} catch (IOException e){
@@ -38,7 +39,7 @@ public class GraphicPanel extends JPanel {
                 int y = j * Settings.CELL_SIZE;
                 if(world.isWall(i, j)) {
                     Random random=new Random();
-                    int value= random.nextInt(5);
+                    int value= random.nextInt(1,6);
                     g.drawImage(images[value], x, y, null);
                 }
 
