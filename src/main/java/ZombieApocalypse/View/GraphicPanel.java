@@ -37,7 +37,7 @@ public class GraphicPanel extends JPanel {
             int x = i * Settings.CELL_SIZE;
             for(int j = 0; j < world.getSize(); j++) {
                 int y = j * Settings.CELL_SIZE;
-                if(world.isWall(i, j)) {
+                if(world.isGround(i, j)) {
                     Random random=new Random();
                     int value= random.nextInt(numeroImmagini);
                     g.drawImage(images[value], x, y, null);

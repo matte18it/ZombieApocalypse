@@ -12,7 +12,6 @@ public class GameFrame extends JPanel{
         JFrame frame = new JFrame();
         frame.setSize(Settings.WINDOW_SIZE, Settings.WINDOW_SIZE);
         GraphicPanel graphicPanel=new GraphicPanel();
-        graphicPanel.repaint();
         frame.add(graphicPanel);
 
         //view.addKeyListener(controller);
@@ -26,6 +25,7 @@ public class GameFrame extends JPanel{
         int y = (screenDimension.height - frame.getHeight())/2;
         frame.setLocation(x, y);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }
