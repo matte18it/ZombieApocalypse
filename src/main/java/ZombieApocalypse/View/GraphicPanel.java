@@ -12,11 +12,11 @@ import java.util.Random;
 public class GraphicPanel extends JPanel {
 
     //private final CharacterView characterView = new CharacterView();
-    private final int numeroImmagini=6;
+    private final int numeroImmagini=4;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
-        try{//o
-        for(int i=1; i<numeroImmagini; i++){
+        try{
+        for(int i=0; i<numeroImmagini; i++){
             String c=String.valueOf(i);
             images[i]= ImageIO.read(getClass().getResourceAsStream("/AmbienteDiGioco/Terreno/Terreno"+c+".png"));
 
@@ -39,7 +39,7 @@ public class GraphicPanel extends JPanel {
                 int y = j * Settings.CELL_SIZE;
                 if(world.isWall(i, j)) {
                     Random random=new Random();
-                    int value= random.nextInt(1,6);
+                    int value= random.nextInt(numeroImmagini);
                     g.drawImage(images[value], x, y, null);
                 }
 
