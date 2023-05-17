@@ -1,7 +1,10 @@
 package ZombieApocalypse;
 
-public class Main { //ciao fra
-    public static void main(String[] args) {
-        System.out.println("World!");
-    }
+import ZombieApocalypse.View.GameFrame;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Main {
+    public static void main(String[] args) {GameFrame.lauch();}
 }
