@@ -15,7 +15,7 @@ public class GraphicPanel extends JPanel {
     private final int numeroImmagini=6;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
-        try{
+        try{//o
         for(int i=1; i<numeroImmagini; i++){
             String c=String.valueOf(i);
             images[i]= ImageIO.read(getClass().getResourceAsStream("/AmbienteDiGioco/Terreno/Terreno"+c+".png"));
