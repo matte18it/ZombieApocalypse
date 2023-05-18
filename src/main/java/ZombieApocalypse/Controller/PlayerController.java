@@ -16,10 +16,14 @@ public class PlayerController implements KeyListener {
         @Override
         public void keyPressed(KeyEvent e) {
             switch (e.getKeyCode()) {
-                case KeyEvent.VK_UP -> Game.getInstance().startMovementUp();
+                case KeyEvent.VK_UP  -> Game.getInstance().startMovementUp();
                 case KeyEvent.VK_RIGHT -> Game.getInstance().startMovementRight();
                 case KeyEvent.VK_LEFT -> Game.getInstance().startMovementLeft();
                 case KeyEvent.VK_DOWN -> Game.getInstance().startMovementDown();
+                case KeyEvent.VK_W  -> Game.getInstance().startMovementUp();
+                case KeyEvent.VK_D -> Game.getInstance().startMovementRight();
+                case KeyEvent.VK_A -> Game.getInstance().startMovementLeft();
+                case KeyEvent.VK_S -> Game.getInstance().startMovementDown();
                 case KeyEvent.VK_Q -> Game.getInstance().closeGame();
 
             }
@@ -30,7 +34,7 @@ public class PlayerController implements KeyListener {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_RIGHT ||e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode()==KeyEvent.VK_DOWN || e.getKeyCode()==KeyEvent.VK_UP)
+            if(e.getKeyCode() == KeyEvent.VK_RIGHT ||e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode()==KeyEvent.VK_DOWN || e.getKeyCode()==KeyEvent.VK_UP ||e.getKeyCode()==KeyEvent.VK_W || e.getKeyCode()==KeyEvent.VK_S || e.getKeyCode()==KeyEvent.VK_D || e.getKeyCode()==KeyEvent.VK_A)
                 Game.getInstance().stopMovement();
         }
 
