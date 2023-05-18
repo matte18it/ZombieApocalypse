@@ -11,38 +11,43 @@ import java.awt.event.ComponentEvent;
 
 public class GameFrame extends JPanel{
 private static JFrame frameGame;
+private static GameLoop gameLoopObject;
 
     public static void lauch(){
-        JFrame frame = new JFrame();
-        frame.setSize(Settings.WINDOW_SIZE, Settings.WINDOW_SIZE);
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenDimension = toolkit.getScreenSize();
+        frameGame = new JFrame();
+        frameGame.setSize(Settings.WINDOW_SIZE, Settings.WINDOW_SIZE);
         GraphicPanel graphicPanel=new GraphicPanel();
-        frame.add(graphicPanel);
+        frameGame.add(graphicPanel);
+
+
 
         //view.addKeyListener(controller);
         graphicPanel.setFocusable(true);
         graphicPanel.requestFocus();
-        frame.setUndecorated(true);
+        frameGame.setUndecorated(true);
         PlayerController playerController=new PlayerController(graphicPanel);
         graphicPanel.addKeyListener(playerController);
-        GameLoop gameLoop=new GameLoop(playerController);
+        gameLoopObject=new GameLoop(playerController);
 
         // Mettiamo la finestra al centro dello schermo
 
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension screenDimension = toolkit.getScreenSize();
-        int x = (screenDimension.width - frame.getWidth())/2;
-        int y = (screenDimension.height - frame.getHeight())/2;
-        frame.setLocation(x, y);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gameLoop.start();
 
-        GameFrame.frameGame=frame;
+        int x = (screenDimension.width - frameGame.getWidth())/2;
+        int y = (screenDimension.height - frameGame.getHeight())/2;
+        frameGame.setLocation(x, y);
+        frameGame.setVisible(true);
+        frameGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gameLoopObject.start();
+
+
     }
 
     public static void close() {
-        //frameGame.dispose();   per chiudere solo il gioco
-        System.exit(0);
+        frameGame.dispose();
+        gameLoopObject.stop();
+        //System.exit(0);
 
     }
 }

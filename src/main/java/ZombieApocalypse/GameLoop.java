@@ -20,5 +20,9 @@ public class GameLoop {
         executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(() -> controller.update(),
                 0, 60, TimeUnit.MILLISECONDS);
+
+    }
+    public void stop(){
+        executor.shutdown();
     }
 }
