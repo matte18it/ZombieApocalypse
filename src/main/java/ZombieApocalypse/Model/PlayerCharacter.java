@@ -1,16 +1,19 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Settings;
+
 import java.awt.event.KeyEvent;
 
 public class PlayerCharacter {
     //Gestisce il player e i suoi movimenti
-    private int x = 0;
-    private int y = 0;
-    private boolean movement = false;
+    private int x = 20;
+    private int y = 20;
+    boolean movement = false;
+    private final World world=new World();
     public enum movementDirection{RIGHT, LEFT, UP, DOWN};
     movementDirection dir;
 
-    private int jump = 0;
+
 
     void startMovementUp() {
         movement = true;
@@ -19,6 +22,7 @@ public class PlayerCharacter {
     void startMovementDown() {
         movement = true;
         dir=movementDirection.DOWN;
+
     }
     void startMovementRight() {
         movement = true;
@@ -39,14 +43,17 @@ public class PlayerCharacter {
 
 
     public void move() {
-        if(dir==movementDirection.RIGHT)
+        if(dir==movementDirection.RIGHT && world.isValidCoordinate(getX()+ Settings.CELL_SIZE, getY()))
             x += 10;
-        if(dir==movementDirection.LEFT)
+        else if(dir==movementDirection.LEFT && world.isValidCoordinate(getX()-10, getY()))
             x -= 10;
-        if(dir==movementDirection.UP)
+        else if(dir==movementDirection.UP && world.isValidCoordinate(getX(), getY()-10))
             y -= 10;
-        if(dir==movementDirection.DOWN)
+        else if(dir==movementDirection.DOWN && world.isValidCoordinate(getX(), getY()+Settings.CELL_SIZE))
             y += 10;
+        else
+            movement=false;
+
 
     }
 

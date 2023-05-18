@@ -26,13 +26,13 @@ public class GameFrame extends JPanel{
         graphicPanel.addKeyListener(playerController);
         GameLoop gameLoop=new GameLoop(playerController);
 
-        /* Mettiamo la finestra al centro dello schermo
-        Non utile in questo momento
+        // Mettiamo la finestra al centro dello schermo
+
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenDimension = toolkit.getScreenSize();
         int x = (screenDimension.width - frame.getWidth())/2;
         int y = (screenDimension.height - frame.getHeight())/2;
-        //frame.setLocation(x, y); */
+        frame.setLocation(x, y);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameLoop.start();

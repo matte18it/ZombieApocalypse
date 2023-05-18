@@ -2,8 +2,9 @@ package ZombieApocalypse.Model;
 
 public class Game {
     //Gestisce gli aspetti del gioco
-
+    private final World world = new World();
     private final PlayerCharacter character = new PlayerCharacter();
+
     private static final Game instance = new Game();
     private Game() {
     }
@@ -12,10 +13,10 @@ public class Game {
     }
 
     public void startMovementRight() {
-        character.startMovementRight();
-    }
+        character.startMovementRight();}
     public void startMovementUp() {
-        character.startMovementUp();
+            character.startMovementUp();
+
     }
     public void startMovementDown() {
         character.startMovementDown();

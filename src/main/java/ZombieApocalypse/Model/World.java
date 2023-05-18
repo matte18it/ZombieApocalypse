@@ -24,8 +24,11 @@ public class World {
 
 
 
-    private boolean isValidPosition(int x, int y) {
+     private boolean isValidPosition(int x, int y) {
         return x >= 0 && x < Settings.WORLD_SIZE && y >= 0 && y < Settings.WORLD_SIZE;
+    }
+    boolean isValidCoordinate(int x, int y) {
+        return x >= 0 && x < Settings.WORLD_SIZE*Settings.CELL_SIZE && y >= 0 && y < Settings.WORLD_SIZE*Settings.CELL_SIZE;
     }
     private boolean isType(int x, int y, Block b) {
         if(isValidPosition(x, y))
