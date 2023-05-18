@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
-public class GameFrame extends JPanel{
+public class GameFrame {
 private static JFrame frameGame;
 private static GameLoop gameLoopObject;
 
