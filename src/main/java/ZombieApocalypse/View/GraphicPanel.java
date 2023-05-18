@@ -1,5 +1,6 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Settings;
 
@@ -11,7 +12,7 @@ import java.util.Random;
 
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
-    //private final CharacterView characterView = new CharacterView();
+    private final CharacterView characterView = new CharacterView();
     private final int numeroImmagini=4;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
@@ -38,13 +39,18 @@ public class GraphicPanel extends JPanel {
             for(int j = 0; j < world.getSize(); j++) {
                 int y = j * Settings.CELL_SIZE;
                 if(world.isGround(i, j)) {
-                    Random random=new Random();
-                    int value= random.nextInt(numeroImmagini);
-                    g.drawImage(images[value], x, y, null);
+                    //Random random=new Random();
+                    //int value= random.nextInt(numeroImmagini);
+                    g.drawImage(images[0], x, y, null);
                 }
 
                 }
 
 
-    }}}
+    }
+        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);}
+    public void update() {
+        characterView.update();
+        repaint();
+    }}
 

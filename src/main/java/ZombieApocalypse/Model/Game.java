@@ -37,4 +37,7 @@ public class Game {
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}
-    }
+
+    public PlayerCharacter.movementDirection getPlayerDirection() {
+        return character.dir;}
+}

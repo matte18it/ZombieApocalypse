@@ -1,5 +1,7 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Controller.PlayerController;
+import ZombieApocalypse.GameLoop;
 import ZombieApocalypse.Settings;
 
 import javax.swing.*;
@@ -20,6 +22,9 @@ public class GameFrame extends JPanel{
         graphicPanel.setFocusable(true);
         graphicPanel.requestFocus();
         frame.setUndecorated(true);
+        PlayerController playerController=new PlayerController(graphicPanel);
+        graphicPanel.addKeyListener(playerController);
+        GameLoop gameLoop=new GameLoop(playerController);
 
         /* Mettiamo la finestra al centro dello schermo
         Non utile in questo momento
@@ -30,6 +35,7 @@ public class GameFrame extends JPanel{
         //frame.setLocation(x, y); */
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gameLoop.start();
     }
 
 }
