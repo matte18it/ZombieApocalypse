@@ -10,7 +10,7 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 public class GameFrame extends JPanel{
-
+private static JFrame frameGame;
 
     public static void lauch(){
         JFrame frame = new JFrame();
@@ -36,6 +36,13 @@ public class GameFrame extends JPanel{
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameLoop.start();
+
+        GameFrame.frameGame=frame;
     }
 
+    public static void close() {
+        //frameGame.dispose();   per chiudere solo il gioco
+        System.exit(0);
+
+    }
 }

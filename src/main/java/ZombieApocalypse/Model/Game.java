@@ -1,5 +1,7 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.View.GameFrame;
+
 public class Game {
     //Gestisce gli aspetti del gioco
     private final World world = new World();
@@ -41,4 +43,8 @@ public class Game {
 
     public PlayerCharacter.movementDirection getPlayerDirection() {
         return character.dir;}
+
+    public void closeGame() {
+        GameFrame.close();
+    }
 }

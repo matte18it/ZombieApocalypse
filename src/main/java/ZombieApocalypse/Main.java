@@ -11,5 +11,6 @@ public class Main {
 
         //Finestra del gioco
         GameFrame.lauch();
+        //chiusura del gioco con Q
     }
 }
