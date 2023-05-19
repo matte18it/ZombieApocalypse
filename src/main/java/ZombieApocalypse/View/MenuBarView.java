@@ -1,9 +1,11 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Settings;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.plaf.ProgressBarUI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
@@ -14,8 +16,8 @@ import java.text.AttributedCharacterIterator;
 
 public class MenuBarView extends JPanel {
     Font font;
-    JLabel healthLabel;
     JLabel ammoLabel;
+    JLabel [] healthLabel;
     JLabel pointLabel;
     JLabel timeLabel;
     public MenuBarView(){
@@ -30,15 +32,24 @@ public class MenuBarView extends JPanel {
 
 
         //Pannello della Salute
+        healthLabel=new JLabel[10];
         JPanel healthAmmoPanel=new JPanel();
-        healthAmmoPanel.setLayout(new GridLayout(2,2,2,2));
+        healthAmmoPanel.setLayout(new GridLayout(2,2,1,1));
         healthAmmoPanel.setBackground(Color.BLACK);
         JLabel jLabelH=new JLabel("Health");
         jLabelH.setFont(font);
         jLabelH.setForeground(Color.WHITE);
-        healthLabel=new JLabel();
+
         healthAmmoPanel.add(jLabelH);
-        healthAmmoPanel.add(healthLabel);
+
+        JPanel array=new JPanel();
+        array.setBackground(Color.BLACK);
+        for(int i=0; i<6; i++){
+            healthLabel[i]=new JLabel();
+            array.add(healthLabel[i]);
+        }
+        healthAmmoPanel.add(array);
+
         //Pannello delle Munizioni
 
         JLabel jLabelA=new JLabel("Ammo");
@@ -95,21 +106,23 @@ public class MenuBarView extends JPanel {
         return font;
     }
 
-    public void update() {   //Aggiornamento della vita
-        try{    //non so perchè in questo metodo setText e setIcon non funzionano, ma in public MenuBarView funzionano
-            Image image= ImageIO.read(getClass().getResourceAsStream("/BarraDistatoeMenù/BarraVita.png"));
-            ImageIcon icon=new ImageIcon(image);
-            healthLabel.setIcon(icon);
-            healthLabel.setText("ciao prova ");
-            healthLabel.repaint();
+    public void update()  {
+        ImageIcon logo=null;
 
+        logo=new ImageIcon(getClass().getResource("/BarraDistatoeMenù/BarraVita.png"));
+        Image im=logo.getImage();
+        Image logoS=im.getScaledInstance(30,25,Image.SCALE_SMOOTH);
+        logo=new ImageIcon(logoS);
 
+        for(int i=0; i<6; i++){
+            healthLabel[i].setIcon(logo);
 
-
-
-        } catch (IOException e){
-            System.exit(1);
         }
+
+
+
+
+
 
     }
 }

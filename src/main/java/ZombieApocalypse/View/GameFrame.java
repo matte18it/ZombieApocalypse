@@ -6,8 +6,6 @@ import ZombieApocalypse.Settings;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
 public class GameFrame {
 private static JFrame frameGame;
@@ -19,10 +17,10 @@ private static GameLoop gameLoopObject;
         frameGame = new JFrame();
         frameGame.setSize(Settings.WINDOW_SIZEX, Settings.WINDOW_SIZEY);
 
-
-        GraphicPanel graphicPanel=new GraphicPanel();
-
         MenuBarView menuBarView=new MenuBarView();
+        GraphicPanel graphicPanel=new GraphicPanel(menuBarView);
+
+
 
         frameGame.add(menuBarView, BorderLayout.PAGE_END);
         frameGame.add(graphicPanel, BorderLayout.CENTER);

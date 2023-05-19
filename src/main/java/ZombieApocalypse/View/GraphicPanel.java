@@ -12,10 +12,11 @@ import java.io.IOException;
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
-    private final MenuBarView menuBarView=new MenuBarView();
+    private  final  MenuBarView menuBarView;
     private final int numeroImmagini=4;
     private final Image[] images=new Image[numeroImmagini];
-    public GraphicPanel()  {
+    public GraphicPanel(MenuBarView menuBarView)  {
+        this.menuBarView = menuBarView;
         try{
         for(int i=0; i<numeroImmagini; i++){
             String c=String.valueOf(i);
