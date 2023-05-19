@@ -14,8 +14,8 @@ public class CharacterView {
     private final CharacterAnimation runAnimationDown;
     private final CharacterAnimation runAnimationRight;
 
-    final int width = Settings.CELL_SIZE;
-    final int height = Settings.CELL_SIZE;
+    final int width = Settings.CELL_SIZEX;
+    final int height = Settings.CELL_SIZEY;
 
     private Image currentImage;
 

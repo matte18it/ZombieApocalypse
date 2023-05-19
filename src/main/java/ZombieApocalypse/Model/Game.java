@@ -20,6 +20,7 @@ public class Game {
             character.startMovementUp();
 
     }
+
     public void startMovementDown() {
         character.startMovementDown();
     }

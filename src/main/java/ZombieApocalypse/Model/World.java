@@ -4,9 +4,9 @@ import ZombieApocalypse.Settings;
 
 public class World {
     //Tutti i blocchi disegnabili
-    enum Block { GROUND}
+    enum Block { GROUND0, GROUND1,GROUND2, GROUND3}
     //Mondo e posizione del player
-    private final Block[][] world = new Block[Settings.WORLD_SIZE][Settings.WORLD_SIZE];
+    private final Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
 
 
     public World() {
@@ -16,7 +16,7 @@ public class World {
     private void generateWorld() {
         for(int i = 0; i < world.length; i++) {
             for(int j = 0; j < world[i].length; j++) {
-                world[i][j]=Block.GROUND;
+                world[i][j]=Block.GROUND0;
             }}
             }
 
@@ -25,18 +25,18 @@ public class World {
 
 
      private boolean isValidPosition(int x, int y) {
-        return x >= 0 && x < Settings.WORLD_SIZE && y >= 0 && y < Settings.WORLD_SIZE;
+        return x >= 0 && x < Settings.WORLD_SIZEX && y >= 0 && y < Settings.WORLD_SIZEY;
     }
     boolean isValidCoordinate(int x, int y) {
-        return x >= 0 && x < Settings.WORLD_SIZE*Settings.CELL_SIZE && y >= 0 && y < Settings.WORLD_SIZE*Settings.CELL_SIZE;
+        return x >= 0 && x < (Settings.WORLD_SIZEX*Settings.CELL_SIZEX)-(Settings.CELL_SIZEX) && y >= 0 && y < (Settings.WORLD_SIZEY*Settings.CELL_SIZEY)-Settings.MENU_BAR_HEIGHT-Settings.CELL_SIZEY;
     }
     private boolean isType(int x, int y, Block b) {
         if(isValidPosition(x, y))
             return world[x][y] == b;
         return false;
     }
-    public boolean isGround(int x, int y) {
-        return isType(x, y, Block.GROUND);
+    public boolean isGround0(int x, int y) {
+        return isType(x, y, Block.GROUND0);
     }
 
     public int getSize() {

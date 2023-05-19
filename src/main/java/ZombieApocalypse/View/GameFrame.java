@@ -17,13 +17,16 @@ private static GameLoop gameLoopObject;
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenDimension = toolkit.getScreenSize();
         frameGame = new JFrame();
-        frameGame.setSize(Settings.WINDOW_SIZE, Settings.WINDOW_SIZE);
+        frameGame.setSize(Settings.WINDOW_SIZEX, Settings.WINDOW_SIZEY);
+
+
         GraphicPanel graphicPanel=new GraphicPanel();
-        frameGame.add(graphicPanel);
 
+        MenuBarView menuBarView=new MenuBarView();
 
+        frameGame.add(menuBarView, BorderLayout.PAGE_END);
+        frameGame.add(graphicPanel, BorderLayout.CENTER);
 
-        //view.addKeyListener(controller);
         graphicPanel.setFocusable(true);
         graphicPanel.requestFocus();
         frameGame.setUndecorated(true);
