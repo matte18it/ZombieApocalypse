@@ -21,7 +21,7 @@ public class MenuBarView extends JPanel {
     JLabel pointLabel;
     JLabel timeLabel;
     JLabel gunLabel1;
-    JLabel gunLanel2;
+    JLabel gunLabel2;
     public MenuBarView(){
         //Crea tre Jpanel
         //Nel primo metto Vita e Munizioni con quattro label
@@ -75,9 +75,9 @@ public class MenuBarView extends JPanel {
         c.gridy=1;
 
         healthAmmoPanel.add(ammoLabel, c);
-        //Pannello delle Armi
+        //Pannello delle Armi primo
         JPanel gunPanel=new JPanel();
-        gunPanel.setMaximumSize(new Dimension(100, Settings.MENU_BAR_HEIGHT));
+        gunPanel.setMaximumSize(new Dimension(90, Settings.MENU_BAR_HEIGHT));
 
         gunPanel.setBackground(Color.BLACK);
         gunPanel.setLayout(new GridBagLayout());
@@ -100,15 +100,42 @@ public class MenuBarView extends JPanel {
         c.gridx=0;
         c.gridy=1;
         gunPanel.add(jLabelD, c);
-        c.insets=new Insets(0,5,0,0);
         c.gridy=0;
         c.gridx=1;
         gunPanel.add(jLabelW, c);
         c.gridy=1;
         c.gridx=1;
         gunPanel.add(jLabelS, c);
-
-
+        //Pannello delle armi 2
+        gunLabel2=new JLabel();
+        JPanel gunPanel1=new JPanel();
+        gunPanel1.setMaximumSize(new Dimension(100, Settings.MENU_BAR_HEIGHT));
+        gunPanel1.setBackground(Color.BLACK);
+        gunPanel1.setLayout(new GridBagLayout());
+        JLabel jLabelE=new JLabel("E");
+        jLabelE.setFont(font);
+        jLabelE.setForeground(Color.WHITE);
+        c.gridx=0;
+        c.gridy=0;
+        gunPanel1.add(jLabelE, c);
+        JLabel jLabelDd=new JLabel("D");
+        jLabelDd.setFont(font);
+        jLabelDd.setForeground(Color.WHITE);
+        c.gridx=0;
+        c.gridy=1;
+        gunPanel1.add(jLabelDd, c);
+        c.gridy=0;
+        c.gridx=1;
+        JLabel jLabelGg=new JLabel("use");
+        jLabelGg.setFont(font);
+        jLabelGg.setForeground(Color.GRAY);
+        gunPanel1.add(jLabelGg, c);
+        c.gridy=1;
+        c.gridx=1;
+        JLabel jLabelz=new JLabel(" drop");
+        jLabelz.setFont(font);
+        jLabelz.setForeground(Color.GRAY);
+        gunPanel1.add(jLabelz, c);
 
 
 
@@ -153,6 +180,9 @@ public class MenuBarView extends JPanel {
         add(healthAmmoPanel);
         add(gunPanel);
         add(gunLabel1);
+        add(new JLabel("  "));
+        add(gunLabel2);
+        add(gunPanel1);
         add(pointPanel);
         add(timePanel);
 
@@ -191,6 +221,7 @@ public class MenuBarView extends JPanel {
 
         }
         gunLabel1.setIcon(logo1);
+        gunLabel2.setIcon(logo1);
 
 
 

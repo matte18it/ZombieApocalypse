@@ -19,10 +19,7 @@ public class PlayerController implements KeyListener {
             case KeyEvent.VK_RIGHT -> Game.getInstance().startMovementRight();
             case KeyEvent.VK_LEFT -> Game.getInstance().startMovementLeft();
             case KeyEvent.VK_DOWN -> Game.getInstance().startMovementDown();
-            case KeyEvent.VK_W  -> Game.getInstance().startMovementUp();
-            case KeyEvent.VK_D -> Game.getInstance().startMovementRight();
-            case KeyEvent.VK_A -> Game.getInstance().startMovementLeft();
-            case KeyEvent.VK_S -> Game.getInstance().startMovementDown();
+
             case KeyEvent.VK_Q -> Game.getInstance().closeGame();
 
         }
