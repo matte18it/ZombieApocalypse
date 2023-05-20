@@ -1,5 +1,6 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.FontLoad;
 import ZombieApocalypse.Settings;
 
 import javax.swing.*;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import static ZombieApocalypse.Utility.PlayerData.nick;
 
 public class MenuBarView extends JPanel {
-    Font font;
+    Font font= FontLoad.getInstance().getPixelFont();
     JLabel playerName;
     JLabel ammoLabel;
     JLabel [] healthLabel;
@@ -23,7 +24,6 @@ public class MenuBarView extends JPanel {
         //Nel primo metto Vita e Munizioni con quattro label
         //nel secondo lo Score
         //nel terzo il tempo
-        loadFont();
         String playerData;
         playerName=new JLabel(nick);
         playerName.setFont(font);
@@ -182,15 +182,7 @@ public class MenuBarView extends JPanel {
         add(pointPanel);
         add(timePanel);
     }
-    private Font loadFont(){
-        try{
-            font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream("/font/PixelFont.otf"))).deriveFont(Font.PLAIN,20);
 
-
-        }catch (IOException | FontFormatException e){
-            e.printStackTrace();}
-        return font;
-    }
 
     public void update()  {
         ImageIcon logo=null;
