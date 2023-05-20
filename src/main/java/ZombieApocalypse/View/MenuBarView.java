@@ -1,6 +1,7 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.FontLoad;
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Settings;
 
 import javax.swing.*;
@@ -10,19 +11,20 @@ import static ZombieApocalypse.Utility.PlayerData.nick;
 
 public class MenuBarView extends JPanel {
     Font font= FontLoad.getInstance().getPixelFont();
+    static MenuBarAnimation iconImages=new MenuBarAnimation();
     JLabel playerName;
+     JPanel flashPanel;
     JLabel ammoLabel;
-    JLabel [] healthLabel;
+     static JLabel [] healthLabel;
     JLabel pointLabel;
     JLabel timeLabel;
-    JLabel gunLabel1;
+     JLabel gunLabel1;
     JLabel gunLabel2;
     public MenuBarView(){
         //Crea tre Jpanel
         //Nel primo metto Vita e Munizioni con quattro label
         //nel secondo lo Score
         //nel terzo il tempo
-        String playerData;
         playerName=new JLabel(nick);
         playerName.setFont(font);
         playerName.setForeground(Color.WHITE);
@@ -34,7 +36,7 @@ public class MenuBarView extends JPanel {
 
 
         //Pannello della Salute
-        healthLabel=new JLabel[10];
+        healthLabel=new JLabel[Game.getInstance().getPlayerMaxLife()];
         JPanel healthAmmoPanel=new JPanel();
         healthAmmoPanel.setLayout(new GridBagLayout());
         healthAmmoPanel.setMaximumSize(new Dimension(300, Settings.MENU_BAR_HEIGHT));
@@ -52,7 +54,7 @@ public class MenuBarView extends JPanel {
         JPanel array=new JPanel();
         array.setLayout(new BoxLayout(array, BoxLayout.X_AXIS));
         array.setBackground(Color.BLACK);
-        for(int i=0; i<6; i++){
+        for(int i=0; i<Game.getInstance().getPlayerMaxLife(); i++){
             healthLabel[i]=new JLabel();
             array.add(healthLabel[i]);
         }
@@ -60,6 +62,9 @@ public class MenuBarView extends JPanel {
         c.gridy=0;
         c.insets=new Insets(0,5,0,0);
         healthAmmoPanel.add(array, c);
+        flashPanel=new JPanel();
+        flashPanel.setOpaque(false);
+        healthAmmoPanel.add(flashPanel, c);
 
         //Pannello delle Munizioni
 
@@ -181,32 +186,37 @@ public class MenuBarView extends JPanel {
         add(timePanel);
     }
 
-
-    public void update()  {
-        ImageIcon logo=null;
-        ImageIcon logo1=null;
-
-        logo=new ImageIcon(getClass().getResource("/BarraDistatoeMenu/BarraVita.png"));
-        logo1=new ImageIcon(getClass().getResource("/BarraDistatoeMenu/SlotVuoto.png"));
-        Image im=logo.getImage();
-        Image logoS=im.getScaledInstance(30,25,Image.SCALE_SMOOTH);
-        logo=new ImageIcon(logoS);
-
-        Image im1=logo1.getImage();
-        Image logoS1=im1.getScaledInstance(55,55,Image.SCALE_SMOOTH);
-        logo1=new ImageIcon(logoS1);
-
-        for(int i=0; i<6; i++){
-            healthLabel[i].setIcon(logo);
+    public static void lifeUpdate(boolean b) {
+        if(b && Game.getInstance().getPlayerMaxLife()<Game.getInstance().getPlayerLife()){
+            healthLabel[Game.getInstance().getPlayerLife()].setIcon(iconImages.setFullHeart());
 
         }
-        gunLabel1.setIcon(logo1);
-        gunLabel2.setIcon(logo1);
+        else if (!b && Game.getInstance().getPlayerLife()>-1){
+            healthLabel[Game.getInstance().getPlayerLife()+1].setIcon(iconImages.setEmptyHeart());
 
-
-
-
-
+        }
 
     }
+    public void setBar() {
+        for(int i=0; i<Game.getInstance().getPlayerMaxLife(); i++){
+            if(i<Game.getInstance().getPlayerLife())
+            healthLabel[i].setIcon(iconImages.setFullHeart());
+            else
+                healthLabel[i].setIcon(iconImages.setEmptyHeart());
+
+        }
+        gunLabel1.setIcon(iconImages.setEmptySlot());
+        gunLabel2.setIcon(iconImages.setEmptySlot());
+
+    }
+
+
+
+
+
+
+
+
+
+
 }

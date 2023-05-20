@@ -12,11 +12,9 @@ import java.io.IOException;
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
-    private  final  MenuBarView menuBarView;
     private final int numeroImmagini=4;
     private final Image[] images=new Image[numeroImmagini];
-    public GraphicPanel(MenuBarView menuBarView)  {
-        this.menuBarView = menuBarView;
+    public GraphicPanel()  {
         try{
             for(int i=0; i<numeroImmagini; i++){
                 String c=String.valueOf(i);
@@ -54,8 +52,6 @@ public class GraphicPanel extends JPanel {
     }
     public void update() {
         characterView.update();
-        if(Game.getInstance().getPlayerCharacter().getHit())   //Esempio di update della Barra
-            menuBarView.update();
 
         repaint();
     }}

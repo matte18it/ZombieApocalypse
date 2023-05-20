@@ -1,6 +1,7 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.View.GameFrame;
+import ZombieApocalypse.View.MenuBarView;
 
 public class Game {
     //Gestisce gli aspetti del gioco
@@ -32,6 +33,7 @@ public class Game {
         character.stopMovement();
     }
 
+
     //Da fare nel Game Loop
     public void update() {
         if(character.isMoving())
@@ -41,6 +43,10 @@ public class Game {
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}
+    public int getPlayerLife() {
+        return character.health;}
+    public int getPlayerMaxLife() {
+        return character.getPlayerMaxHealth();}
 
     public PlayerCharacter.movementDirection getPlayerDirection() {
         return character.dir;}
@@ -48,4 +54,6 @@ public class Game {
     public void closeGame() {
         GameFrame.close();
     }
+
+
 }

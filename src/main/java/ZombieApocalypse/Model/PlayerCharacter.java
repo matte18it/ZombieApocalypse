@@ -2,6 +2,8 @@ package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.Audio;
+import ZombieApocalypse.View.MenuBarView;
+
 import javax.sound.sampled.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -12,11 +14,17 @@ public class PlayerCharacter {
     //Gestisce il player e i suoi movimenti
     private int x = 20;
     private int y = 20;
+    private final int playerMaxHealth=6;
+    int getPlayerMaxHealth(){
+        return playerMaxHealth;
+    }
+
+
     private boolean sound=false;
     int money=0;
-    int health=10;
+    int health=5;
     boolean movement = false;
-    boolean hit=true;  //prova
+    boolean hit=false;
     private final World world=new World();
     public enum movementDirection{RIGHT, LEFT, UP, DOWN};
     movementDirection dir;
@@ -67,6 +75,17 @@ public class PlayerCharacter {
     }
     public boolean getHit() {
         return hit;
+    }
+
+    public void hit(){
+        health--;
+
+        MenuBarView.lifeUpdate(false);
+
+    }
+    public void cure(){
+        health++;
+        MenuBarView.lifeUpdate(true);
     }
 
 

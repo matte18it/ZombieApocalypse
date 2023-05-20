@@ -45,7 +45,7 @@ public class GameFrame extends JPanel{
         frameGame.setTitle("Game");
 
         MenuBarView menuBarView=new MenuBarView();
-        GraphicPanel graphicPanel=new GraphicPanel(menuBarView);
+        GraphicPanel graphicPanel=new GraphicPanel();
         frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
 
         frameGame.add(graphicPanel);
@@ -56,6 +56,7 @@ public class GameFrame extends JPanel{
         PlayerController playerController=new PlayerController(graphicPanel);
         graphicPanel.addKeyListener(playerController);
         gameLoopObject=new GameLoop(playerController);
+        menuBarView.setBar();
         gameLoopObject.start();
     }
 
