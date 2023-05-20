@@ -62,7 +62,6 @@ public class GameFrame extends JPanel{
     public static void close() {
         frameGame.dispose();
         gameLoopObject.stop();
-        //System.exit(0);
-
+        System.exit(0);
     }
 }
