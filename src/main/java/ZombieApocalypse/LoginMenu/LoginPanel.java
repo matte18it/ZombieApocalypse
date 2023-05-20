@@ -56,7 +56,7 @@ public class LoginPanel extends JPanel {
         //Creo la label titolo
         titolo = new JLabel();
         //Creo la icon da inserire nella label titolo
-        titolo.setIcon(new ImageIcon(this.getClass().getResource("/gameTitle/title.png")));
+        titolo.setIcon(new ImageIcon(this.getClass().getResource("/GameTitle/title.png")));
         //Setto le dimensioni della label titolo e il bordo
         titolo.setMinimumSize(new Dimension(750, 138));
         titolo.setMaximumSize(new Dimension(750, 138));
@@ -76,7 +76,7 @@ public class LoginPanel extends JPanel {
         //Ora creo il campo di input dove inserire il nickname
         txtNickname = new JTextField();
         //Qui vado a creare una label in cui andrò ad inserire il campo di input per dargli una grafica
-        JLabel label1 = new JLabel(new ImageIcon(getClass().getResource("/loginInterface/txtGUI.png")));
+        JLabel label1 = new JLabel(new ImageIcon(getClass().getResource("/LoginInterface/txtGUI.png")));
         label1.setLayout(new BorderLayout());
         label1.add(txtNickname);
         txtNickname.setOpaque(false);
@@ -90,6 +90,8 @@ public class LoginPanel extends JPanel {
         //vado ad impostare il focus di default sul campo di input del nickname
         txtNickname.setFocusable(true);
         txtNickname.requestFocus();
+        //Funzione per cambiare colore al puntatore del mouse nel textfield
+        txtNickname.setCaretColor(Color.RED);
         //Evento per settare il numero massimo di caratteri nel campo di input
         txtNickname.addKeyListener(new KeyAdapter() {
             @Override
@@ -117,7 +119,7 @@ public class LoginPanel extends JPanel {
         //Qui vado a dare un bordo al campo password per far si che sia allineato al campo sopra. Infatti senza questo bordo sarebbero disallineati in quanto è presente un bottone in più affianco al campo password
         lblPassword.setBorder(new EmptyBorder(0, 57, 0, 0));
         //Creo la label come ho fatto anche sopra
-        JLabel label2 = new JLabel(new ImageIcon(getClass().getResource("/loginInterface/txtGUI.png")));
+        JLabel label2 = new JLabel(new ImageIcon(getClass().getResource("/LoginInterface/txtGUI.png")));
         label2.setLayout(new BorderLayout());
         label2.add(txtPassword);
         txtPassword.setOpaque(false);
@@ -129,8 +131,10 @@ public class LoginPanel extends JPanel {
         //faccio in modo che la password venga rimpiazzata dal carattere '-'
         txtPassword.setEchoChar('-');
         txtPassword.setForeground(Color.white);
+        //Funzione per cambiare colore al puntatore del mouse nel passwordfield
+        txtPassword.setCaretColor(Color.RED);
         //qua creo il pulsante per mostare/nascondere la password
-        showPassword = new JButton("", new ImageIcon(getClass().getResource("/loginInterface/show.png")));
+        showPassword = new JButton("", new ImageIcon(getClass().getResource("/LoginInterface/show.png")));
         showPassword.setBorderPainted(false);
         showPassword.setBackground(new Color(37, 40, 80));
         showPassword.setOpaque(false);
@@ -144,12 +148,12 @@ public class LoginPanel extends JPanel {
                     show = true;
                     //Carattere per visualizzare la password
                     txtPassword.setEchoChar('\u0000');
-                    showPassword.setIcon(new ImageIcon(getClass().getResource("/loginInterface/hide.png")));
+                    showPassword.setIcon(new ImageIcon(getClass().getResource("/LoginInterface/hide.png")));
                 }
                 else{
                     show = false;
                     txtPassword.setEchoChar('-');
-                    showPassword.setIcon(new ImageIcon(getClass().getResource("/loginInterface/show.png")));
+                    showPassword.setIcon(new ImageIcon(getClass().getResource("/LoginInterface/show.png")));
                 }
             }
         });
@@ -163,7 +167,7 @@ public class LoginPanel extends JPanel {
         panelPasswod.setBorder(new EmptyBorder(30, 0, 0, 0));
 
         //Creo il pannello per contenere il bottone
-        btnSend = new JButton("Send", new ImageIcon(getClass().getResource("/loginInterface/sendButton.png")));
+        btnSend = new JButton("Send", new ImageIcon(getClass().getResource("/LoginInterface/sendButton.png")));
         btnSend.setHorizontalTextPosition(JButton.CENTER);
         btnSend.setVerticalTextPosition(JButton.CENTER);
         btnSend.setFont(font);
@@ -330,7 +334,7 @@ public class LoginPanel extends JPanel {
 
             try{
                 //Qui vado a leggere una sola immagine casuale tra le quattro disponibili
-                bgImage = ImageIO.read(getClass().getResourceAsStream("/loginBackground/War" + setBg + ".png"));
+                bgImage = ImageIO.read(getClass().getResourceAsStream("/LoginBackground/War" + setBg + ".png"));
             } catch(IOException e){ e.printStackTrace(); }
 
             //Disegno l'immagine come sfondo del panel

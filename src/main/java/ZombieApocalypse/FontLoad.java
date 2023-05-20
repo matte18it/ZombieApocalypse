@@ -15,7 +15,7 @@ public class FontLoad {
     public Font getPixelFont() {
         Font font=null;
             try{
-                font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream("/font/PixelFont.otf"))).deriveFont(Font.PLAIN,20);
+                font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream("/Font/PixelFont.otf"))).deriveFont(Font.PLAIN,20);
             }catch (IOException | FontFormatException e){
                 e.printStackTrace();}
             return font;
