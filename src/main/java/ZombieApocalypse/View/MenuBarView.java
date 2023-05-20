@@ -3,11 +3,13 @@ package ZombieApocalypse.View;
 import ZombieApocalypse.FontLoad;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Settings;
+import ZombieApocalypse.TimeLoop;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import static ZombieApocalypse.Utility.PlayerData.nick;
@@ -217,6 +219,7 @@ public class MenuBarView extends JPanel {
         start=System.nanoTime();
         timeLabel.setForeground(Color.WHITE);
         timeLabel.setText(String.valueOf(start));
+        TimeLoop.start();
 
     }
     public static void updateTime(){

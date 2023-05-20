@@ -5,6 +5,7 @@ import ZombieApocalypse.GameLoop;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.LoginMenu.LoginLoop;
 import ZombieApocalypse.LoginMenu.LoginPanel;
+import ZombieApocalypse.TimeLoop;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,6 +64,7 @@ public class GameFrame extends JPanel{
     public static void close() {
         frameGame.dispose();
         gameLoopObject.stop();
+        TimeLoop.stop();
         System.exit(0);
     }
 }
