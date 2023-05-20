@@ -216,7 +216,6 @@ public class loginPanel extends JPanel {
         //se il numero nel db di utenti è uguale a 1 effettuo il login
         if(rs.getInt(1) == 1){
             GameFrame.gameLaunch();
-            System.out.println("Login!");
             GameFrame.loop.stop();
         }
         else{
@@ -255,7 +254,6 @@ public class loginPanel extends JPanel {
                 });
             } else{
                 //Altrimenti se non è stato usato registro il player e lo faccio accedere al gioco
-                System.out.println("Registrazione!");
                 GameFrame.gameLaunch();
                 query = "insert into Player(Nickname, Password) values(?, ?)";
                 stmt = con.prepareStatement(query);
