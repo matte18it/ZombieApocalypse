@@ -5,8 +5,6 @@ import ZombieApocalypse.Settings;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedInputStream;
-import java.io.IOException;
 
 import static ZombieApocalypse.Utility.PlayerData.nick;
 
@@ -188,8 +186,8 @@ public class MenuBarView extends JPanel {
         ImageIcon logo=null;
         ImageIcon logo1=null;
 
-        logo=new ImageIcon(getClass().getResource("/BarraDistatoeMenù/BarraVita.png"));
-        logo1=new ImageIcon(getClass().getResource("/BarraDistatoeMenù/SlotVuoto.png"));
+        logo=new ImageIcon(getClass().getResource("/BarraDistatoeMenu/BarraVita.png"));
+        logo1=new ImageIcon(getClass().getResource("/BarraDistatoeMenu/SlotVuoto.png"));
         Image im=logo.getImage();
         Image logoS=im.getScaledInstance(30,25,Image.SCALE_SMOOTH);
         logo=new ImageIcon(logoS);
