@@ -12,6 +12,7 @@ public class PlayerCharacter {
     //Gestisce il player e i suoi movimenti
     private int x = 20;
     private int y = 20;
+    private boolean sound=false;
     int money=0;
     int health=10;
     boolean movement = false;
@@ -43,22 +44,18 @@ public class PlayerCharacter {
     void startMovementUp() {
         movement = true;
         dir=movementDirection.UP;
-        playSE(0);
     }
     void startMovementDown() {
         movement = true;
         dir=movementDirection.DOWN;
-        playSE(0);
     }
     void startMovementRight() {
         movement = true;
         dir=movementDirection.RIGHT;
-        playSE(0);
     }
     void startMovementLeft() {
         movement = true;
         dir=movementDirection.LEFT;
-        playSE(0);
     }
 
     void stopMovement() {
@@ -84,6 +81,12 @@ public class PlayerCharacter {
             y += 10;
         else
             movement=false;
+        if(sound){
+            playSE(0);
+            sound=false;}
+        else
+            sound=true;
+
 
 
     }
