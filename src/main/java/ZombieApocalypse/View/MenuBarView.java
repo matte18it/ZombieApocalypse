@@ -14,8 +14,11 @@ import java.io.File;
 import java.io.IOException;
 import java.text.AttributedCharacterIterator;
 
+import static ZombieApocalypse.utility.playerData.nick;
+
 public class MenuBarView extends JPanel {
     Font font;
+    JLabel playerName;
     JLabel ammoLabel;
     JLabel [] healthLabel;
     JLabel pointLabel;
@@ -28,6 +31,10 @@ public class MenuBarView extends JPanel {
         //nel secondo lo Score
         //nel terzo il tempo
         loadFont();
+        String playerData;
+        playerName=new JLabel(nick);
+        playerName.setFont(font);
+        playerName.setForeground(Color.WHITE);
         setMaximumSize(new Dimension(Settings.WINDOW_SIZEX, Settings.MENU_BAR_HEIGHT));
         setPreferredSize(new Dimension(Settings.WINDOW_SIZEX, Settings.MENU_BAR_HEIGHT));
         setMinimumSize(new Dimension(Settings.WINDOW_SIZEX, Settings.MENU_BAR_HEIGHT));
@@ -60,11 +67,12 @@ public class MenuBarView extends JPanel {
         }
         c.gridx=1;
         c.gridy=0;
+        c.insets=new Insets(0,5,0,0);
         healthAmmoPanel.add(array, c);
 
         //Pannello delle Munizioni
 
-        JLabel jLabelA=new JLabel("Ammo");
+        JLabel jLabelA=new JLabel(" Ammo");
         jLabelA.setFont(font);
         jLabelA.setForeground(Color.GRAY);
         ammoLabel=new JLabel();
@@ -139,7 +147,7 @@ public class MenuBarView extends JPanel {
 
         //Pannello del Punteggio
         JPanel pointPanel=new JPanel();
-        pointPanel.setMaximumSize(new Dimension(100, Settings.MENU_BAR_HEIGHT));
+        pointPanel.setMaximumSize(new Dimension(300, Settings.MENU_BAR_HEIGHT));
 
         pointPanel.setLayout(new GridBagLayout());
         pointPanel.setBackground(Color.BLACK);
@@ -171,7 +179,7 @@ public class MenuBarView extends JPanel {
         c.gridx = 0;
         c.gridy = 1;
         timePanel.add(timeLabel,c);
-
+        add(playerName);
         add(healthAmmoPanel);
         add(gunPanel);
         add(gunLabel1);
