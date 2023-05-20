@@ -200,7 +200,7 @@ public class loginPanel extends JPanel {
         playerData.pass = crittografia(playerData.pass);
 
         //effettuo la conessione col db
-        String url = "jdbc:sqlite:prova.db";
+        String url = "jdbc:sqlite:player.db";
         Connection con = DriverManager.getConnection(url);
 
         //con questa query vado a contare il numero di utenti nel db che hanno lo stesso nick e la stessa pass di quelli inseriti

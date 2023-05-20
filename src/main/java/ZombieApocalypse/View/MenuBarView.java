@@ -137,9 +137,6 @@ public class MenuBarView extends JPanel {
         jLabelz.setForeground(Color.GRAY);
         gunPanel1.add(jLabelz, c);
 
-
-
-
         //Pannello del Punteggio
         JPanel pointPanel=new JPanel();
         pointPanel.setMaximumSize(new Dimension(100, Settings.MENU_BAR_HEIGHT));
@@ -175,8 +172,6 @@ public class MenuBarView extends JPanel {
         c.gridy = 1;
         timePanel.add(timeLabel,c);
 
-
-
         add(healthAmmoPanel);
         add(gunPanel);
         add(gunLabel1);
@@ -185,12 +180,6 @@ public class MenuBarView extends JPanel {
         add(gunPanel1);
         add(pointPanel);
         add(timePanel);
-
-
-
-
-
-
     }
     private Font loadFont(){
         try{
