@@ -3,8 +3,8 @@ package ZombieApocalypse.View;
 import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.GameLoop;
 import ZombieApocalypse.Settings;
-import ZombieApocalypse.loginMenu.loginLoop;
-import ZombieApocalypse.loginMenu.loginPanel;
+import ZombieApocalypse.loginMenu.LoginLoop;
+import ZombieApocalypse.loginMenu.LoginPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +12,8 @@ import java.awt.*;
 public class GameFrame extends JPanel{
     private static JFrame frameGame;
     private static GameLoop gameLoopObject;
-    private static loginPanel panel;
-    public static loginLoop loop;
+    private static LoginPanel panel;
+    public static LoginLoop loop;
 
     public static void loginLaunch(){
         Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -23,12 +23,12 @@ public class GameFrame extends JPanel{
         frameGame.setUndecorated(true);
 
         //Creo un loginPaint, parte interna della mia cornice
-        panel = new loginPanel();
+        panel = new LoginPanel();
         //Inserisco il panel appena creato all'intrerno del mio frame
         frameGame.add(panel);
 
         //Creo un oggetto loginLoop per usare un thread che gestisca l'animazione del titolo
-        loop = new loginLoop(panel);
+        loop = new LoginLoop(panel);
         loop.start();
 
         // Mettiamo la finestra al centro dello schermo

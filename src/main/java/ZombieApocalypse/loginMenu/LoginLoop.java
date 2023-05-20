@@ -4,10 +4,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class loginLoop {
-    loginPanel controller;
+public class LoginLoop {
+    LoginPanel controller;
     private ScheduledExecutorService executor;
-    public loginLoop(loginPanel controller){
+    public LoginLoop(LoginPanel controller){
         this.controller = controller;
     }
 

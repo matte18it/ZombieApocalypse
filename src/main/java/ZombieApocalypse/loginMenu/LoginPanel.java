@@ -1,7 +1,7 @@
 package ZombieApocalypse.loginMenu;
 
 import ZombieApocalypse.View.GameFrame;
-import ZombieApocalypse.utility.playerData;
+import ZombieApocalypse.utility.PlayerData;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.Random;
 
-public class loginPanel extends JPanel {
+public class LoginPanel extends JPanel {
     private final int setBg;       //Variabile che mi serve per settare lo sfondo della schermata di login
     private Font font;              //Variabile in cui si carica il font
     private JLabel titolo;       //Label per visualizzare il titolo
@@ -27,7 +27,7 @@ public class loginPanel extends JPanel {
     private int borderValueRight, borderValueLeft;  //Variabili che contengono il bordo destro e sinistro dell'animazione
     private boolean cambio = false, show = false;   //la variabile cambio serve per cambiare il verso dell'animazione del titolo, show invece per mostrare o nascondere la password
 
-    public loginPanel() {
+    public LoginPanel() {
         //Carico il font personalizzato
         loadFont();
 
@@ -193,11 +193,11 @@ public class loginPanel extends JPanel {
 
     private void controlloCredenziali() throws SQLException, NoSuchAlgorithmException {
         //come prima cosa mi prendo i valori dal campo password e nickname
-        playerData.nick = txtNickname.getText();
-        playerData.pass = new String(txtPassword.getPassword());
+        PlayerData.nick = txtNickname.getText();
+        PlayerData.pass = new String(txtPassword.getPassword());
 
         //chiamo la funzione di crittografia
-        playerData.pass = crittografia(playerData.pass);
+        PlayerData.pass = crittografia(PlayerData.pass);
 
         //effettuo la conessione col db
         String url = "jdbc:sqlite:player.db";
@@ -207,9 +207,9 @@ public class loginPanel extends JPanel {
         String query = "select count(*) from player where Nickname=? AND Password=?;";
         PreparedStatement stmt = con.prepareStatement(query);
         //setto il primo parametro della query 'Nickname' a playerData.nick
-        stmt.setString(1, playerData.nick);
+        stmt.setString(1, PlayerData.nick);
         //setto il secondo parametro della query 'Password' a playerData.pass
-        stmt.setString(2, playerData.pass);
+        stmt.setString(2, PlayerData.pass);
         //eseguo la query e metto il risultato in rs
         ResultSet rs = stmt.executeQuery();
 
@@ -222,7 +222,7 @@ public class loginPanel extends JPanel {
             //Altrimenti verifico se il nickname è già stato usato
             query = "select count(*) from player where Nickname=?;";
             stmt = con.prepareStatement(query);
-            stmt.setString(1, playerData.nick);
+            stmt.setString(1, PlayerData.nick);
             rs = stmt.executeQuery();
             if(rs.getInt(1) == 1){
                 //Se è già stato usato comunico con una scritta all'utente che il nickname non è disponibilen (essendo chiave primaria devono essere tutti diversi)
@@ -257,8 +257,8 @@ public class loginPanel extends JPanel {
                 GameFrame.gameLaunch();
                 query = "insert into Player(Nickname, Password) values(?, ?)";
                 stmt = con.prepareStatement(query);
-                stmt.setString(1, playerData.nick);
-                stmt.setString(2, playerData.pass);
+                stmt.setString(1, PlayerData.nick);
+                stmt.setString(2, PlayerData.pass);
                 stmt.execute();
                 GameFrame.loop.stop();
             }

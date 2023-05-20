@@ -1,6 +1,6 @@
 package ZombieApocalypse.utility;
 
-public class playerData {
+public class PlayerData {
     public static String nick;
     public static String pass;
 }

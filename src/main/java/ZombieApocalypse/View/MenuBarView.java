@@ -1,20 +1,13 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Settings;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.ProgressBarUI;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.IOException;
-import java.text.AttributedCharacterIterator;
 
-import static ZombieApocalypse.utility.playerData.nick;
+import static ZombieApocalypse.utility.PlayerData.nick;
 
 public class MenuBarView extends JPanel {
     Font font;

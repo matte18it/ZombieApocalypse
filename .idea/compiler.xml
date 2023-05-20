@@ -9,8 +9,5 @@
         <module name="ZombieApocalypse" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ZombieApocalypse" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
