@@ -1,5 +1,6 @@
 package ZombieApocalypse.LoginMenu;
 
+import ZombieApocalypse.FontLoad;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.Utility.PlayerData;
 
@@ -29,7 +30,7 @@ public class LoginPanel extends JPanel {
 
     public LoginPanel() {
         //Carico il font personalizzato
-        loadFont();
+        font = FontLoad.getInstance().getPixelFont();
 
         //setBg contiene un numero casuale da 1 a 4, utile per settare un immagine casuale a ogni avvio
         setBg = new Random().nextInt(1, 4);
@@ -49,12 +50,6 @@ public class LoginPanel extends JPanel {
         this.add(panelNickname);
         this.add(panelPasswod);
         this.add(pannelloBottone);
-    }
-
-    private void loadFont() {
-        try {
-            font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream("/font/PixelFont.otf"))).deriveFont(Font.PLAIN, 30);
-        } catch (Exception ex) { ex.printStackTrace(); }
     }
 
     private void initComponent() {
@@ -77,6 +72,7 @@ public class LoginPanel extends JPanel {
         lblNickame.setFont(font);
         lblNickame.setMinimumSize(new Dimension(180, 30));
         lblNickame.setMaximumSize(new Dimension(180, 30));
+        lblNickame.setFont(font.deriveFont(Font.PLAIN, 30));
         //Ora creo il campo di input dove inserire il nickname
         txtNickname = new JTextField();
         //Qui vado a creare una label in cui andrò ad inserire il campo di input per dargli una grafica
@@ -115,6 +111,7 @@ public class LoginPanel extends JPanel {
         lblPassword.setFont(font);
         lblPassword.setMinimumSize(new Dimension(230, 50));
         lblPassword.setMaximumSize(new Dimension(230, 50));
+        lblPassword.setFont(font.deriveFont(Font.PLAIN, 30));
         //ora creo il campo password
         txtPassword = new JPasswordField();
         //Qui vado a dare un bordo al campo password per far si che sia allineato al campo sopra. Infatti senza questo bordo sarebbero disallineati in quanto è presente un bottone in più affianco al campo password
@@ -171,6 +168,7 @@ public class LoginPanel extends JPanel {
         btnSend.setVerticalTextPosition(JButton.CENTER);
         btnSend.setFont(font);
         btnSend.setForeground(Color.WHITE);
+        btnSend.setFont(font.deriveFont(Font.PLAIN, 30));
         btnSend.setMinimumSize(new Dimension(197, 60));
         btnSend.setMaximumSize(new Dimension(197, 60));
         //Do un evento al pulsante 'SEND', quando viene premuto testa le credenziali di accesso
@@ -179,7 +177,7 @@ public class LoginPanel extends JPanel {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 try {
-                    if(!txtNickname.getText().equals("") && !(txtPassword.getPassword()).toString().equals(""))
+                    if((txtNickname.getText().length() > 0) && (txtPassword.getPassword().length > 0))
                         //Chiamata funzione
                         controlloCredenziali();
                 } catch (SQLException | NoSuchAlgorithmException ex) {
