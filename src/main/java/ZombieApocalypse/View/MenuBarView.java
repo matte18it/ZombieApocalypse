@@ -6,18 +6,22 @@ import ZombieApocalypse.Settings;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Timer;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import static ZombieApocalypse.Utility.PlayerData.nick;
 
 public class MenuBarView extends JPanel {
     Font font= FontLoad.getInstance().getPixelFont();
+    static long start;
     static MenuBarAnimation iconImages=new MenuBarAnimation();
     JLabel playerName;
      JPanel flashPanel;
     JLabel ammoLabel;
      static JLabel [] healthLabel;
     JLabel pointLabel;
-    JLabel timeLabel;
+    static JLabel timeLabel;
      JLabel gunLabel1;
     JLabel gunLabel2;
     public MenuBarView(){
@@ -168,6 +172,7 @@ public class MenuBarView extends JPanel {
         jLabelT.setFont(font);
         jLabelT.setForeground(Color.GRAY);
         timeLabel=new JLabel();
+        timeLabel.setFont(font);
         c.insets=new Insets(0,40,0,0);
         c.gridx = 0;
         c.gridy = 0;
@@ -205,9 +210,18 @@ public class MenuBarView extends JPanel {
                 healthLabel[i].setIcon(iconImages.setEmptyHeart());
 
         }
+
+
         gunLabel1.setIcon(iconImages.setEmptySlot());
         gunLabel2.setIcon(iconImages.setEmptySlot());
+        start=System.nanoTime();
+        timeLabel.setForeground(Color.WHITE);
+        timeLabel.setText(String.valueOf(start));
 
+    }
+    public static void updateTime(){
+        long timeElapsed=System.nanoTime()-start;
+        timeLabel.setText(String.valueOf(timeElapsed/1000000000));
     }
 
 

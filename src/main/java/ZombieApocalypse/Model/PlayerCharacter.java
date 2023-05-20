@@ -76,6 +76,10 @@ public class PlayerCharacter {
     public boolean getHit() {
         return hit;
     }
+    public void stopHit() {
+        hit=false;
+    }
+
 
     public void hit(){
         health--;
