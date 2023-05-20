@@ -8,8 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame {
-private static JFrame frameGame;
-private static GameLoop gameLoopObject;
+    private static JFrame frameGame;
+    private static GameLoop gameLoopObject;
 
     public static void lauch(){
         Toolkit toolkit = Toolkit.getDefaultToolkit();

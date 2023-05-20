@@ -18,13 +18,13 @@ public class World {
             for(int j = 0; j < world[i].length; j++) {
                 world[i][j]=Block.GROUND0;
             }}
-            }
+    }
 
 
 
 
 
-     private boolean isValidPosition(int x, int y) {
+    private boolean isValidPosition(int x, int y) {
         return x >= 0 && x < Settings.WORLD_SIZEX && y >= 0 && y < Settings.WORLD_SIZEY;
     }
     boolean isValidCoordinate(int x, int y) {

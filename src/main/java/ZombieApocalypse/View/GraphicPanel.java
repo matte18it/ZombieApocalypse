@@ -18,15 +18,15 @@ public class GraphicPanel extends JPanel {
     public GraphicPanel(MenuBarView menuBarView)  {
         this.menuBarView = menuBarView;
         try{
-        for(int i=0; i<numeroImmagini; i++){
-            String c=String.valueOf(i);
-            images[i]= ImageIO.read(getClass().getResourceAsStream("/AmbienteDiGioco/Terreno/Terreno"+c+".png"));
+            for(int i=0; i<numeroImmagini; i++){
+                String c=String.valueOf(i);
+                images[i]= ImageIO.read(getClass().getResourceAsStream("/AmbienteDiGioco/Terreno/Terreno"+c+".png"));
 
-            images[i]=images[i].getScaledInstance((int)Settings.CELL_SIZEX, (int)Settings.CELL_SIZEY, Image.SCALE_SMOOTH);
+                images[i]=images[i].getScaledInstance((int)Settings.CELL_SIZEX, (int)Settings.CELL_SIZEY, Image.SCALE_SMOOTH);
 
-        }} catch (IOException e){
+            }} catch (IOException e){
             System.exit(1);
-    }
+        }
 
     }
 
@@ -45,17 +45,18 @@ public class GraphicPanel extends JPanel {
                     g.drawImage(images[0], x, y, null);
                 }
 
-                }
+            }
 
-
-    }
-        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
         }
+        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
+
+    }
     public void update() {
         characterView.update();
         if(Game.getInstance().getPlayerCharacter().getHit())   //Esempio di update della Barra
             menuBarView.update();
+
         repaint();
     }}
 

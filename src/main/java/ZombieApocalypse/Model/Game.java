@@ -17,7 +17,7 @@ public class Game {
     public void startMovementRight() {
         character.startMovementRight();}
     public void startMovementUp() {
-            character.startMovementUp();
+        character.startMovementUp();
 
     }
 
@@ -32,7 +32,7 @@ public class Game {
         character.stopMovement();
     }
 
- //Da fare nel Game Loop
+    //Da fare nel Game Loop
     public void update() {
         if(character.isMoving())
             character.move();}

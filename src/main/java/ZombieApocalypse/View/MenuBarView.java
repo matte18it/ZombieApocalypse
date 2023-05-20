@@ -43,6 +43,7 @@ public class MenuBarView extends JPanel {
         healthAmmoPanel.add(jLabelH);
 
         JPanel array=new JPanel();
+        array.setLayout(new BoxLayout(array, BoxLayout.X_AXIS));
         array.setBackground(Color.BLACK);
         for(int i=0; i<6; i++){
             healthLabel[i]=new JLabel();
@@ -62,7 +63,7 @@ public class MenuBarView extends JPanel {
         JPanel pointPanel=new JPanel();
         pointPanel.setLayout(new GridLayout(2,1,2,2));
         pointPanel.setBackground(Color.BLACK);
-         JLabel jLabelP=new JLabel("Points");
+        JLabel jLabelP=new JLabel("Points");
         jLabelP.setFont(font);
         jLabelP.setForeground(Color.WHITE);
         pointLabel=new JLabel();
@@ -98,11 +99,11 @@ public class MenuBarView extends JPanel {
     }
     private Font loadFont(){
         try{
-        font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream("/PixelFont.otf"))).deriveFont(Font.PLAIN,20);
+            font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream("/PixelFont.otf"))).deriveFont(Font.PLAIN,20);
 
 
-    }catch (IOException | FontFormatException e){
-        e.printStackTrace();}
+        }catch (IOException | FontFormatException e){
+            e.printStackTrace();}
         return font;
     }
 
