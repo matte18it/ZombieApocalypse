@@ -1,4 +1,4 @@
-package ZombieApocalypse.utility;
+package ZombieApocalypse.Utility;
 
 public class PlayerData {
     public static String nick;

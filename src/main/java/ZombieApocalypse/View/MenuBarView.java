@@ -7,7 +7,7 @@ import java.awt.*;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
-import static ZombieApocalypse.utility.PlayerData.nick;
+import static ZombieApocalypse.Utility.PlayerData.nick;
 
 public class MenuBarView extends JPanel {
     Font font;

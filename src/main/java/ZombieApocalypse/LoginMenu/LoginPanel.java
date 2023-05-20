@@ -1,7 +1,7 @@
-package ZombieApocalypse.loginMenu;
+package ZombieApocalypse.LoginMenu;
 
 import ZombieApocalypse.View.GameFrame;
-import ZombieApocalypse.utility.PlayerData;
+import ZombieApocalypse.Utility.PlayerData;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -94,6 +94,15 @@ public class LoginPanel extends JPanel {
         //vado ad impostare il focus di default sul campo di input del nickname
         txtNickname.setFocusable(true);
         txtNickname.requestFocus();
+        //Evento per settare il numero massimo di caratteri nel campo di input
+        txtNickname.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                if(txtNickname.getText().length() > 20)
+                    e.consume();
+            }
+        });
         //Inserisco tutto nel pannello
         panelNickname = new JPanel();
         panelNickname.setOpaque(false);
@@ -170,8 +179,9 @@ public class LoginPanel extends JPanel {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 try {
-                    //Chiamata funzione
-                    controlloCredenziali();
+                    if(!txtNickname.getText().equals("") && !(txtPassword.getPassword()).toString().equals(""))
+                        //Chiamata funzione
+                        controlloCredenziali();
                 } catch (SQLException | NoSuchAlgorithmException ex) {
                     throw new RuntimeException(ex);
                 }

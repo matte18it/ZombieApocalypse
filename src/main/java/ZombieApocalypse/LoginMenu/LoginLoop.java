@@ -1,4 +1,4 @@
-package ZombieApocalypse.loginMenu;
+package ZombieApocalypse.LoginMenu;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

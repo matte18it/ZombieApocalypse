@@ -3,8 +3,8 @@ package ZombieApocalypse.View;
 import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.GameLoop;
 import ZombieApocalypse.Settings;
-import ZombieApocalypse.loginMenu.LoginLoop;
-import ZombieApocalypse.loginMenu.LoginPanel;
+import ZombieApocalypse.LoginMenu.LoginLoop;
+import ZombieApocalypse.LoginMenu.LoginPanel;
 
 import javax.swing.*;
 import java.awt.*;
