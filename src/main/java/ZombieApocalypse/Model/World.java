@@ -28,7 +28,7 @@ public class World {
         return x >= 0 && x < Settings.WORLD_SIZEX && y >= 0 && y < Settings.WORLD_SIZEY;
     }
     boolean isValidCoordinate(int x, int y) {
-        return x >= 0 && x < (Settings.WORLD_SIZEX*Settings.CELL_SIZEX)-(Settings.CELL_SIZEX) && y >= 0 && y < (Settings.WORLD_SIZEY*Settings.CELL_SIZEY)-Settings.MENU_BAR_HEIGHT-Settings.CELL_SIZEY;
+        return x >= 0 && x < (Settings.WORLD_SIZEX*Settings.CELL_SIZEX)-(Settings.CELL_SIZEX) && y >= 0 && y < (Settings.WORLD_SIZEY*Settings.CELL_SIZEY)-Settings.CELL_SIZEY;
     }
     private boolean isType(int x, int y, Block b) {
         if(isValidPosition(x, y))

@@ -15,15 +15,16 @@ public class GameFrame {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenDimension = toolkit.getScreenSize();
         frameGame = new JFrame();
-        frameGame.setSize(Settings.WINDOW_SIZEX, Settings.WINDOW_SIZEY);
+        frameGame.setSize(Settings.WINDOW_SIZEX, Settings.WINDOW_SIZEY+Settings.MENU_BAR_HEIGHT);
 
         MenuBarView menuBarView=new MenuBarView();
         GraphicPanel graphicPanel=new GraphicPanel(menuBarView);
+        frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
 
 
 
-        frameGame.add(menuBarView, BorderLayout.PAGE_END);
-        frameGame.add(graphicPanel, BorderLayout.CENTER);
+        frameGame.add(graphicPanel);
+        frameGame.add(menuBarView);
 
         graphicPanel.setFocusable(true);
         graphicPanel.requestFocus();

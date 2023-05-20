@@ -22,7 +22,7 @@ public class GraphicPanel extends JPanel {
                 String c=String.valueOf(i);
                 images[i]= ImageIO.read(getClass().getResourceAsStream("/AmbienteDiGioco/Terreno/Terreno"+c+".png"));
 
-                images[i]=images[i].getScaledInstance((int)Settings.CELL_SIZEX, (int)Settings.CELL_SIZEY, Image.SCALE_SMOOTH);
+                images[i]=images[i].getScaledInstance(Settings.CELL_SIZEX, Settings.CELL_SIZEY, Image.SCALE_SMOOTH);
 
             }} catch (IOException e){
             System.exit(1);
