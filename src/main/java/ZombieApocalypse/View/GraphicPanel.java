@@ -13,6 +13,10 @@ import java.io.IOException;
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
+    private static final GunView gunView = new GunView();
+    public  GunView getGunView(){
+        return gunView;
+    }
     //immagini ordinate fino ad adesso
     private final int numeroImmagini=1;
     private final Image[] images=new Image[numeroImmagini];
@@ -44,11 +48,13 @@ public class GraphicPanel extends JPanel {
 
 
         }
+        g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.width, gunView.height, null);
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
     }
     public void update() {
         characterView.update();
+        gunView.update(new Point(2,2));
 
         repaint();
     }}

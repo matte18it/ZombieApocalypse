@@ -4,7 +4,6 @@ import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.GameLoop;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.LoginMenu.LoginLoop;
-import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.TimeLoop;
 
 import javax.swing.*;
@@ -56,6 +55,7 @@ public class GameFrame extends JPanel{
         graphicPanel.setFocusable(true);
         graphicPanel.requestFocus();
         PlayerController playerController=new PlayerController(graphicPanel);
+        graphicPanel.addMouseMotionListener(playerController);
         graphicPanel.addKeyListener(playerController);
         gameLoopObject=new GameLoop(playerController);
         menuBarView.setBar();

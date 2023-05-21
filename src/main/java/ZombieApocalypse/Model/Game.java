@@ -3,6 +3,8 @@ package ZombieApocalypse.Model;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuBarView;
 
+import java.awt.*;
+
 public class Game {
     //Gestisce gli aspetti del gioco
     private final World world = new World();
@@ -61,4 +63,6 @@ public class Game {
         long t=timeElapsed/1000000000;
         MenuBarView.updateTimeLable(t);
     }
+
+
 }
