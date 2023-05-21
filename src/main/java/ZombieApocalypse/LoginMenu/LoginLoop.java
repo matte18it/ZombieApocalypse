@@ -1,14 +1,17 @@
 package ZombieApocalypse.LoginMenu;
 
+import ZombieApocalypse.Model.LoginModel;
+import ZombieApocalypse.View.LoginView;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class LoginLoop {
-    LoginPanel controller;
+    LoginView view;
     private ScheduledExecutorService executor;
-    public LoginLoop(LoginPanel controller){
-        this.controller = controller;
+    public LoginLoop(LoginView view){
+        this.view = view;
     }
 
     public void start(){
@@ -16,7 +19,7 @@ public class LoginLoop {
         if (executor != null)
             return;
         executor = Executors.newSingleThreadScheduledExecutor();
-        executor.scheduleAtFixedRate(() -> controller.updatePosition(),
+        executor.scheduleAtFixedRate(() -> view.updatePosition(),
                 0, 60, TimeUnit.MILLISECONDS);
     }
 

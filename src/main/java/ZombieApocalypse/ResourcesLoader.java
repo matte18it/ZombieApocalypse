@@ -57,7 +57,7 @@ public class ResourcesLoader {
         AudioInputStream audioIn;
         Clip clip;
         try {
-            audioIn = AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/resources/" + name));
+            audioIn = AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/resources/" + path));
             clip = AudioSystem.getClip();
             clip.open(audioIn);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {

@@ -4,7 +4,7 @@ import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.GameLoop;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.LoginMenu.LoginLoop;
-import ZombieApocalypse.LoginMenu.LoginPanel;
+import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.TimeLoop;
 
 import javax.swing.*;
@@ -13,7 +13,7 @@ import java.awt.*;
 public class GameFrame extends JPanel{
     private static JFrame frameGame;
     private static GameLoop gameLoopObject;
-    private static LoginPanel panel;
+    private static LoginView panel;
     public static LoginLoop loop;
     public static TimeLoop timeLoop;
 
@@ -25,7 +25,7 @@ public class GameFrame extends JPanel{
         frameGame.setUndecorated(true);
 
         //Creo un loginPaint, parte interna della mia cornice
-        panel = new LoginPanel();
+        panel = new LoginView();
         //Inserisco il panel appena creato all'intrerno del mio frame
         frameGame.add(panel);
 
@@ -68,7 +68,6 @@ public class GameFrame extends JPanel{
     public static void close() {
         frameGame.dispose();
         gameLoopObject.stop();
-        timeLoop.stop();
         System.exit(0);
     }
 }
