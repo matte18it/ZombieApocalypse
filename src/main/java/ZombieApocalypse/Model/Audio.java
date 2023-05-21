@@ -1,4 +1,4 @@
-package ZombieApocalypse.View;
+package ZombieApocalypse.Model;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;

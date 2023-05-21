@@ -1,13 +1,6 @@
 package ZombieApocalypse.Model;
 
-import ZombieApocalypse.Settings;
-import ZombieApocalypse.View.Audio;
 import ZombieApocalypse.View.MenuBarView;
-
-import javax.sound.sampled.*;
-import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
 
 
 public class PlayerCharacter {
