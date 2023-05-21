@@ -2,6 +2,7 @@ package ZombieApocalypse.View;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.World;
+import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Settings;
 
 import javax.imageio.ImageIO;
@@ -12,18 +13,14 @@ import java.io.IOException;
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
-    private final int numeroImmagini=4;
+    //immagini ordinate fino ad adesso
+    private final int numeroImmagini=1;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
-        try{
             for(int i=0; i<numeroImmagini; i++){
                 String c=String.valueOf(i);
-                images[i]= ImageIO.read(getClass().getResourceAsStream("/AmbienteDiGioco/Terreno/Terreno"+c+".png"));
-
-                images[i]=images[i].getScaledInstance(Settings.CELL_SIZEX, Settings.CELL_SIZEY, Image.SCALE_SMOOTH);
-
-            }} catch (IOException e){
-            System.exit(1);
+                String path="/AmbienteDiGioco/Terreno/Terreno"+c+".png";
+                images[i]= ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
         }
 
     }

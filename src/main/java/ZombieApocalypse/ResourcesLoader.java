@@ -21,7 +21,9 @@ public class ResourcesLoader {
             try{
                 font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream(path))).deriveFont(type,size);
             }catch (IOException | FontFormatException e){
-                e.printStackTrace();}
+                System.exit(103);
+
+            }
             return font;
     }
     public ImageIcon getImageIcon(String name, int width, int height, boolean b){
@@ -37,6 +39,7 @@ public class ResourcesLoader {
             image = new ImageIcon(logoS);
 
         }catch (NullPointerException e){
+            System.exit(102);
         } return image;
     }
 
@@ -49,7 +52,7 @@ public class ResourcesLoader {
 
 
     } catch (IOException  | IllegalArgumentException ex){
-        System.exit(1);
+            System.exit(101);
     }
         return  image;
 }
@@ -57,11 +60,12 @@ public class ResourcesLoader {
         AudioInputStream audioIn;
         Clip clip;
         try {
-            audioIn = AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/resources/" + path));
+            audioIn = AudioSystem.getAudioInputStream(getClass().getResourceAsStream(path));
             clip = AudioSystem.getClip();
             clip.open(audioIn);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             clip = null;
+            System.exit(100);
         } return clip;
 
     }

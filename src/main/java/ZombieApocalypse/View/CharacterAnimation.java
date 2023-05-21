@@ -1,6 +1,9 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Model.PlayerCharacter;
+import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Settings;
+import jdk.jfr.SettingControl;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -14,14 +17,12 @@ public class CharacterAnimation {
     private int index = 0;
 
     public CharacterAnimation(String action, int numberOfElements) {
-        try {
             for (int i = 0; i < numberOfElements; i++) {
-                Image img = ImageIO.read(getClass().getResourceAsStream("/Player/" + action + i + ".png"));
+                String path=action+i;
+                Image img= ResourcesLoader.getInstance().getImage("/Player/"+path+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
                 images.add(img);
             }
-        } catch(IOException exception) {
-            exception.printStackTrace();
-        }
+
     }
 
     public Image getDefaultImage() {

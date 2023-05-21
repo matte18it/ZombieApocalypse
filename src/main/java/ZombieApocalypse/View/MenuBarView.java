@@ -10,9 +10,9 @@ import java.awt.*;
 import static ZombieApocalypse.Utility.PlayerData.nick;
 
 public class MenuBarView extends JPanel {
-    Font font= ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 18, Font.PLAIN);
+    Font font= ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
     static long start;
-    static MenuBarAnimation iconImages=new MenuBarAnimation();
+    static MenuBarAnimation menuBarAnimation=new MenuBarAnimation();
     JLabel playerName;
      JPanel flashPanel;
     JLabel ammoLabel;
@@ -190,11 +190,12 @@ public class MenuBarView extends JPanel {
 
     public static void lifeUpdate(boolean b) {
         if(b && Game.getInstance().getPlayerMaxLife()<Game.getInstance().getPlayerLife()){
-            healthLabel[Game.getInstance().getPlayerLife()].setIcon(iconImages.setFullHeart());
+            healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 20, 35));
 
         }
         else if (!b && Game.getInstance().getPlayerLife()>-1){
-            healthLabel[Game.getInstance().getPlayerLife()+1].setIcon(iconImages.setEmptyHeart());
+            healthLabel[Game.getInstance().getPlayerLife()+1].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 20, 35));
+
 
         }
 
@@ -202,15 +203,15 @@ public class MenuBarView extends JPanel {
     public void setBar() {
         for(int i=0; i<Game.getInstance().getPlayerMaxLife(); i++){
             if(i<Game.getInstance().getPlayerLife())
-            healthLabel[i].setIcon(iconImages.setFullHeart());
+            healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 30));
             else
-                healthLabel[i].setIcon(iconImages.setEmptyHeart());
+                healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 30));
 
         }
 
 
-        gunLabel1.setIcon(iconImages.setEmptySlot());
-        gunLabel2.setIcon(iconImages.setEmptySlot());
+        gunLabel1.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
+        gunLabel2.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
         start=System.nanoTime();
         timeLabel.setForeground(Color.WHITE);
         timeLabel.setText(String.valueOf(start));
