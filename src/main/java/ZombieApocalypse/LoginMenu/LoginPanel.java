@@ -1,6 +1,6 @@
 package ZombieApocalypse.LoginMenu;
 
-import ZombieApocalypse.FontLoad;
+import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.Utility.PlayerData;
 
@@ -30,7 +30,7 @@ public class LoginPanel extends JPanel {
 
     public LoginPanel() {
         //Carico il font personalizzato
-        font = FontLoad.getInstance().getPixelFont();
+        font = ResourcesLoader.getInstance().getPixelFont();
 
         //setBg contiene un numero casuale da 1 a 4, utile per settare un immagine casuale a ogni avvio
         setBg = new Random().nextInt(1, 4);

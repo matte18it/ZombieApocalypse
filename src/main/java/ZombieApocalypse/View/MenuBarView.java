@@ -1,21 +1,16 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.FontLoad;
+import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Settings;
-import ZombieApocalypse.TimeLoop;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Timer;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import static ZombieApocalypse.Utility.PlayerData.nick;
 
 public class MenuBarView extends JPanel {
-    Font font= FontLoad.getInstance().getPixelFont();
+    Font font= ResourcesLoader.getInstance().getPixelFont();
     static long start;
     static MenuBarAnimation iconImages=new MenuBarAnimation();
     JLabel playerName;
@@ -219,12 +214,10 @@ public class MenuBarView extends JPanel {
         start=System.nanoTime();
         timeLabel.setForeground(Color.WHITE);
         timeLabel.setText(String.valueOf(start));
-        TimeLoop.start();
 
     }
-    public static void updateTime(){
-        long timeElapsed=System.nanoTime()-start;
-        timeLabel.setText(String.valueOf(timeElapsed/1000000000));
+    public static void updateTimeLable(long t){
+        timeLabel.setText(String.valueOf(t));
     }
 
 

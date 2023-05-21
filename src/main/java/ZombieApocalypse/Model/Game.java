@@ -56,4 +56,9 @@ public class Game {
     }
 
 
+    public void updateTime(long start) {
+        long timeElapsed=System.nanoTime()-start;
+        long t=timeElapsed/1000000000;
+        MenuBarView.updateTimeLable(t);
+    }
 }

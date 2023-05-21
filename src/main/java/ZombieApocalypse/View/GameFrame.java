@@ -15,6 +15,7 @@ public class GameFrame extends JPanel{
     private static GameLoop gameLoopObject;
     private static LoginPanel panel;
     public static LoginLoop loop;
+    public static TimeLoop timeLoop;
 
     public static void loginLaunch(){
         Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -58,13 +59,16 @@ public class GameFrame extends JPanel{
         graphicPanel.addKeyListener(playerController);
         gameLoopObject=new GameLoop(playerController);
         menuBarView.setBar();
+        timeLoop=new TimeLoop();
+
         gameLoopObject.start();
+        timeLoop.start();
     }
 
     public static void close() {
         frameGame.dispose();
         gameLoopObject.stop();
-        TimeLoop.stop();
+        timeLoop.stop();
         System.exit(0);
     }
 }

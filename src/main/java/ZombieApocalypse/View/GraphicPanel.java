@@ -52,7 +52,6 @@ public class GraphicPanel extends JPanel {
     }
     public void update() {
         characterView.update();
-        MenuBarView.updateTime();
 
         repaint();
     }}
