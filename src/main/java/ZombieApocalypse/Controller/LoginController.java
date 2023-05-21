@@ -8,6 +8,7 @@ import ZombieApocalypse.View.LoginView;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
@@ -61,7 +62,7 @@ public class LoginController {
                     if((view.getNickname().getText().length() > 0) && (view.getPassword().getPassword().length > 0))
                         //Chiamata funzione
                         getCredenziali();
-                } catch (NoSuchAlgorithmException | SQLException ex) {
+                } catch (NoSuchAlgorithmException | SQLException | IOException ex) {
                     throw new RuntimeException(ex);
                 }
             }
@@ -92,12 +93,16 @@ public class LoginController {
         });
     }
 
-    public void getCredenziali() throws NoSuchAlgorithmException, SQLException {
+    public void getCredenziali() throws NoSuchAlgorithmException, SQLException, IOException {
         //come prima cosa mi prendo i valori dal campo password e nickname
         PlayerData.nick = view.getNickname().getText();
         PlayerData.pass = new String(view.getPassword().getPassword());
         //chiamo la funzione di crittografia
         PlayerData.pass = login.crittografia(PlayerData.pass);
+
+        //Chiamo la funzione del model per controllare le credenziali e gli passo il path del file php
+        //login.controlloCredenzialiOnline("https://progettouid.altervista.org/ZombieApocalypse/playerUID.php?nickname=" + PlayerData.nick + "&password=" + PlayerData.pass);
+
         //Chiamo la funzione del model per controllare le credenziali
         login.controlloCredenziali();
     }
