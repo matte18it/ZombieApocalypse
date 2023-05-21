@@ -16,7 +16,6 @@ public class MenuBarAnimation {
 
 
     public ImageIcon setIcon(Icon i, int w, int h) {
-        System.out.println(i.ordinal());
         if(images[i.ordinal()]==null){
             images[i.ordinal()]= ResourcesLoader.getInstance().getImageIcon("/BarraDistatoeMenu/Icon"+i.ordinal()+".png",w,h,true );
                 }
