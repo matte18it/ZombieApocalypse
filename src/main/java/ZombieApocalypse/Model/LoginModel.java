@@ -11,9 +11,11 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.Base64;
 
 public class LoginModel {
 
@@ -60,16 +62,25 @@ public class LoginModel {
 
     public String crittografia(String pass) throws NoSuchAlgorithmException {
         //per crittografare uso la funzione di hash MD5, quindi creo la stringa criptata e la restituisco al programma
-        MessageDigest m = MessageDigest.getInstance("MD5");
-        MessageDigest m1 = MessageDigest.getInstance("SHA-512");
+        MessageDigest m = MessageDigest.getInstance("SHA-512");
+        MessageDigest m1 = MessageDigest.getInstance("MD5");
+
         //aggiorna il digest usando la password
         m.update(pass.getBytes());
         byte[] bytes = m.digest();
         StringBuilder s = new StringBuilder();
+        //Viene prima criptata con SHA-512
         for(int i = 0; i < bytes.length; i++)
-            //creo la stringa
             s.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-        return s.toString();
+
+        m1.update(s.toString().getBytes());
+        byte[] bytes1 = m1.digest();
+        StringBuilder s1 = new StringBuilder();
+        //Viene poi criptata con MD5
+        for(int i = 0; i < bytes1.length; i++)
+            s1.append(Integer.toString((bytes1[i] & 0xff) + 0x100, 16).substring(1));
+
+        return s1.toString();
     }
 
 }
