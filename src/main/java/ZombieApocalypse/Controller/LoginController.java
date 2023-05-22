@@ -101,9 +101,6 @@ public class LoginController {
         PlayerData.pass = login.crittografia(PlayerData.pass);
 
         //Chiamo la funzione del model per controllare le credenziali e gli passo il path del file php
-        //login.controlloCredenzialiOnline("https://progettouid.altervista.org/ZombieApocalypse/playerUID.php?nickname=" + PlayerData.nick + "&password=" + PlayerData.pass);
-
-        //Chiamo la funzione del model per controllare le credenziali
-        login.controlloCredenziali();
+        login.controlloCredenzialiOnline("https://progettouid.altervista.org/ZombieApocalypse/playerUID.php?nickname=" + PlayerData.nick + "&password=" + PlayerData.pass);
     }
 }
