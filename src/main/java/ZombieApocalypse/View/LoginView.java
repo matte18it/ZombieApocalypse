@@ -23,7 +23,7 @@ public class LoginView extends JPanel{
     private JPasswordField txtPassword; //Per inserire la password
     private JLabel lblNickame;   //Label per nickname
     private JLabel lblPassword;  //Label per password
-    private JPanel panelNickname, panelPasswod, imagePanel, pannelloBottone;    //Pannelli per contenere gli elementi
+    private JPanel panelPrincipale, imagePanel;    //Pannelli per contenere gli elementi
     private int borderValueRight, borderValueLeft;  //Variabili che contengono il bordo destro e sinistro dell'animazione
     private boolean cambio = false, show = false;   //la variabile cambio serve per cambiare il verso dell'animazione del titolo, show invece per mostrare o nascondere la password
 
@@ -52,12 +52,18 @@ public class LoginView extends JPanel{
 
         //Inserisco ora i componenti nel pannello principale
         this.add(imagePanel);
-        this.add(panelNickname);
-        this.add(panelPasswod);
-        this.add(pannelloBottone);
+        this.add(panelPrincipale);
     }
 
     private void initComponent() {
+        //creo il panello
+        panelPrincipale = new JPanel();
+        panelPrincipale.setOpaque(false);
+        panelPrincipale.setLayout(new GridBagLayout());
+        panelPrincipale.setMaximumSize(new Dimension(1280, 270));
+        GridBagConstraints c = new GridBagConstraints();
+        c.insets = new Insets(20, 5, 0, 0);
+
         //Creo la label titolo
         titolo = new JLabel();
         //Creo la icon da inserire nella label titolo
@@ -98,11 +104,12 @@ public class LoginView extends JPanel{
         //Funzione per cambiare colore al puntatore del mouse nel textfield
         txtNickname.setCaretColor(Color.RED);
         //Inserisco tutto nel pannello
-        panelNickname = new JPanel();
-        panelNickname.setOpaque(false);
-        panelNickname.setLayout(new BoxLayout(panelNickname, BoxLayout.X_AXIS));
-        panelNickname.add(lblNickame);
-        panelNickname.add(label1);
+        c.gridx = 0;                //cella con coordinate 0 0
+        c.gridy = 0;
+        panelPrincipale.add(lblNickame, c);
+        c.gridx = 1;                //cella con coordinate 1 0
+        c.gridy = 0;
+        panelPrincipale.add(label1, c);
 
         //Creo la label per il campo password
         lblPassword = new JLabel("Password: ");
@@ -134,29 +141,34 @@ public class LoginView extends JPanel{
         showPassword.setOpaque(false);
         showPassword.setFocusPainted(false);
         //Metto tutto nel pannello
-        panelPasswod = new JPanel();
-        panelPasswod.setOpaque(false);
-        panelPasswod.setLayout(new BoxLayout(panelPasswod, BoxLayout.X_AXIS));
-        panelPasswod.add(lblPassword);
-        panelPasswod.add(label2);
-        panelPasswod.add(showPassword);
-        panelPasswod.setBorder(new EmptyBorder(30, 0, 0, 0));
+        c.gridx = 0;                //cella con coordinate 0 1
+        c.gridy = 1;
+        panelPrincipale.add(lblPassword, c);
+        c.gridx = 1;                //cella con coordinate 1 1
+        c.gridy = 1;
+        panelPrincipale.add(label2, c);
+        c.gridx = 2;                //cella con coordinate 2 1
+        c.gridy = 1;
+        c.insets = new Insets(20, 15, 0, 0);
+        panelPrincipale.add(showPassword, c);
 
         //Creo il pannello per contenere il bottone
         btnSend = new JButton("Send", loader.getImageIcon("/LoginInterface/sendButton.png", 197, 60, false));
         btnSend.setHorizontalTextPosition(JButton.CENTER);
         btnSend.setVerticalTextPosition(JButton.CENTER);
         btnSend.setFont(font);
+        btnSend.setBorderPainted(false);
+        btnSend.setFocusPainted(false);
         btnSend.setForeground(Color.WHITE);
         btnSend.setFont(font.deriveFont(Font.PLAIN, 30));
         btnSend.setMinimumSize(new Dimension(197, 60));
         btnSend.setMaximumSize(new Dimension(197, 60));
         //Metto il bottone nel suo pannello
-        pannelloBottone = new JPanel();
-        pannelloBottone.setOpaque(false);
-        pannelloBottone.setLayout(new BoxLayout(pannelloBottone, BoxLayout.X_AXIS));
-        pannelloBottone.add(btnSend);
-        pannelloBottone.setBorder(new EmptyBorder(30, 0, 0, 0));
+        c.gridx = 1;               //cella con coordinate 1 2
+        c.gridy = 2;
+        c.insets = new Insets(20, 0, 0, 0);
+        c.fill = GridBagConstraints.CENTER;
+        panelPrincipale.add(btnSend, c);
 
         //Se lo sfondo è impostato sul secondo o quarto (sfondi scuri) rendo le scritte più chiare, per una questione di legibilità
         if(setBg == 2 || setBg == 4){
