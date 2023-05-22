@@ -1,7 +1,7 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.PlayerController;
-import ZombieApocalypse.GameLoop;
+import ZombieApocalypse.Loop.GameLoop;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.Loop.LoginLoop;
 import ZombieApocalypse.Loop.TimeLoop;

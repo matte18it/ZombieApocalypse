@@ -1,4 +1,4 @@
-package ZombieApocalypse;
+package ZombieApocalypse.Loop;
 
 import ZombieApocalypse.Controller.PlayerController;
 
