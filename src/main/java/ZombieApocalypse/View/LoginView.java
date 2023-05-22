@@ -107,13 +107,11 @@ public class LoginView extends JPanel{
         //Creo la label per il campo password
         lblPassword = new JLabel("Password: ");
         lblPassword.setFont(font);
-        lblPassword.setMinimumSize(new Dimension(230, 50));
-        lblPassword.setMaximumSize(new Dimension(230, 50));
+        lblPassword.setMinimumSize(new Dimension(180, 50));
+        lblPassword.setMaximumSize(new Dimension(180, 50));
         lblPassword.setFont(font.deriveFont(Font.PLAIN, 30));
         //ora creo il campo password
         txtPassword = new JPasswordField();
-        //Qui vado a dare un bordo al campo password per far si che sia allineato al campo sopra. Infatti senza questo bordo sarebbero disallineati in quanto è presente un bottone in più affianco al campo password
-        lblPassword.setBorder(new EmptyBorder(0, 57, 0, 0));
         //Creo la label come ho fatto anche sopra
         JLabel label2 = new JLabel(loader.getImageIcon("/LoginInterface/txtGUI.png", 315, 51, false));
         label2.setLayout(new BorderLayout());

@@ -1,6 +1,5 @@
-package ZombieApocalypse.LoginMenu;
+package ZombieApocalypse.Loop;
 
-import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.View.LoginView;
 
 import java.util.concurrent.Executors;
