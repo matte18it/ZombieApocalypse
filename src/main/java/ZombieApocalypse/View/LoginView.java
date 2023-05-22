@@ -149,7 +149,7 @@ public class LoginView extends JPanel{
         panelPrincipale.add(label2, c);
         c.gridx = 2;                //cella con coordinate 2 1
         c.gridy = 1;
-        c.insets = new Insets(20, 15, 0, 0);
+        c.insets = new Insets(20, 10, 0, 0);
         panelPrincipale.add(showPassword, c);
 
         //Creo il pannello per contenere il bottone
