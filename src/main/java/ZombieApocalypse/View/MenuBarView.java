@@ -212,9 +212,7 @@ public class MenuBarView extends JPanel {
 
         gunLabel1.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
         gunLabel2.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
-        start=System.nanoTime();
         timeLabel.setForeground(Color.WHITE);
-        timeLabel.setText(String.valueOf(start));
 
     }
     public static void updateTimeLable(long t){

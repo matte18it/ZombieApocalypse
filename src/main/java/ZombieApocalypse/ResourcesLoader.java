@@ -5,6 +5,7 @@ import javax.sound.sampled.*;
 import javax.swing.*;
 import javax.swing.text.StyleConstants;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
@@ -47,8 +48,10 @@ public class ResourcesLoader {
         Image image=null;
         try{
             image= ImageIO.read(getClass().getResourceAsStream(name));
-
+            if(b)
             image=image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            else
+                image=image.getScaledInstance(width, height, Image.SCALE_FAST);
 
 
     } catch (IOException  | IllegalArgumentException ex){
@@ -70,4 +73,40 @@ public class ResourcesLoader {
 
     }
 
+
+
+
+    public BufferedImage rotateImage(BufferedImage imageToRotate, double degrees) {
+
+        int widthOfImage = imageToRotate.getWidth();
+        int heightOfImage = imageToRotate.getHeight();
+        int typeOfImage = imageToRotate.getType();
+
+        BufferedImage newImageFromBuffer = new BufferedImage(widthOfImage, heightOfImage, typeOfImage);
+
+        Graphics2D graphics2D = newImageFromBuffer.createGraphics();
+
+        graphics2D.rotate(Math.toRadians(degrees), widthOfImage / 2, heightOfImage / 2);
+        graphics2D.drawImage(imageToRotate, null, 0, 0);
+
+        return newImageFromBuffer;
+    }
+
+    public BufferedImage getBufferedImage(String s, int width, int height, boolean b) {
+        BufferedImage image=null;
+        BufferedImage dimg=null;
+        try{
+            image= ImageIO.read(getClass().getResourceAsStream(s));
+            Image tmp=image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            dimg=new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2d = dimg.createGraphics();
+            g2d.drawImage(tmp, 0, 0, null);
+            g2d.dispose();
+
+
+        } catch (IOException  | IllegalArgumentException ex){
+            System.exit(102);
+        }
+        return  dimg;
+    }
 }

@@ -8,7 +8,16 @@ import ZombieApocalypse.Settings;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.font.GlyphVector;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
+import java.awt.image.ImageObserver;
+import java.awt.image.RenderedImage;
+import java.awt.image.renderable.RenderableImage;
 import java.io.IOException;
+import java.text.AttributedCharacterIterator;
+import java.util.Map;
 
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
@@ -48,14 +57,14 @@ public class GraphicPanel extends JPanel {
 
 
         }
+
         g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.width, gunView.height, null);
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
     }
     public void update() {
         characterView.update();
-        gunView.update(new Point(2,2));
-
+        gunView.update(null);
         repaint();
     }}
 
