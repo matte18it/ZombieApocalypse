@@ -1,5 +1,6 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Settings;
 
@@ -10,15 +11,16 @@ public class GunAnimation {
 
     private final ArrayList<Image> images = new ArrayList<>();
     private int index = 0;
+    enum gun{UP,DOWN, LEFT,RIGHT};
 
     public GunAnimation(String action, int numberOfElements) {
         Image img=null;
-        for (int i = 0; i < numberOfElements; i++) {
+        for (int i=0; i<gun.values().length; i++) {
             String path=action+i;
-                if(i==2 || i==3)
-                    img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Settings.CELL_SIZEY/2, Settings.CELL_SIZEX, true);
-                else
-                    img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY/2, true);
+            if(i==gun.UP.ordinal() || i==gun.DOWN.ordinal())
+                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGunModel().getHeight(), Game.getInstance().getGunModel().getWidth(), true);
+            else
+            img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), true);
             images.add(img);
         }
 
