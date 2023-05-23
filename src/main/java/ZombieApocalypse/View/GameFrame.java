@@ -11,6 +11,7 @@ import ZombieApocalypse.Utility.GameData;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.Duration;
 
 public class GameFrame extends JPanel{
     private static JFrame frameGame;
@@ -54,6 +55,7 @@ public class GameFrame extends JPanel{
         frameGame.repaint();
         frameGame.setTitle("Menu");
         menu = new MenuView();
+
         frameGame.add(menu);
         menuLoop = new MenuLoop(menu);
         menuLoop.start();

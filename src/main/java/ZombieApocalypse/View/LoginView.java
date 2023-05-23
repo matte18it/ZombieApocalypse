@@ -3,6 +3,7 @@ package ZombieApocalypse.View;
 import ZombieApocalypse.Controller.LoginController;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Model.LoginModel;
+import ZombieApocalypse.Utility.GameData;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -15,7 +16,6 @@ public class LoginView extends JPanel{
     private ResourcesLoader loader = ResourcesLoader.getInstance();
     private LoginModel model;
     private LoginController controller;
-    private int setBg;       //Variabile che mi serve per settare lo sfondo della schermata di login
     private Font font;              //Variabile in cui si carica il font
     private JLabel titolo;       //Label per visualizzare il titolo
     private JButton btnSend, showPassword;     //Bottone per inviare i dati e l'altro per visualizzare la password
@@ -31,8 +31,6 @@ public class LoginView extends JPanel{
 
         //Carico il font personalizzato
         font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 30, Font.PLAIN);
-
-        setBg = new Random().nextInt(1, 4);
 
         //Inizializzo i componenti da inserire nel pannello principale
         initComponent();
@@ -169,12 +167,6 @@ public class LoginView extends JPanel{
         c.insets = new Insets(20, 0, 0, 0);
         c.fill = GridBagConstraints.CENTER;
         panelPrincipale.add(btnSend, c);
-
-        //Se lo sfondo è impostato sul secondo o quarto (sfondi scuri) rendo le scritte più chiare, per una questione di legibilità
-        if(setBg == 2 || setBg == 4){
-            lblNickame.setForeground(Color.WHITE);
-            lblPassword.setForeground(Color.WHITE);
-        }
     }
 
     public JTextField getNickname(){
@@ -241,7 +233,7 @@ public class LoginView extends JPanel{
 
         try{
             //Qui vado a leggere una sola immagine casuale tra le quattro disponibili
-            bgImage = ImageIO.read(getClass().getResourceAsStream("/LoginBackground/War" + setBg + ".png"));
+            bgImage = ImageIO.read(getClass().getResourceAsStream("/LoginBackground/War" + GameData.setBg + ".png"));
         } catch(IOException e){ e.printStackTrace(); }
 
         //Disegno l'immagine come sfondo del panel
