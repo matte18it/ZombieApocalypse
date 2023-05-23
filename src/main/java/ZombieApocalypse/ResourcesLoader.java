@@ -9,16 +9,15 @@ import javax.swing.text.StyleConstants;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ResourcesLoader {
     private static final ResourcesLoader instance = new ResourcesLoader();
-    private ResourcesLoader() {
-    }
+    private ResourcesLoader() {}
     public static ResourcesLoader getInstance() {
         return instance;
     }
-
     public Font getFont(String path, int size, int type) {
         Font font=null;
             try{
@@ -45,7 +44,6 @@ public class ResourcesLoader {
             System.exit(101);
         } return image;
     }
-
     public Image getImage(String name, int width, int height, boolean b){
         Image image=null;
         try{
@@ -54,13 +52,9 @@ public class ResourcesLoader {
             image=image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             else
                 image=image.getScaledInstance(width, height, Image.SCALE_FAST);
-
-
-    } catch (IOException  | IllegalArgumentException ex){
-            System.exit(102);
-    }
+        } catch (IOException  | IllegalArgumentException ex){ System.exit(102); }
         return  image;
-}
+    }
     public Clip getAudioClip(String path){
         AudioInputStream audioIn;
         Clip clip;
@@ -74,10 +68,6 @@ public class ResourcesLoader {
         } return clip;
 
     }
-
-
-
-
     public BufferedImage rotateImage(BufferedImage imageToRotate, double degrees) {
 
         int widthOfImage = imageToRotate.getWidth();
@@ -93,7 +83,6 @@ public class ResourcesLoader {
 
         return newImageFromBuffer;
     }
-
     public BufferedImage getBufferedImage(String s, int width, int height, boolean b) {
         BufferedImage image=null;
         BufferedImage dimg=null;
@@ -111,7 +100,6 @@ public class ResourcesLoader {
         }
         return  dimg;
     }
-
     public int getHours() {
         DateTime date = new DateTime();
         if(date.getHourOfDay() >= 6 && date.getHourOfDay() <= 15)

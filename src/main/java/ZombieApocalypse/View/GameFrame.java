@@ -8,13 +8,14 @@ import ZombieApocalypse.Settings;
 import ZombieApocalypse.Loop.LoginLoop;
 import ZombieApocalypse.Loop.TimeLoop;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayMusic;
 
 import javax.swing.*;
 import java.awt.*;
-import java.time.Duration;
 
-public class GameFrame extends JPanel{
-    private static JFrame frameGame;
+public class GameFrame extends JPanel {
+    private static PlayMusic playMenuMusic = new PlayMusic("/Music/MenuMusic.wav");
+    private static JFrame frameGame = new JFrame("Login");;
     private static GameLoop gameLoopObject;
     private static LoginView panel;
     private static MenuLoop menuLoop;
@@ -23,14 +24,16 @@ public class GameFrame extends JPanel{
     public static TimeLoop timeLoop;
 
     public static void loginLaunch(){
-        //Prendo l'ora corrente
-       GameData.setBg = ResourcesLoader.getInstance().getHours();
+        //Controllo che la traccia non sia già attiva
+        if(!playMenuMusic.isMusic())
+            //Faccio partire la traccia
+            playMenuMusic.playMusic();
 
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension screenDimension = toolkit.getScreenSize();
-        frameGame = new JFrame("Login");
-        frameGame.setSize(Settings.WINDOW_SIZEX, Settings.WINDOW_SIZEY+Settings.MENU_BAR_HEIGHT);
-        frameGame.setUndecorated(true);
+        //Prendo l'ora corrente
+        GameData.setBg = ResourcesLoader.getInstance().getHours();
+
+        //Setto le dimensioni
+        dimension();
 
         //Creo un loginPaint, parte interna della mia cornice
         panel = new LoginView();
@@ -41,15 +44,22 @@ public class GameFrame extends JPanel{
         loop = new LoginLoop(panel);
         loop.start();
 
-        // Mettiamo la finestra al centro dello schermo
-        int x = (screenDimension.width - frameGame.getWidth())/2;
-        int y = (screenDimension.height - frameGame.getHeight())/2;
-        frameGame.setLocation(x, y);
+        frameGame.setUndecorated(true);
         frameGame.setVisible(true);
         frameGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void menuLaunch(){
+        //Prendo l'ora corrente
+        GameData.setBg = ResourcesLoader.getInstance().getHours();
+
+        dimension();
+
+        //Controllo che la traccia non sia già attiva
+        if(!playMenuMusic.isMusic())
+            //Faccio partire la traccia
+            playMenuMusic.playMusic();
+
         loop.stop();
         frameGame.remove(panel);
         frameGame.repaint();
@@ -59,9 +69,24 @@ public class GameFrame extends JPanel{
         frameGame.add(menu);
         menuLoop = new MenuLoop(menu);
         menuLoop.start();
+
+        if(!frameGame.isUndecorated())
+            frameGame.setUndecorated(true);
+
+        frameGame.setVisible(true);
+        frameGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void gameLaunch(){
+        //controllo che la traccia sia attiva
+        if(playMenuMusic.isMusic()){
+            //se è attiva la stoppo...
+            playMenuMusic.stopMusic();
+            //...e attivo la nuova
+            playMenuMusic.changeMusic("/Music/GameMusic.wav");
+            playMenuMusic.playMusic();
+        }
+
         menuLoop.stop();
         frameGame.remove(menu);
         frameGame.repaint();
@@ -91,5 +116,15 @@ public class GameFrame extends JPanel{
         frameGame.dispose();
         gameLoopObject.stop();
         System.exit(0);
+    }
+
+    private static void dimension() {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenDimension = toolkit.getScreenSize();
+        frameGame.setSize(Settings.WINDOW_SIZEX, Settings.WINDOW_SIZEY+Settings.MENU_BAR_HEIGHT);
+        // Mettiamo la finestra al centro dello schermo
+        int x = (screenDimension.width - frameGame.getWidth())/2;
+        int y = (screenDimension.height - frameGame.getHeight())/2;
+        frameGame.setLocation(x, y);
     }
 }
