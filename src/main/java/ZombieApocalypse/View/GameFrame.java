@@ -25,7 +25,7 @@ public class GameFrame extends JPanel {
 
     public static void loginLaunch(){
         //Controllo che la traccia non sia già attiva
-        if(!playMenuMusic.isMusic())
+        if(!playMenuMusic.isMusic() && GameData.music)
             //Faccio partire la traccia
             playMenuMusic.playMusic();
 
@@ -56,7 +56,7 @@ public class GameFrame extends JPanel {
         dimension();
 
         //Controllo che la traccia non sia già attiva
-        if(!playMenuMusic.isMusic())
+        if(!playMenuMusic.isMusic() && GameData.music)
             //Faccio partire la traccia
             playMenuMusic.playMusic();
 
@@ -79,7 +79,7 @@ public class GameFrame extends JPanel {
 
     public static void gameLaunch(){
         //controllo che la traccia sia attiva
-        if(playMenuMusic.isMusic()){
+        if(playMenuMusic.isMusic() && GameData.music){
             //se è attiva la stoppo...
             playMenuMusic.stopMusic();
             //...e attivo la nuova
