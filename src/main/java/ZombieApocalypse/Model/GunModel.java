@@ -5,8 +5,15 @@ import ZombieApocalypse.Settings;
 import java.awt.*;
 
 public class GunModel {
+
+
+    public boolean getAttack() {
+        return attack;
+    }
+
     //Informazioni sull'arma e l'immagine
-    int damage=5;
+    enum gunType{KNIFE,PISTOL, SHOTGUN};
+    int [] damage= new int[]{2, 4, 7};
     int width= Settings.CELL_SIZEX;
     int height=Settings.CELL_SIZEY/2;
     int radius=Settings.CELL_SIZEY;
@@ -14,12 +21,22 @@ public class GunModel {
     int centerY = height / 2;
     int xPosy;
     int yPosy;
+    boolean attack=false;
     public double angle;
 
     public GunModel(){
         xPosy=width+10;
         yPosy=height-5;
         angle=0;
+
+    }
+    public void attack() {
+        attack=true;
+
+    }
+    public void stopAttack() {
+        attack=false;
+
     }
     public double getAngle(){
         return angle;

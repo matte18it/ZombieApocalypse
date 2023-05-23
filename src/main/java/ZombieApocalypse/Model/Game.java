@@ -73,6 +73,7 @@ public class Game {
 
 
     public void attack() {
+        gun.attack();
 
     }
 }

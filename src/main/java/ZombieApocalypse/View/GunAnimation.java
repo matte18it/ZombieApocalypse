@@ -10,9 +10,28 @@ import java.util.ArrayList;
 public class GunAnimation {
 
     private final ArrayList<Image> images = new ArrayList<>();
+    private final ArrayList<Image> attackImages = new ArrayList<>();
     private int index = 0;
+    private int index2 = 0;
+
+    public Image updateAttack() {
+        if(index2==attackImages.size()-1)
+            Game.getInstance().getGunModel().stopAttack();
+        index2 = (index2+1) % attackImages.size();
+        return attackImages.get(index2);
+    }
+
     enum gun{UP,DOWN, LEFT,RIGHT};
 
+    public GunAnimation(String action, boolean t){
+        Image img=null;
+        for (int i=0; i<gun.values().length; i++) {
+            String path=action+i;
+            img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/Animazione"+path+".png", Game.getInstance().getGunModel().getHeight(), Game.getInstance().getGunModel().getWidth(), true);
+            attackImages.add(img);
+        }
+
+    }
     public GunAnimation(String action) {
         Image img=null;
         for (int i=0; i<gun.values().length; i++) {

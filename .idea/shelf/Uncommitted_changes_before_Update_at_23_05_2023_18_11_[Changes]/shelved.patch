@@ -1,0 +1,64 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"73bd63ef-af00-4bd6-a386-8876e60cfd0d\" name=\"Changes\" comment=\"Creazioni Model per Armi\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Q3PTlPoNKcpKe7fxKWBB5mhSkK\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Pierf\\Desktop\\User_Interface_Desing\\Esercizi\\ZombieApocalypse\\src\\main\\Resources\\ArmieOggetti\" />\r\n      <recent name=\"C:\\Users\\Pierf\\Desktop\\User_Interface_Desing\\Esercizi\\ZombieApocalypse\\src\\main\\Resources\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"ZombieApocalypse\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main Run\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"ZombieApocalypse.Main\" />\r\n      <module name=\"ZombieApocalypse\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"73bd63ef-af00-4bd6-a386-8876e60cfd0d\" name=\"Changes\" comment=\"\" />\r\n      <created>1684579305743</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684579305743</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"fontload\">\r\n      <created>1684579759733</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684579759733</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Sound aggiustata leggermente\">\r\n      <created>1684581748007</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684581748007</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Sound aggiustata leggermente\">\r\n      <created>1684581917660</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684581917660</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Cuori funzionanti\">\r\n      <created>1684590649213</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684590649213</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Tempo funzionante\">\r\n      <created>1684592173725</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684592173725</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Tempo funzionante\">\r\n      <created>1684602102100</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684602102100</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"ResourcesLoader da implementare\">\r\n      <created>1684655712296</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684655712296</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"ResourcesLoader da implementare\">\r\n      <created>1684656027136</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684656027136</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Implementazione del Resources Loader\">\r\n      <created>1684659009640</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684659009640</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Implementazione del Resources Loader\">\r\n      <created>1684659154828</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684659154828</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Inizio di implementazione Armi\">\r\n      <created>1684689158694</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684689158694</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Movimenti armi\">\r\n      <created>1684778535909</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684778535909</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Movimenti armi funzionante\">\r\n      <created>1684832692343</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684832692343</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Creazioni Model per Armi\">\r\n      <created>1684853696343</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684853696343</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"fontload\" />\r\n    <MESSAGE value=\"Sound aggiustata leggermente\" />\r\n    <MESSAGE value=\"Cuori funzionanti\" />\r\n    <MESSAGE value=\"Tempo funzionante\" />\r\n    <MESSAGE value=\"ResourcesLoader da implementare\" />\r\n    <MESSAGE value=\"Implementazione del Resources Loader\" />\r\n    <MESSAGE value=\"Inizio di implementazione Armi\" />\r\n    <MESSAGE value=\"Movimenti armi\" />\r\n    <MESSAGE value=\"Movimenti armi funzionante\" />\r\n    <MESSAGE value=\"Creazioni Model per Armi\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Creazioni Model per Armi\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 54a46658f93e3a22bae3c2c4f7923774876081e6)
++++ b/.idea/workspace.xml	(date 1684858273149)
+@@ -4,8 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Creazioni Model per Armi">
+-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java" afterDir="false" />
++    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="miglioramenti">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -38,7 +38,8 @@
+     "ASKED_ADD_EXTERNAL_FILES": "true",
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "main"
++    "git-widget-placeholder": "main",
++    "settings.editor.selected.configurable": "preferences.lookFeel"
+   }
+ }]]></component>
+   <component name="RecentsManager">
+@@ -166,7 +167,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1684853696343</updated>
+     </task>
+-    <option name="localTasksCounter" value="15" />
++    <task id="LOCAL-00015" summary="miglioramenti">
++      <created>1684854643207</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1684854643207</updated>
++    </task>
++    <task id="LOCAL-00016" summary="miglioramenti">
++      <created>1684854890060</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1684854890060</updated>
++    </task>
++    <option name="localTasksCounter" value="17" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -181,6 +196,7 @@
+     <MESSAGE value="Movimenti armi" />
+     <MESSAGE value="Movimenti armi funzionante" />
+     <MESSAGE value="Creazioni Model per Armi" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Creazioni Model per Armi" />
++    <MESSAGE value="miglioramenti" />
++    <option name="LAST_COMMIT_MESSAGE" value="miglioramenti" />
+   </component>
+ </project>
+\ No newline at end of file
