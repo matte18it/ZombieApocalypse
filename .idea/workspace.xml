@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Creazioni Model per Armi">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Q3PTlPoNKcpKe7fxKWBB5mhSkK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\ArmieOggetti" />
+      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ZombieApocalypse" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main Run" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ZombieApocalypse.Main" />
+      <module name="ZombieApocalypse" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="" />
+      <created>1684579305743</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00001" summary="fontload">
+      <created>1684579759733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684579759733</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Sound aggiustata leggermente">
+      <created>1684581748007</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684581748007</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Sound aggiustata leggermente">
+      <created>1684581917660</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684581917660</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Cuori funzionanti">
+      <created>1684590649213</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684590649213</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Tempo funzionante">
+      <created>1684592173725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684592173725</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Tempo funzionante">
+      <created>1684602102100</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684602102100</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ResourcesLoader da implementare">
+      <created>1684655712296</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684655712296</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ResourcesLoader da implementare">
+      <created>1684656027136</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684656027136</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Implementazione del Resources Loader">
+      <created>1684659009640</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684659009640</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implementazione del Resources Loader">
+      <created>1684659154828</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684659154828</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Inizio di implementazione Armi">
+      <created>1684689158694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684689158694</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Movimenti armi">
+      <created>1684778535909</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684778535909</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Movimenti armi funzionante">
+      <created>1684832692343</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684832692343</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Creazioni Model per Armi">
+      <created>1684853696343</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684853696343</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="fontload" />
+    <MESSAGE value="Sound aggiustata leggermente" />
+    <MESSAGE value="Cuori funzionanti" />
+    <MESSAGE value="Tempo funzionante" />
+    <MESSAGE value="ResourcesLoader da implementare" />
+    <MESSAGE value="Implementazione del Resources Loader" />
+    <MESSAGE value="Inizio di implementazione Armi" />
+    <MESSAGE value="Movimenti armi" />
+    <MESSAGE value="Movimenti armi funzionante" />
+    <MESSAGE value="Creazioni Model per Armi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazioni Model per Armi" />
+  </component>
+</project>

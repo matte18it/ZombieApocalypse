@@ -13,7 +13,7 @@ public class GunAnimation {
     private int index = 0;
     enum gun{UP,DOWN, LEFT,RIGHT};
 
-    public GunAnimation(String action, int numberOfElements) {
+    public GunAnimation(String action) {
         Image img=null;
         for (int i=0; i<gun.values().length; i++) {
             String path=action+i;

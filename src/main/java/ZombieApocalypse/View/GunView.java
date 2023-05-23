@@ -16,7 +16,7 @@ public class GunView {
     public Point imagePosition;
 
     public GunView() {
-        gunAnimation= new GunAnimation("Coltello", 4);
+        gunAnimation= new GunAnimation("Coltello");
         currentImage=gunAnimation.getDefaultImage();
     }
 

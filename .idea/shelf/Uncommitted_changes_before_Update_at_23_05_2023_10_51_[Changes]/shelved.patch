@@ -1,0 +1,195 @@
+Index: src/main/java/ZombieApocalypse/View/GraphicPanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ZombieApocalypse.View;\r\n\r\nimport ZombieApocalypse.Model.Game;\r\nimport ZombieApocalypse.Model.World;\r\nimport ZombieApocalypse.ResourcesLoader;\r\nimport ZombieApocalypse.Settings;\r\n\r\nimport javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.font.GlyphVector;\r\nimport java.awt.geom.AffineTransform;\r\nimport java.awt.image.BufferedImage;\r\nimport java.awt.image.BufferedImageOp;\r\nimport java.awt.image.ImageObserver;\r\nimport java.awt.image.RenderedImage;\r\nimport java.awt.image.renderable.RenderableImage;\r\nimport java.io.IOException;\r\nimport java.text.AttributedCharacterIterator;\r\nimport java.util.Map;\r\n\r\npublic class GraphicPanel extends JPanel {\r\n    //Disegna il mondo\r\n    private final CharacterView characterView = new CharacterView();\r\n    private static final GunView gunView = new GunView();\r\n    public  GunView getGunView(){\r\n        return gunView;\r\n    }\r\n    //immagini ordinate fino ad adesso\r\n    private final int numeroImmagini=1;\r\n    private final Image[] images=new Image[numeroImmagini];\r\n    public GraphicPanel()  {\r\n            for(int i=0; i<numeroImmagini; i++){\r\n                String c=String.valueOf(i);\r\n                String path=\"/AmbienteDiGioco/Terreno/Terreno\"+c+\".png\";\r\n                images[i]= ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);\r\n        }\r\n\r\n    }\r\n\r\n\r\n    @Override\r\n    protected void paintComponent(Graphics g) {\r\n        super.paintComponent(g);\r\n        World world=new World();\r\n        for(int i = 0; i < world.getSize(); i++) {\r\n            int x = i * Settings.CELL_SIZEX;\r\n            for(int j = 0; j < world.getSize(); j++) {\r\n                int y = j * Settings.CELL_SIZEY;\r\n                if(world.isGround0(i, j)) {\r\n                    //Random random=new Random();\r\n                    //int value= random.nextInt(numeroImmagini);\r\n                    g.drawImage(images[0], x, y, null);\r\n                }\r\n\r\n            }\r\n\r\n\r\n        }\r\n\r\n        g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.width, gunView.height, null);\r\n        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);\r\n\r\n    }\r\n    public void update() {\r\n        characterView.update();\r\n        gunView.update(null);\r\n        repaint();\r\n    }}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ZombieApocalypse/View/GraphicPanel.java b/src/main/java/ZombieApocalypse/View/GraphicPanel.java
+--- a/src/main/java/ZombieApocalypse/View/GraphicPanel.java	(revision 2634ba46035fdbd1bf52b0e8ca677bcafdf346d3)
++++ b/src/main/java/ZombieApocalypse/View/GraphicPanel.java	(date 1684829939343)
+@@ -57,8 +57,10 @@
+ 
+ 
+         }
+-
+-        g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.width, gunView.height, null);
++        if(gunView.isUp())
++        g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.height, gunView.width, null);
++        else
++            g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.width, gunView.height, null);
+         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
+ 
+     }
+Index: src/main/java/ZombieApocalypse/View/GunView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ZombieApocalypse.View;\r\n\r\nimport ZombieApocalypse.Loop.TimeLoop;\r\nimport ZombieApocalypse.Model.Game;\r\nimport ZombieApocalypse.ResourcesLoader;\r\nimport ZombieApocalypse.Settings;\r\n\r\nimport java.awt.*;\r\nimport java.awt.image.BufferedImage;\r\nimport java.awt.image.ImageObserver;\r\nimport java.awt.image.ImageProducer;\r\n\r\npublic class GunView {\r\n    final int width=Settings.CELL_SIZEX;\r\n    final int height=Settings.CELL_SIZEY/2;\r\n    int centerX = width / 2;\r\n    int centerY = height / 2;\r\n\r\n\r\n\r\n     public Point imagePosition = new Point(Game.getInstance().getPlayerCharacter().getX()+30, Game.getInstance().getPlayerCharacter().getY()+12);\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public BufferedImage currentImage=  ResourcesLoader.getInstance().getBufferedImage(\"/ArmieOggetti/Coltello0.png\", width,height, true);\r\n\r\n    public GunView() {\r\n\r\n    }\r\n    double angle=0;\r\n\r\n    public void update(Point point) {\r\n        int radius=Settings.CELL_SIZEY;\r\n        double rads=Math.toRadians(angle-180);\r\n        int fullLength=Math.round((radius/2f))-width-10;\r\n        int xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength));\r\n        int yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength));\r\n        angle=angle+10;\r\n\r\n        //imagePosition = new Point(Game.getInstance().getPlayerCharacter().getX()+30, Game.getInstance().getPlayerCharacter().getY()+12);\r\n        imagePosition = new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy-20, Game.getInstance().getPlayerCharacter().getY()+yPosy);\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    public Image getCurrentImage() {\r\n        return currentImage;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ZombieApocalypse/View/GunView.java b/src/main/java/ZombieApocalypse/View/GunView.java
+--- a/src/main/java/ZombieApocalypse/View/GunView.java	(revision 2634ba46035fdbd1bf52b0e8ca677bcafdf346d3)
++++ b/src/main/java/ZombieApocalypse/View/GunView.java	(date 1684831864885)
+@@ -11,11 +11,14 @@
+ import java.awt.image.ImageProducer;
+ 
+ public class GunView {
+-    final int width=Settings.CELL_SIZEX;
+-    final int height=Settings.CELL_SIZEY/2;
++    private final GunAnimation gunAnimation;
++    int width=Settings.CELL_SIZEX;
++    int height=Settings.CELL_SIZEY/2;
++    int radius=Settings.CELL_SIZEY;
+     int centerX = width / 2;
+     int centerY = height / 2;
+-
++    int xPosy=width+10;
++    int yPosy=height-5;
+ 
+ 
+      public Point imagePosition = new Point(Game.getInstance().getPlayerCharacter().getX()+30, Game.getInstance().getPlayerCharacter().getY()+12);
+@@ -25,29 +28,71 @@
+ 
+ 
+ 
+-    public BufferedImage currentImage=  ResourcesLoader.getInstance().getBufferedImage("/ArmieOggetti/Coltello0.png", width,height, true);
++    public Image currentImage;
+ 
+     public GunView() {
++        gunAnimation= new GunAnimation("Coltello", 4);
+ 
+     }
+     double angle=0;
+ 
+     public void update(Point point) {
+-        int radius=Settings.CELL_SIZEY;
+-        double rads=Math.toRadians(angle-180);
+-        int fullLength=Math.round((radius/2f))-width-10;
+-        int xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength));
+-        int yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength));
+-        angle=angle+10;
++
++        if(point==null){
++            imagePosition = new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy-20, Game.getInstance().getPlayerCharacter().getY()+yPosy);
++            currentImage=gunAnimation.update(angle);
++            return;
++        }
++        //Calcolo angolo
++        /*double pr1=(Game.getInstance().getPlayerCharacter().getX()-20)*point.getX();
++        double pr2=(Game.getInstance().getPlayerCharacter().getY())*point.getY();
++        double sopra=pr1+pr2;
++        double pr3=Math.sqrt(Math.pow(Game.getInstance().getPlayerCharacter().getX()-20, 2)+Math.pow(Game.getInstance().getPlayerCharacter().getY(), 2));
++        double pr4=Math.sqrt(Math.pow(point.getX(), 2)+Math.pow(point.getY(), 2));
++        double sotto=pr3*pr4;
++        angle=sopra/sotto;*/
++        float xDistance = point.x - Game.getInstance().getPlayerCharacter().getX()-20;
++        float yDistance = point.y - Game.getInstance().getPlayerCharacter().getY();
++        angle = -Math.toDegrees(Math.atan2(yDistance, xDistance));
++        if(angle<0)
++            angle=angle+360;
++        System.out.println(angle);
++
++
++
++
++        double rads=Math.toRadians(angle-180);  //180
++        int fullLength=Math.round((radius/2f))-width-10;  //width
++        xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength));  //+
++        yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength)); //-
++        if(angle<360)
++            angle=angle+10;
++        else
++            angle=0;
++        //width=Settings.CELL_SIZEX/2;
++        //height=Settings.CELL_SIZEY;
+ 
+-        //imagePosition = new Point(Game.getInstance().getPlayerCharacter().getX()+30, Game.getInstance().getPlayerCharacter().getY()+12);
++        currentImage=gunAnimation.update(angle);                              //-20, 0
+         imagePosition = new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy-20, Game.getInstance().getPlayerCharacter().getY()+yPosy);
+ 
+ 
++    }
++    public boolean isUp(){
++        if((angle<60 && angle>=0) || (angle>=320)){
++            return false;
++        }
++        if(angle<140 && angle>=60){
++            return true;
+ 
++        }
++        if(angle<230 && angle>=140){
++            return false;
+ 
++        }
++        if(angle<360 && angle>=230){
++            return true;
+ 
+-
++        } return true;
+     }
+ 
+     public Image getCurrentImage() {
+Index: src/main/java/ZombieApocalypse/View/GunAnimation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ZombieApocalypse/View/GunAnimation.java b/src/main/java/ZombieApocalypse/View/GunAnimation.java
+new file mode 100644
+--- /dev/null	(date 1684826483553)
++++ b/src/main/java/ZombieApocalypse/View/GunAnimation.java	(date 1684826483553)
+@@ -0,0 +1,53 @@
++package ZombieApocalypse.View;
++
++import ZombieApocalypse.ResourcesLoader;
++import ZombieApocalypse.Settings;
++
++import java.awt.*;
++import java.util.ArrayList;
++
++public class GunAnimation {
++
++    private final ArrayList<Image> images = new ArrayList<>();
++    private int index = 0;
++
++    public GunAnimation(String action, int numberOfElements) {
++        Image img=null;
++        for (int i = 0; i < numberOfElements; i++) {
++            String path=action+i;
++                if(i==2 || i==3)
++                    img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Settings.CELL_SIZEY/2, Settings.CELL_SIZEX, true);
++                else
++                    img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY/2, true);
++            images.add(img);
++        }
++
++    }
++
++    public Image getDefaultImage() {
++        return images.get(0);
++    }
++
++    public Image update(double angle) {
++        if((angle<60 && angle>=0) || (angle>=320)){
++            index=0;
++            return images.get(index);
++        }
++        if(angle<140 && angle>=60){
++            index=2;
++            return images.get(index);
++
++        }
++        if(angle<230 && angle>=140){
++            index=1;
++            return images.get(index);
++
++        }
++        if(angle<360 && angle>=230){
++            index=3;
++            return images.get(index);
++
++        }
++        return null;
++    }}
++
