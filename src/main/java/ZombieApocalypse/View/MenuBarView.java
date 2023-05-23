@@ -7,7 +7,7 @@ import ZombieApocalypse.Settings;
 import javax.swing.*;
 import java.awt.*;
 
-import static ZombieApocalypse.Utility.PlayerData.nick;
+import static ZombieApocalypse.Utility.GameData.nick;
 
 public class MenuBarView extends JPanel {
     Font font= ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);

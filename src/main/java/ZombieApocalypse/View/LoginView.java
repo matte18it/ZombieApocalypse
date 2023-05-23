@@ -87,7 +87,7 @@ public class LoginView extends JPanel{
         //Ora creo il campo di input dove inserire il nickname
         txtNickname = new JTextField();
         //Qui vado a creare una label in cui andrò ad inserire il campo di input per dargli una grafica
-        JLabel label1 = new JLabel(loader.getImageIcon("/LoginInterface/txtGUI.png", 315, 51, false));
+        JLabel label1 = new JLabel(loader.getImageIcon("/Login&Menu/txtGUI.png", 315, 51, false));
         label1.setLayout(new BorderLayout());
         label1.add(txtNickname);
         txtNickname.setOpaque(false);
@@ -120,7 +120,7 @@ public class LoginView extends JPanel{
         //ora creo il campo password
         txtPassword = new JPasswordField();
         //Creo la label come ho fatto anche sopra
-        JLabel label2 = new JLabel(loader.getImageIcon("/LoginInterface/txtGUI.png", 315, 51, false));
+        JLabel label2 = new JLabel(loader.getImageIcon("/Login&Menu/txtGUI.png", 315, 51, false));
         label2.setLayout(new BorderLayout());
         label2.add(txtPassword);
         txtPassword.setOpaque(false);
@@ -135,7 +135,7 @@ public class LoginView extends JPanel{
         //Funzione per cambiare colore al puntatore del mouse nel passwordfield
         txtPassword.setCaretColor(Color.RED);
         //qua creo il pulsante per mostare/nascondere la password
-        showPassword = new JButton("", loader.getImageIcon("/LoginInterface/show.png", 40, 40, false));
+        showPassword = new JButton("", loader.getImageIcon("/Login&Menu/show.png", 40, 40, false));
         showPassword.setBorderPainted(false);
         showPassword.setBackground(new Color(37, 40, 80));
         showPassword.setOpaque(false);
@@ -153,7 +153,7 @@ public class LoginView extends JPanel{
         panelPrincipale.add(showPassword, c);
 
         //Creo il pannello per contenere il bottone
-        btnSend = new JButton("Send", loader.getImageIcon("/LoginInterface/sendButton.png", 197, 60, false));
+        btnSend = new JButton("Send", loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
         btnSend.setHorizontalTextPosition(JButton.CENTER);
         btnSend.setVerticalTextPosition(JButton.CENTER);
         btnSend.setFont(font);

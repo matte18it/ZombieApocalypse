@@ -1,21 +1,16 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.View.GameFrame;
-import ZombieApocalypse.Utility.PlayerData;
 import ZombieApocalypse.View.LoginView;
 
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.*;
-import java.util.Base64;
 
 public class LoginModel {
 
@@ -42,8 +37,7 @@ public class LoginModel {
         //se ris è pari a 0 effettuo il login, se ris è pari a 1 vuol dire che c'è già un player registrato con lo stesso nome, 2 effettuo la registrazione
         switch (ris){
             case 0, 2:{
-                GameFrame.loop.stop();
-                GameFrame.gameLaunch();
+                GameFrame.menuLaunch();
                 break;
             }
             case 1:{

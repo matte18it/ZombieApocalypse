@@ -2,10 +2,9 @@ package ZombieApocalypse.Controller;
 
 import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.ResourcesLoader;
-import ZombieApocalypse.Utility.PlayerData;
+import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.View.LoginView;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -43,12 +42,12 @@ public class LoginController {
                     view.setShow(true);
                     //Carattere per visualizzare la password
                     view.getPassword().setEchoChar('\u0000');
-                    view.getShowPassword().setIcon(loader.getImageIcon("/LoginInterface/hide.png", 40, 40, false));
+                    view.getShowPassword().setIcon(loader.getImageIcon("/Login&Menu/hide.png", 40, 40, false));
                 }
                 else{
                     view.setShow(false);
                     view.getPassword().setEchoChar('-');
-                    view.getShowPassword().setIcon(loader.getImageIcon("/LoginInterface/show.png", 40, 40, false));
+                    view.getShowPassword().setIcon(loader.getImageIcon("/Login&Menu/show.png", 40, 40, false));
                 }
             }
         });
@@ -95,12 +94,12 @@ public class LoginController {
 
     public void getCredenziali() throws NoSuchAlgorithmException, SQLException, IOException {
         //come prima cosa mi prendo i valori dal campo password e nickname
-        PlayerData.nick = view.getNickname().getText();
-        PlayerData.pass = new String(view.getPassword().getPassword());
+        GameData.nick = view.getNickname().getText();
+        GameData.pass = new String(view.getPassword().getPassword());
         //chiamo la funzione di crittografia
-        PlayerData.pass = login.crittografia(PlayerData.pass);
+        GameData.pass = login.crittografia(GameData.pass);
 
         //Chiamo la funzione del model per controllare le credenziali e gli passo il path del file php
-        login.controlloCredenzialiOnline("https://progettouid.altervista.org/ZombieApocalypse/playerUID.php?nickname=" + PlayerData.nick + "&password=" + PlayerData.pass);
+        login.controlloCredenzialiOnline("https://progettouid.altervista.org/ZombieApocalypse/playerUID.php?nickname=" + GameData.nick + "&password=" + GameData.pass);
     }
 }

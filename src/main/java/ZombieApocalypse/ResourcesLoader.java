@@ -1,5 +1,7 @@
 package ZombieApocalypse;
 
+import org.joda.time.DateTime;
+
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
@@ -108,5 +110,17 @@ public class ResourcesLoader {
             System.exit(102);
         }
         return  dimg;
+    }
+
+    public int getHours() {
+        DateTime date = new DateTime();
+        if(date.getHourOfDay() >= 6 && date.getHourOfDay() <= 15)
+            return 1;
+        else if(date.getHourOfDay() >= 16 && date.getHourOfDay() <= 19)
+            return 3;
+        else if(date.getHourOfDay() >= 20 && date.getHourOfDay() <= 22)
+            return 2;
+        else
+            return 4;
     }
 }

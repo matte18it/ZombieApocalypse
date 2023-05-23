@@ -2,9 +2,12 @@ package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.Loop.GameLoop;
+import ZombieApocalypse.Loop.MenuLoop;
+import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.Loop.LoginLoop;
 import ZombieApocalypse.Loop.TimeLoop;
+import ZombieApocalypse.Utility.GameData;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,10 +16,15 @@ public class GameFrame extends JPanel{
     private static JFrame frameGame;
     private static GameLoop gameLoopObject;
     private static LoginView panel;
-    public static LoginLoop loop;
+    private static MenuLoop menuLoop;
+    private static LoginLoop loop;
+    public static MenuView menu;
     public static TimeLoop timeLoop;
 
     public static void loginLaunch(){
+        //Prendo l'ora corrente
+       GameData.setBg = ResourcesLoader.getInstance().getHours();
+
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenDimension = toolkit.getScreenSize();
         frameGame = new JFrame("Login");
@@ -40,8 +48,20 @@ public class GameFrame extends JPanel{
         frameGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void gameLaunch(){
+    public static void menuLaunch(){
+        loop.stop();
         frameGame.remove(panel);
+        frameGame.repaint();
+        frameGame.setTitle("Menu");
+        menu = new MenuView();
+        frameGame.add(menu);
+        menuLoop = new MenuLoop(menu);
+        menuLoop.start();
+    }
+
+    public static void gameLaunch(){
+        menuLoop.stop();
+        frameGame.remove(menu);
         frameGame.repaint();
         frameGame.setTitle("Game");
 
