@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuBarView;
 
@@ -75,5 +76,11 @@ public class Game {
     public void attack() {
         gun.attack();
 
+    }
+
+    public Point coordinateToIJ(int x, int y) {
+        int x1=x* Settings.WORLD_SIZEX/Settings.WINDOW_SIZEX;
+        int y1=y* Settings.WORLD_SIZEY/Settings.WINDOW_SIZEY;
+        return new Point(x1,y1);
     }
 }

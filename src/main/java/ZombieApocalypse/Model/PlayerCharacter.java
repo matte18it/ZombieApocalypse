@@ -1,6 +1,9 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.MenuBarView;
+
+import java.awt.*;
 
 
 public class PlayerCharacter {
@@ -87,13 +90,13 @@ public class PlayerCharacter {
 
 
     public void move() {
-        if(dir==movementDirection.RIGHT && world.isValidCoordinate(getX()+10, getY()))
+        if(dir==movementDirection.RIGHT && (world.isGround0(getX()+10, getY())))
             x += 10;
-        else if(dir==movementDirection.LEFT && world.isValidCoordinate(getX()-10, getY()))
+        else if(dir==movementDirection.LEFT && (world.isGround0(getX()-10, getY())))
             x -= 10;
-        else if(dir==movementDirection.UP && world.isValidCoordinate(getX(), getY()-10))
+        else if(dir==movementDirection.UP && (world.isGround0(getX(), getY()-10)))
             y -= 10;
-        else if(dir==movementDirection.DOWN && world.isValidCoordinate(getX(), getY()+10))
+        else if(dir==movementDirection.DOWN && (world.isGround0(getX(), getY()+10)))
             y += 10;
         else
             movement=false;
