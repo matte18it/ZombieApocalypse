@@ -9,6 +9,7 @@ public class Game {
     //Gestisce gli aspetti del gioco
     private final World world = new World();
     private final PlayerCharacter character = new PlayerCharacter();
+    private final GunModel gun = new GunModel();
 
     private static final Game instance = new Game();
     private Game() {
@@ -45,6 +46,10 @@ public class Game {
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}
+    public GunModel getGunModel() {
+        return gun;}
+
+
     public int getPlayerLife() {
         return character.health;}
     public int getPlayerMaxLife() {
@@ -67,4 +72,7 @@ public class Game {
     }
 
 
+    public void attack() {
+
+    }
 }

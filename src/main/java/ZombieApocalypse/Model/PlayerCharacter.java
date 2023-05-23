@@ -15,7 +15,7 @@ public class PlayerCharacter {
 
     private boolean sound=false;
     int money=0;
-    int health=5;
+    int health=6;
     boolean movement = false;
     boolean hit=false;
     private final World world=new World();

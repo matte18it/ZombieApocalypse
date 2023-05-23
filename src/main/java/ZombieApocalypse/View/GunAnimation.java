@@ -24,9 +24,6 @@ public class GunAnimation {
 
     }
 
-    public Image getDefaultImage() {
-        return images.get(0);
-    }
 
     public Image update(double angle) {
         if((angle<60 && angle>=0) || (angle>=320)){
@@ -49,5 +46,10 @@ public class GunAnimation {
 
         }
         return null;
-    }}
+    }
+
+    public Image getDefaultImage() {
+        return images.get(0);
+    }
+}
 

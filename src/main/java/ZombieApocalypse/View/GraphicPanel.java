@@ -57,10 +57,10 @@ public class GraphicPanel extends JPanel {
 
 
         }
-        if(gunView.isUp())    //Arma per orizzondale o verticale?
-        g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.height, gunView.width, null);
+        if(Game.getInstance().getGunModel().isUp())    //Arma per orizzondale o verticale?
+            g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getHeight(), Game.getInstance().getGunModel().getWidth(), null);
         else
-            g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, gunView.width, gunView.height, null);
+            g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getWidth(),Game.getInstance().getGunModel().getHeight(), null);
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
     }
