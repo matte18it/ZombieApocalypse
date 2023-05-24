@@ -37,7 +37,7 @@ public class GameFrame extends JPanel {
 
         //Creo un loginPaint, parte interna della mia cornice
         panel = new LoginView();
-        //Inserisco il panel appena creato all'intrerno del mio frame
+        //Inserisco il panel appena creato all'interno del mio frame
         frameGame.add(panel);
 
         //Creo un oggetto loginLoop per usare un thread che gestisca l'animazione del titolo

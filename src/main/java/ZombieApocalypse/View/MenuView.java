@@ -1,7 +1,6 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.MenuController;
-import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
@@ -10,8 +9,8 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.AffineTransform;
 import java.io.IOException;
 
 public class MenuView extends JPanel {
@@ -19,7 +18,7 @@ public class MenuView extends JPanel {
     private int borderValueRight, borderValueLeft;
     private boolean cambio = false;
     private Font font;
-    private JLabel titolo, sfondoAbout;
+    private JLabel titolo, sfondoAbout, developerLabel, gameVersionLabel, graphicsLabel, musicLabel, creditsLabel, soundLabel;
     private MenuModel model;
     private MenuController controller;
     private JPanel panelMenu, imagePanel, aboutPanel;
@@ -143,23 +142,60 @@ public class MenuView extends JPanel {
         panelMenu.add(btnExit, c);
     }
 
-    public void setAbout(){
+    public void setAbout() throws IOException {
         initAbout();
         this.remove(panelMenu);
         this.add(aboutPanel);
         this.repaint();
     }
 
-    private void initAbout() {
+    private void initAbout() throws IOException {
         //creo il pannello about
         aboutPanel = new JPanel();
         aboutPanel.setOpaque(false);
-        aboutPanel.setMaximumSize(new Dimension(721, 348));
+        aboutPanel.setMaximumSize(new Dimension(747, 440));
 
         sfondoAbout = new JLabel();
-        sfondoAbout.setIcon(loader.getImageIcon("/Login&Menu/aboutPanel.png", 721, 348, false));
-        sfondoAbout.setForeground(Color.white);
-        sfondoAbout.setFont(font.deriveFont(Font.PLAIN, 18));
+        sfondoAbout.setIcon(loader.getImageIcon("/Login&Menu/aboutPanel.png", 747, 440, false));
+        sfondoAbout.setLayout(new BoxLayout(sfondoAbout, BoxLayout.Y_AXIS));
+
+        AffineTransform affinetransform = new AffineTransform();
+        FontRenderContext frc = new FontRenderContext(affinetransform,true,true);
+        creditsLabel = new JLabel("CREDITS");
+        creditsLabel.setFont(font.deriveFont(Font.PLAIN, 22));
+        creditsLabel.setForeground(Color.WHITE);
+        creditsLabel.setBorder(new EmptyBorder(20, ((sfondoAbout.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(creditsLabel.getText(), frc).getWidth())/2))+25, 0, 0));
+        sfondoAbout.add(creditsLabel);
+
+        developerLabel = new JLabel("GAME: game developed by Pierfrancesco Napoli, Matteo Canino, Sebastian Witon.");
+        developerLabel.setFont(font.deriveFont(Font.PLAIN, 15));
+        developerLabel.setForeground(Color.WHITE);
+        developerLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
+        sfondoAbout.add(developerLabel);
+
+        gameVersionLabel = new JLabel("VERSION: " + GameData.version + ".");
+        gameVersionLabel.setFont(font.deriveFont(Font.PLAIN, 15));
+        gameVersionLabel.setForeground(Color.WHITE);
+        gameVersionLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
+        sfondoAbout.add(gameVersionLabel);
+
+        graphicsLabel = new JLabel("GRAPHICS: graphics taken from itch.io and drawn by Ittai Manero.");
+        graphicsLabel.setFont(font.deriveFont(Font.PLAIN, 15));
+        graphicsLabel.setForeground(Color.WHITE);
+        graphicsLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
+        sfondoAbout.add(graphicsLabel);
+
+        musicLabel = new JLabel("MUSIC: music taken from itch.io is created by SzajnaWorkshop.");
+        musicLabel.setFont(font.deriveFont(Font.PLAIN, 15));
+        musicLabel.setForeground(Color.white);
+        musicLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
+        sfondoAbout.add(musicLabel);
+
+        soundLabel = new JLabel("SOUND: sounds taken from https://freesound.org.");
+        soundLabel.setFont(font.deriveFont(Font.PLAIN, 15));
+        soundLabel.setForeground(Color.white);
+        soundLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
+        sfondoAbout.add(soundLabel);
 
         aboutPanel.add(sfondoAbout);
     }

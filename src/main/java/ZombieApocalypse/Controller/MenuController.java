@@ -9,6 +9,7 @@ import ZombieApocalypse.View.MenuView;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class MenuController {
     private MenuModel model;
@@ -50,7 +51,11 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                view.setAbout();
+                try {
+                    view.setAbout();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
