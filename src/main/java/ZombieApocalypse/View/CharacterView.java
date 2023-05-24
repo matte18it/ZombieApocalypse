@@ -24,14 +24,14 @@ public class CharacterView {
     private Image currentImage;
 
     public CharacterView() {
-        runAnimationUp = new CharacterAnimation("PlayerIndietro",3);
-        runAnimationDown = new CharacterAnimation("PlayerAvanti",3);
-        runAnimationLeft = new CharacterAnimation("PlayerSinistra",3);
-        runAnimationRight = new CharacterAnimation("PlayerDestra",3);
-        hitUp=new CharacterAnimation("PlayerDannoAvanti",3);
-        hitDown=new CharacterAnimation("PlayerDannoIndietro",3);
-        hitLeft=new CharacterAnimation("PlayerDannoSinistra",3);
-        hitRight=new CharacterAnimation("PlayerDannoDestra",3);
+        runAnimationUp = new CharacterAnimation("Player/PlayerIndietro",3);
+        runAnimationDown = new CharacterAnimation("Player/PlayerAvanti",3);
+        runAnimationLeft = new CharacterAnimation("Player/PlayerSinistra",3);
+        runAnimationRight = new CharacterAnimation("Player/PlayerDestra",3);
+        hitUp=new CharacterAnimation("Player/PlayerDannoAvanti",3);
+        hitDown=new CharacterAnimation("Player/PlayerDannoIndietro",3);
+        hitLeft=new CharacterAnimation("Player/PlayerDannoSinistra",3);
+        hitRight=new CharacterAnimation("Player/PlayerDannoDestra",3);
         currentImage = runAnimationDown.getDefaultImage();
     }
 

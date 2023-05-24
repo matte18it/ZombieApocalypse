@@ -10,6 +10,7 @@ public class Game {
     //Gestisce gli aspetti del gioco
     private final World world = new World();
     private final PlayerCharacter character = new PlayerCharacter();
+    private final EnemyCharacter enemy = new EnemyCharacter();
     private final GunModel gun = new GunModel();
 
     private static final Game instance = new Game();
@@ -82,5 +83,9 @@ public class Game {
         int x1=x* Settings.WORLD_SIZEX/Settings.WINDOW_SIZEX;
         int y1=y* Settings.WORLD_SIZEY/Settings.WINDOW_SIZEY;
         return new Point(x1,y1);
+    }
+
+    public Character getEnemyCharacter() {
+        return enemy;
     }
 }

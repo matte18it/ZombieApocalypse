@@ -23,6 +23,7 @@ public class GraphicPanel extends JPanel {
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
     private static final GunView gunView = new GunView();
+    private static final SkinnyEnemyView skinnyEnemyView = new SkinnyEnemyView();
     public  GunView getGunView(){
         return gunView;
     }
@@ -65,11 +66,16 @@ public class GraphicPanel extends JPanel {
         g.drawRect(Game.getInstance().getPlayerCharacter().hitBox.x, Game.getInstance().getPlayerCharacter().hitBox.y, Game.getInstance().getPlayerCharacter().hitBox.width, Game.getInstance().getPlayerCharacter().hitBox.height);
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
+        g.drawRect(Game.getInstance().getEnemyCharacter().hitBox.x, Game.getInstance().getEnemyCharacter().hitBox.y, Game.getInstance().getEnemyCharacter().hitBox.width, Game.getInstance().getEnemyCharacter().hitBox.height);
+        g.drawImage(skinnyEnemyView.getCurrentImage(), Game.getInstance().getEnemyCharacter().getX(), Game.getInstance().getEnemyCharacter().getY(), skinnyEnemyView.width, skinnyEnemyView.height, null);
+
+
     }
     public void update() {
         characterView.update();
         //Sposto l'arma dove è il character senza girarla
         gunView.update(null);
+        skinnyEnemyView.update();
         repaint();
     }}
 

@@ -4,39 +4,78 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Classe Character">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoAvanti0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoAvanti1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoAvanti2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoDestra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoDestra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoDestra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoIndietro0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoIndietro1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoIndietro2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoSinistra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoSinistra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDannoSinistra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAttackAnimation.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Miglioramento gun">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieAvanti0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieAvanti1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieAvanti2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoAvanti0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoAvanti1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoAvanti2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoDestra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoDestra1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoDestra2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoIndietro0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoIndietro1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoIndietro2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoSinistra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoSinistra1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoSinistra2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDestra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieIndietro0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieIndietro1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieIndietro2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieSinistra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieSinistra1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieSinistra2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/SkinnyEnemyView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0485_Capa-486.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0486_Capa-487.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0487_Capa-488.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0488_Capa-489.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0489_Capa-490.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0490_Capa-491.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0491_Capa-492.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0492_Capa-493.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Player Animation Frames/Zombie-Tileset---_0493_Capa-494.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0403_Capa-404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0404_Capa-405.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0405_Capa-406.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0406_Capa-407.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0407_Capa-408.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0408_Capa-409.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0409_Capa-410.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0410_Capa-411.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0411_Capa-412.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0394_Capa-395.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0395_Capa-396.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0396_Capa-397.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0397_Capa-398.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0398_Capa-399.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0399_Capa-400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0400_Capa-401.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0401_Capa-402.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0402_Capa-403.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/EnemyCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/EnemyCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/EnemyAnimation.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAttackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GunAttackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0403_Capa-404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0404_Capa-405.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0405_Capa-406.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0406_Capa-407.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0407_Capa-408.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0408_Capa-409.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0409_Capa-410.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0410_Capa-411.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0411_Capa-412.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0394_Capa-395.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0395_Capa-396.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0396_Capa-397.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0397_Capa-398.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0398_Capa-399.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0399_Capa-400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0400_Capa-401.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0401_Capa-402.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Skinny Walking Zombie Animation/Zombie-Tileset---_0402_Capa-403.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterAnimation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterAnimation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/EnemyAnimation.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684947294106</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Miglioramento gun">
+      <created>1684950528783</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684950528784</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -270,6 +316,7 @@
     <MESSAGE value="About Panel" />
     <MESSAGE value="About Panel pt.1" />
     <MESSAGE value="Classe Character" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe Character" />
+    <MESSAGE value="Miglioramento gun" />
+    <option name="LAST_COMMIT_MESSAGE" value="Miglioramento gun" />
   </component>
 </project>

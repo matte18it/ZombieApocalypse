@@ -1,5 +1,6 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Settings;
 
@@ -27,6 +28,9 @@ public class GunAttackAnimation {
     }
 
     public Image update() {
+        if(index==images.size()-1){
+            Game.getInstance().getGunModel().stopAttack();
+        }
 
         index = (index+1) % images.size();
         return images.get(index);
