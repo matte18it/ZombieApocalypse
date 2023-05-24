@@ -12,13 +12,13 @@ import java.awt.image.ImageProducer;
 
 public class GunView {
     private final GunAnimation gunAnimation;
-    private final GunAnimation attackFrame;
+    private final GunAttackAnimation attackFrame;
     public Image currentImage;
     public Point imagePosition;
 
     public GunView() {
-        gunAnimation= new GunAnimation("Coltello");
-        attackFrame= new GunAnimation("Coltello", true);
+        gunAnimation= new GunAnimation("Coltello",4);
+        attackFrame= new GunAttackAnimation("AnimazioneColtello",4);
         currentImage=gunAnimation.getDefaultImage();
     }
 
@@ -30,7 +30,7 @@ public class GunView {
         //Aggiorno immagine
 
         if( Game.getInstance().getGunModel().getAttack()) {
-            currentImage = attackFrame.updateAttack();
+            currentImage = attackFrame.update();
         } else
             currentImage=gunAnimation.update(Game.getInstance().getGunModel().angle);
 

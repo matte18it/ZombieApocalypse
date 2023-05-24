@@ -35,6 +35,7 @@ public class PlayerCharacter extends Character{
         x=50;
         y=50;
         health=6;
+        hitBox= new Rectangle(x, y, Settings.CELL_SIZEX, Settings.CELL_SIZEY);
     }
 
 
@@ -84,13 +85,14 @@ public class PlayerCharacter extends Character{
 
 
     public void move() {
-        if(dir==movementDirection.RIGHT && (world.isGround0(getX()+10, getY())))
+
+        if(dir==movementDirection.RIGHT && (world.isGround0(getX()+Settings.CELL_SIZEX, getY())))
             x += 10;
-        else if(dir==movementDirection.LEFT && (world.isGround0(getX()-10, getY())))
+        else if(dir==movementDirection.LEFT && (world.isGround0(getX()-Settings.CELL_SIZEX, getY())))
             x -= 10;
-        else if(dir==movementDirection.UP && (world.isGround0(getX(), getY()-10)))
+        else if(dir==movementDirection.UP && (world.isGround0(getX(), getY()-Settings.CELL_SIZEY)))
             y -= 10;
-        else if(dir==movementDirection.DOWN && (world.isGround0(getX(), getY()+10)))
+        else if(dir==movementDirection.DOWN && (world.isGround0(getX(), getY()+Settings.CELL_SIZEY)))
             y += 10;
         else
             movement=false;
@@ -99,6 +101,8 @@ public class PlayerCharacter extends Character{
             sound=false;}
         else
             sound=true;
+        hitBox.x=x;
+        hitBox.y=y;
 
 
 

@@ -1,10 +1,15 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Settings;
+
+import java.awt.*;
+
 public class Character {
 
     int x ;
     int y ;
     final int maxHealth=6;
+    public Rectangle hitBox;
 
 
 

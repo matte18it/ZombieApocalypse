@@ -6,18 +6,18 @@ import ZombieApocalypse.Settings;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class CharacterAnimation {
+public class GunAttackAnimation {
     //Carica le animazioni richieste
 
     private final ArrayList<Image> images = new ArrayList<>();
     private int index = 0;
 
-    public CharacterAnimation(String action, int numberOfElement) {
-            for (int i = 0; i < numberOfElement; i++) {
-                String path=action+i;
-                Image img= ResourcesLoader.getInstance().getImage("/Player/"+path+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
-                images.add(img);
-            }
+    public GunAttackAnimation(String action, int numberOfElement) {
+        for (int i = 0; i < numberOfElement; i++) {
+            String path=action+i;
+            Image img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+            images.add(img);
+        }
     }
 
 
@@ -32,3 +32,4 @@ public class CharacterAnimation {
         return images.get(index);
     }
 }
+

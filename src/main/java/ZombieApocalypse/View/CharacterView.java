@@ -13,6 +13,10 @@ public class CharacterView {
     private final CharacterAnimation runAnimationLeft;
     private final CharacterAnimation runAnimationDown;
     private final CharacterAnimation runAnimationRight;
+    private final CharacterAnimation hitUp;
+    private final CharacterAnimation hitDown;
+    private final CharacterAnimation hitLeft;
+    private final CharacterAnimation hitRight;
 
     final int width = Settings.CELL_SIZEX;
     final int height = Settings.CELL_SIZEY;
@@ -20,10 +24,14 @@ public class CharacterView {
     private Image currentImage;
 
     public CharacterView() {
-        runAnimationUp = new CharacterAnimation("PlayerIndietro", 3);
-        runAnimationDown = new CharacterAnimation("PlayerAvanti", 3);
-        runAnimationLeft = new CharacterAnimation("PlayerSinistra", 3);
-        runAnimationRight = new CharacterAnimation("PlayerDestra", 3);
+        runAnimationUp = new CharacterAnimation("PlayerIndietro",3);
+        runAnimationDown = new CharacterAnimation("PlayerAvanti",3);
+        runAnimationLeft = new CharacterAnimation("PlayerSinistra",3);
+        runAnimationRight = new CharacterAnimation("PlayerDestra",3);
+        hitUp=new CharacterAnimation("PlayerDannoAvanti",3);
+        hitDown=new CharacterAnimation("PlayerDannoIndietro",3);
+        hitLeft=new CharacterAnimation("PlayerDannoSinistra",3);
+        hitRight=new CharacterAnimation("PlayerDannoDestra",3);
         currentImage = runAnimationDown.getDefaultImage();
     }
 
