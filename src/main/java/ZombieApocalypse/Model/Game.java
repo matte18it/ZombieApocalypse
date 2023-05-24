@@ -54,7 +54,7 @@ public class Game {
     public int getPlayerLife() {
         return character.health;}
     public int getPlayerMaxLife() {
-        return character.getPlayerMaxHealth();}
+        return character.getMaxHealth();}
 
     public PlayerCharacter.movementDirection getPlayerDirection() {
         return character.dir;}

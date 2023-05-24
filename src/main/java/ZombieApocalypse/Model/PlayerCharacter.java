@@ -6,24 +6,12 @@ import ZombieApocalypse.View.MenuBarView;
 import java.awt.*;
 
 
-public class PlayerCharacter {
+public class PlayerCharacter extends Character{
     //Gestisce il player e i suoi movimenti
-    private int x = 20;
-    private int y = 20;
-    private final int playerMaxHealth=6;
-    int getPlayerMaxHealth(){
-        return playerMaxHealth;
-    }
-
 
     private boolean sound=false;
-    int money=0;
-    int health=6;
-    boolean movement = false;
-    boolean hit=false;
     private final World world=new World();
-    public enum movementDirection{RIGHT, LEFT, UP, DOWN};
-    movementDirection dir;
+
 
     Audio audio = new Audio();
 
@@ -41,6 +29,12 @@ public class PlayerCharacter {
     public void playSE(int i) {
         audio.setFile(i);
         audio.play();
+    }
+
+    PlayerCharacter(){
+        x=50;
+        y=50;
+        health=6;
     }
 
 
@@ -110,11 +104,5 @@ public class PlayerCharacter {
 
     }
 
-    public int getX() {
-        return x;
-    }
 
-    public int getY() {
-        return y;
-    }
 }

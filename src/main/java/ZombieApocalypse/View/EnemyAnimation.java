@@ -1,13 +1,9 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Settings;
-import jdk.jfr.SettingControl;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class EnemyAnimation {
