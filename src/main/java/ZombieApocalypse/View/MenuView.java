@@ -18,7 +18,7 @@ public class MenuView extends JPanel {
     private int borderValueRight, borderValueLeft;
     private boolean cambio = false;
     private Font font;
-    private JLabel titolo, sfondoAbout, developerLabel, gameVersionLabel, graphicsLabel, musicLabel, creditsLabel, soundLabel;
+    private JLabel titolo, sfondoAbout, developerLabel, gameVersionLabel, graphicsLabel, musicLabel, creditsLabel, soundLabel, controls;
     private MenuModel model;
     private MenuController controller;
     private JPanel panelMenu, imagePanel, aboutPanel;
@@ -221,6 +221,12 @@ public class MenuView extends JPanel {
         btnExitAbout.setFont(font.deriveFont(Font.PLAIN, 30));
         btnExitAbout.setMinimumSize(new Dimension(197, 60));
         btnExitAbout.setMaximumSize(new Dimension(197, 60));
+
+        controls = new JLabel("CONTROLS");
+        controls.setFont(font.deriveFont(Font.PLAIN, 22));
+        controls.setForeground(Color.WHITE);
+        controls.setBorder(new EmptyBorder(20, ((sfondoAbout.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(controls.getText(), frc).getWidth())/2))+25, 0, 0));
+        sfondoAbout.add(controls);
 
         aboutPanel.add(sfondoAbout);
         aboutPanel.add(btnExitAbout);
