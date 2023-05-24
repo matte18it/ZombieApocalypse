@@ -1,4 +1,4 @@
-package ZombieApocalypse.Model;
+ package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.GameFrame;
