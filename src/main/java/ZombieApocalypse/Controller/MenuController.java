@@ -67,5 +67,13 @@ public class MenuController {
                 System.exit(0);
             }
         });
+
+        view.getBtnExitAbout().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                view.setMenu();
+            }
+        });
     }
 }

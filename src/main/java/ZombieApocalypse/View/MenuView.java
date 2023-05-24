@@ -22,32 +22,27 @@ public class MenuView extends JPanel {
     private MenuModel model;
     private MenuController controller;
     private JPanel panelMenu, imagePanel, aboutPanel;
-    private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit;
+    private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
 
     public MenuView(){
         //Carico il font personalizzato
         font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 30, Font.PLAIN);
-        //Inizializzo i componenti
-        initComponent();
 
         //Creo un model e un controller
         model = new MenuModel(this);
         controller = new MenuController(model, this);
-        controller.addListener();
 
-        //Settando il valore di borderValueLeft a 100 dico all'animazione del titolo di iniziare andando verso sinistra
-        borderValueLeft = 100;
-        borderValueRight = titolo.getBorder().getBorderInsets(titolo).right;
+        setTitolo();
 
         //Setto il layout del pannello principale
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         //Inserisco ora i componenti nel pannello principale
         this.add(imagePanel);
-        this.add(panelMenu);
+        setMenu();
     }
 
-    private void initComponent() {
+    private void setTitolo() {
         //Creo la label titolo
         titolo = new JLabel();
         //Creo la icon da inserire nella label titolo
@@ -61,6 +56,25 @@ public class MenuView extends JPanel {
         imagePanel.add(titolo);
         imagePanel.setOpaque(false);
         imagePanel.setMaximumSize(new Dimension(800, 200));
+        //Settando il valore di borderValueLeft a 100 dico all'animazione del titolo di iniziare andando verso sinistra
+        borderValueLeft = 100;
+        borderValueRight = titolo.getBorder().getBorderInsets(titolo).right;
+    }
+
+    public void setMenu() {
+        //Controllo se è attiva la schermata 'About' la elimino
+        if(aboutPanel != null && aboutPanel.isShowing())
+            this.remove(aboutPanel);
+
+        //Inizializzo i componenti
+        initComponent();
+        controller.addListener();
+        this.add(panelMenu);
+        this.repaint();
+    }
+
+    private void initComponent() {
+        btnExitAbout = new JButton("Exit");
 
         //Creo il pannello con tuti i pulsanti
         panelMenu = new JPanel();
@@ -153,7 +167,7 @@ public class MenuView extends JPanel {
         //creo il pannello about
         aboutPanel = new JPanel();
         aboutPanel.setOpaque(false);
-        aboutPanel.setMaximumSize(new Dimension(747, 440));
+        aboutPanel.setMaximumSize(new Dimension(747, 520));
 
         sfondoAbout = new JLabel();
         sfondoAbout.setIcon(loader.getImageIcon("/Login&Menu/aboutPanel.png", 747, 440, false));
@@ -185,19 +199,35 @@ public class MenuView extends JPanel {
         graphicsLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(graphicsLabel);
 
-        musicLabel = new JLabel("MUSIC: music taken from itch.io is created by SzajnaWorkshop.");
+        musicLabel = new JLabel("MUSIC: music taken from itch.io, is created by SzajnaWorkshop.");
         musicLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         musicLabel.setForeground(Color.white);
         musicLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(musicLabel);
 
-        soundLabel = new JLabel("SOUND: sounds taken from https://freesound.org.");
+        soundLabel = new JLabel("SOUND: sounds taken from https://freesound.org");
         soundLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         soundLabel.setForeground(Color.white);
         soundLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(soundLabel);
 
+        btnExitAbout.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
+        btnExitAbout.setHorizontalTextPosition(JButton.CENTER);
+        btnExitAbout.setVerticalTextPosition(JButton.CENTER);
+        btnExitAbout.setFont(font);
+        btnExitAbout.setBorderPainted(false);
+        btnExitAbout.setFocusPainted(false);
+        btnExitAbout.setForeground(Color.WHITE);
+        btnExitAbout.setFont(font.deriveFont(Font.PLAIN, 30));
+        btnExitAbout.setMinimumSize(new Dimension(197, 60));
+        btnExitAbout.setMaximumSize(new Dimension(197, 60));
+
         aboutPanel.add(sfondoAbout);
+        aboutPanel.add(btnExitAbout);
+    }
+
+    public JButton getBtnExitAbout(){
+        return btnExitAbout;
     }
 
     public JButton getBtnPlay(){
