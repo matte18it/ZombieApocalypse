@@ -59,12 +59,11 @@ public class GameFrame extends JPanel {
         if(!playMenuMusic.isMusic() && GameData.music)
             //Faccio partire la traccia
             playMenuMusic.playMusic();
-
-        frameGame.repaint();
         frameGame.setTitle("Menu");
         menu = new MenuView();
 
         frameGame.add(menu);
+        frameGame.repaint();
         menuLoop = new MenuLoop(menu);
         menuLoop.start();
 
@@ -76,7 +75,7 @@ public class GameFrame extends JPanel {
     }
 
     public static void gameLaunch(){
-        //controllo che la traccia sia attiva
+        //controllo che la musica sia attiva
         if(playMenuMusic.isMusic() && GameData.music){
             //se è attiva la stoppo...
             playMenuMusic.stopMusic();
@@ -87,7 +86,6 @@ public class GameFrame extends JPanel {
 
         menuLoop.stop();
         frameGame.remove(menu);
-        frameGame.repaint();
         frameGame.setTitle("Game");
 
         MenuBarView menuBarView=new MenuBarView();
@@ -96,6 +94,7 @@ public class GameFrame extends JPanel {
 
         frameGame.add(graphicPanel);
         frameGame.add(menuBarView);
+        frameGame.repaint();
 
         graphicPanel.setFocusable(true);
         graphicPanel.requestFocus();

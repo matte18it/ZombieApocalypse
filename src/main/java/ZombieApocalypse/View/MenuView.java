@@ -19,10 +19,10 @@ public class MenuView extends JPanel {
     private int borderValueRight, borderValueLeft;
     private boolean cambio = false;
     private Font font;
-    private JLabel titolo;
+    private JLabel titolo, sfondoAbout;
     private MenuModel model;
     private MenuController controller;
-    private JPanel panelMenu, imagePanel;
+    private JPanel panelMenu, imagePanel, aboutPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit;
 
     public MenuView(){
@@ -66,7 +66,6 @@ public class MenuView extends JPanel {
         //Creo il pannello con tuti i pulsanti
         panelMenu = new JPanel();
         panelMenu.setOpaque(false);
-        panelMenu.setLayout(new GridBagLayout());
         panelMenu.setMaximumSize(new Dimension(1280, 550));
         panelMenu.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -142,6 +141,27 @@ public class MenuView extends JPanel {
         c.gridx = 0;
         c.gridy = 4;
         panelMenu.add(btnExit, c);
+    }
+
+    public void setAbout(){
+        initAbout();
+        this.remove(panelMenu);
+        this.add(aboutPanel);
+        this.repaint();
+    }
+
+    private void initAbout() {
+        //creo il pannello about
+        aboutPanel = new JPanel();
+        aboutPanel.setOpaque(false);
+        aboutPanel.setMaximumSize(new Dimension(721, 348));
+
+        sfondoAbout = new JLabel();
+        sfondoAbout.setIcon(loader.getImageIcon("/Login&Menu/aboutPanel.png", 721, 348, false));
+        sfondoAbout.setForeground(Color.white);
+        sfondoAbout.setFont(font.deriveFont(Font.PLAIN, 18));
+
+        aboutPanel.add(sfondoAbout);
     }
 
     public JButton getBtnPlay(){

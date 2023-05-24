@@ -50,6 +50,7 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                view.setAbout();
             }
         });
 
