@@ -15,11 +15,11 @@ import java.awt.*;
 
 public class GameFrame extends JPanel {
     private static PlayMusic playMenuMusic = new PlayMusic("/Music/MenuMusic.wav");
-    private static JFrame frameGame = new JFrame("Login");;
+    public static JFrame frameGame = new JFrame("Login");;
     private static GameLoop gameLoopObject;
-    private static LoginView panel;
+    public static LoginView panel;
     private static MenuLoop menuLoop;
-    private static LoginLoop loop;
+    public static LoginLoop loop;
     public static MenuView menu;
     public static TimeLoop timeLoop;
 
@@ -60,8 +60,6 @@ public class GameFrame extends JPanel {
             //Faccio partire la traccia
             playMenuMusic.playMusic();
 
-        loop.stop();
-        frameGame.remove(panel);
         frameGame.repaint();
         frameGame.setTitle("Menu");
         menu = new MenuView();

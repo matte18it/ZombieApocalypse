@@ -37,6 +37,8 @@ public class LoginModel {
         //se ris è pari a 0 effettuo il login, se ris è pari a 1 vuol dire che c'è già un player registrato con lo stesso nome, 2 effettuo la registrazione
         switch (ris){
             case 0, 2:{
+                GameFrame.loop.stop();
+                GameFrame.frameGame.remove(GameFrame.panel);
                 GameFrame.menuLaunch();
                 break;
             }
