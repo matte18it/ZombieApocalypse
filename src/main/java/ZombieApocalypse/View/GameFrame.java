@@ -15,7 +15,7 @@ import java.awt.*;
 
 public class GameFrame extends JPanel {
     private static PlayMusic playMenuMusic = new PlayMusic("/Music/MenuMusic.wav");
-    public static JFrame frameGame = new JFrame("Login");;
+    public static JFrame frameGame = new JFrame("Login");
     private static GameLoop gameLoopObject;
     public static LoginView panel;
     private static MenuLoop menuLoop;

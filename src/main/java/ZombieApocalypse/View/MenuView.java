@@ -15,7 +15,7 @@ import java.awt.geom.AffineTransform;
 import java.io.File;
 import java.io.IOException;
 
-public class MenuView extends JPanel {
+public class MenuView extends JPanel implements Runnable{
     private ResourcesLoader loader = ResourcesLoader.getInstance();
     private int borderValueRight, borderValueLeft;
     private boolean cambio = false;
@@ -29,6 +29,7 @@ public class MenuView extends JPanel {
     private MenuController controller;
     private JPanel panelMenu, imagePanel, aboutPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
+    public Thread t;
 
     public MenuView(){
 
@@ -359,6 +360,9 @@ public class MenuView extends JPanel {
         lbl10.setIcon(loader.getImageIcon("/ArmieOggetti/AnimazioneColtello0.png", 44, 40, false));
         lbl10.setBorder(new EmptyBorder(0, 13, 0, 0));
         layoutComands2.add(lbl10);
+
+        t = new Thread(this);
+        t.start();
     }
 
     public JButton getBtnExitAbout(){
@@ -444,4 +448,22 @@ public class MenuView extends JPanel {
         }
     }
 
+    @Override
+    public void run() {
+        int nButton = 1;
+        while(!Thread.currentThread().isInterrupted()) {
+            lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto" + nButton + ".png", 64, 60, false));
+            lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/Tasto" + nButton + ".png", 64, 60, false));
+            lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/Tasto" + nButton + ".png", 64, 60, false));
+            lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoD/Tasto" + nButton + ".png", 64, 60, false));
+            lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoQ/Tasto" + nButton + ".png", 64, 60, false));
+            lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoE/Tasto" + nButton + ".png", 64, 60, false));
+            lblESC.setIcon(loader.getImageIcon("/TutorialButton/TastoESC/Tasto" + nButton + ".png", 64, 60, false));
+            lblBar.setIcon(loader.getImageIcon("/TutorialButton/tastoBarra/Tasto" + nButton + ".png", 100, 45, false));
+            lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse" + nButton + ".png", 64, 60, false));
+
+            if(nButton == 1) nButton = 2; else nButton = 1;
+            try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+        }
+    }
 }
