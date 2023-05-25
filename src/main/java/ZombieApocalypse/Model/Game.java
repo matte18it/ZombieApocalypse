@@ -88,4 +88,17 @@ public class Game {
     public Character getEnemyCharacter() {
         return enemy;
     }
+
+    public void checkCollision() {
+        //idea: creare un'array di nemici da scorrere
+        //ora ne abbiamo solo uno
+        //30 frame per hit
+        if(character.countHit==30)
+            character.stopHit();
+        if(character.hitBox.intersects(enemy.hitBox) ){
+            character.hit();
+        }
+
+
+    }
 }

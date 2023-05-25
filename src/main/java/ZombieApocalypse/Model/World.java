@@ -2,7 +2,19 @@ package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Settings;
 
+import java.awt.*;
+
 public class World {
+    public boolean isEnemy(int i, int y) {
+        //Tengo il centro del player a distanza dal centro del nemico
+        Point player=new Point(i+Game.getInstance().getPlayerCharacter().centerX,y+Game.getInstance().getPlayerCharacter().centerY);
+        Point enemy =new Point(Game.getInstance().getEnemyCharacter().getX()+Game.getInstance().getEnemyCharacter().centerX, Game.getInstance().getEnemyCharacter().getY()+Game.getInstance().getEnemyCharacter().centerY);
+        if(player.distance(enemy)<20)
+            return true;
+
+         return false;
+    }
+
     //Tutti i blocchi disegnabili
     enum Block { GROUND0, GROUND1,GROUND2, GROUND3}
     //Mondo e posizione del player

@@ -6,6 +6,8 @@ import java.awt.*;
 
 public class EnemyCharacter extends Character{
     EnemyCharacter(){
+        wight=Settings.CELL_SIZEX;
+        height=Settings.CELL_SIZEY;
         x=500;
         y=500;
         health=6;

@@ -190,11 +190,11 @@ public class MenuBarView extends JPanel {
 
     public static void lifeUpdate(boolean b) {
         if(b && Game.getInstance().getPlayerMaxLife()<Game.getInstance().getPlayerLife()){
-            healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 20, 35));
+            healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 30));
 
         }
         else if (!b && Game.getInstance().getPlayerLife()>-1){
-            healthLabel[Game.getInstance().getPlayerLife()+1].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 20, 35));
+            healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 30));
 
 
         }

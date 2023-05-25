@@ -10,6 +10,10 @@ public class Character {
     int y ;
     final int maxHealth=6;
     public Rectangle hitBox;
+    int wight;
+    int height;
+    int centerX=wight/2;
+    int centerY=height/2;
 
 
 

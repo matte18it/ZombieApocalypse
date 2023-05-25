@@ -36,17 +36,33 @@ public class CharacterView {
     }
 
     public void update() {
+        //E' stato colpito? cambia immagine
+        if(Game.getInstance().getPlayerCharacter().getHit()){
+
+                Game.getInstance().getPlayerCharacter().countHit++;
+
 
         if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
-            currentImage = runAnimationUp.update();
+            currentImage = hitUp.update();
         else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.DOWN)
-            currentImage = runAnimationDown.update();
+            currentImage = hitDown.update();
         else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.LEFT)
+            currentImage = hitLeft.update();
+        else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.RIGHT)
+            currentImage = hitRight.update();
+        else
+            currentImage = hitUp.update();}
+        else{
+        if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
+            currentImage = runAnimationUp.update();
+        else if( Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.DOWN)
+            currentImage = runAnimationDown.update();
+        else if( Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.LEFT)
             currentImage = runAnimationLeft.update();
         else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.RIGHT)
             currentImage = runAnimationRight.update();
         else
-            currentImage = runAnimationDown.getDefaultImage();
+            currentImage = runAnimationDown.getDefaultImage();}
     }
 
     public Image getCurrentImage() {

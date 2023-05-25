@@ -43,6 +43,7 @@ public class PlayerController implements KeyListener, MouseMotionListener {
 
     public void update() {
         Game.getInstance().update();
+        Game.getInstance().checkCollision();
         panel.update();
     }
 
