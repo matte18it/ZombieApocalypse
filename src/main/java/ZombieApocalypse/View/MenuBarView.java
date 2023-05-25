@@ -14,7 +14,6 @@ public class MenuBarView extends JPanel {
     static long start;
     static MenuBarAnimation menuBarAnimation=new MenuBarAnimation();
     JLabel playerName;
-     JPanel flashPanel;
     JLabel ammoLabel;
      static JLabel [] healthLabel;
     JLabel pointLabel;
@@ -65,10 +64,9 @@ public class MenuBarView extends JPanel {
         c.gridx=1;
         c.gridy=0;
         c.insets=new Insets(0,5,0,0);
+
         healthAmmoPanel.add(array, c);
-        flashPanel=new JPanel();
-        flashPanel.setOpaque(false);
-        healthAmmoPanel.add(flashPanel, c);
+
 
         //Pannello delle Munizioni
 

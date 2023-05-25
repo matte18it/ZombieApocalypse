@@ -36,9 +36,16 @@ public class SkinnyEnemyView {
     }
 
     public void update() {
+        if(Game.getInstance().getEnemyCharacter().isHitted()){
+            Game.getInstance().getEnemyCharacter().countHit++;
+
+            if( Game.getInstance().getEnemyCharacter().countHit%2==0){
+
+                    currentImage = hitUp.update();}
+        }else
+            currentImage = runAnimationDown.getDefaultImage();
 
         //Da scrivere
-            currentImage = runAnimationDown.getDefaultImage();
     }
 
     public Image getCurrentImage() {

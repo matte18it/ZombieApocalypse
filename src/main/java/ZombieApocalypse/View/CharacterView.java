@@ -41,7 +41,7 @@ public class CharacterView {
 
                 Game.getInstance().getPlayerCharacter().countHit++;
 
-
+        if( Game.getInstance().getPlayerCharacter().countHit%2==0){
         if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
             currentImage = hitUp.update();
         else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.DOWN)
@@ -51,7 +51,7 @@ public class CharacterView {
         else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.RIGHT)
             currentImage = hitRight.update();
         else
-            currentImage = hitUp.update();}
+            currentImage = hitUp.update();}}
         else{
         if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
             currentImage = runAnimationUp.update();
