@@ -118,4 +118,6 @@ public class ResourcesLoader {
         return toolkit.createCustomCursor(image , new Point(p1.getX(),  p1.getY()), "img");
     }
 
+
+
 }

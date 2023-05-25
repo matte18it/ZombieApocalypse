@@ -14,6 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JPanel {
+
     private static PlayMusic playMenuMusic = new PlayMusic("/Music/MenuMusic.wav");
     public static JFrame frameGame = new JFrame("Login");
     private static GameLoop gameLoopObject;
@@ -22,6 +23,7 @@ public class GameFrame extends JPanel {
     public static LoginLoop loop;
     public static MenuView menu;
     public static TimeLoop timeLoop;
+
 
     public static void loginLaunch(){
         //Controllo che la traccia non sia già attiva

@@ -6,12 +6,13 @@ import java.awt.*;
 
 public class Character {
 
-    int x ;
-    int y ;
+    static int x ;
+    static int y ;
     final int maxHealth=6;
     public Rectangle hitBox;
     int wight;
     int height;
+    int speed;
     int centerX=wight/2;
     int centerY=height/2;
 
@@ -20,11 +21,11 @@ public class Character {
     int getMaxHealth(){
         return maxHealth;
     }
-     public int getX() {
+     public static int getX() {
         return x;
     }
 
-     public int getY() {
+     public static int getY() {
         return y;
     }
 

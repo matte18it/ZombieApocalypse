@@ -38,7 +38,6 @@ public class CharacterView {
     public void update() {
         //E' stato colpito? cambia immagine
         if(Game.getInstance().getPlayerCharacter().getHit()){
-
                 Game.getInstance().getPlayerCharacter().countHit++;
 
         if( Game.getInstance().getPlayerCharacter().countHit%2==0){
