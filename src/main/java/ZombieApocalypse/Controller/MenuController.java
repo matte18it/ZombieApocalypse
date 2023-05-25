@@ -73,7 +73,6 @@ public class MenuController {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 view.setMenu();
-                view.t.interrupt();
             }
         });
     }

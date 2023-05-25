@@ -15,7 +15,7 @@ import java.awt.geom.AffineTransform;
 import java.io.File;
 import java.io.IOException;
 
-public class MenuView extends JPanel implements Runnable{
+public class MenuView extends JPanel {
     private ResourcesLoader loader = ResourcesLoader.getInstance();
     private int borderValueRight, borderValueLeft;
     private boolean cambio = false;
@@ -29,7 +29,6 @@ public class MenuView extends JPanel implements Runnable{
     private MenuController controller;
     private JPanel panelMenu, imagePanel, aboutPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
-    public Thread t;
 
     public MenuView(){
 
@@ -360,9 +359,6 @@ public class MenuView extends JPanel implements Runnable{
         lbl10.setIcon(loader.getImageIcon("/ArmieOggetti/AnimazioneColtello0.png", 44, 40, false));
         lbl10.setBorder(new EmptyBorder(0, 13, 0, 0));
         layoutComands2.add(lbl10);
-
-        t = new Thread(this);
-        t.start();
     }
 
     public JButton getBtnExitAbout(){
@@ -436,22 +432,8 @@ public class MenuView extends JPanel implements Runnable{
         g.drawImage(bgImage, 0, 0, null);
     }
 
-    public void updateAboutButton() {
-        System.out.println("PROVA");
-        if(lblUp != null){
-            if(true)
-                lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto2.png", 64, 60, false));
-            else
-                lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto1.png", 64, 60, false));
-
-            repaint();
-        }
-    }
-
-    @Override
-    public void run() {
+    public void updateAbout() {
         int nButton = 1;
-        while(!Thread.currentThread().isInterrupted()) {
             lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto" + nButton + ".png", 64, 60, false));
             lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/Tasto" + nButton + ".png", 64, 60, false));
             lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/Tasto" + nButton + ".png", 64, 60, false));
@@ -463,7 +445,6 @@ public class MenuView extends JPanel implements Runnable{
             lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse" + nButton + ".png", 64, 60, false));
 
             if(nButton == 1) nButton = 2; else nButton = 1;
-            try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
-        }
+
     }
 }
