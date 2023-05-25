@@ -66,6 +66,7 @@ public class GameFrame extends JPanel {
 
         frameGame.add(menu);
         frameGame.repaint();
+
         menuLoop = new MenuLoop(menu);
         menuLoop.start();
 

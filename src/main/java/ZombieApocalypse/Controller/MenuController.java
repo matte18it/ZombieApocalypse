@@ -51,11 +51,7 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                try {
-                    view.setAbout();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                view.setAbout();
             }
         });
 

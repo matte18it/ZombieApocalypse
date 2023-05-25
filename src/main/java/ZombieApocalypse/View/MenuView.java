@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
@@ -79,7 +80,7 @@ public class MenuView extends JPanel {
         initComponent();
         controller.addListener();
         this.add(panelMenu);
-        this.repaint();
+        revalidate();
     }
 
     private void initComponent() {
@@ -165,14 +166,14 @@ public class MenuView extends JPanel {
         panelMenu.add(btnExit, c);
     }
 
-    public void setAbout() throws IOException {
+    public void setAbout() {
         initAbout();
         this.remove(panelMenu);
         this.add(aboutPanel);
-        this.repaint();
+        revalidate();
     }
 
-    private void initAbout() throws IOException {
+    private void initAbout() {
         //creo il pannello about
         aboutPanel = new JPanel();
         aboutPanel.setOpaque(false);
@@ -261,42 +262,42 @@ public class MenuView extends JPanel {
 
     private void setCommands(JLabel layoutComands, JLabel layoutComands2) {
         lblUp = new JLabel();
-        lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto1.png", 64, 60, false));
+        lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/TastoW.gif", 64, 60, false));
         lblUp.setBorder(new EmptyBorder(0, 15, 0, 0));
         layoutComands.add(lblUp);
 
         lblDown = new JLabel();
-        lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/Tasto1.png", 64, 60, false));
+        lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/TastoS.gif", 64, 60, false));
         lblDown.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblDown);
 
         lblLeft = new JLabel();
-        lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/Tasto1.png", 64, 60, false));
+        lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/TastoA.gif", 64, 60, false));
         lblLeft.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblLeft);
 
         lblRight = new JLabel();
-        lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoD/Tasto1.png", 64, 60, false));
+        lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoD/TastoD.gif", 64, 60, false));
         lblRight.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblRight);
 
         lblQ = new JLabel();
-        lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoQ/Tasto1.png", 64, 60, false));
+        lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoQ/TastoQ.gif", 64, 60, false));
         lblQ.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblQ);
 
         lblE = new JLabel();
-        lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoE/Tasto1.png", 64, 60, false));
+        lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoE/TastoE.gif", 64, 60, false));
         lblE.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblE);
 
         lblESC = new JLabel();
-        lblESC.setIcon(loader.getImageIcon("/TutorialButton/TastoESC/Tasto1.png", 64, 60, false));
+        lblESC.setIcon(loader.getImageIcon("/TutorialButton/TastoESC/TastoESC.gif", 64, 60, false));
         lblESC.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblESC);
 
         lblBar = new JLabel();
-        lblBar.setIcon(loader.getImageIcon("/TutorialButton/TastoBarra/Tasto1.png", 100, 45, false));
+        lblBar.setIcon(loader.getImageIcon("/TutorialButton/TastoBarra/Barra.gif", 100, 45, false));
         lblBar.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblBar);
 
@@ -306,7 +307,7 @@ public class MenuView extends JPanel {
         layoutComands.add(lblMouse1);
 
         lblMouse2 = new JLabel();
-        lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse1.png", 64, 60, false));
+        lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse.gif", 64, 60, false));
         lblMouse2.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblMouse2);
 
@@ -388,33 +389,36 @@ public class MenuView extends JPanel {
     public void updatePosition(){
         //Questa funzione serve per l'animazione del titolo
 
-        //se è verificata questa condizione vuol dire che l'animazione deve spostarsi verso sinistra
-        if(borderValueRight < 100 && !cambio){
-            //Quindi incremento il bordo destro per farlo spostare verso sinistra
-            borderValueRight += 3;
-            //se il bordo di sinistra è maggiore di 0 devo decrementarlo per evitare di farlo uscire dallo schermo
-            if(borderValueLeft > 0)
-                borderValueLeft -= 3;
-            //Qua setto i nuovi bordi
-            titolo.setBorder(new EmptyBorder(20, borderValueLeft, 0, borderValueRight));
-        }
-        else if(borderValueRight >= 100)
-            //quando il bordo destro arriva sopra il valore 100 inverto il senso dell'animazione
-            cambio = true;
+        if(panelMenu.isShowing()){
+            //se è verificata questa condizione vuol dire che l'animazione deve spostarsi verso sinistra
+            if (borderValueRight < 100 && !cambio) {
+                //Quindi incremento il bordo destro per farlo spostare verso sinistra
+                borderValueRight += 3;
+                //se il bordo di sinistra è maggiore di 0 devo decrementarlo per evitare di farlo uscire dallo schermo
+                if (borderValueLeft > 0)
+                    borderValueLeft -= 3;
+                //Qua setto i nuovi bordi
+                titolo.setBorder(new EmptyBorder(20, borderValueLeft, 0, borderValueRight));
+            } else if (borderValueRight >= 100)
+                //quando il bordo destro arriva sopra il valore 100 inverto il senso dell'animazione
+                cambio = true;
 
-        //se è verificata questa condizione vuol dire che l'animazione deve spostarsi verso destra
-        if(borderValueLeft < 100 && cambio){
-            //incremento il bordo sinistro per farlo spostare verso destra
-            borderValueLeft += 3;
-            //se il bordo di destra è maggiore di 0 devo decrementarlo per evitare di farlo uscire dallo schermo
-            if(borderValueRight > 0)
-                borderValueRight -= 3;
-            //setto i nuovi bordi
-            titolo.setBorder(new EmptyBorder(20, borderValueLeft, 0, borderValueRight));
+            //se è verificata questa condizione vuol dire che l'animazione deve spostarsi verso destra
+            if (borderValueLeft < 100 && cambio) {
+                //incremento il bordo sinistro per farlo spostare verso destra
+                borderValueLeft += 3;
+                //se il bordo di destra è maggiore di 0 devo decrementarlo per evitare di farlo uscire dallo schermo
+                if (borderValueRight > 0)
+                    borderValueRight -= 3;
+                //setto i nuovi bordi
+                titolo.setBorder(new EmptyBorder(20, borderValueLeft, 0, borderValueRight));
+            } else if (borderValueLeft >= 100)
+                //quando il bordo sinistro arriva sopra il valore 100 inverto il senso dell'animazione
+                cambio = false;
         }
-        else if(borderValueLeft >= 100)
-            //quando il bordo sinistro arriva sopra il valore 100 inverto il senso dell'animazione
-            cambio = false;
+        else
+            titolo.setBorder(new EmptyBorder(20, 0, 0, 0));
+
     }
 
     @Override
@@ -430,21 +434,5 @@ public class MenuView extends JPanel {
 
         //Disegno l'immagine come sfondo del panel
         g.drawImage(bgImage, 0, 0, null);
-    }
-
-    public void updateAbout() {
-        int nButton = 1;
-            lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto" + nButton + ".png", 64, 60, false));
-            lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/Tasto" + nButton + ".png", 64, 60, false));
-            lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/Tasto" + nButton + ".png", 64, 60, false));
-            lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoD/Tasto" + nButton + ".png", 64, 60, false));
-            lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoQ/Tasto" + nButton + ".png", 64, 60, false));
-            lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoE/Tasto" + nButton + ".png", 64, 60, false));
-            lblESC.setIcon(loader.getImageIcon("/TutorialButton/TastoESC/Tasto" + nButton + ".png", 64, 60, false));
-            lblBar.setIcon(loader.getImageIcon("/TutorialButton/tastoBarra/Tasto" + nButton + ".png", 100, 45, false));
-            lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse" + nButton + ".png", 64, 60, false));
-
-            if(nButton == 1) nButton = 2; else nButton = 1;
-
     }
 }
