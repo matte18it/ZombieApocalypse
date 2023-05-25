@@ -111,4 +111,11 @@ public class ResourcesLoader {
         else
             return 4;
     }
+
+    public Cursor getCursor(String path, JPanel p1){
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image image = ResourcesLoader.getInstance().getImage(path, 32, 32, false);
+        return toolkit.createCustomCursor(image , new Point(p1.getX(),  p1.getY()), "img");
+    }
+
 }

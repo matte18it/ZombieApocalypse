@@ -22,6 +22,9 @@ public class MenuBarView extends JPanel {
      JLabel gunLabel1;
     JLabel gunLabel2;
     public MenuBarView(){
+        //setto il cursore personalizzato
+        this.setCursor(ResourcesLoader.getInstance().getCursor("/GameGeneral/crosshair.png", this));
+
         //Crea tre Jpanel
         //Nel primo metto Vita e Munizioni con quattro label
         //nel secondo lo Score

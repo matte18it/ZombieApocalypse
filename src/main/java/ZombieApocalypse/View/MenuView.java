@@ -7,10 +7,12 @@ import ZombieApocalypse.Utility.GameData;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
+import java.io.File;
 import java.io.IOException;
 
 public class MenuView extends JPanel {
@@ -19,12 +21,20 @@ public class MenuView extends JPanel {
     private boolean cambio = false;
     private Font font;
     private JLabel titolo, sfondoAbout, developerLabel, gameVersionLabel, graphicsLabel, musicLabel, creditsLabel, soundLabel, controls;
+    //label per la rappresentazione dei comandi pt1
+    private JLabel lblUp, lblDown, lblLeft, lblRight, lblQ, lblE, lblESC, lblBar, lblMouse1, lblMouse2;
+    //label per la rappresentazione dei comandi pt2
+    private JLabel lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7, lbl8, lbl9, lbl10;
     private MenuModel model;
     private MenuController controller;
     private JPanel panelMenu, imagePanel, aboutPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
 
     public MenuView(){
+
+        //setto il cursore personalizzato
+        this.setCursor(loader.getCursor("/GameGeneral/crosshair.png", this));
+
         //Carico il font personalizzato
         font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 30, Font.PLAIN);
 
@@ -65,7 +75,6 @@ public class MenuView extends JPanel {
         //Controllo se è attiva la schermata 'About' la elimino
         if(aboutPanel != null && aboutPanel.isShowing())
             this.remove(aboutPanel);
-
         //Inizializzo i componenti
         initComponent();
         controller.addListener();
@@ -187,7 +196,7 @@ public class MenuView extends JPanel {
         developerLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(developerLabel);
 
-        gameVersionLabel = new JLabel("VERSION: " + GameData.version + ".");
+        gameVersionLabel = new JLabel("GAME VERSION: " + GameData.version);
         gameVersionLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         gameVersionLabel.setForeground(Color.WHITE);
         gameVersionLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
@@ -218,18 +227,138 @@ public class MenuView extends JPanel {
         btnExitAbout.setBorderPainted(false);
         btnExitAbout.setFocusPainted(false);
         btnExitAbout.setForeground(Color.WHITE);
-        btnExitAbout.setFont(font.deriveFont(Font.PLAIN, 30));
         btnExitAbout.setMinimumSize(new Dimension(197, 60));
         btnExitAbout.setMaximumSize(new Dimension(197, 60));
 
         controls = new JLabel("CONTROLS");
         controls.setFont(font.deriveFont(Font.PLAIN, 22));
         controls.setForeground(Color.WHITE);
-        controls.setBorder(new EmptyBorder(20, ((sfondoAbout.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(controls.getText(), frc).getWidth())/2))+25, 0, 0));
+        controls.setBorder(new EmptyBorder(10, ((sfondoAbout.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(controls.getText(), frc).getWidth())/2))+25, 0, 0));
         sfondoAbout.add(controls);
 
+        //Creo una label contenitore che mi permette di inserire i componenti in ordine
+        JLabel layoutComands = new JLabel();
+        layoutComands.setMaximumSize(new Dimension(747, 60));
+        layoutComands.setLayout(new BoxLayout(layoutComands, BoxLayout.X_AXIS));
+
+        JLabel layoutComands2 = new JLabel();
+        layoutComands2.setMaximumSize(new Dimension(747, 60));
+        layoutComands2.setLayout(new BoxLayout(layoutComands2, BoxLayout.X_AXIS));
+
+        JLabel layoutComands3 = new JLabel();
+        layoutComands3.setMaximumSize(new Dimension(747, 75));
+        layoutComands3.setLayout(new BorderLayout());
+        layoutComands3.setBorder(new EmptyBorder(10, 0, 0, 0));
+        layoutComands3.add(btnExitAbout, BorderLayout.CENTER);
+
+        setCommands(layoutComands, layoutComands2);
+
+        sfondoAbout.add(layoutComands);
+        sfondoAbout.add(layoutComands2);
+        sfondoAbout.add(layoutComands3);
         aboutPanel.add(sfondoAbout);
-        aboutPanel.add(btnExitAbout);
+    }
+
+    private void setCommands(JLabel layoutComands, JLabel layoutComands2) {
+        lblUp = new JLabel();
+        lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto1.png", 64, 60, false));
+        lblUp.setBorder(new EmptyBorder(0, 15, 0, 0));
+        layoutComands.add(lblUp);
+
+        lblDown = new JLabel();
+        lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/Tasto1.png", 64, 60, false));
+        lblDown.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblDown);
+
+        lblLeft = new JLabel();
+        lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/Tasto1.png", 64, 60, false));
+        lblLeft.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblLeft);
+
+        lblRight = new JLabel();
+        lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoD/Tasto1.png", 64, 60, false));
+        lblRight.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblRight);
+
+        lblQ = new JLabel();
+        lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoQ/Tasto1.png", 64, 60, false));
+        lblQ.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblQ);
+
+        lblE = new JLabel();
+        lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoE/Tasto1.png", 64, 60, false));
+        lblE.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblE);
+
+        lblESC = new JLabel();
+        lblESC.setIcon(loader.getImageIcon("/TutorialButton/TastoESC/Tasto1.png", 64, 60, false));
+        lblESC.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblESC);
+
+        lblBar = new JLabel();
+        lblBar.setIcon(loader.getImageIcon("/TutorialButton/TastoBarra/Tasto1.png", 100, 45, false));
+        lblBar.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblBar);
+
+        lblMouse1 = new JLabel();
+        lblMouse1.setIcon(loader.getImageIcon("/TutorialButton/Mouse/MouseStop.png", 64, 60, false));
+        lblMouse1.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblMouse1);
+
+        lblMouse2 = new JLabel();
+        lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse1.png", 64, 60, false));
+        lblMouse2.setBorder(new EmptyBorder(0, 5, 0, 0));
+        layoutComands.add(lblMouse2);
+
+        lbl1 = new JLabel();
+        lbl1.setIcon(loader.getImageIcon("/Player/PlayerIndietro0.png", 42, 48, false));
+        lbl1.setBorder(new EmptyBorder(0, 25, 0, 0));
+        layoutComands2.add(lbl1);
+
+        lbl2 = new JLabel();
+        lbl2.setIcon(loader.getImageIcon("/Player/PlayerAvanti0.png", 42, 48, false));
+        lbl2.setBorder(new EmptyBorder(0, 30, 0, 0));
+        layoutComands2.add(lbl2);
+
+        lbl3 = new JLabel();
+        lbl3.setIcon(loader.getImageIcon("/Player/PlayerSinistra0.png", 42, 48, false));
+        lbl3.setBorder(new EmptyBorder(0, 30, 0, 0));
+        layoutComands2.add(lbl3);
+
+        lbl4 = new JLabel();
+        lbl4.setIcon(loader.getImageIcon("/Player/PlayerDestra0.png", 42, 48, false));
+        lbl4.setBorder(new EmptyBorder(0, 25, 0, 0));
+        layoutComands2.add(lbl4);
+
+        lbl5 = new JLabel();
+        lbl5.setIcon(loader.getImageIcon("/TutorialButton/pistola.png", 40, 25, false));
+        lbl5.setBorder(new EmptyBorder(0, 25, 0, 0));
+        layoutComands2.add(lbl5);
+
+        lbl6 = new JLabel();
+        lbl6.setIcon(loader.getImageIcon("/TutorialButton/fucile.png", 42, 25, false));
+        lbl6.setBorder(new EmptyBorder(0, 25, 0, 0));
+        layoutComands2.add(lbl6);
+
+        lbl7 = new JLabel();
+        lbl7.setIcon(loader.getImageIcon("/TutorialButton/pause.png", 48, 48, false));
+        lbl7.setBorder(new EmptyBorder(0, 30, 0, 0));
+        layoutComands2.add(lbl7);
+
+        lbl8 = new JLabel();
+        lbl8.setIcon(loader.getImageIcon("/TutorialButton/pistola.png", 40, 25, false));
+        lbl8.setBorder(new EmptyBorder(0, 40, 0, 0));
+        layoutComands2.add(lbl8);
+
+        lbl9 = new JLabel();
+        lbl9.setIcon(loader.getImageIcon("/TutorialButton/crosshair.png", 64, 65, false));
+        lbl9.setBorder(new EmptyBorder(0, 35, 0, 0));
+        layoutComands2.add(lbl9);
+
+        lbl10 = new JLabel();
+        lbl10.setIcon(loader.getImageIcon("/ArmieOggetti/AnimazioneColtello0.png", 44, 40, false));
+        lbl10.setBorder(new EmptyBorder(0, 13, 0, 0));
+        layoutComands2.add(lbl10);
     }
 
     public JButton getBtnExitAbout(){
@@ -302,4 +431,17 @@ public class MenuView extends JPanel {
         //Disegno l'immagine come sfondo del panel
         g.drawImage(bgImage, 0, 0, null);
     }
+
+    public void updateAboutButton() {
+        System.out.println("PROVA");
+        if(lblUp != null){
+            if(true)
+                lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto2.png", 64, 60, false));
+            else
+                lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/Tasto1.png", 64, 60, false));
+
+            repaint();
+        }
+    }
+
 }

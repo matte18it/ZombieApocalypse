@@ -1,6 +1,7 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.LoginController;
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Utility.GameData;
@@ -28,6 +29,8 @@ public class LoginView extends JPanel{
     private boolean cambio = false, show = false;   //la variabile cambio serve per cambiare il verso dell'animazione del titolo, show invece per mostrare o nascondere la password
 
     public LoginView(){
+        //setto il cursore personalizzato
+        this.setCursor(loader.getCursor("/GameGeneral/crosshair.png", this));
 
         //Carico il font personalizzato
         font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 30, Font.PLAIN);
@@ -167,6 +170,12 @@ public class LoginView extends JPanel{
         c.insets = new Insets(20, 0, 0, 0);
         c.fill = GridBagConstraints.CENTER;
         panelPrincipale.add(btnSend, c);
+
+        if(GameData.setBg == 2 || GameData.setBg == 4){
+            lblNickame.setForeground(Color.white);
+            lblPassword.setForeground(Color.white);
+        }
+
     }
 
     public JTextField getNickname(){
