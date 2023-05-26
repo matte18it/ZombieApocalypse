@@ -13,7 +13,7 @@ public class GunModel {
 
     //Informazioni sull'arma e l'immagine
     enum gunType{KNIFE,PISTOL, SHOTGUN};
-    int [] damage= new int[]{2, 4, 7};
+    int [] damage= new int[]{1, 2, 4};
     int width= Settings.CELL_SIZEX;
     int height=Settings.CELL_SIZEY/2;
     int radius=Settings.CELL_SIZEY;
@@ -23,15 +23,21 @@ public class GunModel {
     int yPosy;
     boolean attack=false;
     public double angle;
+    public Rectangle hitBox;
 
     public GunModel(){
         xPosy=width+10;
         yPosy=height-5;
         angle=0;
+        hitBox=new Rectangle(xPosy,yPosy,width,height);
 
     }
     public void attack() {
         attack=true;
+
+        if(hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)){
+            Game.getInstance().getEnemyCharacter().hit();
+        }
 
     }
     public void stopAttack() {
@@ -70,8 +76,10 @@ public class GunModel {
 
 
 
+
         //Aggiorno posizione
         return new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy-20, Game.getInstance().getPlayerCharacter().getY()+yPosy);
+
 
     }
     //Ho bisogno di sapere se l'arma è in verticale o in orizzondale

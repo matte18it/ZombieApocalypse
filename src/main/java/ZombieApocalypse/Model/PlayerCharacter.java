@@ -1,12 +1,16 @@
 package ZombieApocalypse.Model;
 
+
+import ZombieApocalypse.Model.Audio;
+import ZombieApocalypse.Model.Character;
+import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.MenuBarView;
 
 import java.awt.*;
 
 
-public class PlayerCharacter extends Character{
+public class PlayerCharacter extends Character {
     //Gestisce il player e i suoi movimenti
 
     private boolean sound=false;
@@ -74,13 +78,12 @@ public class PlayerCharacter extends Character{
         hit=false;
     }
 
-public int countHit;
+    public int countHit;
     public void hit(){
         if(countHit==30 || countHit==0){
             countHit=0;
             hit=true;
             health--;
-            playSE(2);
             MenuBarView.lifeUpdate(false);
         }
 
@@ -118,3 +121,4 @@ public int countHit;
 
 
 }
+

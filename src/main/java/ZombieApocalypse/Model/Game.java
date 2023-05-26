@@ -1,4 +1,4 @@
- package ZombieApocalypse.Model;
+package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.GameFrame;
@@ -85,7 +85,7 @@ public class Game {
         return new Point(x1,y1);
     }
 
-    public Character getEnemyCharacter() {
+    public EnemyCharacter getEnemyCharacter() {
         return enemy;
     }
 
@@ -93,6 +93,9 @@ public class Game {
         //idea: creare un'array di nemici da scorrere
         //ora ne abbiamo solo uno
         //30 frame per hit
+
+        if(Game.getInstance().getEnemyCharacter().countHit==30)
+            Game.getInstance().getEnemyCharacter().stopHit();
         if(character.countHit==30)
             character.stopHit();
         if(character.hitBox.intersects(enemy.hitBox) ){

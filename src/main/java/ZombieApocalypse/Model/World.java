@@ -12,7 +12,7 @@ public class World {
         if(player.distance(enemy)<20)
             return true;
 
-         return false;
+        return false;
     }
 
     //Tutti i blocchi disegnabili

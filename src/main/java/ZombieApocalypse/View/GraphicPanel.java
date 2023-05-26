@@ -28,17 +28,16 @@ public class GraphicPanel extends JPanel {
         return gunView;
     }
     //immagini ordinate fino ad adesso
-    public final int numeroImmagini=1;
+    private final int numeroImmagini=1;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
-            //setto il cursore personalizzato
-            this.setCursor(ResourcesLoader.getInstance().getCursor("/GameGeneral/crosshair.png", this));
-            for(int i=0; i<numeroImmagini; i++){
-                String c=String.valueOf(i);
-                String path="/AmbienteDiGioco/Terreno/Terreno"+c+".png";
-                images[i]= ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
-
-            }
+        //setto il cursore personalizzato
+        this.setCursor(ResourcesLoader.getInstance().getCursor("/GameGeneral/crosshair.png", this));
+        for(int i=0; i<numeroImmagini; i++){
+            String c=String.valueOf(i);
+            String path="/AmbienteDiGioco/Terreno/Terreno"+c+".png";
+            images[i]= ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        }
 
     }
 
@@ -55,22 +54,38 @@ public class GraphicPanel extends JPanel {
                     //Random random=new Random();
                     //int value= random.nextInt(numeroImmagini);
                     g.drawImage(images[0], x, y, null);
-
                 }
 
             }
 
 
         }
-        if(Game.getInstance().getGunModel().isUp())    //Arma per orizzondale o verticale?
+
+        if(Game.getInstance().getGunModel().isUp()){
             g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getHeight(), Game.getInstance().getGunModel().getWidth(), null);
-        else
-            g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getWidth(),Game.getInstance().getGunModel().getHeight(), null);
+            Game.getInstance().getGunModel().hitBox.x=gunView.imagePosition.x;
+            Game.getInstance().getGunModel().hitBox.y=gunView.imagePosition.y;
+            Game.getInstance().getGunModel().hitBox.width=Game.getInstance().getGunModel().getHeight();
+            Game.getInstance().getGunModel().hitBox.height=Game.getInstance().getGunModel().getWidth();
+
+
+        }else{
+            Game.getInstance().getGunModel().hitBox.x=gunView.imagePosition.x;
+            Game.getInstance().getGunModel().hitBox.y=gunView.imagePosition.y;
+            Game.getInstance().getGunModel().hitBox.width=Game.getInstance().getGunModel().getWidth();
+            Game.getInstance().getGunModel().hitBox.height=Game.getInstance().getGunModel().getHeight();
+
+            g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), null);
+
+        }
+
+
         /* For debugging
         g.setColor(Color.red);
         g.drawRect(Game.getInstance().getPlayerCharacter().hitBox.x, Game.getInstance().getPlayerCharacter().hitBox.y, Game.getInstance().getPlayerCharacter().hitBox.width, Game.getInstance().getPlayerCharacter().hitBox.height);
         g.drawRect(Game.getInstance().getEnemyCharacter().hitBox.x, Game.getInstance().getEnemyCharacter().hitBox.y, Game.getInstance().getEnemyCharacter().hitBox.width, Game.getInstance().getEnemyCharacter().hitBox.height);
          */
+
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
         g.drawImage(skinnyEnemyView.getCurrentImage(), Game.getInstance().getEnemyCharacter().getX(), Game.getInstance().getEnemyCharacter().getY(), skinnyEnemyView.width, skinnyEnemyView.height, null);

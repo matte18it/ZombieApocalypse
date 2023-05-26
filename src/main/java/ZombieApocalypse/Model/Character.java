@@ -6,13 +6,12 @@ import java.awt.*;
 
 public class Character {
 
-    static int x ;
-    static int y ;
+    int x ;
+    int y ;
     final int maxHealth=6;
     public Rectangle hitBox;
     int wight;
     int height;
-    int speed;
     int centerX=wight/2;
     int centerY=height/2;
 
@@ -21,11 +20,11 @@ public class Character {
     int getMaxHealth(){
         return maxHealth;
     }
-     public static int getX() {
+    public int getX() {
         return x;
     }
 
-     public static int getY() {
+    public int getY() {
         return y;
     }
 
@@ -34,6 +33,9 @@ public class Character {
     int health=6;
     boolean movement = false;
     boolean hit=false;
+
+
+
     public enum movementDirection{RIGHT, LEFT, UP, DOWN};
     movementDirection dir;
 }
