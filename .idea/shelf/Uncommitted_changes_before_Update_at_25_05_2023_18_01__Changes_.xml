@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_25_05_2023_18_01_[Changes]" date="1685030554456" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2023_18_01_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 25/05/2023 18:01 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/ZombieApocalypse/Controller/MenuController.class" />
+    <option name="AFTER_PATH" value="target/classes/ZombieApocalypse/Controller/MenuController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2023_18_01_[Changes]/MenuController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/ZombieApocalypse/View/MenuBarView.class" />
+    <option name="AFTER_PATH" value="target/classes/ZombieApocalypse/View/MenuBarView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2023_18_01_[Changes]/MenuBarView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/ZombieApocalypse/View/CharacterView.class" />
+    <option name="AFTER_PATH" value="target/classes/ZombieApocalypse/View/CharacterView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2023_18_01_[Changes]/CharacterView.class" />
+  </binary>
+</changelist>
