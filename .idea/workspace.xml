@@ -5,45 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="About pt.4">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/Mouse/Mouse.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoA/TastoA.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoBarra/Barra.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoD/TastoD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoE/TastoE.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoESC/TastoESC.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoQ/TastoQ.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoS/TastoS.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoW/TastoW.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/Mouse/Mouse1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/Mouse/Mouse2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoA/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoA/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoBarra/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoBarra/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoD/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoD/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoE/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoE/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoESC/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoESC/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoQ/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoQ/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoS/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoS/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoW/Tasto1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoW/Tasto2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Loop/MenuLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Loop/MenuLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/MenuLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/MenuLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/EnemyCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/EnemyCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/GunModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/GunModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/SkinnyEnemyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/SkinnyEnemyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuBarView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +66,6 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoESC" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Login&amp;Menu" />
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
       <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\ArmieOggetti" />

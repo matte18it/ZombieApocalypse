@@ -63,12 +63,14 @@ public class GraphicPanel extends JPanel {
 
         }
 
+        g.setColor(Color.red);
     if(Game.getInstance().getGunModel().isUp()){
         g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getHeight(), Game.getInstance().getGunModel().getWidth(), null);
         Game.getInstance().getGunModel().hitBox.x=gunView.imagePosition.x;
         Game.getInstance().getGunModel().hitBox.y=gunView.imagePosition.y;
         Game.getInstance().getGunModel().hitBox.width=Game.getInstance().getGunModel().getHeight();
         Game.getInstance().getGunModel().hitBox.height=Game.getInstance().getGunModel().getWidth();
+        g.drawRect(Game.getInstance().getGunModel().hitBox.x, Game.getInstance().getGunModel().hitBox.y, Game.getInstance().getGunModel().hitBox.width, Game.getInstance().getGunModel().hitBox.height);
 
 
     }else{
@@ -76,6 +78,7 @@ public class GraphicPanel extends JPanel {
         Game.getInstance().getGunModel().hitBox.y=gunView.imagePosition.y;
         Game.getInstance().getGunModel().hitBox.width=Game.getInstance().getGunModel().getWidth();
         Game.getInstance().getGunModel().hitBox.height=Game.getInstance().getGunModel().getHeight();
+        g.drawRect(Game.getInstance().getGunModel().hitBox.x, Game.getInstance().getGunModel().hitBox.y, Game.getInstance().getGunModel().hitBox.width, Game.getInstance().getGunModel().hitBox.height);
 
         g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), null);
 
