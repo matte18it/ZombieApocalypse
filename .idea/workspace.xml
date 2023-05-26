@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="codice sistemato">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerAvanti.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDestra.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerIndietro.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerSinistra.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/Cambio1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/Cambio2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/shot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/EnemyCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/EnemyCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/SkinnyEnemyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/SkinnyEnemyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character$movementDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character$movementDirection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/EnemyCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/EnemyCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/change.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/change.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/fucile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/fucile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/pistola.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/pistola.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TutorialButton/change.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TutorialButton/change.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TutorialButton/fucile.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TutorialButton/fucile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TutorialButton/pistola.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TutorialButton/pistola.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,15 +50,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Pierf/Desktop/ZombieApocalypse/ZombieApocalypse"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pierf/Desktop/ZombieApocalypse/ZombieApocalypse&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ZombieApocalypse.View" />
@@ -59,10 +68,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/Player" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Login&amp;Menu" />
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
       <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\ArmieOggetti" />
-      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse" />
