@@ -28,7 +28,7 @@ public class GraphicPanel extends JPanel {
         return gunView;
     }
     //immagini ordinate fino ad adesso
-    private final int numeroImmagini=1;
+    public final int numeroImmagini=1;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
             //setto il cursore personalizzato
@@ -37,7 +37,8 @@ public class GraphicPanel extends JPanel {
                 String c=String.valueOf(i);
                 String path="/AmbienteDiGioco/Terreno/Terreno"+c+".png";
                 images[i]= ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
-        }
+
+            }
 
     }
 
@@ -54,6 +55,7 @@ public class GraphicPanel extends JPanel {
                     //Random random=new Random();
                     //int value= random.nextInt(numeroImmagini);
                     g.drawImage(images[0], x, y, null);
+
                 }
 
             }

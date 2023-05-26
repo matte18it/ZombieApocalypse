@@ -80,6 +80,7 @@ public int countHit;
             countHit=0;
             hit=true;
             health--;
+            playSE(2);
             MenuBarView.lifeUpdate(false);
         }
 

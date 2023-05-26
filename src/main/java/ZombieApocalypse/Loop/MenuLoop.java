@@ -17,8 +17,7 @@ public class MenuLoop {
         if (executor != null)
             return;
         executor = Executors.newSingleThreadScheduledExecutor();
-        executor.scheduleAtFixedRate(() -> view.updatePosition(),
-                0, 60, TimeUnit.MILLISECONDS);
+        executor.scheduleAtFixedRate(() -> view.updatePosition(),0, 60, TimeUnit.MILLISECONDS);
     }
 
     public void stop(){

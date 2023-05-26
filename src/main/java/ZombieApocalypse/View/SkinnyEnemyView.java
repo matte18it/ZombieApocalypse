@@ -1,6 +1,7 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.EnemyCharacter;
 import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Settings;
 
@@ -36,6 +37,17 @@ public class SkinnyEnemyView {
     }
 
     public void update() {
+        // Prendiamo coordinate del giocatore
+        int moveToX = PlayerCharacter.getX();
+        int moveToY = PlayerCharacter.getY();
+        // Settiamo distanza tra giocatore ed enemy
+        int diffX = moveToX - EnemyCharacter.getX();
+        int diffY = moveToY - EnemyCharacter.getY();
+        // diffX e diffY sono componenti di un vettore di cui possiamo calcolare l'angolo prendendo l'arctang
+        float angle = (float)Math.atan2(diffY, diffX);
+
+
+
         if(Game.getInstance().getEnemyCharacter().isHitted()){
             Game.getInstance().getEnemyCharacter().countHit++;
 

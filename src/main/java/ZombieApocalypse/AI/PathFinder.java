@@ -1,8 +1,11 @@
 package ZombieApocalypse.AI;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.World;
+import ZombieApocalypse.Model.World.*;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.GameFrame;
+import ZombieApocalypse.View.GraphicPanel;
 
 import java.util.ArrayList;
 
@@ -11,6 +14,7 @@ import java.util.ArrayList;
 
 public class PathFinder {
     GameFrame gf;
+    GraphicPanel gp;
     Node [][] node;
     public ArrayList<Node> openList = new ArrayList<>();
     public ArrayList<Node> pathList = new ArrayList<>();
@@ -18,8 +22,8 @@ public class PathFinder {
     public boolean goalReached = false;
     int step = 0;
 
-    public PathFinder(GameFrame gf) {
-        this.gf = gf;
+    public PathFinder(GraphicPanel gp) {
+        this.gp = gp;
         initNodes();
     }
 
@@ -79,7 +83,9 @@ public class PathFinder {
         while(col < Settings.WORLD_SIZEY && row < Settings.WORLD_SIZEX){
             // Set solid node
             // Settiamo tileNum a col e row della mappa, poi si farà if tileNum.collision == true
-            int tileNum;
+            int tileNum = gp.numeroImmagini;
+
+
 
 
         }
