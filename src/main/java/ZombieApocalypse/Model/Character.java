@@ -34,9 +34,6 @@ public class Character {
     int health=6;
     boolean movement = false;
     boolean hit=false;
-
-
-
     public enum movementDirection{RIGHT, LEFT, UP, DOWN};
     movementDirection dir;
 }
