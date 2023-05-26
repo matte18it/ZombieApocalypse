@@ -4,24 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="codice sistemato">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerAvanti.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerDestra.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerIndietro.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/PlayerSinistra.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/Cambio1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/Cambio2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/shot.png" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="About">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Leaderboard/bgLeaderBoard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Leaderboard/trasparente.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Loop/LeaderboardLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/change.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/change.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/fucile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/fucile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TutorialButton/pistola.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/TutorialButton/pistola.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/GameData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TutorialButton/change.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TutorialButton/change.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TutorialButton/fucile.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TutorialButton/fucile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TutorialButton/pistola.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TutorialButton/pistola.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/LoginController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +47,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pierf/Desktop/ZombieApocalypse/ZombieApocalypse&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/matteocanino/Desktop/Progetti/UID/ZombieApocalypse&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -68,11 +59,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/Leaderboard" />
       <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Player" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Login&amp;Menu" />
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
-      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\ArmieOggetti" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse" />
@@ -264,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685087110986</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="About">
+      <created>1685125581470</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1685125581470</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -288,6 +286,7 @@
     <MESSAGE value="About pt.4" />
     <MESSAGE value="Revert &quot;Danni al nemico&quot;&#10;&#10;This reverts commit ee387b1d" />
     <MESSAGE value="codice sistemato" />
-    <option name="LAST_COMMIT_MESSAGE" value="codice sistemato" />
+    <MESSAGE value="About" />
+    <option name="LAST_COMMIT_MESSAGE" value="About" />
   </component>
 </project>

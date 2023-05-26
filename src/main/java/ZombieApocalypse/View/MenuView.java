@@ -1,6 +1,7 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.MenuController;
+import ZombieApocalypse.Loop.LeaderboardLoop;
 import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
@@ -13,10 +14,23 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MenuView extends JPanel {
+    //variabili utili per la leaderboard
+    ArrayList<String> nickname = new ArrayList<String>();
+    ArrayList<Integer> punti = new ArrayList<Integer>();
+    JLabel bg, sfondo1, sfondo2, sfondo3, sfondo4, sfondo5, sfondo6;
+    LeaderboardLoop loop;
+    //Variabili per i menu
     private ResourcesLoader loader = ResourcesLoader.getInstance();
     private int borderValueRight, borderValueLeft;
     private boolean cambio = false;
@@ -32,7 +46,6 @@ public class MenuView extends JPanel {
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
 
     public MenuView(){
-
         //setto il cursore personalizzato
         this.setCursor(loader.getCursor("/GameGeneral/crosshair.png", this));
 
@@ -76,10 +89,13 @@ public class MenuView extends JPanel {
         //Controllo se è attiva la schermata 'About' la elimino
         if(aboutPanel != null && aboutPanel.isShowing())
             this.remove(aboutPanel);
+        loop = new LeaderboardLoop(this);
+        loop.start();
         //Inizializzo i componenti
         initComponent();
         controller.addListener();
         this.add(panelMenu);
+        repaint();
         revalidate();
     }
 
@@ -104,6 +120,7 @@ public class MenuView extends JPanel {
         btnPlay.setFont(font.deriveFont(Font.PLAIN, 30));
         btnPlay.setMinimumSize(new Dimension(197, 60));
         btnPlay.setMaximumSize(new Dimension(197, 60));
+        btnPlay.setBorder(new EmptyBorder(0, 330, 0, 0));
         c.gridx = 0;
         c.gridy = 0;
         panelMenu.add(btnPlay, c);
@@ -119,6 +136,7 @@ public class MenuView extends JPanel {
         btnSettings.setFont(font.deriveFont(Font.PLAIN, 30));
         btnSettings.setMinimumSize(new Dimension(197, 60));
         btnSettings.setMaximumSize(new Dimension(197, 60));
+        btnSettings.setBorder(new EmptyBorder(0, 330, 0, 0));
         c.gridx = 0;
         c.gridy = 1;
         panelMenu.add(btnSettings, c);
@@ -133,6 +151,7 @@ public class MenuView extends JPanel {
         btnEditor.setFont(font.deriveFont(Font.PLAIN, 30));
         btnEditor.setMinimumSize(new Dimension(197, 60));
         btnEditor.setMaximumSize(new Dimension(197, 60));
+        btnEditor.setBorder(new EmptyBorder(0, 330, 0, 0));
         c.gridx = 0;
         c.gridy = 2;
         panelMenu.add(btnEditor, c);
@@ -147,6 +166,7 @@ public class MenuView extends JPanel {
         btnAbout.setFont(font.deriveFont(Font.PLAIN, 30));
         btnAbout.setMinimumSize(new Dimension(197, 60));
         btnAbout.setMaximumSize(new Dimension(197, 60));
+        btnAbout.setBorder(new EmptyBorder(0, 330, 0, 0));
         c.gridx = 0;
         c.gridy = 3;
         panelMenu.add(btnAbout, c);
@@ -161,15 +181,83 @@ public class MenuView extends JPanel {
         btnExit.setFont(font.deriveFont(Font.PLAIN, 30));
         btnExit.setMinimumSize(new Dimension(197, 60));
         btnExit.setMaximumSize(new Dimension(197, 60));
+        btnExit.setBorder(new EmptyBorder(0, 330, 0, 0));
         c.gridx = 0;
         c.gridy = 4;
         panelMenu.add(btnExit, c);
+
+        bg = new JLabel();
+        bg.setIcon(loader.getImageIcon("/Leaderboard/bgLeaderBoard.png", 330, 400, false));
+        bg.setBorder(new EmptyBorder(0, 20, 0, 0));
+        bg.setLayout(new BoxLayout(bg, BoxLayout.Y_AXIS));
+        c.gridx = 1;
+        c.gridy = 0;
+        c.gridheight = 5;
+        c.gridwidth = 5;
+        c.fill = GridBagConstraints.HORIZONTAL;
+
+        sfondo1 = new JLabel("Leaderboard");
+        sfondo1.setFont(font.deriveFont(Font.PLAIN, 30));
+        sfondo1.setForeground(Color.WHITE);
+        sfondo1.setVerticalTextPosition(JLabel.CENTER);
+        sfondo1.setHorizontalTextPosition(JLabel.CENTER);
+        sfondo1.setIcon(loader.getImageIcon("/Leaderboard/trasparente.png", 270, 51, false));
+        sfondo1.setBorder(new EmptyBorder(15, 15, 0, 0));
+        bg.add(sfondo1);
+
+        sfondo2 = new JLabel("");
+        sfondo2.setFont(font.deriveFont(Font.PLAIN, 15));
+        sfondo2.setForeground(Color.WHITE);
+        sfondo2.setVerticalTextPosition(JLabel.CENTER);
+        sfondo2.setHorizontalTextPosition(JLabel.CENTER);
+        sfondo2.setIcon(loader.getImageIcon("/Login&Menu/txtGUI.png", 270, 51, false));
+        sfondo2.setBorder(new EmptyBorder(5, 15, 0, 0));
+        bg.add(sfondo2);
+
+        sfondo3 = new JLabel("");
+        sfondo3.setFont(font.deriveFont(Font.PLAIN, 15));
+        sfondo3.setForeground(Color.WHITE);
+        sfondo3.setVerticalTextPosition(JLabel.CENTER);
+        sfondo3.setHorizontalTextPosition(JLabel.CENTER);
+        sfondo3.setIcon(loader.getImageIcon("/Login&Menu/txtGUI.png", 270, 51, false));
+        sfondo3.setBorder(new EmptyBorder(10, 15, 0, 0));
+        bg.add(sfondo3);
+
+        sfondo4 = new JLabel("");
+        sfondo4.setFont(font.deriveFont(Font.PLAIN, 15));
+        sfondo4.setForeground(Color.WHITE);
+        sfondo4.setVerticalTextPosition(JLabel.CENTER);
+        sfondo4.setHorizontalTextPosition(JLabel.CENTER);
+        sfondo4.setIcon(loader.getImageIcon("/Login&Menu/txtGUI.png", 270, 51, false));
+        sfondo4.setBorder(new EmptyBorder(10, 15, 0, 0));
+        bg.add(sfondo4);
+
+        sfondo5 = new JLabel("");
+        sfondo5.setFont(font.deriveFont(Font.PLAIN, 15));
+        sfondo5.setForeground(Color.WHITE);
+        sfondo5.setVerticalTextPosition(JLabel.CENTER);
+        sfondo5.setHorizontalTextPosition(JLabel.CENTER);
+        sfondo5.setIcon(loader.getImageIcon("/Login&Menu/txtGUI.png", 270, 51, false));
+        sfondo5.setBorder(new EmptyBorder(10, 15, 0, 0));
+        bg.add(sfondo5);
+
+        sfondo6 = new JLabel("You) Matte18_ITA (400 pt)");
+        sfondo6.setFont(font.deriveFont(Font.PLAIN, 15));
+        sfondo6.setForeground(Color.WHITE);
+        sfondo6.setVerticalTextPosition(JLabel.CENTER);
+        sfondo6.setHorizontalTextPosition(JLabel.CENTER);
+        sfondo6.setIcon(loader.getImageIcon("/Login&Menu/txtGUI.png", 270, 51, false));
+        sfondo6.setBorder(new EmptyBorder(30, 15, 0, 0));
+        bg.add(sfondo6);
+
+        panelMenu.add(bg, c);
     }
 
     public void setAbout() {
         initAbout();
         this.remove(panelMenu);
         this.add(aboutPanel);
+        repaint();
         revalidate();
     }
 
@@ -438,5 +526,41 @@ public class MenuView extends JPanel {
 
         //Disegno l'immagine come sfondo del panel
         g.drawImage(bgImage, 0, 0, null);
+    }
+
+    public void updateLeaderboard() throws IOException {
+        String ris = "";
+        boolean supp = true;
+
+        //chiamata script per leggere la classifica
+        URL script = new URL("https://progettouid.altervista.org/ZombieApocalypse/getLeaderboard.php?nickname=" + GameData.nick);
+        URLConnection conn = script.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+
+        //smistamento classifica
+        while ((inputLine = in.readLine()) != null) {
+            ris = inputLine;
+            if(supp){
+                supp = false;
+                nickname.add(ris);
+            }
+            else{
+                supp = true;
+                punti.add(Integer.parseInt(ris));
+            }
+        }
+
+        sfondo2.setText("1) " + nickname.get(0) + " (" + punti.get(0) + " pt)");
+        sfondo3.setText("2) " + nickname.get(1) + " (" + punti.get(1) + " pt)");
+        sfondo4.setText("3) " + nickname.get(2) + " (" + punti.get(2) + " pt)");
+        sfondo5.setText("4) " + nickname.get(3) + " (" + punti.get(3) + " pt)");
+        sfondo6.setText("" + GameData.nick + "(" + GameData.punti + " pt)");
+
+        //svuoto gli array
+        nickname.clear();
+        punti.clear();
+
+        in.close();
     }
 }
