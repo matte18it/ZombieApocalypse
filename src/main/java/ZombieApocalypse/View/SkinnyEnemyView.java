@@ -37,7 +37,7 @@ public class SkinnyEnemyView {
     }
 
     public void update() {
-        if(Game.getInstance().getEnemyCharacter().isHitted()){
+        if(Game.getInstance().getEnemyCharacter().getHit()){
             Game.getInstance().getEnemyCharacter().countHit++;
 
             if( Game.getInstance().getEnemyCharacter().countHit%2==0){

@@ -41,54 +41,18 @@ public class PlayerCharacter extends Character {
         x=50;
         y=50;
         health=6;
-        hitBox= new Rectangle(x, y, Settings.CELL_SIZEX, Settings.CELL_SIZEY);
+        super.setHitbox();
     }
 
 
-
-
-    void startMovementUp() {
-        movement = true;
-        dir=movementDirection.UP;
-    }
-    void startMovementDown() {
-        movement = true;
-        dir=movementDirection.DOWN;
-    }
-    void startMovementRight() {
-        movement = true;
-        dir=movementDirection.RIGHT;
-    }
-    void startMovementLeft() {
-        movement = true;
-        dir=movementDirection.LEFT;
-    }
-
-    void stopMovement() {
-        movement = false;
-    }
-
-    public boolean isMoving() {
-        return movement;
-    }
-    public boolean getHit() {
-        return hit;
-    }
-    public void stopHit() {
-        hit=false;
-    }
-
-    public int countHit;
-    public void hit(){
+    public void hit() {
+        super.hit();
         if(countHit==30 || countHit==0){
-            countHit=0;
-            hit=true;
             health--;
             MenuBarView.lifeUpdate(false);
         }
-
-
     }
+
     public void cure(){
         health++;
         MenuBarView.lifeUpdate(true);
