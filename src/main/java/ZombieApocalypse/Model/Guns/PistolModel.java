@@ -1,7 +1,7 @@
 package ZombieApocalypse.Model.Guns;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Settings;
+import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 

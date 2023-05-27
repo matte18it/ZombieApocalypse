@@ -1,8 +1,6 @@
 package ZombieApocalypse.Model;
 
-import ZombieApocalypse.Settings;
-
-import java.awt.*;
+import ZombieApocalypse.Utility.Settings;
 
 public class EnemyCharacter extends Character{
     EnemyCharacter(){

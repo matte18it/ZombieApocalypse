@@ -1,9 +1,8 @@
 package ZombieApocalypse.View.MenuBar;
 
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class MenuBarAnimation {
     private static int numImmagini=3;

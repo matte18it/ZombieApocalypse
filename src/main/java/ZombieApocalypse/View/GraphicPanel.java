@@ -2,8 +2,8 @@ package ZombieApocalypse.View;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.World;
-import ZombieApocalypse.ResourcesLoader;
-import ZombieApocalypse.Settings;
+import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.Gun.PistolView;
 import ZombieApocalypse.View.Gun.KnifeView;
 import ZombieApocalypse.View.Gun.ShotgunView;

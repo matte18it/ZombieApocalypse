@@ -2,7 +2,7 @@ package ZombieApocalypse.View.Player;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.PlayerCharacter;
-import ZombieApocalypse.Settings;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.CharacterAnimation;
 
 import java.awt.*;

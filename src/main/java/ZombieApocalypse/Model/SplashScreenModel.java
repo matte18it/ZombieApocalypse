@@ -1,6 +1,6 @@
 package ZombieApocalypse.Model;
 
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;

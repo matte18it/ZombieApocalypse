@@ -3,27 +3,21 @@ package ZombieApocalypse.View;
 import ZombieApocalypse.Controller.MenuController;
 import ZombieApocalypse.Loop.LeaderboardLoop;
 import ZombieApocalypse.Model.MenuModel;
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.Line;
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MenuView extends JPanel {
     //variabili utili per la leaderboard
@@ -213,7 +207,6 @@ public class MenuView extends JPanel {
         bg.add(sfondo1);
 
         sfondo2 = new JLabel("");
-        sfondo2.setFont(font.deriveFont(Font.PLAIN, 15));
         sfondo2.setForeground(Color.WHITE);
         sfondo2.setVerticalTextPosition(JLabel.CENTER);
         sfondo2.setHorizontalTextPosition(JLabel.CENTER);
@@ -222,7 +215,6 @@ public class MenuView extends JPanel {
         bg.add(sfondo2);
 
         sfondo3 = new JLabel("");
-        sfondo3.setFont(font.deriveFont(Font.PLAIN, 15));
         sfondo3.setForeground(Color.WHITE);
         sfondo3.setVerticalTextPosition(JLabel.CENTER);
         sfondo3.setHorizontalTextPosition(JLabel.CENTER);
@@ -231,7 +223,6 @@ public class MenuView extends JPanel {
         bg.add(sfondo3);
 
         sfondo4 = new JLabel("");
-        sfondo4.setFont(font.deriveFont(Font.PLAIN, 15));
         sfondo4.setForeground(Color.WHITE);
         sfondo4.setVerticalTextPosition(JLabel.CENTER);
         sfondo4.setHorizontalTextPosition(JLabel.CENTER);
@@ -240,7 +231,6 @@ public class MenuView extends JPanel {
         bg.add(sfondo4);
 
         sfondo5 = new JLabel("");
-        sfondo5.setFont(font.deriveFont(Font.PLAIN, 15));
         sfondo5.setForeground(Color.WHITE);
         sfondo5.setVerticalTextPosition(JLabel.CENTER);
         sfondo5.setHorizontalTextPosition(JLabel.CENTER);
@@ -249,7 +239,6 @@ public class MenuView extends JPanel {
         bg.add(sfondo5);
 
         sfondo6 = new JLabel("You) Matte18_ITA (400 pt)");
-        sfondo6.setFont(font.deriveFont(Font.PLAIN, 15));
         sfondo6.setForeground(Color.WHITE);
         sfondo6.setVerticalTextPosition(JLabel.CENTER);
         sfondo6.setHorizontalTextPosition(JLabel.CENTER);
@@ -559,10 +548,37 @@ public class MenuView extends JPanel {
         }
 
         sfondo2.setText("1) " + nickname.get(0) + " (" + punti.get(0) + " pt)");
+        sfondo2.setForeground(new Color(255, 215, 0));
+        if(nickname.get(0).length() < 14)
+            sfondo2.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo2.setFont(font.deriveFont(Font.PLAIN, 11));
+
         sfondo3.setText("2) " + nickname.get(1) + " (" + punti.get(1) + " pt)");
+        sfondo3.setForeground(new Color(192, 192, 192));
+        if(nickname.get(1).length() < 14)
+            sfondo3.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo3.setFont(font.deriveFont(Font.PLAIN, 11));
+
         sfondo4.setText("3) " + nickname.get(2) + " (" + punti.get(2) + " pt)");
+        sfondo4.setForeground(new Color(205, 127, 50));
+        if(nickname.get(2).length() < 14)
+            sfondo4.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo4.setFont(font.deriveFont(Font.PLAIN, 11));
+
         sfondo5.setText("4) " + nickname.get(3) + " (" + punti.get(3) + " pt)");
+        if(nickname.get(3).length() < 14)
+            sfondo5.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo5.setFont(font.deriveFont(Font.PLAIN, 11));
+
         sfondo6.setText("" + GameData.nick + "(" + GameData.punti + " pt)");
+        if(GameData.nick.length() < 14)
+            sfondo6.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo6.setFont(font.deriveFont(Font.PLAIN, 11));
 
         //svuoto gli array
         nickname.clear();

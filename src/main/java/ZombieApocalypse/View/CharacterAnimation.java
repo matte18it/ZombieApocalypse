@@ -1,7 +1,7 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.ResourcesLoader;
-import ZombieApocalypse.Settings;
+import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 import java.util.ArrayList;

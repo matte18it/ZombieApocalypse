@@ -1,7 +1,5 @@
 package ZombieApocalypse.Utility;
 
-import ZombieApocalypse.ResourcesLoader;
-
 import javax.sound.sampled.Clip;
 
 public class PlayWav {

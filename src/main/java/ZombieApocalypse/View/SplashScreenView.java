@@ -1,7 +1,7 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Model.SplashScreenModel;
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

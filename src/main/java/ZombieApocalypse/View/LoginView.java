@@ -1,8 +1,7 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.LoginController;
-import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Utility.GameData;
 
@@ -10,12 +9,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.io.IOException;
-import java.util.Random;
 
 public class LoginView extends JPanel{
     private ResourcesLoader loader = ResourcesLoader.getInstance();

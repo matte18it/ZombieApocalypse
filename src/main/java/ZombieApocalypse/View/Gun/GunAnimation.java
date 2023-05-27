@@ -1,7 +1,7 @@
 package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 
 import java.awt.*;
 import java.util.ArrayList;

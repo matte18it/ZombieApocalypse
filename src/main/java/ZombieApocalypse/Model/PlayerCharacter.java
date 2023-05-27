@@ -1,12 +1,7 @@
 package ZombieApocalypse.Model;
 
 
-import ZombieApocalypse.Model.Audio;
-import ZombieApocalypse.Model.Character;
-import ZombieApocalypse.Model.World;
-import ZombieApocalypse.Settings;
-
-import java.awt.*;
+import ZombieApocalypse.Utility.Settings;
 
 
 public class PlayerCharacter extends Character {

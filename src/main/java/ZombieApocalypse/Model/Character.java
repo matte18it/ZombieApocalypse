@@ -1,7 +1,5 @@
 package ZombieApocalypse.Model;
 
-import ZombieApocalypse.Settings;
-
 import java.awt.*;
 
 public class Character {

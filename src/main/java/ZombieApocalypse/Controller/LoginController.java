@@ -1,7 +1,7 @@
 package ZombieApocalypse.Controller;
 
 import ZombieApocalypse.Model.LoginModel;
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.View.LoginView;
 
@@ -27,7 +27,7 @@ public class LoginController {
             @Override
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
-                if(view.getNickname().getText().length() > 12)
+                if(view.getNickname().getText().length() > 20)
                     e.consume();
             }
         });

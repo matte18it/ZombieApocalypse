@@ -1,8 +1,8 @@
 package ZombieApocalypse.View.MenuBar;
 
-import ZombieApocalypse.ResourcesLoader;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Settings;
+import ZombieApocalypse.Utility.Settings;
 
 import javax.swing.*;
 import java.awt.*;

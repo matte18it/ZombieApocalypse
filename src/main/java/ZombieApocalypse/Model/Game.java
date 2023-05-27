@@ -3,7 +3,7 @@ package ZombieApocalypse.Model;
 import ZombieApocalypse.Model.Guns.KnifeModel;
 import ZombieApocalypse.Model.Guns.PistolModel;
 import ZombieApocalypse.Model.Guns.ShotgunModel;
-import ZombieApocalypse.Settings;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 

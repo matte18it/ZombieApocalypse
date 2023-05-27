@@ -1,6 +1,6 @@
 package ZombieApocalypse.Model;
 
-import ZombieApocalypse.Settings;
+import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 

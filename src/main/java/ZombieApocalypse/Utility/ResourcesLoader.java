@@ -1,15 +1,13 @@
-package ZombieApocalypse;
+package ZombieApocalypse.Utility;
 
 import org.joda.time.DateTime;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
-import javax.swing.text.StyleConstants;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ResourcesLoader {
