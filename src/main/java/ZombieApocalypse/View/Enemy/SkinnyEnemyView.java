@@ -1,4 +1,4 @@
-package ZombieApocalypse.View;
+package ZombieApocalypse.View.Enemy;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.PlayerCharacter;
@@ -19,8 +19,8 @@ public class SkinnyEnemyView {
     private final CharacterAnimation hitLeft;
     private final CharacterAnimation hitRight;
 
-    final int width = Settings.CELL_SIZEX;
-    final int height = Settings.CELL_SIZEY;
+    public final int width = Settings.CELL_SIZEX;
+    public  final int height = Settings.CELL_SIZEY;
 
     private Image currentImage;
 

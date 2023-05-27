@@ -1,7 +1,6 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Settings;
-import ZombieApocalypse.View.MenuBarView;
 
 import java.awt.*;
 

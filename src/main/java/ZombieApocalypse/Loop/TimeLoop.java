@@ -2,7 +2,6 @@ package ZombieApocalypse.Loop;
 
 import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.View.MenuBarView;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

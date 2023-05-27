@@ -1,4 +1,4 @@
-package ZombieApocalypse.View;
+package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.ResourcesLoader;

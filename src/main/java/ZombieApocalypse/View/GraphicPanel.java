@@ -4,7 +4,9 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Settings;
-
+import ZombieApocalypse.View.Gun.GunView;
+import ZombieApocalypse.View.Player.CharacterView;
+import ZombieApocalypse.View.Enemy.SkinnyEnemyView;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;

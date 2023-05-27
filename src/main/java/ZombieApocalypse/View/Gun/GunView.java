@@ -1,4 +1,4 @@
-package ZombieApocalypse.View;
+package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Loop.TimeLoop;
 import ZombieApocalypse.Model.Game;

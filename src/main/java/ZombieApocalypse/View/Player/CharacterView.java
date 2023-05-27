@@ -1,8 +1,9 @@
-package ZombieApocalypse.View;
+package ZombieApocalypse.View.Player;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Settings;
+import ZombieApocalypse.View.CharacterAnimation;
 
 import java.awt.*;
 
@@ -18,8 +19,8 @@ public class CharacterView {
     private final CharacterAnimation hitLeft;
     private final CharacterAnimation hitRight;
 
-    final int width = Settings.CELL_SIZEX;
-    final int height = Settings.CELL_SIZEY;
+    public final int width = Settings.CELL_SIZEX;
+    public final int height = Settings.CELL_SIZEY;
 
     private Image currentImage;
 

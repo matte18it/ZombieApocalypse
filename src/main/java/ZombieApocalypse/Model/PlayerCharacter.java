@@ -5,7 +5,6 @@ import ZombieApocalypse.Model.Audio;
 import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Settings;
-import ZombieApocalypse.View.MenuBarView;
 
 import java.awt.*;
 
@@ -49,26 +48,26 @@ public class PlayerCharacter extends Character {
         super.hit();
         if(countHit==30 || countHit==0){
             health--;
-            MenuBarView.lifeUpdate(false);
+            Game.getInstance().getMenuBar().removeHeart();
         }
     }
 
     public void cure(){
         health++;
-        MenuBarView.lifeUpdate(true);
+        Game.getInstance().getMenuBar().addHeart();
     }
 
 
     public void move() {
 
         if(dir==movementDirection.RIGHT && (world.isGround0(getX()+Settings.CELL_SIZEX, getY())) && !world.isEnemy(getX()+20, getY()))
-            x += 10;
+            x += (10*speed);
         else if(dir==movementDirection.LEFT && (world.isGround0(getX()-Settings.CELL_SIZEX, getY())) && !world.isEnemy(getX()-20, getY()))
-            x -= 10;
+            x -= (10*speed);
         else if(dir==movementDirection.UP && (world.isGround0(getX(), getY()-Settings.CELL_SIZEY)) && !world.isEnemy(getX(), getY()-20) )
-            y -= 10;
+            y -= (10*speed);
         else if(dir==movementDirection.DOWN && (world.isGround0(getX(), getY()+Settings.CELL_SIZEY))&& !world.isEnemy(getX(), getY()+20))
-            y += 10;
+            y += (10*speed);
         else
             movement=false;
         if(sound){

@@ -1,4 +1,4 @@
-package ZombieApocalypse.View;
+package ZombieApocalypse.View.MenuBar;
 
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Model.Game;
@@ -11,14 +11,14 @@ import static ZombieApocalypse.Utility.GameData.nick;
 
 public class MenuBarView extends JPanel {
     Font font= ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
-    static long start;
-    static MenuBarAnimation menuBarAnimation=new MenuBarAnimation();
+
+     MenuBarAnimation menuBarAnimation=new MenuBarAnimation();
+     int heart;
     JLabel playerName;
-     JPanel flashPanel;
     JLabel ammoLabel;
-     static JLabel [] healthLabel;
+     JLabel [] healthLabel;
     JLabel pointLabel;
-    static JLabel timeLabel;
+     JLabel timeLabel;
      JLabel gunLabel1;
     JLabel gunLabel2;
     public MenuBarView(){
@@ -66,9 +66,7 @@ public class MenuBarView extends JPanel {
         c.gridy=0;
         c.insets=new Insets(0,5,0,0);
         healthAmmoPanel.add(array, c);
-        flashPanel=new JPanel();
-        flashPanel.setOpaque(false);
-        healthAmmoPanel.add(flashPanel, c);
+
 
         //Pannello delle Munizioni
 
@@ -190,37 +188,34 @@ public class MenuBarView extends JPanel {
         add(pointPanel);
         add(timePanel);
     }
-
-    public static void lifeUpdate(boolean b) {
-        if(b && Game.getInstance().getPlayerMaxLife()<Game.getInstance().getPlayerLife()){
-            healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 30));
-
-        }
-        else if (!b && Game.getInstance().getPlayerLife()>-1){
-            healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 30));
-
-
-        }
-
+    public void addHeart(){
+        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 30));
     }
+    public void removeHeart(){
+        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 30));
+    }
+
+
+
     public void setBar() {
+        heart=Game.getInstance().getPlayerLife();
         for(int i=0; i<Game.getInstance().getPlayerMaxLife(); i++){
             if(i<Game.getInstance().getPlayerLife())
             healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 30));
             else
                 healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 30));
-
         }
-
-
         gunLabel1.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
         gunLabel2.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
         timeLabel.setForeground(Color.WHITE);
-
     }
-    public static void updateTimeLable(long t){
+    public  void updateTimeLable(long t){
         timeLabel.setText(String.valueOf(t));
     }
+    public  void updateScoreLable(long t){
+        pointLabel.setText(String.valueOf(t));
+    }
+
 
 
 

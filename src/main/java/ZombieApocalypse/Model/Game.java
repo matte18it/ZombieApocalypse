@@ -2,7 +2,7 @@ package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.GameFrame;
-import ZombieApocalypse.View.MenuBarView;
+import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 import java.awt.*;
 
@@ -11,6 +11,13 @@ public class Game {
     private final World world = new World();
     private final PlayerCharacter character = new PlayerCharacter();
     private final EnemyCharacter enemy = new EnemyCharacter();
+    private  MenuBarModel menuBar;
+    public void setMenuBar(MenuBarView m){
+        menuBar=new MenuBarModel(m);
+    }
+    public MenuBarModel getMenuBar(){
+        return menuBar;
+    }
     private final GunModel gun = new GunModel();
 
     private static final Game instance = new Game();
@@ -67,11 +74,7 @@ public class Game {
 
 
 
-    public void updateTime(long start) {
-        long timeElapsed=System.nanoTime()-start;
-        long t=timeElapsed/1000000000;
-        MenuBarView.updateTimeLable(t);
-    }
+
 
 
     public void attack() {
@@ -103,5 +106,9 @@ public class Game {
         }
 
 
+    }
+
+    public void updateTime(long time) {
+        menuBar.updateTimeLable(time);
     }
 }

@@ -1,4 +1,4 @@
-package ZombieApocalypse.View;
+package ZombieApocalypse.View.MenuBar;
 
 import ZombieApocalypse.ResourcesLoader;
 

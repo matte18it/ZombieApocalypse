@@ -1,5 +1,6 @@
 package ZombieApocalypse.View;
-
+import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.View.MenuBar.MenuBarView;
 import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.Loop.GameLoop;
 import ZombieApocalypse.Loop.MenuLoop;
@@ -89,6 +90,7 @@ public class GameFrame extends JPanel {
         frameGame.setTitle("Game");
 
         MenuBarView menuBarView=new MenuBarView();
+        Game.getInstance().setMenuBar(menuBarView);
         GraphicPanel graphicPanel=new GraphicPanel();
         frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
 

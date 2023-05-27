@@ -1,7 +1,6 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Settings;
-import ZombieApocalypse.View.MenuBarView;
 
 import java.awt.*;
 
@@ -14,6 +13,7 @@ public class Character {
     public enum movementDirection{RIGHT, LEFT, UP, DOWN};
     movementDirection dir;
     int health;
+    int speed=1;
     boolean movement = false;
     boolean hit=false;
     int wight;
