@@ -10,13 +10,13 @@ import ZombieApocalypse.Settings;
 import ZombieApocalypse.Loop.LoginLoop;
 import ZombieApocalypse.Loop.TimeLoop;
 import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayMusic;
+import ZombieApocalypse.Utility.PlayWav;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JPanel {
-    private static PlayMusic playMenuMusic = PlayMusic.getInstance();
+    private static PlayWav playMenuMusic = PlayWav.getInstance();
     public static JFrame frameGame = new JFrame("Login");
     private static GameLoop gameLoopObject;
     public static LoginView panel;

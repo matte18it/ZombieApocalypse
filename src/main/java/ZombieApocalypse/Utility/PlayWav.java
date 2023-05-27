@@ -3,16 +3,15 @@ package ZombieApocalypse.Utility;
 import ZombieApocalypse.ResourcesLoader;
 
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.FloatControl;
 
-public class PlayMusic {
+public class PlayWav {
     private static Clip clip = null;
-    private static PlayMusic play = null;
+    private static PlayWav play = null;
 
-    private PlayMusic(){}
-    public static PlayMusic getInstance(){
+    private PlayWav(){}
+    public static PlayWav getInstance(){
         if(play == null)
-            play = new PlayMusic();
+            play = new PlayWav();
         return play;
     }
     public void play(String path){
