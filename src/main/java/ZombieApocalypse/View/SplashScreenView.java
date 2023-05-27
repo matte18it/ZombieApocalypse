@@ -1,6 +1,5 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.Controller.SplashScreenController;
 import ZombieApocalypse.Model.SplashScreenModel;
 import ZombieApocalypse.ResourcesLoader;
 
@@ -12,7 +11,6 @@ import java.io.IOException;
 
 public class SplashScreenView extends JPanel {
     private SplashScreenModel model;
-    private SplashScreenController controller;
     private ResourcesLoader loader = ResourcesLoader.getInstance();
     public JLabel bar, bgBar;       //Progress Bar
     private JLabel titolo;          //Label per visualizzare il titolo
@@ -24,9 +22,7 @@ public class SplashScreenView extends JPanel {
 
         //Creo un model e un controller
         model = new SplashScreenModel(this);
-        controller = new SplashScreenController(model, this);
         //Assegno i listener ai componenti
-        controller.addListener();
 
         initComponent();
 

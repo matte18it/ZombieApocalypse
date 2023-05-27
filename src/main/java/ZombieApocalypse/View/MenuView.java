@@ -7,6 +7,7 @@ import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.Line;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
