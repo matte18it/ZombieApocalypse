@@ -1,8 +1,6 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.Controller.LoginController;
 import ZombieApocalypse.Controller.SplashScreenController;
-import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Model.SplashScreenModel;
 import ZombieApocalypse.ResourcesLoader;
 
@@ -10,15 +8,14 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class SplashScreenView extends JPanel {
     private SplashScreenModel model;
     private SplashScreenController controller;
     private ResourcesLoader loader = ResourcesLoader.getInstance();
-    public JProgressBar bar;  //Progress Bar
-    private JLabel titolo;       //Label per visualizzare il titolo
+    public JLabel bar, bgBar;       //Progress Bar
+    private JLabel titolo;          //Label per visualizzare il titolo
     private JPanel panel1, panel2;
 
     public SplashScreenView() {
@@ -34,13 +31,17 @@ public class SplashScreenView extends JPanel {
         initComponent();
 
         //Setto il layout del pannello principale
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
 
         //Inserisco ora i componenti nel pannello principale
-        this.add(Box.createGlue());
-        this.add(panel1);
-        this.add(panel2);
-        this.add(Box.createGlue());
+        this.add(panel1, c);
+        c.gridx = 0;
+        c.gridy = 1;
+        c.fill = GridBagConstraints.VERTICAL;
+        this.add(panel2, c);
     }
 
     private void initComponent() {
@@ -60,17 +61,24 @@ public class SplashScreenView extends JPanel {
         panel1.setOpaque(false);
         panel1.setMaximumSize(new Dimension(800, 200));
 
-        //creo la splash screen
-        bar = new JProgressBar();
-        bar.setMaximum(100);
-        bar.setMinimum(0);
+        bgBar = new JLabel();
+        bgBar.setIcon(loader.getImageIcon("/SplashScreen/bgBar.png", 559, 15, false));
+        bgBar.setBorder(new EmptyBorder(15, 0, 0, 0));
+        bgBar.setLayout(new BoxLayout(bgBar, BoxLayout.X_AXIS));
 
-        bar.setStringPainted(true);
+        //creo la bar
+        bar = new JLabel();
+        bar.setIcon(loader.getImageIcon("/SplashScreen/bar.png", 1, 7, false));
+        bar.setBorder(new EmptyBorder(0, 5, 0, 0));
+
+        bgBar.add(bar);
 
         //creo il pannello per la progress bar
         panel2 = new JPanel();
         panel2.setOpaque(false);
-        panel2.add(bar);
+        panel2.setPreferredSize(new Dimension(559, 200));
+        panel2.setMaximumSize(new Dimension(559, 200));
+        panel2.add(bgBar);
     }
 
     @Override
