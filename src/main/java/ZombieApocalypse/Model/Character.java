@@ -11,7 +11,7 @@ public class Character {
     final int maxHealth=6;
     public int countHit;
     public enum movementDirection{RIGHT, LEFT, UP, DOWN};
-    movementDirection dir;
+    movementDirection dir=movementDirection.RIGHT;   //Direzione iniziale
     int health;
     int speed=1;
     boolean movement = false;
