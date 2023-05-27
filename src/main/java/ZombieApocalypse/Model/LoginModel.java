@@ -1,16 +1,17 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
 
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
 
 public class LoginModel {
 

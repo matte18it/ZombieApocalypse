@@ -7,18 +7,24 @@ import javax.sound.sampled.FloatControl;
 
 public class PlayMusic {
     private static Clip clip;
+    private static PlayMusic  play= null;
 
-    public PlayMusic(String path){
-        clip = ResourcesLoader.getInstance().getAudioClip(path);
+    private PlayMusic(){}
+    public static PlayMusic getInstance(){
+        if(play == null)
+            play = new PlayMusic();
+        return play;
     }
-    public void playMusic(){
+    public void play(String path){
+        clip = ResourcesLoader.getInstance().getAudioClip(path);
         clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
-    public void stopMusic(){ clip.stop(); }
-    public boolean isMusic(){ return clip.isRunning(); }
-    public void changeMusic(String path){
-        clip = ResourcesLoader.getInstance().getAudioClip(path);
+    public void stop(){ clip.stop(); }
+    public boolean isMusic(){
+        if(clip != null)
+            return clip.isRunning();
+        return false;
     }
 
 }

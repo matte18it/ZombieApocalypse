@@ -15,7 +15,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JPanel {
-    private static PlayMusic playMenuMusic = new PlayMusic("/Music/MenuMusic.wav");
+    private static PlayMusic playMenuMusic = PlayMusic.getInstance();
     public static JFrame frameGame = new JFrame("Login");
     private static GameLoop gameLoopObject;
     public static LoginView panel;
@@ -28,7 +28,7 @@ public class GameFrame extends JPanel {
         //Controllo che la traccia non sia già attiva
         if(!playMenuMusic.isMusic() && GameData.music)
             //Faccio partire la traccia
-            playMenuMusic.playMusic();
+            playMenuMusic.play("/Music/MenuMusic.wav");
 
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
@@ -59,7 +59,7 @@ public class GameFrame extends JPanel {
         //Controllo che la traccia non sia già attiva
         if(!playMenuMusic.isMusic() && GameData.music)
             //Faccio partire la traccia
-            playMenuMusic.playMusic();
+            playMenuMusic.play("/Music/MenuMusic.wav");
         frameGame.setTitle("Menu");
         menu = new MenuView();
 
@@ -79,10 +79,9 @@ public class GameFrame extends JPanel {
         //controllo che la musica sia attiva
         if(playMenuMusic.isMusic() && GameData.music){
             //se è attiva la stoppo...
-            playMenuMusic.stopMusic();
+            playMenuMusic.stop();
             //...e attivo la nuova
-            playMenuMusic.changeMusic("/Music/GameMusic.wav");
-            playMenuMusic.playMusic();
+            playMenuMusic.play("/Music/GameMusic.wav");
         }
 
         menuLoop.stop();
