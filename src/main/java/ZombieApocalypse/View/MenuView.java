@@ -116,6 +116,7 @@ public class MenuView extends JPanel {
         btnPlay.setFont(font);
         btnPlay.setBorderPainted(false);
         btnPlay.setFocusPainted(false);
+        btnPlay.setContentAreaFilled(false);
         btnPlay.setForeground(Color.WHITE);
         btnPlay.setFont(font.deriveFont(Font.PLAIN, 30));
         btnPlay.setMinimumSize(new Dimension(197, 60));
@@ -132,6 +133,7 @@ public class MenuView extends JPanel {
         btnSettings.setFont(font);
         btnSettings.setBorderPainted(false);
         btnSettings.setFocusPainted(false);
+        btnSettings.setContentAreaFilled(false);
         btnSettings.setForeground(Color.WHITE);
         btnSettings.setFont(font.deriveFont(Font.PLAIN, 30));
         btnSettings.setMinimumSize(new Dimension(197, 60));
@@ -146,6 +148,7 @@ public class MenuView extends JPanel {
         btnEditor.setVerticalTextPosition(JButton.CENTER);
         btnEditor.setFont(font);
         btnEditor.setBorderPainted(false);
+        btnEditor.setContentAreaFilled(false);
         btnEditor.setFocusPainted(false);
         btnEditor.setForeground(Color.WHITE);
         btnEditor.setFont(font.deriveFont(Font.PLAIN, 30));
@@ -160,6 +163,7 @@ public class MenuView extends JPanel {
         btnAbout.setHorizontalTextPosition(JButton.CENTER);
         btnAbout.setVerticalTextPosition(JButton.CENTER);
         btnAbout.setFont(font);
+        btnAbout.setContentAreaFilled(false);
         btnAbout.setBorderPainted(false);
         btnAbout.setFocusPainted(false);
         btnAbout.setForeground(Color.WHITE);
@@ -176,6 +180,7 @@ public class MenuView extends JPanel {
         btnExit.setVerticalTextPosition(JButton.CENTER);
         btnExit.setFont(font);
         btnExit.setBorderPainted(false);
+        btnExit.setContentAreaFilled(false);
         btnExit.setFocusPainted(false);
         btnExit.setForeground(Color.WHITE);
         btnExit.setFont(font.deriveFont(Font.PLAIN, 30));
