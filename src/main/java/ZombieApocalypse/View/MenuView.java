@@ -108,6 +108,7 @@ public class MenuView extends JPanel {
         panelMenu.setOpaque(false);
         panelMenu.setMaximumSize(new Dimension(1280, 550));
         panelMenu.setLayout(new GridBagLayout());
+        panelMenu.setBorder(new EmptyBorder(0, 330, 0, 0));
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.CENTER;
 
@@ -120,9 +121,9 @@ public class MenuView extends JPanel {
         btnPlay.setContentAreaFilled(false);
         btnPlay.setForeground(Color.WHITE);
         btnPlay.setFont(font.deriveFont(Font.PLAIN, 30));
-        btnPlay.setMinimumSize(new Dimension(197, 60));
-        btnPlay.setMaximumSize(new Dimension(197, 60));
-        btnPlay.setBorder(new EmptyBorder(0, 330, 0, 0));
+        btnPlay.setMinimumSize(new Dimension(297, 70));
+        btnPlay.setPreferredSize(new Dimension(297, 70));
+        btnPlay.setMaximumSize(new Dimension(297, 70));
         c.gridx = 0;
         c.gridy = 0;
         panelMenu.add(btnPlay, c);
@@ -137,9 +138,9 @@ public class MenuView extends JPanel {
         btnSettings.setContentAreaFilled(false);
         btnSettings.setForeground(Color.WHITE);
         btnSettings.setFont(font.deriveFont(Font.PLAIN, 30));
-        btnSettings.setMinimumSize(new Dimension(197, 60));
-        btnSettings.setMaximumSize(new Dimension(197, 60));
-        btnSettings.setBorder(new EmptyBorder(0, 330, 0, 0));
+        btnSettings.setMinimumSize(new Dimension(297, 70));
+        btnSettings.setPreferredSize(new Dimension(297, 70));
+        btnSettings.setMaximumSize(new Dimension(297, 70));
         c.gridx = 0;
         c.gridy = 1;
         panelMenu.add(btnSettings, c);
@@ -153,9 +154,9 @@ public class MenuView extends JPanel {
         btnEditor.setFocusPainted(false);
         btnEditor.setForeground(Color.WHITE);
         btnEditor.setFont(font.deriveFont(Font.PLAIN, 30));
-        btnEditor.setMinimumSize(new Dimension(197, 60));
-        btnEditor.setMaximumSize(new Dimension(197, 60));
-        btnEditor.setBorder(new EmptyBorder(0, 330, 0, 0));
+        btnEditor.setMinimumSize(new Dimension(297, 70));
+        btnEditor.setPreferredSize(new Dimension(297, 70));
+        btnEditor.setMaximumSize(new Dimension(297, 70));
         c.gridx = 0;
         c.gridy = 2;
         panelMenu.add(btnEditor, c);
@@ -169,9 +170,9 @@ public class MenuView extends JPanel {
         btnAbout.setFocusPainted(false);
         btnAbout.setForeground(Color.WHITE);
         btnAbout.setFont(font.deriveFont(Font.PLAIN, 30));
-        btnAbout.setMinimumSize(new Dimension(197, 60));
-        btnAbout.setMaximumSize(new Dimension(197, 60));
-        btnAbout.setBorder(new EmptyBorder(0, 330, 0, 0));
+        btnAbout.setMinimumSize(new Dimension(297, 70));
+        btnAbout.setPreferredSize(new Dimension(297, 70));
+        btnAbout.setMaximumSize(new Dimension(297, 70));
         c.gridx = 0;
         c.gridy = 3;
         panelMenu.add(btnAbout, c);
@@ -185,9 +186,9 @@ public class MenuView extends JPanel {
         btnExit.setFocusPainted(false);
         btnExit.setForeground(Color.WHITE);
         btnExit.setFont(font.deriveFont(Font.PLAIN, 30));
-        btnExit.setMinimumSize(new Dimension(197, 60));
-        btnExit.setMaximumSize(new Dimension(197, 60));
-        btnExit.setBorder(new EmptyBorder(0, 330, 0, 0));
+        btnExit.setMinimumSize(new Dimension(297, 70));
+        btnExit.setPreferredSize(new Dimension(297, 70));
+        btnExit.setMaximumSize(new Dimension(297, 70));
         c.gridx = 0;
         c.gridy = 4;
         panelMenu.add(btnExit, c);
