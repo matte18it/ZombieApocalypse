@@ -20,6 +20,6 @@ public class EnemyCharacter extends Character{
         super.hit();
         if(countHit==30 || countHit==0){
 
-            health=health-Game.getInstance().getGunModel().damage[0];
+            health=health-Game.getInstance().getGunModel().damage;
         }
     }}

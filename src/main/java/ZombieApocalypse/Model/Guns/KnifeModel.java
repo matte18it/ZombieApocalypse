@@ -1,5 +1,7 @@
-package ZombieApocalypse.Model;
+package ZombieApocalypse.Model.Guns;
 
+import ZombieApocalypse.Model.Character;
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Settings;
 
 import java.awt.*;

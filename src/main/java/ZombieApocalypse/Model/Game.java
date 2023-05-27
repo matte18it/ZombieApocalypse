@@ -1,5 +1,8 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Model.Guns.KnifeModel;
+import ZombieApocalypse.Model.Guns.PistolModel;
+import ZombieApocalypse.Model.Guns.ShotgunModel;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
@@ -11,8 +14,13 @@ public class Game {
     private final World world = new World();
     private final PlayerCharacter character = new PlayerCharacter();
     private final KnifeModel knife=new KnifeModel();
-    public boolean hasGun=false;
+    private final PistolModel pistol = new PistolModel();
+    private final ShotgunModel shotgun=new ShotgunModel();
+
+    //Gestione delle armi
+    public boolean hasPistol=false;
     public boolean hasKnife=true;
+    public boolean hasShotgun=false;
     private final EnemyCharacter enemy = new EnemyCharacter();
     private  MenuBarModel menuBar;
     public void setMenuBar(MenuBarView m){
@@ -24,7 +32,10 @@ public class Game {
     public KnifeModel getKnifeModel(){
         return knife;
     }
-    private final GunModel gun = new GunModel();
+    public ShotgunModel getShotgunModel(){
+        return shotgun;
+    }
+
 
     private static final Game instance = new Game();
     private Game() {
@@ -61,8 +72,8 @@ public class Game {
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}
-    public GunModel getGunModel() {
-        return gun;}
+    public PistolModel getGunModel() {
+        return pistol;}
 
 
     public int getPlayerLife() {
@@ -84,10 +95,13 @@ public class Game {
 
 
     public void attack() {
-        if(hasGun)
-            gun.attack();
+        if(hasPistol )
+            pistol.attack();
         if(hasKnife)
             knife.attack();
+        if(hasShotgun)
+            shotgun.attack();
+
 
     }
 

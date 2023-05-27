@@ -16,8 +16,8 @@ public class Character {
     int speed=1;
     boolean movement = false;
     boolean hit=false;
-    int wight;
-    int height;
+    public int wight;
+    public int height;
     int centerX=wight/2;
     int centerY=height/2;
 

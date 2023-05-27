@@ -1,10 +1,11 @@
-package ZombieApocalypse.Model;
+package ZombieApocalypse.Model.Guns;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Settings;
 
 import java.awt.*;
 
-public class GunModel {
+public class ShotgunModel {
 
 
     public boolean getAttack() {
@@ -12,24 +13,28 @@ public class GunModel {
     }
 
     //Informazioni sull'arma e l'immagine
-    enum gunType{KNIFE,PISTOL, SHOTGUN};
-    int [] damage= new int[]{1, 2, 4};
+
+    int damage=2;
     int width= Settings.CELL_SIZEX;
-    int height=Settings.CELL_SIZEY/2;
-    int radius=Settings.CELL_SIZEY;
+    int height=Settings.CELL_SIZEY-10;
+    //Raggio del cerchio, più è piccolo più è grande il cerchio
+    int radius=height-30;
     int centerX = width / 2;
     int centerY = height / 2;
     int xPosy;
     int yPosy;
     boolean attack=false;
     public double angle;
+    public Point imagePosition;
     public Rectangle hitBox;
 
-    public GunModel(){
+    public ShotgunModel(){
         xPosy=width+10;
-        yPosy=height-5;
+        yPosy=height-10;
         angle=0;
         hitBox=new Rectangle(xPosy,yPosy,width,height);
+        imagePosition=new Point(xPosy,yPosy);
+
 
     }
     public void attack() {
@@ -53,11 +58,25 @@ public class GunModel {
     public int getWidth(){
         return width;
     }
-    public Point update(Point point){
-        if(point==null)
-            return new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy-20, Game.getInstance().getPlayerCharacter().getY()+yPosy);
+    public void  update(Point point){
+        int x, y;
+        if(point==null){
+            x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
+            y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
+            hitBox.x=x;
+            hitBox.y=y;
+            if(isUp()){
+                hitBox.height=width;
+                hitBox.width=height;
+            }else{
+                hitBox.height=height;
+                hitBox.width=width;
+            }
 
-        float xDistance = point.x - Game.getInstance().getPlayerCharacter().getX()-20;   //Distanza punto x
+            imagePosition=new Point(x, y);
+            return ;}
+
+        float xDistance = point.x - Game.getInstance().getPlayerCharacter().getX();   //Distanza punto x
         float yDistance = point.y - Game.getInstance().getPlayerCharacter().getY();     //Distanza punto y
         //Questo metodo converte le coordinate rettangolari (x,y) in coordinate polari (r,theta) e ritorna theta
         angle = -Math.toDegrees(Math.atan2(yDistance, xDistance));
@@ -69,7 +88,7 @@ public class GunModel {
         //Calcolo il raggio del cerchio
         //il radius(diametro) è l'altezza del personaggio
         // radius/2f significa dividi per 2 transformandolo in float
-        int fullLength=Math.round((radius/2f))-width-10;
+        int fullLength=Math.round((radius/2f))-width;
         //Calcolo della nuova poszione dell'arma
         xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength));
         yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength));
@@ -78,7 +97,7 @@ public class GunModel {
 
 
         //Aggiorno posizione
-        return new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy-20, Game.getInstance().getPlayerCharacter().getY()+yPosy);
+        imagePosition=new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy, Game.getInstance().getPlayerCharacter().getY()+yPosy);
 
 
     }
