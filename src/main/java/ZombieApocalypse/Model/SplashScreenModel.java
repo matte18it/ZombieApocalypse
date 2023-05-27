@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
@@ -35,14 +36,14 @@ public class SplashScreenModel {
     public static void loadInterface() {
         if(GameData.nick != null){
             //Creo un menuView, parte interna della mia cornice
+            view.bar.setIcon(ResourcesLoader.getInstance().getImageIcon("/SplashScreen/bar.png", 550, 7, false));
             GameFrame.menu = new MenuView();
-            view.bar.setValue(100);
             GameFrame.menuLaunch();
         }
         else{
             //Creo un loginView, parte interna della mia cornice
+            view.bar.setIcon(ResourcesLoader.getInstance().getImageIcon("/SplashScreen/bar.png", 550, 7, false));
             GameFrame.panel = new LoginView();
-            view.bar.setValue(100);
             GameFrame.loginLaunch();
         }
     }
