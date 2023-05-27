@@ -31,4 +31,5 @@ public class CharacterAnimation {
         index = (index+1) % images.size();
         return images.get(index);
     }
+
 }

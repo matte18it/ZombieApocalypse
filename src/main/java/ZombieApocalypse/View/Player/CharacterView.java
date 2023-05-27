@@ -38,32 +38,46 @@ public class CharacterView {
 
     public void update() {
         //E' stato colpito? cambia immagine
-        if(Game.getInstance().getPlayerCharacter().getHit()){
+        if(Game.getInstance().getPlayerCharacter().getHit()) {
 
             Game.getInstance().getPlayerCharacter().countHit++;
 
-            if( Game.getInstance().getPlayerCharacter().countHit%2==0){
-                if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
+            if (Game.getInstance().getPlayerCharacter().countHit % 2 == 0) {
+                if(Game.getInstance().getPlayerCharacter().isMoving()){
+                if (Game.getInstance().getPlayerDirection() == PlayerCharacter.movementDirection.UP)
                     currentImage = hitUp.update();
-                else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.DOWN)
+                else if (Game.getInstance().getPlayerDirection() == PlayerCharacter.movementDirection.DOWN)
                     currentImage = hitDown.update();
-                else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.LEFT)
+                else if (Game.getInstance().getPlayerDirection() == PlayerCharacter.movementDirection.LEFT)
                     currentImage = hitLeft.update();
-                else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.RIGHT)
+                else if (Game.getInstance().getPlayerDirection() == PlayerCharacter.movementDirection.RIGHT)
                     currentImage = hitRight.update();
-                else
-                    currentImage = hitUp.update();}}
-        else{
-            if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
+
+            } else
+                currentImage=hitUp.update();}
+
+        }else{
+            if(Game.getInstance().getPlayerCharacter().isMoving()){
+            if( Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
                 currentImage = runAnimationUp.update();
-            else if( Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.DOWN)
+            else if(  Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.DOWN)
                 currentImage = runAnimationDown.update();
-            else if( Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.LEFT)
+            else if(  Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.LEFT)
                 currentImage = runAnimationLeft.update();
-            else if(Game.getInstance().getPlayerCharacter().isMoving() && Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.RIGHT)
+            else if(Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.RIGHT)
                 currentImage = runAnimationRight.update();
-            else
-                currentImage = runAnimationDown.getDefaultImage();}
+           } else{
+                if( Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.UP)
+                    currentImage = runAnimationUp.getDefaultImage();
+                else if(  Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.DOWN)
+                    currentImage = runAnimationDown.getDefaultImage();
+                else if(  Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.LEFT)
+                    currentImage = runAnimationLeft.getDefaultImage();
+                else if(Game.getInstance().getPlayerDirection()== PlayerCharacter.movementDirection.RIGHT)
+                    currentImage = runAnimationRight.getDefaultImage();
+
+            }
+        }
     }
 
     public Image getCurrentImage() {
