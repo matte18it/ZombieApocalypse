@@ -6,8 +6,8 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
 public class PlayMusic {
-    private static Clip clip;
-    private static PlayMusic  play= null;
+    private static Clip clip = null;
+    private static PlayMusic play = null;
 
     private PlayMusic(){}
     public static PlayMusic getInstance(){
@@ -21,7 +21,7 @@ public class PlayMusic {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
     public void stop(){ clip.stop(); }
-    public boolean isMusic(){
+    public boolean isPlay(){
         if(clip != null)
             return clip.isRunning();
         return false;

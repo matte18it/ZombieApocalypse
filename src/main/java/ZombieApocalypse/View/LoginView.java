@@ -10,6 +10,10 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.io.IOException;
 import java.util.Random;
 
@@ -99,9 +103,6 @@ public class LoginView extends JPanel{
         txtNickname.setMinimumSize(new Dimension(300, 45));
         txtNickname.setMaximumSize(new Dimension(350, 45));
         txtNickname.setForeground(Color.WHITE);
-        //vado ad impostare il focus di default sul campo di input del nickname
-        txtNickname.setFocusable(true);
-        txtNickname.requestFocus();
         //Funzione per cambiare colore al puntatore del mouse nel textfield
         txtNickname.setCaretColor(Color.RED);
         //Inserisco tutto nel pannello

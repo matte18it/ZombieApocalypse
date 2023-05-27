@@ -38,6 +38,13 @@ public class LoginModel {
         //se ris è pari a 0 effettuo il login, se ris è pari a 1 vuol dire che c'è già un player registrato con lo stesso nome, 2 effettuo la registrazione
         switch (ris){
             case 0, 2:{
+                try {
+                    File myObj = new File("player.txt");
+                    myObj.createNewFile();
+                    FileWriter myWriter = new FileWriter("player.txt");
+                    myWriter.write(GameData.nick);
+                    myWriter.close();
+                } catch (IOException e) { e.printStackTrace(); }
                 GameFrame.loop.stop();
                 GameFrame.frameGame.remove(GameFrame.panel);
                 GameFrame.menuLaunch();
