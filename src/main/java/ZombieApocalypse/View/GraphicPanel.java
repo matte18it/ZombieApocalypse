@@ -5,6 +5,7 @@ import ZombieApocalypse.Model.World;
 import ZombieApocalypse.ResourcesLoader;
 import ZombieApocalypse.Settings;
 import ZombieApocalypse.View.Gun.GunView;
+import ZombieApocalypse.View.Gun.KnifeView;
 import ZombieApocalypse.View.Player.CharacterView;
 import ZombieApocalypse.View.Enemy.SkinnyEnemyView;
 import javax.imageio.ImageIO;
@@ -26,6 +27,7 @@ public class GraphicPanel extends JPanel {
     private final CharacterView characterView = new CharacterView();
     private static final GunView gunView = new GunView();
     private static final SkinnyEnemyView skinnyEnemyView = new SkinnyEnemyView();
+    private static final KnifeView knife=new KnifeView();
     public  GunView getGunView(){
         return gunView;
     }
@@ -62,7 +64,7 @@ public class GraphicPanel extends JPanel {
 
 
         }
-
+        if(Game.getInstance().hasGun){
         if(Game.getInstance().getGunModel().isUp()){
             g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getHeight(), Game.getInstance().getGunModel().getWidth(), null);
             Game.getInstance().getGunModel().hitBox.x=gunView.imagePosition.x;
@@ -79,7 +81,7 @@ public class GraphicPanel extends JPanel {
 
             g.drawImage(gunView.getCurrentImage(), gunView.imagePosition.x, gunView.imagePosition.y, Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), null);
 
-        }
+        }}
 
 
         /* For debugging
@@ -90,6 +92,13 @@ public class GraphicPanel extends JPanel {
 
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
+        if(Game.getInstance().hasKnife){
+            if(Game.getInstance().getKnifeModel().isUp())
+                g.drawImage(knife.getCurrentImage(), Game.getInstance().getKnifeModel().imagePosition.x,Game.getInstance().getKnifeModel().imagePosition.y, Game.getInstance().getKnifeModel().getHeight(), Game.getInstance().getKnifeModel().getWidth(), null);
+            else
+                g.drawImage(knife.getCurrentImage(), Game.getInstance().getKnifeModel().imagePosition.x,Game.getInstance().getKnifeModel().imagePosition.y, Game.getInstance().getKnifeModel().getWidth(), Game.getInstance().getKnifeModel().getHeight(), null);
+
+        }
         g.drawImage(skinnyEnemyView.getCurrentImage(), Game.getInstance().getEnemyCharacter().getX(), Game.getInstance().getEnemyCharacter().getY(), skinnyEnemyView.width, skinnyEnemyView.height, null);
 
 
@@ -97,7 +106,10 @@ public class GraphicPanel extends JPanel {
     public void update() {
         characterView.update();
         //Sposto l'arma dove è il character senza girarla
-        gunView.update(null);
+        if(Game.getInstance().hasGun)
+            gunView.update(null);
+        if(Game.getInstance().hasKnife)
+            knife.update();
         skinnyEnemyView.update();
         repaint();
     }}

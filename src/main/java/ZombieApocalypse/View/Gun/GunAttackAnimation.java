@@ -29,7 +29,10 @@ public class GunAttackAnimation {
 
     public Image update() {
         if(index==images.size()-1){
-            Game.getInstance().getGunModel().stopAttack();
+            if(Game.getInstance().hasKnife)
+                Game.getInstance().getKnifeModel().stopAttack();
+            if(Game.getInstance().hasGun)
+                Game.getInstance().getGunModel().stopAttack();
         }
 
         index = (index+1) % images.size();

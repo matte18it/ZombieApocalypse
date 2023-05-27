@@ -10,6 +10,9 @@ public class Game {
     //Gestisce gli aspetti del gioco
     private final World world = new World();
     private final PlayerCharacter character = new PlayerCharacter();
+    private final KnifeModel knife=new KnifeModel();
+    public boolean hasGun=false;
+    public boolean hasKnife=true;
     private final EnemyCharacter enemy = new EnemyCharacter();
     private  MenuBarModel menuBar;
     public void setMenuBar(MenuBarView m){
@@ -17,6 +20,9 @@ public class Game {
     }
     public MenuBarModel getMenuBar(){
         return menuBar;
+    }
+    public KnifeModel getKnifeModel(){
+        return knife;
     }
     private final GunModel gun = new GunModel();
 
@@ -78,7 +84,10 @@ public class Game {
 
 
     public void attack() {
-        gun.attack();
+        if(hasGun)
+            gun.attack();
+        if(hasKnife)
+            knife.attack();
 
     }
 

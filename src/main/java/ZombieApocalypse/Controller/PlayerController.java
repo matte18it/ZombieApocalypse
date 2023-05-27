@@ -25,7 +25,7 @@ public class PlayerController implements KeyListener, MouseMotionListener {
             case KeyEvent.VK_LEFT -> Game.getInstance().startMovementLeft();
             case KeyEvent.VK_DOWN -> Game.getInstance().startMovementDown();
 
-            case KeyEvent.VK_SPACE -> Game.getInstance().attack();
+            case KeyEvent.VK_SPACE  -> Game.getInstance().attack();
 
             case KeyEvent.VK_Q -> Game.getInstance().closeGame();
 
