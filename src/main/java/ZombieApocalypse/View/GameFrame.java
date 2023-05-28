@@ -117,6 +117,7 @@ public class GameFrame extends JPanel {
         graphicPanel.requestFocus();
         PlayerController playerController=new PlayerController(graphicPanel);
         graphicPanel.addMouseMotionListener(playerController);
+        graphicPanel.addMouseListener(playerController);
         graphicPanel.addKeyListener(playerController);
         gameLoopObject=new GameLoop(playerController);
         menuBarView.setBar();

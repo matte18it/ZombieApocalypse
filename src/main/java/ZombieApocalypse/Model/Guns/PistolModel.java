@@ -91,7 +91,7 @@ public class PistolModel {
         int fullLength=Math.round((radius/2f))-width;
         //Calcolo della nuova poszione dell'arma
         xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength));
-        yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength));
+        yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength))-10;
 
 
 

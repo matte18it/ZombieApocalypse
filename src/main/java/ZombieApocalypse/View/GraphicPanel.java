@@ -66,7 +66,7 @@ public class GraphicPanel extends JPanel {
             g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getGunModel().imagePosition.x, Game.getInstance().getGunModel().imagePosition.y, Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), null);
         }}
         if(Game.getInstance().hasShotgun){
-            if(Game.getInstance().getGunModel().isUp()){
+            if(Game.getInstance().getShotgunModel().isUp()){
                 g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getHeight(), Game.getInstance().getShotgunModel().getWidth(), null);
             }else{
                 g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getWidth(), Game.getInstance().getShotgunModel().getHeight(), null);

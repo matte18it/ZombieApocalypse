@@ -14,11 +14,11 @@ public class ShotgunModel {
 
     //Informazioni sull'arma e l'immagine
 
-    int damage=2;
+    int damage=5;
     int width= Settings.CELL_SIZEX;
     int height=Settings.CELL_SIZEY-10;
     //Raggio del cerchio, più è piccolo più è grande il cerchio
-    int radius=height-30;
+    int radius=height-20;
     int centerX = width / 2;
     int centerY = height / 2;
     int xPosy;
@@ -29,7 +29,7 @@ public class ShotgunModel {
     public Rectangle hitBox;
 
     public ShotgunModel(){
-        xPosy=width+10;
+        xPosy=width;
         yPosy=height-10;
         angle=0;
         hitBox=new Rectangle(xPosy,yPosy,width,height);
@@ -89,9 +89,9 @@ public class ShotgunModel {
         //il radius(diametro) è l'altezza del personaggio
         // radius/2f significa dividi per 2 transformandolo in float
         int fullLength=Math.round((radius/2f))-width;
-        //Calcolo della nuova poszione dell'arma
-        xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength));
-        yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength));
+        //Calcolo della nuova poszione dell'arma, con immagini rettangolari va ribilanciata
+        xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength))-20;
+        yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength))-10;
 
 
 

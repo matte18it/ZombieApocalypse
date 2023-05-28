@@ -2,12 +2,9 @@ package ZombieApocalypse.Controller;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.View.GraphicPanel;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 
-public class PlayerController implements KeyListener, MouseMotionListener {
+public class PlayerController implements KeyListener, MouseMotionListener, MouseListener {
     //Gestisce i movimenti del player
 
     private final GraphicPanel panel;
@@ -24,7 +21,7 @@ public class PlayerController implements KeyListener, MouseMotionListener {
             case KeyEvent.VK_LEFT -> Game.getInstance().startMovementLeft();
             case KeyEvent.VK_DOWN -> Game.getInstance().startMovementDown();
 
-            case KeyEvent.VK_SPACE  -> Game.getInstance().attack();
+
 
             case KeyEvent.VK_Q -> Game.getInstance().closeGame();
 
@@ -57,6 +54,32 @@ public class PlayerController implements KeyListener, MouseMotionListener {
             panel.getPistolView().update(e.getPoint());
         if(Game.getInstance().hasShotgun)
             panel.getShotgunView().update(e.getPoint());
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        Game.getInstance().attack();
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
 
     }
 }

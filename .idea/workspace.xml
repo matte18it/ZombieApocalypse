@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bug Fix">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0370_Capa-371.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0371_Capa-372.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0372_Capa-373.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0373_Capa-374.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0374_Capa-375.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/PistolModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/PistolModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAttackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAttackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

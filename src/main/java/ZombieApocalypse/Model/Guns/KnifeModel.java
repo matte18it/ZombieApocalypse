@@ -63,7 +63,6 @@ public class KnifeModel {
             hitBox.width=height;
         }
         if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.LEFT){
-            //x=Game.getInstance().getPlayerCharacter().getX()-(Game.getInstance().getPlayerCharacter().wight/2)-5;
             x=Game.getInstance().getPlayerCharacter().getX()-Game.getInstance().getPlayerCharacter().wight+12;
             y=Game.getInstance().getPlayerCharacter().getY()+(Game.getInstance().getPlayerCharacter().height/2)-3;
             imagePosition=new Point(x, y);

@@ -18,7 +18,10 @@ public class GunAnimation {
         Image img=null;
         for (int i=0; i<numberOfElement; i++) {
             String path=action+i;
-            img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), true);
+            if(Game.getInstance().hasShotgun)
+            img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getShotgunModel().getWidth(),  Game.getInstance().getShotgunModel().getHeight(),  true);
+            if(Game.getInstance().hasPistol)
+                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGunModel().getWidth(),  Game.getInstance().getGunModel().getHeight(),  true);
             images.add(img);
         }
 

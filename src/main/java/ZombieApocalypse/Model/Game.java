@@ -21,6 +21,9 @@ public class Game {
     public boolean hasPistol=false;
     public boolean hasKnife=true;
     public boolean hasShotgun=false;
+
+
+
     private final EnemyCharacter enemy = new EnemyCharacter();
     private  MenuBarModel menuBar;
     public void setMenuBar(MenuBarView m){
