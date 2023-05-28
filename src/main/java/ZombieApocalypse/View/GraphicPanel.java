@@ -46,6 +46,7 @@ public class GraphicPanel extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
+
         super.paintComponent(g);
         World world=new World();
         for(int i = 0; i < world.getSize(); i++) {
@@ -75,13 +76,10 @@ public class GraphicPanel extends JPanel {
                 g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getWidth(), Game.getInstance().getShotgunModel().getHeight(), null);
             }}
 
-        Iterator var= Bullets.getInstance().getBullets().iterator();
-        while(var.hasNext()){
-            Bullet b=(Bullet) var.next();
+        for (Bullet b : Bullets.getInstance().getBullets()) {
             b.getView().update();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
         }
-
 
         /* For debugging
         g.setColor(Color.red);
