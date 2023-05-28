@@ -6,6 +6,7 @@ import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.View.Gun.BulletView;
 import ZombieApocalypse.View.Gun.PistolView;
 import ZombieApocalypse.View.Gun.KnifeView;
 import ZombieApocalypse.View.Gun.ShotgunView;
@@ -78,7 +79,8 @@ public class GraphicPanel extends JPanel {
         Iterator var= Bullets.getInstance().getBullets().iterator();
         while(var.hasNext()){
             Bullet b=(Bullet) var.next();
-            g.drawImage(b.getDefaultImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
+            b.getView().update();
+            g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
         }
 
 

@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Mouse click">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bullet pt1">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/PistolModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/PistolModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/PistolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/PistolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0370_Capa-371.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0371_Capa-372.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0372_Capa-373.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0373_Capa-374.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0374_Capa-375.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -318,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685259525851</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Bullet pt1">
+      <created>1685263797733</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1685263797733</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -347,6 +344,7 @@
     <MESSAGE value="Modifica player" />
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="Mouse click" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mouse click" />
+    <MESSAGE value="Bullet pt1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bullet pt1" />
   </component>
 </project>
