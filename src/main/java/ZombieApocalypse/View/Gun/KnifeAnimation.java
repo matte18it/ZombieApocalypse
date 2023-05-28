@@ -19,7 +19,7 @@ public class KnifeAnimation {
         Image img=null;
         for (int i=0; i<numberOfElement; i++) {
             String path=action+i;
-            img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), true);
+            img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), true);
             images.add(img);
         }
 

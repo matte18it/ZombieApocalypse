@@ -6,7 +6,7 @@ import ZombieApocalypse.View.Gun.BulletView;
 
 import java.awt.*;
 
-public class Bullet {
+public abstract class Bullet {
      int velocityX;
      int velocityY;
     enum Direction{UP,DOWN,LEFT,RIGHT};
@@ -46,10 +46,7 @@ public class Bullet {
         return this.dimension;
     }
 
-    boolean update() {
-        return false;
-
-    };
+    abstract boolean update();
 
 
 }

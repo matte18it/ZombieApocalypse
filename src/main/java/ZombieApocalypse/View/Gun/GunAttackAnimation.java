@@ -32,7 +32,7 @@ public class GunAttackAnimation {
             if(Game.getInstance().hasKnife)
                 Game.getInstance().getKnifeModel().stopAttack();
             if(Game.getInstance().hasPistol)
-                Game.getInstance().getGunModel().stopAttack();
+                Game.getInstance().getPistolModel().stopAttack();
             if( Game.getInstance().hasShotgun)
                 Game.getInstance().getShotgunModel().stopAttack();
         }

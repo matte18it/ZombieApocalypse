@@ -5,33 +5,18 @@ import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 
-public class PistolModel {
+public class PistolModel extends GunModel{
 
-
-    public boolean getAttack() {
-        return attack;
-    }
-
-    //Informazioni sull'arma e l'immagine
-
-    public int damage=2;
-    int width= Settings.CELL_SIZEX-15;
-    int height=Settings.CELL_SIZEY-10;
-    //Raggio del cerchio, più è piccolo più è grande il cerchio
-    int radius=height-30;
-    int centerX = width / 2;
-    int centerY = height / 2;
-    int xPosy;
-    int yPosy;
-    boolean attack=false;
-    public double angle;
-    public Point imagePosition;
-    public Rectangle hitBox;
 
     public PistolModel(){
+        width= Settings.CELL_SIZEX-15;
+        height=Settings.CELL_SIZEY-10;
+        radius=height-30;
+        damage=2;
         xPosy=width+10;
         yPosy=height-10;
         angle=0;
+        super.setCenter();
         hitBox=new Rectangle(xPosy,yPosy,width,height);
         imagePosition=new Point(xPosy,yPosy);
 
@@ -56,25 +41,6 @@ public class PistolModel {
 
         }  Bullets.getInstance().PistolShot(x, y, 10, angle);
 
-
-
-
-
-
-
-    }
-    public void stopAttack() {
-        attack=false;
-
-    }
-    public double getAngle(){
-        return angle;
-    }
-    public int getHeight(){
-        return height;
-    }
-    public int getWidth(){
-        return width;
     }
     public void  update(Point point){
         int x, y;
@@ -135,23 +101,5 @@ public class PistolModel {
         }
 
         return true;
-    }
-
-
-
-    public Bullet.Direction checkDirection(double angle){
-        if((angle<60 && angle>=0) || (angle>=320)){
-            return Bullet.Direction.RIGHT;
-        }
-        if(angle<140 && angle>=60){
-            return Bullet.Direction.UP;
-
-        }
-        if(angle<230 && angle>=140){
-            return Bullet.Direction.LEFT;
-
-        }
-
-        return Bullet.Direction.DOWN;
     }
 }

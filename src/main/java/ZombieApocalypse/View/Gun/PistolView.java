@@ -6,19 +6,17 @@ import java.awt.*;
 
 public class PistolView {
     private final GunAnimation gunAnimation;
-    private final GunAttackAnimation attackFrame;
     public Image currentImage;
 
 
     public PistolView() {
         gunAnimation= new GunAnimation("Pistola",4);
-        attackFrame= new GunAttackAnimation("AnimazioneColtello",4);
         currentImage=gunAnimation.getDefaultImage();
     }
 
     public void update(Point point) {
 
-        Game.getInstance().getGunModel().update(point);
+        Game.getInstance().getPistolModel().update(point);
 
 
         //Aggiorno immagine
@@ -26,7 +24,7 @@ public class PistolView {
         //if( Game.getInstance().getGunModel().getAttack()) {
          //   currentImage = attackFrame.update();
 
-            currentImage=gunAnimation.update(Game.getInstance().getGunModel().angle);
+            currentImage=gunAnimation.update(Game.getInstance().getPistolModel().angle);
 
     }
     public Image getCurrentImage() {

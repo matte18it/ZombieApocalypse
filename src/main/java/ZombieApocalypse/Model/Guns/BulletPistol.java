@@ -2,16 +2,13 @@ package ZombieApocalypse.Model.Guns;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.View.Gun.BulletView;
-
-import java.awt.*;
 
 public class BulletPistol extends Bullet{
 
     BulletPistol(int x, int y, int dimension, double angle){
         super(x,y,dimension, angle);
             totalFrame=40;
-            dir=Game.getInstance().getGunModel().checkDirection(angle);
+            dir=Game.getInstance().getPistolModel().checkDirection(angle);
 
     }
 

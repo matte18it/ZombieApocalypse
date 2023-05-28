@@ -6,23 +6,14 @@ import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 
-public class KnifeModel {
-    public boolean getAttack() {
-        return attack;
-    }
-
-    //Informazioni sull'arma e l'immagine
-    int damage=1;
-    int width= Settings.CELL_SIZEX-5;
-    int height=Settings.CELL_SIZEY/2;
-
-    public Point imagePosition=new Point(0,0);
-
-    boolean attack=false;
-    public double angle;
-    public Rectangle hitBox=new Rectangle(imagePosition.x, imagePosition.y, width,height);
+public class KnifeModel extends GunModel{
 
     public KnifeModel(){
+        width= Settings.CELL_SIZEX-5;
+        height=Settings.CELL_SIZEY/2;
+        imagePosition=new Point(0,0);
+        hitBox=new Rectangle(imagePosition.x, imagePosition.y, width,height);
+        damage=1;
 
     }
     public void attack() {
@@ -30,16 +21,6 @@ public class KnifeModel {
         if(hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)){
             Game.getInstance().getEnemyCharacter().hit();
         }
-
-    }
-    public void stopAttack() {
-        attack=false;
-    }
-    public int getHeight(){
-        return height;
-    }
-    public int getWidth(){
-        return width;
     }
     public void update(){
         int x;
@@ -84,9 +65,6 @@ public class KnifeModel {
     }
 
     public boolean isUp(){
-        if(Game.getInstance().getPlayerCharacter().dir==Character.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir==Character.movementDirection.DOWN)
-            return true;
+        return Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.DOWN;
 
-        return false;
-
-}}
+    }}

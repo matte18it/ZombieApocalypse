@@ -6,7 +6,6 @@ import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.View.Gun.BulletView;
 import ZombieApocalypse.View.Gun.PistolView;
 import ZombieApocalypse.View.Gun.KnifeView;
 import ZombieApocalypse.View.Gun.ShotgunView;
@@ -64,10 +63,10 @@ public class GraphicPanel extends JPanel {
 
         }
         if(Game.getInstance().hasPistol){
-        if(Game.getInstance().getGunModel().isUp()){
-            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getGunModel().imagePosition.x, Game.getInstance().getGunModel().imagePosition.y, Game.getInstance().getGunModel().getHeight(), Game.getInstance().getGunModel().getWidth(), null);
+        if(Game.getInstance().getPistolModel().isUp()){
+            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getPistolModel().imagePosition.x, Game.getInstance().getPistolModel().imagePosition.y, Game.getInstance().getPistolModel().getHeight(), Game.getInstance().getPistolModel().getWidth(), null);
         }else{
-            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getGunModel().imagePosition.x, Game.getInstance().getGunModel().imagePosition.y, Game.getInstance().getGunModel().getWidth(), Game.getInstance().getGunModel().getHeight(), null);
+            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getPistolModel().imagePosition.x, Game.getInstance().getPistolModel().imagePosition.y, Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);
         }}
         if(Game.getInstance().hasShotgun){
             if(Game.getInstance().getShotgunModel().isUp()){

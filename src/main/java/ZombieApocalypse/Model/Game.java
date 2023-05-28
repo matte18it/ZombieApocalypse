@@ -17,7 +17,7 @@ public class Game {
     private final PistolModel pistol = new PistolModel();
     private final ShotgunModel shotgun=new ShotgunModel();
 
-    //Gestione delle armi
+    //Gestione delle armi, per adesso
     public boolean hasPistol=false;
     public boolean hasKnife=false;
     public boolean hasShotgun=true;
@@ -75,7 +75,7 @@ public class Game {
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}
-    public PistolModel getGunModel() {
+    public PistolModel getPistolModel() {
         return pistol;}
 
 

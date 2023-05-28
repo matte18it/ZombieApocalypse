@@ -21,7 +21,7 @@ public class GunAnimation {
             if(Game.getInstance().hasShotgun)
             img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getShotgunModel().getWidth(),  Game.getInstance().getShotgunModel().getHeight(),  true);
             if(Game.getInstance().hasPistol)
-                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGunModel().getWidth(),  Game.getInstance().getGunModel().getHeight(),  true);
+                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(),  Game.getInstance().getPistolModel().getHeight(),  true);
             images.add(img);
         }
 
