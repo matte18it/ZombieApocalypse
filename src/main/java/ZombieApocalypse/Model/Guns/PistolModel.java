@@ -39,10 +39,30 @@ public class PistolModel {
     }
     public void attack() {
         attack=true;
+        int x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
+        int y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
+        Bullet.Direction dir=checkDirection(angle);
+        if(dir== Bullet.Direction.UP) {
+            y=y-width+15;
+            x=x+5;
+        }else if (dir== Bullet.Direction.RIGHT) {
+            x = x + width;
+        }else if(dir== Bullet.Direction.LEFT){
+            x=x-5;
+        }else if(dir== Bullet.Direction.DOWN){
+            y=y+width;
+            x=x+5;
 
-        if(hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)){
-            Game.getInstance().getEnemyCharacter().hit();
-        }
+
+        }  Bullets.getInstance().shoot(x, y, 10, angle, Bullet.Weapon.PISTOL);
+
+
+
+
+
+        //if(hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)){
+         //   Game.getInstance().getEnemyCharacter().hit();
+        //}
 
     }
     public void stopAttack() {
@@ -121,4 +141,19 @@ public class PistolModel {
 
 
 
+    public Bullet.Direction checkDirection(double angle){
+        if((angle<60 && angle>=0) || (angle>=320)){
+            return Bullet.Direction.RIGHT;
+        }
+        if(angle<140 && angle>=60){
+            return Bullet.Direction.UP;
+
+        }
+        if(angle<230 && angle>=140){
+            return Bullet.Direction.LEFT;
+
+        }
+
+        return Bullet.Direction.DOWN;
+    }
 }

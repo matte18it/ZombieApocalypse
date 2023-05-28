@@ -4,27 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bug Fix">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/ProiettilePistola4.png" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Mouse click">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0370_Capa-371.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0371_Capa-372.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0372_Capa-373.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0373_Capa-374.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0374_Capa-375.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/PistolModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/PistolModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAttackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAttackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/PistolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/PistolView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0370_Capa-371.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0371_Capa-372.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0372_Capa-373.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0373_Capa-374.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pistol Shooting Animation Frames/Zombie-Tileset---_0374_Capa-375.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
@@ -317,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685209843889</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Mouse click">
+      <created>1685259525851</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1685259525851</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -345,6 +346,7 @@
     <MESSAGE value="Loading Screen" />
     <MESSAGE value="Modifica player" />
     <MESSAGE value="Bug Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix" />
+    <MESSAGE value="Mouse click" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mouse click" />
   </component>
 </project>

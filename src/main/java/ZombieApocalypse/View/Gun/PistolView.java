@@ -23,9 +23,9 @@ public class PistolView {
 
         //Aggiorno immagine
 
-        if( Game.getInstance().getGunModel().getAttack()) {
-            currentImage = attackFrame.update();
-        } else
+        //if( Game.getInstance().getGunModel().getAttack()) {
+         //   currentImage = attackFrame.update();
+
             currentImage=gunAnimation.update(Game.getInstance().getGunModel().angle);
 
     }

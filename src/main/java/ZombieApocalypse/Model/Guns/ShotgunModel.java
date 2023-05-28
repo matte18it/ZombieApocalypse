@@ -118,6 +118,21 @@ public class ShotgunModel {
 
         return true;
     }
+    public Bullet.Direction checkDirection(double angle){
+        if((angle<60 && angle>=0) || (angle>=320)){
+            return Bullet.Direction.RIGHT;
+        }
+        if(angle<140 && angle>=60){
+            return Bullet.Direction.UP;
+
+        }
+        if(angle<230 && angle>=140){
+            return Bullet.Direction.LEFT;
+
+        }
+
+        return Bullet.Direction.DOWN;
+    }
 
 
 

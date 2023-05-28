@@ -1,6 +1,8 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Guns.Bullet;
+import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
@@ -12,6 +14,7 @@ import ZombieApocalypse.View.Enemy.SkinnyEnemyView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Iterator;
 
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
@@ -72,6 +75,12 @@ public class GraphicPanel extends JPanel {
                 g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getWidth(), Game.getInstance().getShotgunModel().getHeight(), null);
             }}
 
+        Iterator var= Bullets.getInstance().getBullets().iterator();
+        while(var.hasNext()){
+            Bullet b=(Bullet) var.next();
+            g.drawImage(b.getDefaultImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
+        }
+
 
         /* For debugging
         g.setColor(Color.red);
@@ -102,6 +111,7 @@ public class GraphicPanel extends JPanel {
         if(Game.getInstance().hasShotgun)
             shotgunView.update(null);
         skinnyEnemyView.update();
+        Bullets.getInstance().update();
         repaint();
     }
 
