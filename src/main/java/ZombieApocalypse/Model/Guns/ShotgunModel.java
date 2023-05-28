@@ -39,9 +39,29 @@ public class ShotgunModel {
     }
     public void attack() {
         attack=true;
+        int x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
+        int y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
+        Bullet.Direction dir=checkDirection(angle);
+        if(dir== Bullet.Direction.UP) {
+            y=y-width+15;
+            x=x+5;
+        }else if (dir== Bullet.Direction.RIGHT) {
+            x = x + width;
+        }else if(dir== Bullet.Direction.LEFT){
+            x=x-5;
+        }else if(dir== Bullet.Direction.DOWN) {
+            y = y + width;
+            x = x + 5;
 
-        if(hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)){
-            Game.getInstance().getEnemyCharacter().hit();
+        }   if(dir== Bullet.Direction.UP || dir==Bullet.Direction.DOWN){
+            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.RIGHT);
+            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.CENTER );
+            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.LEFT );}
+            else{
+            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.RIGHT);
+            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.CENTER);
+            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.LEFT);
+
         }
 
     }

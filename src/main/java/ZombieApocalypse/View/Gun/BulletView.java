@@ -13,7 +13,7 @@ public class BulletView {
     int count=0;
     boolean ending=false;
 
-    public BulletView(Bullet.Weapon w, int dimension) {
+    public BulletView( int dimension) {
         for(int i=0; i<6; i++)
             bullet[i]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/ProiettilePistola"+i+".png",dimension ,dimension,true);
 

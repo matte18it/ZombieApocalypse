@@ -13,8 +13,12 @@ public class Bullets {
 
     public static Bullets getInstance(){return instance;}
 
-    public void shoot(int x, int y, int dimension, double angle, Bullet.Weapon weapon){
-        this.bullets.add(new Bullet(x,y,dimension, angle, weapon));
+    public void PistolShot(int x, int y, int dimension, double angle){
+            this.bullets.add(new BulletPistol(x,y,dimension, angle));
+
+    }
+    public void ShotgunShot(int x, int y, int dimension, double angle, BulletShotgun.Type t){
+        this.bullets.add(new BulletShotgun(x,y,dimension, angle, t));
     }
 
     public List<Bullet> getBullets(){return Collections.unmodifiableList(this.bullets);

@@ -54,15 +54,13 @@ public class PistolModel {
             x=x+5;
 
 
-        }  Bullets.getInstance().shoot(x, y, 10, angle, Bullet.Weapon.PISTOL);
+        }  Bullets.getInstance().PistolShot(x, y, 10, angle);
 
 
 
 
 
-        //if(hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)){
-         //   Game.getInstance().getEnemyCharacter().hit();
-        //}
+
 
     }
     public void stopAttack() {

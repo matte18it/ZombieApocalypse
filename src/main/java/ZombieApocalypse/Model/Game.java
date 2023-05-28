@@ -18,9 +18,9 @@ public class Game {
     private final ShotgunModel shotgun=new ShotgunModel();
 
     //Gestione delle armi
-    public boolean hasPistol=true;
+    public boolean hasPistol=false;
     public boolean hasKnife=false;
-    public boolean hasShotgun=false;
+    public boolean hasShotgun=true;
 
 
 

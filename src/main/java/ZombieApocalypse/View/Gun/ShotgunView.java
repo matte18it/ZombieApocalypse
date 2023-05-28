@@ -7,13 +7,11 @@ import java.awt.*;
 
     public class ShotgunView {
         private final GunAnimation gunAnimation;
-        private final GunAttackAnimation attackFrame;
         public Image currentImage;
 
 
         public ShotgunView() {
             gunAnimation= new GunAnimation("Fucile",4);
-            attackFrame= new GunAttackAnimation("AnimazioneColtello",4);
             currentImage=gunAnimation.getDefaultImage();
         }
 
@@ -23,9 +21,6 @@ import java.awt.*;
 
             //Aggiorno immagine
 
-            if( Game.getInstance().getShotgunModel().getAttack()) {
-                currentImage = attackFrame.update();
-            } else
                 currentImage=gunAnimation.update(Game.getInstance().getShotgunModel().angle);
 
         }
