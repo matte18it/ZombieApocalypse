@@ -5,14 +5,17 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.ImageBackgroundPane;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.MenuView;
 
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -150,6 +153,21 @@ public class MenuController {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 view.setMenu();
+            }
+        });
+
+        view.getBtnMancino().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(!GameData.mancino){
+                    GameData.mancino = true;
+                    view.getBtnMancino().setIcon(ResourcesLoader.getInstance().getImageIcon("/SettingsImage/Slider2.png", 48, 48, false));
+                }
+                else{
+                    GameData.mancino = false;
+                    view.getBtnMancino().setIcon(ResourcesLoader.getInstance().getImageIcon("/SettingsImage/Slider1.png", 48, 48, false));
+                }
             }
         });
     }

@@ -39,9 +39,9 @@ public class MenuView extends JPanel {
     private JPanel panelMenu, imagePanel, aboutPanel, settingsPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
     //componenti per le settings
-    private JLabel music, sound, language;
+    private JLabel music, sound, language, mancino;
     private JSlider musica = new JSlider(-74, 6), suoni = new JSlider(-74, 6);
-    private JButton muteMusic, muteSound, it, en, exitSettings;
+    private JButton muteMusic, muteSound, it, en, exitSettings, btnMancino;
 
     public MenuView(){
         //setto il cursore personalizzato
@@ -102,6 +102,7 @@ public class MenuView extends JPanel {
         muteSound = new JButton();
         muteMusic = new JButton();
         en = new JButton();
+        btnMancino = new JButton();
         it = new JButton();
         if(GameData.lang.equals("it")) {
             btnExitAbout = new JButton("Esci");
@@ -405,32 +406,51 @@ public class MenuView extends JPanel {
 
     private void setCommands(JLabel layoutComands, JLabel layoutComands2) {
         lblUp = new JLabel();
-        lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/TastoW.gif", 64, 60, false));
+        if(!GameData.mancino)
+            lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/TastoW.gif", 64, 60, false));
+        else
+            lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoI/TastoI.gif", 64, 60, false));
+
         lblUp.setBorder(new EmptyBorder(0, 15, 0, 0));
         layoutComands.add(lblUp);
 
         lblDown = new JLabel();
-        lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/TastoS.gif", 64, 60, false));
+        if(!GameData.mancino)
+            lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoS/TastoS.gif", 64, 60, false));
+        else
+            lblDown.setIcon(loader.getImageIcon("/TutorialButton/TastoK/TastoK.gif", 64, 60, false));
         lblDown.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblDown);
 
         lblLeft = new JLabel();
-        lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/TastoA.gif", 64, 60, false));
+        if(!GameData.mancino)
+            lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoA/TastoA.gif", 64, 60, false));
+        else
+            lblLeft.setIcon(loader.getImageIcon("/TutorialButton/TastoJ/TastoJ.gif", 64, 60, false));
         lblLeft.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblLeft);
 
         lblRight = new JLabel();
-        lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoD/TastoD.gif", 64, 60, false));
+        if(!GameData.mancino)
+            lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoD/TastoD.gif", 64, 60, false));
+        else
+            lblRight.setIcon(loader.getImageIcon("/TutorialButton/TastoL/TastoL.gif", 64, 60, false));
         lblRight.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblRight);
 
         lblQ = new JLabel();
-        lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoQ/TastoQ.gif", 64, 60, false));
+        if(!GameData.mancino)
+            lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoQ/TastoQ.gif", 64, 60, false));
+        else
+            lblQ.setIcon(loader.getImageIcon("/TutorialButton/TastoU/TastoU.gif", 64, 60, false));
         lblQ.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblQ);
 
         lblE = new JLabel();
-        lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoE/TastoE.gif", 64, 60, false));
+        if(!GameData.mancino)
+            lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoE/TastoE.gif", 64, 60, false));
+        else
+            lblE.setIcon(loader.getImageIcon("/TutorialButton/TastoO/TastoO.gif", 64, 60, false));
         lblE.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblE);
 
@@ -450,7 +470,10 @@ public class MenuView extends JPanel {
         layoutComands.add(lblMouse1);
 
         lblMouse2 = new JLabel();
-        lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse.gif", 64, 60, false));
+        if(!GameData.mancino)
+            lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/Mouse.gif", 64, 60, false));
+        else
+            lblMouse2.setIcon(loader.getImageIcon("/TutorialButton/Mouse/MouseMancino.gif", 64, 60, false));
         lblMouse2.setBorder(new EmptyBorder(0, 5, 0, 0));
         layoutComands.add(lblMouse2);
 
@@ -638,9 +661,29 @@ public class MenuView extends JPanel {
         gestioneLingua.add(en);
         sfondoSettings.add(gestioneLingua);
 
-        //traduce l'interfaccia
-        model.translateSettings();
-
+        JLabel gestioneMancino = new JLabel();
+        gestioneMancino.setMaximumSize(new Dimension(800, 50));
+        gestioneMancino.setLayout(new BoxLayout(gestioneMancino, BoxLayout.X_AXIS));
+        mancino = new JLabel("Left Handed: ");
+        mancino.setFont(font.deriveFont(Font.PLAIN, 20));
+        mancino.setForeground(Color.WHITE);
+        mancino.setBorder(new EmptyBorder(3, 25, 0, 0));
+        mancino.setPreferredSize(new Dimension(180, 50));
+        mancino.setMaximumSize(new Dimension(180, 50));
+        mancino.setMinimumSize(new Dimension(180, 50));
+        btnMancino.setPreferredSize(new Dimension(48, 48));
+        btnMancino.setMaximumSize(new Dimension(48, 48));
+        btnMancino.setMinimumSize(new Dimension(48, 48));
+        btnMancino.setBorderPainted(false);
+        btnMancino.setFocusPainted(false);
+        btnMancino.setContentAreaFilled(false);
+        if(!GameData.mancino)
+            btnMancino.setIcon(loader.getImageIcon("/SettingsImage/Slider1.png", 48, 48, false));
+        else
+            btnMancino.setIcon(loader.getImageIcon("/SettingsImage/Slider2.png", 48, 48, false));
+        gestioneMancino.add(mancino);
+        gestioneMancino.add(btnMancino);
+        sfondoSettings.add(gestioneMancino);
 
         exitSettings.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
         exitSettings.setHorizontalTextPosition(JButton.CENTER);
@@ -660,6 +703,9 @@ public class MenuView extends JPanel {
         layoutComands3.setBorder(new EmptyBorder(10, 0, 0, 0));
         layoutComands3.add(exitSettings);
         sfondoSettings.add(layoutComands3);
+
+        //traduce l'interfaccia
+        model.translateSettings();
 
         settingsPanel.add(sfondoSettings);
 
@@ -752,6 +798,14 @@ public class MenuView extends JPanel {
 
     public JLabel getSettingsLabel(){
         return settingsLabel;
+    }
+
+    public JLabel getMancino(){
+        return mancino;
+    }
+
+    public JButton getBtnMancino(){
+        return btnMancino;
     }
 
     public JButton getExitSettings(){
