@@ -1,14 +1,11 @@
 package ZombieApocalypse.View;
+import ZombieApocalypse.Loop.*;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.SplashScreenModel;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 import ZombieApocalypse.Controller.PlayerController;
-import ZombieApocalypse.Loop.GameLoop;
-import ZombieApocalypse.Loop.MenuLoop;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.Loop.LoginLoop;
-import ZombieApocalypse.Loop.TimeLoop;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 
@@ -19,6 +16,7 @@ public class GameFrame extends JPanel {
     private static PlayWav playMenuMusic = PlayWav.getInstance();
     public static JFrame frameGame = new JFrame("Login");
     private static GameLoop gameLoopObject;
+    private static LeaderboardLoop leaderboardLoop;
     public static LoginView panel;
     public static SplashScreenView splashScreen;
     private static MenuLoop menuLoop;
@@ -89,6 +87,8 @@ public class GameFrame extends JPanel {
         frameGame.repaint();
         menuLoop = new MenuLoop(menu);
         menuLoop.start();
+        leaderboardLoop = new LeaderboardLoop(menu);
+        leaderboardLoop.start();
     }
 
     public static void gameLaunch(){
@@ -100,6 +100,7 @@ public class GameFrame extends JPanel {
             playMenuMusic.play("/Music/GameMusic.wav");
         }
 
+        leaderboardLoop.stop();
         menuLoop.stop();
         frameGame.remove(menu);
         frameGame.setTitle("Game");

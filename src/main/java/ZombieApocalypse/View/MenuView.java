@@ -24,7 +24,6 @@ public class MenuView extends JPanel {
     ArrayList<String> nickname = new ArrayList<String>();
     ArrayList<Integer> punti = new ArrayList<Integer>();
     JLabel bg, sfondo1, sfondo2, sfondo3, sfondo4, sfondo5, sfondo6;
-    LeaderboardLoop loop;
     //Variabili per i menu
     private ResourcesLoader loader = ResourcesLoader.getInstance();
     private int borderValueRight, borderValueLeft;
@@ -84,8 +83,6 @@ public class MenuView extends JPanel {
         //Controllo se è attiva la schermata 'About' la elimino
         if(aboutPanel != null && aboutPanel.isShowing())
             this.remove(aboutPanel);
-        loop = new LeaderboardLoop(this);
-        loop.start();
         //Inizializzo i componenti
         initComponent();
         controller.addListener();
