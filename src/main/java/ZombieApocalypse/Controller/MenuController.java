@@ -126,5 +126,23 @@ public class MenuController {
                 }
             }
         });
+
+        view.getIt().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                GameData.lang = "it";
+                model.translateSettings();
+            }
+        });
+
+        view.getEn().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                GameData.lang = "en";
+                model.translateSettings();
+            }
+        });
     }
 }

@@ -1,5 +1,6 @@
 package ZombieApocalypse.View.MenuBar;
 
+import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
@@ -48,7 +49,11 @@ public class MenuBarView extends JPanel {
 
         GridBagConstraints c=new GridBagConstraints();
         healthAmmoPanel.setBackground(Color.BLACK);
-        JLabel jLabelH=new JLabel("Health");
+        JLabel jLabelH;
+        if(GameData.lang.equals("it"))
+            jLabelH = new JLabel("Vita");
+        else
+            jLabelH = new JLabel("Health");
         jLabelH.setFont(font);
         jLabelH.setForeground(Color.GRAY);
         c.gridx=0;
@@ -70,7 +75,11 @@ public class MenuBarView extends JPanel {
 
         //Pannello delle Munizioni
 
-        JLabel jLabelA=new JLabel(" Ammo");
+        JLabel jLabelA;
+        if(GameData.lang.equals("it"))
+            jLabelA = new JLabel("Munizioni");
+        else
+            jLabelA = new JLabel("Ammo");
         jLabelA.setFont(font);
         jLabelA.setForeground(Color.GRAY);
         ammoLabel=new JLabel();
@@ -87,14 +96,22 @@ public class MenuBarView extends JPanel {
 
         gunPanel.setBackground(Color.BLACK);
         gunPanel.setLayout(new GridBagLayout());
-        JLabel jLabelG=new JLabel(" use");
+        JLabel jLabelG;
+        if(GameData.lang.equals("it"))
+            jLabelG = new JLabel("usa");
+        else
+            jLabelG = new JLabel("use");
         jLabelG.setFont(font);
         jLabelG.setForeground(Color.GRAY);
         JLabel jLabelW=new JLabel("W");
         jLabelW.setFont(font);
         jLabelW.setForeground(Color.WHITE);
         gunLabel1=new JLabel();
-        JLabel jLabelD=new JLabel("drop");
+        JLabel jLabelD;
+        if(GameData.lang.equals("it"))
+            jLabelD = new JLabel("lascia");
+        else
+            jLabelD = new JLabel("drop");
         jLabelD.setFont(font);
         jLabelD.setForeground(Color.GRAY);
         JLabel jLabelS=new JLabel("S");
@@ -132,13 +149,21 @@ public class MenuBarView extends JPanel {
         gunPanel1.add(jLabelDd, c);
         c.gridy=0;
         c.gridx=1;
-        JLabel jLabelGg=new JLabel("use");
+        JLabel jLabelGg;
+        if(GameData.lang.equals("it"))
+            jLabelGg = new JLabel("usa");
+        else
+            jLabelGg = new JLabel("use");
         jLabelGg.setFont(font);
         jLabelGg.setForeground(Color.GRAY);
         gunPanel1.add(jLabelGg, c);
         c.gridy=1;
         c.gridx=1;
-        JLabel jLabelz=new JLabel(" drop");
+        JLabel jLabelz;
+        if(GameData.lang.equals("it"))
+            jLabelz = new JLabel("lascia");
+        else
+            jLabelz = new JLabel("drop");
         jLabelz.setFont(font);
         jLabelz.setForeground(Color.GRAY);
         gunPanel1.add(jLabelz, c);
@@ -149,7 +174,11 @@ public class MenuBarView extends JPanel {
 
         pointPanel.setLayout(new GridBagLayout());
         pointPanel.setBackground(Color.BLACK);
-        JLabel jLabelP=new JLabel("Points");
+        JLabel jLabelP;
+        if(GameData.lang.equals("it"))
+            jLabelP = new JLabel("Punti");
+        else
+            jLabelP = new JLabel("Points");
         jLabelP.setFont(font);
         jLabelP.setForeground(Color.GRAY);
         pointLabel=new JLabel();
@@ -166,7 +195,11 @@ public class MenuBarView extends JPanel {
 
         timePanel.setLayout(new GridBagLayout());
         timePanel.setBackground(Color.BLACK);
-        JLabel jLabelT=new JLabel("Time");
+        JLabel jLabelT;
+        if(GameData.lang.equals("it"))
+            jLabelT = new JLabel("Tempo");
+        else
+            jLabelT = new JLabel("Time");
         jLabelT.setFont(font);
         jLabelT.setForeground(Color.GRAY);
         timeLabel=new JLabel();
@@ -215,15 +248,5 @@ public class MenuBarView extends JPanel {
     public  void updateScoreLable(long t){
         pointLabel.setText(String.valueOf(t));
     }
-
-
-
-
-
-
-
-
-
-
 
 }

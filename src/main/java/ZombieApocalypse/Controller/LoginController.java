@@ -71,7 +71,7 @@ public class LoginController {
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
-                if(view.getNickname().getText().equals("Nickname not available!")){
+                if(view.getNickname().getText().equals("Nickname not available!") || view.getNickname().getText().equals("Nickname non disponibile!")){
                     view.getNickname().setText("");
                     view.getPassword().setText("");
                     view.getNickname().setForeground(Color.white);
@@ -83,7 +83,7 @@ public class LoginController {
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
-                if(view.getNickname().getText().equals("Nickname not available!")){
+                if(view.getNickname().getText().equals("Nickname not available!") || view.getNickname().getText().equals("Nickname non disponibile!")){
                     view.getNickname().setText("");
                     view.getPassword().setText("");
                     view.getNickname().setForeground(Color.white);

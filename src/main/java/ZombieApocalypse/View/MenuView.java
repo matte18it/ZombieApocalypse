@@ -39,9 +39,9 @@ public class MenuView extends JPanel {
     private JPanel panelMenu, imagePanel, aboutPanel, settingsPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
     //componenti per le settings
-    private JLabel music, sound;
+    private JLabel music, sound, language;
     private JSlider musica = new JSlider(-74, 6), suoni = new JSlider(-74, 6);
-    private JButton muteMusic = new JButton(), muteSound = new JButton();
+    private JButton muteMusic = new JButton(), muteSound = new JButton(), it = new JButton(), en = new JButton();
 
     public MenuView(){
         //setto il cursore personalizzato
@@ -96,7 +96,10 @@ public class MenuView extends JPanel {
     }
 
     private void initComponent() {
-        btnExitAbout = new JButton("Exit");
+        if(GameData.lang.equals("it"))
+            btnExitAbout = new JButton("Esci");
+        else
+            btnExitAbout = new JButton("Exit");
 
         //Creo il pannello con tuti i pulsanti
         panelMenu = new JPanel();
@@ -107,7 +110,11 @@ public class MenuView extends JPanel {
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.CENTER;
 
-        btnPlay = new JButton("Play", loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
+        if(GameData.lang.equals("it"))
+            btnPlay = new JButton("Gioca");
+        else
+            btnPlay = new JButton("Play");
+        btnPlay.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
         btnPlay.setHorizontalTextPosition(JButton.CENTER);
         btnPlay.setVerticalTextPosition(JButton.CENTER);
         btnPlay.setFont(font);
@@ -124,7 +131,11 @@ public class MenuView extends JPanel {
         panelMenu.add(btnPlay, c);
         c.insets = new Insets(20, 0, 0, 0);
 
-        btnSettings = new JButton("Settings", loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
+        if(GameData.lang.equals("it"))
+            btnSettings = new JButton("Impostazioni");
+        else
+            btnSettings = new JButton("Settings");
+        btnSettings.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
         btnSettings.setHorizontalTextPosition(JButton.CENTER);
         btnSettings.setVerticalTextPosition(JButton.CENTER);
         btnSettings.setFont(font);
@@ -140,7 +151,11 @@ public class MenuView extends JPanel {
         c.gridy = 1;
         panelMenu.add(btnSettings, c);
 
-        btnEditor = new JButton("Editor", loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
+        if(GameData.lang.equals("it"))
+            btnEditor = new JButton("Crea");
+        else
+            btnEditor = new JButton("Editor");
+        btnEditor.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
         btnEditor.setHorizontalTextPosition(JButton.CENTER);
         btnEditor.setVerticalTextPosition(JButton.CENTER);
         btnEditor.setFont(font);
@@ -156,7 +171,11 @@ public class MenuView extends JPanel {
         c.gridy = 2;
         panelMenu.add(btnEditor, c);
 
-        btnAbout = new JButton("About Game", loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
+        if(GameData.lang.equals("it"))
+            btnAbout = new JButton("Informazioni");
+        else
+            btnAbout = new JButton("About Game");
+        btnAbout.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
         btnAbout.setHorizontalTextPosition(JButton.CENTER);
         btnAbout.setVerticalTextPosition(JButton.CENTER);
         btnAbout.setFont(font);
@@ -172,7 +191,11 @@ public class MenuView extends JPanel {
         c.gridy = 3;
         panelMenu.add(btnAbout, c);
 
-        btnExit = new JButton("Exit", loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
+        if(GameData.lang.equals("it"))
+            btnExit = new JButton("Esci");
+        else
+            btnExit = new JButton("Exit");
+        btnExit.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
         btnExit.setHorizontalTextPosition(JButton.CENTER);
         btnExit.setVerticalTextPosition(JButton.CENTER);
         btnExit.setFont(font);
@@ -198,7 +221,10 @@ public class MenuView extends JPanel {
         c.gridwidth = 5;
         c.fill = GridBagConstraints.HORIZONTAL;
 
-        sfondo1 = new JLabel("Leaderboard");
+        if(GameData.lang.equals("it"))
+            sfondo1 = new JLabel("Classifica");
+        else
+            sfondo1 = new JLabel("Leaderboard");
         sfondo1.setFont(font.deriveFont(Font.PLAIN, 30));
         sfondo1.setForeground(Color.WHITE);
         sfondo1.setVerticalTextPosition(JLabel.CENTER);
@@ -239,7 +265,7 @@ public class MenuView extends JPanel {
         sfondo5.setBorder(new EmptyBorder(10, 15, 0, 0));
         bg.add(sfondo5);
 
-        sfondo6 = new JLabel("You) Matte18_ITA (400 pt)");
+        sfondo6 = new JLabel("");
         sfondo6.setForeground(Color.WHITE);
         sfondo6.setVerticalTextPosition(JLabel.CENTER);
         sfondo6.setHorizontalTextPosition(JLabel.CENTER);
@@ -248,6 +274,7 @@ public class MenuView extends JPanel {
         bg.add(sfondo6);
 
         panelMenu.add(bg, c);
+        try { updateLeaderboard(); } catch (IOException e) { throw new RuntimeException(e); }
     }
 
     public void setAbout() {
@@ -270,37 +297,55 @@ public class MenuView extends JPanel {
 
         AffineTransform affinetransform = new AffineTransform();
         FontRenderContext frc = new FontRenderContext(affinetransform,true,true);
-        creditsLabel = new JLabel("CREDITS");
+        if(GameData.lang.equals("it"))
+            creditsLabel = new JLabel("CREDITI");
+        else
+            creditsLabel = new JLabel("CREDITS");
         creditsLabel.setFont(font.deriveFont(Font.PLAIN, 22));
         creditsLabel.setForeground(Color.WHITE);
         creditsLabel.setBorder(new EmptyBorder(20, ((sfondoAbout.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(creditsLabel.getText(), frc).getWidth())/2))+25, 0, 0));
         sfondoAbout.add(creditsLabel);
 
-        developerLabel = new JLabel("GAME: game developed by Pierfrancesco Napoli, Matteo Canino, Sebastian Witon.");
+        if(GameData.lang.equals("it"))
+            developerLabel = new JLabel("GIOCO: gioco sviluppato da Pierfrancesco Napoli, Matteo Canino, Sebastian Witon.");
+        else
+            developerLabel = new JLabel("GAME: game developed by Pierfrancesco Napoli, Matteo Canino, Sebastian Witon.");
         developerLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         developerLabel.setForeground(Color.WHITE);
         developerLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(developerLabel);
 
-        gameVersionLabel = new JLabel("GAME VERSION: " + GameData.version);
+        if(GameData.lang.equals("it"))
+            gameVersionLabel = new JLabel("VERSIONE GIOCO: " + GameData.version);
+        else
+            gameVersionLabel = new JLabel("GAME VERSION: " + GameData.version);
         gameVersionLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         gameVersionLabel.setForeground(Color.WHITE);
         gameVersionLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(gameVersionLabel);
 
-        graphicsLabel = new JLabel("GRAPHICS: graphics taken from itch.io and drawn by Ittai Manero.");
+        if(GameData.lang.equals("it"))
+            graphicsLabel = new JLabel("GRAFICA: grafica scaricata dal sito 'itch.io', disegnata da Ittai Manero.");
+        else
+            graphicsLabel = new JLabel("GRAPHICS: graphics taken from 'itch.io' and drawn by Ittai Manero.");
         graphicsLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         graphicsLabel.setForeground(Color.WHITE);
         graphicsLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(graphicsLabel);
 
-        musicLabel = new JLabel("MUSIC: music taken from itch.io, is created by SzajnaWorkshop.");
+        if(GameData.lang.equals("it"))
+            musicLabel = new JLabel("MUSICA: musica scaricata dal sito 'itch.io', composta da SzajnaWorkshop.");
+        else
+            musicLabel = new JLabel("MUSIC: music taken from 'itch.io', is created by SzajnaWorkshop.");
         musicLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         musicLabel.setForeground(Color.white);
         musicLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(musicLabel);
 
-        soundLabel = new JLabel("SOUND: sounds taken from https://freesound.org");
+        if(GameData.lang.equals("it"))
+            soundLabel = new JLabel("SUONI: suoni scaricati dal sito 'https://freesound.org'");
+        else
+            soundLabel = new JLabel("SOUND: sounds taken from 'https://freesound.org'");
         soundLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         soundLabel.setForeground(Color.white);
         soundLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
@@ -480,6 +525,9 @@ public class MenuView extends JPanel {
         muteMusic.setPreferredSize(new Dimension(32, 32));
         muteMusic.setMaximumSize(new Dimension(32, 32));
         muteMusic.setMinimumSize(new Dimension(32, 32));
+        muteMusic.setBorderPainted(false);
+        muteMusic.setFocusPainted(false);
+        muteMusic.setContentAreaFilled(false);
         muteMusic.setIcon(loader.getImageIcon("/SettingsImage/AudioOn.png", 32, 32, false));
 
         JLabel gestioneMusica = new JLabel();
@@ -489,6 +537,10 @@ public class MenuView extends JPanel {
         music.setFont(font.deriveFont(Font.PLAIN, 20));
         music.setForeground(Color.WHITE);
         music.setBorder(new EmptyBorder(3, 25, 0, 0));
+        music.setPreferredSize(new Dimension(200, 50));
+        music.setMaximumSize(new Dimension(200, 50));
+        music.setMinimumSize(new Dimension(200, 50));
+
         musica.setMinorTickSpacing(4);
         musica.setMajorTickSpacing(16);
         musica.setPreferredSize(new Dimension(500, 50));
@@ -506,6 +558,9 @@ public class MenuView extends JPanel {
         muteSound.setPreferredSize(new Dimension(32, 32));
         muteSound.setMaximumSize(new Dimension(32, 32));
         muteSound.setMinimumSize(new Dimension(32, 32));
+        muteSound.setBorderPainted(false);
+        muteSound.setFocusPainted(false);
+        muteSound.setContentAreaFilled(false);
         muteSound.setIcon(loader.getImageIcon("/SettingsImage/SoundOn.png", 32, 32, false));
 
         JLabel gestioneSuoni = new JLabel();
@@ -515,6 +570,10 @@ public class MenuView extends JPanel {
         sound.setFont(font.deriveFont(Font.PLAIN, 20));
         sound.setForeground(Color.WHITE);
         sound.setBorder(new EmptyBorder(3, 25, 0, 0));
+        sound.setPreferredSize(new Dimension(200, 50));
+        sound.setMaximumSize(new Dimension(200, 50));
+        sound.setMinimumSize(new Dimension(200, 50));
+
         suoni.setPreferredSize(new Dimension(500, 50));
         suoni.setMaximumSize(new Dimension(500, 50));
         suoni.setMinimumSize(new Dimension(500, 50));
@@ -528,9 +587,41 @@ public class MenuView extends JPanel {
         gestioneSuoni.add(suoni);
         gestioneSuoni.add(Box.createRigidArea(new Dimension(30, 10)));
         gestioneSuoni.add(muteSound);
-
         sfondoSettings.add(gestioneMusica);
         sfondoSettings.add(gestioneSuoni);
+
+        JLabel gestioneLingua = new JLabel();
+        gestioneLingua.setMaximumSize(new Dimension(800, 50));
+        gestioneLingua.setLayout(new BoxLayout(gestioneLingua, BoxLayout.X_AXIS));
+        language = new JLabel("Language: ");
+        language.setFont(font.deriveFont(Font.PLAIN, 20));
+        language.setForeground(Color.WHITE);
+        language.setBorder(new EmptyBorder(3, 25, 0, 0));
+        language.setPreferredSize(new Dimension(150, 50));
+        language.setMaximumSize(new Dimension(150, 50));
+        language.setMinimumSize(new Dimension(150, 50));
+
+        it.setPreferredSize(new Dimension(32, 24));
+        it.setMaximumSize(new Dimension(32, 24));
+        it.setMinimumSize(new Dimension(32, 24));
+        it.setBorderPainted(false);
+        it.setFocusPainted(false);
+        it.setContentAreaFilled(false);
+        it.setIcon(loader.getImageIcon("/SettingsImage/it.png", 32, 24, false));
+        en.setPreferredSize(new Dimension(32, 24));
+        en.setMaximumSize(new Dimension(32, 24));
+        en.setMinimumSize(new Dimension(32, 24));
+        en.setBorderPainted(false);
+        en.setFocusPainted(false);
+        en.setContentAreaFilled(false);
+        en.setIcon(loader.getImageIcon("/SettingsImage/en.png", 32, 24, false));
+        gestioneLingua.add(language);
+        gestioneLingua.add(it);
+        gestioneLingua.add(Box.createRigidArea(new Dimension(30, 10)));
+        gestioneLingua.add(en);
+        sfondoSettings.add(gestioneLingua);
+
+        model.translateSettings();
 
         settingsPanel.add(sfondoSettings);
     }
@@ -597,6 +688,34 @@ public class MenuView extends JPanel {
 
     public JButton getMuteSound(){
         return muteSound;
+    }
+
+    public JButton getIt(){
+        return it;
+    }
+
+    public JButton getEn(){
+        return en;
+    }
+
+    public JLabel getMusic() {
+        return music;
+    }
+
+    public JLabel getSound() {
+        return sound;
+    }
+
+    public JLabel getLanguage() {
+        return language;
+    }
+
+    public JLabel getSettingsLabel(){
+        return settingsLabel;
+    }
+
+    public JLabel getSfondoSettings(){
+        return sfondoSettings;
     }
 
     public void updatePosition(){

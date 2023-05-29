@@ -51,7 +51,10 @@ public class LoginModel {
                 break;
             }
             case 1:{
-                view.getNickname().setText("Nickname not available!");
+                if(GameData.lang.equals("it"))
+                    view.getNickname().setText("Nickname non disponibile!");
+                else
+                    view.getNickname().setText("Nickname not available!");
                 view.getNickname().setForeground(Color.RED);
                 view.getPassword().setText("");
                 break;
