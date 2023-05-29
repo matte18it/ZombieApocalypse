@@ -41,7 +41,7 @@ public class MenuView extends JPanel {
     //componenti per le settings
     private JLabel music, sound, language;
     private JSlider musica = new JSlider(-74, 6), suoni = new JSlider(-74, 6);
-    private JButton muteMusic = new JButton(), muteSound = new JButton(), it = new JButton(), en = new JButton();
+    private JButton muteMusic, muteSound, it, en, exitSettings;
 
     public MenuView(){
         //setto il cursore personalizzato
@@ -87,6 +87,9 @@ public class MenuView extends JPanel {
         //Controllo se è attiva la schermata 'About' la elimino
         if(aboutPanel != null && aboutPanel.isShowing())
             this.remove(aboutPanel);
+        //Controllo se è attiva la schermata 'Settings' la elimino
+        if(settingsPanel != null && settingsPanel.isShowing())
+            this.remove(settingsPanel);
         //Inizializzo i componenti
         initComponent();
         controller.addListener();
@@ -96,10 +99,18 @@ public class MenuView extends JPanel {
     }
 
     private void initComponent() {
-        if(GameData.lang.equals("it"))
+        muteSound = new JButton();
+        muteMusic = new JButton();
+        en = new JButton();
+        it = new JButton();
+        if(GameData.lang.equals("it")) {
             btnExitAbout = new JButton("Esci");
-        else
+            exitSettings = new JButton("Esci");
+        }
+        else {
             btnExitAbout = new JButton("Exit");
+            exitSettings = new JButton("Exit");
+        }
 
         //Creo il pannello con tuti i pulsanti
         panelMenu = new JPanel();
@@ -528,7 +539,10 @@ public class MenuView extends JPanel {
         muteMusic.setBorderPainted(false);
         muteMusic.setFocusPainted(false);
         muteMusic.setContentAreaFilled(false);
-        muteMusic.setIcon(loader.getImageIcon("/SettingsImage/AudioOn.png", 32, 32, false));
+        if(GameData.music)
+            muteMusic.setIcon(loader.getImageIcon("/SettingsImage/AudioOn.png", 32, 32, false));
+        else
+            muteMusic.setIcon(loader.getImageIcon("/SettingsImage/AudioOff.png", 32, 32, false));
 
         JLabel gestioneMusica = new JLabel();
         gestioneMusica.setMaximumSize(new Dimension(800, 50));
@@ -561,7 +575,10 @@ public class MenuView extends JPanel {
         muteSound.setBorderPainted(false);
         muteSound.setFocusPainted(false);
         muteSound.setContentAreaFilled(false);
-        muteSound.setIcon(loader.getImageIcon("/SettingsImage/SoundOn.png", 32, 32, false));
+        if(GameData.sound)
+            muteSound.setIcon(loader.getImageIcon("/SettingsImage/SoundOn.png", 32, 32, false));
+        else
+            muteSound.setIcon(loader.getImageIcon("/SettingsImage/SoundOff.png", 32, 32, false));
 
         JLabel gestioneSuoni = new JLabel();
         gestioneSuoni.setMaximumSize(new Dimension(800, 50));
@@ -621,7 +638,28 @@ public class MenuView extends JPanel {
         gestioneLingua.add(en);
         sfondoSettings.add(gestioneLingua);
 
+        //traduce l'interfaccia
         model.translateSettings();
+
+
+        exitSettings.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
+        exitSettings.setHorizontalTextPosition(JButton.CENTER);
+        exitSettings.setVerticalTextPosition(JButton.CENTER);
+        exitSettings.setFont(font);
+        exitSettings.setBorderPainted(false);
+        exitSettings.setFocusPainted(false);
+        exitSettings.setContentAreaFilled(false);
+        exitSettings.setForeground(Color.WHITE);
+        exitSettings.setMinimumSize(new Dimension(197, 60));
+        exitSettings.setPreferredSize(new Dimension(197, 60));
+        exitSettings.setMaximumSize(new Dimension(197, 60));
+        //label per settare il pulsante al centro
+        JLabel layoutComands3 = new JLabel();
+        layoutComands3.setMaximumSize(new Dimension(800, 75));
+        layoutComands3.setLayout(new GridBagLayout());
+        layoutComands3.setBorder(new EmptyBorder(10, 0, 0, 0));
+        layoutComands3.add(exitSettings);
+        sfondoSettings.add(layoutComands3);
 
         settingsPanel.add(sfondoSettings);
     }
@@ -714,8 +752,8 @@ public class MenuView extends JPanel {
         return settingsLabel;
     }
 
-    public JLabel getSfondoSettings(){
-        return sfondoSettings;
+    public JButton getExitSettings(){
+        return exitSettings;
     }
 
     public void updatePosition(){

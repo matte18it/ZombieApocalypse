@@ -24,7 +24,6 @@ public class MenuModel {
             view.getSettingsLabel().setText("IMPOSTAZIONI");
             AffineTransform affinetransform = new AffineTransform();
             FontRenderContext frc = new FontRenderContext(affinetransform,true,true);
-            System.out.println(((830/2)-((int)(view.getFont().getStringBounds(view.getSettingsLabel().getText(), frc).getWidth())/2))+25);
             view.getSettingsLabel().setBorder(new EmptyBorder(25, ((830/2)-((int)(view.getFont().deriveFont(Font.PLAIN, 30).getStringBounds(view.getSettingsLabel().getText(), frc).getWidth())/2))+25, 0, 0));
         }
         else{

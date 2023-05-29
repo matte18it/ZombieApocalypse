@@ -93,6 +93,7 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                System.out.println("PROVA");
                 if(GameData.music){
                     GameData.music = false;
                     view.getMuteMusic().setIcon(ResourcesLoader.getInstance().getImageIcon("/SettingsImage/AudioOff.png", 32, 32, false));
@@ -142,6 +143,14 @@ public class MenuController {
                 super.mousePressed(e);
                 GameData.lang = "en";
                 model.translateSettings();
+            }
+        });
+
+        view.getExitSettings().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                view.setMenu();
             }
         });
     }
