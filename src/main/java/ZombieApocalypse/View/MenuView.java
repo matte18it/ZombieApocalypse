@@ -512,7 +512,10 @@ public class MenuView extends JPanel {
         lbl7.setBorder(new EmptyBorder(0, 30, 0, 0));
         layoutComands2.add(lbl7);
 
-        lbl8 = new JLabel("Drop");
+        if(GameData.lang.equals("it"))
+            lbl8 = new JLabel("Lascia");
+        else
+            lbl8 = new JLabel("Drop");
         lbl8.setFont(font.deriveFont(Font.PLAIN, 25));
         lbl8.setHorizontalTextPosition(JLabel.CENTER);
         lbl8.setForeground(Color.WHITE);
