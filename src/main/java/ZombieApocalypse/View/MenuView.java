@@ -662,6 +662,8 @@ public class MenuView extends JPanel {
         sfondoSettings.add(layoutComands3);
 
         settingsPanel.add(sfondoSettings);
+
+        try { updateLeaderboard(); } catch (IOException e) { throw new RuntimeException(e); }
     }
 
     private Hashtable<Integer, JLabel> setTable() {
