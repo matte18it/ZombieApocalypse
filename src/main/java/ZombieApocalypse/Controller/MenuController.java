@@ -3,13 +3,18 @@ package ZombieApocalypse.Controller;
 import ZombieApocalypse.Loop.MenuLoop;
 import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Model.MenuModel;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.MenuView;
 
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.Optional;
 
 public class MenuController {
     private MenuModel model;
@@ -35,6 +40,7 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                view.setSettings();
             }
         });
 
@@ -69,6 +75,15 @@ public class MenuController {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 view.setMenu();
+            }
+        });
+
+        view.getMusica().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                GameData.musicVolume = view.getMusica().getValue();
+                if(PlayWav.getInstance().isPlay())
+                    PlayWav.getInstance().setVolume(GameData.musicVolume);
             }
         });
     }

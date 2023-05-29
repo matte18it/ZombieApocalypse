@@ -1,7 +1,6 @@
 package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.MenuController;
-import ZombieApocalypse.Loop.LeaderboardLoop;
 import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
@@ -18,6 +17,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class MenuView extends JPanel {
     //variabili utili per la leaderboard
@@ -29,15 +29,19 @@ public class MenuView extends JPanel {
     private int borderValueRight, borderValueLeft;
     private boolean cambio = false;
     private Font font;
-    private JLabel titolo, sfondoAbout, developerLabel, gameVersionLabel, graphicsLabel, musicLabel, creditsLabel, soundLabel, controls;
+    private JLabel titolo, sfondoAbout, developerLabel, gameVersionLabel, graphicsLabel, musicLabel, creditsLabel, soundLabel, controls, sfondoSettings, settingsLabel;
     //label per la rappresentazione dei comandi pt1
     private JLabel lblUp, lblDown, lblLeft, lblRight, lblQ, lblE, lblESC, lblBar, lblMouse1, lblMouse2;
     //label per la rappresentazione dei comandi pt2
     private JLabel lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7, lbl8, lbl9, lbl10;
     private MenuModel model;
     private MenuController controller;
-    private JPanel panelMenu, imagePanel, aboutPanel;
+    private JPanel panelMenu, imagePanel, aboutPanel, settingsPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
+    //componenti per le settings
+    private JLabel music, sound;
+    private JSlider musica = new JSlider(-74, 6), suoni = new JSlider(-74, 6);
+    private JButton muteMusic = new JButton(), muteSound = new JButton();
 
     public MenuView(){
         //setto il cursore personalizzato
@@ -447,6 +451,114 @@ public class MenuView extends JPanel {
         layoutComands2.add(lbl10);
     }
 
+    public void setSettings(){
+        initSettings();
+        this.remove(panelMenu);
+        this.add(settingsPanel);
+        repaint();
+        revalidate();
+    }
+
+    private void initSettings() {
+        //creo il pannello settings
+        settingsPanel = new JPanel();
+        settingsPanel.setOpaque(false);
+        settingsPanel.setMaximumSize(new Dimension(830, 550));
+
+        sfondoSettings = new JLabel();
+        sfondoSettings.setIcon(loader.getImageIcon("/Login&Menu/aboutPanel.png", 830, 550, false));
+        sfondoSettings.setLayout(new BoxLayout(sfondoSettings, BoxLayout.Y_AXIS));
+
+        AffineTransform affinetransform = new AffineTransform();
+        FontRenderContext frc = new FontRenderContext(affinetransform,true,true);
+        settingsLabel = new JLabel("SETTINGS");
+        settingsLabel.setFont(font.deriveFont(Font.PLAIN, 30));
+        settingsLabel.setForeground(Color.WHITE);
+        settingsLabel.setBorder(new EmptyBorder(25, ((sfondoSettings.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(settingsLabel.getText(), frc).getWidth())/2))+25, 0, 0));
+        sfondoSettings.add(settingsLabel);
+
+        muteMusic.setPreferredSize(new Dimension(32, 32));
+        muteMusic.setMaximumSize(new Dimension(32, 32));
+        muteMusic.setMinimumSize(new Dimension(32, 32));
+        muteMusic.setIcon(loader.getImageIcon("/SettingsImage/AudioOn.png", 32, 32, false));
+
+        JLabel gestioneMusica = new JLabel();
+        gestioneMusica.setMaximumSize(new Dimension(800, 50));
+        gestioneMusica.setLayout(new BoxLayout(gestioneMusica, BoxLayout.X_AXIS));
+        music = new JLabel("Music Volume: ");
+        music.setFont(font.deriveFont(Font.PLAIN, 20));
+        music.setForeground(Color.WHITE);
+        music.setBorder(new EmptyBorder(3, 25, 0, 0));
+        musica.setMinorTickSpacing(4);
+        musica.setMajorTickSpacing(16);
+        musica.setPreferredSize(new Dimension(500, 50));
+        musica.setMaximumSize(new Dimension(500, 50));
+        musica.setMinimumSize(new Dimension(500, 50));
+        musica.setPaintTicks(true);
+        musica.setLabelTable(setTable());
+        musica.setPaintLabels(true);
+        musica.setValue(GameData.soundVolume);
+        gestioneMusica.add(music);
+        gestioneMusica.add(musica);
+        gestioneMusica.add(Box.createRigidArea(new Dimension(30, 10)));
+        gestioneMusica.add(muteMusic);
+
+        muteSound.setPreferredSize(new Dimension(32, 32));
+        muteSound.setMaximumSize(new Dimension(32, 32));
+        muteSound.setMinimumSize(new Dimension(32, 32));
+        muteSound.setIcon(loader.getImageIcon("/SettingsImage/SoundOn.png", 32, 32, false));
+
+        JLabel gestioneSuoni = new JLabel();
+        gestioneSuoni.setMaximumSize(new Dimension(800, 50));
+        gestioneSuoni.setLayout(new BoxLayout(gestioneSuoni, BoxLayout.X_AXIS));
+        sound = new JLabel("Sound Volume: ");
+        sound.setFont(font.deriveFont(Font.PLAIN, 20));
+        sound.setForeground(Color.WHITE);
+        sound.setBorder(new EmptyBorder(3, 25, 0, 0));
+        suoni.setPreferredSize(new Dimension(500, 50));
+        suoni.setMaximumSize(new Dimension(500, 50));
+        suoni.setMinimumSize(new Dimension(500, 50));
+        suoni.setMinorTickSpacing(4);
+        suoni.setMajorTickSpacing(16);
+        suoni.setPaintTicks(true);
+        suoni.setLabelTable(setTable());
+        suoni.setPaintLabels(true);
+        suoni.setValue(GameData.soundVolume);
+        gestioneSuoni.add(sound);
+        gestioneSuoni.add(suoni);
+        gestioneSuoni.add(Box.createRigidArea(new Dimension(30, 10)));
+        gestioneSuoni.add(muteSound);
+
+        sfondoSettings.add(gestioneMusica);
+        sfondoSettings.add(gestioneSuoni);
+
+        settingsPanel.add(sfondoSettings);
+    }
+
+    private Hashtable<Integer, JLabel> setTable() {
+        //con questa sezione creo un label per la jslide personalizzata
+        Hashtable<Integer, JLabel> labels = new Hashtable<>();
+        labels.put(-74, new JLabel("0"));
+        labels.put(-58, new JLabel("20"));
+        labels.put(-42, new JLabel("40"));
+        labels.put(-26, new JLabel("60"));
+        labels.put(-10, new JLabel("80"));
+        labels.put(6, new JLabel("100"));
+        labels.get(-74).setForeground(Color.white);
+        labels.get(-58).setForeground(Color.white);
+        labels.get(-42).setForeground(Color.white);
+        labels.get(-26).setForeground(Color.white);
+        labels.get(-10).setForeground(Color.white);
+        labels.get(6).setForeground(Color.white);
+        labels.get(-74).setFont(font.deriveFont(Font.PLAIN, 15));
+        labels.get(-58).setFont(font.deriveFont(Font.PLAIN, 15));
+        labels.get(-42).setFont(font.deriveFont(Font.PLAIN, 15));
+        labels.get(-26).setFont(font.deriveFont(Font.PLAIN, 15));
+        labels.get(-10).setFont(font.deriveFont(Font.PLAIN, 15));
+        labels.get(6).setFont(font.deriveFont(Font.PLAIN, 15));
+        return labels;
+    }
+
     public JButton getBtnExitAbout(){
         return btnExitAbout;
     }
@@ -469,6 +581,18 @@ public class MenuView extends JPanel {
 
     public JButton getBtnExit() {
         return btnExit;
+    }
+
+    public JSlider getMusica(){
+        return musica;
+    }
+
+    public JSlider getSuoni(){
+        return suoni;
+    }
+
+    public JButton getMuteMusic(){
+        return muteMusic;
     }
 
     public void updatePosition(){
