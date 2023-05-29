@@ -595,6 +595,10 @@ public class MenuView extends JPanel {
         return muteMusic;
     }
 
+    public JButton getMuteSound(){
+        return muteSound;
+    }
+
     public void updatePosition(){
         //Questa funzione serve per l'animazione del titolo
 
