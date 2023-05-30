@@ -4,57 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Adattamento lingua">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Ammo0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Ammo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Ammo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Esplosione0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Esplosione1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Esplosione2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Esplosione3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Esplosione4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Esplosione5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Granata0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Granata1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Granata2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Granata3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Lancio0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Lancio1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Lancio2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Lancio3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/GrenadeModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GrenadeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0358_Capa-359.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0359_Capa-360.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0360_Capa-361.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0361_Capa-362.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0362_Capa-363.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0363_Capa-364.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Granata0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Granata2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0342_Capa-343.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0343_Capa-344.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Ammo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Granata.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/KnifeAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/KnifeAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0358_Capa-359.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0359_Capa-360.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0360_Capa-361.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0361_Capa-362.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0362_Capa-363.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Explosion Animation Frames/Zombie-Tileset---_0363_Capa-364.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Granata0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Granata2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0342_Capa-343.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0343_Capa-344.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Settings pt.5">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,18 +382,12 @@
       <option name="project" value="LOCAL" />
       <updated>1685385236948</updated>
     </task>
-    <task id="LOCAL-00044" summary="Adattamento lingua">
-      <created>1685431212567</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1685431212567</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Movimenti armi" />
     <MESSAGE value="Movimenti armi funzionante" />
     <MESSAGE value="Creazioni Model per Armi" />
     <MESSAGE value="Animazione coltello" />
@@ -467,7 +412,6 @@
     <MESSAGE value="Settings pt.3" />
     <MESSAGE value="Settings pt.4" />
     <MESSAGE value="Settings pt.5" />
-    <MESSAGE value="Adattamento lingua" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adattamento lingua" />
+    <option name="LAST_COMMIT_MESSAGE" value="Settings pt.5" />
   </component>
 </project>

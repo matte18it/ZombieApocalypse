@@ -28,7 +28,7 @@ public class LoginView extends JPanel{
 
     public LoginView(){
         //setto il cursore personalizzato
-        this.setCursor(loader.getCursor("/GameGeneral/crosshair.png", this));
+        this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(loader.getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
 
         //Carico il font personalizzato
         font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 30, Font.PLAIN);

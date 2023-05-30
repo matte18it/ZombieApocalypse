@@ -13,12 +13,15 @@ public class ImageBackgroundPane extends JOptionPane {
         this.setPreferredSize(new Dimension(512, 300));
         this.setMaximumSize(new Dimension(512, 300));
         this.setMinimumSize(new Dimension(512, 300));
+        this.add(new JButton("CIAO"));
     }
 
-    public void showDialog(String message){
-        JDialog d = this.createDialog(null, "a");
-        d.dispose();
-        d.setUndecorated(true);
+    public void show(String message){
+        JDialog d = this.createDialog("DANGER");
+        d.setLayout(new BorderLayout());
+        d.add(new JButton("CIOA"), BorderLayout.NORTH);
+        //d.dispose();
+        //d.setUndecorated(true);
         d.setVisible(true);
     }
 

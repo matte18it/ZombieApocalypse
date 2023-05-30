@@ -39,13 +39,13 @@ public class MenuView extends JPanel {
     private JPanel panelMenu, imagePanel, aboutPanel, settingsPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
     //componenti per le settings
-    private JLabel music, sound, language, mancino;
+    private JLabel music, sound, language, mancino, logout;
     private JSlider musica = new JSlider(-74, 6), suoni = new JSlider(-74, 6);
-    private JButton muteMusic, muteSound, it, en, exitSettings, btnMancino;
+    private JButton muteMusic, muteSound, it, en, exitSettings, btnMancino, btnLogout;
 
     public MenuView(){
         //setto il cursore personalizzato
-        this.setCursor(loader.getCursor("/GameGeneral/crosshair.png", this));
+        this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(loader.getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
 
         //Carico il font personalizzato
         font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 30, Font.PLAIN);
@@ -101,6 +101,7 @@ public class MenuView extends JPanel {
     private void initComponent() {
         muteSound = new JButton();
         muteMusic = new JButton();
+        btnLogout = new JButton();
         en = new JButton();
         btnMancino = new JButton();
         it = new JButton();
@@ -586,6 +587,7 @@ public class MenuView extends JPanel {
         musica.setPreferredSize(new Dimension(500, 50));
         musica.setMaximumSize(new Dimension(500, 50));
         musica.setMinimumSize(new Dimension(500, 50));
+        musica.setOpaque(false);
         musica.setPaintTicks(true);
         musica.setLabelTable(setTable());
         musica.setPaintLabels(true);
@@ -620,6 +622,7 @@ public class MenuView extends JPanel {
         suoni.setPreferredSize(new Dimension(500, 50));
         suoni.setMaximumSize(new Dimension(500, 50));
         suoni.setMinimumSize(new Dimension(500, 50));
+        suoni.setOpaque(false);
         suoni.setMinorTickSpacing(4);
         suoni.setMajorTickSpacing(16);
         suoni.setPaintTicks(true);
@@ -687,6 +690,27 @@ public class MenuView extends JPanel {
         gestioneMancino.add(mancino);
         gestioneMancino.add(btnMancino);
         sfondoSettings.add(gestioneMancino);
+
+        JLabel gestioneLogout = new JLabel();
+        gestioneLogout.setMaximumSize(new Dimension(800, 50));
+        gestioneLogout.setLayout(new BoxLayout(gestioneLogout, BoxLayout.X_AXIS));
+        logout = new JLabel("Logout: ");
+        logout.setFont(font.deriveFont(Font.PLAIN, 20));
+        logout.setForeground(Color.WHITE);
+        logout.setBorder(new EmptyBorder(3, 25, 0, 0));
+        logout.setPreferredSize(new Dimension(180, 50));
+        logout.setMaximumSize(new Dimension(180, 50));
+        logout.setMinimumSize(new Dimension(180, 50));
+        btnLogout.setPreferredSize(new Dimension(48, 48));
+        btnLogout.setMaximumSize(new Dimension(48, 48));
+        btnLogout.setMinimumSize(new Dimension(48, 48));
+        btnLogout.setBorderPainted(false);
+        btnLogout.setFocusPainted(false);
+        btnLogout.setContentAreaFilled(false);
+        btnLogout.setIcon(loader.getImageIcon("/SettingsImage/logout.png", 48, 48, false));
+        gestioneLogout.add(logout);
+        gestioneLogout.add(btnLogout);
+        sfondoSettings.add(gestioneLogout);
 
         exitSettings.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
         exitSettings.setHorizontalTextPosition(JButton.CENTER);
@@ -813,6 +837,10 @@ public class MenuView extends JPanel {
 
     public JButton getExitSettings(){
         return exitSettings;
+    }
+
+    public JButton getBtnLogout(){
+        return btnLogout;
     }
 
     public void updatePosition(){
