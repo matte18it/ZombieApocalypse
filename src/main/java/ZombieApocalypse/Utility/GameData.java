@@ -13,7 +13,6 @@ public class GameData {
     public static int soundVolume = 0;    //variabile per volume suoni
     public static int skinAttiva = 1;       //variabile per gestione skin player
     public static Language lang = Language.EN;
-
     public static boolean mancino = false;
 
 }

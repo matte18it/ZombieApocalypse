@@ -2,19 +2,16 @@ package ZombieApocalypse.Controller;
 
 import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.ImageBackgroundPane;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuView;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 public class MenuController {
     private MenuModel model;
@@ -170,24 +167,7 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                UIManager.put("OptionPane.background",new Color(92,75,35));
-                UIManager.put("Panel.background",new Color(18,17,15));
-                UIManager.put("OptionPane.minimumSize",new Dimension(500,250));
-                UIManager.put("OptionPane.border", new EmptyBorder(10, 10, 10,10));
-                UIManager.put("OptionPane.font", ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
-                UIManager.put("OptionPane.foreground", Color.WHITE);
-
-                JOptionPane pane = new JOptionPane();
-                pane.setMessage("CIOA");
-                Dialog dialog = new Dialog((Frame) null, "DANGER");
-                dialog.setLayout(new BorderLayout());
-                dialog.setUndecorated(true);
-                dialog.add(pane);
-                dialog.pack();
-                dialog.setAlwaysOnTop(true);
-                dialog.setModal(true);
-                dialog.setLocationRelativeTo(null);
-                dialog.setVisible(true);
+                model.showDialog();
             }
         });
     }
