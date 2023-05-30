@@ -17,7 +17,7 @@ public class MenuModel {
     }
 
     public void translateSettings() {
-        if(GameData.lang.equals("it")){
+        if(GameData.lang== GameData.Language.IT){
             view.getMusic().setText("Volume Musica: ");
             view.getSound().setText("Volume Suoni: ");
             view.getLanguage().setText("Lingua: ");

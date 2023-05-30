@@ -1,5 +1,6 @@
 package ZombieApocalypse.Controller;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.View.GraphicPanel;
 
 import java.awt.event.*;
@@ -15,26 +16,38 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_UP  -> Game.getInstance().startMovementUp();
-            case KeyEvent.VK_RIGHT -> Game.getInstance().startMovementRight();
-            case KeyEvent.VK_LEFT -> Game.getInstance().startMovementLeft();
-            case KeyEvent.VK_DOWN -> Game.getInstance().startMovementDown();
-
-
-
-            case KeyEvent.VK_Q -> Game.getInstance().closeGame();
-
+        if(GameData.mancino) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_I -> Game.getInstance().startMovementUp();
+                case KeyEvent.VK_L -> Game.getInstance().startMovementRight();
+                case KeyEvent.VK_J -> Game.getInstance().startMovementLeft();
+                case KeyEvent.VK_K -> Game.getInstance().startMovementDown();
+            }
+        }else {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_W -> Game.getInstance().startMovementUp();
+                case KeyEvent.VK_D -> Game.getInstance().startMovementRight();
+                case KeyEvent.VK_A -> Game.getInstance().startMovementLeft();
+                case KeyEvent.VK_S -> Game.getInstance().startMovementDown();
+            }
         }
-    }
+        if( e.getKeyCode()==KeyEvent.VK_ESCAPE)
+            Game.getInstance().closeGame();
+        }
+
 
     @Override
     public void keyTyped(KeyEvent e) {}
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT ||e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode()==KeyEvent.VK_DOWN || e.getKeyCode()==KeyEvent.VK_UP ||e.getKeyCode()==KeyEvent.VK_W || e.getKeyCode()==KeyEvent.VK_S || e.getKeyCode()==KeyEvent.VK_D || e.getKeyCode()==KeyEvent.VK_A)
-            Game.getInstance().stopMovement();
+        if(GameData.mancino) {
+            if (e.getKeyCode() == KeyEvent.VK_I || e.getKeyCode() == KeyEvent.VK_J || e.getKeyCode() == KeyEvent.VK_K || e.getKeyCode() == KeyEvent.VK_L)
+                Game.getInstance().stopMovement();
+        }else {
+            if (e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_D || e.getKeyCode() == KeyEvent.VK_A)
+                Game.getInstance().stopMovement();
+        }
     }
 
     public void update() {
@@ -64,7 +77,10 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
 
     @Override
     public void mousePressed(MouseEvent e) {
-        Game.getInstance().attack();
+        if(GameData.mancino && e.getButton()==2)
+            Game.getInstance().attack();
+        if(!GameData.mancino && e.getButton()==1)
+            Game.getInstance().attack();
 
     }
 

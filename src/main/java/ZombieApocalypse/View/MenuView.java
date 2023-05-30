@@ -104,7 +104,7 @@ public class MenuView extends JPanel {
         en = new JButton();
         btnMancino = new JButton();
         it = new JButton();
-        if(GameData.lang.equals("it")) {
+        if(GameData.lang==GameData.Language.IT) {
             btnExitAbout = new JButton("Esci");
             exitSettings = new JButton("Esci");
         }
@@ -122,7 +122,7 @@ public class MenuView extends JPanel {
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.CENTER;
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             btnPlay = new JButton("Gioca");
         else
             btnPlay = new JButton("Play");
@@ -143,7 +143,7 @@ public class MenuView extends JPanel {
         panelMenu.add(btnPlay, c);
         c.insets = new Insets(20, 0, 0, 0);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             btnSettings = new JButton("Impostazioni");
         else
             btnSettings = new JButton("Settings");
@@ -163,7 +163,7 @@ public class MenuView extends JPanel {
         c.gridy = 1;
         panelMenu.add(btnSettings, c);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             btnEditor = new JButton("Crea");
         else
             btnEditor = new JButton("Editor");
@@ -183,7 +183,7 @@ public class MenuView extends JPanel {
         c.gridy = 2;
         panelMenu.add(btnEditor, c);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             btnAbout = new JButton("Informazioni");
         else
             btnAbout = new JButton("About Game");
@@ -203,7 +203,7 @@ public class MenuView extends JPanel {
         c.gridy = 3;
         panelMenu.add(btnAbout, c);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             btnExit = new JButton("Esci");
         else
             btnExit = new JButton("Exit");
@@ -233,7 +233,7 @@ public class MenuView extends JPanel {
         c.gridwidth = 5;
         c.fill = GridBagConstraints.HORIZONTAL;
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             sfondo1 = new JLabel("Classifica");
         else
             sfondo1 = new JLabel("Leaderboard");
@@ -309,7 +309,7 @@ public class MenuView extends JPanel {
 
         AffineTransform affinetransform = new AffineTransform();
         FontRenderContext frc = new FontRenderContext(affinetransform,true,true);
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             creditsLabel = new JLabel("CREDITI");
         else
             creditsLabel = new JLabel("CREDITS");
@@ -318,7 +318,7 @@ public class MenuView extends JPanel {
         creditsLabel.setBorder(new EmptyBorder(20, ((sfondoAbout.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(creditsLabel.getText(), frc).getWidth())/2))+25, 0, 0));
         sfondoAbout.add(creditsLabel);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             developerLabel = new JLabel("GIOCO: gioco sviluppato da Pierfrancesco Napoli, Matteo Canino, Sebastian Witon.");
         else
             developerLabel = new JLabel("GAME: game developed by Pierfrancesco Napoli, Matteo Canino, Sebastian Witon.");
@@ -327,7 +327,7 @@ public class MenuView extends JPanel {
         developerLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(developerLabel);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             gameVersionLabel = new JLabel("VERSIONE GIOCO: " + GameData.version);
         else
             gameVersionLabel = new JLabel("GAME VERSION: " + GameData.version);
@@ -336,7 +336,7 @@ public class MenuView extends JPanel {
         gameVersionLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(gameVersionLabel);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             graphicsLabel = new JLabel("GRAFICA: grafica scaricata dal sito 'itch.io', disegnata da Ittai Manero.");
         else
             graphicsLabel = new JLabel("GRAPHICS: graphics taken from 'itch.io' and drawn by Ittai Manero.");
@@ -345,7 +345,7 @@ public class MenuView extends JPanel {
         graphicsLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(graphicsLabel);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             musicLabel = new JLabel("MUSICA: musica scaricata dal sito 'itch.io', composta da SzajnaWorkshop.");
         else
             musicLabel = new JLabel("MUSIC: music taken from 'itch.io', is created by SzajnaWorkshop.");
@@ -354,7 +354,7 @@ public class MenuView extends JPanel {
         musicLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(musicLabel);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             soundLabel = new JLabel("SUONI: suoni scaricati dal sito 'https://freesound.org'");
         else
             soundLabel = new JLabel("SOUND: sounds taken from 'https://freesound.org'");
@@ -512,7 +512,7 @@ public class MenuView extends JPanel {
         lbl7.setBorder(new EmptyBorder(0, 30, 0, 0));
         layoutComands2.add(lbl7);
 
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             lbl8 = new JLabel("Lascia");
         else
             lbl8 = new JLabel("Drop");

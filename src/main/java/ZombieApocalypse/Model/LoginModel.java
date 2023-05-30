@@ -51,7 +51,7 @@ public class LoginModel {
                 break;
             }
             case 1:{
-                if(GameData.lang.equals("it"))
+                if(GameData.lang== GameData.Language.IT)
                     view.getNickname().setText("Nickname non disponibile!");
                 else
                     view.getNickname().setText("Nickname not available!");

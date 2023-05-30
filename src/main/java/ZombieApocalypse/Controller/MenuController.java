@@ -134,7 +134,7 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                GameData.lang = "it";
+                GameData.lang = GameData.Language.IT;
                 model.translateSettings();
             }
         });
@@ -143,7 +143,7 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                GameData.lang = "en";
+                GameData.lang = GameData.Language.EN;
                 model.translateSettings();
             }
         });

@@ -50,7 +50,7 @@ public class MenuBarView extends JPanel {
         GridBagConstraints c=new GridBagConstraints();
         healthAmmoPanel.setBackground(Color.BLACK);
         JLabel jLabelH;
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             jLabelH = new JLabel("Vita");
         else
             jLabelH = new JLabel("Health");
@@ -76,8 +76,8 @@ public class MenuBarView extends JPanel {
         //Pannello delle Munizioni
 
         JLabel jLabelA;
-        if(GameData.lang.equals("it"))
-            jLabelA = new JLabel("Munizioni");
+        if(GameData.lang== GameData.Language.IT)
+            jLabelA = new JLabel("Colpi");
         else
             jLabelA = new JLabel("Ammo");
         jLabelA.setFont(font);
@@ -92,29 +92,40 @@ public class MenuBarView extends JPanel {
         healthAmmoPanel.add(ammoLabel, c);
         //Pannello delle Armi primo
         JPanel gunPanel=new JPanel();
-        gunPanel.setMaximumSize(new Dimension(90, Settings.MENU_BAR_HEIGHT));
+        if(GameData.lang== GameData.Language.EN)
+            gunPanel.setMaximumSize(new Dimension(130, Settings.MENU_BAR_HEIGHT));
+        else
+            gunPanel.setMaximumSize(new Dimension(160, Settings.MENU_BAR_HEIGHT));
 
         gunPanel.setBackground(Color.BLACK);
         gunPanel.setLayout(new GridBagLayout());
         JLabel jLabelG;
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             jLabelG = new JLabel("usa");
         else
             jLabelG = new JLabel("use");
         jLabelG.setFont(font);
         jLabelG.setForeground(Color.GRAY);
-        JLabel jLabelW=new JLabel("W");
+        JLabel jLabelW;
+            if(GameData.mancino)
+                jLabelW=new JLabel("U");
+            else
+                jLabelW=new JLabel("Q");
         jLabelW.setFont(font);
         jLabelW.setForeground(Color.WHITE);
         gunLabel1=new JLabel();
         JLabel jLabelD;
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             jLabelD = new JLabel("lascia");
         else
             jLabelD = new JLabel("drop");
         jLabelD.setFont(font);
         jLabelD.setForeground(Color.GRAY);
-        JLabel jLabelS=new JLabel("S");
+        JLabel jLabelS;
+        if(GameData.lang== GameData.Language.IT)
+            jLabelS=new JLabel("Spazio");
+        else
+            jLabelS=new JLabel("Space");
         jLabelS.setFont(font);
         jLabelS.setForeground(Color.WHITE);
         c.gridx=0;
@@ -125,6 +136,7 @@ public class MenuBarView extends JPanel {
         gunPanel.add(jLabelD, c);
         c.gridy=0;
         c.gridx=1;
+        c.anchor=GridBagConstraints.LINE_END;
         gunPanel.add(jLabelW, c);
         c.gridy=1;
         c.gridx=1;
@@ -132,25 +144,38 @@ public class MenuBarView extends JPanel {
         //Pannello delle armi 2
         gunLabel2=new JLabel();
         JPanel gunPanel1=new JPanel();
-        gunPanel1.setMaximumSize(new Dimension(100, Settings.MENU_BAR_HEIGHT));
-        gunPanel1.setBackground(Color.BLACK);
+        if(GameData.lang== GameData.Language.EN)
+            gunPanel1.setMaximumSize(new Dimension(130, Settings.MENU_BAR_HEIGHT));
+        else
+            gunPanel1.setMaximumSize(new Dimension(160, Settings.MENU_BAR_HEIGHT));
+       gunPanel1.setBackground(Color.BLACK);
         gunPanel1.setLayout(new GridBagLayout());
-        JLabel jLabelE=new JLabel("E");
+        JLabel jLabelE;
+        if(GameData.mancino)
+            jLabelE=new JLabel("O");
+        else
+            jLabelE=new JLabel("E");
         jLabelE.setFont(font);
         jLabelE.setForeground(Color.WHITE);
         c.gridx=0;
         c.gridy=0;
+        c.anchor=GridBagConstraints.LINE_START;
         gunPanel1.add(jLabelE, c);
-        JLabel jLabelDd=new JLabel("D");
-        jLabelDd.setFont(font);
-        jLabelDd.setForeground(Color.WHITE);
+
         c.gridx=0;
         c.gridy=1;
-        gunPanel1.add(jLabelDd, c);
+        JLabel jLabelZ;
+        if(GameData.lang== GameData.Language.IT)
+            jLabelZ=new JLabel("Spazio");
+        else
+            jLabelZ=new JLabel("Space");
+        jLabelZ.setFont(font);
+        jLabelZ.setForeground(Color.WHITE);
+        gunPanel1.add(jLabelZ, c);
         c.gridy=0;
         c.gridx=1;
         JLabel jLabelGg;
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             jLabelGg = new JLabel("usa");
         else
             jLabelGg = new JLabel("use");
@@ -160,7 +185,7 @@ public class MenuBarView extends JPanel {
         c.gridy=1;
         c.gridx=1;
         JLabel jLabelz;
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             jLabelz = new JLabel("lascia");
         else
             jLabelz = new JLabel("drop");
@@ -175,7 +200,7 @@ public class MenuBarView extends JPanel {
         pointPanel.setLayout(new GridBagLayout());
         pointPanel.setBackground(Color.BLACK);
         JLabel jLabelP;
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             jLabelP = new JLabel("Punti");
         else
             jLabelP = new JLabel("Points");
@@ -196,7 +221,7 @@ public class MenuBarView extends JPanel {
         timePanel.setLayout(new GridBagLayout());
         timePanel.setBackground(Color.BLACK);
         JLabel jLabelT;
-        if(GameData.lang.equals("it"))
+        if(GameData.lang== GameData.Language.IT)
             jLabelT = new JLabel("Tempo");
         else
             jLabelT = new JLabel("Time");
@@ -210,6 +235,7 @@ public class MenuBarView extends JPanel {
         timePanel.add(jLabelT, c);
         c.gridx = 0;
         c.gridy = 1;
+        c.insets=new Insets(0,60,0,0);
         timePanel.add(timeLabel,c);
         add(playerName);
         add(healthAmmoPanel);
@@ -222,10 +248,10 @@ public class MenuBarView extends JPanel {
         add(timePanel);
     }
     public void addHeart(){
-        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 30));
+        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
     }
     public void removeHeart(){
-        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 30));
+        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
     }
 
 
@@ -234,9 +260,9 @@ public class MenuBarView extends JPanel {
         heart=Game.getInstance().getPlayerLife();
         for(int i=0; i<Game.getInstance().getPlayerMaxLife(); i++){
             if(i<Game.getInstance().getPlayerLife())
-            healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 30));
+            healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
             else
-                healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 30));
+                healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
         }
         gunLabel1.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
         gunLabel2.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));

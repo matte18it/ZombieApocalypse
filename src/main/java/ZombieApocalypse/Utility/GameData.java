@@ -1,6 +1,7 @@
 package ZombieApocalypse.Utility;
 
 public class GameData {
+    public static enum Language{EN, IT};
     public static String nick;  //Variabile che contiene il nickname del player
     public static String pass;  //Variabile che contiene la password del player
     public static String version = "V1.0.0";    //Variabile per rappresentare la versione
@@ -11,7 +12,7 @@ public class GameData {
     public static int musicVolume = 0;    //variabile per volume musica
     public static int soundVolume = 0;    //variabile per volume suoni
     public static int skinAttiva = 1;       //variabile per gestione skin player
-    public static String lang = "en";
+    public static Language lang = Language.EN;
 
     public static boolean mancino = false;
 
