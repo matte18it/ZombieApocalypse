@@ -1,10 +1,12 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Model.Guns.GrenadeModel;
 import ZombieApocalypse.Model.Guns.KnifeModel;
 import ZombieApocalypse.Model.Guns.PistolModel;
 import ZombieApocalypse.Model.Guns.ShotgunModel;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.GameFrame;
+import ZombieApocalypse.View.Gun.GrenadeView;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 import java.awt.*;
@@ -15,12 +17,14 @@ public class Game {
     private final PlayerCharacter character = new PlayerCharacter();
     private final KnifeModel knife=new KnifeModel();
     private final PistolModel pistol = new PistolModel();
+    private final GrenadeModel grenade=new GrenadeModel();
     private final ShotgunModel shotgun=new ShotgunModel();
 
     //Gestione delle armi, per adesso
+    public boolean hasGrenade=true;
     public boolean hasPistol=false;
     public boolean hasKnife=false;
-    public boolean hasShotgun=true;
+    public boolean hasShotgun=false;
 
 
 
@@ -104,6 +108,8 @@ public class Game {
             knife.attack();
         if(hasShotgun)
             shotgun.attack();
+        if(hasGrenade)
+            grenade.attack();
 
 
     }
@@ -136,5 +142,9 @@ public class Game {
 
     public void updateTime(long time) {
         menuBar.updateTimeLable(time);
+    }
+
+    public GrenadeModel getGrenadeModel() {
+        return grenade;
     }
 }

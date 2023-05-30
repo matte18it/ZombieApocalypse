@@ -5,6 +5,7 @@ import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 
+
 public class ShotgunModel extends GunModel{
     public ShotgunModel(){
         width= Settings.CELL_SIZEX;
