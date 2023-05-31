@@ -8,7 +8,7 @@ public class BulletShotgun extends Bullet{
     Type bulletType;
 
     BulletShotgun(int x, int y, int dimension, double angle, Type t){
-        super(x,y,dimension, angle);
+        super(x,y,dimension, angle, false);
             totalFrame=8;
             bulletType=t;
             dir=Game.getInstance().getShotgunModel().checkDirection(angle);

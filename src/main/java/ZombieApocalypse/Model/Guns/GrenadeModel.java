@@ -26,6 +26,9 @@ public class GrenadeModel extends GunModel{
         super.setCenter();
     }
     public void attack() {
+        Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
+
+        Bullets.getInstance().GrenadeLaunch(center.x, center.y, 21, 0, xPosition, yPosition);
 
 
     }

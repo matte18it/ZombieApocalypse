@@ -19,8 +19,10 @@ public class ItemAnimation {
         Image img=null;
         for (int i=0; i<numberOfElement; i++) {
             String path=action+i;
-
-            img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), true);
+            if(Game.getInstance().hasPistol)
+                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), true);
+            if(Game.getInstance().hasGrenade)
+                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenadeModel().getWidth(),  Game.getInstance().getGrenadeModel().getHeight(), true);
             images.add(img);
         }
 

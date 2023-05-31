@@ -1,5 +1,7 @@
 package ZombieApocalypse.View.Gun;
 
+import ZombieApocalypse.Model.Character;
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Utility.ResourcesLoader;
@@ -10,13 +12,24 @@ public class BulletView {
 
     public Image currentImage;
     public Image [] bullet=new Image[6];
+    public Image [] grenade=new Image[4];
     int count=0;
     boolean ending=false;
+    boolean isGrenade=false;
 
-    public BulletView( int dimension) {
-        for(int i=0; i<6; i++)
-            bullet[i]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/ProiettilePistola"+i+".png",dimension ,dimension,true);
-
+    public BulletView( int dimension, boolean b) {
+        isGrenade=b;
+        if(isGrenade){
+            for(int i=0; i<6; i++){
+                bullet[i]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/Esplosione"+i+".png",dimension ,dimension,true);
+            }
+            for(int i=0; i<4; i++){
+                grenade[i]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/Granata"+i+".png", Game.getInstance().getGrenadeModel().getWidth(),Game.getInstance().getGrenadeModel().getHeight(),true);
+            }
+        }else {
+            for (int i = 0; i < 6; i++)
+                bullet[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/ProiettilePistola" + i + ".png", dimension, dimension, true);
+        }
     }
     public void isEnding(){
         count=0;
@@ -24,6 +37,12 @@ public class BulletView {
     }
 
     public void update() {
+        if(isGrenade){
+            if(!ending){
+                    currentImage=grenade[0];
+
+            }
+        }else{
         if(!ending) {
             if (count<2)
                 currentImage = bullet[0];
@@ -38,11 +57,12 @@ public class BulletView {
                 currentImage=bullet[4];
             else if(count==2)
                 currentImage=bullet[5];
-        } count++;
+        } count++;}
 
 
     }
     public Image getCurrentImage() {
         return currentImage;
     }
+
 }

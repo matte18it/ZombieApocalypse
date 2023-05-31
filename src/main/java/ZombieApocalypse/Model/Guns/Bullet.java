@@ -1,11 +1,8 @@
 package ZombieApocalypse.Model.Guns;
 
-import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.Gun.BulletView;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 
 public abstract class Bullet {
      int velocityX;
@@ -23,14 +20,14 @@ public abstract class Bullet {
     boolean ending=false;
     double angle;
 
-    Bullet(int x, int y, int dimension, double angle){
+    Bullet(int x, int y, int dimension, double angle, boolean b){
         this.x=x;
         this.y=y;
         this.dimension=dimension;
         this.velocityX=10;
         this.velocityY=10;
         hitBox=new Rectangle(x, y, dimension, dimension);
-        bulletView=new BulletView(this.dimension);
+        bulletView=new BulletView(this.dimension,b );
         }
     public int getX() {
         return this.x;
