@@ -67,6 +67,8 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             panel.getPistolView().update(e.getPoint());
         if(Game.getInstance().hasShotgun)
             panel.getShotgunView().update(e.getPoint());
+        if(Game.getInstance().hasGrenade)
+            panel.getGrenadeView().update(e.getPoint());
 
     }
 

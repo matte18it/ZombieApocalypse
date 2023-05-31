@@ -6,14 +6,14 @@ import ZombieApocalypse.Model.Game;
 import java.awt.*;
 
 public class KnifeView {
-    private final KnifeAnimation gunAnimation;
+    private final ItemAnimation gunAnimation;
     private final GunAttackAnimation attackFrame;
     private final GunAttackAnimation attackFrameReverse;
     public Image currentImage;
 
 
     public KnifeView() {
-        gunAnimation= new KnifeAnimation("Coltello",4);
+        gunAnimation= new ItemAnimation("Coltello",4);
         attackFrame= new GunAttackAnimation("AnimazioneColtello",4);
         attackFrameReverse= new GunAttackAnimation("AnimazioneColtelloReverse",4);
         currentImage=gunAnimation.getDefaultImage();

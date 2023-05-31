@@ -2,24 +2,31 @@ package ZombieApocalypse.Model.Guns;
 
 import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.*;
+
+import static java.lang.Math.atan2;
 
 public class GrenadeModel extends GunModel{
+    Point mouse;
+    public int [] xPosition={0,0,0};
+    public int[] yPosition= {0,0,0};
+
     public GrenadeModel(){
         damage=6;
         width= 21;
         height=21;
         imagePosition=new Point(0,0);
+        mouse=new Point(0,0);
         super.setCenter();
     }
     public void attack() {
-        attack=true;
-        Point enemy =new Point(Game.getInstance().getEnemyCharacter().getX()+Game.getInstance().getEnemyCharacter().centerX, Game.getInstance().getEnemyCharacter().getY()+Game.getInstance().getEnemyCharacter().centerY);
-        Point explosion=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
-        if(explosion.distance(enemy)<height)
-            Game.getInstance().getEnemyCharacter().hit();
+
 
     }
     public void update(){
@@ -52,6 +59,36 @@ public class GrenadeModel extends GunModel{
 
         }
     }
+    public boolean launch=false;
+    public void update(Point e){
+        Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
+        if (e!=null)
+            mouse=e;
+        int dx,dy;
+        xPosition[0]=center.x;
+        yPosition[0]=center.y;
+        dx=(mouse.x+center.x)/2;
+        dy=((mouse.y+center.y)/2)-60;
+
+        if((Math.abs(mouse.x-center.x)<350 && Math.abs(mouse.y-center.y)<290) || !Game.getInstance().getPlayerCharacter().getWorld().isGround0(mouse.x, mouse.y))
+            launch=true;
+        else
+            launch=false;
+        xPosition[1]=dx;
+        xPosition[2]=mouse.x;
+        yPosition[1]=dy;
+        yPosition[2]=mouse.y;
+
+
+
+
+
+
+
+
+
+        }
+
 
     public boolean isUp() {
         return Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.DOWN;
