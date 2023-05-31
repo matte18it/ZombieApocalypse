@@ -59,7 +59,6 @@ public class GrenadeModel extends GunModel{
 
         }
     }
-    public boolean launch=false;
     public void update(Point e){
         Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
         if (e!=null)
@@ -67,13 +66,30 @@ public class GrenadeModel extends GunModel{
         int dx,dy;
         xPosition[0]=center.x;
         yPosition[0]=center.y;
+
+
+
+        if((Math.abs(mouse.x-center.x)>=300 )){
+            int c=Math.abs(mouse.x-center.x);
+            c=c-300;
+            if(mouse.x>center.x){
+            mouse.x=mouse.x-c;}
+            else
+                mouse.x=mouse.x+c;
+
+        }
+        if( Math.abs(mouse.y-center.y)>=250){
+            int h=Math.abs(mouse.y-center.y);
+            h=h-250;
+            if(mouse.y>center.y)
+                mouse.y=mouse.y-h;
+            else
+                mouse.y=mouse.y+h;
+
+
+        }
         dx=(mouse.x+center.x)/2;
         dy=((mouse.y+center.y)/2)-60;
-
-        if((Math.abs(mouse.x-center.x)<350 && Math.abs(mouse.y-center.y)<290) || !Game.getInstance().getPlayerCharacter().getWorld().isGround0(mouse.x, mouse.y))
-            launch=true;
-        else
-            launch=false;
         xPosition[1]=dx;
         xPosition[2]=mouse.x;
         yPosition[1]=dy;
