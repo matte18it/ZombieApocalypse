@@ -7,7 +7,7 @@ import ZombieApocalypse.Utility.ResourcesLoader;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class KnifeAnimation {
+public class ItemAnimation {
 
     private final ArrayList<Image> images = new ArrayList<>();
 
@@ -15,7 +15,7 @@ public class KnifeAnimation {
 
 
 
-    public KnifeAnimation(String action, int numberOfElement) {
+    public ItemAnimation(String action, int numberOfElement) {
         Image img=null;
         for (int i=0; i<numberOfElement; i++) {
             String path=action+i;

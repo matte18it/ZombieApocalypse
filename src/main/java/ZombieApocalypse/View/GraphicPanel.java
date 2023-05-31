@@ -1,5 +1,6 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
@@ -25,6 +26,8 @@ public class GraphicPanel extends JPanel {
     private static final GrenadeView grenadeView=new GrenadeView();
     private static final SkinnyEnemyView skinnyEnemyView = new SkinnyEnemyView();
     private static final KnifeView knife=new KnifeView();
+    public GrenadeView getGrenadeView(){return grenadeView;}
+
     public PistolView getPistolView(){
         return pistolView;
     }
@@ -98,6 +101,9 @@ public class GraphicPanel extends JPanel {
 
         }
         if(Game.getInstance().hasGrenade){
+            g.setColor(Color.RED);
+
+            g.drawArc(Game.getInstance().getGrenadeModel().xAngle, Game.getInstance().getGrenadeModel().yAngle, Game.getInstance().getGrenadeModel().wightAngle, Game.getInstance().getGrenadeModel().heightAngle, Game.getInstance().getGrenadeModel().startAngle, Game.getInstance().getGrenadeModel().endAngle);
             if(Game.getInstance().getGrenadeModel().isUp())
                 g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenadeModel().imagePosition.x, Game.getInstance().getGrenadeModel().imagePosition.y, Game.getInstance().getGrenadeModel().getHeight(), Game.getInstance().getGrenadeModel().getWidth(), null);
             else
@@ -119,8 +125,9 @@ public class GraphicPanel extends JPanel {
             knife.update();
         if(Game.getInstance().hasShotgun)
             shotgunView.update(null);
-        if(Game.getInstance().hasGrenade)
+        if(Game.getInstance().hasGrenade){
             grenadeView.update();
+            grenadeView.update(null);}
         skinnyEnemyView.update();
         Bullets.getInstance().update();
         repaint();

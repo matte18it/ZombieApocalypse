@@ -1,18 +1,16 @@
 package ZombieApocalypse.View.Gun;
 
-import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.Guns.GrenadeModel;
 
 import java.awt.*;
 
 public class GrenadeView {
-    private final KnifeAnimation gunAnimation;
+    private final ItemAnimation gunAnimation;
     public Image currentImage;
 
 
     public GrenadeView() {
-        gunAnimation= new KnifeAnimation("Granata",4);
+        gunAnimation= new ItemAnimation("Granata",4);
         currentImage=gunAnimation.getDefaultImage();
     }
 
@@ -22,6 +20,9 @@ public class GrenadeView {
             currentImage=gunAnimation.update();
 
     }
+public void update(Point e){
+        Game.getInstance().getGrenadeModel().update(e);
+}
     public Image getCurrentImage() {
         return currentImage;
     }
