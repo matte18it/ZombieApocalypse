@@ -1,6 +1,7 @@
 package ZombieApocalypse.View;
 import ZombieApocalypse.Loop.*;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Model.SplashScreenModel;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 import ZombieApocalypse.Controller.PlayerController;
@@ -15,13 +16,15 @@ import java.awt.*;
 public class GameFrame extends JPanel {
     private static PlayWav playMenuMusic = PlayWav.getInstance();
     public static JFrame frameGame = new JFrame("Login");
-    private static GameLoop gameLoopObject;
+    public static GameLoop gameLoopObject;
     private static LeaderboardLoop leaderboardLoop;
     public static LoginView panel;
     public static SplashScreenView splashScreen;
     private static MenuLoop menuLoop;
     public static LoginLoop loop;
     public static MenuView menu;
+    public static MenuBarView menuBarView;
+    public static GraphicPanel graphicPanel;
     public static TimeLoop timeLoop;
 
     public static void loadingLaunch(){
@@ -66,11 +69,20 @@ public class GameFrame extends JPanel {
     }
 
     public static void menuLaunch(){
-        frameGame.remove(splashScreen);
+        if(splashScreen != null && splashScreen.isShowing())
+            frameGame.remove(splashScreen);
 
         //se il pannello è nullo lo creo
         if(menu == null)
             menu = new MenuView();
+
+        if(graphicPanel != null && graphicPanel.isShowing()){
+            frameGame.remove(graphicPanel);
+            frameGame.remove(menuBarView);
+            timeLoop.stop();
+            gameLoopObject.stop();
+            frameGame.setLayout(null);
+        }
 
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
@@ -85,6 +97,7 @@ public class GameFrame extends JPanel {
 
         frameGame.add(menu);
         frameGame.repaint();
+        frameGame.revalidate();
         menuLoop = new MenuLoop(menu);
         menuLoop.start();
         leaderboardLoop = new LeaderboardLoop(menu);
@@ -105,9 +118,9 @@ public class GameFrame extends JPanel {
         frameGame.remove(menu);
         frameGame.setTitle("Game");
 
-        MenuBarView menuBarView=new MenuBarView();
+        menuBarView = new MenuBarView();
         Game.getInstance().setMenuBar(menuBarView);
-        GraphicPanel graphicPanel=new GraphicPanel();
+        graphicPanel = new GraphicPanel();
         frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
 
         frameGame.add(graphicPanel);
@@ -120,7 +133,7 @@ public class GameFrame extends JPanel {
         graphicPanel.addMouseMotionListener(playerController);
         graphicPanel.addMouseListener(playerController);
         graphicPanel.addKeyListener(playerController);
-        gameLoopObject=new GameLoop(playerController);
+        gameLoopObject = new GameLoop(playerController);
         menuBarView.setBar();
         timeLoop=new TimeLoop();
 

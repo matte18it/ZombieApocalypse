@@ -1,11 +1,18 @@
 package ZombieApocalypse.Controller;
+import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.GraphicPanel;
 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PlayerController implements KeyListener, MouseMotionListener, MouseListener {
     //Gestisce i movimenti del player
@@ -42,9 +49,92 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             }
         }
         if( e.getKeyCode()==KeyEvent.VK_ESCAPE)
-            Game.getInstance().closeGame();
+            if(!Game.getInstance().getPause()){
+                Game.getInstance().setPause(true);
+                setPause();
+            }
         }
 
+    private void setPause() {
+        Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
+        GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
+        UIManager.put("OptionPane.background",new Color(92,75,35));
+        UIManager.put("Panel.background",new Color(18,17,15));
+        UIManager.put("OptionPane.minimumSize",new Dimension(500,200));
+        UIManager.put("OptionPane.border", new EmptyBorder(10, 10, 10,10));
+        UIManager.put("OptionPane.font", ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
+        UIManager.put("OptionPane.foreground", Color.WHITE);
+
+        //creo la label e gli setto il font personalizzato
+        JLabel label = new JLabel("PAUSE");
+        label.setFont(font.deriveFont(Font.PLAIN, 30));
+        label.setForeground(Color.WHITE);
+        label.setMinimumSize(new Dimension(100, 100));
+        label.setPreferredSize(new Dimension(100, 100));
+        label.setHorizontalAlignment(JLabel.CENTER);
+        //label.setVerticalAlignment(JLabel.TOP);
+        label.setBorder(new EmptyBorder(10, 0, 0, 0));
+        JButton btnMenu = new JButton("Menu");
+        JButton btnGo;
+        JLabel lblPausa;
+        if(GameData.lang.equals(GameData.Language.IT)) {
+            btnGo = new JButton("Riprendi");
+            lblPausa = new JLabel("PAUSA");
+        }
+        else {
+            btnGo = new JButton("Resume");
+            lblPausa = new JLabel("PAUSE");
+        }
+
+        btnMenu.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
+        btnMenu.setHorizontalTextPosition(JButton.CENTER);
+        btnMenu.setVerticalTextPosition(JButton.CENTER);
+        btnMenu.setBorderPainted(false);
+        btnMenu.setFocusPainted(false);
+        btnMenu.setContentAreaFilled(false);
+        btnMenu.setForeground(Color.WHITE);
+        btnMenu.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 25, Font.PLAIN));
+
+        btnGo.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
+        btnGo.setHorizontalTextPosition(JButton.CENTER);
+        btnGo.setVerticalTextPosition(JButton.CENTER);
+        btnGo.setBorderPainted(false);
+        btnGo.setFocusPainted(false);
+        btnGo.setContentAreaFilled(false);
+        btnGo.setForeground(Color.WHITE);
+        btnGo.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 25, Font.PLAIN));
+
+        //creo il joptionpane e gli assegno la label, poi creo il dialog e lo mostro
+        JOptionPane pane = new JOptionPane(label,  JOptionPane.PLAIN_MESSAGE,  JOptionPane.DEFAULT_OPTION,null,  new JButton[] {btnMenu, btnGo});
+        JDialog dialog = new JDialog();
+        btnGo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                Game.getInstance().setPause(false);
+                dialog.dispose();
+            }
+        });
+        btnMenu.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                dialog.dispose();
+                Game.getInstance().setPause(false);
+                PlayWav.getInstance().stop();
+                GameFrame.menuLaunch();
+            }
+        });
+
+        dialog.getContentPane().add(pane);
+        dialog.setUndecorated(true);
+        dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        dialog.setAlwaysOnTop(true);
+        dialog.setModal(true);
+        dialog.setSize(new Dimension(515, 220));
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
+    }
 
     @Override
     public void keyTyped(KeyEvent e) {}
@@ -61,9 +151,11 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     }
 
     public void update() {
-        Game.getInstance().update();
-        Game.getInstance().checkCollision();
-        panel.update();
+        if(!Game.getInstance().getPause()){
+            Game.getInstance().update();
+            Game.getInstance().checkCollision();
+            panel.update();
+        }
     }
 
     @Override

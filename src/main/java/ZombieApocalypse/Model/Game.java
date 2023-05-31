@@ -19,14 +19,13 @@ public class Game {
     private final PistolModel pistol = new PistolModel();
     private final GrenadeModel grenade=new GrenadeModel();
     private final ShotgunModel shotgun=new ShotgunModel();
+    private boolean pause = false;
 
     //Gestione delle armi, per adesso
     public boolean hasGrenade=true;
     public boolean hasPistol=false;
     public boolean hasKnife=false;
     public boolean hasShotgun=false;
-
-
 
     private final EnemyCharacter enemy = new EnemyCharacter();
     private  MenuBarModel menuBar;
@@ -45,8 +44,7 @@ public class Game {
 
 
     private static final Game instance = new Game();
-    private Game() {
-    }
+    private Game() {}
     public static Game getInstance() {
         return instance;
     }
@@ -75,8 +73,6 @@ public class Game {
         if(character.isMoving())
             character.move();}
 
-
-
     public PlayerCharacter getPlayerCharacter() {
         return character;}
     public PistolModel getPistolModel() {
@@ -95,12 +91,6 @@ public class Game {
         GameFrame.close();
     }
 
-
-
-
-
-
-
     public void attack() {
         if(hasPistol )
             pistol.attack();
@@ -110,8 +100,6 @@ public class Game {
             shotgun.attack();
         if(hasGrenade)
             grenade.attack();
-
-
     }
 
     public Point coordinateToIJ(int x, int y) {
@@ -136,15 +124,20 @@ public class Game {
         if(character.hitBox.intersects(enemy.hitBox) ){
             character.hit();
         }
-
-
     }
 
     public void updateTime(long time) {
-        menuBar.updateTimeLable(time);
+            menuBar.updateTimeLable(time);
     }
 
     public GrenadeModel getGrenadeModel() {
         return grenade;
+    }
+
+    public boolean getPause(){
+        return  pause;
+    }
+    public void setPause(boolean pause){
+        this.pause = pause;
     }
 }
