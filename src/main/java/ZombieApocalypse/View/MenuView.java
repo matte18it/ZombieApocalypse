@@ -39,9 +39,9 @@ public class MenuView extends JPanel {
     private JPanel panelMenu, imagePanel, aboutPanel, settingsPanel;
     private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
     //componenti per le settings
-    private JLabel music, sound, language, mancino, logout;
+    private JLabel music, sound, language, mancino, logout, skin, skinAttiva;
     private JSlider musica = new JSlider(-74, 6), suoni = new JSlider(-74, 6);
-    private JButton muteMusic, muteSound, it, en, exitSettings, btnMancino, btnLogout;
+    private JButton muteMusic, muteSound, it, en, exitSettings, btnMancino, btnLogout, avantiSkin, dietroSkin;
 
     public MenuView(){
         //setto il cursore personalizzato
@@ -103,6 +103,8 @@ public class MenuView extends JPanel {
         muteMusic = new JButton();
         btnLogout = new JButton();
         en = new JButton();
+        avantiSkin = new JButton();
+        dietroSkin = new JButton();
         btnMancino = new JButton();
         it = new JButton();
         if(GameData.lang==GameData.Language.IT) {
@@ -566,10 +568,14 @@ public class MenuView extends JPanel {
         muteMusic.setBorderPainted(false);
         muteMusic.setFocusPainted(false);
         muteMusic.setContentAreaFilled(false);
-        if(GameData.music)
+        if(GameData.music) {
             muteMusic.setIcon(loader.getImageIcon("/SettingsImage/AudioOn.png", 32, 32, false));
-        else
+            musica.setEnabled(true);
+        }
+        else {
             muteMusic.setIcon(loader.getImageIcon("/SettingsImage/AudioOff.png", 32, 32, false));
+            musica.setEnabled(false);
+        }
 
         JLabel gestioneMusica = new JLabel();
         gestioneMusica.setMaximumSize(new Dimension(800, 50));
@@ -603,10 +609,14 @@ public class MenuView extends JPanel {
         muteSound.setBorderPainted(false);
         muteSound.setFocusPainted(false);
         muteSound.setContentAreaFilled(false);
-        if(GameData.sound)
+        if(GameData.sound) {
             muteSound.setIcon(loader.getImageIcon("/SettingsImage/SoundOn.png", 32, 32, false));
-        else
+            suoni.setEnabled(true);
+        }
+        else {
             muteSound.setIcon(loader.getImageIcon("/SettingsImage/SoundOff.png", 32, 32, false));
+            suoni.setEnabled(false);
+        }
 
         JLabel gestioneSuoni = new JLabel();
         gestioneSuoni.setMaximumSize(new Dimension(800, 50));
@@ -712,6 +722,44 @@ public class MenuView extends JPanel {
         gestioneLogout.add(btnLogout);
         sfondoSettings.add(gestioneLogout);
 
+        skin = new JLabel("Skin: ");
+        skin.setFont(font.deriveFont(Font.PLAIN, 20));
+        skin.setForeground(Color.WHITE);
+        skin.setBorder(new EmptyBorder(3, 25, 0, 0));
+        skin.setPreferredSize(new Dimension(180, 50));
+        skin.setMaximumSize(new Dimension(180, 50));
+        skin.setMinimumSize(new Dimension(180, 50));
+
+        JLabel gestioneSkin = new JLabel();
+        gestioneSkin.setMaximumSize(new Dimension(800, 90));
+        gestioneSkin.setLayout(new BoxLayout(gestioneSkin, BoxLayout.X_AXIS));
+        avantiSkin.setPreferredSize(new Dimension(50, 45));
+        avantiSkin.setMaximumSize(new Dimension(50, 45));
+        avantiSkin.setMinimumSize(new Dimension(50, 45));
+        avantiSkin.setBorderPainted(false);
+        avantiSkin.setFocusPainted(false);
+        avantiSkin.setContentAreaFilled(false);
+        avantiSkin.setIcon(loader.getImageIcon("/SettingsImage/avantiArrow.png", 50, 45, false));
+
+        dietroSkin.setPreferredSize(new Dimension(50, 45));
+        dietroSkin.setMaximumSize(new Dimension(50, 45));
+        dietroSkin.setMinimumSize(new Dimension(50, 45));
+        dietroSkin.setBorderPainted(false);
+        dietroSkin.setFocusPainted(false);
+        dietroSkin.setContentAreaFilled(false);
+        dietroSkin.setIcon(loader.getImageIcon("/SettingsImage/indietroArrow.png", 50, 45, false));
+
+        skinAttiva = new JLabel();
+        skinAttiva.setIcon(loader.getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
+
+        gestioneSkin.add(skin);
+        gestioneSkin.add(dietroSkin);
+        gestioneSkin.add(Box.createRigidArea(new Dimension(50, 10)));
+        gestioneSkin.add(skinAttiva);
+        gestioneSkin.add(Box.createRigidArea(new Dimension(50, 10)));
+        gestioneSkin.add(avantiSkin);
+        sfondoSettings.add(gestioneSkin);
+
         exitSettings.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
         exitSettings.setHorizontalTextPosition(JButton.CENTER);
         exitSettings.setVerticalTextPosition(JButton.CENTER);
@@ -725,9 +773,9 @@ public class MenuView extends JPanel {
         exitSettings.setMaximumSize(new Dimension(197, 60));
         //label per settare il pulsante al centro
         JLabel layoutComands3 = new JLabel();
-        layoutComands3.setMaximumSize(new Dimension(800, 75));
+        layoutComands3.setMaximumSize(new Dimension(800, 70));
+        layoutComands3.setBorder(new EmptyBorder(10, 0, 0 ,0));
         layoutComands3.setLayout(new GridBagLayout());
-        layoutComands3.setBorder(new EmptyBorder(10, 0, 0, 0));
         layoutComands3.add(exitSettings);
         sfondoSettings.add(layoutComands3);
 
@@ -841,6 +889,18 @@ public class MenuView extends JPanel {
 
     public JButton getBtnLogout(){
         return btnLogout;
+    }
+
+    public JButton getAvantiSkin(){
+        return avantiSkin;
+    }
+
+    public JButton getDietroSkin(){
+        return dietroSkin;
+    }
+
+    public JLabel getSkinAttiva(){
+        return skinAttiva;
     }
 
     public void updatePosition(){

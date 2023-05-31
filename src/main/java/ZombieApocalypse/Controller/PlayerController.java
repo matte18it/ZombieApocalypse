@@ -1,8 +1,10 @@
 package ZombieApocalypse.Controller;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.View.GraphicPanel;
 
+import java.awt.*;
 import java.awt.event.*;
 
 public class PlayerController implements KeyListener, MouseMotionListener, MouseListener {
@@ -12,6 +14,14 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
 
     public PlayerController(GraphicPanel panel) {
         this.panel = panel;
+        panel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                //setto il cursore personalizzato
+                panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
+            }
+        });
     }
 
     @Override
