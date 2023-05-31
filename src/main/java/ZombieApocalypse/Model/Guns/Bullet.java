@@ -5,6 +5,7 @@ import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.Gun.BulletView;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
 public abstract class Bullet {
      int velocityX;

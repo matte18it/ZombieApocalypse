@@ -8,7 +8,10 @@ public class PlayerCharacter extends Character {
     //Gestisce il player e i suoi movimenti
 
     private boolean sound=false;
-    private final World world=new World();
+     final World world=new World();
+     public World getWorld(){
+         return world;
+     }
 
 
     Audio audio = new Audio();

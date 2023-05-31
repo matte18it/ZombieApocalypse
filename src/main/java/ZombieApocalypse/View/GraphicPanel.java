@@ -102,8 +102,9 @@ public class GraphicPanel extends JPanel {
         }
         if(Game.getInstance().hasGrenade){
             g.setColor(Color.RED);
+            if(Game.getInstance().getGrenadeModel().launch)
+                g.drawPolyline(Game.getInstance().getGrenadeModel().xPosition, Game.getInstance().getGrenadeModel().yPosition, Game.getInstance().getGrenadeModel().xPosition.length);
 
-            g.drawArc(Game.getInstance().getGrenadeModel().xAngle, Game.getInstance().getGrenadeModel().yAngle, Game.getInstance().getGrenadeModel().wightAngle, Game.getInstance().getGrenadeModel().heightAngle, Game.getInstance().getGrenadeModel().startAngle, Game.getInstance().getGrenadeModel().endAngle);
             if(Game.getInstance().getGrenadeModel().isUp())
                 g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenadeModel().imagePosition.x, Game.getInstance().getGrenadeModel().imagePosition.y, Game.getInstance().getGrenadeModel().getHeight(), Game.getInstance().getGrenadeModel().getWidth(), null);
             else
