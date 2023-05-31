@@ -9,6 +9,7 @@ import ZombieApocalypse.View.MenuView;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -168,6 +169,35 @@ public class MenuController {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 model.showDialog();
+            }
+        });
+
+        view.getAvantiSkin().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.skinAttiva < 4)
+                    GameData.skinAttiva += 1;
+                view.getSkinAttiva().setIcon(ResourcesLoader.getInstance().getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
+            }
+        });
+
+        view.getDietroSkin().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.skinAttiva > 1)
+                    GameData.skinAttiva -= 1;
+                view.getSkinAttiva().setIcon(ResourcesLoader.getInstance().getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
+            }
+        });
+
+        view.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                //setto il cursore personalizzato
+                view.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
             }
         });
     }

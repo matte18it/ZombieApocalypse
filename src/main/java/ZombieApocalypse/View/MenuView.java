@@ -753,11 +753,11 @@ public class MenuView extends JPanel {
         skinAttiva.setIcon(loader.getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
 
         gestioneSkin.add(skin);
-        gestioneSkin.add(avantiSkin);
+        gestioneSkin.add(dietroSkin);
         gestioneSkin.add(Box.createRigidArea(new Dimension(50, 10)));
         gestioneSkin.add(skinAttiva);
         gestioneSkin.add(Box.createRigidArea(new Dimension(50, 10)));
-        gestioneSkin.add(dietroSkin);
+        gestioneSkin.add(avantiSkin);
         sfondoSettings.add(gestioneSkin);
 
         exitSettings.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
