@@ -2,6 +2,7 @@ package ZombieApocalypse.View.Player;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.PlayerCharacter;
+import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.CharacterAnimation;
 
@@ -25,10 +26,10 @@ public class CharacterView {
     private Image currentImage;
 
     public CharacterView() {
-        runAnimationUp = new CharacterAnimation("Player/PlayerIndietro",3);
-        runAnimationDown = new CharacterAnimation("Player/PlayerAvanti",3);
-        runAnimationLeft = new CharacterAnimation("Player/PlayerSinistra",3);
-        runAnimationRight = new CharacterAnimation("Player/PlayerDestra",3);
+        runAnimationUp = new CharacterAnimation("Player/Skin" + GameData.skinAttiva + "/PlayerIndietro",3);
+        runAnimationDown = new CharacterAnimation("Player/Skin" + GameData.skinAttiva + "/PlayerAvanti",3);
+        runAnimationLeft = new CharacterAnimation("Player/Skin" + GameData.skinAttiva + "/PlayerSinistra",3);
+        runAnimationRight = new CharacterAnimation("Player/Skin" + GameData.skinAttiva + "/PlayerDestra",3);
         hitUp=new CharacterAnimation("Player/PlayerDannoAvanti",3);
         hitDown=new CharacterAnimation("Player/PlayerDannoIndietro",3);
         hitLeft=new CharacterAnimation("Player/PlayerDannoSinistra",3);
