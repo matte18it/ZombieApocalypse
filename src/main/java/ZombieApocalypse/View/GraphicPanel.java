@@ -36,7 +36,7 @@ public class GraphicPanel extends JPanel {
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
         //setto il cursore personalizzato
-        this.setCursor(ResourcesLoader.getInstance().getCursor("/GameGeneral/crosshair.png", this));
+        this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
         for(int i=0; i<numeroImmagini; i++){
             String c=String.valueOf(i);
             String path="/AmbienteDiGioco/Terreno/Terreno"+c+".png";

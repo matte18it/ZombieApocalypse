@@ -18,7 +18,7 @@ public class SplashScreenView extends JPanel {
 
     public SplashScreenView() {
         //setto il cursore personalizzato
-        this.setCursor(loader.getCursor("/GameGeneral/crosshair.png", this));
+        this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(loader.getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
 
         //Creo un model e un controller
         model = new SplashScreenModel(this);

@@ -58,9 +58,9 @@ public class MenuModel {
 
         //creo la label e gli setto il font personalizzato
         JLabel layout = new JLabel();
-        layout.setPreferredSize(new Dimension(200, 150));
-        layout.setMaximumSize(new Dimension(200, 150));
-        layout.setMinimumSize(new Dimension(200, 150));
+        layout.setPreferredSize(new Dimension(200, 170));
+        layout.setMaximumSize(new Dimension(200, 170));
+        layout.setMinimumSize(new Dimension(200, 170));
         layout.setLayout(new BoxLayout(layout, BoxLayout.Y_AXIS));
         JLabel label = new JLabel();
         if(GameData.lang.equals(GameData.Language.IT)) {
@@ -74,8 +74,8 @@ public class MenuModel {
         label.setFont(font);
         label.setBorder(new EmptyBorder(10, 10, 0, 0));
         label.setForeground(Color.WHITE);
-        label.setMinimumSize(new Dimension(200, 150));
-        label.setPreferredSize(new Dimension(200, 150));
+        label.setMinimumSize(new Dimension(200, 170));
+        label.setPreferredSize(new Dimension(200, 170));
         layout.add(label);
 
         //qua creo il pulsante per la conferma e gli assegno un listener. Quando viene cliccato cancella i dati e chiude il gioco
@@ -99,7 +99,11 @@ public class MenuModel {
 
         //creo il joptionpane e gli assegno la label, poi creo il dialog e lo mostro
         JOptionPane pane = new JOptionPane( layout,  JOptionPane.PLAIN_MESSAGE,  JOptionPane.DEFAULT_OPTION,null,  new JButton[] {btnPop});
-        JDialog dialog = pane.createDialog("DANGER");
+        JDialog dialog;
+        if(GameData.lang.equals(GameData.Language.IT))
+            dialog = pane.createDialog("ATTENZIONE");
+        else
+            dialog = pane.createDialog("DANGER");
         dialog.setAlwaysOnTop(true);
         dialog.setModal(true);
         dialog.setLocationRelativeTo(null);
