@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Settings pt.7">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Settings pt.8">
       <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin2/PlayerAvanti0.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin2/PlayerAvanti1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin2/PlayerAvanti2.png" afterDir="false" />
@@ -492,12 +492,18 @@
       <option name="project" value="LOCAL" />
       <updated>1685516677268</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Settings pt.8">
+      <created>1685526774474</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1685526774474</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creazioni Model per Armi" />
     <MESSAGE value="Animazione coltello" />
     <MESSAGE value="About Panel" />
     <MESSAGE value="About Panel pt.1" />
@@ -522,6 +528,7 @@
     <MESSAGE value="Settings pt.5" />
     <MESSAGE value="Settings pt.6" />
     <MESSAGE value="Settings pt.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Settings pt.7" />
+    <MESSAGE value="Settings pt.8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Settings pt.8" />
   </component>
 </project>

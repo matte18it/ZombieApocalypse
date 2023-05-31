@@ -11,7 +11,7 @@ public class GameData {
     public static int setBg;    //Variabile che mi serve per settare lo sfondo della schermata di login e menu
     public static int musicVolume = 0;    //variabile per volume musica
     public static int soundVolume = 0;    //variabile per volume suoni
-    public static int skinAttiva = 4;       //variabile per gestione skin player
+    public static int skinAttiva = 1;       //variabile per gestione skin player
     public static Language lang = Language.EN;
     public static boolean mancino = false;
 
