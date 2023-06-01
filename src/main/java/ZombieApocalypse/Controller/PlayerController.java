@@ -15,6 +15,8 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static java.awt.event.KeyEvent.VK_ESCAPE;
+
 public class PlayerController implements KeyListener, MouseMotionListener, MouseListener {
     //Gestisce i movimenti del player
 
@@ -49,7 +51,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 case KeyEvent.VK_S -> Game.getInstance().startMovementDown();
             }
         }
-        if( e.getKeyCode()==KeyEvent.VK_ESCAPE)
+        if( e.getKeyCode()== VK_ESCAPE)
             if(!Game.getInstance().getPause()){
                 Game.getInstance().setPause(true);
                 setPause();
@@ -67,7 +69,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         UIManager.put("OptionPane.foreground", Color.WHITE);
 
         //creo la label e gli setto il font personalizzato
-        JLabel label = new JLabel("PAUSE");
+        JLabel label = new JLabel();
         label.setFont(font.deriveFont(Font.PLAIN, 30));
         label.setForeground(Color.WHITE);
         label.setMinimumSize(new Dimension(100, 100));
@@ -77,14 +79,13 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         label.setBorder(new EmptyBorder(10, 0, 0, 0));
         JButton btnMenu = new JButton("Menu");
         JButton btnGo;
-        JLabel lblPausa;
         if(GameData.lang.equals(GameData.Language.IT)) {
             btnGo = new JButton("Riprendi");
-            lblPausa = new JLabel("PAUSA");
+            label.setText("PAUSA");
         }
         else {
             btnGo = new JButton("Resume");
-            lblPausa = new JLabel("PAUSE");
+            label.setText("PAUSE");
         }
 
         btnMenu.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
