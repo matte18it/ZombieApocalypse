@@ -32,6 +32,7 @@ public class MenuModel {
             FontRenderContext frc = new FontRenderContext(affinetransform,true,true);
             view.getSettingsLabel().setBorder(new EmptyBorder(25, ((830/2)-((int)(view.getFont().deriveFont(Font.PLAIN, 30).getStringBounds(view.getSettingsLabel().getText(), frc).getWidth())/2))+25, 0, 0));
             view.getMancino().setText("Mancino: ");
+            view.getExitSettings().setText("Esci");
         }
         else{
             view.getMusic().setText("Music Volume: ");
@@ -42,6 +43,7 @@ public class MenuModel {
             FontRenderContext frc = new FontRenderContext(affinetransform,true,true);
             view.getSettingsLabel().setBorder(new EmptyBorder(25, ((830/2)-((int)(view.getFont().deriveFont(Font.PLAIN, 30).getStringBounds(view.getSettingsLabel().getText(), frc).getWidth())/2))+25, 0, 0));
             view.getMancino().setText("Left Handed: ");
+            view.getExitSettings().setText("Exit");
         }
     }
 
