@@ -124,6 +124,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 dialog.dispose();
                 Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
+                Game.getInstance().setBackMenu(true);
                 PlayWav.getInstance().stop();
                 GameFrame.menuLaunch();
             }
@@ -155,16 +156,20 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     private int count=0;
 
     public void update() {
-        if(!Game.getInstance().getPause()){
+        if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
             Game.getInstance().update();
             Game.getInstance().checkCollision();
             panel.update();
             count=0;
-        }if(Game.getInstance().getPause() && count==0){
+        }if( Game.getInstance().getBackMenu() && count==0){
             Game.getInstance().update();
             Game.getInstance().checkCollision();
             panel.update();
             count++;
+        }
+        if(count==1){
+            count=0;
+            Game.getInstance().setBackMenu(false);
         }
     }
 

@@ -33,8 +33,8 @@ public class Bullets {
         Iterator var1=this.bullets.iterator();
         while(var1.hasNext()){
             Bullet b=(Bullet) var1.next();
-            if(!b.update() || Game.getInstance().getPause())
-                bullets.remove(var1);
+            if(!b.update()){
+                bullets.remove(var1);}
         }
     }
 

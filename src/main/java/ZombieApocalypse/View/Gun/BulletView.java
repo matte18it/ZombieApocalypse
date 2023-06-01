@@ -36,12 +36,13 @@ public class BulletView {
         count++;
         ending=true;
     }
+    public boolean menu=false;
 
     public void update() {
 
 
         if(isGrenade){
-            if(Game.getInstance().getPause()){
+            if(menu){
                 currentImage=grenadeBullet[6];
                 count=23;
                 ending=true;

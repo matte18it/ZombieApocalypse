@@ -22,8 +22,10 @@ public class BulletGrenade extends Bullet{
 boolean stopAll=false;
     boolean update(){
         if(!stopAll){
-        if(Game.getInstance().getPause()){
+        if(Game.getInstance().getBackMenu()){
+            getView().menu=true;
             stopAll=true;
+            return true;
         }
         Point explosion=new Point(x+dimension/2,y+dimension/2);
         Point enemy=new Point(Game.getInstance().getEnemyCharacter().getX()+Game.getInstance().getEnemyCharacter().centerX, Game.getInstance().getEnemyCharacter().getY()+Game.getInstance().getEnemyCharacter().centerY);
@@ -89,7 +91,7 @@ boolean stopAll=false;
 
         }
         return false;
-    }
+    } stopAll=false; ;
     return false;}}
 
 

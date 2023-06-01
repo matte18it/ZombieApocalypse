@@ -129,6 +129,11 @@ public class Game {
     public void refresh(){
         instance = new Game();
     }
+    private boolean backMenu=false;
+
+    public void setBackMenu(boolean e){
+        backMenu=e;
+    }
 
     public void updateTime(long time) {
             menuBar.updateTimeLable(time);
@@ -143,5 +148,9 @@ public class Game {
     }
     public void setPause(boolean pause){
         this.pause = pause;
+    }
+
+    public boolean getBackMenu() {
+        return backMenu;
     }
 }
