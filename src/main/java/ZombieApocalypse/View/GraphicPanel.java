@@ -101,8 +101,6 @@ public class GraphicPanel extends JPanel {
 
         }
         if(Game.getInstance().hasGrenade){
-            g.setColor(Color.RED);
-            g.drawPolyline(Game.getInstance().getGrenadeModel().xPosition, Game.getInstance().getGrenadeModel().yPosition, Game.getInstance().getGrenadeModel().xPosition.length);
 
             if(Game.getInstance().getGrenadeModel().isUp())
                 g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenadeModel().imagePosition.x, Game.getInstance().getGrenadeModel().imagePosition.y, Game.getInstance().getGrenadeModel().getHeight(), Game.getInstance().getGrenadeModel().getWidth(), null);

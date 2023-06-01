@@ -20,8 +20,8 @@ public class Bullets {
     public void ShotgunShot(int x, int y, int dimension, double angle, BulletShotgun.Type t){
         this.bullets.add(new BulletShotgun(x,y,dimension, angle, t));
     }
-    public void GrenadeLaunch(int  x, int  y, int dimension, double angle, int []xP, int [] yP){
-        this.bullets.add(new BulletGrenade(x,y,dimension,angle,xP, yP));
+    public void GrenadeLaunch(int  x, int  y, int dimension, double angle, Bullet.Direction d, int t){
+        this.bullets.add(new BulletGrenade(x,y,dimension,angle,d, t));
     }
 
     public List<Bullet> getBullets(){return Collections.unmodifiableList(this.bullets);

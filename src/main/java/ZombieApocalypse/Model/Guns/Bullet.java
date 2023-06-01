@@ -12,7 +12,7 @@ public abstract class Bullet {
     Rectangle hitBox;
      int x;
      int y;
-    final int dimension;
+    int dimension;
      Bullet.Direction dir;
     int count=0;
     int numFrame=0;
