@@ -13,11 +13,11 @@ import java.awt.*;
 
 public class Game {
     //Gestisce gli aspetti del gioco
-    private World world = new World();
-    private PlayerCharacter character = new PlayerCharacter();
-    private KnifeModel knife=new KnifeModel();
-    private PistolModel pistol = new PistolModel();
-    private GrenadeModel grenade=new GrenadeModel();
+    private final World world = new World();
+    private final PlayerCharacter character = new PlayerCharacter();
+    private final KnifeModel knife=new KnifeModel();
+    private final PistolModel pistol = new PistolModel();
+    private final GrenadeModel grenade=new GrenadeModel();
     private ShotgunModel shotgun=new ShotgunModel();
     private boolean pause = false;
 
@@ -43,7 +43,7 @@ public class Game {
     }
 
 
-    private static final Game instance = new Game();
+    private static Game instance = new Game();
     private Game() {}
     public static Game getInstance() {
         return instance;
@@ -127,13 +127,7 @@ public class Game {
     }
 
     public void refresh(){
-        world = new World();
-        character = new PlayerCharacter();
-        knife = new KnifeModel();
-        pistol = new PistolModel();
-        grenade = new GrenadeModel();
-        shotgun = new ShotgunModel();
-        enemy = new EnemyCharacter();
+        instance = new Game();
     }
 
     public void updateTime(long time) {

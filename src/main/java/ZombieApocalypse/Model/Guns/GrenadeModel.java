@@ -27,10 +27,7 @@ public class GrenadeModel extends GunModel{
     }
     public void attack() {
         Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
-
         Bullets.getInstance().GrenadeLaunch(center.x, center.y, 21, 0, xPosition, yPosition);
-
-
     }
     public void update(){
         int x;
@@ -97,15 +94,6 @@ public class GrenadeModel extends GunModel{
         xPosition[2]=mouse.x;
         yPosition[1]=dy;
         yPosition[2]=mouse.y;
-
-
-
-
-
-
-
-
-
         }
 
 
