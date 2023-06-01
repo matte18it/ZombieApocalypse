@@ -38,7 +38,14 @@ public class BulletView {
     }
 
     public void update() {
+
+
         if(isGrenade){
+            if(Game.getInstance().getPause()){
+                currentImage=grenadeBullet[6];
+                count=23;
+                ending=true;
+            return;}
             if(!ending){
                 currentImage=grenade[0];
 

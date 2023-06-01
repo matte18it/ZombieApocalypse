@@ -1,6 +1,7 @@
 package ZombieApocalypse.Controller;
 import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
@@ -150,12 +151,19 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 Game.getInstance().stopMovement();
         }
     }
+    private int count=0;
 
     public void update() {
         if(!Game.getInstance().getPause()){
             Game.getInstance().update();
             Game.getInstance().checkCollision();
             panel.update();
+            count=0;
+        }if(Game.getInstance().getPause() && count==0){
+            Game.getInstance().update();
+            Game.getInstance().checkCollision();
+            panel.update();
+            count++;
         }
     }
 

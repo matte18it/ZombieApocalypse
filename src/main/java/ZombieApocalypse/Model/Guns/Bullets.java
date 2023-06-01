@@ -1,5 +1,7 @@
 package ZombieApocalypse.Model.Guns;
 
+import ZombieApocalypse.Model.Game;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -31,7 +33,7 @@ public class Bullets {
         Iterator var1=this.bullets.iterator();
         while(var1.hasNext()){
             Bullet b=(Bullet) var1.next();
-            if(!b.update())
+            if(!b.update() || Game.getInstance().getPause())
                 bullets.remove(var1);
         }
     }

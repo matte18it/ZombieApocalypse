@@ -19,8 +19,12 @@ public class BulletGrenade extends Bullet{
 
 
 
-
+boolean stopAll=false;
     boolean update(){
+        if(!stopAll){
+        if(Game.getInstance().getPause()){
+            stopAll=true;
+        }
         Point explosion=new Point(x+dimension/2,y+dimension/2);
         Point enemy=new Point(Game.getInstance().getEnemyCharacter().getX()+Game.getInstance().getEnemyCharacter().centerX, Game.getInstance().getEnemyCharacter().getY()+Game.getInstance().getEnemyCharacter().centerY);
         Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
@@ -85,7 +89,8 @@ public class BulletGrenade extends Bullet{
 
         }
         return false;
-    }}
+    }
+    return false;}}
 
 
 
