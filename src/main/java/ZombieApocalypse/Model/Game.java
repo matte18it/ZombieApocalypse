@@ -13,12 +13,12 @@ import java.awt.*;
 
 public class Game {
     //Gestisce gli aspetti del gioco
-    private final World world = new World();
-    private final PlayerCharacter character = new PlayerCharacter();
-    private final KnifeModel knife=new KnifeModel();
-    private final PistolModel pistol = new PistolModel();
-    private final GrenadeModel grenade=new GrenadeModel();
-    private final ShotgunModel shotgun=new ShotgunModel();
+    private World world = new World();
+    private PlayerCharacter character = new PlayerCharacter();
+    private KnifeModel knife=new KnifeModel();
+    private PistolModel pistol = new PistolModel();
+    private GrenadeModel grenade=new GrenadeModel();
+    private ShotgunModel shotgun=new ShotgunModel();
     private boolean pause = false;
 
     //Gestione delle armi, per adesso
@@ -27,8 +27,8 @@ public class Game {
     public boolean hasKnife=false;
     public boolean hasShotgun=false;
 
-    private final EnemyCharacter enemy = new EnemyCharacter();
-    private  MenuBarModel menuBar;
+    private EnemyCharacter enemy = new EnemyCharacter();
+    private MenuBarModel menuBar;
     public void setMenuBar(MenuBarView m){
         menuBar=new MenuBarModel(m);
     }
@@ -124,6 +124,16 @@ public class Game {
         if(character.hitBox.intersects(enemy.hitBox) ){
             character.hit();
         }
+    }
+
+    public void refresh(){
+        world = new World();
+        character = new PlayerCharacter();
+        knife = new KnifeModel();
+        pistol = new PistolModel();
+        grenade = new GrenadeModel();
+        shotgun = new ShotgunModel();
+        enemy = new EnemyCharacter();
     }
 
     public void updateTime(long time) {

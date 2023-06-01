@@ -120,6 +120,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 dialog.dispose();
+                Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
                 PlayWav.getInstance().stop();
                 GameFrame.menuLaunch();
