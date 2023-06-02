@@ -933,9 +933,6 @@ public class MenuView extends JPanel {
                 //quando il bordo sinistro arriva sopra il valore 100 inverto il senso dell'animazione
                 cambio = false;
         }
-        else
-            titolo.setBorder(new EmptyBorder(20, 0, 0, 0));
-
     }
 
     @Override
