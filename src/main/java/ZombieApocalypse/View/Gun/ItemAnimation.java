@@ -23,6 +23,9 @@ public class ItemAnimation {
                 img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), true);
             if(Game.getInstance().hasGrenade)
                 img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenadeModel().getWidth(),  Game.getInstance().getGrenadeModel().getHeight(), true);
+            if(Game.getInstance().hasKnife)
+                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getKnifeModel().getWidth(),  Game.getInstance().getKnifeModel().getHeight(), true);
+
             images.add(img);
         }
 

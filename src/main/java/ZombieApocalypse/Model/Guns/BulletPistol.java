@@ -14,12 +14,16 @@ public class BulletPistol extends Bullet{
 
 
     boolean update(){
+        if(Game.getInstance().getBackMenu()){
+            getView().menu=true;}
 
         if(!ending) {
+            this.getView().updateView(false, numFrame);
             numFrame++;
             if (hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)) {
                 Game.getInstance().getEnemyCharacter().hit();
                 ending = true;
+                numFrame=0;
             }
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
                 if (dir == Direction.DOWN)
@@ -33,12 +37,16 @@ public class BulletPistol extends Bullet{
                 hitBox.x = x;
                 hitBox.y = y;
                 return true;
-            } else
+            } else{
                 ending = true;
+                numFrame=0;
+
+            }
+
         }else{
-            if(count<3){
-               this.getView().isEnding();
-                count++;
+            if(numFrame<3){
+               this.getView().updateView(true, numFrame);
+                numFrame++;
                 return true;}
             else
                 return false;

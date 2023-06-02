@@ -22,7 +22,7 @@ public class Game {
     private boolean pause = false;
 
     //Gestione delle armi, per adesso
-    public boolean hasGrenade=true;
+    public boolean hasGrenade=false;
     public boolean hasPistol=false;
     public boolean hasKnife=false;
     public boolean hasShotgun=false;
