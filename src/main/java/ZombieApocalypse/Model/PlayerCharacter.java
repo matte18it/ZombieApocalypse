@@ -51,8 +51,8 @@ public class PlayerCharacter extends Character {
     }
 
     public void cure(){
-        health++;
         Game.getInstance().getMenuBar().addHeart();
+        health++;
     }
 
 

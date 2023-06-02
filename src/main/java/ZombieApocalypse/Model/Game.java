@@ -18,14 +18,14 @@ public class Game {
     private final KnifeModel knife=new KnifeModel();
     private final PistolModel pistol = new PistolModel();
     private final GrenadeModel grenade=new GrenadeModel();
-    private ShotgunModel shotgun=new ShotgunModel();
+    private final ShotgunModel shotgun=new ShotgunModel();
     private boolean pause = false;
 
     //Gestione delle armi, per adesso
     public boolean hasGrenade=false;
     public boolean hasPistol=false;
     public boolean hasKnife=false;
-    public boolean hasShotgun=false;
+    public boolean hasShotgun=true;
 
     private EnemyCharacter enemy = new EnemyCharacter();
     private MenuBarModel menuBar;

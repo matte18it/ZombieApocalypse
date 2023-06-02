@@ -4,6 +4,8 @@ import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
+import ZombieApocalypse.Model.Items.Item;
+import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
@@ -19,6 +21,7 @@ import java.awt.*;
 import java.util.Iterator;
 
 public class GraphicPanel extends JPanel {
+    int count;
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
     private static final PistolView pistolView = new PistolView();
@@ -80,6 +83,17 @@ public class GraphicPanel extends JPanel {
             }else{
                 g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getWidth(), Game.getInstance().getShotgunModel().getHeight(), null);
             }}
+        if(count==0){
+            //per adesso gestione item
+            Items.getInstance().addMedkit(200,350);
+        }
+        for (Item b : Items.getInstance().getItems()) {
+            b.getView().update();
+            g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
+        }
+
+
+        count++;
 
         for (Bullet b : Bullets.getInstance().getBullets()) {
             b.getView().update();
@@ -128,6 +142,7 @@ public class GraphicPanel extends JPanel {
             grenadeView.update(null);}
         skinnyEnemyView.update();
         Bullets.getInstance().update();
+        Items.getInstance().update();
         repaint();
     }
 

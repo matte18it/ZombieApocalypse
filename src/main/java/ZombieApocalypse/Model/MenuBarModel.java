@@ -19,7 +19,8 @@ public class MenuBarModel {
     }
 
     public void addHeart() {
-        if(Game.getInstance().getPlayerLife()<Game.getInstance().getPlayerMaxLife())
+        if(Game.getInstance().getPlayerLife()<Game.getInstance().getPlayerMaxLife()){
+
             menuBarView.addHeart();
-    }
+    }}
 }

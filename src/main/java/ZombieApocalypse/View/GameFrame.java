@@ -1,6 +1,7 @@
 package ZombieApocalypse.View;
 import ZombieApocalypse.Loop.*;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Model.SplashScreenModel;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
@@ -136,6 +137,7 @@ public class GameFrame extends JPanel {
         gameLoopObject = new GameLoop(playerController);
         menuBarView.setBar();
         timeLoop=new TimeLoop();
+
 
         gameLoopObject.start();
         timeLoop.start();
