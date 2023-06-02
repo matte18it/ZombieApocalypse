@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Aggiunta skin">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/EMPTY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/MedKit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/ItemView.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Pause finale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Medkit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/MEDKIT.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/GameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +42,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ToolWindowRun.ShowToolbar": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Pierf/Desktop/User_Interface_Desing/Esercizi/ZombieApocalypse/src/main/Resources/ArmieOggetti",
+    "last_opened_file_path": "/Users/matteocanino/Desktop/Progetti/UID/ZombieApocalypse",
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Properties"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -65,7 +54,6 @@
       <recent name="ZombieApocalypse.View" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\ArmieOggetti" />
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller" />
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
@@ -98,6 +86,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Tempo funzionante">
+      <created>1684592173725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684592173725</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Tempo funzionante">
+      <created>1684602102100</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684602102100</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ResourcesLoader da implementare">
+      <created>1684655712296</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684655712296</updated>
     </task>
     <task id="LOCAL-00008" summary="ResourcesLoader da implementare">
       <created>1684656027136</created>
@@ -421,28 +430,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685610331464</updated>
     </task>
-    <task id="LOCAL-00054" summary="pulizia codice armi">
-      <created>1685692869134</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1685692869135</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Aggiunta skin">
-      <created>1685696581266</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1685696581267</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Aggiunta skin">
-      <created>1685696601273</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1685696601273</updated>
-    </task>
-    <option name="localTasksCounter" value="57" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -458,6 +446,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Classe Character" />
+    <MESSAGE value="About pt.3" />
     <MESSAGE value="About pt.4" />
     <MESSAGE value="Revert &quot;Danni al nemico&quot;&#10;&#10;This reverts commit ee387b1d" />
     <MESSAGE value="codice sistemato" />
@@ -481,8 +471,6 @@
     <MESSAGE value="Pausa pt.1" />
     <MESSAGE value="Pause pt.1" />
     <MESSAGE value="Pause finale" />
-    <MESSAGE value="pulizia codice armi" />
-    <MESSAGE value="Aggiunta skin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta skin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pause finale" />
   </component>
 </project>
