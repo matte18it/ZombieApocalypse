@@ -42,6 +42,8 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 case KeyEvent.VK_L -> Game.getInstance().startMovementRight();
                 case KeyEvent.VK_J -> Game.getInstance().startMovementLeft();
                 case KeyEvent.VK_K -> Game.getInstance().startMovementDown();
+                case KeyEvent.VK_U -> Game.getInstance().useLeftItem();
+                case KeyEvent.VK_O -> Game.getInstance().useRightItem();
             }
         }else {
             switch (e.getKeyCode()) {
@@ -49,6 +51,8 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 case KeyEvent.VK_D -> Game.getInstance().startMovementRight();
                 case KeyEvent.VK_A -> Game.getInstance().startMovementLeft();
                 case KeyEvent.VK_S -> Game.getInstance().startMovementDown();
+                case KeyEvent.VK_Q -> Game.getInstance().useLeftItem();
+                case KeyEvent.VK_E -> Game.getInstance().useRightItem();
             }
         }
         if( e.getKeyCode()== VK_ESCAPE)

@@ -153,4 +153,12 @@ public class Game {
     public boolean getBackMenu() {
         return backMenu;
     }
+
+    public void useLeftItem() {
+        menuBar.useItem(true);
+    }
+
+    public void useRightItem() {
+        menuBar.useItem(false);
+    }
 }

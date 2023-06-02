@@ -1,5 +1,6 @@
 package ZombieApocalypse.View.MenuBar;
 
+import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Model.Game;
@@ -17,6 +18,8 @@ public class MenuBarView extends JPanel {
      int heart;
     JLabel playerName;
     JLabel ammoLabel;
+    Items.ItemType typeGunLabel1;
+    Items.ItemType typeGunLabel2;
      JLabel [] healthLabel;
     JLabel pointLabel;
      JLabel timeLabel;
@@ -264,8 +267,10 @@ public class MenuBarView extends JPanel {
             else
                 healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
         }
-        gunLabel1.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
-        gunLabel2.setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYSLOT, 55, 55));
+        gunLabel1.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 55, 55));
+        typeGunLabel1 = Items.ItemType.EMPTY;
+        gunLabel2.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 55, 55));
+        typeGunLabel2 = Items.ItemType.EMPTY;
         timeLabel.setForeground(Color.WHITE);
     }
     public  void updateTimeLable(long t){
@@ -275,4 +280,40 @@ public class MenuBarView extends JPanel {
         pointLabel.setText(String.valueOf(t));
     }
 
+    public boolean spaceToCollect() {
+        return typeGunLabel1==Items.ItemType.EMPTY || typeGunLabel2==Items.ItemType.EMPTY;
+    }
+
+    public void add(Items.ItemType i) {
+        if(typeGunLabel1==Items.ItemType.EMPTY){
+            gunLabel1.setIcon(menuBarAnimation.setIcon(i, 55, 55));
+            typeGunLabel1=i; return;}
+        if(typeGunLabel2==Items.ItemType.EMPTY){
+            gunLabel2.setIcon(menuBarAnimation.setIcon(i, 55, 55));
+        typeGunLabel2=i;}
+
+
+
+    }
+
+
+
+    public Items.ItemType gunLable1Type() {
+        return typeGunLabel1;
+    }
+
+    public Items.ItemType gunLable2Type() {
+        return typeGunLabel2;
+    }
+
+    public void setGunLable1(Items.ItemType itemType) {
+        typeGunLabel1=itemType;
+        gunLabel1.setIcon(menuBarAnimation.setIcon(typeGunLabel1, 55, 55));
+
+    }
+
+    public void setGunLable2(Items.ItemType itemType) {
+        typeGunLabel2=itemType;
+        gunLabel2.setIcon(menuBarAnimation.setIcon(typeGunLabel2, 55, 55));
+    }
 }

@@ -11,10 +11,10 @@ public class MedKit extends Item{
         taken=true;
     }
     public boolean update() {
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox) && taken){
+        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox) && taken && Game.getInstance().getMenuBar().collect()){
             getView().setTaken(true);
             taken=false;
-            Game.getInstance().getPlayerCharacter().cure();
+            Game.getInstance().getMenuBar().addItem(type);
         }
         return taken;
 

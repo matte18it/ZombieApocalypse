@@ -6,8 +6,38 @@
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Pause finale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/GRENADE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/GRENADE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/GUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/PISTOL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/HEALTH_KIT_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/MEDKIT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Icon0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/FULLHEART.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Icon1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/EMPTYHEART.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Icon2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/EMPTY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/MEDICINE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/SPELL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/RADIO_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/RADIO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/SHOTGUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/SHOTGUN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_GRENADE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_GRENADE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_GUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_PISTOL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_HEALTH_KIT_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_MEDKIT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_MEDICINE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_SPELL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_RADIO_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_RADIO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_SHOTGUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_SHOTGUN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/MedKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/MedKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/GRENADE_SLOT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/HEALTH_KIT_SLOT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/Icon0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/Icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/Icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/MEDICINE_SLOT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/RADIO_SLOT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/SHOTGUN_SLOT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/GameData.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +65,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/matteocanino/Desktop/Progetti/UID/ZombieApocalypse",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Properties"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/matteocanino/Desktop/Progetti/UID/ZombieApocalypse&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Properties&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ZombieApocalypse.View" />
