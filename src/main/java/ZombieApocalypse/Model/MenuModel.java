@@ -111,4 +111,8 @@ public class MenuModel {
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
     }
+
+    public void updateData(){
+
+    }
 }

@@ -37,7 +37,7 @@ public class LoginModel {
 
         //se ris è pari a 0 effettuo il login, se ris è pari a 1 vuol dire che c'è già un player registrato con lo stesso nome, 2 effettuo la registrazione
         switch (ris){
-            case 0, 2:{
+            case 0:{
                 try {
                     File myObj = new File("player.txt");
                     myObj.createNewFile();
@@ -45,6 +45,7 @@ public class LoginModel {
                     myWriter.write(GameData.nick);
                     myWriter.close();
                 } catch (IOException e) { e.printStackTrace(); }
+                getData("https://progettouid.altervista.org/ZombieApocalypse/getData.php?nickname=" + GameData.nick);
                 GameFrame.loop.stop();
                 GameFrame.frameGame.remove(GameFrame.panel);
                 GameFrame.menuLaunch();
@@ -59,12 +60,69 @@ public class LoginModel {
                 view.getPassword().setText("");
                 break;
             }
+            case 2:{
+                try {
+                    File myObj = new File("player.txt");
+                    myObj.createNewFile();
+                    FileWriter myWriter = new FileWriter("player.txt");
+                    myWriter.write(GameData.nick);
+                    myWriter.close();
+                } catch (IOException e) { e.printStackTrace(); }
+                GameFrame.loop.stop();
+                GameFrame.frameGame.remove(GameFrame.panel);
+                GameFrame.menuLaunch();
+                break;
+            }
             default:{
                 //se non è nessun caso precedente potrebbe esserci stato un errore nella lettura dei dati
                 System.out.println("Errore nella lettura dei dati!");
                 break;
             }
         }
+    }
+
+    private static void getData(String path) throws IOException {
+        //chiamo script per fare get dei dati
+        URL sript = new URL(path);
+        URLConnection conn = sript.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+
+        //Aggiorno i dati
+        if ((inputLine = in.readLine()) != null)
+            GameData.musicVolume = Integer.parseInt(inputLine);
+        if ((inputLine = in.readLine()) != null)
+            GameData.soundVolume = Integer.parseInt(inputLine);
+        if ((inputLine = in.readLine()) != null){
+            if(Integer.parseInt(inputLine) == 0)
+                GameData.music = false;
+            else
+                GameData.music = true;
+        }
+        if ((inputLine = in.readLine()) != null){
+            if(Integer.parseInt(inputLine) == 0)
+                GameData.sound = false;
+            else
+                GameData.sound = true;
+        }
+        if ((inputLine = in.readLine()) != null){
+            if(Integer.parseInt(inputLine) == 0)
+                GameData.mancino = false;
+            else
+                GameData.mancino = true;
+        }
+        if ((inputLine = in.readLine()) != null)
+            GameData.skinAttiva = Integer.parseInt(inputLine);
+        if ((inputLine = in.readLine()) != null){
+            if(Integer.parseInt(inputLine) == 0)
+                GameData.lang = GameData.Language.EN;
+            else
+                GameData.lang = GameData.Language.IT;
+        }
+        if ((inputLine = in.readLine()) != null)
+            GameData.recordPunti = Integer.parseInt(inputLine);
+
+        in.close();
     }
 
     public String crittografia(String pass) throws NoSuchAlgorithmException {

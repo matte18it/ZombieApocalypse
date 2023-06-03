@@ -12,9 +12,16 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MenuController {
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
     private MenuModel model;
     private MenuView view;
     public MenuController(MenuModel model, MenuView view){
@@ -146,6 +153,12 @@ public class MenuController {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 view.setMenu();
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
+                    }
+                });
             }
         });
 
@@ -200,5 +213,28 @@ public class MenuController {
                 view.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
             }
         });
+    }
+
+    private void saveData() throws IOException {
+        int val1, val2, val3, val4;
+        //se i punti della partita sono maggiori del suo record, aggiorno
+        if(GameData.punti > GameData.recordPunti)
+            GameData.recordPunti = GameData.punti;
+
+        //gestisco i dati
+        if(GameData.music) val1 = 1; else val1 = 0;
+        if(GameData.sound) val2 = 1; else val2 = 0;
+        if(GameData.mancino) val3 = 1; else val3 = 0;
+        if(GameData.lang == GameData.Language.EN) val4 = 0; else val4 = 1;
+
+        //salvo i dati
+        String path = "https://progettouid.altervista.org/ZombieApocalypse/saveData.php?nickname=" + GameData.nick + "&volumeMusica=" + GameData.musicVolume + "&volumeSuoni=" + GameData.soundVolume + "&musicaAttiva=" + val1 + "&suoniAttivi=" + val2 + "&mancino=" + val3 + "&lingua=" + val4 + "&skinAttiva=" + GameData.skinAttiva + "&punti=" + GameData.recordPunti;
+        URL sript = new URL(path);
+        URLConnection conn = sript.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+
+        if ((inputLine = in.readLine()) != null)
+            val1 = Integer.parseInt(inputLine);
     }
 }

@@ -973,32 +973,25 @@ public class MenuView extends JPanel {
             }
         }
 
-        sfondo2.setText("1) " + nickname.get(0) + " (" + punti.get(0) + " pt)");
-        sfondo2.setForeground(new Color(255, 215, 0));
-        if(nickname.get(0).length() < 14)
-            sfondo2.setFont(font.deriveFont(Font.PLAIN, 15));
-        else
-            sfondo2.setFont(font.deriveFont(Font.PLAIN, 11));
-
-        sfondo3.setText("2) " + nickname.get(1) + " (" + punti.get(1) + " pt)");
-        sfondo3.setForeground(new Color(192, 192, 192));
-        if(nickname.get(1).length() < 14)
-            sfondo3.setFont(font.deriveFont(Font.PLAIN, 15));
-        else
-            sfondo3.setFont(font.deriveFont(Font.PLAIN, 11));
-
-        sfondo4.setText("3) " + nickname.get(2) + " (" + punti.get(2) + " pt)");
-        sfondo4.setForeground(new Color(205, 127, 50));
-        if(nickname.get(2).length() < 14)
-            sfondo4.setFont(font.deriveFont(Font.PLAIN, 15));
-        else
-            sfondo4.setFont(font.deriveFont(Font.PLAIN, 11));
-
-        sfondo5.setText("4) " + nickname.get(3) + " (" + punti.get(3) + " pt)");
-        if(nickname.get(3).length() < 14)
-            sfondo5.setFont(font.deriveFont(Font.PLAIN, 15));
-        else
-            sfondo5.setFont(font.deriveFont(Font.PLAIN, 11));
+        if(nickname.size() == 1){
+            setPrimo();
+        }
+        else if(nickname.size() == 2){
+            setPrimo();
+            setSecondo();
+        }
+        else if(nickname.size() == 3){
+            setPrimo();
+            setSecondo();
+            setTerzo();
+        } else if(nickname.size() == 4) {
+            setPrimo();
+            setSecondo();
+            setTerzo();
+            setQuarto();
+        } else{
+            setNull();
+        }
 
         sfondo6.setText("" + GameData.nick + "(" + GameData.punti + " pt)");
         if(GameData.nick.length() < 14)
@@ -1012,4 +1005,50 @@ public class MenuView extends JPanel {
 
         in.close();
     }
+
+    public void setPrimo(){
+        sfondo2.setText("1) " + nickname.get(0) + " (" + punti.get(0) + " pt)");
+        sfondo2.setForeground(new Color(255, 215, 0));
+        if(nickname.get(0).length() < 14)
+            sfondo2.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo2.setFont(font.deriveFont(Font.PLAIN, 11));
+    }
+    private void setSecondo() {
+        sfondo3.setText("2) " + nickname.get(1) + " (" + punti.get(1) + " pt)");
+        sfondo3.setForeground(new Color(192, 192, 192));
+        if(nickname.get(1).length() < 14)
+            sfondo3.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo3.setFont(font.deriveFont(Font.PLAIN, 11));
+    }
+    public void setTerzo(){
+        sfondo4.setText("3) " + nickname.get(2) + " (" + punti.get(2) + " pt)");
+        sfondo4.setForeground(new Color(205, 127, 50));
+        if(nickname.get(2).length() < 14)
+            sfondo4.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo4.setFont(font.deriveFont(Font.PLAIN, 11));
+    }
+    public void setQuarto(){
+        sfondo5.setText("4) " + nickname.get(3) + " (" + punti.get(3) + " pt)");
+        if(nickname.get(3).length() < 14)
+            sfondo5.setFont(font.deriveFont(Font.PLAIN, 15));
+        else
+            sfondo5.setFont(font.deriveFont(Font.PLAIN, 11));
+    }
+    public void setNull(){
+        sfondo2.setText("-");
+        sfondo2.setForeground(Color.WHITE);
+        sfondo2.setFont(font.deriveFont(Font.PLAIN, 15));
+
+        sfondo3.setText("-");
+        sfondo3.setForeground(Color.WHITE);
+        sfondo3.setFont(font.deriveFont(Font.PLAIN, 15));
+
+        sfondo4.setText("-");
+        sfondo4.setForeground(Color.WHITE);
+        sfondo4.setFont(font.deriveFont(Font.PLAIN, 15));
+    }
+
 }
