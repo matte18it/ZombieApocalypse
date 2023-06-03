@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class ItemView {
     public Image currentImage;
-    Image items[]=new Image[7];
+    Image items[]=new Image[Items.ItemType.values().length];
     boolean isTaken=false;
     Items.ItemType type;
     public ItemView(Items.ItemType e, int wight, int height){

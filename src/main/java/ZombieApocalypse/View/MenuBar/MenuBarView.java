@@ -21,6 +21,7 @@ public class MenuBarView extends JPanel {
     Items.ItemType typeGunLabel1;
     Items.ItemType typeGunLabel2;
      JLabel [] healthLabel;
+     JLabel addAmmoLabel;
     JLabel pointLabel;
      JLabel timeLabel;
      JLabel gunLabel1;
@@ -85,14 +86,26 @@ public class MenuBarView extends JPanel {
             jLabelA = new JLabel("Ammo");
         jLabelA.setFont(font);
         jLabelA.setForeground(Color.GRAY);
-        ammoLabel=new JLabel();
+        ammoLabel=new JLabel("30");
+        addAmmoLabel=new JLabel("+30");
+        ammoLabel.setForeground(Color.WHITE);
+        ammoLabel.setFont(font);
+        addAmmoLabel.setForeground(Color.WHITE);
+        addAmmoLabel.setFont(font);
         c.gridx=0;
         c.gridy=1;
+
         healthAmmoPanel.add(jLabelA, c);
         c.gridx=1;
         c.gridy=1;
+        c.fill=GridBagConstraints.HORIZONTAL;
 
         healthAmmoPanel.add(ammoLabel, c);
+        c.gridx=2;
+        c.gridy=1;
+        c.fill=GridBagConstraints.HORIZONTAL;
+
+        healthAmmoPanel.add(addAmmoLabel, c);
         //Pannello delle Armi primo
         JPanel gunPanel=new JPanel();
         if(GameData.lang== GameData.Language.EN)
@@ -162,7 +175,7 @@ public class MenuBarView extends JPanel {
         jLabelE.setForeground(Color.WHITE);
         c.gridx=0;
         c.gridy=0;
-        c.anchor=GridBagConstraints.LINE_START;
+        c.fill=GridBagConstraints.LINE_END;
         gunPanel1.add(jLabelE, c);
 
         c.gridx=0;

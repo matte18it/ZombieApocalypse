@@ -12,7 +12,7 @@ public class Items {
         this.items.add(new Item(x, y, value));
     }
 
-    public enum ItemType{SPELL, RADIO, SHOTGUN, MEDKIT, GRENADE, PISTOL, EMPTY};
+    public enum ItemType{AMMO1, AMMO2, SPELL, RADIO, SHOTGUN, MEDKIT, GRENADE, PISTOL, EMPTY};
     private final List<Item> items=new ArrayList();
     private static final Items instance=new Items();
 
