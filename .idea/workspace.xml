@@ -7,12 +7,9 @@
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Save/Load DB">
       <change afterPath="$PROJECT_DIR$/player.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Ammo0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/AMMO2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Ammo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Ammo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/AMMO1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/ItemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/ItemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

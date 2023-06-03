@@ -94,7 +94,7 @@ public class GameFrame extends JPanel {
         if(!playMenuMusic.isPlay() && GameData.music)
             //Faccio partire la traccia
             playMenuMusic.play("/Music/MenuMusic.wav");
-        if(!GameData.music && playMenuMusic.isPlay())
+        else if(!GameData.music && playMenuMusic.isPlay())
             playMenuMusic.stop();
         frameGame.setTitle("Menu");
 

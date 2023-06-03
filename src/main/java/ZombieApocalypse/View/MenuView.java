@@ -500,14 +500,24 @@ public class MenuView extends JPanel {
         lbl4.setBorder(new EmptyBorder(0, 25, 0, 0));
         layoutComands2.add(lbl4);
 
-        lbl5 = new JLabel();
-        lbl5.setIcon(loader.getImageIcon("/TutorialButton/pistola.png", 48, 48, false));
-        lbl5.setBorder(new EmptyBorder(0, 20, 0, 0));
+        if(GameData.lang == GameData.Language.IT)
+            lbl5 = new JLabel("Usa");
+        else
+            lbl5 = new JLabel("Use");
+        lbl5.setFont(font.deriveFont(Font.PLAIN, 25));
+        lbl5.setHorizontalTextPosition(JLabel.CENTER);
+        lbl5.setForeground(Color.WHITE);
+        lbl5.setBorder(new EmptyBorder(0, 25, 0, 0));
         layoutComands2.add(lbl5);
 
-        lbl6 = new JLabel();
-        lbl6.setIcon(loader.getImageIcon("/TutorialButton/fucile.png", 48, 48, false));
-        lbl6.setBorder(new EmptyBorder(0, 20, 0, 0));
+        if(GameData.lang == GameData.Language.IT)
+            lbl6 = new JLabel("Usa");
+        else
+            lbl6 = new JLabel("Use");
+        lbl6.setFont(font.deriveFont(Font.PLAIN, 25));
+        lbl6.setHorizontalTextPosition(JLabel.CENTER);
+        lbl6.setForeground(Color.WHITE);
+        lbl6.setBorder(new EmptyBorder(0, 25, 0, 0));
         layoutComands2.add(lbl6);
 
         lbl7 = new JLabel();
@@ -515,7 +525,7 @@ public class MenuView extends JPanel {
         lbl7.setBorder(new EmptyBorder(0, 30, 0, 0));
         layoutComands2.add(lbl7);
 
-        if(GameData.lang== GameData.Language.IT)
+        if(GameData.lang == GameData.Language.IT)
             lbl8 = new JLabel("Lascia");
         else
             lbl8 = new JLabel("Drop");
