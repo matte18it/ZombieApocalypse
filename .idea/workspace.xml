@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="GEstione della corsa">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/GRENADE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/PISTOL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/SHOTGUN.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Radio.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/RADIO.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Gestione Item final">
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/PistolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/PistolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/ShotgunView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/ShotgunView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/ItemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/ItemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +85,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00008" summary="ResourcesLoader da implementare">
-      <created>1684656027136</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1684656027136</updated>
     </task>
     <task id="LOCAL-00009" summary="Implementazione del Resources Loader">
       <created>1684659009640</created>
@@ -443,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685777898610</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Gestione Item final">
+      <created>1685781017085</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1685781017085</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,7 +445,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Revert &quot;Danni al nemico&quot;&#10;&#10;This reverts commit ee387b1d" />
     <MESSAGE value="codice sistemato" />
     <MESSAGE value="About" />
     <MESSAGE value="Loading Screen pt.1" />
@@ -484,6 +469,7 @@
     <MESSAGE value="Aggiunta item pt2" />
     <MESSAGE value="Aggiunta del drop" />
     <MESSAGE value="GEstione della corsa" />
-    <option name="LAST_COMMIT_MESSAGE" value="GEstione della corsa" />
+    <MESSAGE value="Gestione Item final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gestione Item final" />
   </component>
 </project>

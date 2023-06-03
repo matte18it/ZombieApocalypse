@@ -52,5 +52,10 @@ public boolean taken=true;
             taken=false;
             Game.getInstance().getMenuBar().addItem(type);
         }
+        if(Game.getInstance().getBackMenu()){
+            getView().setTaken(true);
+            taken=false;
+        }
+
         return taken;
 }}
