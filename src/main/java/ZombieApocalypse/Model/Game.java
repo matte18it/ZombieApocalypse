@@ -125,6 +125,10 @@ public class Game {
         if(character.hitBox.intersects(enemy.hitBox) ){
             character.hit();
         }
+        if(character.speedUp && character.countSpeed<300) //sono 5 secondi
+            character.speedUp();
+        else
+            character.stopSpeed();
     }
 
     public void refresh(){
@@ -173,11 +177,12 @@ public class Game {
         if(value!= Items.ItemType.EMPTY){
             if(world.isGround0(character.getX()+character.wight+10, character.getY())){
                 Items.getInstance().dropItem(character.getX()+character.wight+10, character.getY(), value);
-                if(b)
-                    menuBar.setLabel1Empty();
-                else
-                    menuBar.setLabel2Empty();
+                menuBar.setLabelEmpty(b);
             }
 
     }}
+
+    public void speedUpPlayer() {
+        character.speedUp();
+    }
 }

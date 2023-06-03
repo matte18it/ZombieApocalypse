@@ -54,9 +54,26 @@ public class PlayerCharacter extends Character {
         Game.getInstance().getMenuBar().addHeart();
         health++;
     }
+    public void speedUp(){
+        if(countSpeed==0)
+            speedUp=true;
+        countSpeed++;
+    }
+    public void stopSpeed(){
+        speedUp=false;
+        countSpeed=0;
+    }
+    public boolean speedUp=false;
+    public int countSpeed=0;
 
 
     public void move() {
+        if(speedUp)
+            speed=4;
+        else{
+            if(speed==4)
+                speed=1;
+        }
 
         if(dir==movementDirection.RIGHT && (world.isGround0(getX()+Settings.CELL_SIZEX, getY())) && !world.isEnemy(getX()+20, getY()))
             x += (10*speed);

@@ -37,10 +37,7 @@ public class MenuBarModel {
     private void medKit(boolean b){
         for(int i=0; i<2; i++){
         Game.getInstance().getPlayerCharacter().cure();}
-        if(b)
-            setLabel1Empty();
-        else
-            setLabel2Empty();
+        setLabelEmpty(b);
 
     }
 
@@ -52,8 +49,14 @@ public class MenuBarModel {
             value=menuBarView.gunLable2Type();
         switch (value){
             case MEDKIT -> medKit(b);
+            case SPELL -> spell(b);
         }
 
+    }
+
+    private void spell(boolean b) {
+        Game.getInstance().speedUpPlayer();
+        setLabelEmpty(b);
     }
 
     public Items.ItemType getLabel1() {
@@ -63,12 +66,14 @@ public class MenuBarModel {
         return menuBarView.gunLable2Type();
     }
 
-    public void setLabel1Empty() {
-        menuBarView.setGunLable1(Items.ItemType.EMPTY);
+    public void setLabelEmpty(boolean b) {
+        if(b)
+            menuBarView.setGunLable1(Items.ItemType.EMPTY);
+        else
+            menuBarView.setGunLable2(Items.ItemType.EMPTY);
+
 
     }
 
-    public void setLabel2Empty() {
-        menuBarView.setGunLable2(Items.ItemType.EMPTY);
-    }
+
 }
