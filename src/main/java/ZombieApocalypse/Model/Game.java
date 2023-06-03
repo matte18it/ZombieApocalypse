@@ -25,8 +25,8 @@ public class Game {
     //Gestione delle armi, per adesso
     public boolean hasGrenade=false;
     public boolean hasPistol=false;
-    public boolean hasKnife=false;
-    public boolean hasShotgun=true;
+    public boolean hasKnife=true;
+    public boolean hasShotgun=false;
 
     private EnemyCharacter enemy = new EnemyCharacter();
     private MenuBarModel menuBar;
@@ -99,8 +99,10 @@ public class Game {
             knife.attack();
         if(hasShotgun)
             shotgun.attack();
-        if(hasGrenade)
+        if(hasGrenade){
             grenade.attack();
+            menuBar.setGrenadeEmpty();
+            setKnife();}
     }
 
     public Point coordinateToIJ(int x, int y) {
@@ -167,6 +169,7 @@ public class Game {
         menuBar.useItem(false);
     }
 
+
     public void dropItem() {
         boolean b=true;
         Items.ItemType value=menuBar.getLabel1();
@@ -178,11 +181,43 @@ public class Game {
             if(world.isGround0(character.getX()+character.wight+10, character.getY())){
                 Items.getInstance().dropItem(character.getX()+character.wight+10, character.getY(), value);
                 menuBar.setLabelEmpty(b);
+                if(value== Items.ItemType.SHOTGUN || value== Items.ItemType.PISTOL || value==Items.ItemType.GRENADE)
+                    setKnife();
             }
 
     }}
 
+    private void setKnife() {
+        hasGrenade=false;
+        hasPistol=false;
+        hasKnife=true;
+        hasShotgun=false;
+    }
+
     public void speedUpPlayer() {
         character.speedUp();
+    }
+
+    public void setShotgun() {
+         hasGrenade=false;
+        hasPistol=false;
+        hasKnife=false;
+         hasShotgun=true;
+
+
+    }
+
+    public void setPistol() {
+        hasGrenade=false;
+        hasPistol=true;
+        hasKnife=false;
+        hasShotgun=false;
+    }
+
+    public void setGrenade() {
+        hasGrenade=true;
+        hasPistol=false;
+        hasKnife=false;
+        hasShotgun=false;
     }
 }
