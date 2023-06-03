@@ -87,17 +87,23 @@ public class GraphicPanel extends JPanel {
             //per adesso gestione item
             Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
             Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);
+            Items.getInstance().dropItem(150, 100, Items.ItemType.RADIO);
+            Items.getInstance().dropItem(50, 100, Items.ItemType.SHOTGUN);
+            Items.getInstance().dropItem(250, 100, Items.ItemType.PISTOL);
+            Items.getInstance().dropItem(300, 100, Items.ItemType.GRENADE);
+            Items.getInstance().dropItem(350, 100, Items.ItemType.GRENADE);
+
         }
         for (Item b : Items.getInstance().getItems()) {
             b.getView().update();
-            g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
+            g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
         }
         if(Game.getInstance().getPlayerCharacter().speedUp ){
-        g.setColor(Color.RED);
+        g.setColor(Color.WHITE);
         float t= (float) Game.getInstance().getPlayerCharacter().countSpeed /60;
             String h = String.format("%.2f", t);
         g.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
-        String c="Speed: "+String.valueOf(h);
+        String c="SpeedUp: "+String.valueOf(h);
         g.drawString(c, 20, 20);}
 
 

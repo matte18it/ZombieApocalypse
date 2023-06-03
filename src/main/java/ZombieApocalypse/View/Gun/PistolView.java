@@ -10,7 +10,7 @@ public class PistolView {
 
 
     public PistolView() {
-        gunAnimation= new GunAnimation("Pistola",4);
+        gunAnimation= new GunAnimation("Pistola",4, GunAnimation.GunType.PISTOL);
         currentImage=gunAnimation.getDefaultImage();
     }
 

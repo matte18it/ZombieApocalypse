@@ -10,13 +10,13 @@ public class ItemView {
     Image items[]=new Image[7];
     boolean isTaken=false;
     Items.ItemType type;
-    public ItemView(Items.ItemType e, int dimesion){
+    public ItemView(Items.ItemType e, int wight, int height){
         type=e;
         if(items[type.ordinal()]==null){
-            items[type.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+type+".png", dimesion, dimesion, true);
+            items[type.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+type+".png", wight, height, true);
             }
         if(items[Items.ItemType.EMPTY.ordinal()]==null){
-            items[Items.ItemType.EMPTY.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+Items.ItemType.EMPTY +".png", dimesion, dimesion, true);
+            items[Items.ItemType.EMPTY.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+Items.ItemType.EMPTY +".png", wight, height, true);
         }
 
     }

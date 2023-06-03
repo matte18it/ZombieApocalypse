@@ -50,8 +50,29 @@ public class MenuBarModel {
         switch (value){
             case MEDKIT -> medKit(b);
             case SPELL -> spell(b);
+            case RADIO -> radio(b);
+            case SHOTGUN -> shotGun(b);
+            case PISTOL -> pistol(b);
+            case GRENADE -> grenade(b);
         }
 
+    }
+
+    private void grenade(boolean b) {
+        Game.getInstance().setGrenade();
+    }
+
+    private void pistol(boolean b) {
+        Game.getInstance().setPistol();
+    }
+
+    private void shotGun(boolean b) {
+        Game.getInstance().setShotgun();
+
+    }
+
+    private void radio(boolean b) {
+        setLabelEmpty(b);   //Da implementare la logica
     }
 
     private void spell(boolean b) {
@@ -74,6 +95,7 @@ public class MenuBarModel {
 
 
     }
+
 
 
 }

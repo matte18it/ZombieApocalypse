@@ -11,7 +11,7 @@ import java.awt.*;
 
 
         public ShotgunView() {
-            gunAnimation= new GunAnimation("Fucile",4);
+            gunAnimation= new GunAnimation("Fucile",4, GunAnimation.GunType.SHOTGUN);
             currentImage=gunAnimation.getDefaultImage();
         }
 
