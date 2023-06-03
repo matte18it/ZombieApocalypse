@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Save/Load DB">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="bug fix">
       <change afterPath="$PROJECT_DIR$/player.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +85,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00008" summary="ResourcesLoader da implementare">
-      <created>1684656027136</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1684656027136</updated>
     </task>
     <task id="LOCAL-00009" summary="Implementazione del Resources Loader">
       <created>1684659009640</created>
@@ -430,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685787686789</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="bug fix">
+      <created>1685804416667</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1685804416667</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,7 +445,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Revert &quot;Danni al nemico&quot;&#10;&#10;This reverts commit ee387b1d" />
     <MESSAGE value="codice sistemato" />
     <MESSAGE value="About" />
     <MESSAGE value="Loading Screen pt.1" />
@@ -471,6 +469,7 @@
     <MESSAGE value="Aggiunta item pt2" />
     <MESSAGE value="Aggiunta del drop" />
     <MESSAGE value="Save/Load DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save/Load DB" />
+    <MESSAGE value="bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
 </project>
