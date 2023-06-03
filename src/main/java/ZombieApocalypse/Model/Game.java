@@ -4,6 +4,7 @@ import ZombieApocalypse.Model.Guns.GrenadeModel;
 import ZombieApocalypse.Model.Guns.KnifeModel;
 import ZombieApocalypse.Model.Guns.PistolModel;
 import ZombieApocalypse.Model.Guns.ShotgunModel;
+import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.Gun.GrenadeView;
@@ -161,4 +162,22 @@ public class Game {
     public void useRightItem() {
         menuBar.useItem(false);
     }
+
+    public void dropItem() {
+        boolean b=true;
+        Items.ItemType value=menuBar.getLabel1();
+        if(value== Items.ItemType.EMPTY){
+            value=menuBar.getLabel2();
+        b=false;}
+
+        if(value!= Items.ItemType.EMPTY){
+            if(world.isGround0(character.getX()+character.wight+10, character.getY())){
+                Items.getInstance().dropItem(character.getX()+character.wight+10, character.getY(), value);
+                if(b)
+                    menuBar.setLabel1Empty();
+                else
+                    menuBar.setLabel2Empty();
+            }
+
+    }}
 }

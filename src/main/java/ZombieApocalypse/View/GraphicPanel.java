@@ -85,7 +85,8 @@ public class GraphicPanel extends JPanel {
             }}
         if(count==0){
             //per adesso gestione item
-            Items.getInstance().addMedkit(200,350);
+            Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
+            Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);
         }
         for (Item b : Items.getInstance().getItems()) {
             b.getView().update();

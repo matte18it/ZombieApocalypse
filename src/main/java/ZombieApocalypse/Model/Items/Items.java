@@ -8,6 +8,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Items {
+    public void dropItem(int x, int y, ItemType value) {
+        this.items.add(new Item(x, y, value));
+    }
+
     public enum ItemType{SPELL, RADIO, SHOTGUN, MEDKIT, GRENADE, PISTOL, EMPTY};
     private final List<Item> items=new ArrayList();
     private static final Items instance=new Items();
@@ -16,10 +20,7 @@ public class Items {
 
     public static Items getInstance(){return instance;}
 
-    public void addMedkit(int x, int y){
-        this.items.add(new MedKit(x,y, ItemType.MEDKIT));
 
-    }
 
 
     public List<Item> getItems(){return Collections.unmodifiableList(this.items);

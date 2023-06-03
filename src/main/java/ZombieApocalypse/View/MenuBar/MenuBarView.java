@@ -267,9 +267,9 @@ public class MenuBarView extends JPanel {
             else
                 healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
         }
-        gunLabel1.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 55, 55));
+        gunLabel1.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 65, 55));
         typeGunLabel1 = Items.ItemType.EMPTY;
-        gunLabel2.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 55, 55));
+        gunLabel2.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 65, 55));
         typeGunLabel2 = Items.ItemType.EMPTY;
         timeLabel.setForeground(Color.WHITE);
     }
@@ -286,10 +286,10 @@ public class MenuBarView extends JPanel {
 
     public void add(Items.ItemType i) {
         if(typeGunLabel1==Items.ItemType.EMPTY){
-            gunLabel1.setIcon(menuBarAnimation.setIcon(i, 55, 55));
+            gunLabel1.setIcon(menuBarAnimation.setIcon(i, 65, 55));
             typeGunLabel1=i; return;}
         if(typeGunLabel2==Items.ItemType.EMPTY){
-            gunLabel2.setIcon(menuBarAnimation.setIcon(i, 55, 55));
+            gunLabel2.setIcon(menuBarAnimation.setIcon(i, 65, 55));
         typeGunLabel2=i;}
 
 
@@ -308,12 +308,12 @@ public class MenuBarView extends JPanel {
 
     public void setGunLable1(Items.ItemType itemType) {
         typeGunLabel1=itemType;
-        gunLabel1.setIcon(menuBarAnimation.setIcon(typeGunLabel1, 55, 55));
+        gunLabel1.setIcon(menuBarAnimation.setIcon(typeGunLabel1, 65, 55));
 
     }
 
     public void setGunLable2(Items.ItemType itemType) {
         typeGunLabel2=itemType;
-        gunLabel2.setIcon(menuBarAnimation.setIcon(typeGunLabel2, 55, 55));
+        gunLabel2.setIcon(menuBarAnimation.setIcon(typeGunLabel2, 65, 55));
     }
 }

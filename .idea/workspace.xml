@@ -4,40 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Pause finale">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Aggiunta item pt2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/GRENADE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/GRENADE.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/GUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/PISTOL.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/HEALTH_KIT_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/MEDKIT.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Icon0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/FULLHEART.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Icon1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/EMPTYHEART.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Icon2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/EMPTY.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/MEDICINE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/SPELL.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/RADIO_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/RADIO.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/SHOTGUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/SHOTGUN.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_GRENADE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_GRENADE.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_GUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_PISTOL.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_HEALTH_KIT_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_MEDKIT.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_MEDICINE_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_SPELL.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_RADIO_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_RADIO.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/Using_SHOTGUN_SLOT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/BarraDistatoeMenu/USING_SHOTGUN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/RunSpell.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/SPELL.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/MedKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/MedKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/MedKit.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/GRENADE_SLOT.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/HEALTH_KIT_SLOT.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/Icon0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/Icon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/Icon2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/MEDICINE_SLOT.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/RADIO_SLOT.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BarraDistatoeMenu/SHOTGUN_SLOT.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/GameData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,13 +96,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Tempo funzionante">
-      <created>1684592173725</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1684592173725</updated>
     </task>
     <task id="LOCAL-00006" summary="Tempo funzionante">
       <created>1684602102100</created>
@@ -460,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685610331464</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Aggiunta item pt2">
+      <created>1685724148330</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1685724148331</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +456,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Classe Character" />
     <MESSAGE value="About pt.3" />
     <MESSAGE value="About pt.4" />
     <MESSAGE value="Revert &quot;Danni al nemico&quot;&#10;&#10;This reverts commit ee387b1d" />
@@ -501,6 +480,7 @@
     <MESSAGE value="Pausa pt.1" />
     <MESSAGE value="Pause pt.1" />
     <MESSAGE value="Pause finale" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pause finale" />
+    <MESSAGE value="Aggiunta item pt2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta item pt2" />
   </component>
 </project>
