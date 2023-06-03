@@ -91,6 +91,7 @@ public class GraphicPanel extends JPanel {
             Items.getInstance().dropItem(50, 100, Items.ItemType.SHOTGUN);
             Items.getInstance().dropItem(250, 100, Items.ItemType.PISTOL);
             Items.getInstance().dropItem(300, 100, Items.ItemType.GRENADE);
+            Items.getInstance().dropItem(350, 100, Items.ItemType.GRENADE);
 
         }
         for (Item b : Items.getInstance().getItems()) {

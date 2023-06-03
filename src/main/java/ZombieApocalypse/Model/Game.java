@@ -101,7 +101,7 @@ public class Game {
             shotgun.attack();
         if(hasGrenade){
             grenade.attack();
-            menuBar.setGrenadeEmpty();
+            menuBar.setLabelEmpty(itemUsed);
             setKnife();}
     }
 
@@ -160,13 +160,16 @@ public class Game {
     public boolean getBackMenu() {
         return backMenu;
     }
+    boolean itemUsed;
 
     public void useLeftItem() {
-        menuBar.useItem(true);
+        itemUsed=true;
+        menuBar.useItem(itemUsed);
     }
 
     public void useRightItem() {
-        menuBar.useItem(false);
+        itemUsed=false;
+        menuBar.useItem(itemUsed);
     }
 
 

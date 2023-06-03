@@ -97,10 +97,5 @@ public class MenuBarModel {
     }
 
 
-    public void setGrenadeEmpty() {
-        if(getLabel1()== Items.ItemType.GRENADE)
-            setLabelEmpty(true);
-        else
-            setLabelEmpty(false);
-    }
+
 }
