@@ -98,7 +98,7 @@ public class GraphicPanel extends JPanel {
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
         }
         if(Game.getInstance().getPlayerCharacter().speedUp ){
-        g.setColor(Color.RED);
+        g.setColor(Color.WHITE);
         float t= (float) Game.getInstance().getPlayerCharacter().countSpeed /60;
             String h = String.format("%.2f", t);
         g.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
