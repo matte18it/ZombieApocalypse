@@ -22,7 +22,6 @@ public class ResourcesLoader {
                 font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream(path))).deriveFont(type,size);
             }catch (IOException | FontFormatException e){
                 System.exit(100);
-
             }
             return font;
     }

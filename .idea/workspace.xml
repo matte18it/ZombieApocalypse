@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Implementazione delle munizioni">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Posizione player fix">
       <change afterPath="$PROJECT_DIR$/player.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/ButtonSound.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/GrenadeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/GrenadeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/ResourcesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/ResourcesLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +68,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/Audio" />
       <recent name="$PROJECT_DIR$/src/main/Resources/SettingsImage" />
       <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton/Mouse" />
       <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton" />
       <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoU" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton/TastoI" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.Model.Guns" />
@@ -90,6 +96,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Inizio di implementazione Armi">
+      <created>1684689158694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684689158694</updated>
     </task>
     <task id="LOCAL-00012" summary="Movimenti armi">
       <created>1684778535909</created>
@@ -427,14 +440,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685862000629</updated>
     </task>
-    <task id="LOCAL-00060" summary="Implementazione delle munizioni">
-      <created>1685865604146</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1685865604146</updated>
-    </task>
-    <option name="localTasksCounter" value="61" />
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -450,6 +456,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Loading Screen pt.1" />
     <MESSAGE value="Loading Screen" />
     <MESSAGE value="Modifica player" />
     <MESSAGE value="Mouse click" />
@@ -474,7 +481,6 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="bug fix pt 2" />
     <MESSAGE value="Posizione player fix" />
-    <MESSAGE value="Implementazione delle munizioni" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementazione delle munizioni" />
+    <option name="LAST_COMMIT_MESSAGE" value="Posizione player fix" />
   </component>
 </project>

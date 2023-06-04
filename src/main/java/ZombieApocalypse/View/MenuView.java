@@ -607,7 +607,7 @@ public class MenuView extends JPanel {
         musica.setPaintTicks(true);
         musica.setLabelTable(setTable());
         musica.setPaintLabels(true);
-        musica.setValue(GameData.soundVolume);
+        musica.setValue(GameData.musicVolume);
         gestioneMusica.add(music);
         gestioneMusica.add(musica);
         gestioneMusica.add(Box.createRigidArea(new Dimension(30, 10)));

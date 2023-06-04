@@ -92,6 +92,13 @@ public class MenuController {
             }
         });
 
+        view.getSuoni().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                GameData.soundVolume = view.getSuoni().getValue();
+            }
+        });
+
         view.getMuteMusic().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {

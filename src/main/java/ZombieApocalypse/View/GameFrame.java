@@ -50,9 +50,11 @@ public class GameFrame extends JPanel {
             panel = new LoginView();
 
         //Controllo che la traccia non sia già attiva
-        if(!playMenuMusic.isPlay() && GameData.music)
+        if(!playMenuMusic.isPlay() && GameData.music){
             //Faccio partire la traccia
             playMenuMusic.play("/Music/MenuMusic.wav");
+            playMenuMusic.setVolume(GameData.musicVolume);
+        }
 
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
@@ -91,9 +93,11 @@ public class GameFrame extends JPanel {
         dimension();
 
         //Controllo che la traccia non sia già attiva
-        if(!playMenuMusic.isPlay() && GameData.music)
+        if(!playMenuMusic.isPlay() && GameData.music){
             //Faccio partire la traccia
             playMenuMusic.play("/Music/MenuMusic.wav");
+            playMenuMusic.setVolume(GameData.musicVolume);
+        }
         else if(!GameData.music && playMenuMusic.isPlay())
             playMenuMusic.stop();
         frameGame.setTitle("Menu");
@@ -114,6 +118,7 @@ public class GameFrame extends JPanel {
             playMenuMusic.stop();
             //...e attivo la nuova
             playMenuMusic.play("/Music/GameMusic.wav");
+            playMenuMusic.setVolume(GameData.musicVolume);
         }
 
         leaderboardLoop.stop();
