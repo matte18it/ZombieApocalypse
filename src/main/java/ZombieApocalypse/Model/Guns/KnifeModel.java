@@ -18,10 +18,9 @@ public class KnifeModel extends GunModel{
     }
     public void attack() {
         attack=true;
-        if(hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)){
-            Game.getInstance().getEnemyCharacter().hit();
+
         }
-    }
+
     public void update(){
         int x;
         int y;

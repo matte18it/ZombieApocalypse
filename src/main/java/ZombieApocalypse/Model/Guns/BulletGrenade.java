@@ -27,7 +27,6 @@ boolean stopAll=false;
             return true;
         }
         Point explosion=new Point(x+dimension/2,y+dimension/2);
-        Point enemy=new Point(Game.getInstance().getEnemyCharacter().getX()+Game.getInstance().getEnemyCharacter().centerX, Game.getInstance().getEnemyCharacter().getY()+Game.getInstance().getEnemyCharacter().centerY);
         Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
         if(!ending) {
             this.getView().updateView(false, numFrame);
@@ -49,9 +48,7 @@ boolean stopAll=false;
                 numFrame=0;
             }
         }else{
-            if (explosion.distance(enemy)<dimension && numFrame<22) {
-                Game.getInstance().getEnemyCharacter().hit();
-            }
+
             if(explosion.distance(player)<dimension && numFrame<22){
                 Game.getInstance().getPlayerCharacter().hit();
             }

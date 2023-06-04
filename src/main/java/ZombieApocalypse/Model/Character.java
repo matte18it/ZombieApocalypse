@@ -16,8 +16,8 @@ public class Character {
     boolean hit=false;
     public int wight;
     public int height;
-    public int centerX=wight/2;
-    public int centerY=height/2;
+    public int centerX;
+    public int centerY;
 
     public Rectangle hitBox;
     void setHitbox(){

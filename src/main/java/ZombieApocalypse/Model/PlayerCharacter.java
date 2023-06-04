@@ -32,6 +32,8 @@ public class PlayerCharacter extends Character {
     PlayerCharacter(){
         wight=Settings.CELL_SIZEX;
         height=Settings.CELL_SIZEY;
+        centerX=wight/2;
+        centerY=height/2;
         x=50;
         y=50;
         health=6;
@@ -72,13 +74,13 @@ public class PlayerCharacter extends Character {
                 speed=1;
         }
 
-        if(dir==movementDirection.RIGHT && world.isGround0(getX()+wight+(10*speed), getY()) && ! world.isEnemy(getX()+20, getY()))
+        if(dir==movementDirection.RIGHT && world.isGround0(getX()+wight+(10*speed), getY()) && world.isEnemy(getX()+(10*speed), getY()) )
             x += (10*speed);
-        else if(dir==movementDirection.LEFT && world.isGround0(getX()-(10*speed), getY()) && !world.isEnemy(getX()-20, getY()))
+        else if(dir==movementDirection.LEFT && world.isGround0(getX()-(10*speed), getY()) && world.isEnemy(getX()-(10*speed), getY()))
             x -= (10*speed);
-        else if(dir==movementDirection.UP && world.isGround0(getX(), getY()-(10*speed)) && !world.isEnemy(getX(), getY()-20) )
+        else if(dir==movementDirection.UP && world.isGround0(getX(), getY()-(10*speed)) && world.isEnemy(getX(), getY()-(10*speed)))
             y -= (10*speed);
-        else if(dir==movementDirection.DOWN && world.isGround0(getX(), getY()+height+(10*speed))&& !world.isEnemy(getX(), getY()+20))
+        else if(dir==movementDirection.DOWN && world.isGround0(getX(), getY()+height+(10*speed)) && world.isEnemy(getX(), getY()+(10*speed)))
             y += (10*speed);
         else
             movement=false;

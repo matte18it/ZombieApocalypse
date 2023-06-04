@@ -30,7 +30,6 @@ public class Game {
     public boolean hasKnife=true;
     public boolean hasShotgun=false;
 
-    private EnemyCharacter enemy = new EnemyCharacter();
     private MenuBarModel menuBar;
     public void setMenuBar(MenuBarView m){
         menuBar=new MenuBarModel(m);
@@ -116,22 +115,12 @@ public class Game {
         return new Point(x1,y1);
     }
 
-    public EnemyCharacter getEnemyCharacter() {
-        return enemy;
-    }
 
     public void checkCollision() {
         //idea: creare un'array di nemici da scorrere
         //ora ne abbiamo solo uno
         //30 frame per hit
 
-        if(Game.getInstance().getEnemyCharacter().countHit==30)
-            Game.getInstance().getEnemyCharacter().stopHit();
-        if(character.countHit==30)
-            character.stopHit();
-        if(character.hitBox.intersects(enemy.hitBox) ){
-            character.hit();
-        }
         if(character.speedUp && character.countSpeed<300) //sono 5 secondi
             character.speedUp();
         else

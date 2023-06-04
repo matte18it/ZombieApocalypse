@@ -1,5 +1,7 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Model.Enemy.Enemies;
+import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
@@ -13,7 +15,6 @@ import ZombieApocalypse.View.Gun.PistolView;
 import ZombieApocalypse.View.Gun.KnifeView;
 import ZombieApocalypse.View.Gun.ShotgunView;
 import ZombieApocalypse.View.Player.CharacterView;
-import ZombieApocalypse.View.Enemy.SkinnyEnemyView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +26,6 @@ public class GraphicPanel extends JPanel {
     private static final PistolView pistolView = new PistolView();
     private static final ShotgunView shotgunView=new ShotgunView();
     private static final GrenadeView grenadeView=new GrenadeView();
-    private static final SkinnyEnemyView skinnyEnemyView = new SkinnyEnemyView();
     private static final KnifeView knife=new KnifeView();
     public GrenadeView getGrenadeView(){return grenadeView;}
 
@@ -82,6 +82,8 @@ public class GraphicPanel extends JPanel {
                 g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getWidth(), Game.getInstance().getShotgunModel().getHeight(), null);
             }}
         if(count==0){
+            //per adesso gestione nemici
+            Enemies.getInstance().addEnemy(500,500, Enemies.EnemiesType.SKINNYZOMBIE);
             //per adesso gestione item
             Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
             Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);
@@ -94,6 +96,10 @@ public class GraphicPanel extends JPanel {
             Items.getInstance().dropItem(120, 120, Items.ItemType.AMMO1);
 
 
+        }
+        for (Enemy b : Enemies.getInstance().getEnemies()) {
+            b.getView().update();
+            g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
         }
         for (Item b : Items.getInstance().getItems()) {
             b.getView().update();
@@ -135,7 +141,6 @@ public class GraphicPanel extends JPanel {
         }
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
-        g.drawImage(skinnyEnemyView.getCurrentImage(), Game.getInstance().getEnemyCharacter().getX(), Game.getInstance().getEnemyCharacter().getY(), skinnyEnemyView.width, skinnyEnemyView.height, null);
 
 
     }
@@ -151,9 +156,9 @@ public class GraphicPanel extends JPanel {
         if(Game.getInstance().hasGrenade){
             grenadeView.update();
             grenadeView.update(null);}
-        skinnyEnemyView.update();
         Bullets.getInstance().update();
         Items.getInstance().update();
+        Enemies.getInstance().update();
         repaint();
     }
 

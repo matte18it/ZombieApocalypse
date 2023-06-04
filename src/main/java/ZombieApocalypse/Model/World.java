@@ -1,19 +1,12 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 
 public class World {
-    public boolean isEnemy(int i, int y) {
-        //Tengo il centro del player a distanza dal centro del nemico
-        Point player=new Point(i+Game.getInstance().getPlayerCharacter().centerX,y+Game.getInstance().getPlayerCharacter().centerY);
-        Point enemy =new Point(Game.getInstance().getEnemyCharacter().getX()+Game.getInstance().getEnemyCharacter().centerX, Game.getInstance().getEnemyCharacter().getY()+Game.getInstance().getEnemyCharacter().centerY);
-        if(player.distance(enemy)<20)
-            return true;
 
-        return false;
-    }
 
 
 
@@ -33,6 +26,9 @@ public class World {
             for(int j = 0; j < world[i].length; j++) {
                 world[i][j]=Block.GROUND0;
             }}
+    }
+    public boolean isEnemy(int x, int y){
+        return Enemies.getInstance().checkCollision(x,y);
     }
 
 

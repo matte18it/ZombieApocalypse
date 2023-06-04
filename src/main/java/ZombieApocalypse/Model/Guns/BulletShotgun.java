@@ -24,11 +24,7 @@ public class BulletShotgun extends Bullet{
         if(!ending) {
             this.getView().updateView(false, numFrame);
             numFrame++;
-            if (hitBox.intersects(Game.getInstance().getEnemyCharacter().hitBox)) {
-                Game.getInstance().getEnemyCharacter().hit();
-                ending = true;
-                numFrame=0;
-            }
+
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
                 if (dir == Direction.DOWN){
                     if(bulletType==Type.LEFT){
