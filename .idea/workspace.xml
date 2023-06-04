@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="movimento del enemy random" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Posizione player fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Audio/ButtonSound.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Audio/ButtonSound.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +92,41 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Inizio di implementazione Armi">
+      <created>1684689158694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684689158694</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Movimenti armi">
+      <created>1684778535909</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684778535909</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Movimenti armi funzionante">
+      <created>1684832692343</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684832692343</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Creazioni Model per Armi">
+      <created>1684853696343</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684853696343</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Animazione coltello">
+      <created>1684861196858</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684861196858</updated>
     </task>
     <task id="LOCAL-00016" summary="Bug Fix">
       <created>1684910200064</created>
@@ -391,42 +436,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685862000629</updated>
     </task>
-    <task id="LOCAL-00060" summary="aggiunta parziale texture nemici">
-      <created>1685889946128</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1685889946128</updated>
-    </task>
-    <task id="LOCAL-00061" summary="enemy inizio">
-      <created>1685897322466</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1685897322466</updated>
-    </task>
-    <task id="LOCAL-00062" summary="hit enemy al player">
-      <created>1685898164984</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1685898164984</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Gestione di più spell conteporeamente">
-      <created>1685899611608</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1685899611608</updated>
-    </task>
-    <task id="LOCAL-00064" summary="movimento del enemy random">
-      <created>1685902075168</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1685902075168</updated>
-    </task>
-    <option name="localTasksCounter" value="65" />
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,6 +452,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Loading Screen pt.1" />
+    <MESSAGE value="Loading Screen" />
+    <MESSAGE value="Modifica player" />
+    <MESSAGE value="Mouse click" />
+    <MESSAGE value="Bullet pt1" />
     <MESSAGE value="Bullet pt2" />
     <MESSAGE value="Bullet pt3" />
     <MESSAGE value="Bug Fix" />
@@ -462,11 +477,6 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="bug fix pt 2" />
     <MESSAGE value="Posizione player fix" />
-    <MESSAGE value="aggiunta parziale texture nemici" />
-    <MESSAGE value="enemy inizio" />
-    <MESSAGE value="hit enemy al player" />
-    <MESSAGE value="Gestione di più spell conteporeamente" />
-    <MESSAGE value="movimento del enemy random" />
-    <option name="LAST_COMMIT_MESSAGE" value="movimento del enemy random" />
+    <option name="LAST_COMMIT_MESSAGE" value="Posizione player fix" />
   </component>
 </project>

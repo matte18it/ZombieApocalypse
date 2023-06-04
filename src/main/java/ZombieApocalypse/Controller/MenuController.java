@@ -54,6 +54,11 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound){
+                    PlayWav.getInstance().loadSound("/Audio/ButtonSound.wav");
+                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+                    PlayWav.getInstance().playSound();
+                }
             }
         });
 
