@@ -11,6 +11,7 @@ import ZombieApocalypse.View.Gun.GrenadeView;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class Game {
     //Gestisce gli aspetti del gioco
@@ -21,6 +22,7 @@ public class Game {
     private final GrenadeModel grenade=new GrenadeModel();
     private final ShotgunModel shotgun=new ShotgunModel();
     private boolean pause = false;
+    private Point mousePoint=new Point(0,0);
 
     //Gestione delle armi, per adesso
     public boolean hasGrenade=false;
@@ -209,6 +211,7 @@ public class Game {
         hasPistol=false;
         hasKnife=false;
          hasShotgun=true;
+         shotgun.update(mousePoint);
 
 
     }
@@ -218,6 +221,7 @@ public class Game {
         hasPistol=true;
         hasKnife=false;
         hasShotgun=false;
+        pistol.update(mousePoint);
     }
 
     public void setGrenade() {
@@ -225,5 +229,11 @@ public class Game {
         hasPistol=false;
         hasKnife=false;
         hasShotgun=false;
+        grenade.update(mousePoint);
+    }
+
+
+    public void setLastMousePosition(Point e) {
+        mousePoint=e;
     }
 }

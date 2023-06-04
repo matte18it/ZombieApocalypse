@@ -22,8 +22,10 @@ public class GrenadeModel extends GunModel{
         damage=6;
         width= 21;
         height=21;
-        imagePosition=new Point(0,0);
         mouse=new Point(0,0);
+
+        imagePosition=new Point(0,0);
+
         super.setCenter();
     }
     public void attack() {
