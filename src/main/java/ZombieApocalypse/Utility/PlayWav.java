@@ -27,7 +27,7 @@ public class PlayWav {
         clip = ResourcesLoader.getInstance().getAudioClip(path);
         clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
-        music =  (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        music = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
     }
     public void stop(){ clip.stop(); }
     public boolean isPlay(){
@@ -40,8 +40,15 @@ public class PlayWav {
     }
 
     //Suoni
-    public void playSound(String path){}
+    public void loadSound(String path){
+        clipSound = ResourcesLoader.getInstance().getAudioClip(path);
+        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+    }
+    public void playSound(){
+        clipSound.start();
+    }
     public void setVolumeSound(int value){
+        sound.setValue(value);
     }
 
 }
