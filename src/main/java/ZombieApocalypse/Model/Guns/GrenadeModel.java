@@ -2,6 +2,7 @@ package ZombieApocalypse.Model.Guns;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.PlayerCharacter;
+import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 
@@ -30,27 +31,27 @@ public class GrenadeModel extends GunModel{
     public void update(){
         int x;
         int y;
-        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.DOWN){
+        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.DOWN){
             x=Game.getInstance().getPlayerCharacter().getX()+(Game.getInstance().getPlayerCharacter().wight/2)+5;
             y=Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().height-15;
             imagePosition=new Point(x, y);
 
 
         }
-        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.UP){
+        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.UP){
             x=Game.getInstance().getPlayerCharacter().getX()-7;
             y=Game.getInstance().getPlayerCharacter().getY()-1;
             imagePosition=new Point(x, y);
 
         }
-        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.LEFT){
+        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.LEFT){
             x=Game.getInstance().getPlayerCharacter().getX()-centerX-5;
             y=Game.getInstance().getPlayerCharacter().getY()+centerY-5;
             imagePosition=new Point(x, y);
 
 
         }
-        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.RIGHT){
+        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.RIGHT){
             x=Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().wight-5;
             y=Game.getInstance().getPlayerCharacter().getY()+centerY-5;
             imagePosition=new Point(x, y);
@@ -92,7 +93,7 @@ public class GrenadeModel extends GunModel{
 
 
     public boolean isUp() {
-        return Game.getInstance().getPlayerCharacter().dir == PlayerCharacter.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == PlayerCharacter.movementDirection.DOWN;
+        return Game.getInstance().getPlayerCharacter().dir == Settings.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == Settings.movementDirection.DOWN;
 
     }
 }

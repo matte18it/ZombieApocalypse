@@ -90,7 +90,7 @@ public class Game {
     public int getPlayerMaxLife() {
         return character.getMaxHealth();}
 
-    public PlayerCharacter.movementDirection getPlayerDirection() {
+    public Settings.movementDirection getPlayerDirection() {
         return character.dir;}
 
     public void closeGame() {
@@ -219,5 +219,8 @@ public class Game {
 
     public void setLastMousePosition(Point e) {
         mousePoint=e;
+    }
+    public World getWorld(){
+        return world;
     }
 }
