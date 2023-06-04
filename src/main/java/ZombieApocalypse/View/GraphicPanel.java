@@ -83,7 +83,7 @@ public class GraphicPanel extends JPanel {
             }}
         if(count==0){
             //per adesso gestione nemici
-            Enemies.getInstance().addEnemy(500,500, Enemies.EnemiesType.SKINNYZOMBIE);
+            Enemies.getInstance().addSkinnyZombie(500,500);
             //per adesso gestione item
             Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
             Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);

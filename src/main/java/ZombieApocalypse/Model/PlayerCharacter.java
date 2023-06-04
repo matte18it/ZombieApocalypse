@@ -20,8 +20,7 @@ public class PlayerCharacter  {
         }
     }
 
-    public enum movementDirection{RIGHT, LEFT, UP, DOWN};
-    public movementDirection dir=movementDirection.RIGHT;   //Direzione iniziale
+    public Settings.movementDirection dir= Settings.movementDirection.RIGHT;   //Direzione iniziale
     int health;
     int speed=1;
     boolean movement = false;
@@ -35,19 +34,19 @@ public class PlayerCharacter  {
 
     void startMovementUp() {
         movement = true;
-        dir=movementDirection.UP;
+        dir= Settings.movementDirection.UP;
     }
     void startMovementDown() {
         movement = true;
-        dir=movementDirection.DOWN;
+        dir=Settings.movementDirection.DOWN;
     }
     void startMovementRight() {
         movement = true;
-        dir=movementDirection.RIGHT;
+        dir=Settings.movementDirection.RIGHT;
     }
     void startMovementLeft() {
         movement = true;
-        dir=movementDirection.LEFT;
+        dir=Settings.movementDirection.LEFT;
     }
 
     void stopMovement() {
@@ -80,7 +79,6 @@ public class PlayerCharacter  {
 
 
     private boolean sound=false;
-     final World world=new World();
 
 
     Audio audio = new Audio();
@@ -152,13 +150,13 @@ public class PlayerCharacter  {
     public void move() {
 
 
-        if(dir==movementDirection.RIGHT && world.isGround0(getX()+wight+(10*speed), getY()) && world.isEnemy(getX()+(10*speed), getY()) )
+        if(dir==Settings.movementDirection.RIGHT && Game.getInstance().getWorld().isGround0(getX()+wight+(10*speed), getY()) && Game.getInstance().getWorld().isEnemy(getX()+(10*speed), getY()) )
             x += (10*speed);
-        else if(dir==movementDirection.LEFT && world.isGround0(getX()-(10*speed), getY()) && world.isEnemy(getX()-(10*speed), getY()))
+        else if(dir==Settings.movementDirection.LEFT && Game.getInstance().getWorld().isGround0(getX()-(10*speed), getY()) && Game.getInstance().getWorld().isEnemy(getX()-(10*speed), getY()))
             x -= (10*speed);
-        else if(dir==movementDirection.UP && world.isGround0(getX(), getY()-(10*speed)) && world.isEnemy(getX(), getY()-(10*speed)))
+        else if(dir== Settings.movementDirection.UP && Game.getInstance().getWorld().isGround0(getX(), getY()-(10*speed)) && Game.getInstance().getWorld().isEnemy(getX(), getY()-(10*speed)))
             y -= (10*speed);
-        else if(dir==movementDirection.DOWN && world.isGround0(getX(), getY()+height+(10*speed)) && world.isEnemy(getX(), getY()+(10*speed)))
+        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().getWorld().isGround0(getX(), getY()+height+(10*speed)) && Game.getInstance().getWorld().isEnemy(getX(), getY()+(10*speed)))
             y += (10*speed);
         else
             movement=false;

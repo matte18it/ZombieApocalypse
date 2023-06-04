@@ -1,7 +1,6 @@
 package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.Items.Item;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -10,8 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Enemies {
-    public void addEnemy(int x, int y, Enemies.EnemiesType value) {
-        this.enemies.add(new Enemy(x, y, value));
+    public void addSkinnyZombie(int x, int y) {
+        this.enemies.add(new SkinnyZombie(x, y));
     }
 
     public boolean checkCollision(int x, int y) {

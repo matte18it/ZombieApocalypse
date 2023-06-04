@@ -8,7 +8,7 @@ import ZombieApocalypse.View.ItemView;
 
 import java.awt.*;
 
-public  class Enemy {
+public  abstract class Enemy {
     int centerX, centerY;
 
     public int getCenterX() {
@@ -44,22 +44,17 @@ public  class Enemy {
         return view;
     }
 
-    public Enemy(int x, int y, Enemies.EnemiesType value){
+    public Enemy(int x, int y){
         this.x=x;
         this.y=y;
-        this.type=value;
-        switch (type){
-            case SKINNYZOMBIE -> {healt=6; wight= Settings.CELL_SIZEX; height=Settings.CELL_SIZEY;}
-        }
-        hitBox=new Rectangle(x,y,wight, height);
-        view=new EnemyView(type);
+    }
+    public abstract boolean update();
+
+    protected void setSize() {
         centerX=wight/2;
         centerY=height/2;
+        hitBox=new Rectangle(x,y,wight, height);
+        view=new EnemyView(type);
 
     }
-    public boolean update(){
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-            Game.getInstance().getPlayerCharacter().hit();
-        return false;
-    };
 }

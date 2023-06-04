@@ -7,6 +7,8 @@ public class Settings {
 
 
     //Grandezza della finestra di Gioco
+    public static enum movementDirection{RIGHT, LEFT, UP, DOWN};
+
     public  static int WORLD_SIZEX=32;
     public  static int WORLD_SIZEY=20;
     public  static int WINDOW_SIZEX=1280;
