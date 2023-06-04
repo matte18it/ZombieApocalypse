@@ -198,12 +198,10 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     public void update() {
         if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
             Game.getInstance().update();
-            Game.getInstance().checkCollision();
             panel.update();
             count=0;
         }if( Game.getInstance().getBackMenu() && count==0){
             Game.getInstance().update();
-            Game.getInstance().checkCollision();
             panel.update();
             count++;
         }

@@ -75,7 +75,9 @@ public class Game {
         if(character.isMoving())
             character.move();
         if(character.hit)
-            character.addHit();}
+            character.addHit();
+        if(character.speedUp)
+            character.addSpeed();}
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}
@@ -118,16 +120,7 @@ public class Game {
     }
 
 
-    public void checkCollision() {
-        //idea: creare un'array di nemici da scorrere
-        //ora ne abbiamo solo uno
-        //30 frame per hit
 
-        if(character.speedUp && character.countSpeed<300) //sono 5 secondi
-            character.speedUp();
-        else
-            character.stopSpeed();
-    }
 
     public void refresh(){
         instance = new Game();

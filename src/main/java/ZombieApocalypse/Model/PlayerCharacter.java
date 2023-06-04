@@ -126,25 +126,31 @@ public class PlayerCharacter  {
         health++;
     }
     public void speedUp(){
-        if(countSpeed==0)
+        if(countSpeed==0){
             speedUp=true;
-        countSpeed++;
+            speed=4;}
+        else
+            maxCountSpeed=maxCountSpeed+maxCountSpeed;
+
     }
     public void stopSpeed(){
         speedUp=false;
         countSpeed=0;
+        speed=1;
+        maxCountSpeed=300;
+    }
+    private int maxCountSpeed=300;
+    public void addSpeed(){
+        countSpeed++;
+        if(countSpeed==maxCountSpeed)
+            stopSpeed();
     }
     public boolean speedUp=false;
     public int countSpeed=0;
 
 
     public void move() {
-        if(speedUp)
-            speed=4;
-        else{
-            if(speed==4)
-                speed=1;
-        }
+
 
         if(dir==movementDirection.RIGHT && world.isGround0(getX()+wight+(10*speed), getY()) && world.isEnemy(getX()+(10*speed), getY()) )
             x += (10*speed);

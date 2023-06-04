@@ -87,6 +87,7 @@ public class GraphicPanel extends JPanel {
             //per adesso gestione item
             Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
             Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);
+            Items.getInstance().dropItem(80,150, Items.ItemType.SPELL);
             Items.getInstance().dropItem(150, 100, Items.ItemType.RADIO);
             Items.getInstance().dropItem(50, 100, Items.ItemType.SHOTGUN);
             Items.getInstance().dropItem(250, 100, Items.ItemType.PISTOL);
