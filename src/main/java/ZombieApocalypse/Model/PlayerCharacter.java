@@ -9,9 +9,6 @@ public class PlayerCharacter extends Character {
 
     private boolean sound=false;
      final World world=new World();
-     public World getWorld(){
-         return world;
-     }
 
 
     Audio audio = new Audio();
@@ -74,13 +71,14 @@ public class PlayerCharacter extends Character {
             if(speed==4)
                 speed=1;
         }
-        if(dir==movementDirection.RIGHT && (world.isGround0(getX()+wight+(10*speed), getY())) && !world.isEnemy(getX()+20, getY()))
+
+        if(dir==movementDirection.RIGHT && world.isGround0(getX()+wight+(10*speed), getY()) && ! world.isEnemy(getX()+20, getY()))
             x += (10*speed);
-        else if(dir==movementDirection.LEFT && (world.isGround0(getX()-wight-(10*speed), getY())) && !world.isEnemy(getX()-20, getY()))
+        else if(dir==movementDirection.LEFT && world.isGround0(getX()-(10*speed), getY()) && !world.isEnemy(getX()-20, getY()))
             x -= (10*speed);
-        else if(dir==movementDirection.UP && (world.isGround0(getX(), getY()-height-(10*speed))) && !world.isEnemy(getX(), getY()-20) )
+        else if(dir==movementDirection.UP && world.isGround0(getX(), getY()-(10*speed)) && !world.isEnemy(getX(), getY()-20) )
             y -= (10*speed);
-        else if(dir==movementDirection.DOWN && (world.isGround0(getX(), getY()+height+(10*speed)))&& !world.isEnemy(getX(), getY()+20))
+        else if(dir==movementDirection.DOWN && world.isGround0(getX(), getY()+height+(10*speed))&& !world.isEnemy(getX(), getY()+20))
             y += (10*speed);
         else
             movement=false;

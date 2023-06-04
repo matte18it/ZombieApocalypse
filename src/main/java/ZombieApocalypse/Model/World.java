@@ -15,6 +15,9 @@ public class World {
         return false;
     }
 
+
+
+
     //Tutti i blocchi disegnabili
     enum Block { GROUND0, GROUND1,GROUND2, GROUND3}
     //Mondo e posizione del player
@@ -41,8 +44,13 @@ public class World {
     }
 
     private boolean isType(int x, int y, Block b) {
-        x=(x*Settings.WORLD_SIZEX)/Settings.WINDOW_SIZEX;
-        y=(y*Settings.WORLD_SIZEY)/Settings.WINDOW_SIZEY;
+        if(x<0 || y<0)  //viene utilizzato perchè nel passaggio da coordinata
+            return false; //a posizone sulla matrice un numero negativo
+                            //potrebbe essere approssimato a 0, facendo uscire il player
+        x=(x * Settings.WORLD_SIZEX) /Settings.WINDOW_SIZEX;
+        y= (y * Settings.WORLD_SIZEY) /Settings.WINDOW_SIZEY;
+
+
         if(isValidPosition(x, y))
             return world[x][y] == b;
         return false;
