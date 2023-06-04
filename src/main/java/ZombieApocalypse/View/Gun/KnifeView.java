@@ -1,7 +1,7 @@
 package ZombieApocalypse.View.Gun;
 
-import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.PlayerCharacter;
 
 import java.awt.*;
 
@@ -24,7 +24,7 @@ public class KnifeView {
 
         //Aggiorno immagine
         if( Game.getInstance().getKnifeModel().getAttack() ) {
-            if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.UP)
+            if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.UP)
                 currentImage=attackFrameReverse.update();
             else
                 currentImage = attackFrame.update();

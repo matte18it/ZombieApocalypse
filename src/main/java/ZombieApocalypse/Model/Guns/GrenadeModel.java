@@ -1,18 +1,9 @@
 package ZombieApocalypse.Model.Guns;
 
-import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.World;
-import ZombieApocalypse.Utility.Settings;
-import org.w3c.dom.ranges.Range;
+import ZombieApocalypse.Model.PlayerCharacter;
 
 import java.awt.*;
-import java.awt.font.NumericShaper;
-import java.io.IOException;
-import java.net.URI;
-import java.nio.file.*;
-
-import static java.lang.Math.atan2;
 
 public class GrenadeModel extends GunModel{
     Point mouse;
@@ -39,27 +30,27 @@ public class GrenadeModel extends GunModel{
     public void update(){
         int x;
         int y;
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.DOWN){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.DOWN){
             x=Game.getInstance().getPlayerCharacter().getX()+(Game.getInstance().getPlayerCharacter().wight/2)+5;
             y=Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().height-15;
             imagePosition=new Point(x, y);
 
 
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.UP){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.UP){
             x=Game.getInstance().getPlayerCharacter().getX()-7;
             y=Game.getInstance().getPlayerCharacter().getY()-1;
             imagePosition=new Point(x, y);
 
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.LEFT){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.LEFT){
             x=Game.getInstance().getPlayerCharacter().getX()-centerX-5;
             y=Game.getInstance().getPlayerCharacter().getY()+centerY-5;
             imagePosition=new Point(x, y);
 
 
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.RIGHT){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.RIGHT){
             x=Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().wight-5;
             y=Game.getInstance().getPlayerCharacter().getY()+centerY-5;
             imagePosition=new Point(x, y);
@@ -101,7 +92,7 @@ public class GrenadeModel extends GunModel{
 
 
     public boolean isUp() {
-        return Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.DOWN;
+        return Game.getInstance().getPlayerCharacter().dir == PlayerCharacter.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == PlayerCharacter.movementDirection.DOWN;
 
     }
 }

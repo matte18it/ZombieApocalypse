@@ -1,7 +1,7 @@
 package ZombieApocalypse.Model.Guns;
 
-import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -24,7 +24,7 @@ public class KnifeModel extends GunModel{
     public void update(){
         int x;
         int y;
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.DOWN){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.DOWN){
             x=Game.getInstance().getPlayerCharacter().getX()+(Game.getInstance().getPlayerCharacter().wight/2)+5;
             y=Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().height-15;
             imagePosition=new Point(x, y);
@@ -33,7 +33,7 @@ public class KnifeModel extends GunModel{
             hitBox.height=width;
             hitBox.width=height;
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.UP){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.UP){
             x=Game.getInstance().getPlayerCharacter().getX()-1;
             y=Game.getInstance().getPlayerCharacter().getY()-18;
             imagePosition=new Point(x, y);
@@ -42,7 +42,7 @@ public class KnifeModel extends GunModel{
             hitBox.height=width;
             hitBox.width=height;
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.LEFT){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.LEFT){
             x=Game.getInstance().getPlayerCharacter().getX()-Game.getInstance().getPlayerCharacter().wight+12;
             y=Game.getInstance().getPlayerCharacter().getY()+(Game.getInstance().getPlayerCharacter().height/2)-3;
             imagePosition=new Point(x, y);
@@ -51,7 +51,7 @@ public class KnifeModel extends GunModel{
             hitBox.height=height;
             hitBox.width=width;
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.RIGHT){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.RIGHT){
             x=Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().wight-5;
             y=Game.getInstance().getPlayerCharacter().getY()+(Game.getInstance().getPlayerCharacter().height/2)-3;
             imagePosition=new Point(x, y);
@@ -64,6 +64,6 @@ public class KnifeModel extends GunModel{
     }
 
     public boolean isUp(){
-        return Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == Character.movementDirection.DOWN;
+        return Game.getInstance().getPlayerCharacter().dir == PlayerCharacter.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == PlayerCharacter.movementDirection.DOWN;
 
     }}

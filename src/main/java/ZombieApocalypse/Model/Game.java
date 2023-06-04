@@ -73,7 +73,9 @@ public class Game {
     //Da fare nel Game Loop
     public void update() {
         if(character.isMoving())
-            character.move();}
+            character.move();
+        if(character.hit)
+            character.addHit();}
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}

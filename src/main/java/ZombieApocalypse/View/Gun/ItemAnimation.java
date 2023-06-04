@@ -1,7 +1,7 @@
 package ZombieApocalypse.View.Gun;
 
-import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Utility.ResourcesLoader;
 
 import java.awt.*;
@@ -33,16 +33,16 @@ public class ItemAnimation {
 
 
     public Image update() {
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.DOWN){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.DOWN){
             index=3;
             return images.get(index);}
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.UP){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.UP){
             index=2;
             return images.get(index);}
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.LEFT){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.LEFT){
             index=1;
             return images.get(index);}
-        if(Game.getInstance().getPlayerCharacter().dir== Character.movementDirection.RIGHT){
+        if(Game.getInstance().getPlayerCharacter().dir== PlayerCharacter.movementDirection.RIGHT){
             index=0;
             return images.get(index);}
         return null;

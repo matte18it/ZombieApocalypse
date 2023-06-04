@@ -1,8 +1,5 @@
 package ZombieApocalypse.Controller;
-import ZombieApocalypse.Model.Character;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.Guns.Bullets;
-import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
@@ -18,12 +15,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import static java.awt.event.KeyEvent.VK_ESCAPE;
 
