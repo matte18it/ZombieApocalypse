@@ -224,6 +224,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 if(GameData.skinAttiva < 4)
                     GameData.skinAttiva += 1;
                 view.getSkinAttiva().setIcon(ResourcesLoader.getInstance().getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
@@ -234,6 +236,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 if(GameData.skinAttiva > 1)
                     GameData.skinAttiva -= 1;
                 view.getSkinAttiva().setIcon(ResourcesLoader.getInstance().getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
