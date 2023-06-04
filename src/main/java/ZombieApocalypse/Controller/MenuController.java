@@ -36,6 +36,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mouseClicked(e);
+                if(GameData.sound)
+                    soundButton();
                 GameFrame.gameLaunch();
             }
         });
@@ -45,6 +47,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 view.setSettings();
             }
         });
@@ -54,11 +58,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                if(GameData.sound){
-                    PlayWav.getInstance().loadSound("/Audio/ButtonSound.wav");
-                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                    PlayWav.getInstance().playSound();
-                }
+                if(GameData.sound)
+                    soundButton();
             }
         });
 
@@ -67,6 +68,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 view.setAbout();
             }
         });
@@ -76,6 +79,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mouseClicked(e);
+                if(GameData.sound)
+                    soundButton();
                 System.exit(0);
             }
         });
@@ -84,6 +89,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 view.setMenu();
             }
         });
@@ -108,6 +115,9 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
+
                 if(GameData.music){
                     GameData.music = false;
                     view.getMuteMusic().setIcon(ResourcesLoader.getInstance().getImageIcon("/SettingsImage/AudioOff.png", 32, 32, false));
@@ -129,6 +139,9 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
+
                 if(GameData.sound){
                     GameData.sound = false;
                     view.getMuteSound().setIcon(ResourcesLoader.getInstance().getImageIcon("/SettingsImage/SoundOff.png", 32, 32, false));
@@ -146,6 +159,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 GameData.lang = GameData.Language.IT;
                 model.translateSettings();
             }
@@ -155,6 +170,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 GameData.lang = GameData.Language.EN;
                 model.translateSettings();
             }
@@ -164,6 +181,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 view.setMenu();
                 executor.execute(new Runnable() {
                     @Override
@@ -178,6 +197,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 if(!GameData.mancino){
                     GameData.mancino = true;
                     view.getBtnMancino().setIcon(ResourcesLoader.getInstance().getImageIcon("/SettingsImage/Slider2.png", 48, 48, false));
@@ -193,6 +214,8 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 model.showDialog();
             }
         });
@@ -225,6 +248,12 @@ public class MenuController {
                 view.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
             }
         });
+    }
+
+    private void soundButton() {
+        PlayWav.getInstance().loadSound("/Audio/ButtonSound.wav");
+        PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+        PlayWav.getInstance().playSound();
     }
 
     private void saveData() throws IOException {
