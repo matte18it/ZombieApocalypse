@@ -38,7 +38,10 @@ public boolean taken=true;
             case SHOTGUN -> {this.wight=Game.getInstance().getShotgunModel().getWidth(); this.height=Game.getInstance().getShotgunModel().getHeight();}
             case PISTOL -> {this.wight=Game.getInstance().getPistolModel().getWidth(); this.height=Game.getInstance().getPistolModel().getHeight();}
             case GRENADE -> {this.wight=Game.getInstance().getGrenadeModel().getWidth(); this.height=Game.getInstance().getGrenadeModel().getHeight();}
-            default ->{this.wight=30; this.height=30;}
+            case MEDKIT -> {this.wight=30; this.height=30;}
+            case RADIO -> {this.wight=30; this.height=30;}
+            case AMMO0 -> {this.wight=20; this.height=20;}
+            case AMMO1 -> {this.wight=20; this.height=20;}
         }
         this.view=new ItemView(e, wight, height);
         this.type=e;
@@ -47,11 +50,22 @@ public boolean taken=true;
     }
 
     public boolean update() {
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox) && taken && Game.getInstance().getMenuBar().collect()){
-            getView().setTaken(true);
-            taken=false;
-            Game.getInstance().getMenuBar().addItem(type);
+        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox) && taken){
+             if(Game.getInstance().getMenuBar().collect() && (type!= Items.ItemType.AMMO0 && type!= Items.ItemType.AMMO1)){
+
+                    Game.getInstance().getMenuBar().addItem(type);
+                 getView().setTaken(true);
+                 taken=false;
+
         }
+         if (Game.getInstance().getMenuBar().collectAmmo(type) && (type== Items.ItemType.AMMO0 || type== Items.ItemType.AMMO1)) {
+                Game.getInstance().getMenuBar().addAmmo(type);
+             getView().setTaken(true);
+             taken=false;
+            }
+
+        }
+
         if(Game.getInstance().getBackMenu()){
             getView().setTaken(true);
             taken=false;

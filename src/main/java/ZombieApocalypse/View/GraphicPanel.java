@@ -1,6 +1,5 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
@@ -18,7 +17,6 @@ import ZombieApocalypse.View.Enemy.SkinnyEnemyView;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Iterator;
 
 public class GraphicPanel extends JPanel {
     int count;
@@ -92,6 +90,9 @@ public class GraphicPanel extends JPanel {
             Items.getInstance().dropItem(250, 100, Items.ItemType.PISTOL);
             Items.getInstance().dropItem(300, 100, Items.ItemType.GRENADE);
             Items.getInstance().dropItem(350, 100, Items.ItemType.GRENADE);
+            Items.getInstance().dropItem(80, 120, Items.ItemType.AMMO0);
+            Items.getInstance().dropItem(120, 120, Items.ItemType.AMMO1);
+
 
         }
         for (Item b : Items.getInstance().getItems()) {

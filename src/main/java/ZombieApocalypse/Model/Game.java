@@ -93,12 +93,15 @@ public class Game {
     }
 
     public void attack() {
-        if(hasPistol )
+        if(hasPistol && menuBar.numBullet()>0 ){
+
             pistol.attack();
+            menuBar.removeAmmo(1);}
         if(hasKnife)
             knife.attack();
-        if(hasShotgun)
+        if(hasShotgun && menuBar.numBullet()>2 ){
             shotgun.attack();
+            menuBar.removeAmmo(3);}
         if(hasGrenade){
             grenade.attack();
             menuBar.setLabelEmpty(itemUsed);

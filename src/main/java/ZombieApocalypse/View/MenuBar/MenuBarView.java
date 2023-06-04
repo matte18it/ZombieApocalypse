@@ -18,10 +18,10 @@ public class MenuBarView extends JPanel {
      int heart;
     JLabel playerName;
     JLabel ammoLabel;
+    JLabel addAmmoLabel;
     Items.ItemType typeGunLabel1;
     Items.ItemType typeGunLabel2;
      JLabel [] healthLabel;
-     JLabel addAmmoLabel;
     JLabel pointLabel;
      JLabel timeLabel;
      JLabel gunLabel1;
@@ -86,12 +86,12 @@ public class MenuBarView extends JPanel {
             jLabelA = new JLabel("Ammo");
         jLabelA.setFont(font);
         jLabelA.setForeground(Color.GRAY);
-        ammoLabel=new JLabel("30");
-        addAmmoLabel=new JLabel("+30");
-        ammoLabel.setForeground(Color.WHITE);
-        ammoLabel.setFont(font);
+        addAmmoLabel=new JLabel("");
         addAmmoLabel.setForeground(Color.WHITE);
         addAmmoLabel.setFont(font);
+        ammoLabel=new JLabel("30");
+        ammoLabel.setForeground(Color.WHITE);
+        ammoLabel.setFont(font);
         c.gridx=0;
         c.gridy=1;
 
@@ -101,11 +101,12 @@ public class MenuBarView extends JPanel {
         c.fill=GridBagConstraints.HORIZONTAL;
 
         healthAmmoPanel.add(ammoLabel, c);
-        c.gridx=2;
+        c.gridx=1;
         c.gridy=1;
-        c.fill=GridBagConstraints.HORIZONTAL;
+        c.fill=GridBagConstraints.LINE_END;
 
         healthAmmoPanel.add(addAmmoLabel, c);
+
         //Pannello delle Armi primo
         JPanel gunPanel=new JPanel();
         if(GameData.lang== GameData.Language.EN)
@@ -222,7 +223,9 @@ public class MenuBarView extends JPanel {
             jLabelP = new JLabel("Points");
         jLabelP.setFont(font);
         jLabelP.setForeground(Color.GRAY);
-        pointLabel=new JLabel();
+        pointLabel=new JLabel("0");
+        pointLabel.setFont(font);
+        pointLabel.setForeground(Color.WHITE);
         c.insets=new Insets(0,40,0,0);
         c.gridx = 0;
         c.gridy = 0;
@@ -287,6 +290,15 @@ public class MenuBarView extends JPanel {
         timeLabel.setForeground(Color.WHITE);
     }
     public  void updateTimeLable(long t){
+        if(addAmmo){
+        if(count!=2)
+            count++;
+        if(count==2){
+            count=0;
+            addAmmo=false;
+            addAmmoLabel.setText("");
+        }}
+
         timeLabel.setText(String.valueOf(t));
     }
     public  void updateScoreLable(long t){
@@ -328,5 +340,23 @@ public class MenuBarView extends JPanel {
     public void setGunLable2(Items.ItemType itemType) {
         typeGunLabel2=itemType;
         gunLabel2.setIcon(menuBarAnimation.setIcon(typeGunLabel2, 65, 55));
+    }
+    public int getAmmo(){
+        return Integer.parseInt(ammoLabel.getText());
+    }
+private boolean addAmmo=false;
+    private int count=0;
+    public void addAmmo(int i) {
+        int t= Integer.parseInt(ammoLabel.getText());
+        t=t+i;
+        ammoLabel.setText(String.valueOf(t));
+        addAmmoLabel.setText(String.valueOf("+"+i));
+        addAmmo=true;
+        count=0;
+    }
+    public void useAmmo(int i) {
+        int t= Integer.parseInt(ammoLabel.getText());
+        t=t-i;
+        ammoLabel.setText(String.valueOf(t));
     }
 }

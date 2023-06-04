@@ -1,7 +1,5 @@
 package ZombieApocalypse.Model.Items;
 
-import ZombieApocalypse.Model.Guns.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -12,7 +10,7 @@ public class Items {
         this.items.add(new Item(x, y, value));
     }
 
-    public enum ItemType{AMMO1, AMMO2, SPELL, RADIO, SHOTGUN, MEDKIT, GRENADE, PISTOL, EMPTY};
+    public enum ItemType{AMMO0, AMMO1, SPELL, RADIO, SHOTGUN, MEDKIT, GRENADE, PISTOL, EMPTY};
     private final List<Item> items=new ArrayList();
     private static final Items instance=new Items();
 

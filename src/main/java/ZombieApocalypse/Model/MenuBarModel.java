@@ -1,11 +1,11 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Model.Items.Items;
-import ZombieApocalypse.View.MenuBar.MenuBarAnimation;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 public class MenuBarModel {
     MenuBarView menuBarView;
+    private  int ammo[]=new int[]{4,12};
     MenuBarModel(MenuBarView m){
         this.menuBarView=m;
     }
@@ -97,5 +97,29 @@ public class MenuBarModel {
     }
 
 
+    public void addAmmo(Items.ItemType type) {
+        switch (type){
+            case AMMO0 -> menuBarView.addAmmo(ammo[0]);
+            case AMMO1 -> menuBarView.addAmmo(ammo[1]);
+        }
+    }
 
+    public int numBullet() {
+        return  menuBarView.getAmmo();
+    }
+
+    public void removeAmmo(int i) {
+        menuBarView.useAmmo(i);
+    }
+
+    public boolean collectAmmo(Items.ItemType type) {
+        int t=numBullet();
+        switch (type){
+            case AMMO0 -> t=t+ammo[0];
+            case AMMO1 -> t=t+ammo[1];
+        }
+        if(t>99)
+            return false;
+        return true;
+    }
 }
