@@ -9,6 +9,10 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class ResourcesLoader {
     private static final ResourcesLoader instance = new ResourcesLoader();

@@ -115,11 +115,7 @@ public class GraphicPanel extends JPanel {
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
         }
 
-        /* For debugging
-        g.setColor(Color.red);
-        g.drawRect(Game.getInstance().getPlayerCharacter().hitBox.x, Game.getInstance().getPlayerCharacter().hitBox.y, Game.getInstance().getPlayerCharacter().hitBox.width, Game.getInstance().getPlayerCharacter().hitBox.height);
-        g.drawRect(Game.getInstance().getEnemyCharacter().hitBox.x, Game.getInstance().getEnemyCharacter().hitBox.y, Game.getInstance().getEnemyCharacter().hitBox.width, Game.getInstance().getEnemyCharacter().hitBox.height);
-         */
+
 
 
         if(Game.getInstance().hasKnife){
