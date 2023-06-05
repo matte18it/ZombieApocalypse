@@ -66,7 +66,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 Game.getInstance().setPause(true);
                 setPause();
             }
-        }
+    }
 
     private void setPause() {
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
@@ -123,6 +123,8 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 Game.getInstance().setPause(false);
                 dialog.dispose();
             }
@@ -131,6 +133,8 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
                 dialog.dispose();
                 Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
@@ -155,6 +159,12 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         dialog.setSize(new Dimension(515, 220));
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
+    }
+
+    private void soundButton() {
+        PlayWav.getInstance().loadSound("/Audio/ButtonSound.wav");
+        PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+        PlayWav.getInstance().playSound();
     }
 
     private void saveData() throws IOException {

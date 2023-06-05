@@ -80,24 +80,7 @@ public class PlayerCharacter  {
 
     private boolean sound=false;
 
-
-    Audio audio = new Audio();
-
     // Metodo usato per musica in loop, riceve come argomento index da array Audio e lo passa a SetFile
-    public void playMusic(int i) {
-
-        audio.setFile(i);
-        audio.play();
-        audio.loop();
-    }
-    public void stopMusic() {
-        audio.stop();
-    }
-    // Metodo usato per i sound effects
-    public void playSE(int i) {
-        audio.setFile(i);
-        audio.play();
-    }
 
     PlayerCharacter(){
         wight=Settings.CELL_SIZEX;
@@ -160,18 +143,11 @@ public class PlayerCharacter  {
             y += (10*speed);
         else
             movement=false;
-        if(sound){
-            playSE(0);
-            sound=false;}
-        else
-            sound=true;
+
+        if(sound)  sound = false; else  sound = true;
+
         hitBox.x=x;
         hitBox.y=y;
-
-
-
     }
-
-
 }
 

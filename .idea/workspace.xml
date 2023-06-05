@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Posizione player fix" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Suoni pt. 2">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/shotPistola.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.txt" beforeDir="false" afterPath="$PROJECT_DIR$/player.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,41 +87,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Inizio di implementazione Armi">
-      <created>1684689158694</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1684689158694</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Movimenti armi">
-      <created>1684778535909</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1684778535909</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Movimenti armi funzionante">
-      <created>1684832692343</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1684832692343</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Creazioni Model per Armi">
-      <created>1684853696343</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1684853696343</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Animazione coltello">
-      <created>1684861196858</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1684861196858</updated>
     </task>
     <task id="LOCAL-00016" summary="Bug Fix">
       <created>1684910200064</created>
@@ -426,7 +396,42 @@
       <option name="project" value="LOCAL" />
       <updated>1685862000629</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Suoni pt. 2">
+      <created>1685901584145</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1685901584145</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Suoni pt. 2">
+      <created>1685902192455</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1685902192455</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Suoni pt. 2">
+      <created>1685902497601</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1685902497601</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Suoni pt. 2">
+      <created>1685902676884</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1685902676884</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Suoni pt. 2">
+      <created>1685907872018</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1685907872018</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,7 +447,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Loading Screen pt.1" />
     <MESSAGE value="Loading Screen" />
     <MESSAGE value="Modifica player" />
     <MESSAGE value="Mouse click" />
@@ -467,6 +471,7 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="bug fix pt 2" />
     <MESSAGE value="Posizione player fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Posizione player fix" />
+    <MESSAGE value="Suoni pt. 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suoni pt. 2" />
   </component>
 </project>
