@@ -2,6 +2,7 @@ package ZombieApocalypse.View.Enemy;
 
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Enemy.Enemy;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.CharacterAnimation;
 
@@ -18,6 +19,7 @@ public class EnemyView {
     private  CharacterAnimation hitRight;
     Enemies.EnemiesType type;
     private Image currentImage;
+    private Image emptyImage;
     Enemy enemyModel;
     public EnemyView(Enemies.EnemiesType value, Enemy enemy){
         enemyModel=enemy;
@@ -25,6 +27,7 @@ public class EnemyView {
         switch (type){
             case SKINNYZOMBIE -> loadSkinnyZombie();
         }
+        emptyImage= ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true);
 
 
     }
@@ -44,6 +47,11 @@ public class EnemyView {
 
     }
     public void update(){
+        if(enemyModel.stopAll){
+            currentImage=emptyImage;
+
+            return;
+        }
         if(enemyModel.hit){
             if(enemyModel.countHit%2==0){
                 if(enemyModel.dir== Settings.movementDirection.UP)

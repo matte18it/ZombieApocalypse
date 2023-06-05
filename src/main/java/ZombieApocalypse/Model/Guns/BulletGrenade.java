@@ -7,32 +7,31 @@ import java.awt.*;
 
 public class BulletGrenade extends Bullet{
     BulletGrenade(int x, int y, int dimension, double angle, Direction d, int tot){
-        super(x,y,dimension,angle, true);
+        super(x,y,dimension, true, true);
         velocityX=15;
         velocityY=15;
+        isGrenade=true;
         dir=d;
         numFrame=0;
         totalFrame=tot/15;
     }
 
 
-
+private int count=0;
 boolean stopAll=false;
     boolean update(){
         if(!stopAll){
         if(Game.getInstance().getBackMenu()){
-            getView().menu=true;
             stopAll=true;
+            menu=true;
             numFrame=25;
             return true;
         }
         Point explosion=new Point(x+dimension/2,y+dimension/2);
         Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
         if(!ending) {
-            this.getView().updateView(false, numFrame);
-
-            numFrame++;
-            if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
+            count++;
+            if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && count<totalFrame) {
                 if (dir == Direction.DOWN)
                     this.y += this.velocityY;
                 if (dir == Direction.LEFT)
@@ -53,7 +52,6 @@ boolean stopAll=false;
                 Game.getInstance().getPlayerCharacter().hit();
             }
             if(numFrame<24){
-                this.getView().updateView(true, numFrame);
                 numFrame++;
                 if(numFrame==10 ) {
                     dimension = dimension + 10;
@@ -90,8 +88,8 @@ boolean stopAll=false;
 
         }
         return false;
-    } stopAll=false; ;
-    return false;}}
+    }else
+        return false;}}
 
 
 

@@ -57,7 +57,7 @@ public class Enemies {
         Iterator var1=this.enemies.iterator();
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
-            if(!b.update()){
+            if(!b.update() ){
                 enemies.remove(var1);}
 
         }

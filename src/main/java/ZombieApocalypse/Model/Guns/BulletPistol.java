@@ -6,7 +6,7 @@ import ZombieApocalypse.Utility.Settings;
 public class BulletPistol extends Bullet{
 
     BulletPistol(int x, int y, int dimension, double angle){
-        super(x,y,dimension, angle, false);
+        super(x,y,dimension, false, false);
             totalFrame=40;
             dir=Game.getInstance().getPistolModel().checkDirection(angle);
 
@@ -15,10 +15,10 @@ public class BulletPistol extends Bullet{
 
     boolean update(){
         if(Game.getInstance().getBackMenu()){
-            getView().menu=true;}
+            menu=true;
+            }
 
         if(!ending) {
-            this.getView().updateView(false, numFrame);
             numFrame++;
 
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
@@ -41,7 +41,6 @@ public class BulletPistol extends Bullet{
 
         }else{
             if(numFrame<3){
-               this.getView().updateView(true, numFrame);
                 numFrame++;
                 return true;}
             else

@@ -8,9 +8,10 @@ public class BulletShotgun extends Bullet{
     Type bulletType;
 
     BulletShotgun(int x, int y, int dimension, double angle, Type t){
-        super(x,y,dimension, angle, false);
+        super(x,y,dimension, false, false);
             totalFrame=8;
             bulletType=t;
+            isGrenade=false;
             dir=Game.getInstance().getShotgunModel().checkDirection(angle);
 
     }
@@ -19,11 +20,9 @@ public class BulletShotgun extends Bullet{
     boolean update(){
         int lateral=3;
         if(Game.getInstance().getBackMenu()){
-            getView().menu=true;}
+            }
 
         if(!ending) {
-            this.getView().updateView(false, numFrame);
-            numFrame++;
 
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
                 if (dir == Direction.DOWN){
@@ -61,6 +60,7 @@ public class BulletShotgun extends Bullet{
                         this.x += this.velocityX;}
                 hitBox.x = x;
                 hitBox.y = y;
+                numFrame++;
                 return true;
             } else{
                 ending=true;
@@ -68,7 +68,6 @@ public class BulletShotgun extends Bullet{
             }
         }else{
             if(numFrame<3){
-               this.getView().updateView(true, numFrame);
                 numFrame++;
                 return true;}
             else

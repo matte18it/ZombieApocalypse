@@ -1,6 +1,7 @@
 package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Utility.ResourcesLoader;
 
 import java.awt.*;
@@ -11,78 +12,72 @@ public class BulletView {
     public Image [] bullet=new Image[6];
     public Image [] grenadeBullet=new Image[7];
     public Image [] grenade=new Image[4];
-    int count=0;
-    boolean ending=false;
-    boolean isGrenade;
 
-    public BulletView( int dimension, boolean b) {
-        isGrenade=b;
-        if(isGrenade) {
+    Bullet bulletModel;
+
+    public BulletView( Bullet b) {
+        bulletModel=b;
+        if(bulletModel.isGrenade) {
             for (int i = 0; i < 6; i++)
-                grenadeBullet[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/Esplosione" + i + ".png", dimension, dimension, true);
+                grenadeBullet[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/Esplosione" + i + ".png", bulletModel.getDimension()+(i*10), bulletModel.getDimension()+(i*10), true);
             for (int i = 0; i < 4; i++)
                 grenade[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/Granata" + i + ".png", Game.getInstance().getGrenadeModel().getWidth(), Game.getInstance().getGrenadeModel().getHeight(), true);
         }else {
 
             for (int i = 0; i < 6; i++)
-                bullet[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/ProiettilePistola" + i + ".png", dimension+(i*10), dimension+(i*10), true);
+                bullet[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/ProiettilePistola" + i + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true);
 
     }}
-    public void updateView(boolean e, int c){
-        ending=e;
-        count=c;
-    }
 
-    public boolean menu=false;
 
     public void update() {
 
 
-        if(isGrenade){
-            if(menu){
+        if(bulletModel.isGrenade){
+            if(bulletModel.menu){
                 currentImage=grenadeBullet[6];
 
             return;}
-            if(!ending){
+            if(!bulletModel.ending){
                 currentImage=grenade[0];
 
             }else{
-                if(count<10 )
+                if(bulletModel.numFrame<10 )
                     currentImage=grenade[0];
-                if(count>=10 &&count<12)
+                if(bulletModel.numFrame>=10 &&bulletModel.numFrame<12)
                     currentImage=grenadeBullet[0];
-                if(count>=12 && count<14)
+                if(bulletModel.numFrame>=12 && bulletModel.numFrame<14)
                     currentImage=grenadeBullet[1];
-                if(count>=14 && count<16)
-                    currentImage=grenadeBullet[2];
-                if(count == 17)
+                if(bulletModel.numFrame>=14 && bulletModel.numFrame<16){
+                    currentImage=grenadeBullet[2];}
+                if(bulletModel.numFrame == 17)
                     currentImage=grenadeBullet[3];
-                if(count == 19)
+                if(bulletModel.numFrame == 19)
                     currentImage=grenadeBullet[4];
-                if(count == 21)
+                if(bulletModel.numFrame == 21)
                     currentImage=grenadeBullet[5];
-                if(count>22)
+                if(bulletModel.numFrame>22)
                     currentImage=grenadeBullet[6];
 
             }
         }else{
-            if(menu){
+            if(bulletModel.menu){
                 currentImage=bullet[5];
                 return;
             }
-            if(!ending) {
-                if (count<1)
+            if(!bulletModel.ending) {
+                if (bulletModel.numFrame<1)
                     currentImage = bullet[0];
-                else if (count == 1)
+                else if (bulletModel.numFrame == 1)
                     currentImage = bullet[1];
                 else
                     currentImage = bullet[2];
             }else{
-                if(count==0)
+                if(bulletModel.numFrame==0)
                     currentImage=bullet[3];
-                else if(count==1)
+                else if(bulletModel.numFrame==1)
                     currentImage=bullet[4];
-                else if(count==2)
+                else if(bulletModel.numFrame==2)
                     currentImage=bullet[5];
                 } }
 

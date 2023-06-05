@@ -71,4 +71,5 @@ public  abstract class Enemy {
         countHit=0;
         hit=false;
     }
+    public boolean stopAll=false;
 }

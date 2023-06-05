@@ -19,6 +19,10 @@ public class SkinnyZombie extends Enemy{
     //Per prova
     Random m=new Random();
     public boolean update() {
+        if(Game.getInstance().getBackMenu()){
+            stopAll=true;
+            return false;
+        }
         if(hit){
             if(countHit<30){
                 countHit++;}
