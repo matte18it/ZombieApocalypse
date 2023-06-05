@@ -1,6 +1,8 @@
 package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Items.Item;
+import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -19,6 +21,13 @@ public class SkinnyZombie extends Enemy{
     //Per prova
     Random m=new Random();
     public boolean update() {
+        if(healt<=0 && !dying){
+            dying=true;
+            int c=m.nextInt(4,9);
+            Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
+            return false;
+            }
+
         if(Game.getInstance().getBackMenu()){
             stopAll=true;
             return false;
@@ -44,6 +53,8 @@ public class SkinnyZombie extends Enemy{
         hitBox.y=y;
         } else
             isMoving=false;
+
+
 
 
         return true;

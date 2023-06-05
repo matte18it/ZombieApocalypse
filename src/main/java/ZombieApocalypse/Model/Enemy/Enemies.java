@@ -1,7 +1,5 @@
 package ZombieApocalypse.Model.Enemy;
 
-import ZombieApocalypse.Model.Game;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,7 +66,7 @@ public class Enemies {
 
 
     public enum EnemiesType{SKINNYZOMBIE, EMPTY};
-    private final List<Enemy> enemies=new ArrayList();
+    private final List<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
     public Enemies(){}
@@ -82,11 +80,13 @@ public class Enemies {
     }
 
     public void update(){
-        Iterator var1=this.enemies.iterator();
-        while(var1.hasNext()){
-            Enemy b=(Enemy) var1.next();
-            if(!b.update() ){
-                enemies.remove(var1);}
+        Iterator<Enemy> e=enemies.iterator();
+        while (e.hasNext()){
+            Enemy b=e.next();
+            if(!b.update()){
+                e.remove();
+            }
+
 
         }
     }

@@ -7,6 +7,7 @@ import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.CharacterAnimation;
 
 import java.awt.*;
+import java.util.Random;
 
 public class EnemyView {
     private  CharacterAnimation runAnimationUp;
@@ -19,14 +20,19 @@ public class EnemyView {
     private  CharacterAnimation hitRight;
     Enemies.EnemiesType type;
     private Image currentImage;
-    private Image emptyImage;
+    private final Image emptyImage;
+    private final Image bloodImage;
     Enemy enemyModel;
     public EnemyView(Enemies.EnemiesType value, Enemy enemy){
+        Random m=new Random();
         enemyModel=enemy;
         this.type=value;
         switch (type){
             case SKINNYZOMBIE -> loadSkinnyZombie();
         }
+        bloodImage= ResourcesLoader.getInstance().getImage("/Blood/Sangue"+m.nextInt(0,3)+".png", enemyModel.getWight(), enemyModel.getHeight(), true);
+
+
         emptyImage= ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true);
 
 
@@ -47,9 +53,13 @@ public class EnemyView {
 
     }
     public void update(){
-        if(enemyModel.stopAll){
-            currentImage=emptyImage;
+        if(enemyModel.dying){
+            currentImage=bloodImage;
+            return;
+        }
 
+        if(enemyModel.stopAll ){
+            currentImage=emptyImage;
             return;
         }
         if(enemyModel.hit){

@@ -10,8 +10,8 @@ public class Items {
         this.items.add(new Item(x, y, value));
     }
 
-    public enum ItemType{AMMO0, AMMO1, SPELL, RADIO, SHOTGUN, MEDKIT, GRENADE, PISTOL, EMPTY};
-    private final List<Item> items=new ArrayList();
+    public enum ItemType{ RADIO, SHOTGUN, GRENADE, PISTOL, MEDKIT, AMMO0, AMMO1, SPELL,EMPTY};
+    private final List<Item> items=new ArrayList<>();
     private static final Items instance=new Items();
 
     public Items(){}
@@ -27,7 +27,7 @@ public class Items {
     public void update(){
         Iterator var1=this.items.iterator();
         while(var1.hasNext()){
-            Item b=(Item) var1.next();
+            Item b= (Item) var1.next();
             if(!b.update()){
                 items.remove(var1);}
 

@@ -22,6 +22,8 @@ public class BulletShotgun extends Bullet{
     boolean update(){
         int lateral=3;
         if(Game.getInstance().getBackMenu()){
+            ending=true;
+            numFrame=30;
             }
 
         if(!ending) {

@@ -42,6 +42,7 @@ public boolean taken=true;
             case RADIO -> {this.wight=30; this.height=30;}
             case AMMO0 -> {this.wight=20; this.height=20;}
             case AMMO1 -> {this.wight=20; this.height=20;}
+            case EMPTY -> {this.wight=30; this.height=30;}
         }
         this.view=new ItemView(e, wight, height);
         this.type=e;

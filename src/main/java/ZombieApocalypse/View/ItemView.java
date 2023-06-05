@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class ItemView {
     public Image currentImage;
-    Image items[]=new Image[Items.ItemType.values().length];
+    Image[] items =new Image[Items.ItemType.values().length];
     boolean isTaken=false;
     Items.ItemType type;
     public ItemView(Items.ItemType e, int wight, int height){
@@ -15,9 +15,9 @@ public class ItemView {
         if(items[type.ordinal()]==null){
             items[type.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+type+".png", wight, height, true);
             }
-        if(items[Items.ItemType.EMPTY.ordinal()]==null){
-            items[Items.ItemType.EMPTY.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+Items.ItemType.EMPTY +".png", wight, height, true);
-        }
+        if(items[type.ordinal()]==null)
+            items[Items.ItemType.EMPTY.ordinal()] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/" + Items.ItemType.EMPTY + ".png", wight, height, true);
+
 
     }
 

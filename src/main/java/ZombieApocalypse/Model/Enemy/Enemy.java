@@ -63,13 +63,13 @@ public  abstract class Enemy {
     public boolean hit=false;
 
     public void gettingHit(int damage) {
-        if(countHit==0){
             hit=true;
-            healt=healt-damage;}
+            healt=healt-damage;
     }
     public void stopHit(){
         countHit=0;
         hit=false;
     }
     public boolean stopAll=false;
+    public boolean dying=false;
 }

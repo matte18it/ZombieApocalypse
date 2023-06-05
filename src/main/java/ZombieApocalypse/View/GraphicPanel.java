@@ -98,11 +98,13 @@ public class GraphicPanel extends JPanel {
 
 
         }
-        for (Enemy b : Enemies.getInstance().getEnemies()) {
+
+
+        for (Item b : Items.getInstance().getItems()) {
             b.getView().update();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
         }
-        for (Item b : Items.getInstance().getItems()) {
+        for (Enemy b : Enemies.getInstance().getEnemies()) {
             b.getView().update();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
         }
