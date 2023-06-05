@@ -4,114 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="drop e morte del nemico">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/FatZombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDannoSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/FatZombie/FatZombieSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDannoSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/KidZombie/KidZombieSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDannoSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SkinnyZombie/SkinnyZombieSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieAvanti3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDannoSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieDestra3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieIndietro3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieSinistra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/TurretZombie/TurretZombieSinistra3.png" beforeDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="AGGIUNTA SKIN">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/KidZombie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletShotgun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletShotgun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,20 +87,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00019" summary="About Panel pt.1">
-      <created>1684938529938</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1684938529938</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Classe Character">
-      <created>1684947294106</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1684947294106</updated>
     </task>
     <task id="LOCAL-00021" summary="About pt.3">
       <created>1685024537079</created>
@@ -535,7 +417,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685978870326</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="pulizia e secondo nemico">
+      <created>1685981772469</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1685981772469</updated>
+    </task>
+    <task id="LOCAL-00069" summary="AGGIUNTA SKIN">
+      <created>1685982317988</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1685982317988</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,8 +447,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mouse click" />
-    <MESSAGE value="Bullet pt1" />
     <MESSAGE value="Bullet pt2" />
     <MESSAGE value="Bullet pt3" />
     <MESSAGE value="Bug Fix" />
@@ -576,6 +470,8 @@
     <MESSAGE value="Suoni pt. 2" />
     <MESSAGE value="Suoni pt. 3" />
     <MESSAGE value="drop e morte del nemico" />
-    <option name="LAST_COMMIT_MESSAGE" value="drop e morte del nemico" />
+    <MESSAGE value="pulizia e secondo nemico" />
+    <MESSAGE value="AGGIUNTA SKIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="AGGIUNTA SKIN" />
   </component>
 </project>

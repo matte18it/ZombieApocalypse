@@ -66,12 +66,13 @@ public class Enemies {
 
     public void addFatZombie(int x, int y) {
         this.enemies.add(new FatZombie(x, y));
-
-
+    }
+    public void addKidZombie(int x, int y) {
+        this.enemies.add(new KidZombie(x, y));
     }
 
 
-    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, EMPTY};
+    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE, EMPTY};
     private final List<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
