@@ -19,6 +19,12 @@ public class SkinnyZombie extends Enemy{
     //Per prova
     Random m=new Random();
     public boolean update() {
+        if(hit){
+            if(countHit<30){
+                countHit++;}
+            else
+                stopHit();
+        }
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
             Game.getInstance().getPlayerCharacter().hit();
         int f=m.nextInt(0,100);
@@ -32,34 +38,39 @@ public class SkinnyZombie extends Enemy{
         }
         hitBox.x=x;
         hitBox.y=y;
-        }
+        } else
+            isMoving=false;
 
 
         return true;
     }
 
     private void moveRight() {
-        if(Game.getInstance().getWorld().isGround0(x+wight+10, y)){
+        if(Game.getInstance().getWorld().isGround0(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+10, y, centerX, centerY)){
             x=x+10;
-            view.isMoving(Settings.movementDirection.RIGHT);}
+            isMoving=true;
+            dir=Settings.movementDirection.RIGHT;}
     }
 
     private void moveLeft() {
-        if(Game.getInstance().getWorld().isGround0(x-10, y)){
+        if(Game.getInstance().getWorld().isGround0(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
             x=x-10;
-            view.isMoving(Settings.movementDirection.LEFT);}
+            isMoving=true;
+            dir=Settings.movementDirection.LEFT;}
     }
 
     private void moveDown() {
-        if(Game.getInstance().getWorld().isGround0(x, y+height+10)){
+        if(Game.getInstance().getWorld().isGround0(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
             y=y+10;
-            view.isMoving(Settings.movementDirection.DOWN);}
+            isMoving=true;
+            dir=Settings.movementDirection.DOWN;}
     }
 
     private void moveUp() {
-        if(Game.getInstance().getWorld().isGround0(x, y-10)){
+        if(Game.getInstance().getWorld().isGround0(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
             y=y-10;
-        view.isMoving(Settings.movementDirection.UP);}
+            isMoving=true;
+        dir=Settings.movementDirection.UP;}
 
     }
 }

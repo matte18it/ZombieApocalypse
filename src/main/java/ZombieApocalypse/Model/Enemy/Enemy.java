@@ -9,6 +9,8 @@ import ZombieApocalypse.View.ItemView;
 import java.awt.*;
 
 public  abstract class Enemy {
+    public boolean isMoving=false;
+    public Settings.movementDirection dir= Settings.movementDirection.DOWN;
     int centerX, centerY;
 
     public int getCenterX() {
@@ -54,7 +56,19 @@ public  abstract class Enemy {
         centerX=wight/2;
         centerY=height/2;
         hitBox=new Rectangle(x,y,wight, height);
-        view=new EnemyView(type);
+        view=new EnemyView(type, this);
 
+    }
+    public int countHit=0;
+    public boolean hit=false;
+
+    public void gettingHit(int damage) {
+        if(countHit==0){
+            hit=true;
+            healt=healt-damage;}
+    }
+    public void stopHit(){
+        countHit=0;
+        hit=false;
     }
 }

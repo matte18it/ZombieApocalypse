@@ -1,8 +1,7 @@
 package ZombieApocalypse.View.Enemy;
 
 import ZombieApocalypse.Model.Enemy.Enemies;
-import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.PlayerCharacter;
+import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.CharacterAnimation;
 
@@ -19,20 +18,19 @@ public class EnemyView {
     private  CharacterAnimation hitRight;
     Enemies.EnemiesType type;
     private Image currentImage;
-    public EnemyView(Enemies.EnemiesType value){
+    Enemy enemyModel;
+    public EnemyView(Enemies.EnemiesType value, Enemy enemy){
+        enemyModel=enemy;
         this.type=value;
         switch (type){
             case SKINNYZOMBIE -> loadSkinnyZombie();
         }
 
-    }
-    private boolean isMoving=false;
-    Settings.movementDirection direction= Settings.movementDirection.DOWN;
 
-    public void isMoving(Settings.movementDirection m) {
-        direction=m;
-        isMoving=true;
     }
+
+
+
 
     private void loadSkinnyZombie() {
         runAnimationUp = new CharacterAnimation("SkinnyZombie/SkinnyZombieIndietro",3);
@@ -45,34 +43,46 @@ public class EnemyView {
         hitRight=new CharacterAnimation("SkinnyZombie/SkinnyZombieDannoDestra",3);
 
     }
-
     public void update(){
-        if(isMoving){
-            if(direction== Settings.movementDirection.UP)
+        if(enemyModel.hit){
+            if(enemyModel.countHit%2==0){
+                if(enemyModel.dir== Settings.movementDirection.UP)
+                    currentImage=hitUp.update();
+                else if(enemyModel.dir== Settings.movementDirection.DOWN)
+                    currentImage=hitDown.update();
+                else if(enemyModel.dir== Settings.movementDirection.RIGHT)
+                    currentImage=hitRight.update();
+                else if(enemyModel.dir== Settings.movementDirection.LEFT)
+                    currentImage=hitLeft.update();
+                }
+        }else{
+        if(enemyModel.isMoving){
+            if(enemyModel.dir== Settings.movementDirection.UP)
                 currentImage=runAnimationUp.update();
-            else if(direction== Settings.movementDirection.DOWN)
+            else if(enemyModel.dir== Settings.movementDirection.DOWN)
                 currentImage=runAnimationDown.update();
-            else if(direction== Settings.movementDirection.RIGHT)
+            else if(enemyModel.dir== Settings.movementDirection.RIGHT)
                 currentImage=runAnimationRight.update();
-            else if(direction== Settings.movementDirection.LEFT)
+            else if(enemyModel.dir== Settings.movementDirection.LEFT)
                 currentImage=runAnimationLeft.update();
-            isMoving=false;
         }
         else {
-            if(direction== Settings.movementDirection.UP)
+            if(enemyModel.dir== Settings.movementDirection.UP)
                 currentImage=runAnimationUp.getDefaultImage();
-            else if(direction== Settings.movementDirection.DOWN)
+            else if(enemyModel.dir== Settings.movementDirection.DOWN)
                 currentImage=runAnimationDown.getDefaultImage();
-            else if(direction== Settings.movementDirection.RIGHT)
+            else if(enemyModel.dir== Settings.movementDirection.RIGHT)
                 currentImage=runAnimationRight.getDefaultImage();
-            else if(direction== Settings.movementDirection.LEFT)
+            else if(enemyModel.dir== Settings.movementDirection.LEFT)
                 currentImage=runAnimationLeft.getDefaultImage();
 
-        }
+        }}
 
     }
 
     public Image getCurrentImage() {
         return currentImage;
     }
+
+
 }
