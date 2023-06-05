@@ -11,6 +11,7 @@ import java.awt.*;
 public class PlayerCharacter  {
     //Gestisce il player e i suoi movimenti
     int x ;
+    boolean muovo = true, muovo1 = true;
     int y ;
     final int maxHealth=6;
     public int countHit;
@@ -138,7 +139,7 @@ public class PlayerCharacter  {
 
 
     public void move() {
-
+        soundWalk();
 
         if(dir==Settings.movementDirection.RIGHT && Game.getInstance().getWorld().isGround0(getX()+wight+(10*speed), getY()) && Game.getInstance().getWorld().isEnemy(getX()+(10*speed), getY(), centerX, centerY) )
             x += (10*speed);
@@ -156,5 +157,22 @@ public class PlayerCharacter  {
         hitBox.x=x;
         hitBox.y=y;
     }
+    private void soundWalk() {
+        if(GameData.sound && muovo) {
+            muovo = false;
+            if(muovo1){
+                muovo1 = false;
+                PlayWav.getInstance().loadSound("/Audio/WalkSound.wav");
+                PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+                PlayWav.getInstance().playSound();
+            }
+            else
+                muovo1 = true;
+        }
+        else{
+            muovo = true;
+        }
+    }
+
 }
 
