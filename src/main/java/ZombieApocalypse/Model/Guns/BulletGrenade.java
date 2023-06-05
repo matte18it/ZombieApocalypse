@@ -92,8 +92,6 @@ boolean stopAll=false;
                 return true;}
             else
                 return false;
-
-
         }
         return false;
     }else

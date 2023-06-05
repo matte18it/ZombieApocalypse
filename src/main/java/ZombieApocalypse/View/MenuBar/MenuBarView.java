@@ -2,6 +2,7 @@ package ZombieApocalypse.View.MenuBar;
 
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
@@ -347,6 +348,12 @@ public class MenuBarView extends JPanel {
 private boolean addAmmo=false;
     private int count=0;
     public void addAmmo(int i) {
+        if(GameData.sound) {
+            PlayWav.getInstance().loadSound("/Audio/AmmoSound.wav");
+            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+            PlayWav.getInstance().playSound();
+        }
+
         int t= Integer.parseInt(ammoLabel.getText());
         t=t+i;
         ammoLabel.setText(String.valueOf(t));

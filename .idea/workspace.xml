@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="AGGIUNTA SKIN">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/KidZombie.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Implementazione armi sul nemico">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/AmmoSound.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/ZombieHit.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletGrenade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletGrenade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuBar/MenuBarView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,14 +62,13 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\Blood" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Audio" />
+      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\Blood" />
       <recent name="$PROJECT_DIR$/src/main/Resources/SettingsImage" />
       <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton/Mouse" />
       <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ZombieApocalypse.Model.Enemy" />
       <recent name="ZombieApocalypse.Model.Guns" />
       <recent name="ZombieApocalypse" />
     </key>
@@ -87,6 +90,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00018" summary="About Panel">
+      <created>1684938296556</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684938296556</updated>
+    </task>
+    <task id="LOCAL-00019" summary="About Panel pt.1">
+      <created>1684938529938</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684938529938</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Classe Character">
+      <created>1684947294106</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684947294106</updated>
     </task>
     <task id="LOCAL-00021" summary="About pt.3">
       <created>1685024537079</created>
@@ -410,28 +434,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685965473845</updated>
     </task>
-    <task id="LOCAL-00067" summary="drop e morte del nemico">
-      <created>1685978870326</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1685978870326</updated>
-    </task>
-    <task id="LOCAL-00068" summary="pulizia e secondo nemico">
-      <created>1685981772469</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1685981772469</updated>
-    </task>
-    <task id="LOCAL-00069" summary="AGGIUNTA SKIN">
-      <created>1685982317988</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1685982317988</updated>
-    </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -447,6 +450,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Modifica player" />
+    <MESSAGE value="Mouse click" />
+    <MESSAGE value="Bullet pt1" />
     <MESSAGE value="Bullet pt2" />
     <MESSAGE value="Bullet pt3" />
     <MESSAGE value="Bug Fix" />
@@ -469,9 +475,6 @@
     <MESSAGE value="Posizione player fix" />
     <MESSAGE value="Suoni pt. 2" />
     <MESSAGE value="Suoni pt. 3" />
-    <MESSAGE value="drop e morte del nemico" />
-    <MESSAGE value="pulizia e secondo nemico" />
-    <MESSAGE value="AGGIUNTA SKIN" />
-    <option name="LAST_COMMIT_MESSAGE" value="AGGIUNTA SKIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suoni pt. 3" />
   </component>
 </project>

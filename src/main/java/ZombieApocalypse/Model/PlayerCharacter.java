@@ -1,6 +1,8 @@
 package ZombieApocalypse.Model;
 
 
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -96,6 +98,11 @@ public class PlayerCharacter  {
 
     public void hit() {
         if(countHit==0){
+            if(GameData.sound) {
+                PlayWav.getInstance().loadSound("/Audio/Hurt.wav");
+                PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+                PlayWav.getInstance().playSound();
+            }
             hit=true;
             health--;
             Game.getInstance().getMenuBar().removeHeart();

@@ -1,5 +1,8 @@
 package ZombieApocalypse.Model.Enemy;
 
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,6 +40,11 @@ public class Enemies {
             enem.x=b.getX()+b.getCenterX();
             enem.y=b.getY()+b.getCenterY();
             if(p.distance(enem)<30){
+                if(GameData.sound) {
+                    PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
+                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+                    PlayWav.getInstance().playSound();
+                }
                 b.gettingHit(damage);
             }
         }
@@ -48,6 +56,11 @@ public class Enemies {
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
             if(b.hitBox.intersects(hitBox)){
+                if(GameData.sound) {
+                    PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
+                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+                    PlayWav.getInstance().playSound();
+                }
                 b.gettingHit(damage);
             }
         }
@@ -58,6 +71,11 @@ public class Enemies {
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
             if(b.hitBox.intersects(hitBox)){
+                if(GameData.sound) {
+                    PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
+                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+                    PlayWav.getInstance().playSound();
+                }
                 b.gettingHit(damage);
                 return true;
             }
