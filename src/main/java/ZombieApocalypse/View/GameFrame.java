@@ -147,10 +147,10 @@ public class GameFrame extends JPanel {
         graphicPanel.addKeyListener(playerController);
         gameLoopObject = new GameLoop(playerController);
         menuBarView.setBar();
-        timeLoop=new TimeLoop();
-
         zombie = new ZombieSound();
         zombie.start();
+
+        timeLoop=new TimeLoop();
 
         gameLoopObject.start();
         timeLoop.start();
