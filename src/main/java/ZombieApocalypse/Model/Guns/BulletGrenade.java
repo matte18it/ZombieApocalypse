@@ -106,7 +106,8 @@ boolean stopAll=false;
         if(explosion.distance(player)<dimension ){
             Game.getInstance().getPlayerCharacter().hit();
         }
-        Enemies.getInstance().checkCollisionHit(x,y,dimension/2, dimension/2, damage);
+        if(numFrame==6)
+            Enemies.getInstance().checkCollisionHit(x,y,dimension/2, dimension/2, damage);
     }}
 }
 

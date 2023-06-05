@@ -27,9 +27,7 @@ public class EnemyView {
         Random m=new Random();
         enemyModel=enemy;
         this.type=value;
-        switch (type){
-            case SKINNYZOMBIE -> loadSkinnyZombie();
-        }
+        load();
         bloodImage= ResourcesLoader.getInstance().getImage("/Blood/Sangue"+m.nextInt(0,3)+".png", enemyModel.getWight(), enemyModel.getHeight(), true);
 
 
@@ -41,15 +39,26 @@ public class EnemyView {
 
 
 
-    private void loadSkinnyZombie() {
-        runAnimationUp = new CharacterAnimation("SkinnyZombie/SkinnyZombieIndietro",3);
-        runAnimationDown = new CharacterAnimation("SkinnyZombie/SkinnyZombieAvanti",3);
-        runAnimationLeft = new CharacterAnimation("SkinnyZombie/SkinnyZombieSinistra",3);
-        runAnimationRight = new CharacterAnimation("SkinnyZombie/SkinnyZombieDestra",3);
-        hitUp=new CharacterAnimation("SkinnyZombie/SkinnyZombieDannoAvanti",3);
-        hitDown=new CharacterAnimation("SkinnyZombie/SkinnyZombieDannoIndietro",3);
-        hitLeft=new CharacterAnimation("SkinnyZombie/SkinnyZombieDannoSinistra",3);
-        hitRight=new CharacterAnimation("SkinnyZombie/SkinnyZombieDannoDestra",3);
+    private void load() {
+        runAnimationUp = new CharacterAnimation("Nemici/"+type+"/"+type+"Indietro",3);
+        runAnimationDown = new CharacterAnimation("Nemici/"+type+"/"+type+"Avanti",3);
+        runAnimationLeft = new CharacterAnimation("Nemici/"+type+"/"+type+"Sinistra",3);
+        runAnimationRight = new CharacterAnimation("Nemici/"+type+"/"+type+"Destra",3);
+        hitUp=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoAvanti",3);
+        hitDown=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoIndietro",3);
+        hitLeft=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoSinistra",3);
+        hitRight=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoDestra",3);
+
+    }
+    private void loadFatZombie() {
+        runAnimationUp = new CharacterAnimation("FatZombie/FatZombieIndietro",3);
+        runAnimationDown = new CharacterAnimation("FatZombie/FatZombieAvanti",3);
+        runAnimationLeft = new CharacterAnimation("FatZombie/FatZombieSinistra",3);
+        runAnimationRight = new CharacterAnimation("FatZombie/FatZombieDestra",3);
+        hitUp=new CharacterAnimation("FatZombie/FatZombieDannoAvanti",3);
+        hitDown=new CharacterAnimation("FatZombie/FatZombieDannoIndietro",3);
+        hitLeft=new CharacterAnimation("FatZombie/FatZombieDannoSinistra",3);
+        hitRight=new CharacterAnimation("FatZombie/FatZombieDannoDestra",3);
 
     }
     public void update(){
