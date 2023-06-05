@@ -2,6 +2,8 @@ package ZombieApocalypse.Model.Guns;
 
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -53,6 +55,12 @@ boolean stopAll=false;
             if(numFrame<24){
                 numFrame++;
                 if(numFrame==10 ) {
+                    if(GameData.sound) {
+                        PlayWav.getInstance().loadSound("/Audio/Grenade.wav");
+                        PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+                        PlayWav.getInstance().playSound();
+                    }
+
                     dimension = dimension + 10;
                     x=x-5;
                     y=y-5;
@@ -84,6 +92,7 @@ boolean stopAll=false;
                 return true;}
             else
                 return false;
+
 
         }
         return false;

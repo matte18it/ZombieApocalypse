@@ -1,6 +1,8 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 public class MenuBarModel {
@@ -35,10 +37,17 @@ public class MenuBarModel {
         return (menuBarView.spaceToCollect());
     }
     private void medKit(boolean b){
-        for(int i=0; i<2; i++){
-        Game.getInstance().getPlayerCharacter().cure();}
-        setLabelEmpty(b);
+        if(GameData.sound) {
+            PlayWav.getInstance().loadSound("/Audio/MedikitSound.wav");
+            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+            PlayWav.getInstance().playSound();
+        }
 
+        for(int i=0; i<2; i++){
+            Game.getInstance().getPlayerCharacter().cure();
+        }
+
+        setLabelEmpty(b);
     }
 
     public void useItem(boolean b) {
@@ -68,14 +77,25 @@ public class MenuBarModel {
 
     private void shotGun(boolean b) {
         Game.getInstance().setShotgun();
-
     }
 
     private void radio(boolean b) {
+        if(GameData.sound) {
+            PlayWav.getInstance().loadSound("/Audio/WinSound.wav");
+            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+            PlayWav.getInstance().playSound();
+        }
+
         setLabelEmpty(b);   //Da implementare la logica
     }
 
     private void spell(boolean b) {
+        if(GameData.sound) {
+            PlayWav.getInstance().loadSound("/Audio/PotionDrink.wav");
+            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+            PlayWav.getInstance().playSound();
+        }
+
         Game.getInstance().speedUpPlayer();
         setLabelEmpty(b);
     }

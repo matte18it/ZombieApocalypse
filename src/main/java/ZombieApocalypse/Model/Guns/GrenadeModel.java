@@ -80,15 +80,6 @@ public class GrenadeModel extends GunModel{
         //Le coordinate sotto lo zero diventano negative, a noi ci servono sempre positive
         if(angle<0)
             angle=angle+360;
-
-
-
-
-
-
-
-
-
     }
 
 

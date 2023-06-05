@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Suoni pt. 2">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/PumpShot.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/knifeHit.wav" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Suoni pt. 3">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/GameOverSound.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/Grenade.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/MedikitSound.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/PotionDrink.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/RadioSound.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/WinSound.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.txt" beforeDir="false" afterPath="$PROJECT_DIR$/player.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/ShotgunModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Audio/hit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Audio/hurt.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Audio/Hurt.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletGrenade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletGrenade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/GrenadeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/GrenadeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/MenuBarModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,20 +95,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Bug Fix">
-      <created>1684910200064</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1684910200065</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Bug Fix">
-      <created>1684911108584</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1684911108584</updated>
     </task>
     <task id="LOCAL-00018" summary="About Panel">
       <created>1684938296556</created>
@@ -433,7 +425,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685907872018</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Suoni pt. 3">
+      <created>1685965428060</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1685965428060</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Suoni pt. 3">
+      <created>1685965473845</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1685965473845</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +455,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Loading Screen" />
     <MESSAGE value="Modifica player" />
     <MESSAGE value="Mouse click" />
     <MESSAGE value="Bullet pt1" />
@@ -474,6 +479,7 @@
     <MESSAGE value="bug fix pt 2" />
     <MESSAGE value="Posizione player fix" />
     <MESSAGE value="Suoni pt. 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Suoni pt. 2" />
+    <MESSAGE value="Suoni pt. 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suoni pt. 3" />
   </component>
 </project>
