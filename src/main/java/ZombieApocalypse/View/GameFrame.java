@@ -20,6 +20,7 @@ public class GameFrame extends JPanel {
     public static GameLoop gameLoopObject;
     private static LeaderboardLoop leaderboardLoop;
     public static LoginView panel;
+    public static ZombieSound zombie;
     public static SplashScreenView splashScreen;
     private static MenuLoop menuLoop;
     public static LoginLoop loop;
@@ -87,6 +88,9 @@ public class GameFrame extends JPanel {
             frameGame.setLayout(null);
         }
 
+        if(zombie != null)
+            zombie.stop();
+
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
 
@@ -145,6 +149,8 @@ public class GameFrame extends JPanel {
         menuBarView.setBar();
         timeLoop=new TimeLoop();
 
+        zombie = new ZombieSound();
+        zombie.start();
 
         gameLoopObject.start();
         timeLoop.start();
