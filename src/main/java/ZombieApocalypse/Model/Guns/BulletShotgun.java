@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model.Guns;
 
+import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
 
@@ -12,6 +13,7 @@ public class BulletShotgun extends Bullet{
             totalFrame=8;
             bulletType=t;
             isGrenade=false;
+            damage=2;
             dir=Game.getInstance().getShotgunModel().checkDirection(angle);
 
     }
@@ -23,6 +25,11 @@ public class BulletShotgun extends Bullet{
             }
 
         if(!ending) {
+            if(Enemies.getInstance().checkBulletHitBox(hitBox, damage)){
+                ending=true;
+                numFrame=0;
+
+            }
 
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
                 if (dir == Direction.DOWN){

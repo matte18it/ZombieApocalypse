@@ -13,6 +13,8 @@ public class Enemies {
         this.enemies.add(new SkinnyZombie(x, y));
     }
 
+
+    //Controllo della collisione con il player
     public boolean checkCollision(int x, int y, int ceX, int ceY) {
         Point player=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
@@ -27,6 +29,21 @@ public class Enemies {
         }
         return true;
     }
+    //Controllo della collisione con l'esplosione della granata (che è di forma rotonda)
+    public void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
+        Point p=new Point(x+ ceX,y+ceY);
+        Point enem=new Point();
+        Iterator var1=this.enemies.iterator();
+        while(var1.hasNext()){
+            Enemy b=(Enemy) var1.next();
+            enem.x=b.getX()+b.getCenterX();
+            enem.y=b.getY()+b.getCenterY();
+            if(p.distance(enem)<30){
+                b.gettingHit(damage);
+            }
+        }
+    }
+    //Controllo della collisione con l'hitbox del coltello
 
     public void checkHitBox(Rectangle hitBox, int damage) {
         Iterator var1=this.enemies.iterator();
@@ -36,6 +53,17 @@ public class Enemies {
                 b.gettingHit(damage);
             }
         }
+    }
+    //Controllo della collisione con i proiettili (deve restituire booleana per eliminare proiettili)
+    public boolean checkBulletHitBox(Rectangle hitBox, int damage) {
+        Iterator var1=this.enemies.iterator();
+        while(var1.hasNext()){
+            Enemy b=(Enemy) var1.next();
+            if(b.hitBox.intersects(hitBox)){
+                b.gettingHit(damage);
+                return true;
+            }
+        } return false;
     }
 
 

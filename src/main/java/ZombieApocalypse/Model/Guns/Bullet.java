@@ -19,6 +19,7 @@ public abstract class Bullet {
     public int numFrame=0;
     int totalFrame;
     public boolean ending=false;
+    int damage;
 
 
     Bullet(int x, int y, int dimension, boolean b, boolean t){

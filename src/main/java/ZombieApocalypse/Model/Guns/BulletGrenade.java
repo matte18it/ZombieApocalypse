@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model.Guns;
 
+import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
 
@@ -13,6 +14,7 @@ public class BulletGrenade extends Bullet{
         isGrenade=true;
         dir=d;
         numFrame=0;
+        damage=5;
         totalFrame=tot/15;
     }
 
@@ -27,8 +29,7 @@ boolean stopAll=false;
             numFrame=25;
             return true;
         }
-        Point explosion=new Point(x+dimension/2,y+dimension/2);
-        Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
+
         if(!ending) {
             count++;
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && count<totalFrame) {
@@ -47,10 +48,8 @@ boolean stopAll=false;
                 numFrame=0;
             }
         }else{
+            checkcollision();
 
-            if(explosion.distance(player)<dimension && numFrame<22){
-                Game.getInstance().getPlayerCharacter().hit();
-            }
             if(numFrame<24){
                 numFrame++;
                 if(numFrame==10 ) {
@@ -89,7 +88,18 @@ boolean stopAll=false;
         }
         return false;
     }else
-        return false;}}
+        return false;}
+
+    private void checkcollision() {
+        Point explosion=new Point(x+dimension/2,y+dimension/2);
+        Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
+        if(numFrame<22 && numFrame>5){
+        if(explosion.distance(player)<dimension ){
+            Game.getInstance().getPlayerCharacter().hit();
+        }
+        Enemies.getInstance().checkCollisionHit(x,y,dimension/2, dimension/2, damage);
+    }}
+}
 
 
 
