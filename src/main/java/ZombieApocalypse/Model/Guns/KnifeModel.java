@@ -3,6 +3,8 @@ package ZombieApocalypse.Model.Guns;
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.PlayerCharacter;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -18,6 +20,12 @@ public class KnifeModel extends GunModel{
 
     }
     public void attack() {
+        if(GameData.sound) {
+            PlayWav.getInstance().loadSound("/Audio/knifeHit.wav");
+            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+            PlayWav.getInstance().playSound();
+        }
+
         attack=true;
         Enemies.getInstance().checkHitBox(hitBox, damage);
 

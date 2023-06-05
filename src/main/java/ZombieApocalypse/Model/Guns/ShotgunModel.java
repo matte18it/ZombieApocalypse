@@ -1,6 +1,8 @@
 package ZombieApocalypse.Model.Guns;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -22,6 +24,12 @@ public class ShotgunModel extends GunModel{
 
     }
     public void attack() {
+        if(GameData.sound) {
+            PlayWav.getInstance().loadSound("/Audio/PumpShot.wav");
+            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
+            PlayWav.getInstance().playSound();
+        }
+
         attack=true;
         int x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
         int y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
