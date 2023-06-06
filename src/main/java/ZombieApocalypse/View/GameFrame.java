@@ -4,6 +4,8 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Model.SplashScreenModel;
+import ZombieApocalypse.View.Editor.EditorBarView;
+import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 import ZombieApocalypse.Controller.PlayerController;
 import ZombieApocalypse.Utility.ResourcesLoader;
@@ -28,6 +30,8 @@ public class GameFrame extends JPanel {
     public static MenuBarView menuBarView;
     public static GraphicPanel graphicPanel;
     public static TimeLoop timeLoop;
+    public static EditorView editor;
+    public static EditorBarView editorBar;
 
     public static void loadingLaunch(){
         dimension();
@@ -85,6 +89,12 @@ public class GameFrame extends JPanel {
             frameGame.remove(menuBarView);
             timeLoop.stop();
             gameLoopObject.stop();
+            frameGame.setLayout(null);
+        }
+
+        if(editor != null && editor.isShowing()){
+            frameGame.remove(editor);
+            frameGame.remove(editorBar);
             frameGame.setLayout(null);
         }
 
@@ -154,6 +164,22 @@ public class GameFrame extends JPanel {
 
         gameLoopObject.start();
         timeLoop.start();
+    }
+
+    public static void editorLaunch(){
+        if(menu != null && menu.isShowing())
+            frameGame.remove(menu);
+        frameGame.setTitle("Editor");
+
+        frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
+
+        editor = new EditorView();
+        editorBar = new EditorBarView();
+
+        frameGame.add(editor);
+        frameGame.add(editorBar);
+        frameGame.revalidate();
+        frameGame.repaint();
     }
 
     public static void close() {

@@ -60,6 +60,7 @@ public class MenuController {
                 super.mousePressed(e);
                 if(GameData.sound)
                     soundButton();
+                GameFrame.editorLaunch();
             }
         });
 
