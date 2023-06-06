@@ -39,5 +39,9 @@ public class Bullets {
     }
 
 
+    public void zombieShot(int i, int y,  double angle) {
+        this.bullets.add(new BulletZombie(i,y, angle));
 
+
+    }
 }

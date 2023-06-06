@@ -40,7 +40,7 @@ public  abstract class Enemy {
     }
     public int getHeight(){return height;}
     EnemyView view;
-    Enemies.EnemiesType type;
+    public Enemies.EnemiesType type;
     Rectangle hitBox;
     public EnemyView getView(){
         return view;
@@ -61,6 +61,7 @@ public  abstract class Enemy {
     }
     public int countHit=0;
     public boolean hit=false;
+    public double turretCount=0;
 
     public void gettingHit(int damage) {
             hit=true;

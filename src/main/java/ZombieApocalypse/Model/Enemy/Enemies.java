@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model.Enemy;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 
@@ -24,12 +25,13 @@ public class Enemies {
             Enemy b=(Enemy) var1.next();
             enem.x=b.getX()+ b.centerX;
             enem.y=b.getY()+b.centerY;
-            if(b.type==EnemiesType.SKINNYZOMBIE && player.distance(enem)<16)
+            if((b.type==EnemiesType.SKINNYZOMBIE || b.type==EnemiesType.TURRETZOMBIE) && player.distance(enem)<16)
                 return false;
             if(b.type==EnemiesType.FATZOMBIE && player.distance(enem)<24)
                 return false;
             if(b.type==EnemiesType.KIDZOMBIE && player.distance(enem)<13)
                 return false;
+
 
         }
         return true;
@@ -96,6 +98,19 @@ public class Enemies {
     }
     public void addKidZombie(int x, int y) {
         this.enemies.add(new KidZombie(x, y));
+    }
+    public void addTurretZombie(int x,int y){
+        this.enemies.add(new TurretZombie(x, y));
+
+    }
+
+    public boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
+        Rectangle hit=Game.getInstance().getPlayerCharacter().hitBox;
+        if(hitBox.intersects(hit)){
+            Game.getInstance().getPlayerCharacter().hit();
+            return true;
+        } return false;
+
     }
 
 
