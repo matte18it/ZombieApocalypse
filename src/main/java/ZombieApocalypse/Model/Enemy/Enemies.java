@@ -25,7 +25,7 @@ public class Enemies {
             Enemy b=(Enemy) var1.next();
             enem.x=b.getX()+ b.centerX;
             enem.y=b.getY()+b.centerY;
-            if((b.type==EnemiesType.SKINNYZOMBIE || b.type==EnemiesType.TURRETZOMBIE) && player.distance(enem)<16)
+            if((b.type==EnemiesType.SKINNYZOMBIE || b.type==EnemiesType.TURRETZOMBIE || b.type==EnemiesType.BANDIT) && player.distance(enem)<16)
                 return false;
             if(b.type==EnemiesType.FATZOMBIE && player.distance(enem)<24)
                 return false;
@@ -102,10 +102,9 @@ public class Enemies {
     public void addKidZombie(int x, int y) {
         this.enemies.add(new KidZombie(x, y));
     }
-    public void addTurretZombie(int x,int y){
-        this.enemies.add(new TurretZombie(x, y));
+    public void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
+    public void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
 
-    }
 
     public boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
         Rectangle hit=Game.getInstance().getPlayerCharacter().hitBox;
@@ -117,7 +116,7 @@ public class Enemies {
     }
 
 
-    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE, EMPTY};
+    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT, EMPTY};
     private final List<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
@@ -138,6 +137,8 @@ public class Enemies {
             if(!b.update()){
                 e.remove();
             }
+            if(b.type==EnemiesType.BANDIT)
+                b.updateGunPosition();
 
 
         }

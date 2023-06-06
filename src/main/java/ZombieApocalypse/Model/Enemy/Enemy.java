@@ -73,4 +73,15 @@ public  abstract class Enemy {
     }
     public boolean stopAll=false;
     public boolean dying=false;
+    Point gunPosition=new Point(0,0);
+
+    public int getGunX() {
+        return gunPosition.x;
+    }
+    public int getGunY() {
+        return gunPosition.y;
+    }
+
+    public void updateGunPosition() {
+    }
 }

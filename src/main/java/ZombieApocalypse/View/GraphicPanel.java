@@ -10,10 +10,7 @@ import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.View.Gun.GrenadeView;
-import ZombieApocalypse.View.Gun.PistolView;
-import ZombieApocalypse.View.Gun.KnifeView;
-import ZombieApocalypse.View.Gun.ShotgunView;
+import ZombieApocalypse.View.Gun.*;
 import ZombieApocalypse.View.Player.CharacterView;
 
 import javax.swing.*;
@@ -24,6 +21,7 @@ public class GraphicPanel extends JPanel {
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
     private static final PistolView pistolView = new PistolView();
+    private static final BanditPistolView pistolBandit=new BanditPistolView();
     private static final ShotgunView shotgunView=new ShotgunView();
     private static final GrenadeView grenadeView=new GrenadeView();
     private static final KnifeView knife=new KnifeView();
@@ -87,6 +85,7 @@ public class GraphicPanel extends JPanel {
             Enemies.getInstance().addFatZombie(600,500);
             Enemies.getInstance().addKidZombie(700,500);
             Enemies.getInstance().addTurretZombie(500, 100);
+            Enemies.getInstance().addBandit(100, 300);
             //per adesso gestione item
             Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
             Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);
@@ -109,7 +108,11 @@ public class GraphicPanel extends JPanel {
         }
         for (Enemy b : Enemies.getInstance().getEnemies()) {
             b.getView().update();
+            if(b.type== Enemies.EnemiesType.BANDIT){
+                pistolBandit.update(b);
+                g.drawImage(pistolBandit.getCurrentImage(), b.getGunX(), b.getGunY(), Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);}
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
+
         }
         if(Game.getInstance().getPlayerCharacter().speedUp ){
         g.setColor(Color.WHITE);
