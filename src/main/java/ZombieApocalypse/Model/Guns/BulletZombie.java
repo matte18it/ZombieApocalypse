@@ -8,7 +8,7 @@ public class BulletZombie extends Bullet{
 
     BulletZombie(int x, int y,  double angle){
         super(x,y,10, BulletType.ZOMBIE);
-        totalFrame=30;
+        totalFrame=20;
         damage=2;
         dir= Game.getInstance().getPistolModel().checkDirection(angle);
 
