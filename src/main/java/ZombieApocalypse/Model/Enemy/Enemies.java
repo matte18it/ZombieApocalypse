@@ -22,11 +22,15 @@ public class Enemies {
         Iterator var1=this.enemies.iterator();
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
-            enem.x=b.getX()+b.getCenterX();
-            enem.y=b.getY()+b.getCenterY();
-            if(player.distance(enem)<30){
+            enem.x=b.getX()+ b.centerX;
+            enem.y=b.getY()+b.centerY;
+            if(b.type==EnemiesType.SKINNYZOMBIE && player.distance(enem)<16)
                 return false;
-            }
+            if(b.type==EnemiesType.FATZOMBIE && player.distance(enem)<24)
+                return false;
+            if(b.type==EnemiesType.KIDZOMBIE && player.distance(enem)<13)
+                return false;
+
         }
         return true;
     }
@@ -39,16 +43,21 @@ public class Enemies {
             Enemy b=(Enemy) var1.next();
             enem.x=b.getX()+b.getCenterX();
             enem.y=b.getY()+b.getCenterY();
-            if(p.distance(enem)<30){
+            if(b.type==EnemiesType.SKINNYZOMBIE && p.distance(enem)<20)
+                b.gettingHit(damage);
+            if(b.type==EnemiesType.FATZOMBIE && p.distance(enem)<30)
+                b.gettingHit(damage);
+            if(b.type==EnemiesType.KIDZOMBIE && p.distance(enem)<15)
                 if(GameData.sound) {
                     PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
                     PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
                     PlayWav.getInstance().playSound();
                 }
                 b.gettingHit(damage);
-            }
+
         }
-    }
+        }
+
     //Controllo della collisione con l'hitbox del coltello
 
     public void checkHitBox(Rectangle hitBox, int damage) {
