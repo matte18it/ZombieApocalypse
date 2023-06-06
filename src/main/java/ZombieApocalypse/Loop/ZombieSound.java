@@ -16,7 +16,7 @@ public class ZombieSound {
         if (executor != null)
             return;
         executor = Executors.newSingleThreadScheduledExecutor();
-        executor.scheduleAtFixedRate(() -> soundZombie(), 0, new Random().nextInt(0, 60), TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(() -> soundZombie(), 0, new Random().nextInt(1, 60), TimeUnit.SECONDS);
     }
 
     private void soundZombie() {
