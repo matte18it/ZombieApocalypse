@@ -20,6 +20,7 @@ public class FatZombie extends Enemy{
     //Per prova
     Random m=new Random();
     public boolean update() {
+        //Gestione della Morte
         if(healt<=0 && !dying){
             dying=true;
             int c=m.nextInt(4,9);
@@ -27,18 +28,23 @@ public class FatZombie extends Enemy{
             return false;
             }
 
+        //Gestione della Pausa del gioco
         if(Game.getInstance().getBackMenu()){
             stopAll=true;
             return false;
         }
+        //Gestione delle Hit
         if(hit){
             if(countHit<30){
                 countHit++;}
             else
                 stopHit();
         }
+        //Gestione delle hit al Player
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
             Game.getInstance().getPlayerCharacter().hit();
+
+        //Parte di IA da implementare
         int f=m.nextInt(0,100);
         if(f<20){
         int i=m.nextInt(0,4);
@@ -48,10 +54,11 @@ public class FatZombie extends Enemy{
             case 2 ->{moveLeft();}
             case 3 ->{moveRight();}
         }
+        //Aggiornamento ad ogni clock delle hitbox
         hitBox.x=x;
         hitBox.y=y;
         } else
-            isMoving=false;
+            isMoving=false;  //Fine delle animazioni di movimento
 
 
 

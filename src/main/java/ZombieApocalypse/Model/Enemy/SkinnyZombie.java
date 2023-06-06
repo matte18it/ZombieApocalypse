@@ -21,25 +21,30 @@ public class SkinnyZombie extends Enemy{
     //Per prova
     Random m=new Random();
     public boolean update() {
+        //Gestione della Morte
         if(healt<=0 && !dying){
             dying=true;
             int c=m.nextInt(4,9);
             Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
             return false;
             }
-
+        //Gestione dalla Pausa del Gioco
         if(Game.getInstance().getBackMenu()){
             stopAll=true;
             return false;
         }
+        //Gestione delle Hit
         if(hit){
             if(countHit<30){
                 countHit++;}
             else
                 stopHit();
         }
+        //Gestione delle hit con il Player
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
             Game.getInstance().getPlayerCharacter().hit();
+
+        //Parte di Intelligenza artificiale da Implementare
         int f=m.nextInt(0,100);
         if(f<20){
         int i=m.nextInt(0,4);
@@ -49,11 +54,12 @@ public class SkinnyZombie extends Enemy{
             case 2 ->{moveLeft();}
             case 3 ->{moveRight();}
         }
+
+        //Aggiornamento della hitbox necessario ad ogni clock
         hitBox.x=x;
         hitBox.y=y;
         } else
-            isMoving=false;
-
+            isMoving=false;  //Stop delle animazioni di movimento
 
 
 
