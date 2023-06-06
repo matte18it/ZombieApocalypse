@@ -20,9 +20,11 @@ public abstract class Bullet {
     int totalFrame;
     public boolean ending=false;
     int damage;
+    public boolean isZombie=false;
 
 
     Bullet(int x, int y, int dimension, boolean b, boolean t){
+        isZombie=b;
         isGrenade=t;
         this.x=x;
         this.y=y;

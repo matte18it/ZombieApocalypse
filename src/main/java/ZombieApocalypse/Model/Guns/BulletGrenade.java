@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class BulletGrenade extends Bullet{
     BulletGrenade(int x, int y, int dimension, double angle, Direction d, int tot){
-        super(x,y,dimension, true, true);
+        super(x,y,dimension, false, true);
         velocityX=15;
         velocityY=15;
         isGrenade=true;

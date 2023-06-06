@@ -223,4 +223,8 @@ public class Game {
     public World getWorld(){
         return world;
     }
+
+    public Point getPlayerPosition() {
+        return new Point(character.getX()+character.centerX, character.getY()+character.centerY);
+    }
 }

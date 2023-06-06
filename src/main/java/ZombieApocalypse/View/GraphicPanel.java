@@ -86,6 +86,7 @@ public class GraphicPanel extends JPanel {
             Enemies.getInstance().addSkinnyZombie(500,500);
             Enemies.getInstance().addFatZombie(600,500);
             Enemies.getInstance().addKidZombie(700,500);
+            Enemies.getInstance().addTurretZombie(500, 100);
             //per adesso gestione item
             Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
             Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);

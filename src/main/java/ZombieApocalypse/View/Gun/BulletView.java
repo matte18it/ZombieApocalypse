@@ -22,6 +22,11 @@ public class BulletView {
                 grenadeBullet[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/Esplosione" + i + ".png", bulletModel.getDimension()+(i*10), bulletModel.getDimension()+(i*10), true);
             for (int i = 0; i < 4; i++)
                 grenade[i] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/Granata" + i + ".png", Game.getInstance().getGrenadeModel().getWidth(), Game.getInstance().getGrenadeModel().getHeight(), true);
+        }if (bulletModel.isZombie){
+            for (int i = 0; i < 6; i++)
+                bullet[i] = ResourcesLoader.getInstance().getImage("/Nemici/TURRETZOMBIE/Vomito" + i + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true);
+
+
         }else {
 
             for (int i = 0; i < 6; i++)
@@ -60,7 +65,28 @@ public class BulletView {
                     currentImage=grenadeBullet[6];
 
             }
-        }else{
+        }else if(bulletModel.isZombie){
+            if(bulletModel.menu){
+                currentImage=bullet[5];
+                return;
+            }
+            if(!bulletModel.ending) {
+                if (bulletModel.numFrame<1)
+                    currentImage = bullet[0];
+                else if (bulletModel.numFrame == 1)
+                    currentImage = bullet[1];
+                else
+                    currentImage = bullet[2];
+            }else{
+                if(bulletModel.numFrame==0)
+                    currentImage=bullet[3];
+                else if(bulletModel.numFrame==1)
+                    currentImage=bullet[4];
+                else if(bulletModel.numFrame==2)
+                    currentImage=bullet[5];
+            } }
+
+        else{
             if(bulletModel.menu){
                 currentImage=bullet[5];
                 return;
