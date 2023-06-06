@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="commenti">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/TurretZombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/TurretZombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="turretZombie nerfato">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletZombieView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletZombieView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterAnimation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterAnimation.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +85,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Loading Screen pt.1">
-      <created>1685184688983</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1685184688983</updated>
     </task>
     <task id="LOCAL-00027" summary="Loading Screen">
       <created>1685194129813</created>
@@ -431,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686063545160</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="turretZombie nerfato">
+      <created>1686068292155</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1686068292155</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -447,7 +445,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bullet pt3" />
     <MESSAGE value="Settings pt.1" />
     <MESSAGE value="Settings pt.2" />
     <MESSAGE value="Settings pt.3" />
@@ -472,6 +469,7 @@
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="turret zombie" />
     <MESSAGE value="commenti" />
-    <option name="LAST_COMMIT_MESSAGE" value="commenti" />
+    <MESSAGE value="turretZombie nerfato" />
+    <option name="LAST_COMMIT_MESSAGE" value="turretZombie nerfato" />
   </component>
 </project>

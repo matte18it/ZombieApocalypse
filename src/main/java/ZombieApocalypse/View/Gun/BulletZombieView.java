@@ -6,7 +6,6 @@ public class BulletZombieView extends BulletView{
     public BulletZombieView(Bullet b) {
         super(b);
     }
-    boolean b=true;
 
 
     public void update() {
@@ -22,13 +21,8 @@ public class BulletZombieView extends BulletView{
             currentImage = bullet[1];
         else if (bulletModel.numFrame == 2)
             currentImage = bullet[2];
-        else if(b) {
-            currentImage = bullet[3];
-            b=false;
-
-        }else{
-            currentImage=bullet[4];
-            b=true;}
+        else
+            currentImage=bullet[3];
 
     }else{
         if(bulletModel.numFrame==0)
