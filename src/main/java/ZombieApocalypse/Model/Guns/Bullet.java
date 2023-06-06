@@ -1,6 +1,6 @@
 package ZombieApocalypse.Model.Guns;
 
-import ZombieApocalypse.View.Gun.BulletView;
+import ZombieApocalypse.View.Gun.*;
 
 import java.awt.*;
 
@@ -8,8 +8,8 @@ public abstract class Bullet {
      int velocityX;
      int velocityY;
      public boolean menu=false;
-     public boolean isGrenade=false;
     enum Direction{UP,DOWN,LEFT,RIGHT};
+    public enum BulletType{PISTOL, SHOTGUN, ZOMBIE, GRENADE};
     private  final BulletView bulletView;
     Rectangle hitBox;
      int x;
@@ -20,19 +20,22 @@ public abstract class Bullet {
     int totalFrame;
     public boolean ending=false;
     int damage;
-    public boolean isZombie=false;
+    public BulletType type;
 
 
-    Bullet(int x, int y, int dimension, boolean b, boolean t){
-        isZombie=b;
-        isGrenade=t;
+    Bullet(int x, int y, int dimension, BulletType bulletType){
+        type=bulletType;
         this.x=x;
         this.y=y;
         this.dimension=dimension;
         this.velocityX=10;
         this.velocityY=10;
         hitBox=new Rectangle(x, y, dimension, dimension);
-        bulletView=new BulletView(this );
+        switch (type){
+            case ZOMBIE -> bulletView=new BulletZombieView(this);
+            case GRENADE -> bulletView=new BulletGrenadeView(this);
+            default -> bulletView=new BulletPistolView(this);
+        }
         }
     public int getX() {
         return this.x;

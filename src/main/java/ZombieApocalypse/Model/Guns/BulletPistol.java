@@ -7,7 +7,7 @@ import ZombieApocalypse.Utility.Settings;
 public class BulletPistol extends Bullet{
 
     BulletPistol(int x, int y, int dimension, double angle){
-        super(x,y,dimension, false, false);
+        super(x,y,dimension, BulletType.PISTOL);
             totalFrame=40;
             damage=2;
             dir=Game.getInstance().getPistolModel().checkDirection(angle);

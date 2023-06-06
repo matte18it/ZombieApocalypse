@@ -50,12 +50,15 @@ public class Enemies {
             if(b.type==EnemiesType.FATZOMBIE && p.distance(enem)<30)
                 b.gettingHit(damage);
             if(b.type==EnemiesType.KIDZOMBIE && p.distance(enem)<15)
-                if(GameData.sound) {
+                b.gettingHit(damage);
+            if(b.type==EnemiesType.TURRETZOMBIE && p.distance(enem)<20)
+                b.gettingHit(damage);
+
+            if(GameData.sound) {
                     PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
                     PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
                     PlayWav.getInstance().playSound();
                 }
-                b.gettingHit(damage);
 
         }
         }

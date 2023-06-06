@@ -9,11 +9,10 @@ import ZombieApocalypse.Utility.Settings;
 import java.awt.*;
 
 public class BulletGrenade extends Bullet{
-    BulletGrenade(int x, int y, int dimension, double angle, Direction d, int tot){
-        super(x,y,dimension, false, true);
+    BulletGrenade(int x, int y, int dimension,double angle,  Direction d, int tot){
+        super(x,y,dimension, BulletType.GRENADE);
         velocityX=15;
         velocityY=15;
-        isGrenade=true;
         dir=d;
         numFrame=0;
         damage=5;
@@ -25,7 +24,7 @@ private int count=0;
 boolean stopAll=false;
     boolean update(){
         if(!stopAll){
-        if(Game.getInstance().getBackMenu()){
+            if(Game.getInstance().getBackMenu()){
             stopAll=true;
             menu=true;
             numFrame=25;
@@ -60,7 +59,6 @@ boolean stopAll=false;
                         PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
                         PlayWav.getInstance().playSound();
                     }
-
                     dimension = dimension + 10;
                     x=x-5;
                     y=y-5;

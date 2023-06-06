@@ -40,7 +40,6 @@ public class TurretZombie extends Enemy{
             angle2 = angle2 + 360;
 
 
-
         turretCount+=0.5;
         if(turretCount==3.5)
             turretCount=0;
@@ -52,7 +51,8 @@ public class TurretZombie extends Enemy{
             case 1-> moveDown();
             case 2-> moveRight();
             case 3 -> moveUp();
-        }}else
+        }}
+                else
             isMoving=false;
 
 
@@ -82,6 +82,18 @@ public class TurretZombie extends Enemy{
 
             return true;
         }
+
+    private boolean checkAngle() {
+        if(angle>320 || angle<40)
+            return true;
+        if(angle>50 && angle<130)
+            return true;
+        if(angle>140 && angle<220)
+            return true;
+        if(angle>230 && angle<310)
+            return true;
+        return false;
+    }
 
     private int checkDirection(double angle) {
         if((angle<60 && angle>=0) || (angle>=320)){
