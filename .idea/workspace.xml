@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="AGGIUNTA SKIN PT2">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/TURRETZOMBIE/Vomito0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/TURRETZOMBIE/Vomito1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/TURRETZOMBIE/Vomito2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/TURRETZOMBIE/Vomito3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/TURRETZOMBIE/Vomito4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/TURRETZOMBIE/Vomito5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/TURRETZOMBIE/Vomito6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/TurretZombie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletZombie.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Suoni Finale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Loop/ZombieSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Loop/ZombieSound.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,26 +34,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Pierf/Desktop/User_Interface_Desing/Esercizi/ZombieApocalypse/src/main/Resources/Nemici/TURRETZOMBIE",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Properties"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/matteocanino/Desktop/Progetti/UID/ZombieApocalypse&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Properties&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ZombieApocalypse.View" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\Nemici\TURRETZOMBIE" />
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller" />
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
@@ -83,7 +64,6 @@
       <recent name="$PROJECT_DIR$/src/main/Resources/TutorialButton" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ZombieApocalypse.Model.Enemy" />
       <recent name="ZombieApocalypse.Model.Guns" />
       <recent name="ZombieApocalypse" />
     </key>
@@ -442,12 +422,12 @@
       <option name="project" value="LOCAL" />
       <updated>1685991031688</updated>
     </task>
-    <task id="LOCAL-00070" summary="AGGIUNTA SKIN PT2">
-      <created>1686055517711</created>
+    <task id="LOCAL-00070" summary="Suoni Finale">
+      <created>1685994423210</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1686055517711</updated>
+      <updated>1685994423210</updated>
     </task>
     <option name="localTasksCounter" value="71" />
     <servers />
@@ -465,6 +445,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Bullet pt1" />
     <MESSAGE value="Bullet pt2" />
     <MESSAGE value="Bullet pt3" />
     <MESSAGE value="Bug Fix" />
@@ -489,7 +470,6 @@
     <MESSAGE value="Suoni pt. 3" />
     <MESSAGE value="Sound pt.5" />
     <MESSAGE value="Suoni Finale" />
-    <MESSAGE value="AGGIUNTA SKIN PT2" />
-    <option name="LAST_COMMIT_MESSAGE" value="AGGIUNTA SKIN PT2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suoni Finale" />
   </component>
 </project>
