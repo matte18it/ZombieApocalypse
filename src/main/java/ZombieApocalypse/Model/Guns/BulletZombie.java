@@ -25,6 +25,7 @@ public class BulletZombie extends Bullet{
                 ending=true;
                 numFrame=0;
             }
+
             numFrame++;
 
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
