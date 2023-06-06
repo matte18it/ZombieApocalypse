@@ -40,11 +40,11 @@ public class TurretZombie extends Enemy{
             angle2 = angle2 + 360;
 
 
-        turretCount+=0.5;
-        if(turretCount==3.5)
-            turretCount=0;
-        if(turretCount==2)
+        turretCount+=1;
+        if(turretCount==15){
             Bullets.getInstance().zombieShot(x+centerX,y+centerY-5 , angle);
+            turretCount=-1;}
+
         int i=checkDirection(angle2);
         switch (i){
             case 0-> moveLeft();

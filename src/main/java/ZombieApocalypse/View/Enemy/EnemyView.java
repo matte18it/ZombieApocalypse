@@ -89,7 +89,7 @@ public class EnemyView {
                 }
         }else{
             if(enemyModel.type== Enemies.EnemiesType.TURRETZOMBIE){
-                if(enemyModel.isMoving && enemyModel.turretCount==(int)enemyModel.turretCount){
+                if(enemyModel.isMoving && (enemyModel.turretCount==0 ||enemyModel.turretCount==5 ||enemyModel.turretCount==10 ||enemyModel.turretCount==15)){
                     if(enemyModel.dir== Settings.movementDirection.UP)
                         currentImage=runAnimationUp.update();
                     else if(enemyModel.dir== Settings.movementDirection.DOWN)
@@ -101,13 +101,13 @@ public class EnemyView {
                 }
                 else {
                     if(enemyModel.dir== Settings.movementDirection.UP)
-                        currentImage=runAnimationUp.getDefaultImage();
+                        currentImage=runAnimationUp.getCurrentImage();
                     else if(enemyModel.dir== Settings.movementDirection.DOWN)
-                        currentImage=runAnimationDown.getDefaultImage();
+                        currentImage=runAnimationDown.getCurrentImage();
                     else if(enemyModel.dir== Settings.movementDirection.RIGHT)
-                        currentImage=runAnimationRight.getDefaultImage();
+                        currentImage=runAnimationRight.getCurrentImage();
                     else if(enemyModel.dir== Settings.movementDirection.LEFT)
-                        currentImage=runAnimationLeft.getDefaultImage();
+                        currentImage=runAnimationLeft.getCurrentImage();
 
                 }
 
