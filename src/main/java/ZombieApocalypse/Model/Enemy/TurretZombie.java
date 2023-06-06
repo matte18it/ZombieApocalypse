@@ -55,8 +55,7 @@ public class TurretZombie extends Enemy{
                 else
             isMoving=false;
 
-
-            if (healt <= 0 && !dying) {
+                if (healt <= 0 && !dying) {
                 dying = true;
                 int c = m.nextInt(4, 9);
                 Items.getInstance().dropItem(x, y, Items.ItemType.values()[c]);
