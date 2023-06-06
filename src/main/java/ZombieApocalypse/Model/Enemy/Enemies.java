@@ -99,7 +99,7 @@ public class Enemies {
     }
 
 
-    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE, EMPTY};
+    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE, EMPTY};
     private final List<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
