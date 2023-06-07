@@ -11,7 +11,7 @@ public class GunAnimation {
     private final ArrayList<Image> images = new ArrayList<>();
 
     private int index = 0;
-    enum GunType{SHOTGUN, PISTOL};
+    enum GunType{SHOTGUN, GRENADE, PISTOL};
 
 
 
@@ -23,6 +23,8 @@ public class GunAnimation {
                 img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getShotgunModel().getWidth(),  Game.getInstance().getShotgunModel().getHeight(),  true);
             if(e==GunType.PISTOL)
                 img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(),  Game.getInstance().getPistolModel().getHeight(),  true);
+            if(e==GunType.GRENADE)
+                img= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenadeModel().getWidth(),  Game.getInstance().getGrenadeModel().getHeight(), true);
             images.add(img);
         }
 

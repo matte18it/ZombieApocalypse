@@ -5,7 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.1">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Granata3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoAvanti0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoAvanti1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoAvanti2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoDestra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoDestra1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoDestra2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoIndietro0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoIndietro1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoIndietro2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoSinistra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoSinistra1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDannoSinistra2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/BombBandit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletGrenadeBandit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITAvanti0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITAvanti0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITAvanti1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITAvanti1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITAvanti2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITAvanti2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITDestra0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDestra0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITDestra1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDestra1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITDestra2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITDestra2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITIndietro0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITIndietro0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITIndietro1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITIndietro1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITIndietro2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITIndietro2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITSinistra0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITSinistra0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITSinistra1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITSinistra1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITSinistra2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BOMBBANDIT/BOMBBANDITSinistra2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletPistol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletPistol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +96,9 @@
       <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\Blood" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ZombieApocalypse.Model.Guns" />
       <recent name="ZombieApocalypse.View.Gun" />
       <recent name="ZombieApocalypse.Model.Enemy" />
-      <recent name="ZombieApocalypse.Model.Guns" />
       <recent name="ZombieApocalypse" />
     </key>
   </component>

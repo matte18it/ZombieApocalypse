@@ -119,6 +119,7 @@ public class Enemies {
     }
     public void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
     public void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
+    public void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
 
 
     public boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
@@ -131,7 +132,9 @@ public class Enemies {
     }
 
 
-    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT, EMPTY};
+
+
+    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, EMPTY};
     private final List<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
@@ -152,7 +155,7 @@ public class Enemies {
             if(!b.update()){
                 e.remove();
             }
-            if(b.type==EnemiesType.BANDIT)
+            if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
 
 

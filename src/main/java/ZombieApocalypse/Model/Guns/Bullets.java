@@ -1,7 +1,5 @@
 package ZombieApocalypse.Model.Guns;
 
-import ZombieApocalypse.Model.Game;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -46,5 +44,10 @@ public class Bullets {
         this.bullets.add(new BulletZombie(i,y, angle));
 
 
+    }
+
+
+    public void BulletGrenadeBandit(int  x, int  y, int dimension, double angle, Bullet.Direction dir, int t){
+        this.bullets.add(new BulletGrenadeBandit(x,y,dimension,angle,  dir, t));
     }
 }

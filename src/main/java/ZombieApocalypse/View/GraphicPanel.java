@@ -15,6 +15,7 @@ import ZombieApocalypse.View.Player.CharacterView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 public class GraphicPanel extends JPanel {
     int count;
@@ -86,6 +87,8 @@ public class GraphicPanel extends JPanel {
             Enemies.getInstance().addKidZombie(700,500);
             Enemies.getInstance().addTurretZombie(500, 100);
             Enemies.getInstance().addBandit(100, 300);
+            Enemies.getInstance().addBombBandit(100, 500);
+
             //per adesso gestione item
             Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
             Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);
@@ -108,10 +111,13 @@ public class GraphicPanel extends JPanel {
         }
         for (Enemy b : Enemies.getInstance().getEnemies()) {
             b.getView().update();
-            if(b.type== Enemies.EnemiesType.BANDIT){
+            if (b.type == Enemies.EnemiesType.BANDIT) {
                 pistolBandit.update(b);
-                g.drawImage(pistolBandit.getCurrentImage(), b.getGunX(), b.getGunY(), Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);}
+                g.drawImage(pistolBandit.getCurrentImage(), b.getGunX(), b.getGunY(), Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);
+            }
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
+
+
 
         }
         if(Game.getInstance().getPlayerCharacter().speedUp ){
