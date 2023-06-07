@@ -53,18 +53,6 @@ public class Enemies {
                 b.gettingHit(damage);
             if(b.type==EnemiesType.TURRETZOMBIE && p.distance(enem)<20)
                 b.gettingHit(damage);
-
-            if(GameData.sound && b.type == EnemiesType.BANDIT) {
-                    PlayWav.getInstance().loadSound("/Audio/Hurt.wav");
-                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                    PlayWav.getInstance().playSound();
-                }
-            else{
-                PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
-                PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                PlayWav.getInstance().playSound();
-            }
-
         }
         }
 
@@ -75,16 +63,6 @@ public class Enemies {
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
             if(b.hitBox.intersects(hitBox)){
-                if(GameData.sound && b.type == EnemiesType.BANDIT) {
-                    PlayWav.getInstance().loadSound("/Audio/Hurt.wav");
-                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                    PlayWav.getInstance().playSound();
-                }
-                else{
-                    PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
-                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                    PlayWav.getInstance().playSound();
-                }
                 b.gettingHit(damage);
             }
         }
@@ -95,16 +73,6 @@ public class Enemies {
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
             if(b.hitBox.intersects(hitBox)){
-                if(GameData.sound && b.type == EnemiesType.BANDIT) {
-                    PlayWav.getInstance().loadSound("/Audio/Hurt.wav");
-                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                    PlayWav.getInstance().playSound();
-                }
-                else{
-                    PlayWav.getInstance().loadSound("/Audio/ZombieHit.wav");
-                    PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                    PlayWav.getInstance().playSound();
-                }
                 b.gettingHit(damage);
                 return true;
             }

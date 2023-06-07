@@ -246,6 +246,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
 
     @Override
     public void mousePressed(MouseEvent e) {
+
         if(GameData.mancino && e.getButton()==2)
             Game.getInstance().attack();
         if(!GameData.mancino && e.getButton()==1)

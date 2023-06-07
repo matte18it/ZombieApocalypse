@@ -1,10 +1,6 @@
 package ZombieApocalypse.Utility;
 
 import javax.sound.sampled.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
 
 public class PlayWav {
     private static Clip clip = null;
