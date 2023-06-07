@@ -7,8 +7,12 @@
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/PlayerController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +63,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/Boss" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu" />
       <recent name="$PROJECT_DIR$/src/main/Resources" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Bandito" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.Model.Guns" />
@@ -89,20 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Mouse click">
-      <created>1685259525851</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1685259525851</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Bullet pt1">
-      <created>1685263797733</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1685263797733</updated>
     </task>
     <task id="LOCAL-00034" summary="Bullet pt2">
       <created>1685270378329</created>
@@ -433,7 +423,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686150018609</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Editor pt.1">
+      <created>1686159539265</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1686159539265</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Editor pt.1">
+      <created>1686159630231</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1686159630231</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

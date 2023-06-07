@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -204,6 +205,8 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         }
     }
     private int count=0;
+    private int countZombie = 0;
+    private int randomZombie = new Random().nextInt(300, 600);
 
     public void update() {
         if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
@@ -219,6 +222,14 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             count=0;
             Game.getInstance().setBackMenu(false);
         }
+
+        if(countZombie == randomZombie){
+            countZombie = 0;
+            if(GameData.sound)
+                PlayWav.getInstance().playZombie(GameData.soundVolume);
+        }
+        else
+            countZombie++;
     }
 
     @Override

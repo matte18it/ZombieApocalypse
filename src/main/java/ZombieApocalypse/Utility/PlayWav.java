@@ -18,7 +18,7 @@ public class PlayWav {
         return play;
     }
 
-    //Musica
+    //----- Musica -----
     public void play(String path){
         clip = ResourcesLoader.getInstance().getAudioClip(path);
         clip.start();
@@ -35,7 +35,12 @@ public class PlayWav {
         music.setValue(value);
     }
 
-    //Suoni
+    //----- Suoni -----
+    public void playZombie(int value){
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieSound.wav");
+        sound.setValue(value);
+        clipSound.start();
+    }
     public void loadSound(String path){
         clipSound = ResourcesLoader.getInstance().getAudioClip(path);
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
