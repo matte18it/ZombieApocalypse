@@ -13,7 +13,7 @@ public class EditorBarView extends JPanel {
     private EditorBarController controller;
 
     //Bottoni per rappresentare i blocchi della mappa
-    private JButton dirt0, dirt1, dirt2, dirt3;
+    private JButton dirt0, dirt1, dirt2, dirt3, water0, water1, water2, divisorio;
 
     public EditorBarView(){
         //setto il cursore personalizzato
@@ -83,5 +83,57 @@ public class EditorBarView extends JPanel {
         dirt3.setMaximumSize(new Dimension(48, 48));
         c.gridx = 0; c.gridy = 7;
         add(dirt3, c);
+
+        c.gridx = 0; c.gridy = 8;
+        add(Box.createRigidArea(new Dimension(10, 10)), c);
+
+        divisorio = new JButton();
+        divisorio.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/DivisorioAcquaTerra/Divisorio1.png", 48, 48, false));
+        divisorio.setFocusPainted(false);
+        divisorio.setContentAreaFilled(false);
+        divisorio.setMinimumSize(new Dimension(48, 48));
+        divisorio.setPreferredSize(new Dimension(48, 48));
+        divisorio.setMaximumSize(new Dimension(48, 48));
+        c.gridx = 0; c.gridy = 9;
+        add(divisorio, c);
+
+        c.gridx = 0; c.gridy = 10;
+        add(Box.createRigidArea(new Dimension(10, 10)), c);
+
+        water0 = new JButton();
+        water0.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Water/Water0.png", 48, 48, false));
+        water0.setFocusPainted(false);
+        water0.setContentAreaFilled(false);
+        water0.setMinimumSize(new Dimension(48, 48));
+        water0.setPreferredSize(new Dimension(48, 48));
+        water0.setMaximumSize(new Dimension(48, 48));
+        c.gridx = 0; c.gridy = 11;
+        add(water0, c);
+
+        c.gridx = 0; c.gridy = 12;
+        add(Box.createRigidArea(new Dimension(10, 10)), c);
+
+        water1 = new JButton();
+        water1.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Water/Water1.png", 48, 48, false));
+        water1.setFocusPainted(false);
+        water1.setContentAreaFilled(false);
+        water1.setMinimumSize(new Dimension(48, 48));
+        water1.setPreferredSize(new Dimension(48, 48));
+        water1.setMaximumSize(new Dimension(48, 48));
+        c.gridx = 0; c.gridy = 13;
+        add(water1, c);
+
+        c.gridx = 0; c.gridy = 14;
+        add(Box.createRigidArea(new Dimension(10, 10)), c);
+
+        water2 = new JButton();
+        water2.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Water/Water2.png", 48, 48, false));
+        water2.setFocusPainted(false);
+        water2.setContentAreaFilled(false);
+        water2.setMinimumSize(new Dimension(48, 48));
+        water2.setPreferredSize(new Dimension(48, 48));
+        water2.setMaximumSize(new Dimension(48, 48));
+        c.gridx = 0; c.gridy = 15;
+        add(water2, c);
     }
 }
