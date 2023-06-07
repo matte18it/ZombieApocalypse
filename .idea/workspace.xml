@@ -4,51 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="turretZombie nerfato">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITAvanti0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITAvanti1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITAvanti2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoAvanti0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoAvanti1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoAvanti2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoDestra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoDestra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoDestra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoIndietro0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoIndietro1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoIndietro2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoSinistra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoSinistra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDannoSinistra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDestra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDestra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITDestra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITIndietro0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITIndietro1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITIndietro2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITSinistra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITSinistra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITSinistra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Bandit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BanditPistolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerAvanti0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerAvanti1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerAvanti2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerDestra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerDestra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerDestra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerIndietro0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerIndietro1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerIndietro2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerSinistra0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerSinistra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Bandito/PlayerSinistra2.png" beforeDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.1">
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/TurretZombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/TurretZombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,13 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Modifica player">
-      <created>1685195612919</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1685195612920</updated>
     </task>
     <task id="LOCAL-00029" summary="Modifica player">
       <created>1685195751318</created>
@@ -473,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686068570912</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Editor pt.1">
+      <created>1686124068159</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1686124068160</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,7 +446,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Settings pt.1" />
     <MESSAGE value="Settings pt.2" />
     <MESSAGE value="Settings pt.3" />
     <MESSAGE value="Settings pt.4" />
@@ -514,6 +470,7 @@
     <MESSAGE value="turret zombie" />
     <MESSAGE value="commenti" />
     <MESSAGE value="turretZombie nerfato" />
-    <option name="LAST_COMMIT_MESSAGE" value="turretZombie nerfato" />
+    <MESSAGE value="Editor pt.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editor pt.1" />
   </component>
 </project>
