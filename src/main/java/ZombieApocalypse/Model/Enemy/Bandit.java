@@ -1,6 +1,7 @@
 package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
@@ -21,6 +22,7 @@ public class Bandit extends Enemy{
 
     //Per prova
     Random m=new Random();
+    int count=0;
     public boolean update() {
         //Gestione della Morte
         if(healt<=0 && !dying){
@@ -41,9 +43,13 @@ public class Bandit extends Enemy{
             else
                 stopHit();
         }
-        shoot();
+        Point player = Game.getInstance().getPlayerPosition();
+        Point turret = new Point(x + centerX, y + centerY);
+
 
         //Parte di Intelligenza artificiale da Implementare
+        if(player.distance(turret)<300)
+            shoot();
         int f=m.nextInt(0,100);
         if(f<20){
         int i=m.nextInt(0,4);
@@ -52,32 +58,31 @@ public class Bandit extends Enemy{
             case 1 ->{moveDown();}
             case 2 ->{moveLeft();}
             case 3 ->{moveRight();}
-        }
+        }  }else
+            isMoving=false;
 
         //Aggiornamento della hitbox necessario ad ogni clock
         hitBox.x=x;
         hitBox.y=y;
-        } else
-            isMoving=false;  //Stop delle animazioni di movimento
 
 
 
-        return true;
-    }
+
+        return true;}
+
 
     private void shoot() {
-        //Da scrivere
-        Point player = Game.getInstance().getPlayerPosition();
-        Point turret = new Point(x + centerX, y + centerY);
-        /*if(player.distance(turret)<300) {
+        if(count==20){
             switch (dir){
-                case RIGHT ->  Bullets.getInstance().PistolShot(turret.x,turret.y,10,0);
-                case DOWN -> Bullets.getInstance().PistolShot(turret.x,turret.y,10,270);
-                case LEFT -> Bullets.getInstance().PistolShot(turret.x,turret.y,10,180);
-                case UP ->Bullets.getInstance().PistolShot(turret.x,turret.y,10,90);
-            }
-        }*/
-    }
+                case RIGHT -> Bullets.getInstance().BulletBandit(x+wight+2,y+5, 10, 0, Bullet.Direction.RIGHT);
+                case DOWN ->  Bullets.getInstance().BulletBandit(x+wight-5,y+height, 10, 0, Bullet.Direction.DOWN);
+                case LEFT -> Bullets.getInstance().BulletBandit(x-10,y+5, 10, 0, Bullet.Direction.LEFT);
+                case UP -> Bullets.getInstance().BulletBandit(x-2,y, 10, 0, Bullet.Direction.UP);
+
+            } count=0;}
+        count++;
+        }
+
 
     public void updateGunPosition() {
         switch (dir){
@@ -105,8 +110,8 @@ public class Bandit extends Enemy{
 
     private void moveDown() {
         if(Game.getInstance().getWorld().isGround0(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
-            y=y+10;
-            isMoving=true;
+            //y=y+10;
+            //isMoving=true;
             dir=Settings.movementDirection.DOWN;}
     }
 

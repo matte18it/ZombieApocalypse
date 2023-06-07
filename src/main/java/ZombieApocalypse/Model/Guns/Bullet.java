@@ -8,7 +8,7 @@ public abstract class Bullet {
      int velocityX;
      int velocityY;
      public boolean menu=false;
-    enum Direction{UP,DOWN,LEFT,RIGHT};
+    public enum Direction{UP,DOWN,LEFT,RIGHT};
     public enum BulletType{PISTOL, SHOTGUN, ZOMBIE, GRENADE};
     private  final BulletView bulletView;
     Rectangle hitBox;

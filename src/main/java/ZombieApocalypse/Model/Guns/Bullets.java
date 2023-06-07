@@ -25,6 +25,9 @@ public class Bullets {
     public void GrenadeLaunch(int  x, int  y, int dimension, double angle, Bullet.Direction d, int t){
         this.bullets.add(new BulletGrenade(x,y,dimension,angle,d, t));
     }
+    public void BulletBandit(int  x, int  y, int dimension, double angle, Bullet.Direction dir){
+        this.bullets.add(new BulletBandit(x,y,dimension,angle,  dir));
+    }
 
     public List<Bullet> getBullets(){return Collections.unmodifiableList(this.bullets);
     }
