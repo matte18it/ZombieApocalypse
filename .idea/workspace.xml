@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.1">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITAvanti0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITAvanti1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITAvanti2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITDestra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITDestra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITDestra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITIndietro0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITIndietro1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata/BANDITIndietro2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/ArmieOggetti/Granata3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT/BANDITAvanti1.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,11 +56,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Bandito" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Bandito/Skin1" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Audio" />
       <recent name="C:\Users\Pierf\Desktop\User_Interface_Desing\Esercizi\ZombieApocalypse\src\main\Resources\Blood" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/SettingsImage" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.View.Gun" />
@@ -97,13 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Bug Fix">
-      <created>1685207394563</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1685207394563</updated>
     </task>
     <task id="LOCAL-00031" summary="Bug Fix">
       <created>1685209843889</created>
@@ -441,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686124306890</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Editor pt.1">
+      <created>1686148050475</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1686148050476</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
