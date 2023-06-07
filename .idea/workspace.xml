@@ -5,6 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bug Fix">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo/Colpo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo/Colpo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +81,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Colpo" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Boss" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu" />
-      <recent name="$PROJECT_DIR$/src/main/Resources" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.Model.Guns" />
@@ -86,13 +111,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Bug Fix">
-      <created>1685346138028</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1685346138028</updated>
     </task>
     <task id="LOCAL-00037" summary="Settings pt.1">
       <created>1685359970057</created>
@@ -430,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686161728454</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Bug Fix">
+      <created>1686164975076</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1686164975077</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
