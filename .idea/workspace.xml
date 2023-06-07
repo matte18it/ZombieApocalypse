@@ -56,11 +56,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Colpo" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu" />
       <recent name="$PROJECT_DIR$/src/main/Resources" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Nemici/BANDIT" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Nemici/BanditoGranata" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.Model.Guns" />
@@ -86,13 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Bullet pt3">
-      <created>1685291413397</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1685291413398</updated>
     </task>
     <task id="LOCAL-00036" summary="Bug Fix">
       <created>1685346138028</created>
@@ -430,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686160782255</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Bug Fix">
+      <created>1686161728453</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1686161728454</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
