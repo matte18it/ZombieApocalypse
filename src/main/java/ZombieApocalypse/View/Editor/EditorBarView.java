@@ -16,14 +16,18 @@ public class EditorBarView extends JPanel {
     //Bottoni per rappresentare i blocchi della mappa
     private JButton dirt0, dirt1, dirt2, dirt3, water0, divisorio, flower1, flower2;
     private JButton road1, road2, road3, road4, road5, road6, road7, road8, road9, road10, road11, road12, road13, road14, road15, road16, road17, road18, road19, road20, road21, road22, road23, road24, road25;
-    private JButton arrow1, arrow2;
+    private JButton arrow1, arrow2, lineButton;
 
     private JButton save, exit, reset;
     private JTextField txtName;
 
-    public EditorBarView(){
+    private EditorView editorView;
+
+    public EditorBarView(EditorView editorView){
         //setto il cursore personalizzato
         this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
+
+        this.editorView = editorView;
 
         //Dimensione barra e layout
         setMaximumSize(new Dimension(Settings.WINDOW_SIZEX, Settings.EDITOR_BAR_HEIGHT));
@@ -36,7 +40,7 @@ public class EditorBarView extends JPanel {
         initComponent();
 
         //creo il controller
-        controller = new EditorBarController(this);
+        controller = new EditorBarController(this, editorView);
         Page1();
         controller.addListener();
     }
@@ -46,6 +50,10 @@ public class EditorBarView extends JPanel {
         arrow1 = new JButton();
         arrow2 = new JButton();
         txtName = new JTextField();
+        lineButton = new JButton();
+        save = new JButton();
+        exit = new JButton();
+        reset = new JButton();
     }
 
     public void Page1() {
@@ -497,7 +505,7 @@ public class EditorBarView extends JPanel {
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
         road25 = new JButton();
-        road25.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road24.png", 48, 48, false));
+        road25.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road25.png", 48, 48, false));
         road25.setFocusPainted(false);
         road25.setContentAreaFilled(false);
         road25.setMinimumSize(new Dimension(48, 48));
@@ -519,22 +527,29 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 27;
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
-        save = new JButton("Save");
+        save.setText("Save");
         c.gridx = 0; c.gridy = 28;
         add(save, c);
 
         c.gridx = 0; c.gridy = 29;
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
-        reset = new JButton("Reset");
+        lineButton.setText("Line");
         c.gridx = 0; c.gridy = 30;
-        add(reset, c);
+        add(lineButton, c);
 
         c.gridx = 0; c.gridy = 31;
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
-        exit = new JButton("Exit");
+        reset.setText("Reset");
         c.gridx = 0; c.gridy = 32;
+        add(reset, c);
+
+        c.gridx = 0; c.gridy = 33;
+        add(Box.createRigidArea(new Dimension(5, 10)), c);
+
+        exit.setText("Exit");
+        c.gridx = 0; c.gridy = 34;
         add(exit, c);
     }
 
@@ -549,4 +564,9 @@ public class EditorBarView extends JPanel {
     public JTextField getTxtName() {
         return txtName;
     }
+
+    public JButton getLine() {
+        return lineButton;
+    }
 }
+

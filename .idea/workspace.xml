@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="boss pt2" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,11 +71,11 @@
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ZombieApocalypse.Model.Enemy" />
       <recent name="ZombieApocalypse.View.Enemy" />
       <recent name="ZombieApocalypse.Model" />
       <recent name="ZombieApocalypse.Model.Guns" />
       <recent name="ZombieApocalypse.View.Gun" />
+      <recent name="ZombieApocalypse.Model.Enemy" />
     </key>
   </component>
   <component name="RunManager">
@@ -422,12 +432,12 @@
       <option name="project" value="LOCAL" />
       <updated>1686222805791</updated>
     </task>
-    <task id="LOCAL-00088" summary="boss pt2">
-      <created>1686236279404</created>
+    <task id="LOCAL-00088" summary="Editor pt.2">
+      <created>1686223140780</created>
       <option name="number" value="00088" />
       <option name="presentableId" value="LOCAL-00088" />
       <option name="project" value="LOCAL" />
-      <updated>1686236279404</updated>
+      <updated>1686223140780</updated>
     </task>
     <option name="localTasksCounter" value="89" />
     <servers />
@@ -445,6 +455,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Settings pt.4" />
     <MESSAGE value="Settings pt.5" />
     <MESSAGE value="Settings pt.6" />
     <MESSAGE value="Settings pt.7" />
@@ -469,7 +480,6 @@
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="skin animation Boss" />
     <MESSAGE value="Editor pt.2" />
-    <MESSAGE value="boss pt2" />
-    <option name="LAST_COMMIT_MESSAGE" value="boss pt2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editor pt.2" />
   </component>
 </project>

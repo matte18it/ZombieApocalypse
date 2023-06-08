@@ -9,6 +9,8 @@ import ZombieApocalypse.Utility.Settings;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class EditorView extends JPanel {
     private EditorController controller;
@@ -18,6 +20,7 @@ public class EditorView extends JPanel {
     private final int numeroImmagini = 8;
     private final Image[] images = new Image[numeroImmagini];
     private String path;
+    public boolean line = true;
 
     //Gestione dei blocchi disegnabili
     enum Block { TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25, ROAD26}
@@ -68,15 +71,36 @@ public class EditorView extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.clearRect(0, 1280, 0, 1280);
+
+        int x = 0, y = 0;
+        g.setColor(Color.RED);
 
         //Inizializzo la mappa dell'editor
-        for(int i = 0; i < world.length; i++) {
-            int x = i * Settings.CELL_SIZEX;
-            for(int j = 0; j < world.length; j++) {
-                int y = j * Settings.CELL_SIZEY;
-                g.drawImage(images[0], x, y, null);
+        for(int i = 0; i < world.length+1; i++) {
+            x = i * Settings.CELL_SIZEX;
+            for(int j = 0; j < world.length+1; j++) {
+                y = j * Settings.CELL_SIZEY;
+
+                if(i < world.length && j < world[i].length)
+                    g.drawImage(images[world[i][j].ordinal()], x, y, null);
+
+                if(line){
+                    g.drawLine(x-Settings.CELL_SIZEX, y-Settings.CELL_SIZEY, x, y-Settings.CELL_SIZEY);
+                    g.drawLine(x-Settings.CELL_SIZEX, y-Settings.CELL_SIZEY, x-Settings.CELL_SIZEX, y);
+                }
             }
         }
+        if(line)
+            g.drawLine(1280, 0, 1280, 1280);
+    }
+
+    public boolean getLine(){
+        return line;
+    }
+
+    public void setLine(boolean l){
+        line = l;
     }
 
 }
