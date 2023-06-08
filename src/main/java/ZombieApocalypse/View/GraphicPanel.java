@@ -154,6 +154,7 @@ public class GraphicPanel extends JPanel {
                 g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenadeModel().imagePosition.x, Game.getInstance().getGrenadeModel().imagePosition.y, Game.getInstance().getGrenadeModel().getWidth(), Game.getInstance().getGrenadeModel().getHeight(), null);
 
         }
+
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
 

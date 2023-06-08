@@ -5,32 +5,159 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bug Fix">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo/Colpo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo/Colpo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Colpo/Colpo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Colpo/Colpo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Hit/Hit1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Hit/Hit2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Hit/Hit3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/BossCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_23__22_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_23__22_13__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_23__10_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_23__10_25__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_23__13_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_23__13_08__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_23__19_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_23__19_43__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_06_23__10_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_06_23__10_08__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_06_23__15_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_06_23__15_58__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_06_23__17_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_06_23__17_00__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_12__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_17__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__19_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__19_44__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_06_23__10_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_06_23__10_50__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_06_23__17_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_06_23__17_28__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_06_23__20_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_06_23__20_04__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_23__14_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_23__14_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_06_23__09_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_06_23__09_45__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_06_23__09_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_06_23__09_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_06_23__17_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_06_23__17_43__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2023_10_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2023_10_45__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack1/Attack9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack2/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack2/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack2/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack2/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack2/Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Attack2/Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo/Colpo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo/Colpo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death/Death5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit/Hit3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle/Idle5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk/Walk9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack1/Attack9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack2/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack2/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack2/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack2/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack2/Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Attack2/Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Colpo/Colpo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Colpo/Colpo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Death/Death1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Death/Death2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Death/Death3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Death/Death4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Death/Death5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Hit/Hit1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Hit/Hit2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Hit/Hit3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Idle/Idle1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Idle/Idle2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Idle/Idle3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Idle/Idle4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Idle/Idle5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Boss/BossVerde/Walk/Walk9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,10 +215,11 @@
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Colpo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ZombieApocalypse.View.Enemy" />
+      <recent name="ZombieApocalypse.Model" />
       <recent name="ZombieApocalypse.Model.Guns" />
       <recent name="ZombieApocalypse.View.Gun" />
       <recent name="ZombieApocalypse.Model.Enemy" />
-      <recent name="ZombieApocalypse" />
     </key>
   </component>
   <component name="RunManager">
