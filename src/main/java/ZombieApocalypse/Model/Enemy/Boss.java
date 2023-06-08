@@ -21,12 +21,15 @@ public class Boss extends Enemy{
     Random m=new Random();
     public boolean update() {
         //Gestione della Morte
-        if(healt<=0 && !dying){
+
+        if(healt<=0 && countDeath<=8){
+            countDeath++;
             dying=true;
-            int c=m.nextInt(4,9);
-            Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
-            return false;
+            return true;
             }
+
+        if(countDeath>8)
+            return true;
 
         //Gestione della Pausa del gioco
         if(Game.getInstance().getBackMenu()){
@@ -35,17 +38,17 @@ public class Boss extends Enemy{
         }
         //Gestione delle Hit
         if(hit){
-            if(countHit<30){
+            if(countHit<10){
                 countHit++;}
             else
                 stopHit();
         }
         //Gestione delle hit al Player
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-            Game.getInstance().getPlayerCharacter().hit();
+        //if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
+          //  Game.getInstance().getPlayerCharacter().hit();
 
         //Parte di IA da implementare
-        int f=m.nextInt(0,100);
+       /* int f=m.nextInt(0,100);
         if(f<20){
         int i=m.nextInt(0,4);
         switch (i){
@@ -60,7 +63,7 @@ public class Boss extends Enemy{
         } else
             isMoving=false;  //Fine delle animazioni di movimento
 
-
+*/
 
 
         return true;

@@ -44,7 +44,7 @@ public class Enemies {
             enem.x=b.getX()+b.getCenterX();
             enem.y=b.getY()+b.getCenterY();
             switch (b.type){
-                case BOSS -> {if(p.distance(enem)<80) b.gettingHit(damage);}
+                case BOSS -> {if(p.distance(enem)<120) b.gettingHit(damage);}
                 case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE ->{if(p.distance(enem)<30) b.gettingHit(damage);}
                 case FATZOMBIE -> {if(p.distance(enem)<45) b.gettingHit(damage);}
                 case KIDZOMBIE -> {if(p.distance(enem)<15) b.gettingHit(damage);}

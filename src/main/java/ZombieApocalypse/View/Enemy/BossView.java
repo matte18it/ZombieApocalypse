@@ -52,8 +52,41 @@ public class BossView implements EnemyViewInterface{
 
         currentImage = idleRight.getDefaultImage();
     }
+    private int count=0;
+    boolean b=true;
+
 
     public void update() {
+        if(enemyModel.dying){
+            if(enemyModel.countDeath==0 ||enemyModel.countDeath==2 ||enemyModel.countDeath==4 ||enemyModel.countDeath==6||enemyModel.countDeath==8){
+            switch (enemyModel.dir){
+                case LEFT -> {currentImage=deathLeft.update(); b=true;}
+                case RIGHT -> {currentImage=deathRight.update(); b=false;}
+                case UP,DOWN ->{if(b) currentImage=deathLeft.update(); else currentImage=deathRight.update();}
+        }  }return;}
+        if(!enemyModel.hit){
+        if(enemyModel.isMoving){
+            switch (enemyModel.dir){
+                case LEFT -> {currentImage=runAnimationLeft.update(); b=true;}
+                case RIGHT -> {currentImage=runAnimationRight.update(); b=false;}
+                case UP,DOWN ->{if(b) currentImage=runAnimationLeft.update(); else currentImage=runAnimationRight.update();}
+            }
+        }else if(count==2){
+            switch (enemyModel.dir){
+                case LEFT -> {currentImage=idleLeft.update(); b=true;}
+                case RIGHT -> {currentImage=idleRight.update(); b=false;}
+                case UP,DOWN ->{if(b) currentImage=idleLeft.update(); else currentImage=idleRight.update();}
+            } count=0;
+    }else count++;
+        }else{
+             if(count==2){
+                switch (enemyModel.dir){
+                    case LEFT -> {currentImage= hitLeft.update(); b=true;}
+                    case RIGHT -> {currentImage= hitRight.update(); b=false;}
+                    case UP,DOWN ->{if(b) currentImage= hitLeft.update(); else currentImage=hitRight.update();}
+                } count=0;
+            }else count++;
+        }
     }
 
     public Image getCurrentImage() {

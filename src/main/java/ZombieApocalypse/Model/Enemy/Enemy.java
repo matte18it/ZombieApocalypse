@@ -66,6 +66,7 @@ public  abstract class Enemy {
     }
     public int countHit=0;
     public boolean hit=false;
+    public int countDeath=0;
     public double turretCount=0;
 
     public void gettingHit(int damage) {
