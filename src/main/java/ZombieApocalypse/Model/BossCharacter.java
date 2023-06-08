@@ -93,12 +93,10 @@ public class BossCharacter {
     }
 
 
-    public void hit() {
-        if(countHit==0){
-
+    public void hit(int damage) {
             hit=true;
-            health--;
-        }
+            health=health-damage;
+
     }
 
 
@@ -135,7 +133,7 @@ public class BossCharacter {
             x -= (20*speed);
         else if(dir== Settings.movementDirection.UP && Game.getInstance().getWorld().isGround0(getX(), getY()-(20*speed)) && Game.getInstance().getWorld().isPlayer(getX(), getY()-(20*speed),centerX,centerY))
             y -= (20*speed);
-        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().getWorld().isGround0(getX(), getY()+height+(20*speed)) && Game.getInstance().getWorld().isPlayer(getX(), getY()+(20*speed),centerX,centerY))
+        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().getWorld().isGround0(getX(), getY()+height+(20*speed)) && Game.getInstance().getWorld().isPlayer(getX(), getY()+height+(20*speed),centerX,centerY))
             y += (20*speed);
         else
             movement=false;
@@ -148,6 +146,10 @@ public class BossCharacter {
 
 
     public void update() {
+        if(hit)
+            countHit++;
+        if(countHit==20)
+            stopHit();
         int f=m.nextInt(0,100);
         if(f<20){
             int i=m.nextInt(0,4);
@@ -166,5 +168,24 @@ public class BossCharacter {
     }
 
 
+    public void checkHitBox(Rectangle hitBox, int damage) {
+        if(this.hitBox.intersects(hitBox))
+            hit(damage);
+    }
+
+
+    public void checkDistanceHit(Point d, int damage) {
+        Point boss=new Point(x+centerX, y+centerY);
+
+        if(boss.distance(d)<60)
+            hit(damage);
+    }
+
+    public boolean checkBulletHitBox(Rectangle hitBox, int damage) {
+        if(this.hitBox.intersects(hitBox)){
+            hit(damage);
+        return true;}
+        return false;
+    }
 }
 

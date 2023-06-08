@@ -25,6 +25,7 @@ public class KnifeModel extends GunModel{
 
         attack=true;
         Enemies.getInstance().checkHitBox(hitBox, damage);
+        Game.getInstance().getBoss().checkHitBox(hitBox, damage);
 
         }
 

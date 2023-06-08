@@ -65,6 +65,7 @@ public class BossView {
     public void update() {
         boolean direction=false;
         Game.getInstance().getBoss().update();
+        if(!Game.getInstance().getBoss().getHit()){
         if(Game.getInstance().getBoss().isMoving()){
         if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
             currentImage= runAnimationLeft.update();
@@ -90,7 +91,33 @@ public class BossView {
                 currentImage= idleLeft.update();
             else
                 currentImage= idleRight.update(); countIdle=0;} else return; }
-    }
+
+    } else{ countIdle++;if(Game.getInstance().getBoss().isMoving()){
+        if(countIdle==3){
+            if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
+                currentImage= hitLeft.update();update();
+                direction=true;}
+            else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
+                currentImage= hitRight.update();
+                direction=false;}
+            else if(direction)
+                currentImage= hitLeft.update();
+            else
+                currentImage= hitRight.update(); countIdle=0;}
+
+
+
+        } else{ if(countIdle==3){
+            if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
+                currentImage= hitLeft.update();
+                direction=true;}
+            else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
+                currentImage= hitRight.update();
+                direction=false;}
+            else if(direction)
+                currentImage= hitLeft.update();
+            else
+                currentImage= hitRight.update(); countIdle=0;} else return; }}}
 
     public Image getCurrentImage() {
         return currentImage;

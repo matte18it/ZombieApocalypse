@@ -28,7 +28,7 @@ public class BulletShotgun extends Bullet{
             }
 
         if(!ending) {
-            if(Enemies.getInstance().checkBulletHitBox(hitBox, damage)){
+            if(Enemies.getInstance().checkBulletHitBox(hitBox, damage)|| Game.getInstance().getBoss().checkBulletHitBox(hitBox,damage)){
                 ending=true;
                 numFrame=0;
 

@@ -232,4 +232,8 @@ public class Game {
     public Point getPlayerPosition() {
         return new Point(character.getX()+character.centerX, character.getY()+character.centerY);
     }
+
+    public Point getBossPoint() {
+        return new Point(boss.x+boss.centerX, boss.y+boss.centerY);
+    }
 }
