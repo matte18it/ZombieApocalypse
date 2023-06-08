@@ -77,7 +77,7 @@ public class BulletShotgun extends Bullet{
                 numFrame=0;
             }
         }else{
-            if(numFrame<3){
+            if(numFrame<2){
                 numFrame++;
                 return true;}
             else
