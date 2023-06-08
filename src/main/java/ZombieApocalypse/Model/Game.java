@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Guns.GrenadeModel;
 import ZombieApocalypse.Model.Guns.KnifeModel;
 import ZombieApocalypse.Model.Guns.PistolModel;
@@ -21,6 +22,7 @@ public class Game {
     private final PistolModel pistol = new PistolModel();
     private final GrenadeModel grenade=new GrenadeModel();
     private final ShotgunModel shotgun=new ShotgunModel();
+    public BossCharacter boss=new BossCharacter();
     private boolean pause = false;
     private Point mousePoint=new Point(0,0);
 
@@ -31,6 +33,9 @@ public class Game {
     public boolean hasShotgun=false;
 
     private MenuBarModel menuBar;
+    public BossCharacter getBoss(){
+        return boss;
+    }
     public void setMenuBar(MenuBarView m){
         menuBar=new MenuBarModel(m);
     }

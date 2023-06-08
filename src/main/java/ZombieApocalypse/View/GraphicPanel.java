@@ -10,6 +10,7 @@ import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.View.Enemy.BossView;
 import ZombieApocalypse.View.Gun.*;
 import ZombieApocalypse.View.Player.CharacterView;
 
@@ -21,6 +22,7 @@ public class GraphicPanel extends JPanel {
     int count;
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
+    private final BossView bossView=new BossView();
     private static final PistolView pistolView = new PistolView();
     private static final BanditPistolView pistolBandit=new BanditPistolView();
     private static final ShotgunView shotgunView=new ShotgunView();
@@ -154,6 +156,8 @@ public class GraphicPanel extends JPanel {
                 g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenadeModel().imagePosition.x, Game.getInstance().getGrenadeModel().imagePosition.y, Game.getInstance().getGrenadeModel().getWidth(), Game.getInstance().getGrenadeModel().getHeight(), null);
 
         }
+        if(! Game.getInstance().getBoss().die)
+            g.drawImage(bossView.getCurrentImage(), Game.getInstance().getBoss().getX(), Game.getInstance().getBoss().getY(), bossView.width, bossView.height, null);
 
         g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
 
@@ -161,6 +165,7 @@ public class GraphicPanel extends JPanel {
 
     }
     public void update() {
+        bossView.update();
         characterView.update();
         //Sposto l'arma dove è il character senza girarla
         if(Game.getInstance().hasPistol)

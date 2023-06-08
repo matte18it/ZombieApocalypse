@@ -31,8 +31,8 @@ public class BossView {
 
 
 
-    public final int width = Settings.CELL_SIZEX;
-    public final int height = Settings.CELL_SIZEY;
+    public final int width = Settings.CELL_SIZEX*3;
+    public final int height = Settings.CELL_SIZEY*3;
 
     private Image currentImage;
     Random m=new Random();
@@ -60,11 +60,36 @@ public class BossView {
 
         currentImage = idleRight.getDefaultImage();
     }
+    private int countIdle=0;
 
     public void update() {
+        boolean direction=false;
+        Game.getInstance().getBoss().update();
+        if(Game.getInstance().getBoss().isMoving()){
+        if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
+            currentImage= runAnimationLeft.update();
+        direction=true;}
+        else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
+            currentImage=runAnimationRight.update();
+            direction=false;}
+        else if(direction)
+            currentImage= runAnimationLeft.update();
+        else
+            currentImage=runAnimationRight.update();
 
 
 
+    } else{ countIdle++;if(countIdle==3){
+            if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
+                currentImage= idleLeft.update();
+                direction=true;}
+            else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
+                currentImage= idleRight.update();
+                direction=false;}
+            else if(direction)
+                currentImage= idleLeft.update();
+            else
+                currentImage= idleRight.update(); countIdle=0;} else return; }
     }
 
     public Image getCurrentImage() {

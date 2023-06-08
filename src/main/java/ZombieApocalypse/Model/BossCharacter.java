@@ -6,6 +6,7 @@ import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
+import java.util.Random;
 
 
 public class BossCharacter {
@@ -85,7 +86,7 @@ public class BossCharacter {
         height=Settings.CELL_SIZEY*3;
         centerX=wight/2;
         centerY=height/2;
-        x=50;
+        x=1000;
         y=50;
         health=maxHealth;
         hitBox=new Rectangle(x,y,wight,height);
@@ -100,9 +101,7 @@ public class BossCharacter {
         }
     }
 
-    public void cure(){
-        health++;
-    }
+
     public void speedUp(){
         if(countSpeed==0){
             speedUp=true;
@@ -125,24 +124,45 @@ public class BossCharacter {
     }
     public boolean speedUp=false;
     public int countSpeed=0;
+    public boolean die=false;
 
 
     public void move() {
 
-        if(dir==Settings.movementDirection.RIGHT && Game.getInstance().getWorld().isGround0(getX()+wight+(10*speed), getY()) && Game.getInstance().getWorld().isEnemy(getX()+(10*speed), getY(), centerX, centerY) )
-            x += (10*speed);
-        else if(dir==Settings.movementDirection.LEFT && Game.getInstance().getWorld().isGround0(getX()-(10*speed), getY()) && Game.getInstance().getWorld().isEnemy(getX()-(10*speed), getY(),centerX,centerY))
-            x -= (10*speed);
-        else if(dir== Settings.movementDirection.UP && Game.getInstance().getWorld().isGround0(getX(), getY()-(10*speed)) && Game.getInstance().getWorld().isEnemy(getX(), getY()-(10*speed),centerX,centerY))
-            y -= (10*speed);
-        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().getWorld().isGround0(getX(), getY()+height+(10*speed)) && Game.getInstance().getWorld().isEnemy(getX(), getY()+(10*speed),centerX,centerY))
-            y += (10*speed);
+        if(dir==Settings.movementDirection.RIGHT && Game.getInstance().getWorld().isGround0(getX()+wight+(20*speed), getY())  && Game.getInstance().getWorld().isPlayer(getX()+wight+(20*speed), getY(), centerX, centerY))
+            x += (20*speed);
+        else if(dir==Settings.movementDirection.LEFT && Game.getInstance().getWorld().isGround0(getX()-(20*speed), getY()) && Game.getInstance().getWorld().isPlayer(getX()-(20*speed), getY(),centerX,centerY))
+            x -= (20*speed);
+        else if(dir== Settings.movementDirection.UP && Game.getInstance().getWorld().isGround0(getX(), getY()-(20*speed)) && Game.getInstance().getWorld().isPlayer(getX(), getY()-(20*speed),centerX,centerY))
+            y -= (20*speed);
+        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().getWorld().isGround0(getX(), getY()+height+(20*speed)) && Game.getInstance().getWorld().isPlayer(getX(), getY()+(20*speed),centerX,centerY))
+            y += (20*speed);
         else
             movement=false;
 
 
         hitBox.x=x;
         hitBox.y=y;
+    }
+    Random m=new Random();
+
+
+    public void update() {
+        int f=m.nextInt(0,100);
+        if(f<20){
+            int i=m.nextInt(0,4);
+            switch (i){
+                case 0 ->{startMovementUp();}
+                case 1 ->{startMovementDown();}
+                case 2 ->{startMovementLeft();}
+                case 3 ->{startMovementRight();}
+            } move();
+            //Aggiornamento ad ogni clock delle hitbox
+            hitBox.x=x;
+            hitBox.y=y;
+        } else
+            movement=false;  //Fine delle animazioni di movimento
+
     }
 
 
