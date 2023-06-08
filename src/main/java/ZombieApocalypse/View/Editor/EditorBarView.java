@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class EditorBarView extends JPanel {
-    public static int bloccoAttivo = 1;
+    public static int bloccoAttivo = 0;
     private EditorBarController controller;
     private GridBagConstraints c;
 
@@ -60,13 +60,45 @@ public class EditorBarView extends JPanel {
         save = new JButton();
         exit = new JButton();
         reset = new JButton();
+        road1 = new JButton();
+        road2 = new JButton();
+        road3 = new JButton();
+        road4 = new JButton();
+        road5 = new JButton();
+        road6 = new JButton();
+        road7 = new JButton();
+        road8 = new JButton();
+        road9 = new JButton();
+        road10 = new JButton();
+        road11 = new JButton();
+        road12 = new JButton();
+        road13 = new JButton();
+        road14 = new JButton();
+        road15 = new JButton();
+        road16 = new JButton();
+        road17 = new JButton();
+        road18 = new JButton();
+        road19 = new JButton();
+        road20 = new JButton();
+        road21 = new JButton();
+        road22 = new JButton();
+        road23 = new JButton();
+        road24 = new JButton();
+        road25 = new JButton();
+        dirt0 = new JButton();
+        dirt1 = new JButton();
+        dirt2 = new JButton();
+        dirt3 = new JButton();
+        divisorio = new JButton();
+        water0 = new JButton();
+        flower1 = new JButton();
+        flower2 = new JButton();
     }
 
     public void Page1() {
         c.gridx = 0; c.gridy = 0;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        dirt0 = new JButton();
         dirt0.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Terreno/Terreno0.png", 48, 48, false));
         dirt0.setFocusPainted(false);
         dirt0.setContentAreaFilled(false);
@@ -79,7 +111,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 2;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        dirt1 = new JButton();
         dirt1.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Terreno/Terreno1.png", 48, 48, false));
         dirt1.setFocusPainted(false);
         dirt1.setContentAreaFilled(false);
@@ -92,7 +123,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 4;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        dirt2 = new JButton();
         dirt2.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Terreno/Terreno2.png", 48, 48, false));
         dirt2.setFocusPainted(false);
         dirt2.setContentAreaFilled(false);
@@ -105,7 +135,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 6;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        dirt3 = new JButton();
         dirt3.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Terreno/Terreno3.png", 48, 48, false));
         dirt3.setFocusPainted(false);
         dirt3.setContentAreaFilled(false);
@@ -118,7 +147,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 8;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        divisorio = new JButton();
         divisorio.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/DivisorioAcquaTerra/Divisorio1.png", 48, 48, false));
         divisorio.setFocusPainted(false);
         divisorio.setContentAreaFilled(false);
@@ -131,7 +159,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 10;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        water0 = new JButton();
         water0.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Water/Water0.png", 48, 48, false));
         water0.setFocusPainted(false);
         water0.setContentAreaFilled(false);
@@ -144,7 +171,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 12;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        flower1 = new JButton();
         flower1.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Flower/Flower1.png", 48, 48, false));
         flower1.setFocusPainted(false);
         flower1.setContentAreaFilled(false);
@@ -157,7 +183,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 14;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        flower2 = new JButton();
         flower2.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Flower/Flower2.png", 48, 48, false));
         flower2.setFocusPainted(false);
         flower2.setContentAreaFilled(false);
@@ -170,7 +195,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 16;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road1 = new JButton();
         road1.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road1.png", 48, 48, false));
         road1.setFocusPainted(false);
         road1.setContentAreaFilled(false);
@@ -183,7 +207,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 18;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road2 = new JButton();
         road2.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road2.png", 48, 48, false));
         road2.setFocusPainted(false);
         road2.setContentAreaFilled(false);
@@ -196,7 +219,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 20;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road3 = new JButton();
         road3.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road3.png", 48, 48, false));
         road3.setFocusPainted(false);
         road3.setContentAreaFilled(false);
@@ -209,7 +231,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 22;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road4 = new JButton();
         road4.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road4.png", 48, 48, false));
         road4.setFocusPainted(false);
         road4.setContentAreaFilled(false);
@@ -222,7 +243,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 24;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road5 = new JButton();
         road5.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road5.png", 48, 48, false));
         road5.setFocusPainted(false);
         road5.setContentAreaFilled(false);
@@ -235,7 +255,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 26;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road6 = new JButton();
         road6.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road6.png", 48, 48, false));
         road6.setFocusPainted(false);
         road6.setContentAreaFilled(false);
@@ -248,7 +267,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 28;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road7 = new JButton();
         road7.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road7.png", 48, 48, false));
         road7.setFocusPainted(false);
         road7.setContentAreaFilled(false);
@@ -261,7 +279,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 30;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road8 = new JButton();
         road8.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road8.png", 48, 48, false));
         road8.setFocusPainted(false);
         road8.setContentAreaFilled(false);
@@ -274,7 +291,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 32;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road9 = new JButton();
         road9.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road9.png", 48, 48, false));
         road9.setFocusPainted(false);
         road9.setContentAreaFilled(false);
@@ -287,7 +303,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 34;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road10 = new JButton();
         road10.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road10.png", 48, 48, false));
         road10.setFocusPainted(false);
         road10.setContentAreaFilled(false);
@@ -300,7 +315,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 36;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road11 = new JButton();
         road11.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road11.png", 48, 48, false));
         road11.setFocusPainted(false);
         road11.setContentAreaFilled(false);
@@ -313,7 +327,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 38;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road12 = new JButton();
         road12.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road12.png", 48, 48, false));
         road12.setFocusPainted(false);
         road12.setContentAreaFilled(false);
@@ -326,7 +339,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 40;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road13 = new JButton();
         road13.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road13.png", 48, 48, false));
         road13.setFocusPainted(false);
         road13.setContentAreaFilled(false);
@@ -367,7 +379,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 2;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road14 = new JButton();
         road14.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road14.png", 48, 48, false));
         road14.setFocusPainted(false);
         road14.setContentAreaFilled(false);
@@ -380,7 +391,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 4;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road15 = new JButton();
         road15.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road15.png", 48, 48, false));
         road15.setFocusPainted(false);
         road15.setContentAreaFilled(false);
@@ -393,7 +403,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 5;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road16 = new JButton();
         road16.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road16.png", 48, 48, false));
         road16.setFocusPainted(false);
         road16.setContentAreaFilled(false);
@@ -406,7 +415,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 7;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road17 = new JButton();
         road17.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road17.png", 48, 48, false));
         road17.setFocusPainted(false);
         road17.setContentAreaFilled(false);
@@ -419,7 +427,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 9;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road18 = new JButton();
         road18.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road18.png", 48, 48, false));
         road18.setFocusPainted(false);
         road18.setContentAreaFilled(false);
@@ -432,7 +439,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 11;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road19 = new JButton();
         road19.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road19.png", 48, 48, false));
         road19.setFocusPainted(false);
         road19.setContentAreaFilled(false);
@@ -445,7 +451,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 13;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road20 = new JButton();
         road20.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road20.png", 48, 48, false));
         road20.setFocusPainted(false);
         road20.setContentAreaFilled(false);
@@ -458,7 +463,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 15;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road21 = new JButton();
         road21.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road21.png", 48, 48, false));
         road21.setFocusPainted(false);
         road21.setContentAreaFilled(false);
@@ -471,7 +475,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 17;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road22 = new JButton();
         road22.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road22.png", 48, 48, false));
         road22.setFocusPainted(false);
         road22.setContentAreaFilled(false);
@@ -484,7 +487,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 19;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road23 = new JButton();
         road23.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road23.png", 48, 48, false));
         road23.setFocusPainted(false);
         road23.setContentAreaFilled(false);
@@ -497,7 +499,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 21;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road24 = new JButton();
         road24.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road24.png", 48, 48, false));
         road24.setFocusPainted(false);
         road24.setContentAreaFilled(false);
@@ -510,7 +511,6 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 23;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
-        road25 = new JButton();
         road25.setIcon(ResourcesLoader.getInstance().getImageIcon("/AmbienteDiGioco/Road/Road25.png", 48, 48, false));
         road25.setFocusPainted(false);
         road25.setContentAreaFilled(false);
@@ -586,6 +586,138 @@ public class EditorBarView extends JPanel {
 
     public JButton getLine() {
         return lineButton;
+    }
+
+    public JButton getDirt0() {
+        return dirt0;
+    }
+
+    public JButton getDirt1() {
+        return dirt1;
+    }
+
+    public JButton getDirt2() {
+        return dirt2;
+    }
+
+    public JButton getDirt3() {
+        return dirt3;
+    }
+
+    public JButton getWater0() {
+        return water0;
+    }
+
+    public JButton getDivisorio() {
+        return divisorio;
+    }
+
+    public JButton getFlower1() {
+        return flower1;
+    }
+
+    public JButton getFlower2() {
+        return flower2;
+    }
+
+    public JButton getRoad1() {
+        return road1;
+    }
+
+    public JButton getRoad2() {
+        return road2;
+    }
+
+    public JButton getRoad3() {
+        return road3;
+    }
+
+    public JButton getRoad4() {
+        return road4;
+    }
+
+    public JButton getRoad5() {
+        return road5;
+    }
+
+    public JButton getRoad6() {
+        return road6;
+    }
+
+    public JButton getRoad7() {
+        return road7;
+    }
+
+    public JButton getRoad8() {
+        return road8;
+    }
+
+    public JButton getRoad9() {
+        return road9;
+    }
+
+    public JButton getRoad10() {
+        return road10;
+    }
+
+    public JButton getRoad11() {
+        return road11;
+    }
+
+    public JButton getRoad12() {
+        return road12;
+    }
+
+    public JButton getRoad13() {
+        return road13;
+    }
+
+    public JButton getRoad14() {
+        return road14;
+    }
+
+    public JButton getRoad15() {
+        return road15;
+    }
+
+    public JButton getRoad16() {
+        return road16;
+    }
+
+    public JButton getRoad17() {
+        return road17;
+    }
+
+    public JButton getRoad18() {
+        return road18;
+    }
+
+    public JButton getRoad19() {
+        return road19;
+    }
+
+    public JButton getRoad20() {
+        return road20;
+    }
+
+    public JButton getRoad21() {
+        return road21;
+    }
+
+    public JButton getRoad22() {
+        return road22;
+    }
+
+    public JButton getRoad23() {
+        return road23;
+    }
+
+    public JButton getRoad24() {
+        return road24;
+    }
+
+    public JButton getRoad25() {
+        return road25;
     }
 }
 
