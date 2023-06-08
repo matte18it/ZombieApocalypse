@@ -3,14 +3,17 @@ package ZombieApocalypse.Controller;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.View.Editor.EditorBarView;
+import ZombieApocalypse.View.Editor.EditorView;
 
 import java.awt.*;
 import java.awt.event.*;
 
 public class EditorBarController {
     private final EditorBarView view;
+    private EditorView editorView;
 
-    public EditorBarController(EditorBarView view) {
+    public EditorBarController(EditorBarView view, EditorView editorView) {
+        this.editorView = editorView;
         this.view = view;
         view.addFocusListener(new FocusAdapter() {
             @Override
@@ -58,6 +61,21 @@ public class EditorBarController {
                         view.getTxtName().setText("Insert map name:");
                     else if(GameData.lang.equals(GameData.Language.IT))
                         view.getTxtName().setText("Inserisci il nome della mappa:");
+            }
+        });
+
+        view.getLine().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(editorView.line){
+                    editorView.line = false;
+                    editorView.repaint();
+                }
+                else {
+                    editorView.line = true;
+                    editorView.repaint();
+                }
             }
         });
     }

@@ -168,7 +168,7 @@ public class GameFrame extends JPanel {
         frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
 
         editor = new EditorView();
-        editorBar = new EditorBarView();
+        editorBar = new EditorBarView(editor);
 
         frameGame.add(editor);
         frameGame.add(editorBar);
