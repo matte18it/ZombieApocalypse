@@ -81,9 +81,7 @@ public class PlayerCharacter  {
     }
 
 
-    private boolean sound=false;
 
-    // Metodo usato per musica in loop, riceve come argomento index da array Audio e lo passa a SetFile
 
     PlayerCharacter(){
         wight=Settings.CELL_SIZEX;
@@ -149,7 +147,6 @@ public class PlayerCharacter  {
         else
             movement=false;
 
-        if(sound)  sound = false; else  sound = true;
 
         hitBox.x=x;
         hitBox.y=y;

@@ -96,18 +96,15 @@ boolean stopAll=false;
         Point explosion=new Point(x+dimension/2,y+dimension/2);
         Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
 
-        if(numFrame<22 && numFrame>5){
-        if(explosion.distance(player)<dimension ){
+        if(numFrame<22 && numFrame>10){
+            Enemies.getInstance().checkCollisionHit(x,y,dimension/2, dimension/2, damage);
+
+            if(explosion.distance(player)<dimension ){
             Game.getInstance().getPlayerCharacter().hit();
 
         }
 
-            if(numFrame==6){
-                Game.getInstance().getBoss().checkDistanceHit(explosion, damage);
-
-                Enemies.getInstance().checkCollisionHit(x,y,dimension/2, dimension/2, damage);
-
-    }}}
+    }}
 }
 
 

@@ -25,7 +25,7 @@ public class BulletPistolView extends BulletView{
                 currentImage=bullet[3];
             else if(bulletModel.numFrame==1)
                 currentImage=bullet[4];
-            else if(bulletModel.numFrame==2)
+            else if(bulletModel.numFrame>=2)
                 currentImage=emptyImage;
         } }
 

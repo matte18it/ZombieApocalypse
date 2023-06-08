@@ -22,7 +22,7 @@ public class BulletPistol extends Bullet{
             }
 
         if(!ending) {
-            if(( Enemies.getInstance().checkBulletHitBox(hitBox, damage)) || Game.getInstance().getBoss().checkBulletHitBox(hitBox,damage)){
+            if(( Enemies.getInstance().checkBulletHitBox(hitBox, damage))){
                 ending=true;
                 numFrame=0;
             }
@@ -48,7 +48,7 @@ public class BulletPistol extends Bullet{
             }
 
         }else{
-            if(numFrame<3){
+            if(numFrame<2){
                 numFrame++;
                 return true;}
             else

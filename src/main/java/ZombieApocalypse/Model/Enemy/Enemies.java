@@ -25,14 +25,12 @@ public class Enemies {
             Enemy b=(Enemy) var1.next();
             enem.x=b.getX()+ b.centerX;
             enem.y=b.getY()+b.centerY;
-            if((b.type==EnemiesType.SKINNYZOMBIE || b.type==EnemiesType.TURRETZOMBIE || b.type==EnemiesType.BANDIT) && player.distance(enem)<16)
-                return false;
-            if(b.type==EnemiesType.FATZOMBIE && player.distance(enem)<24)
-                return false;
-            if(b.type==EnemiesType.KIDZOMBIE && player.distance(enem)<13)
-                return false;
-
-
+            switch (b.type){
+                case BOSS -> {if(player.distance(enem)<64) return false;}
+                case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {if(player.distance(enem)<16) return false;}
+                case FATZOMBIE -> {if(player.distance(enem)<24) return false;}
+                case KIDZOMBIE -> {if(player.distance(enem)<13) return false;}
+            }
         }
         return true;
     }
@@ -45,14 +43,13 @@ public class Enemies {
             Enemy b=(Enemy) var1.next();
             enem.x=b.getX()+b.getCenterX();
             enem.y=b.getY()+b.getCenterY();
-            if(b.type==EnemiesType.SKINNYZOMBIE && p.distance(enem)<20)
-                b.gettingHit(damage);
-            if(b.type==EnemiesType.FATZOMBIE && p.distance(enem)<30)
-                b.gettingHit(damage);
-            if(b.type==EnemiesType.KIDZOMBIE && p.distance(enem)<15)
-                b.gettingHit(damage);
-            if(b.type==EnemiesType.TURRETZOMBIE && p.distance(enem)<20)
-                b.gettingHit(damage);
+            switch (b.type){
+                case BOSS -> {if(p.distance(enem)<80) b.gettingHit(damage);}
+                case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE ->{if(p.distance(enem)<30) b.gettingHit(damage);}
+                case FATZOMBIE -> {if(p.distance(enem)<45) b.gettingHit(damage);}
+                case KIDZOMBIE -> {if(p.distance(enem)<15) b.gettingHit(damage);}
+            }
+
         }
         }
 
@@ -88,6 +85,8 @@ public class Enemies {
     public void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
     public void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
     public void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
+    public void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
+
 
 
     public boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
@@ -102,7 +101,7 @@ public class Enemies {
 
 
 
-    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, EMPTY};
+    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};
     private final List<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 

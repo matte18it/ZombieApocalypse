@@ -33,15 +33,10 @@ public class World {
             }}
     }
     public boolean isEnemy(int x, int y, int cX, int cY){
-        return Enemies.getInstance().checkCollision(x,y, cX, cY) && isBoss(x,y, cX, cY);
+        return Enemies.getInstance().checkCollision(x,y, cX, cY) ;
     }
 
-    private boolean isBoss(int x, int y, int cX, int cY) {
-        Point p=new Point(x+ cX,y+cY);
-        Point boss=new Point(Game.getInstance().getBoss().x+Game.getInstance().getBoss().centerX, Game.getInstance().getBoss().y+Game.getInstance().getBoss().centerY);
-        return !(boss.distance(p) < 50);
 
-    }
 
 
     private boolean isValidPosition(int x, int y) {

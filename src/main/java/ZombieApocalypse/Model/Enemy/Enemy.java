@@ -3,7 +3,9 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.View.Enemy.BossView;
 import ZombieApocalypse.View.Enemy.EnemyView;
+import ZombieApocalypse.View.Enemy.EnemyViewInterface;
 import ZombieApocalypse.View.ItemView;
 
 import java.awt.*;
@@ -39,10 +41,10 @@ public  abstract class Enemy {
         return wight;
     }
     public int getHeight(){return height;}
-    EnemyView view;
+    EnemyViewInterface view;
     public Enemies.EnemiesType type;
     Rectangle hitBox;
-    public EnemyView getView(){
+    public EnemyViewInterface getView(){
         return view;
     }
 
@@ -56,7 +58,10 @@ public  abstract class Enemy {
         centerX=wight/2;
         centerY=height/2;
         hitBox=new Rectangle(x,y,wight, height);
-        view=new EnemyView(type, this);
+        if(type== Enemies.EnemiesType.BOSS)
+            view=new BossView( this);
+        else
+            view=new EnemyView(type, this);
 
     }
     public int countHit=0;

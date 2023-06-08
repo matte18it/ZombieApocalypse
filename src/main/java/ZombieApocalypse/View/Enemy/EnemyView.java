@@ -10,8 +10,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-public class EnemyView {
-    private  CharacterAnimation runAnimationUp;
+public class EnemyView  implements  EnemyViewInterface{
+    private CharacterAnimation runAnimationUp;
     private  CharacterAnimation runAnimationLeft;
     private  CharacterAnimation runAnimationDown;
     private CharacterAnimation runAnimationRight;

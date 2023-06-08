@@ -1,5 +1,7 @@
 package ZombieApocalypse.View.Enemy;
 
+import ZombieApocalypse.Model.Enemy.Enemies;
+import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.Settings;
@@ -8,23 +10,23 @@ import ZombieApocalypse.View.CharacterAnimation;
 import java.awt.*;
 import java.util.Random;
 
-public class BossView {
+public class BossView implements EnemyViewInterface{
 
-    private final CharacterAnimation runAnimationLeft;
-    private final CharacterAnimation runAnimationRight;
-    private final CharacterAnimation hitLeft;
-    private final CharacterAnimation hitRight;
-    private final CharacterAnimation idleRight;
-    private final CharacterAnimation idleLeft;
-    private final CharacterAnimation deathRight;
+    private CharacterAnimation runAnimationLeft;
+    private  CharacterAnimation runAnimationRight;
+    private CharacterAnimation hitLeft;
+    private CharacterAnimation hitRight;
+    private CharacterAnimation idleRight;
+    private  CharacterAnimation idleLeft;
+    private  CharacterAnimation deathRight;
 
-    private final CharacterAnimation deathLeft;
-    private final CharacterAnimation attackLeft1;
+    private  CharacterAnimation deathLeft;
+    private  CharacterAnimation attackLeft1;
 
-    private final CharacterAnimation attackRight1;
-    private final CharacterAnimation attackRight2;
+    private CharacterAnimation attackRight1;
+    private CharacterAnimation attackRight2;
 
-    private final CharacterAnimation attackLeft2;
+    private CharacterAnimation attackLeft2;
 
 
 
@@ -36,14 +38,28 @@ public class BossView {
 
     private Image currentImage;
     Random m=new Random();
+    Enemy enemyModel;
+    public BossView(Enemy enemy) {
+        enemyModel=enemy;
 
-    public BossView() {
         String g;
         int i=m.nextInt(0, 10000);
         //if(i==0)
           //  g="Nemici/Boss/BossBlu";
         //else
             g="Nemici/Boss/BossVerde";
+            load(g);
+
+        currentImage = idleRight.getDefaultImage();
+    }
+
+    public void update() {
+    }
+
+    public Image getCurrentImage() {
+        return currentImage;
+    }
+    private void load(String g){
         runAnimationLeft = new CharacterAnimation(g+"/Walk/WalkLeft", 10);
         runAnimationRight = new CharacterAnimation(g+"/Walk/WalkRight", 10);
         hitLeft=new CharacterAnimation(g+"/Hit/HitLeft",3);
@@ -57,69 +73,5 @@ public class BossView {
         deathLeft=new CharacterAnimation(g+"/Death/DeathLeft", 5);
         deathRight=new CharacterAnimation(g+"/Death/DeathRight", 5);
 
-
-        currentImage = idleRight.getDefaultImage();
-    }
-    private int countIdle=0;
-
-    public void update() {
-        boolean direction=false;
-        Game.getInstance().getBoss().update();
-        if(!Game.getInstance().getBoss().getHit()){
-        if(Game.getInstance().getBoss().isMoving()){
-        if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
-            currentImage= runAnimationLeft.update();
-        direction=true;}
-        else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
-            currentImage=runAnimationRight.update();
-            direction=false;}
-        else if(direction)
-            currentImage= runAnimationLeft.update();
-        else
-            currentImage=runAnimationRight.update();
-
-
-
-    } else{ countIdle++;if(countIdle==3){
-            if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
-                currentImage= idleLeft.update();
-                direction=true;}
-            else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
-                currentImage= idleRight.update();
-                direction=false;}
-            else if(direction)
-                currentImage= idleLeft.update();
-            else
-                currentImage= idleRight.update(); countIdle=0;} else return; }
-
-    } else{ countIdle++;if(Game.getInstance().getBoss().isMoving()){
-        if(countIdle==3){
-            if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
-                currentImage= hitLeft.update();update();
-                direction=true;}
-            else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
-                currentImage= hitRight.update();
-                direction=false;}
-            else if(direction)
-                currentImage= hitLeft.update();
-            else
-                currentImage= hitRight.update(); countIdle=0;}
-
-
-
-        } else{ if(countIdle==3){
-            if( Game.getInstance().getBoss().dir== Settings.movementDirection.LEFT){
-                currentImage= hitLeft.update();
-                direction=true;}
-            else if(Game.getInstance().getBoss().dir== Settings.movementDirection.RIGHT){
-                currentImage= hitRight.update();
-                direction=false;}
-            else if(direction)
-                currentImage= hitLeft.update();
-            else
-                currentImage= hitRight.update(); countIdle=0;} else return; }}}
-
-    public Image getCurrentImage() {
-        return currentImage;
     }
 }
