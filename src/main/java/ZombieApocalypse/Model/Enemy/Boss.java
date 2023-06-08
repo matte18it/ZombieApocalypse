@@ -1,6 +1,8 @@
 package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Guns.Bullet;
+import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
 
@@ -14,6 +16,7 @@ public class Boss extends Enemy{
         height=Settings.CELL_SIZEY*4;
         type= Enemies.EnemiesType.BOSS;
         healt=50;
+        dir= Settings.movementDirection.LEFT;
         super.setSize();
     }
 
@@ -63,11 +66,27 @@ public class Boss extends Enemy{
         } else
             isMoving=false;  //Fine delle animazioni di movimento
 
-*/
+*/  //Comando per sparare
+        isAttack1();
+if(countAttack<23)
+    countAttack++;
+if(countAttack==23)
+    stopAttack1();
+if(countAttack==20)
+    shoot();
+
 
 
         return true;
     }
+
+    private void shoot() {
+        switch (dir){
+            case LEFT -> Bullets.getInstance().BulletBoss(x+30,y+35, 25, 0, Bullet.Direction.LEFT);
+            case RIGHT -> Bullets.getInstance().BulletBoss(x+wight-50,y+35, 25, 0, Bullet.Direction.RIGHT);
+        }
+    }
+
 
     private void moveRight() {
         if(Game.getInstance().getWorld().isGround0(x+wight+20, y) && Game.getInstance().getWorld().isPlayer(x+20, y, centerX, centerY)){
@@ -75,6 +94,19 @@ public class Boss extends Enemy{
             isMoving=true;
             dir=Settings.movementDirection.RIGHT;}
     }
+    private void isAttack1() {
+        if(countAttack==0){
+            attack1=true;}}
+    private void stopAttack1() {
+        attack1=false;
+        countAttack=0;}
+    private void isAttack2() {
+        attack2=true;
+        countAttack++;}
+    private void stopAttack2() {
+        attack2=false;
+        countAttack=0;}
+
 
     private void moveLeft() {
         if(Game.getInstance().getWorld().isGround0(x-20, y) && Game.getInstance().getWorld().isPlayer(x-20, y, centerX, centerY)){

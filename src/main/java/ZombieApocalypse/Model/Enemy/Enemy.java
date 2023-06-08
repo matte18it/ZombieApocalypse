@@ -22,6 +22,9 @@ public  abstract class Enemy {
     public int getCenterY() {
         return centerY;
     }
+    public boolean attack1=false;
+    public boolean attack2=false;
+    public int countAttack=0;
 
     int x;
     int y;

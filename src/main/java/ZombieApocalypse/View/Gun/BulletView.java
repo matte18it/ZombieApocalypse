@@ -21,6 +21,7 @@ public abstract class BulletView {
             case PISTOL, SHOTGUN -> loadBulletPistol();
             case GRENADE -> loadBulletGrenade();
             case ZOMBIE -> loadBulletZombie();
+            case BOSS -> loadBulletBoss();
 
         }
 
@@ -30,6 +31,11 @@ public abstract class BulletView {
         bullet=new Image[7];
         for (int i = 0; i < 7; i++)
             bullet[i] = ResourcesLoader.getInstance().getImage("/Nemici/TURRETZOMBIE/Vomito" + i + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true);
+    }
+    private void loadBulletBoss() {
+        bullet=new Image[2];
+        for (int i = 0; i < 2; i++)
+            bullet[i] = ResourcesLoader.getInstance().getImage("/Nemici/Boss/BossVerde/Colpo/Colpo" + i + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true);
     }
 
     private void loadBulletGrenade() {

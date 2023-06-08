@@ -57,8 +57,17 @@ public class BossView implements EnemyViewInterface{
 
 
     public void update() {
+        if(enemyModel.attack1){
+            if(enemyModel.countAttack%2!=0){
+                switch (enemyModel.dir){
+                    case LEFT -> {currentImage=attackLeft1.update(); b=true;}
+                    case RIGHT -> {currentImage=attackRight1.update(); b=false;}
+                    case UP,DOWN ->{if(b) currentImage=attackLeft1.update(); else currentImage=attackRight1.update();}
+                }  }return;
+
+        }
         if(enemyModel.dying){
-            if(enemyModel.countDeath==0 ||enemyModel.countDeath==2 ||enemyModel.countDeath==4 ||enemyModel.countDeath==6||enemyModel.countDeath==8){
+            if(enemyModel.countDeath%2==0){
             switch (enemyModel.dir){
                 case LEFT -> {currentImage=deathLeft.update(); b=true;}
                 case RIGHT -> {currentImage=deathRight.update(); b=false;}

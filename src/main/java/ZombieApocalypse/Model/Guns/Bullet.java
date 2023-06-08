@@ -9,7 +9,7 @@ public abstract class Bullet {
      int velocityY;
      public boolean menu=false;
     public enum Direction{UP,DOWN,LEFT,RIGHT};
-    public enum BulletType{PISTOL, SHOTGUN, ZOMBIE, GRENADE};
+    public enum BulletType{PISTOL, SHOTGUN, ZOMBIE, GRENADE, BOSS};
     private  final BulletView bulletView;
     Rectangle hitBox;
      int x;
@@ -34,6 +34,7 @@ public abstract class Bullet {
         switch (type){
             case ZOMBIE -> bulletView=new BulletZombieView(this);
             case GRENADE -> bulletView=new BulletGrenadeView(this);
+            case BOSS -> bulletView=new BulletBossView(this);
             default -> bulletView=new BulletPistolView(this);
         }
         }

@@ -26,6 +26,9 @@ public class Bullets {
     public void BulletBandit(int  x, int  y, int dimension, double angle, Bullet.Direction dir){
         this.bullets.add(new BulletBandit(x,y,dimension,angle,  dir));
     }
+    public void BulletBoss(int  x, int  y, int dimension, double angle, Bullet.Direction dir){
+        this.bullets.add(new BulletBoss(x,y,dimension,angle,  dir));
+    }
 
     public List<Bullet> getBullets(){return Collections.unmodifiableList(this.bullets);
     }
@@ -50,4 +53,5 @@ public class Bullets {
     public void BulletGrenadeBandit(int  x, int  y, int dimension, double angle, Bullet.Direction dir, int t){
         this.bullets.add(new BulletGrenadeBandit(x,y,dimension,angle,  dir, t));
     }
+
 }
