@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.5">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/EditorImage/sendButton.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/LoginController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,11 +60,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/EditorImage" />
       <recent name="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road" />
       <recent name="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Flower" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Audio" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.View.Enemy" />
@@ -92,13 +91,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Settings pt.6">
-      <created>1685467942961</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1685467942961</updated>
     </task>
     <task id="LOCAL-00045" summary="Settings pt.6">
       <created>1685468058040</created>
@@ -436,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686244604343</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Editor pt.5">
+      <created>1686246817464</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1686246817465</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

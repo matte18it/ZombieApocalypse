@@ -12,6 +12,7 @@ import java.awt.*;
 
 public class EditorBarView extends JPanel {
     public static int bloccoAttivo = 0;
+    public static ResourcesLoader loader = ResourcesLoader.getInstance();
     private EditorBarController controller;
     private GridBagConstraints c;
 
@@ -537,9 +538,9 @@ public class EditorBarView extends JPanel {
             txtName.setText("Nome mappa:");
         txtName.setForeground(new Color(156, 156, 156));
         txtName.setFont(font);
-        txtName.setPreferredSize(new Dimension(150, 40));
-        txtName.setMaximumSize(new Dimension(150, 40));
-        txtName.setMinimumSize(new Dimension(150, 40));
+        txtName.setPreferredSize(new Dimension(150, 50));
+        txtName.setMaximumSize(new Dimension(150, 50));
+        txtName.setMinimumSize(new Dimension(150, 50));
         c.gridx = 0; c.gridy = 26;
         add(txtName, c);
 
@@ -548,6 +549,12 @@ public class EditorBarView extends JPanel {
 
         save.setText("Save");
         save.setFont(font);
+        save.setForeground(Color.WHITE);
+        save.setIcon(loader.getImageIcon("/EditorImage/sendButton.png", 80, 40, false));
+        save.setHorizontalTextPosition(JButton.CENTER);
+        save.setVerticalTextPosition(JButton.CENTER);
+        save.setBorderPainted(false);
+        save.setFocusPainted(false);
         save.setPreferredSize(new Dimension(80, 40));
         save.setMaximumSize(new Dimension(80, 40));
         save.setMinimumSize(new Dimension(80, 40));
@@ -559,6 +566,12 @@ public class EditorBarView extends JPanel {
 
         lineButton.setText("Line");
         lineButton.setFont(font);
+        lineButton.setForeground(Color.WHITE);
+        lineButton.setIcon(loader.getImageIcon("/EditorImage/sendButton.png", 80, 40, false));
+        lineButton.setHorizontalTextPosition(JButton.CENTER);
+        lineButton.setVerticalTextPosition(JButton.CENTER);
+        lineButton.setBorderPainted(false);
+        lineButton.setFocusPainted(false);
         lineButton.setPreferredSize(new Dimension(80, 40));
         lineButton.setMaximumSize(new Dimension(80, 40));
         lineButton.setMinimumSize(new Dimension(80, 40));
@@ -570,6 +583,12 @@ public class EditorBarView extends JPanel {
 
         reset.setText("Reset");
         reset.setFont(font);
+        reset.setForeground(Color.WHITE);
+        reset.setIcon(loader.getImageIcon("/EditorImage/sendButton.png", 80, 40, false));
+        reset.setHorizontalTextPosition(JButton.CENTER);
+        reset.setVerticalTextPosition(JButton.CENTER);
+        reset.setBorderPainted(false);
+        reset.setFocusPainted(false);
         reset.setPreferredSize(new Dimension(80, 40));
         reset.setMaximumSize(new Dimension(80, 40));
         reset.setMinimumSize(new Dimension(80, 40));
@@ -581,9 +600,15 @@ public class EditorBarView extends JPanel {
 
         exit.setText("Exit");
         exit.setFont(font);
+        exit.setForeground(Color.WHITE);
         exit.setPreferredSize(new Dimension(80, 40));
         exit.setMaximumSize(new Dimension(80, 40));
         exit.setMinimumSize(new Dimension(80, 40));
+        exit.setIcon(loader.getImageIcon("/EditorImage/sendButton.png", 80, 40, false));
+        exit.setHorizontalTextPosition(JButton.CENTER);
+        exit.setVerticalTextPosition(JButton.CENTER);
+        exit.setBorderPainted(false);
+        exit.setFocusPainted(false);
         c.gridx = 0; c.gridy = 34;
         add(exit, c);
 
