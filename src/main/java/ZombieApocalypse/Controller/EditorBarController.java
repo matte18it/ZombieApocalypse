@@ -47,7 +47,7 @@ public class EditorBarController {
         view.getTxtName().addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                if(view.getTxtName().getText().equals("Insert map name") || view.getTxtName().getText().equals("Inserisci il nome della mappa") )
+                if(view.getTxtName().getText().equals("Insert map name:") || view.getTxtName().getText().equals("Inserisci il nome della mappa:") )
                     view.getTxtName().setText("");
             }
 

@@ -4,47 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="skin animation Boss">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Flower/Flower1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Editor/EditorModel.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Terreno/Terreno1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Terreno/Terreno1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/TilesetBlock/Tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/SettingsImage/Thumbs.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Terreno/Terreno1.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Terreno/Terreno1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/TilesetBlock/Tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SettingsImage/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletPistol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletPistol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +57,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Flower" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Audio" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Walk" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Idle" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Death" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/Boss/BossBlu/Hit" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.View.Enemy" />
@@ -126,13 +88,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Settings pt.2">
-      <created>1685364950992</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1685364950992</updated>
     </task>
     <task id="LOCAL-00039" summary="Settings pt.3">
       <created>1685371158013</created>
@@ -470,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686211963759</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Editor pt.2">
+      <created>1686222805790</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1686222805791</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,7 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Settings pt.3" />
     <MESSAGE value="Settings pt.4" />
     <MESSAGE value="Settings pt.5" />
     <MESSAGE value="Settings pt.6" />
@@ -511,6 +472,7 @@
     <MESSAGE value="Editor pt.1" />
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="skin animation Boss" />
-    <option name="LAST_COMMIT_MESSAGE" value="skin animation Boss" />
+    <MESSAGE value="Editor pt.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editor pt.2" />
   </component>
 </project>
