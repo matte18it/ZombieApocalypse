@@ -23,12 +23,17 @@ public class EditorBarView extends JPanel {
     private JButton save, exit, reset;
     private JTextField txtName;
 
+    private Font font;
+
     private EditorView editorView;
     private EditorBarModel model;
 
     public EditorBarView(EditorView editorView){
         //setto il cursore personalizzato
         this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
+
+        //Carico il font personalizzato
+        font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 15, Font.PLAIN);
 
         this.editorView = editorView;
 
@@ -360,6 +365,9 @@ public class EditorBarView extends JPanel {
         arrow1.setMaximumSize(new Dimension(48, 48));
         c.gridx = 0; c.gridy = 43;
         add(arrow1, c);
+
+        c.gridx = 0; c.gridy = 44;
+        add(Box.createRigidArea(new Dimension(10, 10)), c);
     }
 
     public void Page2() {
@@ -521,13 +529,17 @@ public class EditorBarView extends JPanel {
         add(road25, c);
 
         c.gridx = 0; c.gridy = 25;
-        add(Box.createRigidArea(new Dimension(30, 10)), c);
+        add(Box.createRigidArea(new Dimension(25, 10)), c);
 
         if(GameData.lang.equals(GameData.Language.EN) && txtName.getText().equals(""))
             txtName.setText("Insert map name:");
         else if(GameData.lang.equals(GameData.Language.IT) && txtName.getText().equals(""))
-            txtName.setText("Inserisci il nome della mappa:");
+            txtName.setText("Nome mappa:");
         txtName.setForeground(new Color(156, 156, 156));
+        txtName.setFont(font);
+        txtName.setPreferredSize(new Dimension(150, 40));
+        txtName.setMaximumSize(new Dimension(150, 40));
+        txtName.setMinimumSize(new Dimension(150, 40));
         c.gridx = 0; c.gridy = 26;
         add(txtName, c);
 
@@ -535,6 +547,10 @@ public class EditorBarView extends JPanel {
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
         save.setText("Save");
+        save.setFont(font);
+        save.setPreferredSize(new Dimension(80, 40));
+        save.setMaximumSize(new Dimension(80, 40));
+        save.setMinimumSize(new Dimension(80, 40));
         c.gridx = 0; c.gridy = 28;
         add(save, c);
 
@@ -542,6 +558,10 @@ public class EditorBarView extends JPanel {
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
         lineButton.setText("Line");
+        lineButton.setFont(font);
+        lineButton.setPreferredSize(new Dimension(80, 40));
+        lineButton.setMaximumSize(new Dimension(80, 40));
+        lineButton.setMinimumSize(new Dimension(80, 40));
         c.gridx = 0; c.gridy = 30;
         add(lineButton, c);
 
@@ -549,6 +569,10 @@ public class EditorBarView extends JPanel {
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
         reset.setText("Reset");
+        reset.setFont(font);
+        reset.setPreferredSize(new Dimension(80, 40));
+        reset.setMaximumSize(new Dimension(80, 40));
+        reset.setMinimumSize(new Dimension(80, 40));
         c.gridx = 0; c.gridy = 32;
         add(reset, c);
 
@@ -556,8 +580,15 @@ public class EditorBarView extends JPanel {
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
         exit.setText("Exit");
+        exit.setFont(font);
+        exit.setPreferredSize(new Dimension(80, 40));
+        exit.setMaximumSize(new Dimension(80, 40));
+        exit.setMinimumSize(new Dimension(80, 40));
         c.gridx = 0; c.gridy = 34;
         add(exit, c);
+
+        c.gridx = 0; c.gridy = 35;
+        add(Box.createRigidArea(new Dimension(10, 10)), c);
     }
 
     public JButton getArrow1() {

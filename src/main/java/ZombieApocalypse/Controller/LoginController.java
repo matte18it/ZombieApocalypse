@@ -27,7 +27,7 @@ public class LoginController {
             @Override
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
-                if(view.getNickname().getText().length() > 20)
+                if(view.getNickname().getText().length() > 19)
                     e.consume();
             }
         });

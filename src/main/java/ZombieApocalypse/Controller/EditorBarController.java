@@ -61,7 +61,7 @@ public class EditorBarController {
         view.getTxtName().addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                if(view.getTxtName().getText().equals("Insert map name:") || view.getTxtName().getText().equals("Inserisci il nome della mappa:") ){
+                if(view.getTxtName().getText().equals("Insert map name:") || view.getTxtName().getText().equals("Nome mappa:") ){
                     view.getTxtName().setText("");
                     view.getTxtName().setForeground(Color.BLACK);
                 }
@@ -75,7 +75,7 @@ public class EditorBarController {
                         view.getTxtName().setForeground(new Color(156, 156, 156));
                     }
                     else if(GameData.lang.equals(GameData.Language.IT)){
-                        view.getTxtName().setText("Inserisci il nome della mappa:");
+                        view.getTxtName().setText("Nome mappa:");
                         view.getTxtName().setForeground(new Color(156, 156, 156));
                     }
             }
@@ -118,11 +118,11 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                if(!view.getTxtName().getText().equals("Insert map name:") && !view.getTxtName().getText().equals("Inserisci il nome della mappa") && !view.getTxtName().getText().equals(""))
+                if(!view.getTxtName().getText().equals("Insert map name:") && !view.getTxtName().getText().equals("Nome mappa:") && !view.getTxtName().getText().equals(""))
                     model.saveMap(view.getTxtName().getText());
                 else{
                     if(GameData.lang.equals(GameData.Language.IT)){
-                        view.getTxtName().setText("Inserisci il nome della mappa:");
+                        view.getTxtName().setText("Nome mappa:");
                         view.getTxtName().setForeground(Color.red);
                     }
                     else{
@@ -460,6 +460,15 @@ public class EditorBarController {
                 model.clearBorder();
                 EditorBarView.bloccoAttivo = 32;
                 view.getRoad25().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getTxtName().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                if(view.getTxtName().getText().length() > 11)
+                    e.consume();
             }
         });
     }
