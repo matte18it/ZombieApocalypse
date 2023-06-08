@@ -521,6 +521,7 @@ public class EditorBarView extends JPanel {
             txtName.setText("Insert map name:");
         else if(GameData.lang.equals(GameData.Language.IT) && txtName.getText().equals(""))
             txtName.setText("Inserisci il nome della mappa:");
+        txtName.setForeground(new Color(156, 156, 156));
         c.gridx = 0; c.gridy = 26;
         add(txtName, c);
 
@@ -563,6 +564,10 @@ public class EditorBarView extends JPanel {
 
     public JTextField getTxtName() {
         return txtName;
+    }
+
+    public JButton getExit() {
+        return exit;
     }
 
     public JButton getLine() {

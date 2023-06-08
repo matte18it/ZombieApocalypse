@@ -161,8 +161,12 @@ public class GameFrame extends JPanel {
     }
 
     public static void editorLaunch(){
-        if(menu != null && menu.isShowing())
+        if(menu != null && menu.isShowing()){
             frameGame.remove(menu);
+            menuLoop.stop();
+            leaderboardLoop.stop();
+        }
+
         frameGame.setTitle("Editor");
 
         frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
