@@ -10,6 +10,7 @@ import ZombieApocalypse.View.GameFrame;
 import javax.sound.midi.SysexMessage;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,7 +30,7 @@ public class EditorBarModel {
     public void saveMap(String name){
         //creo folder e file
         File f1 = new File("EditorMap");
-        File f2 = new File("EditorMap/" + name + ".txt");
+        File f2 = new File("EditorMap/" + name + "_editor.txt");
 
         //qua verifico se la directory e il file esistono, se non esistono li creo
         if(!f1.exists())
@@ -144,4 +145,42 @@ public class EditorBarModel {
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
     }
+
+
+    public void clearBorder(){
+        view.getDirt0().setBorder(null);
+        view.getDirt1().setBorder(null);
+        view.getDirt2().setBorder(null);
+        view.getDirt3().setBorder(null);
+        view.getDivisorio().setBorder(null);
+        view.getWater0().setBorder(null);
+        view.getFlower1().setBorder(null);
+        view.getFlower2().setBorder(null);
+        view.getRoad1().setBorder(null);
+        view.getRoad2().setBorder(null);
+        view.getRoad3().setBorder(null);
+        view.getRoad4().setBorder(null);
+        view.getRoad5().setBorder(null);
+        view.getRoad6().setBorder(null);
+        view.getRoad7().setBorder(null);
+        view.getRoad8().setBorder(null);
+        view.getRoad9().setBorder(null);
+        view.getRoad10().setBorder(null);
+        view.getRoad11().setBorder(null);
+        view.getRoad12().setBorder(null);
+        view.getRoad13().setBorder(null);
+        view.getRoad14().setBorder(null);
+        view.getRoad15().setBorder(null);
+        view.getRoad16().setBorder(null);
+        view.getRoad17().setBorder(null);
+        view.getRoad18().setBorder(null);
+        view.getRoad19().setBorder(null);
+        view.getRoad20().setBorder(null);
+        view.getRoad21().setBorder(null);
+        view.getRoad22().setBorder(null);
+        view.getRoad23().setBorder(null);
+        view.getRoad24().setBorder(null);
+        view.getRoad25().setBorder(null);
+    }
+
 }

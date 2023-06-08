@@ -25,6 +25,5 @@ public class EditorController {
         });
     }
 
-    public void addListener(){
-    }
+    public void addListener(){}
 }

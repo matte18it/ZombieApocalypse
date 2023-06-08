@@ -12,6 +12,7 @@ import ZombieApocalypse.View.GameFrame;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -129,6 +130,336 @@ public class EditorBarController {
                         view.getTxtName().setForeground(Color.red);
                     }
                 }
+            }
+        });
+
+        view.getDirt0().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 0;
+                view.getDirt0().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getDirt1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 1;
+                view.getDirt1().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getDirt2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 2;
+                view.getDirt2().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getDirt3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 3;
+                view.getDirt3().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getDivisorio().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 4;
+                view.getDivisorio().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getWater0().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 5;
+                view.getWater0().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getFlower1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 6;
+                view.getFlower1().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getFlower2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 7;
+                view.getFlower2().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 8;
+                view.getRoad1().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 9;
+                view.getRoad2().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 10;
+                view.getRoad3().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad4().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 11;
+                view.getRoad4().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad5().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 12;
+                view.getRoad5().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad6().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 13;
+                view.getRoad6().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad7().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 14;
+                view.getRoad7().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad8().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 15;
+                view.getRoad8().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad9().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 16;
+                view.getRoad9().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad10().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 17;
+                view.getRoad10().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad11().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 18;
+                view.getRoad11().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad12().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 19;
+                view.getRoad12().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad13().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 20;
+                view.getRoad13().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad14().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 21;
+                view.getRoad14().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad15().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 22;
+                view.getRoad15().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad16().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 23;
+                view.getRoad16().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad17().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 24;
+                view.getRoad17().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad18().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 25;
+                view.getRoad18().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad19().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 26;
+                view.getRoad19().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad20().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 27;
+                view.getRoad20().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad21().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 28;
+                view.getRoad21().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad22().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 29;
+                view.getRoad22().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad23().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 30;
+                view.getRoad23().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad24().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 31;
+                view.getRoad24().setBorder(new LineBorder(Color.red));
+            }
+        });
+
+        view.getRoad25().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                model.clearBorder();
+                EditorBarView.bloccoAttivo = 32;
+                view.getRoad25().setBorder(new LineBorder(Color.red));
             }
         });
     }
