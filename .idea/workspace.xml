@@ -4,52 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="movimenti boss">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="skin animation Boss">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Flower/Flower1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Road/Road8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Editor/EditorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/BossCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/BossCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletGrenade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletGrenade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletPistol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletPistol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletShotgun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletShotgun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/DivisorioAcquaTerra/Divisorio1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Terreno/Terreno0 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Terreno/Terreno1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Terreno/Terreno2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TutorialButton/Mouse/MouseStop 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/AI/Node 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/LoginController$3 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/LoginController$4 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/LoginController$5 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$1 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$2 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$3 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$4 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$5 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$6 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/GameLoop 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/LoginLoop 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/MenuLoop 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/TimeLoop 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Audio 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Character$movementDirection 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/EnemyCharacter 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/KnifeModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/KnifeModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/LoginModel 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/GameData 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/CharacterAnimation 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/LoginView 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Terreno/Terreno1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Terreno/Terreno1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/TilesetBlock/Tileset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/SettingsImage/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Terreno/Terreno1.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/Terreno/Terreno1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AmbienteDiGioco/TilesetBlock/Tileset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SettingsImage/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorBarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletPistol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletPistol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorBarView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +126,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Settings pt.2">
+      <created>1685364950992</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1685364950992</updated>
     </task>
     <task id="LOCAL-00039" summary="Settings pt.3">
       <created>1685371158013</created>
@@ -468,14 +470,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686211963759</updated>
     </task>
-    <task id="LOCAL-00087" summary="movimenti boss">
-      <created>1686216491330</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1686216491330</updated>
-    </task>
-    <option name="localTasksCounter" value="88" />
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -491,6 +486,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Settings pt.3" />
     <MESSAGE value="Settings pt.4" />
     <MESSAGE value="Settings pt.5" />
     <MESSAGE value="Settings pt.6" />
@@ -515,7 +511,6 @@
     <MESSAGE value="Editor pt.1" />
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="skin animation Boss" />
-    <MESSAGE value="movimenti boss" />
-    <option name="LAST_COMMIT_MESSAGE" value="movimenti boss" />
+    <option name="LAST_COMMIT_MESSAGE" value="skin animation Boss" />
   </component>
 </project>

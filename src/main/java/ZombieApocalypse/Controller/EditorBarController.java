@@ -1,11 +1,11 @@
 package ZombieApocalypse.Controller;
 
+import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.View.Editor.EditorBarView;
 
 import java.awt.*;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import java.awt.event.*;
 
 public class EditorBarController {
     private final EditorBarView view;
@@ -22,7 +22,44 @@ public class EditorBarController {
     }
 
     public void addListener(){
+        view.getArrow1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                view.removeAll();
+                view.Page2();
+                view.revalidate();
+                view.repaint();
+            }
+        });
 
+        view.getArrow2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                view.removeAll();
+                view.Page1();
+                view.revalidate();
+                view.repaint();
+            }
+        });
+
+        view.getTxtName().addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if(view.getTxtName().getText().equals("Insert map name") || view.getTxtName().getText().equals("Inserisci il nome della mappa") )
+                    view.getTxtName().setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if(view.getTxtName().getText().equals(""))
+                    if(GameData.lang.equals(GameData.Language.EN))
+                        view.getTxtName().setText("Insert map name:");
+                    else if(GameData.lang.equals(GameData.Language.IT))
+                        view.getTxtName().setText("Inserisci il nome della mappa:");
+            }
+        });
     }
 
 }
