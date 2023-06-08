@@ -43,7 +43,7 @@ public class Bandit extends Enemy{
             else
                 stopHit();
         }
-        Point player = Game.getInstance().getPlayerPosition();
+         Point player = Game.getInstance().getPlayerPosition();
         Point turret = new Point(x + centerX, y + centerY);
 
 
