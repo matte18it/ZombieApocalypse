@@ -24,11 +24,8 @@ public class ShotgunModel extends GunModel{
 
     }
     public void attack() {
-        if(GameData.sound) {
-            PlayWav.getInstance().loadSound("/Audio/PumpShot.wav");
-            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-            PlayWav.getInstance().playSound();
-        }
+        if(GameData.sound)
+            PlayWav.getInstance().playPumpShot();
 
         attack=true;
         int x=Game.getInstance().getPlayerCharacter().getX()+xPosy;

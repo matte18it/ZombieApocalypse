@@ -163,9 +163,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     }
 
     private void soundButton() {
-        PlayWav.getInstance().loadSound("/Audio/ButtonSound.wav");
-        PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-        PlayWav.getInstance().playSound();
+        PlayWav.getInstance().playButtonSound();
     }
 
     private void saveData() throws IOException {
@@ -226,7 +224,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         if(countZombie == randomZombie){
             countZombie = 0;
             if(GameData.sound)
-                PlayWav.getInstance().playZombie(GameData.soundVolume);
+                PlayWav.getInstance().playZombie();
         }
         else
             countZombie++;

@@ -348,11 +348,8 @@ public class MenuBarView extends JPanel {
 private boolean addAmmo=false;
     private int count=0;
     public void addAmmo(int i) {
-        if(GameData.sound) {
-            PlayWav.getInstance().loadSound("/Audio/AmmoSound.wav");
-            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-            PlayWav.getInstance().playSound();
-        }
+        if(GameData.sound)
+            PlayWav.getInstance().playAmmoSound();
 
         int t= Integer.parseInt(ammoLabel.getText());
         t=t+i;

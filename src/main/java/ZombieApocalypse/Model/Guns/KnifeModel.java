@@ -20,9 +20,7 @@ public class KnifeModel extends GunModel{
     }
     public void attack() {
         if(GameData.sound) {
-            PlayWav.getInstance().loadSound("/Audio/KnifeSound.wav");
-            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-            PlayWav.getInstance().playSound();
+            PlayWav.getInstance().playKnifeSound();
         }
 
         attack=true;

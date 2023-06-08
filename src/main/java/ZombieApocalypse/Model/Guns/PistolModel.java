@@ -26,9 +26,7 @@ public class PistolModel extends GunModel{
     }
     public void attack() {
         if(GameData.sound) {
-            PlayWav.getInstance().loadSound("/Audio/ShotPistola.wav");
-            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-            PlayWav.getInstance().playSound();
+            PlayWav.getInstance().playShotPistola();
         }
 
         attack=true;

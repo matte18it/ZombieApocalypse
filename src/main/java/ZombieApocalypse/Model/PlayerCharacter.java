@@ -99,11 +99,8 @@ public class PlayerCharacter  {
 
     public void hit() {
         if(countHit==0){
-            if(GameData.sound) {
-                PlayWav.getInstance().loadSound("/Audio/Hurt.wav");
-                PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                PlayWav.getInstance().playSound();
-            }
+            if(GameData.sound)
+                PlayWav.getInstance().playHurtSound();
             hit=true;
             health--;
             Game.getInstance().getMenuBar().removeHeart();
@@ -162,9 +159,7 @@ public class PlayerCharacter  {
             muovo = false;
             if(muovo1){
                 muovo1 = false;
-                PlayWav.getInstance().loadSound("/Audio/WalkSound.wav");
-                PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                PlayWav.getInstance().playSound();
+                PlayWav.getInstance().playWalkSound();
             }
             else
                 muovo1 = true;

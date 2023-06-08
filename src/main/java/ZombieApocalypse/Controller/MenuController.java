@@ -256,9 +256,7 @@ public class MenuController {
     }
 
     private void soundButton() {
-        PlayWav.getInstance().loadSound("/Audio/ButtonSound.wav");
-        PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-        PlayWav.getInstance().playSound();
+        PlayWav.getInstance().playButtonSound();
     }
 
     private void saveData() throws IOException {

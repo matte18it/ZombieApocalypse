@@ -37,11 +37,9 @@ public class MenuBarModel {
         return (menuBarView.spaceToCollect());
     }
     private void medKit(boolean b){
-        if(GameData.sound) {
-            PlayWav.getInstance().loadSound("/Audio/MedikitSound.wav");
-            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-            PlayWav.getInstance().playSound();
-        }
+        if(GameData.sound)
+            PlayWav.getInstance().playMedikitSound();
+
 
         for(int i=0; i<2; i++){
             Game.getInstance().getPlayerCharacter().cure();
@@ -80,21 +78,17 @@ public class MenuBarModel {
     }
 
     private void radio(boolean b) {
-        if(GameData.sound) {
-            PlayWav.getInstance().loadSound("/Audio/WinSound.wav");
-            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-            PlayWav.getInstance().playSound();
-        }
+        if(GameData.sound)
+            PlayWav.getInstance().playWinSound();
+
 
         setLabelEmpty(b);   //Da implementare la logica
     }
 
     private void spell(boolean b) {
-        if(GameData.sound) {
-            PlayWav.getInstance().loadSound("/Audio/PotionDrink.wav");
-            PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-            PlayWav.getInstance().playSound();
-        }
+        if(GameData.sound)
+            PlayWav.getInstance().playPotionSound();
+
 
         Game.getInstance().speedUpPlayer();
         setLabelEmpty(b);

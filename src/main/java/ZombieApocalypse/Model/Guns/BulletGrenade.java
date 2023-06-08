@@ -54,11 +54,8 @@ boolean stopAll=false;
             if(numFrame<24){
                 numFrame++;
                 if(numFrame==10 ) {
-                    if(GameData.sound) {
-                        PlayWav.getInstance().loadSound("/Audio/Grenade.wav");
-                        PlayWav.getInstance().setVolumeSound(GameData.soundVolume);
-                        PlayWav.getInstance().playSound();
-                    }
+                    if(GameData.sound)
+                        PlayWav.getInstance().playGrenadeSound();
                     dimension = dimension + 10;
                     x=x-5;
                     y=y-5;
