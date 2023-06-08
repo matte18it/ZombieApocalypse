@@ -1,5 +1,7 @@
 package ZombieApocalypse.Controller;
 
+import ZombieApocalypse.Model.Editor.EditorBarModel;
+import ZombieApocalypse.Model.Editor.EditorModel;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
@@ -17,10 +19,12 @@ import java.io.IOException;
 public class EditorBarController {
     private final EditorBarView view;
     private EditorView editorView;
+    private EditorBarModel model;
 
-    public EditorBarController(EditorBarView view, EditorView editorView) {
+    public EditorBarController(EditorBarView view, EditorView editorView, EditorBarModel model) {
         this.editorView = editorView;
         this.view = view;
+        this.model = model;
         view.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -96,6 +100,35 @@ public class EditorBarController {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 showDialog();
+            }
+        });
+
+        view.getReset().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                editorView.line = true;
+                editorView.initWorld();
+                editorView.repaint();
+            }
+        });
+
+        view.getSave().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(!view.getTxtName().getText().equals("Insert map name:") && !view.getTxtName().getText().equals("Inserisci il nome della mappa") && !view.getTxtName().getText().equals(""))
+                    model.saveMap(view.getTxtName().getText());
+                else{
+                    if(GameData.lang.equals(GameData.Language.IT)){
+                        view.getTxtName().setText("Inserisci il nome della mappa:");
+                        view.getTxtName().setForeground(Color.red);
+                    }
+                    else{
+                        view.getTxtName().setText("Insert map name:");
+                        view.getTxtName().setForeground(Color.red);
+                    }
+                }
             }
         });
     }

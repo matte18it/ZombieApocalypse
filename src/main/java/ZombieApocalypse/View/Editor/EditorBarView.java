@@ -1,6 +1,8 @@
 package ZombieApocalypse.View.Editor;
 
 import ZombieApocalypse.Controller.EditorBarController;
+import ZombieApocalypse.Model.Editor.EditorBarModel;
+import ZombieApocalypse.Model.Editor.EditorModel;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
@@ -22,6 +24,7 @@ public class EditorBarView extends JPanel {
     private JTextField txtName;
 
     private EditorView editorView;
+    private EditorBarModel model;
 
     public EditorBarView(EditorView editorView){
         //setto il cursore personalizzato
@@ -39,8 +42,11 @@ public class EditorBarView extends JPanel {
 
         initComponent();
 
+        //creo il model
+        model = new EditorBarModel(this, editorView);
+
         //creo il controller
-        controller = new EditorBarController(this, editorView);
+        controller = new EditorBarController(this, editorView, model);
         Page1();
         controller.addListener();
     }
@@ -568,6 +574,14 @@ public class EditorBarView extends JPanel {
 
     public JButton getExit() {
         return exit;
+    }
+
+    public JButton getReset() {
+        return reset;
+    }
+
+    public JButton getSave(){
+        return save;
     }
 
     public JButton getLine() {

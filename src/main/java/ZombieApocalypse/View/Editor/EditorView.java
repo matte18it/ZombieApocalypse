@@ -40,12 +40,24 @@ public class EditorView extends JPanel {
         initImage();
     }
 
-    private void initWorld() {
+    public void initWorld() {
         for(int i = 0; i < world.length; i++) {
             for(int j = 0; j < world[i].length; j++) {
                 world[i][j] = Block.TERRENO0;
             }
         }
+    }
+
+    public int getWorldLength(){
+        return world.length;
+    }
+
+    public int getWorldLengthRow(int i){
+        return world[i].length;
+    }
+
+    public int getEnum(int i, int j){
+        return world[i][j].ordinal();
     }
 
     public void initImage(){
