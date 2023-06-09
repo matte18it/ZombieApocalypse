@@ -44,7 +44,7 @@ public class GraphicPanel extends JPanel {
         this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
         for(int i=0; i<numeroImmagini; i++){
             String c=String.valueOf(i);
-            String path="/AmbienteDiGioco/Terreno/Terreno"+c+".png";
+            String path="/AmbienteDiGioco/Terreno"+c+".png";
             images[i]= ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
         }
 

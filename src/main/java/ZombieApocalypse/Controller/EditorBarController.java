@@ -555,6 +555,7 @@ public class EditorBarController {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 dialog.dispose();
+                EditorBarView.bloccoAttivo = -1;
                 GameFrame.menuLaunch();
             }
         });

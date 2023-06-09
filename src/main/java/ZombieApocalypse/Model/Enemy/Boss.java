@@ -28,8 +28,6 @@ public class Boss extends Enemy{
         //Gestione della Morte
 
         if(healt<=0 && countDeath<=8){
-            if(GameData.sound)
-                PlayWav.getInstance().playZombieHit();
             countDeath++;
             dying=true;
             return true;

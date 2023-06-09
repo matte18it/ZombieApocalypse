@@ -36,8 +36,6 @@ public class KidZombie extends Enemy{
         }
         //Gestione delle Hit
         if(hit){
-            if(GameData.sound)
-                PlayWav.getInstance().playZombieHit();
             if(countHit<30){
                 countHit++;}
             else

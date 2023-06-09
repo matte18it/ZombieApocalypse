@@ -38,8 +38,6 @@ public class SkinnyZombie extends Enemy{
         //Gestione delle Hit
         if(hit){
             if(countHit<30){
-                if(GameData.sound)
-                    PlayWav.getInstance().playZombieHit();
                 countHit++;}
             else
                 stopHit();

@@ -69,8 +69,6 @@ public class TurretZombie extends Enemy{
             }
             if (hit) {
                 if (countHit < 30) {
-                    if(GameData.sound)
-                        PlayWav.getInstance().playZombieHit();
                     countHit++;
                 } else
                     stopHit();
