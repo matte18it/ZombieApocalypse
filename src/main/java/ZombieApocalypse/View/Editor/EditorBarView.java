@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class EditorBarView extends JPanel {
-    public static int bloccoAttivo = 0;
+    public static int bloccoAttivo = -1;
     public static ResourcesLoader loader = ResourcesLoader.getInstance();
     private EditorBarController controller;
     private GridBagConstraints c;
@@ -547,7 +547,10 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 27;
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
-        save.setText("Save");
+        if(GameData.lang.equals(GameData.Language.EN))
+            save.setText("Save");
+        else
+            save.setText("Salva");
         save.setFont(font);
         save.setForeground(Color.WHITE);
         save.setIcon(loader.getImageIcon("/EditorImage/sendButton.png", 80, 40, false));
@@ -564,7 +567,10 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 29;
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
-        lineButton.setText("Line");
+        if(GameData.lang.equals(GameData.Language.EN))
+            lineButton.setText("Line");
+        else
+            lineButton.setText("Linee");
         lineButton.setFont(font);
         lineButton.setForeground(Color.WHITE);
         lineButton.setIcon(loader.getImageIcon("/EditorImage/sendButton.png", 80, 40, false));
@@ -581,7 +587,10 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 31;
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
-        reset.setText("Reset");
+        if(GameData.lang.equals(GameData.Language.EN))
+            reset.setText("Reset");
+        else
+            reset.setText("Resetta");
         reset.setFont(font);
         reset.setForeground(Color.WHITE);
         reset.setIcon(loader.getImageIcon("/EditorImage/sendButton.png", 80, 40, false));
@@ -598,7 +607,10 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 33;
         add(Box.createRigidArea(new Dimension(5, 10)), c);
 
-        exit.setText("Exit");
+        if(GameData.lang.equals(GameData.Language.EN))
+            exit.setText("Exit");
+        else
+            exit.setText("Esci");
         exit.setFont(font);
         exit.setForeground(Color.WHITE);
         exit.setPreferredSize(new Dimension(80, 40));
