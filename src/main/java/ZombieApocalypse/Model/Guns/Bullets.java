@@ -34,11 +34,11 @@ public class Bullets {
     }
 
     public void update(){
-        Iterator var1=this.bullets.iterator();
+        Iterator<Bullet> var1=this.bullets.iterator();
         while(var1.hasNext()){
-            Bullet b=(Bullet) var1.next();
+            Bullet b= var1.next();
             if(!b.update()){
-                bullets.remove(var1);}
+                var1.remove();}
         }
     }
 

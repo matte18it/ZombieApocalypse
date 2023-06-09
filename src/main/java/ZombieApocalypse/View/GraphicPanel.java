@@ -51,6 +51,7 @@ public class GraphicPanel extends JPanel {
 
 
 Random m=new Random();
+    int countWater=0;
     @Override
     protected void paintComponent(Graphics g) {
         int r;
@@ -60,17 +61,22 @@ Random m=new Random();
             int x = i * Settings.CELL_SIZEX;
             for(int j = 0; j < world.getSizeY(); j++) {
                 int y = j * Settings.CELL_SIZEY;
-                if(world.world[i][j]== World.Block.WATER0){
-                    r=m.nextInt(0, 10);
+                if(world.world[i][j]== World.Block.WATER0 || world.world[i][j]== World.Block.WATER1 || world.world[i][j]== World.Block.WATER2){
+                    r=m.nextInt(0, 100);
+                    if(r<5){
+                        r=m.nextInt(0,3);
+                        switch (r){
+                            case 0-> world.world[i][j]= World.Block.WATER0;
+                            case 1-> world.world[i][j]= World.Block.WATER1;
+                            case 2-> world.world[i][j]= World.Block.WATER2;
 
-                    switch (r){
-                        case 1 -> g.drawImage(images.get(World.Block.WATER1), x, y, null);
-                        case 2 -> g.drawImage(images.get(World.Block.WATER2), x, y, null);
-                        default -> g.drawImage(images.get(World.Block.WATER0), x, y, null);
+                        }
                     }
 
-                }else
+
+                }
                     g.drawImage(images.get(world.world[i][j]), x, y, null);
+
                 }
 
             }

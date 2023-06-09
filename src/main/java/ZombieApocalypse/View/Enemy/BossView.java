@@ -43,7 +43,7 @@ public class BossView implements EnemyViewInterface{
         enemyModel=enemy;
 
         String g;
-        int i=m.nextInt(0, 10000);  //Gestione dello Shiny
+        int i=m.nextInt(0, 500);  //Gestione dello Shiny
         if(i==0)
             g="Nemici/Boss/BossBlu";
         else

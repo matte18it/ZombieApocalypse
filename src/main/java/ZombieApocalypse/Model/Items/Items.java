@@ -25,11 +25,11 @@ public class Items {
     }
 
     public void update(){
-        Iterator var1=this.items.iterator();
+        Iterator<Item> var1=items.iterator();
         while(var1.hasNext()){
-            Item b= (Item) var1.next();
+            Item b=  var1.next();
             if(!b.update()){
-                items.remove(var1);}
+                var1.remove();}
 
         }
     }
