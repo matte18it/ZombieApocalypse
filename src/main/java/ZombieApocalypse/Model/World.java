@@ -28,27 +28,37 @@ public class World {
 
 
     //Tutti i blocchi disegnabili
-    public enum Block {TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
+    public enum Block {TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, WATER1, WATER2, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
     //Mondo e posizione del player
     public  Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
     public boolean isEditor=false;
+    private int campainMapIndex=1;  //Mappa campagna corrente
+    private final int campainMaps=5;  //numero mappe massime
+    public boolean nextCampaignMap(){  //Verrà chiamato al completamento del livello
+        if(campainMapIndex>=campainMaps)
+            return false;
+
+        campainMapIndex++;
+        return true;
+
+    }
 
 
 
 
     public World() {
+        if(!isEditor){
         try{
-        generateWorld();}catch (IOException ex){
+        generateCampaignWorld();}catch (IOException ex){
             System.exit(105);
-        }
+        }}
     }
     //Per adesso, dopo caricare il mondo da file
-    private void generateWorld() throws IOException, ArrayIndexOutOfBoundsException{
+    private void generateCampaignWorld() throws IOException, ArrayIndexOutOfBoundsException{
         BufferedReader in = null;
-        File f=new File("Resources/CampaignMap/Campagna1.txt");
         String[] builder=new String[Settings.WORLD_SIZEX];
         try {
-            in = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/CampaignMap/Campagna1.txt")));
+            in = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/CampaignMap/Campagna"+campainMapIndex+".txt")));
                 for(int i=0; i<Settings.WORLD_SIZEX; i++){
                     builder = in.readLine().split(" ");
                     for(int j=0; j<Settings.WORLD_SIZEY; j++){
@@ -75,7 +85,7 @@ public class World {
         return x >= 0 && x < Settings.WORLD_SIZEX && y >= 0 && y < Settings.WORLD_SIZEY;
     }
 
-    private boolean isType(int x, int y, Block b) {
+    private boolean walkableType(int x, int y) {
         if(x<0 || y<0)  //viene utilizzato perchè nel passaggio da coordinata
             return false; //a posizone sulla matrice un numero negativo
                             //potrebbe essere approssimato a 0, facendo uscire il player
@@ -83,16 +93,16 @@ public class World {
         y= (y * Settings.WORLD_SIZEY) /Settings.WINDOW_SIZEY;
 
 
-        if(isValidPosition(x, y))
-            return world[x][y] == b;
+        if(isValidPosition(x, y)){
+            if(world[x][y]!=Block.WATER0 && world[x][y]!=Block.WATER1 && world[x][y]!=Block.WATER2 && world[x][y]!=Block.DIVISORIO1)
+                return true;
+        }
         return false;
     }
-    public boolean isGround0(int x, int y) {
-        return isType(x, y, Block.TERRENO0);
+    public boolean isWalkable(int x, int y) {
+        return walkableType(x,y);
     }
 
-    public int getSize() {
-        return world.length;
-    }
+
 
 }

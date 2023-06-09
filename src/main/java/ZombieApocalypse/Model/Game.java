@@ -1,6 +1,5 @@
 package ZombieApocalypse.Model;
 
-import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Guns.GrenadeModel;
 import ZombieApocalypse.Model.Guns.KnifeModel;
 import ZombieApocalypse.Model.Guns.PistolModel;
@@ -8,12 +7,9 @@ import ZombieApocalypse.Model.Guns.ShotgunModel;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.GameFrame;
-import ZombieApocalypse.View.Gun.GrenadeView;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.io.File;
 
 public class Game {
     //Gestisce gli aspetti del gioco
@@ -173,7 +169,7 @@ public class Game {
         b=false;}
 
         if(value!= Items.ItemType.EMPTY){
-            if(world.isGround0(character.getX()+character.wight+10, character.getY())){
+            if(world.isWalkable(character.getX()+character.wight+10, character.getY())){
                 Items.getInstance().dropItem(character.getX()+character.wight+10, character.getY(), value);
                 menuBar.setLabelEmpty(b);
                 if(value== Items.ItemType.SHOTGUN || value== Items.ItemType.PISTOL || value==Items.ItemType.GRENADE)

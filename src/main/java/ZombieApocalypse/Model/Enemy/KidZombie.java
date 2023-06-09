@@ -2,8 +2,6 @@ package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -68,28 +66,28 @@ public class KidZombie extends Enemy{
     }
 
     private void moveRight() {
-        if(Game.getInstance().getWorld().isGround0(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+10, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+10, y, centerX, centerY)){
             x=x+10;
             isMoving=true;
             dir=Settings.movementDirection.RIGHT;}
     }
 
     private void moveLeft() {
-        if(Game.getInstance().getWorld().isGround0(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
             x=x-10;
             isMoving=true;
             dir=Settings.movementDirection.LEFT;}
     }
 
     private void moveDown() {
-        if(Game.getInstance().getWorld().isGround0(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
             y=y+10;
             isMoving=true;
             dir=Settings.movementDirection.DOWN;}
     }
 
     private void moveUp() {
-        if(Game.getInstance().getWorld().isGround0(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
             y=y-10;
             isMoving=true;
         dir=Settings.movementDirection.UP;}

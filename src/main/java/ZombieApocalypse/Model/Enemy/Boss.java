@@ -3,8 +3,6 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -108,7 +106,7 @@ public class Boss extends Enemy{
 
 
     private void moveRight() {
-        if(Game.getInstance().getWorld().isGround0(x+wight+20, y) && Game.getInstance().getWorld().isPlayer(x+20, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x+wight+20, y) && Game.getInstance().getWorld().isPlayer(x+20, y, centerX, centerY)){
             x=x+20;
             isMoving=true;
             dir=Settings.movementDirection.RIGHT;}
@@ -130,21 +128,21 @@ public class Boss extends Enemy{
 
 
     private void moveLeft() {
-        if(Game.getInstance().getWorld().isGround0(x-20, y) && Game.getInstance().getWorld().isPlayer(x-20, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x-20, y) && Game.getInstance().getWorld().isPlayer(x-20, y, centerX, centerY)){
             x=x-20;
             isMoving=true;
             dir=Settings.movementDirection.LEFT;}
     }
 
     private void moveDown() {
-        if(Game.getInstance().getWorld().isGround0(x, y+height+20) && Game.getInstance().getWorld().isPlayer(x, y+20, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x, y+height+20) && Game.getInstance().getWorld().isPlayer(x, y+20, centerX, centerY)){
             y=y+20;
             isMoving=true;
             dir=Settings.movementDirection.DOWN;}
     }
 
     private void moveUp() {
-        if(Game.getInstance().getWorld().isGround0(x, y-20) && Game.getInstance().getWorld().isPlayer(x, y-20, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x, y-20) && Game.getInstance().getWorld().isPlayer(x, y-20, centerX, centerY)){
             y=y-20;
             isMoving=true;
         dir=Settings.movementDirection.UP;}
