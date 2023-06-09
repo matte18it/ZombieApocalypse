@@ -11,8 +11,10 @@ public class Boss extends Enemy{
 
     public Boss(int x, int y) {
         super(x, y);
-        wight= Settings.CELL_SIZEX*4;
-        height=Settings.CELL_SIZEY*4;
+
+        wight = Settings.CELL_SIZEX*4;
+        height = Settings.CELL_SIZEY*4;
+
         type= Enemies.EnemiesType.BOSS;
         healt=50;
         //Cambiare posizione sparo per adesso
