@@ -64,12 +64,10 @@ Random m=new Random();
                 if(world.world[i][j]== World.Block.WATER0 || world.world[i][j]== World.Block.WATER1 || world.world[i][j]== World.Block.WATER2){
                     r=m.nextInt(0, 100);
                     if(r<5){
-                        r=m.nextInt(0,3);
-                        switch (r){
-                            case 0-> world.world[i][j]= World.Block.WATER0;
-                            case 1-> world.world[i][j]= World.Block.WATER1;
-                            case 2-> world.world[i][j]= World.Block.WATER2;
-
+                        switch (world.world[i][j]){
+                            case WATER0 -> world.world[i][j]= World.Block.WATER1;
+                            case WATER1 -> world.world[i][j]= World.Block.WATER2;
+                            case WATER2 -> world.world[i][j]= World.Block.WATER0;
                         }
                     }
 
