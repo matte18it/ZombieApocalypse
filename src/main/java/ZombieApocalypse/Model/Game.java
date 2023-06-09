@@ -13,10 +13,12 @@ import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 public class Game {
     //Gestisce gli aspetti del gioco
-    private final World world = new World();
+    private  World world = new World();
+
     private final PlayerCharacter character = new PlayerCharacter();
     private final KnifeModel knife=new KnifeModel();
     private final PistolModel pistol = new PistolModel();
@@ -228,6 +230,7 @@ public class Game {
     public Point getPlayerPosition() {
         return new Point(character.getX()+character.centerX, character.getY()+character.centerY);
     }
+
 
 
 }

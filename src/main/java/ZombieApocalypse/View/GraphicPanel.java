@@ -16,6 +16,9 @@ import ZombieApocalypse.View.Player.CharacterView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
 import java.util.Objects;
 
 public class GraphicPanel extends JPanel {
@@ -35,40 +38,37 @@ public class GraphicPanel extends JPanel {
     public ShotgunView getShotgunView() {
         return shotgunView;
     }
-    World world=new World();
-    //immagini ordinate fino ad adesso
+    World world=Game.getInstance().getWorld();
     private final int numeroImmagini=World.Block.values().length;
-    private final Image[] images=new Image[numeroImmagini];
+    private final Map<World.Block, Image> images=new Hashtable<>();
     public GraphicPanel()  {
         //setto il cursore personalizzato
         this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
+        World.Block[] enue=new World.Block[numeroImmagini];
         for(int i=0; i<numeroImmagini; i++){
-            String c=String.valueOf(i);
-            String path="/AmbienteDiGioco/Terreno/Terreno"+c+".png";
-            images[i]= ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+            enue[i]= World.Block.values()[i];
+            images.put(enue[i], ResourcesLoader.getInstance().getImage("/AmbienteDiGioco/"+enue[i]+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true));
+        }
         }
 
-    }
+
 
 
     @Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        for(int i = 0; i < world.getSize(); i++) {
+        for(int i = 0; i < world.getSizeX(); i++) {
             int x = i * Settings.CELL_SIZEX;
-            for(int j = 0; j < world.getSize(); j++) {
+            for(int j = 0; j < world.getSizeY(); j++) {
                 int y = j * Settings.CELL_SIZEY;
-                if(world.isGround0(i, j)) {
-                    //Random random=new Random();
-                    //int value= random.nextInt(numeroImmagini);
-                    g.drawImage(images[0], x, y, null);
+                    g.drawImage(images.get(world.world[i][j]), x, y, null);
                 }
 
             }
 
 
-        }
+
         if(Game.getInstance().hasPistol){
         if(Game.getInstance().getPistolModel().isUp()){
             g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getPistolModel().imagePosition.x, Game.getInstance().getPistolModel().imagePosition.y, Game.getInstance().getPistolModel().getHeight(), Game.getInstance().getPistolModel().getWidth(), null);
