@@ -23,7 +23,7 @@ public class EditorView extends JPanel {
     public boolean line = true;
 
     //Gestione dei blocchi disegnabili
-    enum Block { TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25, ROAD26}
+    enum Block { TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
     private final Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
 
     public EditorView(){
@@ -77,6 +77,36 @@ public class EditorView extends JPanel {
             world[i][j] = Block.ROAD9;
         else if(EditorBarView.bloccoAttivo == 17)
             world[i][j] = Block.ROAD10;
+        else if(EditorBarView.bloccoAttivo == 18)
+            world[i][j] = Block.ROAD11;
+        else if(EditorBarView.bloccoAttivo == 19)
+            world[i][j] = Block.ROAD12;
+        else if(EditorBarView.bloccoAttivo == 20)
+            world[i][j] = Block.ROAD13;
+        else if(EditorBarView.bloccoAttivo == 21)
+            world[i][j] = Block.ROAD14;
+        else if(EditorBarView.bloccoAttivo == 22)
+            world[i][j] = Block.ROAD15;
+        else if(EditorBarView.bloccoAttivo == 23)
+            world[i][j] = Block.ROAD16;
+        else if(EditorBarView.bloccoAttivo == 24)
+            world[i][j] = Block.ROAD17;
+        else if(EditorBarView.bloccoAttivo == 25)
+            world[i][j] = Block.ROAD18;
+        else if(EditorBarView.bloccoAttivo == 26)
+            world[i][j] = Block.ROAD19;
+        else if(EditorBarView.bloccoAttivo == 27)
+            world[i][j] = Block.ROAD20;
+        else if(EditorBarView.bloccoAttivo == 28)
+            world[i][j] = Block.ROAD21;
+        else if(EditorBarView.bloccoAttivo == 29)
+            world[i][j] = Block.ROAD22;
+        else if(EditorBarView.bloccoAttivo == 30)
+            world[i][j] = Block.ROAD23;
+        else if(EditorBarView.bloccoAttivo == 31)
+            world[i][j] = Block.ROAD24;
+        else if(EditorBarView.bloccoAttivo == 32)
+            world[i][j] = Block.ROAD25;
 
         repaint();
     }
@@ -115,10 +145,60 @@ public class EditorView extends JPanel {
         images[4] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
         path = "/AmbienteDiGioco/Water/Water0.png";
         images[5] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
-        path = "/AmbienteDiGioco/Water/Water1.png";
+        path = "/AmbienteDiGioco/Flower/Flower1.png";
         images[6] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
-        path = "/AmbienteDiGioco/Water/Water2.png";
+        path = "/AmbienteDiGioco/Flower/Flower2.png";
         images[7] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road1.png";
+        images[8] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road2.png";
+        images[9] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road3.png";
+        images[10] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road4.png";
+        images[11] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road5.png";
+        images[12] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road6.png";
+        images[13] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road7.png";
+        images[14] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road8.png";
+        images[15] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road9.png";
+        images[16] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road10.png";
+        images[17] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road11.png";
+        images[18] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road12.png";
+        images[19] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road13.png";
+        images[20] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road14.png";
+        images[21] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road15.png";
+        images[22] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road16.png";
+        images[23] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road17.png";
+        images[24] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road18.png";
+        images[25] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road19.png";
+        images[26] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road20.png";
+        images[27] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road21.png";
+        images[28] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road22.png";
+        images[29] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road23.png";
+        images[30] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road24.png";
+        images[31] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+        path = "/AmbienteDiGioco/Road/Road25.png";
+        images[32] = ResourcesLoader.getInstance().getImage(path, Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
     }
 
     @Override

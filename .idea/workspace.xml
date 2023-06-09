@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.6">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore11 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore18 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore2 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore20 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore22 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore23 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore26 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore28 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore29 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore3 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore30 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore31 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore33 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore6 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Cursori/Cursore9 2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/EditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EditorMap/mappa1_editor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EditorMap/mappa1_editor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Editor/EditorBarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Editor/EditorBarModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/EditorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World$Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World$Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Editor/EditorView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,13 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Settings pt.7">
-      <created>1685480622827</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1685480622827</updated>
     </task>
     <task id="LOCAL-00047" summary="Settings pt.7">
       <created>1685515929341</created>
@@ -450,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686301522719</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Editor pt.6">
+      <created>1686303455720</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1686303455720</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
