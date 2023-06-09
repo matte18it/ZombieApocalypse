@@ -37,108 +37,108 @@ public class PlayWav {
 
     //----- Suoni -----
     public void playZombie(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playAmmoSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playButtonSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ButtonSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ButtonSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playGameOverSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/GameOverSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/GameOverSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playGrenadeSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/Grenade.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/Grenade.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playHurtSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playKnifeSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/KnifeSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/KnifeSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playMedikitSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/MedikitSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/MedikitSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playPotionSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/PotionDrink.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/PotionDrink.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playPumpShot(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/PumpShot.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/PumpShot.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playRadioSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/RadioSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/RadioSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playShotPistola(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ShotPistola.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ShotPistola.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playWalkSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playWinSound(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/WinSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/WinSound.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
     public void playZombieDeath(){
-        /*clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieDeath.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieDeath.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();*/
+        clipSound.start();
     }
 
 }

@@ -40,6 +40,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 view.removeAll();
                 view.Page2();
                 view.revalidate();
@@ -51,6 +53,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 view.removeAll();
                 view.Page1();
                 view.revalidate();
@@ -85,6 +89,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 if(editorView.line){
                     editorView.line = false;
                     editorView.repaint();
@@ -100,6 +106,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 showDialog();
             }
         });
@@ -108,6 +116,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 editorView.line = true;
                 editorView.initWorld();
                 editorView.repaint();
@@ -118,6 +128,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 if(!view.getTxtName().getText().equals("Insert map name:") && !view.getTxtName().getText().equals("Nome mappa:") && !view.getTxtName().getText().equals(""))
                     model.saveMap(view.getTxtName().getText());
                 else{
@@ -530,6 +542,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 Game.getInstance().setPause(false);
                 dialog.dispose();
             }
@@ -538,6 +552,8 @@ public class EditorBarController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 dialog.dispose();
                 GameFrame.menuLaunch();
             }

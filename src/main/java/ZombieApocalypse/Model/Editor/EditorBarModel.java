@@ -2,6 +2,7 @@ package ZombieApocalypse.Model.Editor;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
@@ -121,6 +122,8 @@ public class EditorBarModel {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 Game.getInstance().setPause(false);
                 dialog.dispose();
             }
@@ -129,6 +132,8 @@ public class EditorBarModel {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 dialog.dispose();
                 f2.delete();
                 try { f2.createNewFile(); } catch (IOException ex) { throw new RuntimeException(ex); }
