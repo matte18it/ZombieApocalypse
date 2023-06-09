@@ -1,16 +1,12 @@
 package ZombieApocalypse.View.Editor;
 
-import ZombieApocalypse.Controller.EditorBarController;
 import ZombieApocalypse.Controller.EditorController;
 import ZombieApocalypse.Model.Editor.EditorModel;
-import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class EditorView extends JPanel {
     private EditorController controller;
@@ -23,7 +19,7 @@ public class EditorView extends JPanel {
     public boolean line = true;
 
     //Gestione dei blocchi disegnabili
-    enum Block { TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
+    enum Block {TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
     private final Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
 
     public EditorView(){
@@ -127,8 +123,8 @@ public class EditorView extends JPanel {
         return world[i].length;
     }
 
-    public int getEnum(int i, int j){
-        return world[i][j].ordinal();
+    public Block getEnum(int i, int j){
+        return world[i][j];
     }
 
     public void initImage(){
