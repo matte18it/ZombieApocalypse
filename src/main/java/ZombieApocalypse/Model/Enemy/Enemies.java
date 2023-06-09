@@ -31,8 +31,7 @@ public class Enemies {
                 case FATZOMBIE -> {if(player.distance(enem)<24) return false;}
                 case KIDZOMBIE -> {if(player.distance(enem)<13) return false;}
             }
-        }
-        return true;
+        }return true;
     }
     //Controllo della collisione con l'esplosione della granata (che è di forma rotonda)
     public void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
