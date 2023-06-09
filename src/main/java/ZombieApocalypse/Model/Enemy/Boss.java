@@ -3,6 +3,8 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
