@@ -33,9 +33,10 @@ public abstract class BulletView {
             bullet[i] = ResourcesLoader.getInstance().getImage("/Nemici/TURRETZOMBIE/Vomito" + i + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true);
     }
     private void loadBulletBoss() {
-        bullet=new Image[2];
-        for (int i = 0; i < 2; i++)
-            bullet[i] = ResourcesLoader.getInstance().getImage("/Nemici/Boss/BossVerde/Colpo/Colpo" + i + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true);
+        bullet=new Image[8];
+        for (int i = 0; i < 8; i++)
+                bullet[i] = ResourcesLoader.getInstance().getImage("/Nemici/Boss/BossVerde/Colpo/Colpo" + i + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true);
+
     }
 
     private void loadBulletGrenade() {

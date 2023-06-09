@@ -16,7 +16,8 @@ public class Boss extends Enemy{
         height=Settings.CELL_SIZEY*4;
         type= Enemies.EnemiesType.BOSS;
         healt=50;
-        dir= Settings.movementDirection.LEFT;
+        //Cambiare posizione sparo per adesso
+        dir= Settings.movementDirection.DOWN;
         super.setSize();
     }
 
@@ -84,6 +85,9 @@ if(countAttack==20)
         switch (dir){
             case LEFT -> Bullets.getInstance().BulletBoss(x+30,y+35, 25, 0, Bullet.Direction.LEFT);
             case RIGHT -> Bullets.getInstance().BulletBoss(x+wight-50,y+35, 25, 0, Bullet.Direction.RIGHT);
+            case UP -> Bullets.getInstance().BulletBoss(x+50,y,25, 0, Bullet.Direction.UP);
+            case DOWN -> Bullets.getInstance().BulletBoss(x+50,y+50,25, 0, Bullet.Direction.DOWN);
+
         }
     }
 

@@ -15,7 +15,7 @@ public abstract class Bullet {
      int x;
      int y;
     int dimension;
-     Bullet.Direction dir;
+     public Bullet.Direction dir;
     public int numFrame=0;
     int totalFrame;
     public boolean ending=false;
