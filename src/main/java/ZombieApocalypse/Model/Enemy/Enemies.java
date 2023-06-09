@@ -43,6 +43,7 @@ public class Enemies {
             Enemy b=(Enemy) var1.next();
             enem.x=b.getX()+b.getCenterX();
             enem.y=b.getY()+b.getCenterY();
+            hitSound(b);
             switch (b.type){
                 case BOSS -> {if(p.distance(enem)<120) b.gettingHit(damage);}
                 case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE ->{if(p.distance(enem)<30) b.gettingHit(damage);}
@@ -60,6 +61,7 @@ public class Enemies {
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
             if(b.hitBox.intersects(hitBox)){
+                hitSound(b);
                 b.gettingHit(damage);
             }
         }
@@ -70,6 +72,7 @@ public class Enemies {
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
             if(b.hitBox.intersects(hitBox)){
+                hitSound(b);
                 b.gettingHit(damage);
                 return true;
             }
@@ -126,6 +129,17 @@ public class Enemies {
                 b.updateGunPosition();
 
 
+        }
+    }
+
+    private void hitSound(Enemy b) {
+        if(b.type.equals(EnemiesType.FATZOMBIE) || b.type.equals(EnemiesType.TURRETZOMBIE) || b.type.equals(EnemiesType.BOSS) || b.type.equals(EnemiesType.KIDZOMBIE) || b.type.equals(EnemiesType.SKINNYZOMBIE)){
+            if(GameData.sound)
+                PlayWav.getInstance().playZombieHit();
+        }
+        else if(b.type.equals(EnemiesType.BANDIT) || b.type.equals(EnemiesType.BOMBBANDIT)) {
+            if (GameData.sound)
+                PlayWav.getInstance().playHurtSound();
         }
     }
 }

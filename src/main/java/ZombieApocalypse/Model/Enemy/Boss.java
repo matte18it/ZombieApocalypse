@@ -3,6 +3,8 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -11,8 +13,8 @@ public class Boss extends Enemy{
 
     public Boss(int x, int y) {
         super(x, y);
-        wight= Settings.CELL_SIZEX*4;
-        height=Settings.CELL_SIZEY*4;
+        wight = Settings.CELL_SIZEX*4;
+        height = Settings.CELL_SIZEY*4;
         type= Enemies.EnemiesType.BOSS;
         healt=50;
         //Cambiare posizione sparo per adesso

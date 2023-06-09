@@ -15,7 +15,7 @@ public class CharacterAnimation {
     public CharacterAnimation(String action, int numberOfElement) {
         for (int i = 0; i < numberOfElement; i++) {
             String path=action+i;
-            Image img= ResourcesLoader.getInstance().getImage("/"+path+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true);
+            Image img= ResourcesLoader.getInstance().getImage("/"+path+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, false);
             images.add(img);
         }
     }
