@@ -55,7 +55,7 @@ public class EditorBarModel {
             for (int i = 0; i < editorView.getWorldLength(); i++) {
 
                 for (int j = 0; j < editorView.getWorldLengthRow(i); j++)
-                    myWriter.write(String.valueOf(editorView.getEnum(i, j) + " "));
+                    myWriter.write(editorView.getEnum(i, j) + " ");
 
                 myWriter.write("\n");
             }
