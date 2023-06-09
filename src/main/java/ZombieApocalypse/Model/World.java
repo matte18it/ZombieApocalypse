@@ -22,6 +22,7 @@ public class World {
     }
 
     public int getSizeY() {
+
         return world[0].length;
     }
 
