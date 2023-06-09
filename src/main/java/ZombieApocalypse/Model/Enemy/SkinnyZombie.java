@@ -3,6 +3,8 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Item;
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -36,6 +38,8 @@ public class SkinnyZombie extends Enemy{
         //Gestione delle Hit
         if(hit){
             if(countHit<30){
+                if(GameData.sound)
+                    PlayWav.getInstance().playZombieHit();
                 countHit++;}
             else
                 stopHit();

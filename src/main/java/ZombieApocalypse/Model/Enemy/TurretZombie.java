@@ -3,6 +3,8 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -67,6 +69,8 @@ public class TurretZombie extends Enemy{
             }
             if (hit) {
                 if (countHit < 30) {
+                    if(GameData.sound)
+                        PlayWav.getInstance().playZombieHit();
                     countHit++;
                 } else
                     stopHit();

@@ -3,6 +3,8 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -26,6 +28,8 @@ public class Boss extends Enemy{
         //Gestione della Morte
 
         if(healt<=0 && countDeath<=8){
+            if(GameData.sound)
+                PlayWav.getInstance().playZombieHit();
             countDeath++;
             dying=true;
             return true;

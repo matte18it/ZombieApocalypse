@@ -2,6 +2,8 @@ package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -34,6 +36,8 @@ public class KidZombie extends Enemy{
         }
         //Gestione delle Hit
         if(hit){
+            if(GameData.sound)
+                PlayWav.getInstance().playZombieHit();
             if(countHit<30){
                 countHit++;}
             else
