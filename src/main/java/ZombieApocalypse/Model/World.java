@@ -17,7 +17,7 @@ public class World {
     }
 
     //Tutti i blocchi disegnabili
-    enum Block { GROUND0, GROUND1,GROUND2, GROUND3}
+    enum Block { TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25, ROAD26}
     //Mondo e posizione del player
     private final Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
 
@@ -29,7 +29,7 @@ public class World {
     private void generateWorld() {
         for(int i = 0; i < world.length; i++) {
             for(int j = 0; j < world[i].length; j++) {
-                world[i][j]=Block.GROUND0;
+                world[i][j]=Block.TERRENO0;
             }}
     }
     public boolean isEnemy(int x, int y, int cX, int cY){
@@ -56,7 +56,7 @@ public class World {
         return false;
     }
     public boolean isGround0(int x, int y) {
-        return isType(x, y, Block.GROUND0);
+        return isType(x, y, Block.TERRENO0);
     }
 
     public int getSize() {

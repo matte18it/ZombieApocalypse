@@ -2,6 +2,7 @@ package ZombieApocalypse.Controller;
 
 import ZombieApocalypse.Model.Editor.EditorModel;
 import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
 
@@ -15,13 +16,7 @@ public class EditorController {
     public EditorController(EditorView view, EditorModel model) {
         this.view = view;
         this.model = model;
-        view.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
-                customCursor();
-            }
-        });
+        addListener();
     }
 
     private void customCursor() {
@@ -96,5 +91,28 @@ public class EditorController {
 
     }
 
-    public void addListener(){}
+    public void addListener(){
+        view.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                customCursor();
+            }
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                int x = e.getX(), y = e.getY(), x1, y1;
+
+                for(int i = 0; i < view.getWorldLength(); i++) {
+                    x1 = i * Settings.CELL_SIZEX;
+                    for(int j = 0; j < view.getWorldLengthRow(i); j++) {
+                        y1 = j * Settings.CELL_SIZEY;
+                        if((x >= x1 && x <= x1 + Settings.CELL_SIZEX) && (y >= y1 && y <= y1 + Settings.CELL_SIZEY))
+                            view.setTassello(i, j);
+                    }
+                }
+
+            }
+        });
+    }
 }
