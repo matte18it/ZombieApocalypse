@@ -30,7 +30,7 @@ public class EditorBarModel {
     public void saveMap(String name){
         //creo folder e file
         File f1 = new File("EditorMap");
-        File f2 = new File("EditorMap/" + name + "_editor.txt");
+        File f2 = new File("EditorMap/" + name + ".txt");
 
         //qua verifico se la directory e il file esistono, se non esistono li creo
         if(!f1.exists())
