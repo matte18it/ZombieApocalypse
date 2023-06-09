@@ -4,22 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Editor pt.5">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossVerde/Colpo/Colpo7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_23,_22_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_23__22_13__Changes_.xml" beforeDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="attacco boss 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack1/Attack9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Attack2/Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Colpo/Colpo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Colpo/Colpo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Death/Death5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Hit/Hit1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Hit/Hit2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Hit/Hit3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Idle/Idle5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/Nemici/Boss/BossBlu/Walk/Walk9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Boss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletBossView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletBossView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Gun/BulletView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Gun/BulletView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Settings pt.6">
-      <created>1685468058040</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1685468058040</updated>
     </task>
     <task id="LOCAL-00046" summary="Settings pt.7">
       <created>1685480622827</created>
@@ -445,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686246817465</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="attacco boss 1">
+      <created>1686298178553</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1686298178553</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +491,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Settings pt.6" />
     <MESSAGE value="Settings pt.7" />
     <MESSAGE value="Settings pt.9" />
     <MESSAGE value="Pausa pt.1" />
@@ -486,6 +515,7 @@
     <MESSAGE value="Editor pt.2" />
     <MESSAGE value="Editor pt.3" />
     <MESSAGE value="Editor pt.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editor pt.5" />
+    <MESSAGE value="attacco boss 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="attacco boss 1" />
   </component>
 </project>

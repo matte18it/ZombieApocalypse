@@ -43,12 +43,12 @@ public class BossView implements EnemyViewInterface{
         enemyModel=enemy;
 
         String g;
-        int i=m.nextInt(0, 10000);
-        //if(i==0)
-          //  g="Nemici/Boss/BossBlu";
-        //else
+        int i=m.nextInt(0, 10000);  //Gestione dello Shiny
+        if(i==0)
+            g="Nemici/Boss/BossBlu";
+        else
             g="Nemici/Boss/BossVerde";
-            load(g);
+        load(g);
 
         currentImage = idleRight.getDefaultImage();
     }
@@ -63,6 +63,15 @@ public class BossView implements EnemyViewInterface{
                     case LEFT -> {currentImage=attackLeft1.update(); b=true;}
                     case RIGHT -> {currentImage=attackRight1.update(); b=false;}
                     case UP,DOWN ->{if(b) currentImage=attackLeft1.update(); else currentImage=attackRight1.update();}
+                }  }return;
+
+        }
+        if(enemyModel.attack2){
+            if(enemyModel.countAttack%2!=0){
+                switch (enemyModel.dir){
+                    case LEFT -> {currentImage=attackLeft2.update(); b=true;}
+                    case RIGHT -> {currentImage=attackRight2.update(); b=false;}
+                    case UP,DOWN ->{if(b) currentImage=attackLeft2.update(); else currentImage=attackRight2.update();}
                 }  }return;
 
         }

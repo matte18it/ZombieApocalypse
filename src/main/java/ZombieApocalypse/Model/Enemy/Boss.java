@@ -3,7 +3,6 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
-import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
 
 import java.util.Random;
@@ -17,7 +16,7 @@ public class Boss extends Enemy{
         type= Enemies.EnemiesType.BOSS;
         healt=50;
         //Cambiare posizione sparo per adesso
-        dir= Settings.movementDirection.DOWN;
+        dir= Settings.movementDirection.RIGHT;
         super.setSize();
     }
 
@@ -52,7 +51,7 @@ public class Boss extends Enemy{
           //  Game.getInstance().getPlayerCharacter().hit();
 
         //Parte di IA da implementare
-       /* int f=m.nextInt(0,100);
+       /*int f=m.nextInt(0,100);
         if(f<20){
         int i=m.nextInt(0,4);
         switch (i){
@@ -66,15 +65,29 @@ public class Boss extends Enemy{
         hitBox.y=y;
         } else
             isMoving=false;  //Fine delle animazioni di movimento
+*/
+ //Comando per sparare Attacco1:
+    //    attack1();
 
-*/  //Comando per sparare
-        isAttack1();
-if(countAttack<23)
-    countAttack++;
-if(countAttack==23)
-    stopAttack1();
-if(countAttack==20)
-    shoot();
+        if(attack1){
+    if(countAttack<23 && countAttack>0)
+        countAttack++;
+    if(countAttack==23)
+        stopAttack1();
+    if(countAttack==20)
+        shoot();}
+
+    //Comando per attacco2:
+    //attack2();
+
+        if(attack2){
+    if(countAttack<9 && countAttack>0){
+        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
+          Game.getInstance().getPlayerCharacter().hit();
+        countAttack++;}
+    if(countAttack==9)
+        stopAttack2();}
+
 
 
 
@@ -98,15 +111,17 @@ if(countAttack==20)
             isMoving=true;
             dir=Settings.movementDirection.RIGHT;}
     }
-    private void isAttack1() {
+    private void attack1() {
         if(countAttack==0){
-            attack1=true;}}
+            attack1=true;
+        countAttack++;}}
     private void stopAttack1() {
         attack1=false;
         countAttack=0;}
-    private void isAttack2() {
+    private void attack2() {
+        if(countAttack==0){
         attack2=true;
-        countAttack++;}
+        countAttack++;}}
     private void stopAttack2() {
         attack2=false;
         countAttack=0;}
