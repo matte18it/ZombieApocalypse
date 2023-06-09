@@ -35,8 +35,9 @@ public class GraphicPanel extends JPanel {
     public ShotgunView getShotgunView() {
         return shotgunView;
     }
+    World world=new World();
     //immagini ordinate fino ad adesso
-    private final int numeroImmagini=1;
+    private final int numeroImmagini=World.Block.values().length;
     private final Image[] images=new Image[numeroImmagini];
     public GraphicPanel()  {
         //setto il cursore personalizzato
@@ -54,7 +55,6 @@ public class GraphicPanel extends JPanel {
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        World world=new World();
         for(int i = 0; i < world.getSize(); i++) {
             int x = i * Settings.CELL_SIZEX;
             for(int j = 0; j < world.getSize(); j++) {
