@@ -45,7 +45,7 @@ public class SkinnyZombie extends Enemy{
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
             Game.getInstance().getPlayerCharacter().hit();
 
-        //Parte di Intelligenza artificiale da Implementare
+        //Movimenti Random
         int f=m.nextInt(0,100);
         if(f<20){
         int i=m.nextInt(0,4);
@@ -57,8 +57,6 @@ public class SkinnyZombie extends Enemy{
         }
 
         //Aggiornamento della hitbox necessario ad ogni clock
-        hitBox.x=x;
-        hitBox.y=y;
         } else
             isMoving=false;  //Stop delle animazioni di movimento
 
@@ -71,6 +69,7 @@ public class SkinnyZombie extends Enemy{
         if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+10, y, centerX, centerY)){
             x=x+10;
             isMoving=true;
+            hitBox.x=x;
             dir=Settings.movementDirection.RIGHT;}
     }
 
@@ -78,6 +77,7 @@ public class SkinnyZombie extends Enemy{
         if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
             x=x-10;
             isMoving=true;
+            hitBox.x=x;
             dir=Settings.movementDirection.LEFT;}
     }
 
@@ -85,6 +85,7 @@ public class SkinnyZombie extends Enemy{
         if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
             y=y+10;
             isMoving=true;
+            hitBox.y=y;
             dir=Settings.movementDirection.DOWN;}
     }
 
@@ -92,6 +93,7 @@ public class SkinnyZombie extends Enemy{
         if(Game.getInstance().getWorld().isWalkable(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
             y=y-10;
             isMoving=true;
+            hitBox.y=y;
         dir=Settings.movementDirection.UP;}
 
     }

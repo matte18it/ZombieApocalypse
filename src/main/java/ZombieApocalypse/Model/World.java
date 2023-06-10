@@ -32,7 +32,7 @@ public class World {
     public boolean isSpawnable(int x, int y) {
         Point enemy=new Point(x, y);
         Point player=Game.getInstance().getPlayerPosition();
-        if(player.distance(enemy)<200)
+        if(player.distance(enemy)<300)
             return false;
         return true;
     }
