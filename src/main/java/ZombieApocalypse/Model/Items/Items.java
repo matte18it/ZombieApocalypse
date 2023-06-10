@@ -21,7 +21,7 @@ public class Items {
 
 
 
-    public final List<Item> getItems(){return this.items;
+    public  List<Item> getItems(){return this.items;
     }
 
     public void update(){

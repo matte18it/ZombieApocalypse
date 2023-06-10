@@ -115,7 +115,7 @@ public class Enemies {
 
 
 
-    public final List<Enemy> getEnemies(){return this.enemies;
+    public  List<Enemy> getEnemies(){return this.enemies;
     }
 
     public void update(){

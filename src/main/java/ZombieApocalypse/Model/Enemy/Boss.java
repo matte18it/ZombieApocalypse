@@ -25,6 +25,11 @@ public class Boss extends Enemy{
     //Per prova
     Random m=new Random();
     public boolean update() {
+        //Gestione della Pausa del gioco
+        if(Game.getInstance().getBackMenu()){
+            stopAll=true;
+            return false;
+        }
         //Gestione della Morte
 
         if(healt<=0 && countDeath<=8){
@@ -36,11 +41,7 @@ public class Boss extends Enemy{
         if(countDeath>8)
             return true;
 
-        //Gestione della Pausa del gioco
-        if(Game.getInstance().getBackMenu()){
-            stopAll=true;
-            return false;
-        }
+
         //Gestione delle Hit
         if(hit){
             if(countHit<10){

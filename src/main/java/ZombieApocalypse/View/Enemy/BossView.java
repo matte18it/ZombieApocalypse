@@ -4,6 +4,7 @@ import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.CharacterAnimation;
 
@@ -30,13 +31,8 @@ public class BossView implements EnemyViewInterface{
 
 
 
-
-
-
-    public final int width = Settings.CELL_SIZEX*3;
-    public final int height = Settings.CELL_SIZEY*3;
-
     private Image currentImage;
+    private Image emptyImage;
     Random m=new Random();
     Enemy enemyModel;
     public BossView(Enemy enemy) {
@@ -57,6 +53,8 @@ public class BossView implements EnemyViewInterface{
 
 
     public void update() {
+        if(enemyModel.stopAll){
+            currentImage=emptyImage; return;}
         if(enemyModel.attack1){
             if(enemyModel.countAttack%2!=0){
                 switch (enemyModel.dir){
@@ -123,6 +121,8 @@ public class BossView implements EnemyViewInterface{
         attackLeft2=new CharacterAnimation(g+"/Attack2/Attack2Left", 6);
         deathLeft=new CharacterAnimation(g+"/Death/DeathLeft", 5);
         deathRight=new CharacterAnimation(g+"/Death/DeathRight", 5);
+        emptyImage= ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true);
+
 
     }
 }
