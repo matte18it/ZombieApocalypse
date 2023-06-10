@@ -81,6 +81,7 @@ public class UserMapController {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 UserMapView.difficulty = 0;
+                Game.getInstance().diff = Game.Difficulty.EASY;
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(null);
                 view.getBtnEasy().setBorder(new LineBorder(Color.red));
@@ -94,6 +95,7 @@ public class UserMapController {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 UserMapView.difficulty = 1;
+                Game.getInstance().diff = Game.Difficulty.MEDIUM;
                 view.getBtnMedium().setBorder(new LineBorder(Color.red));
                 view.getBtnHard().setBorder(null);
                 view.getBtnEasy().setBorder(null);
@@ -107,6 +109,7 @@ public class UserMapController {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 UserMapView.difficulty = 2;
+                Game.getInstance().diff = Game.Difficulty.HARD;
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(new LineBorder(Color.red));
                 view.getBtnEasy().setBorder(null);
@@ -160,6 +163,7 @@ public class UserMapController {
                 if(f.exists() && !f.isDirectory()){
                     World.isEditor = true;
                     nomeFile = view.getNameMap().getText();
+                    Game.getInstance().loadEditorMap(nomeFile);
                     GameFrame.gameLaunch();
                 }
                 else{

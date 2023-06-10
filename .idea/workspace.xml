@@ -7,10 +7,7 @@
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Gestione Mappe Player">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/UserMapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/UserMapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World$Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World$Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,13 +91,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Suoni pt. 2">
-      <created>1685907872018</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1685907872018</updated>
     </task>
     <task id="LOCAL-00065" summary="Suoni pt. 3">
       <created>1685965428060</created>
@@ -438,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686419964638</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Gestione Mappe Player">
+      <created>1686421283197</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1686421283197</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

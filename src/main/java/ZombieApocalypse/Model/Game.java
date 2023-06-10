@@ -23,7 +23,7 @@ public class Game {
     }
 
     public enum Difficulty{EASY, MEDIUM, HARD};
-    public Difficulty diff=Difficulty.HARD;
+    public Difficulty diff = Difficulty.HARD;
 
     private final PlayerCharacter character = new PlayerCharacter();
     private final KnifeModel knife=new KnifeModel();
