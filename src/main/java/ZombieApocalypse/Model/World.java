@@ -1,6 +1,7 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Model.Enemy.Enemies;
+import ZombieApocalypse.Model.Enemy.SkinnyZombie;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -26,6 +27,22 @@ public class World {
     public int getSizeY() {
 
         return world[0].length;
+    }
+
+    public boolean isSpawnable(int x, int y) {
+        Point enemy=new Point(x, y);
+        Point player=Game.getInstance().getPlayerPosition();
+        if(player.distance(enemy)<200)
+            return false;
+        return true;
+    }
+
+    public boolean isSpawnableItem(int x, int y) {
+        Point enemy=new Point(x, y);
+        Point player=Game.getInstance().getPlayerPosition();
+        if(player.distance(enemy)<50)
+            return false;
+        return true;
     }
 
 

@@ -104,24 +104,24 @@ public class Enemies {
 
     }
     Random m=new Random();
+    public int enemyNumber=0;
 
     public void generateRandomEnemies() {
-        int count=0;
         switch (Game.getInstance().getDifficulty()){
-            case EASY -> count=m.nextInt(5,7);
-            case MEDIUM -> count= m.nextInt(7,15);
-            case HARD ->  count= m.nextInt(15,25);
+            case EASY -> enemyNumber=m.nextInt(5,7);
+            case MEDIUM -> enemyNumber= m.nextInt(7,15);
+            case HARD ->  enemyNumber= m.nextInt(15,25);
         }
         int x,y;
         int c=0;
         int t;
 
-        while (c<count ){
+        while (c<enemyNumber ){
             t=m.nextInt(0, EnemiesType.values().length-2);
 
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
-            if( Game.getInstance().getWorld().isPlayer(x,y,20,20) && Game.getInstance().getWorld().isWalkable(x,y)){
+            if( Game.getInstance().getWorld().isSpawnable(x,y) && Game.getInstance().getWorld().isWalkable(x,y)){
                 c++;
                 switch (t){
                     case 0-> Enemies.getInstance().addSkinnyZombie(x,y);
@@ -158,6 +158,7 @@ public class Enemies {
         while (e.hasNext()){
             Enemy b=e.next();
             if(!b.update()){
+                enemyNumber--;
                 e.remove();
             }
             if(b.type==EnemiesType.BANDIT )

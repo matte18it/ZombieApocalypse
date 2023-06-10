@@ -38,7 +38,7 @@ Random m=new Random();
             }
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
-            if(!(pistol && t==3) && !(shotGun && t==1) && Game.getInstance().getWorld().isPlayer(x,y,20,20) && Game.getInstance().getWorld().isWalkable(x,y)){
+            if(!(pistol && t==3) && !(shotGun && t==1) && Game.getInstance().getWorld().isSpawnableItem(x,y) && Game.getInstance().getWorld().isWalkable(x,y)){
                 c++;
                 Items.getInstance().dropItem(x,y, ItemType.values()[t]);
                 if(t==3 )
