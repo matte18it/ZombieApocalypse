@@ -205,8 +205,10 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     private int count=0;
     private int countZombie = 0;
     private int randomZombie = new Random().nextInt(300, 600);
+    private int cdd=0;
 
-    public void update() {
+    public void update(){
+
         if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
             Game.getInstance().update();
             panel.update();
@@ -228,6 +230,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         }
         else
             countZombie++;
+
     }
 
     @Override

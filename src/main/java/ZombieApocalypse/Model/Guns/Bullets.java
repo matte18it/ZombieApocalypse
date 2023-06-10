@@ -1,12 +1,13 @@
 package ZombieApocalypse.Model.Guns;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import ZombieApocalypse.Model.Items.Item;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Bullets {
-    private final List<Bullet> bullets=new ArrayList<>();
+    //Gestione di eliminazioni e aggiunte concorrenti
+    private ConcurrentLinkedDeque<Bullet> bullets=new ConcurrentLinkedDeque<>();
     private static final Bullets instance=new Bullets();
 
     public Bullets(){}
@@ -30,11 +31,11 @@ public class Bullets {
         this.bullets.add(new BulletBoss(x,y,dimension,angle,  dir));
     }
 
-    public List<Bullet> getBullets(){return this.bullets;}
+    public ConcurrentLinkedDeque<Bullet> getBullets(){return this.bullets;}
 
 
-    public void update(){
-        bullets.removeIf(b -> !b.update());
+    public  void update(){
+        bullets.removeIf(str -> !str.update());
     }
 
 

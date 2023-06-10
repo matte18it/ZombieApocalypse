@@ -2,9 +2,7 @@ package ZombieApocalypse.Loop;
 
 import ZombieApocalypse.Controller.PlayerController;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class GameLoop {
 
@@ -18,10 +16,14 @@ public class GameLoop {
         if (executor != null)
             return;
         executor = Executors.newSingleThreadScheduledExecutor();
-        executor.scheduleWithFixedDelay(() -> controller.update(),
-                0, 60, TimeUnit.MILLISECONDS);
+            this.executor.scheduleAtFixedRate(this.controller::update,
+                    0L, 60L, TimeUnit.MILLISECONDS);
 
-    }
+
+        }
+
+
+
     public void stop(){
         executor.shutdown();
     }
