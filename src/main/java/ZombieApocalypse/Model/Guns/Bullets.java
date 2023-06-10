@@ -30,7 +30,7 @@ public class Bullets {
         this.bullets.add(new BulletBoss(x,y,dimension,angle,  dir));
     }
 
-    public List<Bullet> getBullets(){return this.bullets;}
+    public final List<Bullet> getBullets(){return this.bullets;}
 
 
     public void update(){
