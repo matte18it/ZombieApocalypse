@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Items {
     public void dropItem(int x, int y, ItemType value) {
@@ -11,7 +12,7 @@ public class Items {
     }
 
     public enum ItemType{ RADIO, SHOTGUN, GRENADE, PISTOL, MEDKIT, AMMO0, AMMO1, SPELL,EMPTY};
-    private final List<Item> items=new ArrayList<>();
+    private final ConcurrentLinkedDeque<Item> items=new ConcurrentLinkedDeque<>();
     private static final Items instance=new Items();
 
     public Items(){}
@@ -21,16 +22,10 @@ public class Items {
 
 
 
-    public  List<Item> getItems(){return this.items;
+    public  ConcurrentLinkedDeque<Item> getItems(){return this.items;
     }
 
     public void update(){
-        Iterator<Item> var1=items.iterator();
-        while(var1.hasNext()){
-            Item b=  var1.next();
-            if(!b.update()){
-                var1.remove();}
-
-        }
+        items.removeIf(b -> !b.update());
     }
 }

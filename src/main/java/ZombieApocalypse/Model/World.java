@@ -5,6 +5,7 @@ import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 import java.io.*;
+import java.util.Objects;
 
 public class World {
 
@@ -42,37 +43,54 @@ public class World {
         return true;
 
     }
+    private String fileName;
+    public void setFileName(String s){
+        fileName=s;
+        isEditor=true;
+    }
 
 
 
 
     public World() {
-        if(!isEditor){
-        try{
-        generateCampaignWorld();}catch (IOException ex){
-            System.exit(105);
-        }}
+        if(isEditor)
+            generatePlayerWorld();
+        else
+            generateCampaignWorld();
+
     }
-    //Per adesso, dopo caricare il mondo da file
-    private void generateCampaignWorld() throws IOException, ArrayIndexOutOfBoundsException{
-        BufferedReader in = null;
-        String[] builder=new String[Settings.WORLD_SIZEX];
-        try {
-            in = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/CampaignMap/Campagna"+campainMapIndex+".txt")));
-                for(int i=0; i<Settings.WORLD_SIZEX; i++){
-                    builder = in.readLine().split(" ");
-                    for(int j=0; j<Settings.WORLD_SIZEY; j++){
-                        world[i][j]=Block.valueOf(builder[j]);
-                    }
+
+    private void generatePlayerWorld() {
+        String[] builder;
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/EditorMap/" + fileName + ".txt"))))) {
+            for (int i = 0; i < Settings.WORLD_SIZEX; i++) {
+                builder = in.readLine().split(" ");
+                for (int j = 0; j < Settings.WORLD_SIZEY; j++) {
+                    world[i][j] = Block.valueOf(builder[j]);
                 }
+            }
+
+        } catch (IOException | ArrayIndexOutOfBoundsException e) {
+            System.exit(107);
 
         }
-        finally {
-            if(in != null)
-                in.close();
-
-
     }
+
+    //Per adesso, dopo caricare il mondo da file
+    private void generateCampaignWorld(){
+        String[] builder;
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/CampaignMap/Campagna" + campainMapIndex + ".txt"))))) {
+            for (int i = 0; i < Settings.WORLD_SIZEX; i++) {
+                builder = in.readLine().split(" ");
+                for (int j = 0; j < Settings.WORLD_SIZEY; j++) {
+                    world[i][j] = Block.valueOf(builder[j]);
+                }
+            }
+
+        } catch (IOException | ArrayIndexOutOfBoundsException e) {
+            System.exit(107);
+
+        }
     }
     public boolean isEnemy(int x, int y, int cX, int cY){
         return Enemies.getInstance().checkCollision(x,y, cX, cY) ;
