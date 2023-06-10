@@ -15,7 +15,11 @@ public class BulletGrenade extends Bullet{
         velocityY=15;
         dir=d;
         numFrame=0;
-        damage=5;
+        switch (Game.getInstance().getDifficulty()){
+            case EASY -> damage=15;
+            case MEDIUM -> damage=7;
+            case HARD -> damage=4;
+        }
         totalFrame=tot/15;
     }
 

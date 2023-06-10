@@ -90,7 +90,7 @@ public class MenuBarView extends JPanel {
         addAmmoLabel=new JLabel("");
         addAmmoLabel.setForeground(Color.WHITE);
         addAmmoLabel.setFont(font);
-        ammoLabel=new JLabel("30");
+        ammoLabel=new JLabel("45");
         ammoLabel.setForeground(Color.WHITE);
         ammoLabel.setFont(font);
         c.gridx=0;

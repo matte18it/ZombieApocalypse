@@ -39,9 +39,14 @@ public class MenuBarModel {
     private void medKit(boolean b){
         if(GameData.sound)
             PlayWav.getInstance().playMedikitSound();
+        int numVite=0;
 
-
-        for(int i=0; i<2; i++){
+        switch (Game.getInstance().getDifficulty()){
+            case EASY -> numVite=3;
+            case MEDIUM -> numVite=2;
+            case HARD -> numVite=1;
+        }
+        for(int i=0; i<numVite; i++){
             Game.getInstance().getPlayerCharacter().cure();
         }
 

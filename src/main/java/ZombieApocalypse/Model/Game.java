@@ -18,6 +18,13 @@ public class Game {
         world.setFileName(name);
     }
 
+    public Difficulty getDifficulty() {
+        return diff;
+    }
+
+    public enum Difficulty{EASY, MEDIUM, HARD};
+    public Difficulty diff=Difficulty.HARD;
+
     private final PlayerCharacter character = new PlayerCharacter();
     private final KnifeModel knife=new KnifeModel();
     private final PistolModel pistol = new PistolModel();

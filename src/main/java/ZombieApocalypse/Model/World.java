@@ -6,6 +6,7 @@ import ZombieApocalypse.Utility.Settings;
 import java.awt.*;
 import java.io.*;
 import java.util.Objects;
+import java.util.Random;
 
 public class World {
 
@@ -48,6 +49,7 @@ public class World {
         fileName=s;
         isEditor=true;
     }
+    public int enemyNumber=0;
 
 
 

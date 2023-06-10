@@ -19,7 +19,7 @@ import java.awt.*;
 import java.util.*;
 
 public class GraphicPanel extends JPanel {
-    int count;
+    int count=0;
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
     private static final PistolView pistolView = new PistolView();
@@ -51,9 +51,12 @@ public class GraphicPanel extends JPanel {
 
 
 Random m=new Random();
-    int countWater=0;
     @Override
     protected void paintComponent(Graphics g) {
+        if(count==0){
+            Items.getInstance().generateRandomItems();
+            Enemies.getInstance().generateRandomEnemies();
+        }
         int r;
 
         super.paintComponent(g);
@@ -93,30 +96,7 @@ Random m=new Random();
             }else{
                 g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getWidth(), Game.getInstance().getShotgunModel().getHeight(), null);
             }}
-        if(count==0){
-            //per adesso gestione nemici
-            Enemies.getInstance().addSkinnyZombie(500,500);
-            Enemies.getInstance().addFatZombie(600,500);
-            Enemies.getInstance().addKidZombie(700,500);
-            Enemies.getInstance().addTurretZombie(500, 100);
-            Enemies.getInstance().addBandit(100, 300);
-            Enemies.getInstance().addBombBandit(100, 500);
-            Enemies.getInstance().addBoss(1000, 100);
 
-            //per adesso gestione item
-            Items.getInstance().dropItem(200,350, Items.ItemType.MEDKIT);
-            Items.getInstance().dropItem(100,150, Items.ItemType.SPELL);
-            Items.getInstance().dropItem(80,150, Items.ItemType.SPELL);
-            Items.getInstance().dropItem(150, 100, Items.ItemType.RADIO);
-            Items.getInstance().dropItem(50, 100, Items.ItemType.SHOTGUN);
-            Items.getInstance().dropItem(250, 100, Items.ItemType.PISTOL);
-            Items.getInstance().dropItem(300, 100, Items.ItemType.GRENADE);
-            Items.getInstance().dropItem(350, 100, Items.ItemType.GRENADE);
-            Items.getInstance().dropItem(80, 120, Items.ItemType.AMMO0);
-            Items.getInstance().dropItem(120, 120, Items.ItemType.AMMO1);
-
-
-        }
 
 
         for (Item b : Items.getInstance().getItems()) {

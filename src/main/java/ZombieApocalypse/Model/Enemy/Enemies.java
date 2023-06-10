@@ -1,13 +1,16 @@
 package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
+import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class Enemies {
     public void addSkinnyZombie(int x, int y) {
@@ -100,8 +103,40 @@ public class Enemies {
         } return false;
 
     }
+    Random m=new Random();
+
+    public void generateRandomEnemies() {
+        int count=0;
+        switch (Game.getInstance().getDifficulty()){
+            case EASY -> count=m.nextInt(5,7);
+            case MEDIUM -> count= m.nextInt(7,15);
+            case HARD ->  count= m.nextInt(15,25);
+        }
+        int x,y;
+        int c=0;
+        int t;
+
+        while (c<count ){
+            t=m.nextInt(0, EnemiesType.values().length-2);
+
+            x=m.nextInt(0, Settings.WINDOW_SIZEX);
+            y=m.nextInt(0, Settings.WINDOW_SIZEY);
+            if( Game.getInstance().getWorld().isPlayer(x,y,20,20) && Game.getInstance().getWorld().isWalkable(x,y)){
+                c++;
+                switch (t){
+                    case 0-> Enemies.getInstance().addSkinnyZombie(x,y);
+                    case 1-> Enemies.getInstance().addFatZombie(x,y);
+                    case 2-> Enemies.getInstance().addKidZombie(x,y);
+                    case 3->Enemies.getInstance().addTurretZombie(x,y);
+                    case 4-> Enemies.getInstance().addBandit(x,y);
+                    case 5->Enemies.getInstance().addBombBandit(x,y);
+                }
+
+            }
 
 
+        }
+    }
 
 
     public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};

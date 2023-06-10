@@ -112,7 +112,7 @@ public class PlayerCharacter  {
     public void speedUp(){
         if(countSpeed==0){
             speedUp=true;
-            speed=4;}
+            speed=3;}
         else
             maxCountSpeed=maxCountSpeed+maxCountSpeed;
 
