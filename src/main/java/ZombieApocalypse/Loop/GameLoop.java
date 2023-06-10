@@ -18,7 +18,7 @@ public class GameLoop {
         if (executor != null)
             return;
         executor = Executors.newSingleThreadScheduledExecutor();
-        executor.scheduleAtFixedRate(() -> controller.update(),
+        executor.scheduleWithFixedDelay(() -> controller.update(),
                 0, 60, TimeUnit.MILLISECONDS);
 
     }
