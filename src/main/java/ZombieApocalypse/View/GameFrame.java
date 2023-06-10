@@ -1,9 +1,11 @@
 package ZombieApocalypse.View;
+import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Loop.*;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Model.SplashScreenModel;
+import ZombieApocalypse.Model.World;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
@@ -34,7 +36,9 @@ public class GameFrame extends JPanel {
     public static UserMapView userView;
 
     public static void loadingLaunch(){
+        //setto le dimensioni
         dimension();
+
         splashScreen = new SplashScreenView();
 
         frameGame.add(splashScreen);
@@ -63,9 +67,6 @@ public class GameFrame extends JPanel {
 
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
-
-        //Setto le dimensioni
-        dimension();
 
         //Inserisco il panel appena creato all'interno del mio frame
         frameGame.add(panel);
@@ -105,8 +106,6 @@ public class GameFrame extends JPanel {
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
 
-        dimension();
-
         //Controllo che la traccia non sia già attiva
         if(!playMenuMusic.isPlay() && GameData.music){
             //Faccio partire la traccia
@@ -135,6 +134,8 @@ public class GameFrame extends JPanel {
             playMenuMusic.play("/Music/GameMusic.wav");
             playMenuMusic.setVolume(GameData.musicVolume);
         }
+        if(userView != null && userView.isShowing())
+            frameGame.remove(userView);
 
         leaderboardLoop.stop();
         menuLoop.stop();
@@ -171,6 +172,9 @@ public class GameFrame extends JPanel {
             menuLoop.stop();
             leaderboardLoop.stop();
         }
+        if(userView != null && userView.isShowing()){
+            frameGame.remove(userView);
+        }
 
         frameGame.setTitle("Editor");
 
@@ -195,8 +199,8 @@ public class GameFrame extends JPanel {
         userView = new UserMapView();
         frameGame.add(userView);
 
-        frameGame.revalidate();
         frameGame.repaint();
+        frameGame.revalidate();
     }
 
     public static void close() {

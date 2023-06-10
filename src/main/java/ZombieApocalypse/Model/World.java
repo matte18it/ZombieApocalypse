@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Enemy.SkinnyZombie;
 import ZombieApocalypse.Utility.Settings;
@@ -50,7 +51,7 @@ public class World {
     public enum Block {TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, WATER1, WATER2, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
     //Mondo e posizione del player
     public  Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
-    public boolean isEditor=false;
+    public static boolean isEditor=false;
     private int campainMapIndex=1;  //Mappa campagna corrente
     private final int campainMaps=5;  //numero mappe massime
     public boolean nextCampaignMap(){  //Verrà chiamato al completamento del livello
@@ -72,16 +73,19 @@ public class World {
 
 
     public World() {
-        if(isEditor)
+        if(isEditor && !UserMapController.nomeFile.equals(""))
             generatePlayerWorld();
-        else
+        else {
+            isEditor = false;
             generateCampaignWorld();
+        }
 
     }
 
     private void generatePlayerWorld() {
         String[] builder;
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/EditorMap/" + fileName + ".txt"))))) {
+        File file = new File("EditorMap/" + UserMapController.nomeFile + ".txt");
+        try (BufferedReader in = new BufferedReader(new FileReader(file))) {
             for (int i = 0; i < Settings.WORLD_SIZEX; i++) {
                 builder = in.readLine().split(" ");
                 for (int j = 0; j < Settings.WORLD_SIZEY; j++) {
@@ -91,8 +95,8 @@ public class World {
 
         } catch (IOException | ArrayIndexOutOfBoundsException e) {
             System.exit(107);
-
         }
+        UserMapController.nomeFile = "";
     }
 
     //Per adesso, dopo caricare il mondo da file

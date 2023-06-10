@@ -1,6 +1,7 @@
 package ZombieApocalypse.View.Editor;
 
 import ZombieApocalypse.Controller.EditorBarController;
+import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Editor.EditorBarModel;
 import ZombieApocalypse.Model.Editor.EditorModel;
 import ZombieApocalypse.Utility.GameData;
@@ -47,6 +48,12 @@ public class EditorBarView extends JPanel {
         c = new GridBagConstraints();
 
         initComponent();
+
+        if(!UserMapController.nomeFile.equals("")){
+            txtName.setText(UserMapController.nomeFile);
+            txtName.setForeground(Color.BLACK);
+            UserMapController.nomeFile = "";
+        }
 
         //creo il model
         model = new EditorBarModel(this, editorView);
@@ -532,11 +539,14 @@ public class EditorBarView extends JPanel {
         c.gridx = 0; c.gridy = 25;
         add(Box.createRigidArea(new Dimension(25, 10)), c);
 
-        if(GameData.lang.equals(GameData.Language.EN) && txtName.getText().equals(""))
+        if(GameData.lang.equals(GameData.Language.EN) && txtName.getText().equals("")) {
             txtName.setText("Insert map name:");
-        else if(GameData.lang.equals(GameData.Language.IT) && txtName.getText().equals(""))
+            txtName.setForeground(new Color(156, 156, 156));
+        }
+        else if(GameData.lang.equals(GameData.Language.IT) && txtName.getText().equals("")) {
             txtName.setText("Nome mappa:");
-        txtName.setForeground(new Color(156, 156, 156));
+            txtName.setForeground(new Color(156, 156, 156));
+        }
         txtName.setFont(font);
         txtName.setPreferredSize(new Dimension(150, 50));
         txtName.setMaximumSize(new Dimension(150, 50));
@@ -786,6 +796,9 @@ public class EditorBarView extends JPanel {
 
     public JButton getRoad25() {
         return road25;
+    }
+    public JTextField gettxtName(){
+        return txtName;
     }
 }
 

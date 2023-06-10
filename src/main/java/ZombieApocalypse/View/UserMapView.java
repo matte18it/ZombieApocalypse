@@ -451,7 +451,7 @@ public class UserMapView extends JPanel {
 
     @Override
     public void paintComponent(Graphics g){
-        //Con questo paintComponent vado a impostare un immagine casuale come sfondo al login
+        //Con questo paintComponent vado a impostare un immagine casuale come sfondo
         super.paintComponent(g);
         Image bgImage = null;       //Immagine da disegnare
 
