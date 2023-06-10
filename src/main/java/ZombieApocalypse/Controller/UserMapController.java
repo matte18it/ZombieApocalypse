@@ -4,6 +4,7 @@ import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Model.UserMapModel;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
+import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.UserMapView;
@@ -12,14 +13,13 @@ import javax.sound.sampled.Line;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
+import java.io.File;
 
 public class UserMapController {
     private UserMapModel model;
     private UserMapView view;
+    public static String nomeFile = "";
 
     public UserMapController(UserMapModel model, UserMapView view){
         //Creo il model e la view
@@ -79,7 +79,7 @@ public class UserMapController {
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(null);
                 view.getBtnEasy().setBorder(new LineBorder(Color.red));
-                changeDifficulty();
+                model.changeDifficulty();
             }
         });
         view.getBtnMedium().addMouseListener(new MouseAdapter() {
@@ -92,7 +92,7 @@ public class UserMapController {
                 view.getBtnMedium().setBorder(new LineBorder(Color.red));
                 view.getBtnHard().setBorder(null);
                 view.getBtnEasy().setBorder(null);
-                changeDifficulty();
+                model.changeDifficulty();
             }
         });
         view.getBtnHard().addMouseListener(new MouseAdapter() {
@@ -105,51 +105,30 @@ public class UserMapController {
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(new LineBorder(Color.red));
                 view.getBtnEasy().setBorder(null);
-                changeDifficulty();
+                model.changeDifficulty();
             }
         });
-    }
-
-    private void changeDifficulty() {
-        if(GameData.lang.equals(GameData.Language.EN)){
-            if(UserMapView.difficulty == 0)
-                view.getLblDescrizione().setText("<html>- Right difficulty for those who are new to the game.<br>" +
-                        "- Zombies: random number of zombies between 1 and 15.<br>" +
-                        "- Medikit: heals 3 lives at a time.<br>" +
-                        "- Grenade: double damage.<br>" +
-                        "- Hits: double damage.</html>");
-            else if(UserMapView.difficulty == 1)
-                view.getLblDescrizione().setText("<html>- Right difficulty for those who want a more complex.<br>" +
-                        "- Zombies: random number of zombies between 15 and 30.<br>" +
-                        "- Medikit: heals 2 lives at a time.<br>" +
-                        "- Grenade: normal damage.<br>" +
-                        "- Hits: normal damage.</htmL>");
-            else if(UserMapView.difficulty == 2)
-                view.getLblDescrizione().setText("<html>- Right difficulty for those who want a complex challenge.<br>" +
-                        "- Zombies: random number of zombies between 30 and 45.<br>" +
-                        "- Medikit: heals 1 life at a time.<br>" +
-                        "- Grenade: damage halved.<br>" +
-                        "- Hits: damage halved.</html>");
-        }
-        else{
-            if(UserMapView.difficulty == 0)
-                view.getLblDescrizione().setText("<html>- Difficoltà giusta per chi è agli inizi col gioco.<br>" +
-                        "- Zombie: numero di zombie casuale compreso tra 1 e 15.<br>" +
-                        "- Medikit: cura 3 vite alla volta.<br>" +
-                        "- Granata: danni raddoppiati.<br>" +
-                        "- Colpi: danni raddoppiati.</html>");
-            else if(UserMapView.difficulty == 1)
-                view.getLblDescrizione().setText("<html>- Difficoltà giusta per chi vuole una sfida più complessa.<br>" +
-                        "- Zombie: numero di zombie casuale compreso tra 15 e 30.<br>" +
-                        "- Medikit: cura 2 vite alla volta.<br>" +
-                        "- Granata: danni normali.<br>" +
-                        "- Colpi: danni normali.</html>");
-            else if(UserMapView.difficulty == 2)
-                view.getLblDescrizione().setText("<html>- Difficoltà giusta per chi vuole una sfida complessa.<br>" +
-                        "- Zombie: numero di zombie casuale compreso tra 30 e 45.<br>" +
-                        "- Medikit: cura 1 vita alla volta.<br>" +
-                        "- Granata: danni dimezzati.<br>" +
-                        "- Colpi: danni dimezzati.</html>");
-        }
+        view.getNameMap().addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+                view.getNameMap().setForeground(Color.white);
+            }
+        });
+        view.getLoadButton().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                File f = new File("EditorMap/" + view.getNameMap().getText() + ".txt");
+                if(f.exists() && !f.isDirectory()){
+                    EditorView.init = 1;
+                    nomeFile = view.getNameMap().getText();
+                    GameFrame.editorLaunch();
+                }
+                else{
+                    view.getNameMap().setForeground(Color.red);
+                }
+            }
+        });
     }
 }

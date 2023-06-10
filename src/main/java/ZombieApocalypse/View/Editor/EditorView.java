@@ -1,14 +1,20 @@
 package ZombieApocalypse.View.Editor;
 
 import ZombieApocalypse.Controller.EditorController;
+import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Editor.EditorModel;
+import ZombieApocalypse.Model.UserMapModel;
+import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.*;
+import java.util.Objects;
 
 public class EditorView extends JPanel {
+    public static int init = 0;
     private EditorController controller;
     private EditorModel model;
 
@@ -32,8 +38,31 @@ public class EditorView extends JPanel {
         controller = new EditorController(this, model);
 
         this.setBackground(Color.BLACK);
-        initWorld();
+        if(init == 0)
+            initWorld();
+        else
+            loadWorld();
         initImage();
+    }
+
+    private void loadWorld() {
+        String[] builder;
+        File file = new File("EditorMap/" + UserMapController.nomeFile + ".txt");
+        try (BufferedReader in = new BufferedReader(new FileReader(file))) {
+            for (int i = 0; i < Settings.WORLD_SIZEX; i++) {
+                builder = in.readLine().split(" ");
+                for (int j = 0; j < Settings.WORLD_SIZEY; j++) {
+                    world[i][j] = Block.valueOf(builder[j]);
+                }
+            }
+
+        } catch (IOException | ArrayIndexOutOfBoundsException e) {
+            System.exit(107);
+
+        }
+
+        //alla fine setto tutto come prima
+        init = 0;
     }
 
     public void setTassello(int i, int j) {

@@ -34,7 +34,9 @@ public class GameFrame extends JPanel {
     public static UserMapView userView;
 
     public static void loadingLaunch(){
+        //setto le dimensioni
         dimension();
+
         splashScreen = new SplashScreenView();
 
         frameGame.add(splashScreen);
@@ -63,9 +65,6 @@ public class GameFrame extends JPanel {
 
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
-
-        //Setto le dimensioni
-        dimension();
 
         //Inserisco il panel appena creato all'interno del mio frame
         frameGame.add(panel);
@@ -104,8 +103,6 @@ public class GameFrame extends JPanel {
 
         //Prendo l'ora corrente
         GameData.setBg = ResourcesLoader.getInstance().getHours();
-
-        dimension();
 
         //Controllo che la traccia non sia già attiva
         if(!playMenuMusic.isPlay() && GameData.music){
@@ -171,6 +168,9 @@ public class GameFrame extends JPanel {
             menuLoop.stop();
             leaderboardLoop.stop();
         }
+        if(userView != null && userView.isShowing()){
+            frameGame.remove(userView);
+        }
 
         frameGame.setTitle("Editor");
 
@@ -195,8 +195,8 @@ public class GameFrame extends JPanel {
         userView = new UserMapView();
         frameGame.add(userView);
 
-        frameGame.revalidate();
         frameGame.repaint();
+        frameGame.revalidate();
     }
 
     public static void close() {

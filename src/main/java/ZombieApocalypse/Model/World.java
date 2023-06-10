@@ -81,7 +81,7 @@ public class World {
 
     private void generatePlayerWorld() {
         String[] builder;
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/EditorMap/" + fileName + ".txt"))))) {
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("EditorMap/" + fileName + ".txt"))))) {
             for (int i = 0; i < Settings.WORLD_SIZEX; i++) {
                 builder = in.readLine().split(" ");
                 for (int j = 0; j < Settings.WORLD_SIZEY; j++) {
