@@ -90,7 +90,7 @@ public class GameFrame extends JPanel {
             frameGame.remove(menuBarView);
             timeLoop.stop();
             gameLoopObject.stop();
-            frameGame.setLayout(null);
+            frameGame.setLayout(new BorderLayout());
         }
 
         if(userView != null && userView.isShowing()){
@@ -100,7 +100,7 @@ public class GameFrame extends JPanel {
         if(editor != null && editor.isShowing()){
             frameGame.remove(editor);
             frameGame.remove(editorBar);
-            frameGame.setLayout(null);
+            frameGame.setLayout(new BorderLayout());
         }
 
         //Prendo l'ora corrente
