@@ -253,6 +253,16 @@ public class MenuController {
                 view.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
             }
         });
+
+        view.getBtnEditorMap().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.sound)
+                    soundButton();
+                //Qui devo far partire la schermata
+            }
+        });
     }
 
     private void soundButton() {

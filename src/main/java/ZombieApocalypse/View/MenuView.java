@@ -37,7 +37,7 @@ public class MenuView extends JPanel {
     private MenuModel model;
     private MenuController controller;
     private JPanel panelMenu, imagePanel, aboutPanel, settingsPanel;
-    private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout;
+    private JButton btnPlay, btnSettings, btnAbout, btnEditor, btnExit, btnExitAbout, btnEditorMap;
     //componenti per le settings
     private JLabel music, sound, language, mancino, logout, skin, skinAttiva;
     private JSlider musica = new JSlider(-74, 6), suoni = new JSlider(-74, 6);
@@ -187,6 +187,25 @@ public class MenuView extends JPanel {
         panelMenu.add(btnEditor, c);
 
         if(GameData.lang== GameData.Language.IT)
+            btnEditorMap = new JButton("Mappe Utente");
+        else
+            btnEditorMap = new JButton("User Map");
+        btnEditorMap.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
+        btnEditorMap.setHorizontalTextPosition(JButton.CENTER);
+        btnEditorMap.setVerticalTextPosition(JButton.CENTER);
+        btnEditorMap.setFont(font);
+        btnEditorMap.setBorderPainted(false);
+        btnEditorMap.setContentAreaFilled(false);
+        btnEditorMap.setFocusPainted(false);
+        btnEditorMap.setForeground(Color.WHITE);
+        btnEditorMap.setFont(font.deriveFont(Font.PLAIN, 30));
+        btnEditorMap.setMinimumSize(new Dimension(297, 70));
+        btnEditorMap.setPreferredSize(new Dimension(297, 70));
+        btnEditorMap.setMaximumSize(new Dimension(297, 70));
+        c.gridx = 0; c.gridy = 3;
+        panelMenu.add(btnEditorMap, c);
+
+        if(GameData.lang== GameData.Language.IT)
             btnAbout = new JButton("Informazioni");
         else
             btnAbout = new JButton("About Game");
@@ -203,7 +222,7 @@ public class MenuView extends JPanel {
         btnAbout.setPreferredSize(new Dimension(297, 70));
         btnAbout.setMaximumSize(new Dimension(297, 70));
         c.gridx = 0;
-        c.gridy = 3;
+        c.gridy = 4;
         panelMenu.add(btnAbout, c);
 
         if(GameData.lang== GameData.Language.IT)
@@ -223,7 +242,7 @@ public class MenuView extends JPanel {
         btnExit.setPreferredSize(new Dimension(297, 70));
         btnExit.setMaximumSize(new Dimension(297, 70));
         c.gridx = 0;
-        c.gridy = 4;
+        c.gridy = 5;
         panelMenu.add(btnExit, c);
 
         bg = new JLabel();
@@ -911,6 +930,10 @@ public class MenuView extends JPanel {
 
     public JLabel getSkinAttiva(){
         return skinAttiva;
+    }
+
+    public JButton getBtnEditorMap() {
+        return btnEditorMap;
     }
 
     public void updatePosition(){
