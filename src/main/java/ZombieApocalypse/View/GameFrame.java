@@ -31,6 +31,7 @@ public class GameFrame extends JPanel {
     public static TimeLoop timeLoop;
     public static EditorView editor;
     public static EditorBarView editorBar;
+    public static UserMapView userView;
 
     public static void loadingLaunch(){
         dimension();
@@ -178,6 +179,24 @@ public class GameFrame extends JPanel {
         frameGame.add(editorBar);
         frameGame.revalidate();
         frameGame.repaint();
+    }
+
+    public static void editorMapLaunch() {
+        if (menu != null && menu.isShowing()) {
+            frameGame.remove(menu);
+            menuLoop.stop();
+            leaderboardLoop.stop();
+        }
+        frameGame.setTitle("User Map");
+
+        userView = new UserMapView();
+
+        frameGame.add(userView);
+
+        if (userView.isShowing()){
+            frameGame.repaint();
+            frameGame.revalidate();
+        }
     }
 
     public static void close() {

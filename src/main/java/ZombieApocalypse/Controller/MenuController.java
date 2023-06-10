@@ -260,7 +260,7 @@ public class MenuController {
                 super.mousePressed(e);
                 if(GameData.sound)
                     soundButton();
-                //Qui devo far partire la schermata
+                GameFrame.editorMapLaunch();
             }
         });
     }
