@@ -4,17 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Difficoltà e spawn nemici e item">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies$EnemiesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies$EnemiesType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/PlayerCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuBar/MenuBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuBar/MenuBarView.class" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="bug fix">
+      <change afterPath="$PROJECT_DIR$/EditorMap/Mappa1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EditorMap/Mappa2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EditorMap/Mappa3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EditorMap/Mappa4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EditorMap/Mappa5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EditorMap/Mappa6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EditorMap/Mappa7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/UserMap/BottoneFrecciaGiu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/UserMap/BottoneFrecciaSu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/UserMap/SfondoUserMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/UserMapController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/UserMapModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/UserMapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/Bullets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/Bullets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +105,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Suoni pt. 2">
+      <created>1685902192455</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1685902192455</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Suoni pt. 2">
+      <created>1685902497601</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1685902497601</updated>
     </task>
     <task id="LOCAL-00063" summary="Suoni pt. 2">
       <created>1685902676884</created>
@@ -426,21 +449,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686383968846</updated>
     </task>
-    <task id="LOCAL-00110" summary="metodo del game">
-      <created>1686409298799</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1686409298799</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Difficoltà e spawn nemici e item">
-      <created>1686412796201</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1686412796202</updated>
-    </task>
-    <option name="localTasksCounter" value="112" />
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -456,6 +465,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Pause finale" />
+    <MESSAGE value="Aggiunta item pt2" />
     <MESSAGE value="Aggiunta del drop" />
     <MESSAGE value="Save/Load DB" />
     <MESSAGE value="bug fix pt 2" />
@@ -479,8 +490,6 @@
     <MESSAGE value="mappa pt2" />
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="bug fix" />
-    <MESSAGE value="metodo del game" />
-    <MESSAGE value="Difficoltà e spawn nemici e item" />
-    <option name="LAST_COMMIT_MESSAGE" value="Difficoltà e spawn nemici e item" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
 </project>

@@ -92,6 +92,10 @@ public class GameFrame extends JPanel {
             frameGame.setLayout(null);
         }
 
+        if(userView != null && userView.isShowing()){
+            frameGame.remove(userView);
+        }
+
         if(editor != null && editor.isShowing()){
             frameGame.remove(editor);
             frameGame.remove(editorBar);
@@ -182,21 +186,17 @@ public class GameFrame extends JPanel {
     }
 
     public static void editorMapLaunch() {
-        if (menu != null && menu.isShowing()) {
-            frameGame.remove(menu);
-            menuLoop.stop();
-            leaderboardLoop.stop();
-        }
+        frameGame.remove(menu);
+        menuLoop.stop();
+        leaderboardLoop.stop();
+
         frameGame.setTitle("User Map");
 
         userView = new UserMapView();
-
         frameGame.add(userView);
 
-        if (userView.isShowing()){
-            frameGame.repaint();
-            frameGame.revalidate();
-        }
+        frameGame.revalidate();
+        frameGame.repaint();
     }
 
     public static void close() {

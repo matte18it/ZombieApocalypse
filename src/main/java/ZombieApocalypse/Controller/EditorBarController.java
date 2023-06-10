@@ -26,10 +26,10 @@ public class EditorBarController {
         this.editorView = editorView;
         this.view = view;
         this.model = model;
-        view.addFocusListener(new FocusAdapter() {
+        view.addMouseListener(new MouseAdapter() {
             @Override
-            public void focusGained(FocusEvent e) {
-                super.focusGained(e);
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
                 view.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
             }
         });

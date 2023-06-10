@@ -19,14 +19,15 @@ public class UserMapView extends JPanel {
     //variabili utili a gestire la mappa dell'utente
     public static int indice = 0;
     public static int maxIndice = 0;
+    public static int difficulty = 0; //0: facile, 1: medio, 2:hard
 
     //variabili per interfaccia
     private UserMapController controller;
     private UserMapModel model;
     private Font font;              //Variabile in cui si carica il font
     private JPanel pannelloPrincipale, imagePanel, panelButton;
-    private JButton btnSu, btnGiu, exitButton, loadButton, deleteButton, playButton;
-    private JLabel label, titolo, labelTitoloTxtArea, lblName, lblDifficulty;
+    private JButton btnSu, btnGiu, exitButton, loadButton, deleteButton, playButton, btnEasy, btnMedium, btnHard;
+    private JLabel label, titolo, labelTitoloTxtArea, lblName, lblDifficulty, lblDescrizione;
     private JTextArea showFile;
     private JTextField nameMap;
     private File[] nameFile;
@@ -69,6 +70,7 @@ public class UserMapView extends JPanel {
     }
 
     private void initComponent() {
+        GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
         pannelloPrincipale = new JPanel();
         pannelloPrincipale.setOpaque(false);
         pannelloPrincipale.setMaximumSize(new Dimension(996, 500));
@@ -79,11 +81,11 @@ public class UserMapView extends JPanel {
         GridBagConstraints c = new GridBagConstraints();
 
         if(GameData.lang.equals(GameData.Language.EN))
-            labelTitoloTxtArea = new JLabel("Maps created by you:");
+            labelTitoloTxtArea = new JLabel("Maps of " + GameData.nick + ": ");
         else
-            labelTitoloTxtArea = new JLabel("Mappe create da te:");
+            labelTitoloTxtArea = new JLabel("Mappe di " + GameData.nick + ": ");
         labelTitoloTxtArea.setBorder(new EmptyBorder(10, 0, 0, 0));
-        labelTitoloTxtArea.setFont(font.deriveFont(Font.PLAIN, 28));
+        labelTitoloTxtArea.setFont(font.deriveFont(Font.PLAIN, 22));
         labelTitoloTxtArea.setForeground(Color.WHITE);
         c.gridx = 0; c.gridy = 0; c.anchor = GridBagConstraints.LINE_START;
         label.add(labelTitoloTxtArea, c);
@@ -136,20 +138,23 @@ public class UserMapView extends JPanel {
         
         initFile();
 
+        JPanel panelSupport1 = new JPanel();
+        panelSupport1.setOpaque(false);
+        panelSupport1.setMaximumSize(new Dimension(400, 100));
+        panelSupport1.setLayout(new BoxLayout(panelSupport1, BoxLayout.X_AXIS));
         if(GameData.lang.equals(GameData.Language.EN))
-            lblName = new JLabel("Insert map name: ");
+            lblName = new JLabel("Map Name: ");
         else
-            lblName = new JLabel("Inserisci il nome della mappa: ");
+            lblName = new JLabel("Nome Mappa: ");
         lblName.setBorder(new EmptyBorder(10, 10, 0, 0));
-        lblName.setFont(font.deriveFont(Font.PLAIN, 25));
+        lblName.setFont(font.deriveFont(Font.PLAIN, 22));
         lblName.setForeground(Color.WHITE);
-        c.gridx = 1; c.gridy = 1; c.anchor = GridBagConstraints.NORTHEAST;
-        label.add(lblName, c);
-
+        panelSupport1.add(lblName);
         nameMap = new JTextField();
-        JLabel label1 = new JLabel(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/txtGUI.png", 280, 45, false));
+        JLabel label1 = new JLabel(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/txtGUI.png", 280, 40, false));
         label1.setLayout(new BorderLayout());
         label1.add(nameMap);
+        label1.setBorder(new EmptyBorder(10, 0, 0, 0));
         nameMap.setOpaque(false);
         nameMap.setBorder(BorderFactory.createCompoundBorder(nameMap.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
         nameMap.setBackground(new Color(0, 0, 0 ,0));
@@ -158,8 +163,228 @@ public class UserMapView extends JPanel {
         nameMap.setMaximumSize(new Dimension(280, 45));
         nameMap.setForeground(Color.WHITE);
         nameMap.setCaretColor(Color.RED);
-        c.gridx = 2; c.gridy = 1;
-        label.add(label1, c);
+        panelSupport1.add(label1);
+
+        JPanel panelSupport2 = new JPanel();
+        panelSupport2.setOpaque(false);
+        panelSupport2.setMaximumSize(new Dimension(400, 100));
+        panelSupport2.setLayout(new GridBagLayout());
+        GridBagConstraints c3 = new GridBagConstraints();
+        if(GameData.lang.equals(GameData.Language.EN))
+            lblDifficulty = new JLabel("Difficulty: ");
+        else
+            lblDifficulty = new JLabel("Difficoltà: ");
+        lblDifficulty.setBorder(new EmptyBorder(10, 10, 0, 0));
+        lblDifficulty.setFont(font.deriveFont(Font.PLAIN, 22));
+        lblDifficulty.setForeground(Color.WHITE);
+        c3.gridx = 0; c3.gridy = 0; c3.anchor = GridBagConstraints.NORTHWEST;
+        panelSupport2.add(panelSupport1, c3);
+        c3.gridx = 0; c3.gridy = 1; c3.anchor = GridBagConstraints.NORTHWEST;
+        panelSupport2.add(lblDifficulty, c3);
+
+        JPanel panelSupport4 = new JPanel();
+        panelSupport4.setOpaque(false);
+        panelSupport4.setMinimumSize(new Dimension(500, 70));
+        panelSupport4.setMaximumSize(new Dimension(500, 70));
+        panelSupport4.setPreferredSize(new Dimension(500, 70));
+        panelSupport4.setBorder(new EmptyBorder(0, 10, 0, 0));
+        panelSupport4.setLayout(new GridBagLayout());
+        GridBagConstraints c4 = new GridBagConstraints();
+        if(GameData.lang.equals(GameData.Language.EN)){
+            btnEasy = new JButton("Easy");
+            btnMedium = new JButton("Medium");
+            btnHard = new JButton("Hard");
+        }
+        else{
+            btnEasy = new JButton("Facile");
+            btnMedium = new JButton("Media");
+            btnHard = new JButton("Difficile");
+        }
+        if(difficulty == 0)
+            btnEasy.setBorder(new LineBorder(Color.red));
+        btnEasy.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/SendButton.png", 100, 50, false));
+        btnEasy.setHorizontalTextPosition(JButton.CENTER);
+        btnEasy.setVerticalTextPosition(JButton.CENTER);
+        btnEasy.setFont(font.deriveFont(Font.PLAIN, 15));
+        btnEasy.setForeground(Color.WHITE);
+        btnEasy.setContentAreaFilled(false);
+        btnEasy.setFocusPainted(false);
+        btnEasy.setMinimumSize(new Dimension(100, 50));
+        btnEasy.setPreferredSize(new Dimension(100, 50));
+        btnEasy.setMaximumSize(new Dimension(100, 50));
+        c4.gridx = 0; c4.gridy = 0;
+        panelSupport4.add(btnEasy, c4);
+
+        c4.gridx = 1; c4.gridy = 0;
+        panelSupport4.add(Box.createRigidArea(new Dimension(20, 10)), c4);
+        if(difficulty == 1)
+            btnMedium.setBorder(new LineBorder(Color.red));
+        btnMedium.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/SendButton.png", 100, 50, false));
+        btnMedium.setHorizontalTextPosition(JButton.CENTER);
+        btnMedium.setVerticalTextPosition(JButton.CENTER);
+        btnMedium.setFont(font.deriveFont(Font.PLAIN, 15));
+        btnMedium.setForeground(Color.WHITE);
+        btnMedium.setContentAreaFilled(false);
+        btnMedium.setFocusPainted(false);
+        btnMedium.setMinimumSize(new Dimension(100, 50));
+        btnMedium.setPreferredSize(new Dimension(100, 50));
+        btnMedium.setMaximumSize(new Dimension(100, 50));
+        c4.gridx = 2; c4.gridy = 0;
+        panelSupport4.add(btnMedium, c4);
+
+        c4.gridx = 3; c4.gridy = 0;
+        panelSupport4.add(Box.createRigidArea(new Dimension(20, 10)), c4);
+        if(difficulty == 2)
+            btnHard.setBorder(new LineBorder(Color.red));
+        btnHard.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/SendButton.png", 100, 50, false));
+        btnHard.setHorizontalTextPosition(JButton.CENTER);
+        btnHard.setVerticalTextPosition(JButton.CENTER);
+        btnHard.setFont(font.deriveFont(Font.PLAIN, 15));
+        btnHard.setForeground(Color.WHITE);
+        btnHard.setContentAreaFilled(false);
+        btnHard.setFocusPainted(false);
+        btnHard.setMinimumSize(new Dimension(100, 50));
+        btnHard.setPreferredSize(new Dimension(100, 50));
+        btnHard.setMaximumSize(new Dimension(100, 50));
+        c4.gridx = 4; c4.gridy = 0;
+        panelSupport4.add(btnHard, c4);
+
+
+        c3.gridx = 0; c3.gridy = 2;
+        panelSupport2.add(panelSupport4, c3);
+
+        lblDescrizione = new JLabel();
+        if(GameData.lang.equals(GameData.Language.EN)){
+            if(difficulty == 0)
+                lblDescrizione.setText("<html>- Right difficulty for those who are new to the game.<br>" +
+                        "- Zombies: random number of zombies between 0 and 50.<br>" +
+                        "- Medikit: heals 3 lives at a time.<br>" +
+                        "- Grenade: double damage.<br>" +
+                        "- Hits: double damage.</html>");
+            else if(difficulty == 1)
+                lblDescrizione.setText("<html>- Right difficulty for those who want a more complex.<br>" +
+                        "- Zombies: random number of zombies between 50 and 100.<br>" +
+                        "- Medikit: heals 2 lives at a time.<br>" +
+                        "- Grenade: normal damage.<br>" +
+                        "- Hits: normal damage.</htmL>");
+            else if(difficulty == 2)
+                lblDescrizione.setText("<html>- Right difficulty for those who want a complex challenge.<br>" +
+                        "- Zombies: random number of zombies between 100 and 150.<br>" +
+                        "- Medikit: heals 1 life at a time.<br>" +
+                        "- Grenade: damage halved.<br>" +
+                        "- Hits: damage halved.</html>");
+        }
+        else{
+            if(difficulty == 0)
+                lblDescrizione.setText("<html>- Difficoltà giusta per chi è agli inizi col gioco.<br>" +
+                        "- Zombie: numero di zombie casuale compreso tra 0 e 50.<br>" +
+                        "- Medikit: cura 3 vite alla volta.<br>" +
+                        "- Granata: danni raddoppiati.<br>" +
+                        "- Colpi: danni raddoppiati.</html>");
+            else if(difficulty == 1)
+                lblDescrizione.setText("<html>- Difficoltà giusta per chi vuole una sfida più complessa.<br>" +
+                        "- Zombie: numero di zombie casuale compreso tra 50 e 100.<br>" +
+                        "- Medikit: cura 2 vite alla volta.<br>" +
+                        "- Granata: danni normali.<br>" +
+                        "- Colpi: danni normali.</html>");
+            else if(difficulty == 2)
+                lblDescrizione.setText("<html>- Difficoltà giusta per chi vuole una sfida complessa.<br>" +
+                        "- Zombie: numero di zombie casuale compreso tra 100 e 150.<br>" +
+                        "- Medikit: cura 1 vita alla volta.<br>" +
+                        "- Granata: danni dimezzati.<br>" +
+                        "- Colpi: danni dimezzati.</html>");
+        }
+        lblDescrizione.setBorder(new EmptyBorder(10, 10, 0, 0));
+        lblDescrizione.setFont(font.deriveFont(Font.PLAIN, 15));
+        lblDescrizione.setForeground(Color.WHITE);
+        c3.gridx = 0; c3.gridy = 3;
+        panelSupport2.add(lblDescrizione, c3);
+
+        JPanel panelSupport3 = new JPanel();
+        panelSupport3.setOpaque(false);
+        panelSupport3.setMaximumSize(new Dimension(500, 70));
+        panelSupport3.setMinimumSize(new Dimension(500, 70));
+        panelSupport3.setPreferredSize(new Dimension(500, 70));
+        panelSupport3.setLayout(new GridBagLayout());
+        GridBagConstraints c2 = new GridBagConstraints();
+        if(GameData.lang.equals(GameData.Language.EN)){
+            playButton = new JButton("Play");
+            exitButton = new JButton("Exit");
+            loadButton = new JButton("Modify");
+            deleteButton = new JButton("Delete");
+        }
+        else{
+            playButton = new JButton("Gioca");
+            exitButton = new JButton("Esci");
+            loadButton = new JButton("Modifica");
+            deleteButton = new JButton("Elimina");
+        }
+        playButton.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/sendButton.png", 100, 50, false));
+        playButton.setBorderPainted(false);
+        playButton.setContentAreaFilled(false);
+        playButton.setFocusPainted(false);
+        playButton.setMinimumSize(new Dimension(100, 50));
+        playButton.setPreferredSize(new Dimension(100, 50));
+        playButton.setMaximumSize(new Dimension(100, 50));
+        playButton.setHorizontalTextPosition(JButton.CENTER);
+        playButton.setVerticalTextPosition(JButton.CENTER);
+        playButton.setFont(font.deriveFont(Font.PLAIN, 15));
+        playButton.setForeground(Color.WHITE);
+        loadButton.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/sendButton.png", 100, 50, false));
+        loadButton.setBorderPainted(false);
+        loadButton.setContentAreaFilled(false);
+        loadButton.setFocusPainted(false);
+        loadButton.setMinimumSize(new Dimension(100, 50));
+        loadButton.setPreferredSize(new Dimension(100, 50));
+        loadButton.setMaximumSize(new Dimension(100, 50));
+        loadButton.setHorizontalTextPosition(JButton.CENTER);
+        loadButton.setVerticalTextPosition(JButton.CENTER);
+        loadButton.setFont(font.deriveFont(Font.PLAIN, 15));
+        loadButton.setForeground(Color.WHITE);
+        deleteButton.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/sendButton.png", 100, 50, false));
+        deleteButton.setBorderPainted(false);
+        deleteButton.setContentAreaFilled(false);
+        deleteButton.setFocusPainted(false);
+        deleteButton.setMinimumSize(new Dimension(100, 50));
+        deleteButton.setPreferredSize(new Dimension(100, 50));
+        deleteButton.setMaximumSize(new Dimension(100, 50));
+        deleteButton.setHorizontalTextPosition(JButton.CENTER);
+        deleteButton.setVerticalTextPosition(JButton.CENTER);
+        deleteButton.setFont(font.deriveFont(Font.PLAIN, 15));
+        deleteButton.setForeground(Color.WHITE);
+        exitButton.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/sendButton.png", 100, 50, false));
+        exitButton.setBorderPainted(false);
+        exitButton.setContentAreaFilled(false);
+        exitButton.setFocusPainted(false);
+        exitButton.setMinimumSize(new Dimension(100, 50));
+        exitButton.setPreferredSize(new Dimension(100, 50));
+        exitButton.setMaximumSize(new Dimension(100, 50));
+        exitButton.setHorizontalTextPosition(JButton.CENTER);
+        exitButton.setVerticalTextPosition(JButton.CENTER);
+        exitButton.setFont(font.deriveFont(Font.PLAIN, 15));
+        exitButton.setForeground(Color.WHITE);
+        c2.gridx = 0; c2.gridy = 0;
+        panelSupport3.add(Box.createRigidArea(new Dimension(25, 10)), c2);
+        c2.gridx = 1; c2.gridy = 0;
+        panelSupport3.add(playButton, c2);
+        c2.gridx = 2; c2.gridy = 0;
+        panelSupport3.add(Box.createRigidArea(new Dimension(20, 10)), c2);
+        c2.gridx = 3; c2.gridy = 0;
+        panelSupport3.add(loadButton, c2);
+        c2.gridx = 4; c2.gridy = 0;
+        panelSupport3.add(Box.createRigidArea(new Dimension(20, 10)), c2);
+        c2.gridx = 5; c2.gridy = 0;
+        panelSupport3.add(deleteButton, c2);
+        c2.gridx = 6; c2.gridy = 0;
+        panelSupport3.add(Box.createRigidArea(new Dimension(20, 10)), c2);
+        c2.gridx = 7; c2.gridy = 0;
+        panelSupport3.add(exitButton, c2);
+
+        c3.gridx = 0; c3.gridy = 4;
+        panelSupport2.add(panelSupport3, c3);
+
+        c.gridx = 1; c.gridy = 1;
+        label.add(panelSupport2, c);
 
         pannelloPrincipale.add(label);
     }
@@ -169,6 +394,10 @@ public class UserMapView extends JPanel {
         nameFile = folder.listFiles((dir, name) -> !name.equals(".DS_Store"));
         showFile.setText("");
         maxIndice = nameFile.length;
+        if(maxIndice < 19){
+            btnGiu.setEnabled(false);
+            btnSu.setEnabled(false);
+        }
 
         for (int i = indice; i < nameFile.length; i++){
             showFile.append(nameFile[i].getName().replaceFirst("[.][^.]+$", "") + "\t" + model.stampData(nameFile[i]) + "\n");
@@ -186,6 +415,38 @@ public class UserMapView extends JPanel {
 
     public JTextField getNameMap(){
         return nameMap;
+    }
+
+    public JButton getExitButton() {
+        return exitButton;
+    }
+
+    public JButton getLoadButton() {
+        return loadButton;
+    }
+
+    public JButton getDeleteButton() {
+        return deleteButton;
+    }
+
+    public JButton getPlayButton() {
+        return playButton;
+    }
+
+    public JButton getBtnEasy() {
+        return btnEasy;
+    }
+
+    public JButton getBtnMedium() {
+        return btnMedium;
+    }
+
+    public JButton getBtnHard() {
+        return btnHard;
+    }
+
+    public JLabel getLblDescrizione(){
+        return lblDescrizione;
     }
 
     @Override
