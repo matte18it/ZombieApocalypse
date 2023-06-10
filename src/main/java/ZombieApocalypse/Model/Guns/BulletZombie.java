@@ -43,6 +43,7 @@ public class BulletZombie extends Bullet{
             } else{
                 ending = true;
                 numFrame=0;
+                return true;
 
             }
 
@@ -54,7 +55,6 @@ public class BulletZombie extends Bullet{
                 return false;
 
         }
-        return false;
     }
 
 

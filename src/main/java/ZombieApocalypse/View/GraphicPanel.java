@@ -145,10 +145,11 @@ Random m=new Random();
 
         count++;
 
-        for (Bullet b : Bullets.getInstance().getBullets()) {
+        for(Bullet b: Bullets.getInstance().getBullets()){
             b.getView().update();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
         }
+
 
 
 

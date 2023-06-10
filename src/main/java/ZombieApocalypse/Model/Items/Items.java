@@ -21,7 +21,7 @@ public class Items {
 
 
 
-    public List<Item> getItems(){return Collections.unmodifiableList(this.items);
+    public List<Item> getItems(){return this.items;
     }
 
     public void update(){

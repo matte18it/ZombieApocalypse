@@ -42,6 +42,7 @@ public class BulletBoss extends Bullet{
             } else{
                 ending = true;
                 numFrame=0;
+                return true;
 
             }
 
@@ -50,7 +51,6 @@ public class BulletBoss extends Bullet{
                 return false;
 
         }
-        return false;
     }
 
 

@@ -41,7 +41,7 @@ public abstract class Bullet {
     public int getX() {
         return this.x;
     }
-    public BulletView getView(){
+    public final BulletView getView(){
         return bulletView;
     }
 

@@ -6,7 +6,6 @@ import ZombieApocalypse.Utility.PlayWav;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -37,17 +36,26 @@ public class Enemies {
     public void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
         Point p=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
-        Iterator var1=this.enemies.iterator();
-        while(var1.hasNext()){
-            Enemy b=(Enemy) var1.next();
-            enem.x=b.getX()+b.getCenterX();
-            enem.y=b.getY()+b.getCenterY();
-            hitSound(b);
-            switch (b.type){
-                case BOSS -> {if(p.distance(enem)<120) b.gettingHit(damage);}
-                case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE ->{if(p.distance(enem)<30) b.gettingHit(damage);}
-                case FATZOMBIE -> {if(p.distance(enem)<45) b.gettingHit(damage);}
-                case KIDZOMBIE -> {if(p.distance(enem)<15) b.gettingHit(damage);}
+        for (Enemy b : this.enemies) {
+            enem.x = b.getX() + b.getCenterX();
+            enem.y = b.getY() + b.getCenterY();
+            switch (b.type) {
+                case BOSS -> {
+                    if (p.distance(enem) < 120) b.gettingHit(damage);
+                    hitSound(b);
+                }
+                case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {
+                    if (p.distance(enem) < 30) b.gettingHit(damage);
+                    hitSound(b);
+                }
+                case FATZOMBIE -> {
+                    if (p.distance(enem) < 45) b.gettingHit(damage);
+                    hitSound(b);
+                }
+                case KIDZOMBIE -> {
+                    if (p.distance(enem) < 15) b.gettingHit(damage);
+                    hitSound(b);
+                }
             }
 
         }
@@ -56,10 +64,8 @@ public class Enemies {
     //Controllo della collisione con l'hitbox del coltello
 
     public void checkHitBox(Rectangle hitBox, int damage) {
-        Iterator var1=this.enemies.iterator();
-        while(var1.hasNext()){
-            Enemy b=(Enemy) var1.next();
-            if(b.hitBox.intersects(hitBox)){
+        for (Enemy b : this.enemies) {
+            if (b.hitBox.intersects(hitBox)) {
                 hitSound(b);
                 b.gettingHit(damage);
             }
@@ -67,15 +73,14 @@ public class Enemies {
     }
     //Controllo della collisione con i proiettili (deve restituire booleana per eliminare proiettili)
     public boolean checkBulletHitBox(Rectangle hitBox, int damage) {
-        Iterator var1=this.enemies.iterator();
-        while(var1.hasNext()){
-            Enemy b=(Enemy) var1.next();
-            if(b.hitBox.intersects(hitBox)){
+        for (Enemy b : this.enemies) {
+            if (b.hitBox.intersects(hitBox)) {
                 hitSound(b);
                 b.gettingHit(damage);
                 return true;
             }
-        } return false;
+        }
+        return false;
     }
 
     public void addFatZombie(int x, int y) {
@@ -114,7 +119,7 @@ public class Enemies {
 
 
 
-    public List<Enemy> getEnemies(){return Collections.unmodifiableList(this.enemies);
+    public List<Enemy> getEnemies(){return this.enemies;
     }
 
     public void update(){

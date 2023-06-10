@@ -9,7 +9,7 @@ public class BulletPistol extends Bullet{
     BulletPistol(int x, int y, int dimension, double angle){
         super(x,y,dimension, BulletType.PISTOL);
 
-        totalFrame=40;
+        totalFrame=30;
         damage=2;
         dir=Game.getInstance().getPistolModel().checkDirection(angle);
 
@@ -44,6 +44,7 @@ public class BulletPistol extends Bullet{
             } else{
                 ending = true;
                 numFrame=0;
+                return true;
 
             }
 
@@ -55,7 +56,6 @@ public class BulletPistol extends Bullet{
                 return false;
 
         }
-        return false;
     }
 
 

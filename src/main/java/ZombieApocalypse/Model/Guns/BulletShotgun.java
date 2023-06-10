@@ -75,6 +75,7 @@ public class BulletShotgun extends Bullet{
             } else{
                 ending=true;
                 numFrame=0;
+                return true;
             }
         }else{
             if(numFrame<2){
@@ -84,7 +85,6 @@ public class BulletShotgun extends Bullet{
                 return false;
 
         }
-        return false;
     }
 
 

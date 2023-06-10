@@ -42,6 +42,7 @@ public class BulletBandit extends Bullet{
             } else{
                 ending = true;
                 numFrame=0;
+                return true;
 
             }
 
@@ -53,7 +54,6 @@ public class BulletBandit extends Bullet{
                 return false;
 
         }
-        return false;
     }
 
 

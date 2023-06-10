@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Bullets {
-    private final List<Bullet> bullets=new ArrayList();
+    private final List<Bullet> bullets=new ArrayList<>();
     private static final Bullets instance=new Bullets();
 
     public Bullets(){}
@@ -30,16 +30,11 @@ public class Bullets {
         this.bullets.add(new BulletBoss(x,y,dimension,angle,  dir));
     }
 
-    public List<Bullet> getBullets(){return Collections.unmodifiableList(this.bullets);
-    }
+    public List<Bullet> getBullets(){return this.bullets;}
+
 
     public void update(){
-        Iterator<Bullet> var1=this.bullets.iterator();
-        while(var1.hasNext()){
-            Bullet b= var1.next();
-            if(!b.update()){
-                var1.remove();}
-        }
+        bullets.removeIf(b -> !b.update());
     }
 
 

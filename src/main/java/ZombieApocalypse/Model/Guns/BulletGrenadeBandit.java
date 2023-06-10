@@ -47,6 +47,7 @@ boolean stopAll=false;
             } else{
                 ending=true;
                 numFrame=0;
+                return true;
             }
         }else{
             checkcollision();
@@ -89,7 +90,6 @@ boolean stopAll=false;
             else
                 return false;
         }
-        return false;
     }else
         return false;}
 
