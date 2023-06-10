@@ -52,7 +52,7 @@ public class FatZombie extends Enemy{
             Game.getInstance().getPlayerCharacter().hit();
 
 
-        if(p.distance(turret)<100){
+        if(p.distance(turret)<200){
             if(countRun==0) {
                 countRun++;
                 if(p.y>=y && p.y<=y+height && p.x<turret.x)

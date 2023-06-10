@@ -44,13 +44,24 @@ public class BombBandit extends Enemy{
             else
                 stopHit();
         }
-        Point player = Game.getInstance().getPlayerPosition();
+        Point p= Game.getInstance().getPlayerPosition();
         Point turret = new Point(x + centerX, y + centerY);
 
 
-        //Parte di Intelligenza artificiale da Implementare
-        if(player.distance(turret)<300)
+        if(p.distance(turret)<300){
+
+            isMoving=false;
+            if(p.y>=y && p.y<=y+height && p.x<turret.x)
+                dir= Settings.movementDirection.LEFT;
+            if(p.y>=y && p.y<=y+height && p.x>=turret.x)
+                dir= Settings.movementDirection.RIGHT;
+            if(p.x>=x && p.x<=x+height && p.y>=turret.y)
+                dir= Settings.movementDirection.DOWN;
+            if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+                dir= Settings.movementDirection.UP;
             shoot();
+        }else{
+
         int f=m.nextInt(0,100);
         if(f<20){
         int i=m.nextInt(0,4);
@@ -60,16 +71,16 @@ public class BombBandit extends Enemy{
             case 2 ->{moveLeft();}
             case 3 ->{moveRight();}
         }  }else
-            isMoving=false;
+            isMoving=false;}
 
-        //Aggiornamento della hitbox necessario ad ogni clock
-        hitBox.x=x;
-        hitBox.y=y;
+
 
 
 
 
         return true;}
+
+
 
 
     private void shoot() {
@@ -95,29 +106,33 @@ public class BombBandit extends Enemy{
     private void moveRight() {
         if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+10, y, centerX, centerY)){
             x=x+10;
+            hitBox.x=x;
             isMoving=true;
-            dir=Settings.movementDirection.RIGHT;}
+            dir=Settings.movementDirection.RIGHT;}else isMoving=false;
     }
 
     private void moveLeft() {
         if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
             x=x-10;
+            hitBox.x=x;
             isMoving=true;
-            dir=Settings.movementDirection.LEFT;}
+            dir=Settings.movementDirection.LEFT;}else isMoving=false;
     }
 
     private void moveDown() {
         if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
-            //y=y+10;
-            //isMoving=true;
-            dir=Settings.movementDirection.DOWN;}
+            y=y+10;
+            isMoving=true;
+            hitBox.y=y;
+            dir=Settings.movementDirection.DOWN;}else isMoving=false;
     }
 
     private void moveUp() {
         if(Game.getInstance().getWorld().isWalkable(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
             y=y-10;
             isMoving=true;
-        dir=Settings.movementDirection.UP;}
+            hitBox.y=y;
+        dir=Settings.movementDirection.UP;} else isMoving=false;
 
     }
 }

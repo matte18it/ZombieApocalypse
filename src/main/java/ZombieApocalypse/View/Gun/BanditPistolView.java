@@ -16,10 +16,10 @@ public class BanditPistolView {
 
     public void update(Enemy e) {
         switch (e.dir){
-            case RIGHT ->  currentImage=gunAnimation.update(0);
-            case DOWN -> currentImage=gunAnimation.update(270);
-            case LEFT -> currentImage=gunAnimation.update(180);
-            case UP -> currentImage=gunAnimation.update(90);
+            case LEFT ->  currentImage=gunAnimation.update(0);
+            case UP -> currentImage=gunAnimation.update(270);
+            case RIGHT -> currentImage=gunAnimation.update(180);
+            case DOWN -> currentImage=gunAnimation.update(90);
         }
     }
     public Image getCurrentImage() {

@@ -44,14 +44,14 @@ public class EnemyView  implements  EnemyViewInterface{
 
 
     private void load() {
-        runAnimationUp = new CharacterAnimation("Nemici/"+type+"/"+type+"Indietro",3);
-        runAnimationDown = new CharacterAnimation("Nemici/"+type+"/"+type+"Avanti",3);
-        runAnimationLeft = new CharacterAnimation("Nemici/"+type+"/"+type+"Sinistra",3);
-        runAnimationRight = new CharacterAnimation("Nemici/"+type+"/"+type+"Destra",3);
-        hitUp=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoAvanti",3);
-        hitDown=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoIndietro",3);
-        hitLeft=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoSinistra",3);
-        hitRight=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoDestra",3);
+            runAnimationUp = new CharacterAnimation("Nemici/" + type + "/" + type + "Indietro", 3);
+            runAnimationDown = new CharacterAnimation("Nemici/" + type + "/" + type + "Avanti", 3);
+            runAnimationLeft = new CharacterAnimation("Nemici/" + type + "/" + type + "Sinistra", 3);
+            runAnimationRight = new CharacterAnimation("Nemici/" + type + "/" + type + "Destra", 3);
+            hitUp = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoAvanti", 3);
+            hitDown = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoIndietro", 3);
+            hitLeft = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoSinistra", 3);
+            hitRight = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoDestra", 3);
 
     }
     private void loadTurret() {

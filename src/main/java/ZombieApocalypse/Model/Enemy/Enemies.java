@@ -121,7 +121,7 @@ public class Enemies {
 
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
-            if( Game.getInstance().getWorld().isSpawnable(x,y) && Game.getInstance().getWorld().isWalkable(x,y)){
+            if( Game.getInstance().getWorld().isSpawnable(x,y) && Game.getInstance().getWorld().isWalkable(x,y)&& Game.getInstance().getWorld().isWalkable(x,y+30) && Game.getInstance().getWorld().isWalkable(x+30,y)){
                 c++;
                 switch (t){
                     case 0-> Enemies.getInstance().addSkinnyZombie(x,y);
