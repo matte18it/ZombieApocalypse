@@ -41,20 +41,20 @@ public class Enemies {
             enem.y = b.getY() + b.getCenterY();
             switch (b.type) {
                 case BOSS -> {
-                    if (p.distance(enem) < 120) b.gettingHit(damage);
-                    hitSound(b);
+                    if (p.distance(enem) < 120){ b.gettingHit(damage);
+                    hitSound(b);}
                 }
                 case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {
-                    if (p.distance(enem) < 30) b.gettingHit(damage);
-                    hitSound(b);
+                    if (p.distance(enem) < 30){ b.gettingHit(damage);
+                    hitSound(b);}
                 }
                 case FATZOMBIE -> {
-                    if (p.distance(enem) < 45) b.gettingHit(damage);
-                    hitSound(b);
+                    if (p.distance(enem) < 45){ b.gettingHit(damage);
+                    hitSound(b);}
                 }
                 case KIDZOMBIE -> {
-                    if (p.distance(enem) < 15) b.gettingHit(damage);
-                    hitSound(b);
+                    if (p.distance(enem) < 15){ b.gettingHit(damage);
+                    hitSound(b);}
                 }
             }
 
@@ -119,7 +119,7 @@ public class Enemies {
 
 
 
-    public List<Enemy> getEnemies(){return this.enemies;
+    public final List<Enemy> getEnemies(){return this.enemies;
     }
 
     public void update(){
