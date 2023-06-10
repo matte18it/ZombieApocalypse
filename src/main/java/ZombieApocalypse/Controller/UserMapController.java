@@ -3,6 +3,7 @@ package ZombieApocalypse.Controller;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Model.UserMapModel;
+import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
@@ -136,7 +137,6 @@ public class UserMapController {
                 }
             }
         });
-
         view.getDeleteButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -148,6 +148,23 @@ public class UserMapController {
                     showDialog();
                 else
                     view.getNameMap().setForeground(Color.red);
+            }
+        });
+        view.getPlayButton().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
+                File f = new File("EditorMap/" + view.getNameMap().getText() + ".txt");
+                if(f.exists() && !f.isDirectory()){
+                    World.isEditor = true;
+                    nomeFile = view.getNameMap().getText();
+                    GameFrame.gameLaunch();
+                }
+                else{
+                    view.getNameMap().setForeground(Color.red);
+                }
             }
         });
     }

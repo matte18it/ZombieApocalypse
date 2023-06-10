@@ -1,9 +1,11 @@
 package ZombieApocalypse.View;
+import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Loop.*;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Model.SplashScreenModel;
+import ZombieApocalypse.Model.World;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
@@ -132,6 +134,8 @@ public class GameFrame extends JPanel {
             playMenuMusic.play("/Music/GameMusic.wav");
             playMenuMusic.setVolume(GameData.musicVolume);
         }
+        if(userView != null && userView.isShowing())
+            frameGame.remove(userView);
 
         leaderboardLoop.stop();
         menuLoop.stop();
