@@ -544,7 +544,6 @@ public class EditorBarController {
                 super.mousePressed(e);
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
-                Game.getInstance().setPause(false);
                 dialog.dispose();
             }
         });

@@ -1,15 +1,19 @@
 package ZombieApocalypse.Controller;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Model.UserMapModel;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
+import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.UserMapView;
 
 import javax.sound.sampled.Line;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
@@ -119,6 +123,8 @@ public class UserMapController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 File f = new File("EditorMap/" + view.getNameMap().getText() + ".txt");
                 if(f.exists() && !f.isDirectory()){
                     EditorView.init = 1;
@@ -130,5 +136,105 @@ public class UserMapController {
                 }
             }
         });
+
+        view.getDeleteButton().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
+                File f = new File("EditorMap/" + view.getNameMap().getText() + ".txt");
+                if(f.exists() && !f.isDirectory())
+                    showDialog();
+                else
+                    view.getNameMap().setForeground(Color.red);
+            }
+        });
+    }
+
+    private void showDialog() {
+
+        Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
+        GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
+        UIManager.put("OptionPane.background",new Color(92,75,35));
+        UIManager.put("Panel.background",new Color(18,17,15));
+        UIManager.put("OptionPane.minimumSize",new Dimension(500,200));
+        UIManager.put("OptionPane.border", new EmptyBorder(10, 10, 10,10));
+        UIManager.put("OptionPane.font", ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
+        UIManager.put("OptionPane.foreground", Color.WHITE);
+
+        //creo la label e gli setto il font personalizzato
+        JLabel label = new JLabel();
+        label.setFont(font.deriveFont(Font.PLAIN, 18));
+        label.setForeground(Color.WHITE);
+        label.setMinimumSize(new Dimension(100, 100));
+        label.setPreferredSize(new Dimension(100, 100));
+        label.setBorder(new EmptyBorder(10, 10, 0, 0));
+
+        JButton btnMenu;
+        JButton btnGo;
+        if(GameData.lang.equals(GameData.Language.IT)) {
+            btnMenu = new JButton("Elimina");
+            btnGo = new JButton("Annulla");
+            label.setText("<html>Se confermi il mondo sarà eliminato per sempre.<br>Sei sicuro di voler continuare?</html>");
+        }
+        else {
+            btnMenu = new JButton("Delete");
+            btnGo = new JButton("Cancel");
+            label.setText("<html>If you confirm the world will be eliminated forever.<br>Are you sure you want to continue?</html>");
+        }
+
+        btnMenu.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
+        btnMenu.setHorizontalTextPosition(JButton.CENTER);
+        btnMenu.setVerticalTextPosition(JButton.CENTER);
+        btnMenu.setBorderPainted(false);
+        btnMenu.setFocusPainted(false);
+        btnMenu.setContentAreaFilled(false);
+        btnMenu.setForeground(Color.WHITE);
+        btnMenu.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 25, Font.PLAIN));
+
+        btnGo.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
+        btnGo.setHorizontalTextPosition(JButton.CENTER);
+        btnGo.setVerticalTextPosition(JButton.CENTER);
+        btnGo.setBorderPainted(false);
+        btnGo.setFocusPainted(false);
+        btnGo.setContentAreaFilled(false);
+        btnGo.setForeground(Color.WHITE);
+        btnGo.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 25, Font.PLAIN));
+
+        //creo il joptionpane e gli assegno la label, poi creo il dialog e lo mostro
+        JOptionPane pane = new JOptionPane(label,  JOptionPane.PLAIN_MESSAGE,  JOptionPane.DEFAULT_OPTION,null,  new JButton[] {btnMenu, btnGo});
+        JDialog dialog = new JDialog();
+        btnGo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
+                dialog.dispose();
+            }
+        });
+        btnMenu.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
+                dialog.dispose();
+                File file = new File("EditorMap/" + view.getNameMap().getText() + ".txt");
+                file.delete();
+                view.initFile();
+                view.getNameMap().setText("");
+            }
+        });
+
+        dialog.getContentPane().add(pane);
+        dialog.setUndecorated(true);
+        dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        dialog.setAlwaysOnTop(true);
+        dialog.setModal(true);
+        dialog.setSize(new Dimension(515, 220));
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
     }
 }
