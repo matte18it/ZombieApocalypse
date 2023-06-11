@@ -100,14 +100,17 @@ public class PlayerCharacter  {
             if(GameData.sound)
                 PlayWav.getInstance().playHurtSound();
             hit=true;
-            health--;
-            Game.getInstance().getMenuBar().removeHeart();
+            if(health>0){
+                health--;
+            Game.getInstance().getMenuBar().removeHeart();}
         }
     }
 
     public void cure(){
-        Game.getInstance().getMenuBar().addHeart();
-        health++;
+        if(health<maxHealth){
+            health++;
+        Game.getInstance().getMenuBar().addHeart();}
+
     }
     public void speedUp(){
         if(countSpeed==0){

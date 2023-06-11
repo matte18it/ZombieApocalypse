@@ -162,10 +162,10 @@ public class UserMapController {
                     PlayWav.getInstance().playButtonSound();
                 File f = new File("EditorMap/" + view.getNameMap().getText() + ".txt");
                 if(f.exists() && !f.isDirectory()){
-                    World.isEditor = true;
                     nomeFile = view.getNameMap().getText();
-                    Game.getInstance().loadEditorMap(nomeFile);
+                    Settings.loadEditorMap(nomeFile);
                     GameFrame.gameLaunch();
+
                 }
                 else{
                     view.getNameMap().setForeground(Color.red);

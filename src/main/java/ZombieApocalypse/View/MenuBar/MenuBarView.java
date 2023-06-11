@@ -268,7 +268,7 @@ public class MenuBarView extends JPanel {
         add(timePanel);
     }
     public void addHeart(){
-        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
+        healthLabel[Game.getInstance().getPlayerLife()-1].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
     }
     public void removeHeart(){
         healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));

@@ -19,15 +19,12 @@ public class MenuBarModel {
     }
 
     public void removeHeart() {
-        if(Game.getInstance().getPlayerLife()>0)
             menuBarView.removeHeart();
     }
 
     public void addHeart() {
-        if(Game.getInstance().getPlayerLife()<Game.getInstance().getPlayerMaxLife()){
-
             menuBarView.addHeart();
-    }}
+    }
 
     public void addItem(Items.ItemType type) {
         menuBarView.add(type);

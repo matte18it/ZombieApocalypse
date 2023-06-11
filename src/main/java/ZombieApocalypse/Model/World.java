@@ -63,28 +63,28 @@ public class World {
 
     }
     private String fileName;
-    public void setFileName(String s){
-        fileName=s;
-        isEditor=true;
-    }
+
+
 
 
 
 
     public World() {
-        if(isEditor && !UserMapController.nomeFile.equals(""))
+        if(Settings.isEditor)
             generatePlayerWorld();
-        else {
-            isEditor = false;
+        else
             generateCampaignWorld();
-        }
+
+
+
+
+
 
     }
 
     private void generatePlayerWorld() {
         String[] builder;
-        File file = new File("EditorMap/" + UserMapController.nomeFile + ".txt");
-        try (BufferedReader in = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("EditorMap/" +Settings.mapName + ".txt"))) {
             for (int i = 0; i < Settings.WORLD_SIZEX; i++) {
                 builder = in.readLine().split(" ");
                 for (int j = 0; j < Settings.WORLD_SIZEY; j++) {
@@ -95,10 +95,8 @@ public class World {
         } catch (IOException | ArrayIndexOutOfBoundsException e) {
             System.exit(107);
         }
-        UserMapController.nomeFile = "";
     }
 
-    //Per adesso, dopo caricare il mondo da file
     private void generateCampaignWorld(){
         String[] builder;
         try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/CampaignMap/Campagna" + campainMapIndex + ".txt"))))) {

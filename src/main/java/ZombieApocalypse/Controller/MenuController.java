@@ -1,9 +1,11 @@
 package ZombieApocalypse.Controller;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuView;
 
@@ -36,8 +38,10 @@ public class MenuController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mouseClicked(e);
+
                 if(GameData.sound)
                     soundButton();
+                Settings.loadCampaign();
                 GameFrame.gameLaunch();
             }
         });

@@ -3,8 +3,17 @@ package ZombieApocalypse.Utility;
 import java.awt.*;
 
 public class Settings {
+    public static String mapName;
+    public static boolean isEditor=true;
 
 
+    public static void loadEditorMap(String nomeFile) {
+        mapName=nomeFile;
+        isEditor=true;
+    }
+    public static void loadCampaign(){
+        isEditor=false;
+    }
 
     //Grandezza della finestra di Gioco
     public static enum Difficulty{EASY, MEDIUM, HARD};

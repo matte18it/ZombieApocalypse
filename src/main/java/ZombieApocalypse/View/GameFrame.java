@@ -164,7 +164,6 @@ public class GameFrame extends JPanel {
         graphicPanel.addKeyListener(playerController);
         gameLoopObject = new GameLoop(playerController);
         menuBarView.setBar();
-
         timeLoop=new TimeLoop();
 
         gameLoopObject.start();
