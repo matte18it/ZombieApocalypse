@@ -15,7 +15,11 @@ public class KnifeModel extends GunModel{
         height=Settings.CELL_SIZEY/2;
         imagePosition=new Point(0,0);
         hitBox=new Rectangle(imagePosition.x, imagePosition.y, width,height);
-        damage=1;
+        damage=4;
+        switch (Game.getInstance().getDifficulty()){
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
+        }
 
     }
     public void attack() {

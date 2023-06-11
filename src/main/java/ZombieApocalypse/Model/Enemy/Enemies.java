@@ -108,9 +108,9 @@ public class Enemies {
 
     public void generateRandomEnemies() {
         switch (Game.getInstance().getDifficulty()){
-            case EASY -> enemyNumber=m.nextInt(5,7);
-            case MEDIUM -> enemyNumber= m.nextInt(7,15);
-            case HARD ->  enemyNumber= m.nextInt(15,25);
+            case EASY -> enemyNumber=m.nextInt(1,15);
+            case MEDIUM -> enemyNumber= m.nextInt(15,30);
+            case HARD ->  enemyNumber= m.nextInt(30,45);
         }
         int x,y;
         int c=0;

@@ -10,7 +10,11 @@ public class BulletPistol extends Bullet{
         super(x,y,dimension, BulletType.PISTOL);
 
         totalFrame=30;
-        damage=2;
+        damage=5;
+        switch (Game.getInstance().getDifficulty()){
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
+        }
         dir=Game.getInstance().getPistolModel().checkDirection(angle);
 
     }

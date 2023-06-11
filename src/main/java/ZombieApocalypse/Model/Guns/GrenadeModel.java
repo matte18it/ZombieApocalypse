@@ -11,7 +11,11 @@ public class GrenadeModel extends GunModel{
 
 
     public GrenadeModel(){
-        damage=6;
+        damage=10;
+        switch (Game.getInstance().getDifficulty()){
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
+        }
         width= 21;
         height=21;
         mouse=new Point(0,0);
