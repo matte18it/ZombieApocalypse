@@ -58,7 +58,7 @@ public class PlayWav {
     }
 
     public void playGameOverSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/GameOverSound.wav");
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/YouLose.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipSound.start();
@@ -143,6 +143,13 @@ public class PlayWav {
 
     public void playZombieHit(){
         clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieHit.wav");
+        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        clipSound.start();
+    }
+
+    public void playYouWin(){
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/YouWin.wav");
         sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipSound.start();
