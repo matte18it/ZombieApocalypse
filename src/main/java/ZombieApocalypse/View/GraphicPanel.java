@@ -1,5 +1,6 @@
 package ZombieApocalypse.View;
 
+import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Game;

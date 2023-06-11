@@ -14,12 +14,9 @@ import java.awt.*;
 public class Game {
     //Gestisce gli aspetti del gioco
     private  World world = new World();
-    public void loadEditorMap(String name){
+    public void loadEditorMap(String name) {
         world.setFileName(name);
     }
-
-
-
 
 
     private final PlayerCharacter character = new PlayerCharacter();
