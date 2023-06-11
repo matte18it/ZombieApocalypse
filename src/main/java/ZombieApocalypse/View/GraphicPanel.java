@@ -104,7 +104,7 @@ Random m=new Random();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
         }
         for (Enemy b : Enemies.getInstance().getEnemies()) {
-            b.getView().update();
+            b.getView().getUpdate();
             if (b.type == Enemies.EnemiesType.BANDIT) {
                 pistolBandit.update(b);
                 g.drawImage(pistolBandit.getCurrentImage(), b.getGunX(), b.getGunY(), Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);
@@ -156,7 +156,7 @@ Random m=new Random();
 
     }
     public void update() {
-        characterView.update();
+        characterView.getUpdate();
         //Sposto l'arma dove è il character senza girarla
         if(Game.getInstance().hasPistol)
             pistolView.update(null);

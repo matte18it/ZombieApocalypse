@@ -4,21 +4,24 @@ import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.Utility.ThreadPool;
 import ZombieApocalypse.View.CharacterAnimation;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class EnemyView  implements  EnemyViewInterface{
-    private CharacterAnimation runAnimationUp;
-    private  CharacterAnimation runAnimationLeft;
-    private  CharacterAnimation runAnimationDown;
-    private CharacterAnimation runAnimationRight;
-    private  CharacterAnimation hitUp;
-    private  CharacterAnimation hitDown;
-    private  CharacterAnimation hitLeft;
-    private  CharacterAnimation hitRight;
+    private  final Future<CharacterAnimation> runAnimationUp;
+    private  final Future<CharacterAnimation> runAnimationLeft;
+    private  final Future<CharacterAnimation> runAnimationDown;
+    private  final Future<CharacterAnimation> runAnimationRight;
+    private  final Future<CharacterAnimation> hitUp;
+    private  final Future<CharacterAnimation> hitDown;
+    private  final Future<CharacterAnimation> hitLeft;
+    private  final Future<CharacterAnimation> hitRight;
     Enemies.EnemiesType type;
     private Image currentImage;
     private final Image emptyImage;
@@ -28,10 +31,28 @@ public class EnemyView  implements  EnemyViewInterface{
         Random m=new Random();
         enemyModel=enemy;
         this.type=value;
-        if(enemyModel.type== Enemies.EnemiesType.TURRETZOMBIE)
-            loadTurret();
-        else
-            load();
+        if(enemyModel.type== Enemies.EnemiesType.TURRETZOMBIE) {
+            runAnimationUp = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/"+type+"/"+type+"Indietro",4));
+            runAnimationDown =ThreadPool.executeCharacterAnimation( new CharacterAnimation("Nemici/"+type+"/"+type+"Avanti",4));
+            runAnimationLeft =ThreadPool.executeCharacterAnimation( new CharacterAnimation("Nemici/"+type+"/"+type+"Sinistra",4));
+            runAnimationRight = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/"+type+"/"+type+"Destra",4));
+            hitUp=ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/"+type+"/"+type+"DannoAvanti",3));
+            hitDown=ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/"+type+"/"+type+"DannoIndietro",3));
+            hitLeft=ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/"+type+"/"+type+"DannoSinistra",3));
+            hitRight=ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/"+type+"/"+type+"DannoDestra",3));
+
+        }else{
+            runAnimationUp = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "Indietro", 3));
+            runAnimationDown = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "Avanti", 3));
+            runAnimationLeft = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "Sinistra", 3));
+            runAnimationRight = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "Destra", 3));
+            hitUp = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "DannoAvanti", 3));
+            hitDown = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "DannoIndietro", 3));
+            hitLeft = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "DannoSinistra", 3));
+            hitRight = ThreadPool.executeCharacterAnimation(new CharacterAnimation("Nemici/" + type + "/" + type + "DannoDestra", 3));
+
+        }
+
         bloodImage= ResourcesLoader.getInstance().getImage("/Blood/Sangue"+m.nextInt(0,3)+".png", enemyModel.getWight(), enemyModel.getHeight(), true);
 
 
@@ -43,30 +64,10 @@ public class EnemyView  implements  EnemyViewInterface{
 
 
 
-    private void load() {
-            runAnimationUp = new CharacterAnimation("Nemici/" + type + "/" + type + "Indietro", 3);
-            runAnimationDown = new CharacterAnimation("Nemici/" + type + "/" + type + "Avanti", 3);
-            runAnimationLeft = new CharacterAnimation("Nemici/" + type + "/" + type + "Sinistra", 3);
-            runAnimationRight = new CharacterAnimation("Nemici/" + type + "/" + type + "Destra", 3);
-            hitUp = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoAvanti", 3);
-            hitDown = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoIndietro", 3);
-            hitLeft = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoSinistra", 3);
-            hitRight = new CharacterAnimation("Nemici/" + type + "/" + type + "DannoDestra", 3);
 
-    }
-    private void loadTurret() {
-        runAnimationUp = new CharacterAnimation("Nemici/"+type+"/"+type+"Indietro",4);
-        runAnimationDown = new CharacterAnimation("Nemici/"+type+"/"+type+"Avanti",4);
-        runAnimationLeft = new CharacterAnimation("Nemici/"+type+"/"+type+"Sinistra",4);
-        runAnimationRight = new CharacterAnimation("Nemici/"+type+"/"+type+"Destra",4);
-        hitUp=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoAvanti",3);
-        hitDown=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoIndietro",3);
-        hitLeft=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoSinistra",3);
-        hitRight=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoDestra",3);
 
-    }
 
-    public void update(){
+    public void update() throws ExecutionException, InterruptedException {
         if(enemyModel.dying){
             currentImage=bloodImage;
             return;
@@ -79,58 +80,58 @@ public class EnemyView  implements  EnemyViewInterface{
         if(enemyModel.hit){
             if(enemyModel.countHit%2==0){
                 if(enemyModel.dir== Settings.movementDirection.UP)
-                    currentImage=hitUp.update();
+                    currentImage=hitUp.get().update();
                 else if(enemyModel.dir== Settings.movementDirection.DOWN)
-                    currentImage=hitDown.update();
+                    currentImage=hitDown.get().update();
                 else if(enemyModel.dir== Settings.movementDirection.RIGHT)
-                    currentImage=hitRight.update();
+                    currentImage=hitRight.get().update();
                 else if(enemyModel.dir== Settings.movementDirection.LEFT)
-                    currentImage=hitLeft.update();
+                    currentImage=hitLeft.get().update();
                 }
         }else{
             if(enemyModel.type== Enemies.EnemiesType.TURRETZOMBIE){
                 if(enemyModel.isMoving && (enemyModel.turretCount==0 ||enemyModel.turretCount==5 ||enemyModel.turretCount==10 ||enemyModel.turretCount==15)){
                     if(enemyModel.dir== Settings.movementDirection.UP)
-                        currentImage=runAnimationUp.update();
+                        currentImage=runAnimationUp.get().update();
                     else if(enemyModel.dir== Settings.movementDirection.DOWN)
-                        currentImage=runAnimationDown.update();
+                        currentImage=runAnimationDown.get().update();
                     else if(enemyModel.dir== Settings.movementDirection.RIGHT)
-                        currentImage=runAnimationRight.update();
+                        currentImage=runAnimationRight.get().update();
                     else if(enemyModel.dir== Settings.movementDirection.LEFT)
-                        currentImage=runAnimationLeft.update();
+                        currentImage=runAnimationLeft.get().update();
                 }
                 else {
                     if(enemyModel.dir== Settings.movementDirection.UP)
-                        currentImage=runAnimationUp.getCurrentImage();
+                        currentImage=runAnimationUp.get().getCurrentImage();
                     else if(enemyModel.dir== Settings.movementDirection.DOWN)
-                        currentImage=runAnimationDown.getCurrentImage();
+                        currentImage=runAnimationDown.get().getCurrentImage();
                     else if(enemyModel.dir== Settings.movementDirection.RIGHT)
-                        currentImage=runAnimationRight.getCurrentImage();
+                        currentImage=runAnimationRight.get().getCurrentImage();
                     else if(enemyModel.dir== Settings.movementDirection.LEFT)
-                        currentImage=runAnimationLeft.getCurrentImage();
+                        currentImage=runAnimationLeft.get().getCurrentImage();
 
                 }
 
             }else{
         if(enemyModel.isMoving){
             if(enemyModel.dir== Settings.movementDirection.UP)
-                currentImage=runAnimationUp.update();
+                currentImage=runAnimationUp.get().update();
             else if(enemyModel.dir== Settings.movementDirection.DOWN)
-                currentImage=runAnimationDown.update();
+                currentImage=runAnimationDown.get().update();
             else if(enemyModel.dir== Settings.movementDirection.RIGHT)
-                currentImage=runAnimationRight.update();
+                currentImage=runAnimationRight.get().update();
             else if(enemyModel.dir== Settings.movementDirection.LEFT)
-                currentImage=runAnimationLeft.update();
+                currentImage=runAnimationLeft.get().update();
         }
         else {
             if(enemyModel.dir== Settings.movementDirection.UP)
-                currentImage=runAnimationUp.getDefaultImage();
+                currentImage=runAnimationUp.get().getDefaultImage();
             else if(enemyModel.dir== Settings.movementDirection.DOWN)
-                currentImage=runAnimationDown.getDefaultImage();
+                currentImage=runAnimationDown.get().getDefaultImage();
             else if(enemyModel.dir== Settings.movementDirection.RIGHT)
-                currentImage=runAnimationRight.getDefaultImage();
+                currentImage=runAnimationRight.get().getDefaultImage();
             else if(enemyModel.dir== Settings.movementDirection.LEFT)
-                currentImage=runAnimationLeft.getDefaultImage();
+                currentImage=runAnimationLeft.get().getDefaultImage();
 
         }}}
 
