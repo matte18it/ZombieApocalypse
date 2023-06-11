@@ -5,6 +5,16 @@ import java.awt.*;
 public class Settings {
     public static String mapName;
     public static boolean isEditor=true;
+    public static int campainMapIndex=1;  //Mappa campagna corrente
+    public static int campainMaps=5;  //numero mappe massime
+    public static boolean nextCampaignMap(){  //Verrà chiamato al completamento del livello
+        if(campainMapIndex>=campainMaps)
+            return false;
+
+        campainMapIndex++;
+        return true;
+
+    }
 
 
     public static void loadEditorMap(String nomeFile) {

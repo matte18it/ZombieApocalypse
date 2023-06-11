@@ -53,16 +53,7 @@ public class World {
     //Mondo e posizione del player
     public  Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
     public static boolean isEditor=false;
-    private int campainMapIndex=1;  //Mappa campagna corrente
-    private final int campainMaps=5;  //numero mappe massime
-    public boolean nextCampaignMap(){  //Verrà chiamato al completamento del livello
-        if(campainMapIndex>=campainMaps)
-            return false;
 
-        campainMapIndex++;
-        return true;
-
-    }
     private String fileName;
 
 
@@ -100,7 +91,7 @@ public class World {
 
     private void generateCampaignWorld(){
         String[] builder;
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/CampaignMap/Campagna" + campainMapIndex + ".txt"))))) {
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/CampaignMap/Campagna" + Settings.campainMapIndex + ".txt"))))) {
             for (int i = 0; i < Settings.WORLD_SIZEX; i++) {
                 builder = in.readLine().split(" ");
                 for (int j = 0; j < Settings.WORLD_SIZEY; j++) {
