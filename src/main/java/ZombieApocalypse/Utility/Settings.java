@@ -12,8 +12,18 @@ public class Settings {
             return false;
 
         campainMapIndex++;
+        setDifficulty();
         return true;
 
+    }
+
+    private static void setDifficulty() {
+        if(campainMapIndex == 1 || campainMapIndex == 2)
+            diff = Difficulty.EASY;
+        else if(campainMapIndex == 3 || campainMapIndex == 5)
+            diff = Difficulty.MEDIUM;
+        else
+            diff = Difficulty.HARD;
     }
 
 

@@ -139,10 +139,7 @@ public class Enemies {
                     case 4-> Enemies.getInstance().addBandit(x,y);
                     case 5->Enemies.getInstance().addBombBandit(x,y);
                 }
-
             }
-
-
         }
     }
 
