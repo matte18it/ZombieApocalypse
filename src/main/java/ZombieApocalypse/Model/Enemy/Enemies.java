@@ -166,7 +166,6 @@ public class Enemies {
             if(!b.update()){
                 e.remove();
                 enemyNumber--;
-
                 if(enemyNumber == 0 && !Game.getInstance().getBackMenu()){
                     Game.getInstance().setPause(true);
                     if(Settings.nextCampaignMap())
@@ -232,7 +231,8 @@ public class Enemies {
                 Game.getInstance().setPause(false);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
-                //Qua chiamare funzione per andare a prossimo livello
+                Game.getInstance().reloadWorld();
+                GameFrame.gameLaunch();
             }
         });
 
