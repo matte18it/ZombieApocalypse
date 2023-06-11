@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="GameOver Panel">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Audio/MissionComplete.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings$movementDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings$movementDirection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Q3PTlPoNKcpKe7fxKWBB5mhSkK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/matteocanino/Desktop/Progetti/UID/ZombieApocalypse&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Properties&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ZombieApocalypse.View" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/EditorMap" />
+      <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller" />
+      <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/Audio" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/VictoryLose" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/Player/Skin5" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/CampaignMap" />
+      <recent name="$PROJECT_DIR$/src/main/Resources/UserMap" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ZombieApocalypse.View.Enemy" />
+      <recent name="ZombieApocalypse.Model" />
+      <recent name="ZombieApocalypse.Model.Guns" />
+      <recent name="ZombieApocalypse.View.Gun" />
+      <recent name="ZombieApocalypse.Model.Enemy" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main Run" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ZombieApocalypse.Main" />
+      <module name="ZombieApocalypse" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="" />
+      <created>1684579305743</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00072" summary="turret zombie">
+      <created>1686063096897</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1686063096897</updated>
+    </task>
+    <task id="LOCAL-00073" summary="turret zombie">
+      <created>1686063208705</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1686063208705</updated>
+    </task>
+    <task id="LOCAL-00074" summary="commenti">
+      <created>1686063545160</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1686063545160</updated>
+    </task>
+    <task id="LOCAL-00075" summary="turretZombie nerfato">
+      <created>1686068292155</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1686068292155</updated>
+    </task>
+    <task id="LOCAL-00076" summary="turretZombie nerfato">
+      <created>1686068570912</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1686068570912</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Editor pt.1">
+      <created>1686124068159</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1686124068160</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Editor pt.1">
+      <created>1686124306889</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1686124306890</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Editor pt.1">
+      <created>1686148050475</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1686148050476</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Editor pt.1">
+      <created>1686150018609</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1686150018609</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Editor pt.1">
+      <created>1686159539265</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1686159539265</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Editor pt.1">
+      <created>1686159630231</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1686159630231</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Bug Fix">
+      <created>1686160782255</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1686160782255</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Bug Fix">
+      <created>1686161728453</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1686161728454</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Bug Fix">
+      <created>1686164975076</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1686164975077</updated>
+    </task>
+    <task id="LOCAL-00086" summary="skin animation Boss">
+      <created>1686211963758</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1686211963759</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Editor pt.2">
+      <created>1686222805790</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1686222805791</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Editor pt.2">
+      <created>1686223140780</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1686223140780</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Editor pt.3">
+      <created>1686234594147</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1686234594147</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Editor pt.5">
+      <created>1686241608086</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1686241608086</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Editor pt.5">
+      <created>1686242153584</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1686242153584</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Editor pt.5">
+      <created>1686244604342</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1686244604343</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Editor pt.5">
+      <created>1686246817464</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1686246817465</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Editor pt.6">
+      <created>1686301522719</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1686301522719</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Editor pt.6">
+      <created>1686303455720</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1686303455720</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Editor Finale">
+      <created>1686303991315</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1686303991315</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Editor Finale">
+      <created>1686304041302</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1686304041302</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Editor Finale">
+      <created>1686304059487</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1686304059487</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Editor Finale">
+      <created>1686304615366</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1686304615366</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Mappa Campagna 1">
+      <created>1686305294966</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1686305294966</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Bug Fix">
+      <created>1686316838346</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1686316838346</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Bug Fix">
+      <created>1686319816180</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1686319816180</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Mappe Campagna">
+      <created>1686321394057</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1686321394057</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Mappe Campagna">
+      <created>1686321740456</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1686321740456</updated>
+    </task>
+    <task id="LOCAL-00105" summary="mappa pt2">
+      <created>1686324951449</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1686324951449</updated>
+    </task>
+    <task id="LOCAL-00106" summary="mappa pt2">
+      <created>1686325014977</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1686325014977</updated>
+    </task>
+    <task id="LOCAL-00107" summary="bug fix">
+      <created>1686381498941</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1686381498941</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Bug Fix">
+      <created>1686382022821</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1686382022821</updated>
+    </task>
+    <task id="LOCAL-00109" summary="bug fix">
+      <created>1686383968846</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1686383968846</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Gestione Mappe Player">
+      <created>1686414945207</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1686414945208</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Gestione Mappe Player">
+      <created>1686418941871</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1686418941872</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Gestione Mappe Player">
+      <created>1686419964638</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1686419964638</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Gestione Mappe Player">
+      <created>1686421283197</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1686421283197</updated>
+    </task>
+    <task id="LOCAL-00114" summary="Gestione Mappe Player">
+      <created>1686422302333</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1686422302333</updated>
+    </task>
+    <task id="LOCAL-00115" summary="Ottimizzazione gioco">
+      <created>1686474762020</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1686474762021</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Easter Eggs primo posto">
+      <created>1686479312215</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1686479312215</updated>
+    </task>
+    <task id="LOCAL-00117" summary="Easter Eggs primo posto">
+      <created>1686480278590</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1686480278590</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Easter Eggs primo posto">
+      <created>1686481491865</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1686481491865</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Easter Eggs primo posto">
+      <created>1686481681597</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1686481681597</updated>
+    </task>
+    <task id="LOCAL-00120" summary="GameOver Panel">
+      <created>1686488076684</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1686488076684</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="bug fix pt 2" />
+    <MESSAGE value="Posizione player fix" />
+    <MESSAGE value="Suoni pt. 2" />
+    <MESSAGE value="Suoni pt. 3" />
+    <MESSAGE value="Sound pt.5" />
+    <MESSAGE value="Suoni Finale" />
+    <MESSAGE value="turret zombie" />
+    <MESSAGE value="commenti" />
+    <MESSAGE value="turretZombie nerfato" />
+    <MESSAGE value="Editor pt.1" />
+    <MESSAGE value="skin animation Boss" />
+    <MESSAGE value="Editor pt.2" />
+    <MESSAGE value="Editor pt.3" />
+    <MESSAGE value="Editor pt.5" />
+    <MESSAGE value="Editor pt.6" />
+    <MESSAGE value="Editor Finale" />
+    <MESSAGE value="Mappa Campagna 1" />
+    <MESSAGE value="Mappe Campagna" />
+    <MESSAGE value="mappa pt2" />
+    <MESSAGE value="Bug Fix" />
+    <MESSAGE value="bug fix" />
+    <MESSAGE value="Gestione Mappe Player" />
+    <MESSAGE value="Ottimizzazione gioco" />
+    <MESSAGE value="Easter Eggs primo posto" />
+    <MESSAGE value="GameOver Panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="GameOver Panel" />
+  </component>
+</project>
