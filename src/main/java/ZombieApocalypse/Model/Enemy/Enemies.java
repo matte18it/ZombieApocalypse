@@ -1,12 +1,20 @@
 package ZombieApocalypse.Model.Enemy;
 
+import ZombieApocalypse.Loop.TimeLoop;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
+import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.View.GameFrame;
 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -163,8 +171,6 @@ public class Enemies {
             }
             if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
-
-
         }
     }
 
