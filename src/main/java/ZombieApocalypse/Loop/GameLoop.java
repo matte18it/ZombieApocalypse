@@ -13,10 +13,9 @@ public class GameLoop {
     }
 
     public void start() {
-        if (executor != null)
-            return;
-        executor = Executors.newSingleThreadScheduledExecutor();
-            this.executor.scheduleAtFixedRate(this.controller::update,
+        if(executor==null)
+            executor = Executors.newSingleThreadScheduledExecutor();
+        this.executor.scheduleAtFixedRate(this.controller::update,
                     0L, 60L, TimeUnit.MILLISECONDS);
 
 

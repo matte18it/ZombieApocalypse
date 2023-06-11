@@ -212,6 +212,9 @@ public class GameFrame extends JPanel {
         gameLoopObject.stop();
         System.exit(0);
     }
+    public static void closeGame() {
+        gameLoopObject.stop();
+    }
 
     private static void dimension() {
         Toolkit toolkit = Toolkit.getDefaultToolkit();

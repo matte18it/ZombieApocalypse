@@ -1,8 +1,10 @@
 package ZombieApocalypse.Controller;
+import ZombieApocalypse.Loop.GameLoop;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.ThreadPool;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.GraphicPanel;
 
@@ -16,8 +18,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import static java.awt.event.KeyEvent.VK_ESCAPE;
 
@@ -206,19 +210,23 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     private int countZombie = 0;
     private int randomZombie = new Random().nextInt(300, 600);
     private int cdd=0;
+    Future<?> f1;
 
     public void update(){
-
+        try{
+        if(f1!=null && count==0)
+          f1.get();
         if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
             Game.getInstance().update();
-            panel.update();
+            f1= ThreadPool.getExecutor().submit(()->panel.update());
             count=0;
         }if( Game.getInstance().getBackMenu() && count==0){
             Game.getInstance().update();
-            panel.update();
+            f1= ThreadPool.getExecutor().submit(()->panel.update());
             count++;
         }
         if(count==1){
+            f1.get();
             count=0;
             Game.getInstance().setBackMenu(false);
         }
@@ -231,7 +239,9 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         else
             countZombie++;
 
-    }
+    }catch (ExecutionException | InterruptedException e){
+
+    }}
 
     @Override
     public void mouseDragged(MouseEvent e) {

@@ -16,6 +16,9 @@ public class ThreadPool {
     public static Future<CharacterAnimation> executeCharacterAnimation(CharacterAnimation task) {
         return  executor.submit(()->task);
     }
+    public static ExecutorService getExecutor(){
+        return executor;
+    }
 
 
 

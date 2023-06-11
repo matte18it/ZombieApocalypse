@@ -10,6 +10,7 @@ import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.Utility.ThreadPool;
 import ZombieApocalypse.View.Enemy.BossView;
 import ZombieApocalypse.View.Gun.*;
 import ZombieApocalypse.View.Player.CharacterView;
@@ -17,9 +18,11 @@ import ZombieApocalypse.View.Player.CharacterView;
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class GraphicPanel extends JPanel {
-    int count=0;
+    public int count=0;
     //Disegna il mondo
     private final CharacterView characterView = new CharacterView();
     private static final PistolView pistolView = new PistolView();
@@ -156,6 +159,34 @@ Random m=new Random();
 
     }
     public void update() {
+        /*Future<?> t1=null;
+        Future<?> t2=null, t3, t4, t5;
+        Future<?> t0= ThreadPool.getExecutor().submit(()->characterView.getUpdate());
+        //Sposto l'arma dove è il character senza girarla
+        if(Game.getInstance().hasPistol)
+            t1=ThreadPool.getExecutor().submit(()->pistolView.update(null));
+        if(Game.getInstance().hasKnife)
+            t1=ThreadPool.getExecutor().submit(()->knife.update());
+        if(Game.getInstance().hasShotgun)
+            t1=ThreadPool.getExecutor().submit(()->shotgunView.update(null));
+        if(Game.getInstance().hasGrenade){
+            t1=ThreadPool.getExecutor().submit(()->grenadeView.update());
+            t2=ThreadPool.getExecutor().submit(()->grenadeView.update(null));}
+
+        t3=ThreadPool.getExecutor().submit(()->Bullets.getInstance().update());
+        t4=ThreadPool.getExecutor().submit(()->Items.getInstance().update());
+        t5=ThreadPool.getExecutor().submit(()->Enemies.getInstance().update());
+        try {
+            t0.get();
+            t1.get();
+            if(Game.getInstance().hasGrenade)
+                t2.get();
+            t3.get();
+            t4.get();
+            t5.get();
+        } catch (ExecutionException |InterruptedException e) {
+            throw new RuntimeException(e);
+        }*/
         characterView.getUpdate();
         //Sposto l'arma dove è il character senza girarla
         if(Game.getInstance().hasPistol)
@@ -170,6 +201,7 @@ Random m=new Random();
         Bullets.getInstance().update();
         Items.getInstance().update();
         Enemies.getInstance().update();
+
         repaint();
     }
 
