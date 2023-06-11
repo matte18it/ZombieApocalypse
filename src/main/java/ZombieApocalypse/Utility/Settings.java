@@ -15,6 +15,8 @@ public class Settings {
         return true;
 
     }
+
+
     public static void loadEditorMap(String nomeFile) {
         mapName=nomeFile;
         isEditor=true;
