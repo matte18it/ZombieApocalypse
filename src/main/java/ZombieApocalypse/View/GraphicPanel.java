@@ -60,6 +60,7 @@ Random m=new Random();
         if(count==0){
             Items.getInstance().generateRandomItems();
             Enemies.getInstance().generateRandomEnemies();
+            Game.getInstance().getPlayerCharacter().chooseCoordinate();
         }
         int r;
 

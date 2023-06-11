@@ -95,8 +95,7 @@ public class PlayerCharacter  {
         height=Settings.CELL_SIZEY;
         centerX=wight/2;
         centerY=height/2;
-        x=50;
-        y=50;
+
         health=6;
         hitBox=new Rectangle(x,y,wight,height);
     }
@@ -244,5 +243,10 @@ public class PlayerCharacter  {
         }
     }
 
+    public void chooseCoordinate() {
+        Point p=Game.getInstance().getWorld().selectPlayerPosition();
+        x=p.x;
+        y=p.y;
+    }
 }
 
