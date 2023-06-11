@@ -4,23 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Ottimizzazione gioco">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerAvanti0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerAvanti1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerAvanti2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerDestra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerDestra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerDestra2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerIndietro0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerIndietro1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerIndietro2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerSinistra0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerSinistra1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerSinistra2.png" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Easter Eggs primo posto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Fence1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Fence2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Fence3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Fence4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FenceUnita1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCEUNITA1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FenceUnita2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCEUNITA2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$17.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GameFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,13 +101,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Sound pt.5">
-      <created>1685989532624</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1685989532624</updated>
     </task>
     <task id="LOCAL-00068" summary="Sound pt.5">
       <created>1685990387368</created>
@@ -447,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686474762021</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Easter Eggs primo posto">
+      <created>1686479312215</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1686479312215</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -463,7 +461,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta del drop" />
     <MESSAGE value="Save/Load DB" />
     <MESSAGE value="bug fix pt 2" />
     <MESSAGE value="Posizione player fix" />
@@ -488,6 +485,7 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="Gestione Mappe Player" />
     <MESSAGE value="Ottimizzazione gioco" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ottimizzazione gioco" />
+    <MESSAGE value="Easter Eggs primo posto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Easter Eggs primo posto" />
   </component>
 </project>
