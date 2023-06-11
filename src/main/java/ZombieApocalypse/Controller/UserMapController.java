@@ -7,6 +7,7 @@ import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.GameFrame;
@@ -81,7 +82,7 @@ public class UserMapController {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 UserMapView.difficulty = 0;
-                Game.getInstance().diff = Game.Difficulty.EASY;
+                Settings.diff = Settings.Difficulty.EASY;
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(null);
                 view.getBtnEasy().setBorder(new LineBorder(Color.red));
@@ -95,7 +96,7 @@ public class UserMapController {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 UserMapView.difficulty = 1;
-                Game.getInstance().diff = Game.Difficulty.MEDIUM;
+                Settings.diff = Settings.Difficulty.MEDIUM;
                 view.getBtnMedium().setBorder(new LineBorder(Color.red));
                 view.getBtnHard().setBorder(null);
                 view.getBtnEasy().setBorder(null);
@@ -109,7 +110,7 @@ public class UserMapController {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 UserMapView.difficulty = 2;
-                Game.getInstance().diff = Game.Difficulty.HARD;
+                Settings.diff = Settings.Difficulty.HARD;
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(new LineBorder(Color.red));
                 view.getBtnEasy().setBorder(null);

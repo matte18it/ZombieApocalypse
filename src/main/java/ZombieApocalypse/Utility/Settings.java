@@ -7,6 +7,9 @@ public class Settings {
 
 
     //Grandezza della finestra di Gioco
+    public static enum Difficulty{EASY, MEDIUM, HARD};
+
+    public static Difficulty diff = Difficulty.HARD;
     public static enum movementDirection{RIGHT, LEFT, UP, DOWN};
 
     public  static int WORLD_SIZEX=32;

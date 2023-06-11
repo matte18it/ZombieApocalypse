@@ -13,7 +13,7 @@ public class BulletShotgun extends Bullet{
             totalFrame=8;
             bulletType=t;
             damage=5;
-            switch (Game.getInstance().getDifficulty()){
+            switch (Settings.diff){
                 case EASY -> damage=damage*2;
                 case HARD -> damage=damage/2;
             }

@@ -67,7 +67,6 @@ public class World {
         fileName=s;
         isEditor=true;
     }
-    public int enemyNumber=0;
 
 
 

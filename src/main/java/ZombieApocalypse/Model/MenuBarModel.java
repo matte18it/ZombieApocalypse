@@ -3,6 +3,7 @@ package ZombieApocalypse.Model;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 public class MenuBarModel {
@@ -41,7 +42,7 @@ public class MenuBarModel {
             PlayWav.getInstance().playMedikitSound();
         int numVite=0;
 
-        switch (Game.getInstance().getDifficulty()){
+        switch (Settings.diff){
             case EASY -> numVite=3;
             case MEDIUM -> numVite=2;
             case HARD -> numVite=1;

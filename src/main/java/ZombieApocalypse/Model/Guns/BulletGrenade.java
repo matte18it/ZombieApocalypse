@@ -15,7 +15,7 @@ public class BulletGrenade extends Bullet{
         velocityY=15;
         dir=d;
         numFrame=0;
-        switch (Game.getInstance().getDifficulty()){
+        switch (Settings.diff){
             case EASY -> damage=15;
             case MEDIUM -> damage=7;
             case HARD -> damage=4;

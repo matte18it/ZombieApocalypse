@@ -15,7 +15,7 @@ public class Items {
 Random m=new Random();
     public void generateRandomItems() {
         int count=0;
-        switch (Game.getInstance().getDifficulty()){
+        switch (Settings.diff){
             case EASY -> count=m.nextInt(10,18);
             case MEDIUM -> count= m.nextInt(5,10);
             case HARD ->  count= m.nextInt(3,5);

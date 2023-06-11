@@ -12,7 +12,7 @@ public class GrenadeModel extends GunModel{
 
     public GrenadeModel(){
         damage=10;
-        switch (Game.getInstance().getDifficulty()){
+        switch (Settings.diff){
             case EASY -> damage=damage*2;
             case HARD -> damage=damage/2;
         }

@@ -11,7 +11,7 @@ public class BulletPistol extends Bullet{
 
         totalFrame=30;
         damage=5;
-        switch (Game.getInstance().getDifficulty()){
+        switch (Settings.diff){
             case EASY -> damage=damage*2;
             case HARD -> damage=damage/2;
         }

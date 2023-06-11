@@ -18,12 +18,9 @@ public class Game {
         world.setFileName(name);
     }
 
-    public Difficulty getDifficulty() {
-        return diff;
-    }
 
-    public enum Difficulty{EASY, MEDIUM, HARD};
-    public Difficulty diff = Difficulty.HARD;
+
+
 
     private final PlayerCharacter character = new PlayerCharacter();
     private final KnifeModel knife=new KnifeModel();
@@ -57,7 +54,8 @@ public class Game {
     private static Game instance = new Game();
     private Game() {}
     public static Game getInstance() {
-        return instance;
+            return instance;
+
     }
 
     public void startMovementRight() {
