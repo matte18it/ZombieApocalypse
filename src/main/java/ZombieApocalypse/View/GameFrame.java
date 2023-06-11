@@ -84,6 +84,7 @@ public class GameFrame extends JPanel {
 
     public static void menuLaunch(){
         Settings.campainMapIndex = 1;
+        Settings.diff = Settings.Difficulty.EASY;
         if(splashScreen != null && splashScreen.isShowing())
             frameGame.remove(splashScreen);
 
