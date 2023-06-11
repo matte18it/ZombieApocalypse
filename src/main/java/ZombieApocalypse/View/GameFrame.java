@@ -83,6 +83,7 @@ public class GameFrame extends JPanel {
     }
 
     public static void menuLaunch(){
+        Settings.campainMapIndex = 1;
         if(splashScreen != null && splashScreen.isShowing())
             frameGame.remove(splashScreen);
 
@@ -141,6 +142,12 @@ public class GameFrame extends JPanel {
         }
         if(userView != null && userView.isShowing())
             frameGame.remove(userView);
+        if(graphicPanel != null && graphicPanel.isShowing()){
+            frameGame.remove(graphicPanel);
+            frameGame.remove(menuBarView);
+            timeLoop.stop();
+            gameLoopObject.stop();
+        }
 
         leaderboardLoop.stop();
         menuLoop.stop();
