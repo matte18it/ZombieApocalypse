@@ -189,7 +189,7 @@ public class MenuView extends JPanel {
         if(GameData.lang== GameData.Language.IT)
             btnEditorMap = new JButton("Mappe Utente");
         else
-            btnEditorMap = new JButton("User Map");
+            btnEditorMap = new JButton("User Maps");
         btnEditorMap.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
         btnEditorMap.setHorizontalTextPosition(JButton.CENTER);
         btnEditorMap.setVerticalTextPosition(JButton.CENTER);
