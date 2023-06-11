@@ -81,7 +81,6 @@ public class UserMapController {
                 super.mousePressed(e);
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
-                UserMapView.difficulty = 0;
                 Settings.diff = Settings.Difficulty.EASY;
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(null);
@@ -95,7 +94,6 @@ public class UserMapController {
                 super.mousePressed(e);
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
-                UserMapView.difficulty = 1;
                 Settings.diff = Settings.Difficulty.MEDIUM;
                 view.getBtnMedium().setBorder(new LineBorder(Color.red));
                 view.getBtnHard().setBorder(null);
@@ -109,7 +107,6 @@ public class UserMapController {
                 super.mousePressed(e);
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
-                UserMapView.difficulty = 2;
                 Settings.diff = Settings.Difficulty.HARD;
                 view.getBtnMedium().setBorder(null);
                 view.getBtnHard().setBorder(new LineBorder(Color.red));
