@@ -42,6 +42,7 @@ public class MenuController {
                 if(GameData.sound)
                     soundButton();
                 Settings.loadCampaign();
+                Game.getInstance().reloadWorld();
                 GameFrame.gameLaunch();
             }
         });

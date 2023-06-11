@@ -13,6 +13,7 @@ import java.util.Random;
 public class World {
 
 
+
     public boolean isPlayer(int x, int i, int ceX, int ceY) {
         Point enemy=new Point(x+ceX, i+ceY);
         Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);

@@ -164,6 +164,7 @@ public class UserMapController {
                 if(f.exists() && !f.isDirectory()){
                     nomeFile = view.getNameMap().getText();
                     Settings.loadEditorMap(nomeFile);
+                    Game.getInstance().reloadWorld();
                     GameFrame.gameLaunch();
 
                 }

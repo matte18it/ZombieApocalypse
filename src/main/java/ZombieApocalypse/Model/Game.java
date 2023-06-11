@@ -13,7 +13,11 @@ import java.awt.*;
 
 public class Game {
     //Gestisce gli aspetti del gioco
-    private  World world = new World();
+    private  World world=new World();
+    public void reloadWorld(){
+        world=new World();
+    }
+
 
 
 
