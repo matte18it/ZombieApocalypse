@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="thread pt 2" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Easter Eggs primo posto">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/World.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,20 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Sound pt.5">
-      <created>1685990387368</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1685990387368</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Suoni Finale">
-      <created>1685991031688</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1685991031688</updated>
     </task>
     <task id="LOCAL-00070" summary="Suoni Finale">
       <created>1685994423210</created>
@@ -423,14 +412,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686474762021</updated>
     </task>
-    <task id="LOCAL-00116" summary="thread pt 2">
-      <created>1686484012733</created>
+    <task id="LOCAL-00116" summary="Easter Eggs primo posto">
+      <created>1686479312215</created>
       <option name="number" value="00116" />
       <option name="presentableId" value="LOCAL-00116" />
       <option name="project" value="LOCAL" />
-      <updated>1686484012734</updated>
+      <updated>1686479312215</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Easter Eggs primo posto">
+      <created>1686480278590</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1686480278590</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Easter Eggs primo posto">
+      <created>1686481491865</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1686481491865</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -470,7 +473,7 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="Gestione Mappe Player" />
     <MESSAGE value="Ottimizzazione gioco" />
-    <MESSAGE value="thread pt 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="thread pt 2" />
+    <MESSAGE value="Easter Eggs primo posto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Easter Eggs primo posto" />
   </component>
 </project>

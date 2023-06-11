@@ -1123,11 +1123,11 @@ public class MenuView extends JPanel implements Runnable{
         JButton btnGo;
         if(GameData.lang.equals(GameData.Language.IT)) {
             btnMenu = new JButton("Conferma");
-            label.setText("<html>Complimenti, ti trovi al primo posto della classifica!<br>Ti aspetta una sorpresa, sta a te trovarla! Continua a giocare per mantenere il primo posto!</html>");
+            label.setText("<html>Complimenti, ti trovi al primo posto della classifica!<br>Ti aspetta una sorpresa, controlla tra le skin! Continua a giocare per mantenere il primo posto!</html>");
         }
         else {
             btnMenu = new JButton("Confirm");
-            label.setText("<html>Congratulations, you are in first place in the ranking!<br>A surprise awaits you, it is up to you to find it! Continue playing to keep the first place!</html>");
+            label.setText("<html>Congratulations, you are in first place in the ranking!<br>A surprise awaits you, check between the skins! Continue playing to keep the first place!</html>");
         }
 
         btnMenu.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
