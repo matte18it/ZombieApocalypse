@@ -155,4 +155,10 @@ public class PlayWav {
         clipSound.start();
     }
 
+    public void playMissionComplete() {
+        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/MissionComplete.wav");
+        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        clipSound.start();
+    }
 }
