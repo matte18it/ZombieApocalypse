@@ -46,7 +46,11 @@ public class GameFrame extends JPanel {
         frameGame.setVisible(true);
         frameGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        SplashScreenModel.checkFile();
+        if(SplashScreenModel.checkFile())
+            launch();
+    }
+
+    public static void launch() {
         splashScreen.bar.setIcon(ResourcesLoader.getInstance().getImageIcon("/SplashScreen/bar.png", 276, 7, false));
         SplashScreenModel.loadInterface();
     }

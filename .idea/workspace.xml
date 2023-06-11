@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="set difficoltà fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/ThreadPool.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Gestione Mappe Player">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/CampaignMap/Campagna5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23,_10_12_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23,_10_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_12__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_17__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/CharacterAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyViewInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyViewInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Player/CharacterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Player/CharacterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EditorMap/Prova1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EditorMap/Prova1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/SplashScreenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/SplashScreenModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" afterDir="false" />
@@ -72,9 +74,9 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/CampaignMap" />
       <recent name="$PROJECT_DIR$/src/main/Resources/UserMap" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Arrows" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/CampaignMap" />
       <recent name="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Fences" />
       <recent name="$PROJECT_DIR$/src/main/Resources/EditorImage" />
     </key>
@@ -103,6 +105,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Suoni pt. 3">
+      <created>1685965473845</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1685965473845</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Sound pt.5">
+      <created>1685989532624</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1685989532624</updated>
     </task>
     <task id="LOCAL-00068" summary="Sound pt.5">
       <created>1685990387368</created>
@@ -433,21 +449,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686422302333</updated>
     </task>
-    <task id="LOCAL-00115" summary="set difficoltà">
-      <created>1686463364367</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1686463364368</updated>
-    </task>
-    <task id="LOCAL-00116" summary="set difficoltà fix">
-      <created>1686465126903</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1686465126903</updated>
-    </task>
-    <option name="localTasksCounter" value="117" />
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -463,6 +465,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Aggiunta item pt2" />
+    <MESSAGE value="Aggiunta del drop" />
     <MESSAGE value="Save/Load DB" />
     <MESSAGE value="bug fix pt 2" />
     <MESSAGE value="Posizione player fix" />
@@ -486,8 +490,6 @@
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="Gestione Mappe Player" />
-    <MESSAGE value="set difficoltà" />
-    <MESSAGE value="set difficoltà fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="set difficoltà fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gestione Mappe Player" />
   </component>
 </project>
