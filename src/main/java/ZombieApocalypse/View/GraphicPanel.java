@@ -58,7 +58,6 @@ Random m=new Random();
     @Override
     protected void paintComponent(Graphics g) {
         if(count==0){
-
             Items.getInstance().generateRandomItems();
             Enemies.getInstance().generateRandomEnemies();
         }

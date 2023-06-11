@@ -107,13 +107,14 @@ public class PlayerCharacter  {
             if(GameData.sound)
                 PlayWav.getInstance().playHurtSound();
             hit=true;
-            if(health>=0){
+            if(health>0){
                 health--;
+                Game.getInstance().getMenuBar().removeHeart();
                 if(health == 0){
                     Game.getInstance().setPause(false);
                     showDialog();
                 }
-            Game.getInstance().getMenuBar().removeHeart();}
+            }
         }
     }
 
