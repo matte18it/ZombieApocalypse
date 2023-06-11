@@ -23,11 +23,13 @@ public class SkinnyZombie extends Enemy{
     Random m=new Random();
     public boolean update() {
         //Gestione della Morte
-        if(healt<=0 && !dying){
+        if(dying)
+            return false;
+        if(healt<=0 ){
             dying=true;
             int c=m.nextInt(4,9);
             Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
-            return false;
+            return true;
             }
         //Gestione dalla Pausa del Gioco
         if(Game.getInstance().getBackMenu()){

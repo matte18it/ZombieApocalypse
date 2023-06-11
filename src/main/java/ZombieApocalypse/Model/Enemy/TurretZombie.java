@@ -25,6 +25,26 @@ public class TurretZombie extends Enemy{
     double angle, angle2;
     Random m=new Random();
     public boolean update() {
+        if(dying)
+            return false;
+        if (healt <= 0 ) {
+            dying = true;
+            int c = m.nextInt(4, 9);
+            Items.getInstance().dropItem(x, y, Items.ItemType.values()[c]);
+            return true;}
+        if (Game.getInstance().getBackMenu()) {
+            stopAll = true;
+            return false;
+        }
+        if (hit) {
+            if (countHit < 30) {
+                countHit++;
+            } else
+                stopHit();
+        }
+        if (hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
+            Game.getInstance().getPlayerCharacter().hit();
+
 
         Point player = Game.getInstance().getPlayerPosition();
         Point turret = new Point(x + centerX, y + centerY);
@@ -56,31 +76,9 @@ public class TurretZombie extends Enemy{
         }}
                 else
             isMoving=false;
-                if (healt <= 0 && !dying) {
-                dying = true;
-                int c = m.nextInt(4, 9);
-                Items.getInstance().dropItem(x, y, Items.ItemType.values()[c]);
-                return false;
-            }
-
-            if (Game.getInstance().getBackMenu()) {
-                stopAll = true;
-                return false;
-            }
-            if (hit) {
-                if (countHit < 30) {
-                    countHit++;
-                } else
-                    stopHit();
-            }
-            if (hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-                Game.getInstance().getPlayerCharacter().hit();
-
-            hitBox.x = x;
-            hitBox.y = y;
 
 
-            return true;
+                return true;
         }
 
     private boolean checkAngle() {

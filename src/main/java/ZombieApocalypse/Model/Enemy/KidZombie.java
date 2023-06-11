@@ -25,13 +25,15 @@ public class KidZombie extends Enemy{
     public boolean update() {
         Point p=Game.getInstance().getPlayerPosition();
         Point turret = new Point(x + centerX, y + centerY);
+        if(dying)
+            return false;
 
         //Gestione della Morte
-        if(healt<=0 && !dying){
+        if(healt<=0){
             dying=true;
             int c=m.nextInt(4,9);
             Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
-            return false;
+            return true;
             }
         //Gestione della Pausa del gioco
         if(Game.getInstance().getBackMenu()){
