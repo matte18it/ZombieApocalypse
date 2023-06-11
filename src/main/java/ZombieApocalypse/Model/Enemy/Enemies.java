@@ -164,9 +164,10 @@ public class Enemies {
         while (e.hasNext()){
             Enemy b=e.next();
             if(!b.update()){
-                enemyNumber--;
                 e.remove();
-                if(enemyNumber == 0){
+                enemyNumber--;
+
+                if(enemyNumber == 0 && !Game.getInstance().getBackMenu()){
                     Game.getInstance().setPause(true);
                     if(Settings.nextCampaignMap())
                         showContinue();
