@@ -14,7 +14,11 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -165,8 +169,12 @@ public class Enemies {
                 enemyNumber--;
                 if(enemyNumber == 0 && !Game.getInstance().getBackMenu()){
                     Game.getInstance().setPause(true);
-                    if(Settings.nextCampaignMap())
-                        showContinue();
+                    if(!Settings.isEditor){
+                        if(Settings.nextCampaignMap())
+                            showContinue();
+                        else
+                            showFinal();
+                    }
                     else
                         showFinal();
                 }
