@@ -4,25 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Gestione Mappe Player">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/CampaignMap/Campagna5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23,_10_12_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23,_10_17_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_12__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_06_23__10_17__Changes_.xml" beforeDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Ottimizzazione gioco">
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerAvanti0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerAvanti1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerAvanti2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerDestra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerDestra1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerDestra2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerIndietro0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerIndietro1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerIndietro2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerSinistra0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerSinistra1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resources/Player/Skin5/PlayerSinistra2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EditorMap/Prova1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EditorMap/Prova1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/SplashScreenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/SplashScreenModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Items/Items.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Items/Items.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/MenuBarModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings$movementDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings$movementDirection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Utility/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +72,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/Resources/Player/Skin5" />
       <recent name="$PROJECT_DIR$/src/main/Resources/CampaignMap" />
       <recent name="$PROJECT_DIR$/src/main/Resources/UserMap" />
       <recent name="$PROJECT_DIR$/src/main/Resources/Arrows" />
       <recent name="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/Fences" />
-      <recent name="$PROJECT_DIR$/src/main/Resources/EditorImage" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ZombieApocalypse.View.Enemy" />
@@ -105,13 +103,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Suoni pt. 3">
-      <created>1685965473845</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1685965473845</updated>
     </task>
     <task id="LOCAL-00067" summary="Sound pt.5">
       <created>1685989532624</created>
@@ -449,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686422302333</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Ottimizzazione gioco">
+      <created>1686474762020</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1686474762021</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,7 +463,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta item pt2" />
     <MESSAGE value="Aggiunta del drop" />
     <MESSAGE value="Save/Load DB" />
     <MESSAGE value="bug fix pt 2" />
@@ -490,6 +487,7 @@
     <MESSAGE value="Bug Fix" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="Gestione Mappe Player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gestione Mappe Player" />
+    <MESSAGE value="Ottimizzazione gioco" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ottimizzazione gioco" />
   </component>
 </project>

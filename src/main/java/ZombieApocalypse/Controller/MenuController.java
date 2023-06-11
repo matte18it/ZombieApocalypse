@@ -229,6 +229,8 @@ public class MenuController {
                     soundButton();
                 if(GameData.skinAttiva < 4)
                     GameData.skinAttiva += 1;
+                else if(GameData.skinAttiva == 4 && MenuView.complimentato)
+                    GameData.skinAttiva += 1;
                 view.getSkinAttiva().setIcon(ResourcesLoader.getInstance().getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
             }
         });

@@ -2,6 +2,7 @@ package ZombieApocalypse.View;
 
 import ZombieApocalypse.Controller.MenuController;
 import ZombieApocalypse.Model.MenuModel;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
 
@@ -9,6 +10,8 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import java.io.BufferedReader;
@@ -19,8 +22,10 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class MenuView extends JPanel {
+public class MenuView extends JPanel implements Runnable{
     //variabili utili per la leaderboard
+    public static boolean complimentato = false;
+    private Thread t;
     ArrayList<String> nickname = new ArrayList<String>();
     ArrayList<Integer> punti = new ArrayList<Integer>();
     JLabel bg, sfondo1, sfondo2, sfondo3, sfondo4, sfondo5, sfondo6;
@@ -1046,6 +1051,17 @@ public class MenuView extends JPanel {
             sfondo2.setFont(font.deriveFont(Font.PLAIN, 15));
         else
             sfondo2.setFont(font.deriveFont(Font.PLAIN, 11));
+
+        if(nickname.get(0).equals(GameData.nick) && !complimentato){
+            complimentato = true;
+            t = new Thread(this);
+            t.start();
+        }
+        else if(!nickname.get(0).equals(GameData.nick)){
+            complimentato = false;
+            if(GameData.skinAttiva == 5)
+                GameData.skinAttiva = 4;
+        }
     }
     private void setSecondo() {
         sfondo3.setText("2) " + nickname.get(1) + " (" + punti.get(1) + " pt)");
@@ -1084,4 +1100,71 @@ public class MenuView extends JPanel {
         sfondo4.setFont(font.deriveFont(Font.PLAIN, 15));
     }
 
+    private static void showDialog() {
+
+        Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
+        GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
+        UIManager.put("OptionPane.background",new Color(92,75,35));
+        UIManager.put("Panel.background",new Color(18,17,15));
+        UIManager.put("OptionPane.minimumSize",new Dimension(500,200));
+        UIManager.put("OptionPane.border", new EmptyBorder(10, 10, 10,10));
+        UIManager.put("OptionPane.font", ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
+        UIManager.put("OptionPane.foreground", Color.WHITE);
+
+        //creo la label e gli setto il font personalizzato
+        JLabel label = new JLabel();
+        label.setFont(font.deriveFont(Font.PLAIN, 18));
+        label.setForeground(Color.WHITE);
+        label.setMinimumSize(new Dimension(100, 100));
+        label.setPreferredSize(new Dimension(100, 100));
+        label.setBorder(new EmptyBorder(10, 10, 0, 0));
+
+        JButton btnMenu;
+        JButton btnGo;
+        if(GameData.lang.equals(GameData.Language.IT)) {
+            btnMenu = new JButton("Conferma");
+            label.setText("<html>Complimenti, ti trovi al primo posto della classifica!<br>Ti aspetta una sorpresa, sta a te trovarla! Continua a giocare per mantenere il primo posto!</html>");
+        }
+        else {
+            btnMenu = new JButton("Confirm");
+            label.setText("<html>Congratulations, you are in first place in the ranking!<br>A surprise awaits you, it is up to you to find it! Continue playing to keep the first place!</html>");
+        }
+
+        btnMenu.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
+        btnMenu.setHorizontalTextPosition(JButton.CENTER);
+        btnMenu.setVerticalTextPosition(JButton.CENTER);
+        btnMenu.setBorderPainted(false);
+        btnMenu.setFocusPainted(false);
+        btnMenu.setContentAreaFilled(false);
+        btnMenu.setForeground(Color.WHITE);
+        btnMenu.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 25, Font.PLAIN));
+
+        //creo il joptionpane e gli assegno la label, poi creo il dialog e lo mostro
+        JOptionPane pane = new JOptionPane(label,  JOptionPane.PLAIN_MESSAGE,  JOptionPane.DEFAULT_OPTION,null,  new JButton[] {btnMenu});
+        JDialog dialog = new JDialog();
+
+        btnMenu.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
+                dialog.dispose();
+            }
+        });
+
+        dialog.getContentPane().add(pane);
+        dialog.setUndecorated(true);
+        dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        dialog.setAlwaysOnTop(true);
+        dialog.setModal(true);
+        dialog.setSize(new Dimension(515, 220));
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
+    }
+
+    @Override
+    public void run() {
+        showDialog();
+    }
 }
