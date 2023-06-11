@@ -236,7 +236,11 @@ public class Enemies {
                 Game.getInstance().setPause(false);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
+                Game.getInstance().setBackMenu(true);
                 Game.getInstance().reloadWorld();
+
+
+
                 GameFrame.gameLaunch();
             }
         });
@@ -297,7 +301,6 @@ public class Enemies {
                 dialog.dispose();
                 Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
-                Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
                 GameFrame.menuLaunch();

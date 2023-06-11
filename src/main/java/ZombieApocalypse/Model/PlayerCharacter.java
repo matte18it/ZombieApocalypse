@@ -187,27 +187,25 @@ public class PlayerCharacter  {
 
     }
     public void speedUp(){
-        if(countSpeed==0){
+        if(countSpeed==300){
             speedUp=true;
             speed=3;}
         else
-            maxCountSpeed=maxCountSpeed+maxCountSpeed;
+            countSpeed=countSpeed+300;
 
     }
     public void stopSpeed(){
         speedUp=false;
-        countSpeed=0;
+        countSpeed=300;
         speed=1;
-        maxCountSpeed=300;
     }
-    private int maxCountSpeed=300;
     public void addSpeed(){
-        countSpeed++;
-        if(countSpeed==maxCountSpeed)
+        countSpeed--;
+        if(countSpeed==0)
             stopSpeed();
     }
     public boolean speedUp=false;
-    public int countSpeed=0;
+    public int countSpeed=300;
 
 
     public void move() {

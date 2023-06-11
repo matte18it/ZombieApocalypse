@@ -1,5 +1,6 @@
 package ZombieApocalypse.Model;
 
+import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Guns.GrenadeModel;
 import ZombieApocalypse.Model.Guns.KnifeModel;
 import ZombieApocalypse.Model.Guns.PistolModel;
@@ -11,11 +12,15 @@ import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 import java.awt.*;
 
+import static java.lang.Thread.sleep;
+
 public class Game {
     //Gestisce gli aspetti del gioco
     private  World world=new World();
     public void reloadWorld(){
         world=new World();
+
+        Game.getInstance().getPlayerCharacter().chooseCoordinate();
     }
 
 

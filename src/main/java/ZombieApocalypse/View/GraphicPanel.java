@@ -23,8 +23,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class GraphicPanel extends JPanel {
-    public int count=0;
     //Disegna il mondo
+    private boolean firstLoad=true;
     private final CharacterView characterView = new CharacterView();
     private static final PistolView pistolView = new PistolView();
     private static final BanditPistolView pistolBandit=new BanditPistolView();
@@ -57,11 +57,10 @@ public class GraphicPanel extends JPanel {
 Random m=new Random();
     @Override
     protected void paintComponent(Graphics g) {
-        if(count==0){
+        if(firstLoad){
             Items.getInstance().generateRandomItems();
-            Enemies.getInstance().generateRandomEnemies();
-            Game.getInstance().getPlayerCharacter().chooseCoordinate();
-        }
+            Enemies.getInstance().generateRandomEnemies(); firstLoad=false;}
+
         int r;
 
         super.paintComponent(g);
@@ -128,7 +127,7 @@ Random m=new Random();
         g.drawString(c, 20, 20);}
 
 
-        count++;
+
 
         for(Bullet b: Bullets.getInstance().getBullets()){
             b.getView().update();
