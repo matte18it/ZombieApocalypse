@@ -63,11 +63,7 @@ public class PlayWav {
     }
 
     public void playButtonSound(){
-        if(clipButton == null)
-            clipButton = ResourcesLoader.getInstance().getAudioClip("/Audio/ButtonSound.wav");
-        else if(clipButton.getFramePosition() != 0)
-            clipButton.setFramePosition(0);
-
+        clipButton = ResourcesLoader.getInstance().getAudioClip("/Audio/ButtonSound.wav");
         sound = (FloatControl) clipButton.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipButton.start();
