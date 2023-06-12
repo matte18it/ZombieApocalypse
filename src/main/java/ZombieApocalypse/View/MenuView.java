@@ -24,10 +24,10 @@ import java.util.Hashtable;
 public class MenuView extends JPanel implements Runnable{
     //variabili utili per la leaderboard
     public static boolean complimentato = false;
-    private Thread t;
-    ArrayList<String> nickname = new ArrayList<String>();
-    ArrayList<Integer> punti = new ArrayList<Integer>();
-    JLabel bg, sfondo1, sfondo2, sfondo3, sfondo4, sfondo5, sfondo6;
+    private Thread t;   //thread per la visualizzazione del messaggio di congratulazioni per il primo classificato in classifica
+    ArrayList<String> nickname = new ArrayList<String>();       //qua tengo tutti i nomi della classifica
+    ArrayList<Integer> punti = new ArrayList<Integer>();        //e qua i relativi punti
+    JLabel bg, sfondo1, sfondo2, sfondo3, sfondo4, sfondo5, sfondo6;    //qua le label della classifica
     //Variabili per i menu
     private ResourcesLoader loader = ResourcesLoader.getInstance();
     private int borderValueRight, borderValueLeft;
@@ -103,6 +103,7 @@ public class MenuView extends JPanel implements Runnable{
     }
 
     private void initComponent() {
+        //inizializzo i vari componenti che poi userò nel menù
         muteSound = new JButton();
         muteMusic = new JButton();
         btnLogout = new JButton();
@@ -120,7 +121,7 @@ public class MenuView extends JPanel implements Runnable{
             exitSettings = new JButton("Exit");
         }
 
-        //Creo il pannello con tuti i pulsanti
+        //Creo il pannello con tutti i pulsanti
         panelMenu = new JPanel();
         panelMenu.setOpaque(false);
         panelMenu.setMaximumSize(new Dimension(1280, 550));
@@ -259,6 +260,7 @@ public class MenuView extends JPanel implements Runnable{
         c.gridwidth = 5;
         c.fill = GridBagConstraints.HORIZONTAL;
 
+        //qua invece creo la classifica
         if(GameData.lang== GameData.Language.IT)
             sfondo1 = new JLabel("Classifica");
         else
@@ -312,6 +314,7 @@ public class MenuView extends JPanel implements Runnable{
         bg.add(sfondo6);
 
         panelMenu.add(bg, c);
+        //serve per aggiornare la classifica
         try { updateLeaderboard(); } catch (IOException e) { throw new RuntimeException(e); }
     }
 
@@ -389,6 +392,8 @@ public class MenuView extends JPanel implements Runnable{
         soundLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(soundLabel);
 
+        //Qua do alle label musica, suoni e grafica un listener.
+        //Infatti cliccando su una di queste label è possibile visualizzare il sito da dove sono state prese le risorse principali di gioco.
         navigateListener();
 
         btnExitAbout.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
@@ -475,6 +480,8 @@ public class MenuView extends JPanel implements Runnable{
     }
 
     private void setCommands(JLabel layoutComands, JLabel layoutComands2) {
+        //In questa funzione non faccio altro che creare la parte del menu di about che visualizza le gif dei comandi.
+        //In pratica un tutorial, ovviamente visualizza i comandi diversi per i mancini se la modalità mancino è attivata.
         lblUp = new JLabel();
         if(!GameData.mancino)
             lblUp.setIcon(loader.getImageIcon("/TutorialButton/TastoW/TastoW.gif", 64, 60, false));
@@ -625,6 +632,10 @@ public class MenuView extends JPanel implements Runnable{
     }
 
     private void initSettings() {
+        //Tutte le impostazioni delle settings vengono recuperate e settate in base alle scelte del player.
+        //Infatti viene tenuta traccia delle impostazioni settate da ogni player nel DB online
+        //All'avvio del gioco vengono recuperate e una volta che si apre il meù delle settings, settate a quei valori.
+
         //creo il pannello settings
         settingsPanel = new JPanel();
         settingsPanel.setOpaque(false);
@@ -668,13 +679,16 @@ public class MenuView extends JPanel implements Runnable{
         music.setMaximumSize(new Dimension(200, 50));
         music.setMinimumSize(new Dimension(200, 50));
 
+        //qua vado a mettere la distanza minima e massima tra le tacche della jslide
         musica.setMinorTickSpacing(4);
         musica.setMajorTickSpacing(16);
+        //qua invece setto la dimensione della jslide
         musica.setPreferredSize(new Dimension(500, 50));
         musica.setMaximumSize(new Dimension(500, 50));
         musica.setMinimumSize(new Dimension(500, 50));
         musica.setOpaque(false);
         musica.setPaintTicks(true);
+        //con questa funzione mappo i valori della jslide
         musica.setLabelTable(setTable());
         musica.setPaintLabels(true);
         musica.setValue(GameData.musicVolume);
@@ -1057,26 +1071,34 @@ public class MenuView extends JPanel implements Runnable{
             }
         }
 
+        //se è presente solo un utente, setto solo il primo posto
         if(nickname.size() == 1){
             setPrimo();
         }
+        //se sono presenti due utenti, setto le prime due posizioni
         else if(nickname.size() == 2){
             setPrimo();
             setSecondo();
         }
+        //se sono presenti tre utenti, setto le prime tre posizioni
         else if(nickname.size() == 3){
             setPrimo();
             setSecondo();
             setTerzo();
-        } else if(nickname.size() == 4) {
+        }
+        //se sono presenti quattro utenti, setto le prime quattro posizioni
+        else if(nickname.size() == 4) {
             setPrimo();
             setSecondo();
             setTerzo();
             setQuarto();
-        } else{
+        }
+        //se non è presente nessuno, setto la classifica vuota
+        else {
             setNull();
         }
 
+        //qua invece setto nome e punti dell'utente attuale che sta giocando. Un recap veloce del suo nick e dei suoi punti
         sfondo6.setText("" + GameData.nick + "(" + GameData.recordPunti + " pt)");
         if(GameData.nick.length() < 14)
             sfondo6.setFont(font.deriveFont(Font.PLAIN, 15));
@@ -1147,7 +1169,7 @@ public class MenuView extends JPanel implements Runnable{
     }
 
     private static void showDialog() {
-
+        //Qua visualizzo il dialog personalizzato totalmente a tema Zombie Apocalypse per congratularmi con il giocatore attualmente primo
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
         UIManager.put("OptionPane.background",new Color(92,75,35));
@@ -1211,6 +1233,8 @@ public class MenuView extends JPanel implements Runnable{
 
     @Override
     public void run() {
+        //thread che visualizza il messaggio di congratulazioni.
+        //Lo faccio nel thread così la chiamata non è bloccante e la classifica può continuare ad aggiornarsi.
         showDialog();
     }
 }

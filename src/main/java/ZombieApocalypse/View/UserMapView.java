@@ -44,11 +44,14 @@ public class UserMapView extends JPanel {
         //creo il controller
         controller = new UserMapController(model, this);
 
+        //inizializzo i componenti
         initTitolo();
         initComponent();
 
+        //aggiungo dei listener sui componenti
         controller.addListener();
 
+        //aggiungo tutto al pannello principale
         this.add(imagePanel);
         this.add(pannelloPrincipale);
     }
@@ -70,16 +73,21 @@ public class UserMapView extends JPanel {
     }
 
     private void initComponent() {
+        //siccome più avanti farò uso di tag html con questa istruzione faccio in modo di usare il font personalizzato anche con l'html
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
+
+        //creo pannello principale
         pannelloPrincipale = new JPanel();
         pannelloPrincipale.setOpaque(false);
         pannelloPrincipale.setMaximumSize(new Dimension(996, 500));
 
+        //creo lo sfondo
         label = new JLabel();
         label.setLayout(new GridBagLayout());
         label.setIcon(ResourcesLoader.getInstance().getImageIcon("/UserMap/SfondoUserMap.png", 996, 500, false));
         GridBagConstraints c = new GridBagConstraints();
 
+        //creo la parte di sinistra del menù in cui metto una label per indicare l'utente che ha creato le mappe
         if(GameData.lang.equals(GameData.Language.EN))
             labelTitoloTxtArea = new JLabel("Maps of " + GameData.nick + ": ");
         else
@@ -90,6 +98,7 @@ public class UserMapView extends JPanel {
         c.gridx = 0; c.gridy = 0; c.anchor = GridBagConstraints.LINE_START;
         label.add(labelTitoloTxtArea, c);
 
+        //poi una textArea non editabile che contiene nome e data di ultima modifica di tutte le mappe utente
         showFile = new JTextArea();
         showFile.setMargin(new Insets(25, 55, 25, 25));
         showFile.setPreferredSize(new Dimension(400, 350));
@@ -103,6 +112,9 @@ public class UserMapView extends JPanel {
         c.gridx = 0; c.gridy = 1;
         label.add(showFile, c);
 
+        //Qua vado a creare un pannello contenenti due bottoni per scorrere le mappe.
+        //Infatti quando le mappe superano un cero numero non saranno pù visualizzabili.
+        //Con questi due pulsanti faccio scorrere l'elenco delle mappe verso sopra o verso sotto
         panelButton = new JPanel();
         panelButton.setOpaque(false);
         panelButton.setMaximumSize(new Dimension(400, 70));
@@ -135,9 +147,12 @@ public class UserMapView extends JPanel {
 
         c.gridx = 0; c.gridy = 2;
         label.add(panelButton, c);
-        
+
+        //leggo i file e li aggiungo alla textArea
         initFile();
 
+        //Da qui in poi creo la parte destra del menu
+        //Questo pannello contiene una label e il campo in cui inserire il nome della mappa su cui si vogliono fare cose
         JPanel panelSupport1 = new JPanel();
         panelSupport1.setOpaque(false);
         panelSupport1.setMaximumSize(new Dimension(400, 100));
@@ -165,6 +180,7 @@ public class UserMapView extends JPanel {
         nameMap.setCaretColor(Color.RED);
         panelSupport1.add(label1);
 
+        //Questo panello è quello principale, quello che contiene tutta la parte destra del menu
         JPanel panelSupport2 = new JPanel();
         panelSupport2.setOpaque(false);
         panelSupport2.setMaximumSize(new Dimension(400, 100));
@@ -178,10 +194,13 @@ public class UserMapView extends JPanel {
         lblDifficulty.setFont(font.deriveFont(Font.PLAIN, 22));
         lblDifficulty.setForeground(Color.WHITE);
         c3.gridx = 0; c3.gridy = 0; c3.anchor = GridBagConstraints.NORTHWEST;
+        //Infatti qua aggiungo il pannello creato sopra
         panelSupport2.add(panelSupport1, c3);
         c3.gridx = 0; c3.gridy = 1; c3.anchor = GridBagConstraints.NORTHWEST;
+        //E qua la label appena creata
         panelSupport2.add(lblDifficulty, c3);
 
+        //questo pannello invece contiene i pulsanti per settare la difficoltà della mappa che si vuole giocare
         JPanel panelSupport4 = new JPanel();
         panelSupport4.setOpaque(false);
         panelSupport4.setMinimumSize(new Dimension(500, 70));
@@ -253,6 +272,7 @@ public class UserMapView extends JPanel {
         c3.gridx = 0; c3.gridy = 2;
         panelSupport2.add(panelSupport4, c3);
 
+        //Questa label invece contiene le differenze tra le tre modalità
         lblDescrizione = new JLabel();
         if(GameData.lang.equals(GameData.Language.EN)){
             if(Settings.diff == Settings.Difficulty.EASY)
@@ -298,8 +318,10 @@ public class UserMapView extends JPanel {
         lblDescrizione.setFont(font.deriveFont(Font.PLAIN, 15));
         lblDescrizione.setForeground(Color.WHITE);
         c3.gridx = 0; c3.gridy = 3;
+        //viene sempre inserita in questo pannello
         panelSupport2.add(lblDescrizione, c3);
 
+        //questo pannello invece contiene i quattro pulsanti finali che permettono di fare varie operazioni sul file selezionato
         JPanel panelSupport3 = new JPanel();
         panelSupport3.setOpaque(false);
         panelSupport3.setMaximumSize(new Dimension(500, 70));
@@ -381,24 +403,31 @@ public class UserMapView extends JPanel {
         panelSupport3.add(exitButton, c2);
 
         c3.gridx = 0; c3.gridy = 4;
+        //i pulsanti vengono inseriti in panelSupport3, poi questo pannello in panelSupport2
         panelSupport2.add(panelSupport3, c3);
 
         c.gridx = 1; c.gridy = 1;
         label.add(panelSupport2, c);
 
+        //tutto viene poi inserito nel pannello principale
         pannelloPrincipale.add(label);
     }
 
     public void initFile() {
+        //leggo la cartella
         File folder = new File("EditorMap");
+        //escluso questo file che non serve
         nameFile = folder.listFiles((dir, name) -> !name.equals(".DS_Store"));
+        //inizializzo la mia textarea
         showFile.setText("");
         maxIndice = nameFile.length;
+        //controllo, se il numero di mappe supera 19 rendo attivi i due pulsanti, sennò no
         if(maxIndice < 19){
             btnGiu.setEnabled(false);
             btnSu.setEnabled(false);
         }
 
+        //faccio la lettura
         for (int i = indice; i < nameFile.length; i++){
             showFile.append(nameFile[i].getName().replaceFirst("[.][^.]+$", "") + "\t" + model.stampData(nameFile[i]) + "\n");
         }

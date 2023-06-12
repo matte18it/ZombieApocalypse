@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Punti">
-      <change afterPath="$PROJECT_DIR$/src/main/Resources/LogoGame/LogoGame.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/CountPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/CountPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorBarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Editor/EditorView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$13$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$13$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Controller/MenuController$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuBar/MenuBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuBar/MenuBarView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/MenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/SplashScreenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/SplashScreenView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/UserMapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/UserMapView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

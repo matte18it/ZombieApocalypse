@@ -65,7 +65,7 @@ public class EditorBarView extends JPanel {
     }
 
     private void initComponent() {
-        //inizializzo i bottoni freccia
+        //inizializzo tutti i bottoni della barra
         arrow1 = new JButton();
         arrow2 = new JButton();
         txtName = new JTextField();
@@ -109,6 +109,7 @@ public class EditorBarView extends JPanel {
     }
 
     public void Page1() {
+        //Pagina 1 della barra, contiene i primi blocchi disegnabili
         c.gridx = 0; c.gridy = 0;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 
@@ -379,6 +380,7 @@ public class EditorBarView extends JPanel {
     }
 
     public void Page2() {
+        //pagina 2 dell'interfaccia, contiene altri blocchi disegnabili e i bottoni per le varie azioni sulla mappa
         c.gridx = 0; c.gridy = 0;
         add(Box.createRigidArea(new Dimension(10, 10)), c);
 

@@ -11,10 +11,10 @@ import java.io.IOException;
 
 public class SplashScreenView extends JPanel {
     private SplashScreenModel model;
-    private ResourcesLoader loader = ResourcesLoader.getInstance();
+    private ResourcesLoader loader = ResourcesLoader.getInstance();  //mi serve per caricare le risorse
     public JLabel bar, bgBar;       //Progress Bar
     private JLabel titolo;          //Label per visualizzare il titolo
-    private JPanel panel1, panel2;
+    private JPanel panel1, panel2;  //panelli per interfaccia
 
     public SplashScreenView() {
         //setto il cursore personalizzato
@@ -22,8 +22,8 @@ public class SplashScreenView extends JPanel {
 
         //Creo un model e un controller
         model = new SplashScreenModel(this);
-        //Assegno i listener ai componenti
 
+        //inizializzo i componenti con la funzione
         initComponent();
 
         //Setto il layout del pannello principale
@@ -57,6 +57,7 @@ public class SplashScreenView extends JPanel {
         panel1.setOpaque(false);
         panel1.setMaximumSize(new Dimension(800, 200));
 
+        //creo la label della barra di caricamento, il background
         bgBar = new JLabel();
         bgBar.setIcon(loader.getImageIcon("/SplashScreen/bgBar.png", 559, 15, false));
         bgBar.setBorder(new EmptyBorder(15, 0, 0, 0));

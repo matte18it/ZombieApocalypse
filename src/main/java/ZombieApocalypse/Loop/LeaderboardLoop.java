@@ -17,7 +17,7 @@ public class LeaderboardLoop {
     }
 
     public void start(){
-        //Game loop con un thread che agisce ogni 60 millisecondi chiamando la funzione updatePosition che serve per l'animazione del titolo
+        //Game loop con un thread che agisce ogni minuto per aggiornare la classifica
         if (executor != null)
             return;
         executor = Executors.newSingleThreadScheduledExecutor();
