@@ -148,13 +148,13 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
-                GameFrame.menuLaunch();
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
                         try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
                     }
                 });
+                GameFrame.menuLaunch();
             }
         });
 

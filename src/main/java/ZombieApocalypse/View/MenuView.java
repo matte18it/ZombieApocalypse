@@ -17,6 +17,8 @@ import java.awt.geom.AffineTransform;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -211,9 +213,9 @@ public class MenuView extends JPanel implements Runnable{
         panelMenu.add(btnEditorMap, c);
 
         if(GameData.lang== GameData.Language.IT)
-            btnAbout = new JButton("Informazioni");
+            btnAbout = new JButton("Comandi");
         else
-            btnAbout = new JButton("About Game");
+            btnAbout = new JButton("Game Commands");
         btnAbout.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 297, 70, false));
         btnAbout.setHorizontalTextPosition(JButton.CENTER);
         btnAbout.setVerticalTextPosition(JButton.CENTER);

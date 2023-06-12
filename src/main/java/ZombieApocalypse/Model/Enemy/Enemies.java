@@ -24,8 +24,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Enemies {
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
+
     public void addSkinnyZombie(int x, int y) {
         this.enemies.add(new SkinnyZombie(x, y));
     }
@@ -274,9 +278,12 @@ public class Enemies {
                     PlayWav.getInstance().stop();
                 Game.getInstance().setBackMenu(true);
                 Game.getInstance().reloadWorld();
-
-
-
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
+                    }
+                });
                 GameFrame.gameLaunch();
             }
         });
@@ -339,6 +346,12 @@ public class Enemies {
                 Game.getInstance().setPause(false);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
+                    }
+                });
                 GameFrame.menuLaunch();
             }
         });
@@ -351,6 +364,29 @@ public class Enemies {
         dialog.setSize(new Dimension(515, 220));
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
+    }
+
+    private void saveData() throws IOException {
+        int val1, val2, val3, val4;
+        //se i punti della partita sono maggiori del suo record, aggiorno
+        if(GameData.punti > GameData.recordPunti)
+            GameData.recordPunti = GameData.punti;
+
+        //gestisco i dati
+        if(GameData.music) val1 = 1; else val1 = 0;
+        if(GameData.sound) val2 = 1; else val2 = 0;
+        if(GameData.mancino) val3 = 1; else val3 = 0;
+        if(GameData.lang == GameData.Language.EN) val4 = 0; else val4 = 1;
+
+        //salvo i dati
+        String path = "https://progettouid.altervista.org/ZombieApocalypse/saveData.php?nickname=" + GameData.nick + "&volumeMusica=" + GameData.musicVolume + "&volumeSuoni=" + GameData.soundVolume + "&musicaAttiva=" + val1 + "&suoniAttivi=" + val2 + "&mancino=" + val3 + "&lingua=" + val4 + "&skinAttiva=" + GameData.skinAttiva + "&punti=" + GameData.recordPunti;
+        URL sript = new URL(path);
+        URLConnection conn = sript.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+
+        if ((inputLine = in.readLine()) != null)
+            val1 = Integer.parseInt(inputLine);
     }
 
     private void hitSound(Enemy b) {
