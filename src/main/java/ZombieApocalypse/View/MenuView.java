@@ -381,7 +381,7 @@ public class MenuView extends JPanel implements Runnable{
         musicLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(musicLabel);
 
-        if(GameData.lang== GameData.Language.IT)
+        if(GameData.lang == GameData.Language.IT)
             soundLabel = new JLabel("SUONI: suoni scaricati dal sito 'https://freesound.org'");
         else
             soundLabel = new JLabel("SOUND: sounds taken from 'https://freesound.org'");
@@ -402,7 +402,10 @@ public class MenuView extends JPanel implements Runnable{
         btnExitAbout.setPreferredSize(new Dimension(197, 60));
         btnExitAbout.setMaximumSize(new Dimension(197, 60));
 
-        controls = new JLabel("CONTROLS");
+        if(GameData.lang == GameData.Language.EN)
+            controls = new JLabel("COMMANDS");
+        else
+            controls = new JLabel("COMANDI");
         controls.setFont(font.deriveFont(Font.PLAIN, 22));
         controls.setForeground(Color.WHITE);
         controls.setBorder(new EmptyBorder(10, ((sfondoAbout.getIcon().getIconWidth()/2)-((int)(font.getStringBounds(controls.getText(), frc).getWidth())/2))+25, 0, 0));
@@ -549,11 +552,14 @@ public class MenuView extends JPanel implements Runnable{
         lbl7.setBorder(new EmptyBorder(0, 30, 0, 0));
         layoutComands2.add(lbl7);
 
-        if(GameData.lang == GameData.Language.IT)
+        if(GameData.lang == GameData.Language.IT) {
             lbl8 = new JLabel("Lascia");
-        else
+            lbl8.setFont(font.deriveFont(Font.PLAIN, 18));
+        }
+        else {
             lbl8 = new JLabel("Drop");
-        lbl8.setFont(font.deriveFont(Font.PLAIN, 25));
+            lbl8.setFont(font.deriveFont(Font.PLAIN, 25));
+        }
         lbl8.setHorizontalTextPosition(JLabel.CENTER);
         lbl8.setForeground(Color.WHITE);
         lbl8.setBorder(new EmptyBorder(0, 25, 0, 0));
