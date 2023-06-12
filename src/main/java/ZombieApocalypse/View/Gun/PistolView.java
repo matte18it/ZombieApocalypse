@@ -1,30 +1,42 @@
 package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.Utility.ThreadPool;
 
 import java.awt.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class PistolView {
-    private final GunAnimation gunAnimation;
+    private final Future<GunAnimation> gunAnimation;
     public Image currentImage;
 
 
     public PistolView() {
-        gunAnimation= new GunAnimation("Pistola",4, GunAnimation.GunType.PISTOL);
-        currentImage=gunAnimation.getDefaultImage();
+        gunAnimation= ThreadPool.executeGunAnimation(new GunAnimation("Pistola",4, GunAnimation.GunType.PISTOL));
+
+        try {
+            currentImage=gunAnimation.get().getDefaultImage();
+        }catch (ExecutionException | InterruptedException e){
+            e.printStackTrace();
+            System.exit(207);
+        }
     }
 
     public void update(Point point) {
 
         Game.getInstance().getPistolModel().update(point);
+        try {
+            currentImage=gunAnimation.get().update(Game.getInstance().getPistolModel().angle);
+
+        }catch (ExecutionException | InterruptedException e){
+            e.printStackTrace();
+            System.exit(207);
+        }
 
 
-        //Aggiorno immagine
 
-        //if( Game.getInstance().getGunModel().getAttack()) {
-         //   currentImage = attackFrame.update();
-
-            currentImage=gunAnimation.update(Game.getInstance().getPistolModel().angle);
 
     }
     public Image getCurrentImage() {

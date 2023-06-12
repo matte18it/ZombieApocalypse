@@ -214,7 +214,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
 
     public void update(){
         try{
-        if(f1!=null && count==0)
+        if(f1!=null)
           f1.get();
         if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
             Game.getInstance().update();
@@ -226,7 +226,6 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             count++;
         }
         if(count==1){
-            f1.get();
             count=0;
             Game.getInstance().setBackMenu(false);
         }

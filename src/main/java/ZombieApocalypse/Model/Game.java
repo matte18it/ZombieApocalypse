@@ -1,10 +1,7 @@
 package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Model.Enemy.Enemies;
-import ZombieApocalypse.Model.Guns.GrenadeModel;
-import ZombieApocalypse.Model.Guns.KnifeModel;
-import ZombieApocalypse.Model.Guns.PistolModel;
-import ZombieApocalypse.Model.Guns.ShotgunModel;
+import ZombieApocalypse.Model.Guns.*;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.GameFrame;
@@ -88,7 +85,11 @@ public class Game {
         if(character.hit)
             character.addHit();
         if(character.speedUp)
-            character.addSpeed();}
+            character.addSpeed();
+        Bullets.getInstance().update();
+        Items.getInstance().update();
+        Enemies.getInstance().update();
+    }
 
     public PlayerCharacter getPlayerCharacter() {
         return character;}

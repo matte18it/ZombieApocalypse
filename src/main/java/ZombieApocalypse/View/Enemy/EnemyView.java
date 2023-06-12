@@ -24,8 +24,8 @@ public class EnemyView  implements  EnemyViewInterface{
     private  final Future<CharacterAnimation> hitRight;
     Enemies.EnemiesType type;
     private Image currentImage;
-    private final Image emptyImage;
-    private final Image bloodImage;
+    private final Future<Image> emptyImage;
+    private final Future<Image> bloodImage;
     Enemy enemyModel;
     public EnemyView(Enemies.EnemiesType value, Enemy enemy){
         Random m=new Random();
@@ -53,10 +53,8 @@ public class EnemyView  implements  EnemyViewInterface{
 
         }
 
-        bloodImage= ResourcesLoader.getInstance().getImage("/Blood/Sangue"+m.nextInt(0,3)+".png", enemyModel.getWight(), enemyModel.getHeight(), true);
-
-
-        emptyImage= ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true);
+        bloodImage= ThreadPool.getExecutor().submit(()->ResourcesLoader.getInstance().getImage("/Blood/Sangue"+m.nextInt(0,3)+".png", enemyModel.getWight(), enemyModel.getHeight(), true));
+        emptyImage= ThreadPool.getExecutor().submit(()->ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true));
 
 
     }
@@ -69,12 +67,12 @@ public class EnemyView  implements  EnemyViewInterface{
 
     public void update() throws ExecutionException, InterruptedException {
         if(enemyModel.dying){
-            currentImage=bloodImage;
+            currentImage=bloodImage.get();
             return;
         }
 
         if(enemyModel.stopAll ){
-            currentImage=emptyImage;
+            currentImage=emptyImage.get();
             return;
         }
         if(enemyModel.hit){

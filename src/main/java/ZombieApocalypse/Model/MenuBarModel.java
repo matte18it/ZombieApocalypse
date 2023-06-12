@@ -8,7 +8,7 @@ import ZombieApocalypse.View.MenuBar.MenuBarView;
 
 public class MenuBarModel {
     MenuBarView menuBarView;
-    private  int ammo[]=new int[]{4,12};
+    private final int[] ammo =new int[]{4,12};
     MenuBarModel(MenuBarView m){
         this.menuBarView=m;
     }
