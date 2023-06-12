@@ -2,21 +2,24 @@ package ZombieApocalypse.View;
 
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.ThreadPool;
 
 import java.awt.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class ItemView {
     public Image currentImage;
-    Image[] items =new Image[Items.ItemType.values().length];
+    Future<Image>  item;
+    Future<Image> emptyImage;
     boolean isTaken=false;
     Items.ItemType type;
     public ItemView(Items.ItemType e, int wight, int height){
         type=e;
-        if(items[type.ordinal()]==null){
-            items[type.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+type+".png", wight, height, true);
-            }
+            item= ThreadPool.getExecutor().submit(()->ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+type+".png", wight, height, true));
+
         if(type!= Items.ItemType.EMPTY)
-            items[Items.ItemType.EMPTY.ordinal()] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/" + Items.ItemType.EMPTY + ".png", wight, height, true);
+            emptyImage = ThreadPool.getExecutor().submit(()->ResourcesLoader.getInstance().getImage("/ArmieOggetti/" + Items.ItemType.EMPTY + ".png", wight, height, true));
 
 
     }
@@ -26,11 +29,15 @@ public class ItemView {
     }
 
     public void update() {
+        try{
         if(isTaken)
-           currentImage=items[Items.ItemType.EMPTY.ordinal()];
+           currentImage=emptyImage.get();
         else{
-            currentImage=items[type.ordinal()];
-       }
+            currentImage=item.get();
+       }} catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            System.exit(207);
+        }
 
     }
 
