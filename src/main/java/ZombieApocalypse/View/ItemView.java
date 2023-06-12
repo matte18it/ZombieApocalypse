@@ -15,7 +15,7 @@ public class ItemView {
         if(items[type.ordinal()]==null){
             items[type.ordinal()]= ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+type+".png", wight, height, true);
             }
-        if(items[type.ordinal()]==null)
+        if(type!= Items.ItemType.EMPTY)
             items[Items.ItemType.EMPTY.ordinal()] = ResourcesLoader.getInstance().getImage("/ArmieOggetti/" + Items.ItemType.EMPTY + ".png", wight, height, true);
 
 

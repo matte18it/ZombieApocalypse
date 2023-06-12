@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Enemies {
     public void addSkinnyZombie(int x, int y) {
@@ -149,7 +150,7 @@ public class Enemies {
 
 
     public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};
-    private final List<Enemy> enemies=new ArrayList<>();
+    private final ConcurrentLinkedDeque<Enemy> enemies=new ConcurrentLinkedDeque<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
     public Enemies(){}
@@ -157,7 +158,7 @@ public class Enemies {
     public static ZombieApocalypse.Model.Enemy.Enemies getInstance(){return instance;}
 
 
-    public  List<Enemy> getEnemies(){return this.enemies;
+    public  ConcurrentLinkedDeque<Enemy> getEnemies(){return this.enemies;
     }
 
     public void update(){

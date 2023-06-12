@@ -130,7 +130,7 @@ Random m=new Random();
 
 
         for(Bullet b: Bullets.getInstance().getBullets()){
-            b.getView().update();
+            b.getView().loadUpdate();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
         }
 
