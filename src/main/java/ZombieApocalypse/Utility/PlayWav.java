@@ -198,11 +198,7 @@ public class PlayWav {
     }
 
     public void playWalkSound(){
-        if(clipWak == null)
-            clipWak = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkSound.wav");
-        else if(clipWak.getFramePosition() != 0)
-            clipWak.setFramePosition(0);
-
+        clipWak = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkSound.wav");
         sound = (FloatControl) clipWak.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipWak.start();
