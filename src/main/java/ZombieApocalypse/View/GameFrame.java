@@ -37,6 +37,9 @@ public class GameFrame extends JPanel {
     public static UserMapView userView;
 
     public static void loadingLaunch(){
+        //setto il logo
+        frameGame.setIconImage(Toolkit.getDefaultToolkit().getImage(GameFrame.class.getClassLoader().getResource("LogoGame/LogoGame.png")));
+
         //setto le dimensioni
         dimension();
 
