@@ -23,6 +23,7 @@ public class MenuModel {
     }
 
     public void translateSettings() {
+        //Funzione che serve per tradurre l'interfaccia
         if(GameData.lang== GameData.Language.IT){
             view.getMusic().setText("Volume Musica: ");
             view.getSound().setText("Volume Suoni: ");
@@ -48,6 +49,8 @@ public class MenuModel {
     }
 
     public void showDialog() {
+        //dialog personalizzata a tema Zombie Apocalypse che serve per il logout
+
         //carico il font
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
@@ -112,7 +115,5 @@ public class MenuModel {
         dialog.setVisible(true);
     }
 
-    public void updateData(){
-
-    }
+    public void updateData(){}
 }
