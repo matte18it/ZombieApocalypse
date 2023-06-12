@@ -130,6 +130,7 @@ public class Enemies {
         int x,y;
         int c=0;
         int t;
+        boolean finalLevel= Settings.campainMapIndex == 1;//Settings.campainMaps ;
 
         while (c<enemyNumber ){
             t=m.nextInt(0, EnemiesType.values().length-2);
@@ -147,6 +148,15 @@ public class Enemies {
                     case 5->Enemies.getInstance().addBombBandit(x,y);
                 }
             }
+
+        } while (finalLevel){
+            x=m.nextInt(0, Settings.WINDOW_SIZEX);
+            y=m.nextInt(0, Settings.WINDOW_SIZEY);
+            if(checkSpawn(x, y, EnemiesType.BOSS)){
+                Enemies.getInstance().addBoss(x,y);
+                finalLevel=false;
+            }
+
         }
     }
 

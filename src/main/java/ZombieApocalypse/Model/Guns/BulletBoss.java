@@ -8,7 +8,7 @@ public class BulletBoss extends Bullet{
 
     BulletBoss(int x, int y, int dimension, double angle, Direction direction){
         super(x,y,dimension, BulletType.BOSS);
-            totalFrame=50;
+            totalFrame=80;
             damage=2;
             dir=direction;
 

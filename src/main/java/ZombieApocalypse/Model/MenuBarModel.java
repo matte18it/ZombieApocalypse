@@ -139,7 +139,7 @@ public class MenuBarModel {
             case AMMO0 -> t=t+ammo[0];
             case AMMO1 -> t=t+ammo[1];
         }
-        if(t>99)
+        if(t>999)
             return false;
         return true;
     }

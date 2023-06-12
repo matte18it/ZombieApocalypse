@@ -4,10 +4,9 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Utility.CountPoint;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
 
+import java.awt.*;
 import java.util.Random;
 
 public class Boss extends Enemy{
@@ -17,11 +16,11 @@ public class Boss extends Enemy{
 
         type= Enemies.EnemiesType.BOSS;
         healt=50;
-        //Cambiare posizione sparo per adesso
-        dir= Settings.movementDirection.RIGHT;
+
         super.setSize();
     }
-
+    boolean run=false;
+int countRun =0;
     //Per prova
     Random m=new Random();
     public boolean update() {
@@ -35,7 +34,8 @@ public class Boss extends Enemy{
         if(healt<=0 && countDeath<=8){
             countDeath++;
             dying=true;
-            CountPoint.getInstance().setPointBoss();
+            if(countDeath==1)
+                CountPoint.getInstance().setPointBoss();
             return true;
             }
 
@@ -50,30 +50,78 @@ public class Boss extends Enemy{
             else
                 stopHit();
         }
-        //Gestione delle hit al Player
-        //if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-          //  Game.getInstance().getPlayerCharacter().hit();
+int i;
 
-        //Parte di IA da implementare
-       /*int f=m.nextInt(0,100);
-        if(f<20){
-        int i=m.nextInt(0,4);
-        switch (i){
-            case 0 ->{moveUp();}
-            case 1 ->{moveDown();}
-            case 2 ->{moveLeft();}
-            case 3 ->{moveRight();}
-        }
-        //Aggiornamento ad ogni clock delle hitbox
-        hitBox.x=x;
-        hitBox.y=y;
-        } else
-            isMoving=false;  //Fine delle animazioni di movimento
-*/
+
  //Comando per sparare Attacco1:
     //    attack1();
 
-        if(attack1){
+        Point p = Game.getInstance().getPlayerPosition();
+        Point turret = new Point(x + centerX, y + centerY);
+        int h;
+
+
+
+
+
+        if(p.distance(turret)>=300 && !run ){
+            h=m.nextInt(0,1000000000);
+            if(h!=0 && !run){
+            if(turret.y>p.y+50) {
+                moveUp();
+                stopAttack1();
+            }else if(turret.y<p.y-50) {
+                moveDown();
+                stopAttack1();
+            }else{
+                if(turret.x>p.x)
+                    dir= Settings.movementDirection.LEFT;
+                else
+                    dir= Settings.movementDirection.RIGHT;
+                isMoving=false;
+
+                attack1();}}else {
+                run=true;
+                if(attack1)
+                    stopAttack1();
+                if(attack2)
+                    stopAttack2();
+                isMoving=true;
+                if(countRun==0) {
+                    countRun++;
+                    if(p.y>=y && p.y<=y+height && p.x<turret.x)
+                        moveLeft();
+                    if(p.y>=y && p.y<=y+height && p.x>=turret.x)
+                        moveRight();
+                    if(p.x>=x && p.x<=x+height && p.y>=turret.y)
+                        moveDown();
+                    if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+                        moveUp();
+                }
+
+            }
+
+
+
+
+
+        }else if(p.distance(turret)>=100 && !run){
+            if(attack1)
+                stopAttack1();
+            if(p.y>=y && p.y<=y+height && p.x<turret.x)
+                moveLeft();
+            else if(p.y>=y && p.y<=y+height && p.x>=turret.x)
+                moveRight();
+            else if(p.x>=x && p.x<=x+height && p.y>=turret.y)
+                moveDown();
+            else if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+                moveUp();
+        }else if(!run){
+            if(isMoving)
+                isMoving=false;
+            attack2();}
+
+        if(attack1 ){
     if(countAttack<23 && countAttack>0)
         countAttack++;
     if(countAttack==23)
@@ -81,8 +129,6 @@ public class Boss extends Enemy{
     if(countAttack==20)
         shoot();}
 
-    //Comando per attacco2:
-    //attack2();
 
         if(attack2){
     if(countAttack<9 && countAttack>0){
@@ -91,6 +137,21 @@ public class Boss extends Enemy{
         countAttack++;}
     if(countAttack==9)
         stopAttack2();}
+
+        if(countRun>0 && countRun<100){
+            countRun++;
+            switch (dir){
+                case RIGHT -> moveRight();
+                case LEFT -> moveLeft();
+                case DOWN -> moveDown();
+                case UP -> moveUp();
+            }
+        }
+        if(countRun==100){
+            countRun=0;
+            isMoving=false;
+            run=false;
+        }
 
 
 
@@ -110,10 +171,14 @@ public class Boss extends Enemy{
 
 
     private void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+20, y) && Game.getInstance().getWorld().isPlayer(x+20, y, centerX, centerY)){
-            x=x+20;
+        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+20, y, centerX, centerY)){
+            if(!run)
+                x=x+5;
+            else
+                x=x+10;
+            hitBox.x=x;
             isMoving=true;
-            dir=Settings.movementDirection.RIGHT;}
+            dir=Settings.movementDirection.RIGHT;} else  isMoving=false;
     }
     private void attack1() {
         if(countAttack==0){
@@ -132,24 +197,36 @@ public class Boss extends Enemy{
 
 
     private void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-20, y) && Game.getInstance().getWorld().isPlayer(x-20, y, centerX, centerY)){
-            x=x-20;
+        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
+            if(!run)
+                x=x-5;
+            else
+                x=x-10;
+            hitBox.x=x;
             isMoving=true;
-            dir=Settings.movementDirection.LEFT;}
+            dir=Settings.movementDirection.LEFT;} else  isMoving=false;
     }
 
     private void moveDown() {
-        if(Game.getInstance().getWorld().isWalkable(x, y+height+20) && Game.getInstance().getWorld().isPlayer(x, y+20, centerX, centerY)){
-            y=y+20;
+        if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
+            if(!run)
+                y=y+5;
+            else
+                y=y+10;
+            hitBox.y=y;
             isMoving=true;
-            dir=Settings.movementDirection.DOWN;}
+            dir=Settings.movementDirection.DOWN;} else  isMoving=false;
     }
 
     private void moveUp() {
-        if(Game.getInstance().getWorld().isWalkable(x, y-20) && Game.getInstance().getWorld().isPlayer(x, y-20, centerX, centerY)){
-            y=y-20;
+        if(Game.getInstance().getWorld().isWalkable(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
+            if(!run)
+                y=y-5;
+            else
+                y=y-10;
+            hitBox.y=y;
             isMoving=true;
-        dir=Settings.movementDirection.UP;}
+        dir=Settings.movementDirection.UP;} else  isMoving=false;
 
     }
 }

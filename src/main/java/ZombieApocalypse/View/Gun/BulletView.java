@@ -45,6 +45,8 @@ public abstract class BulletView {
             int finalI = i;
             bullet[i] = ThreadPool.getExecutor().submit(()->ResourcesLoader.getInstance().getImage("/Nemici/Boss/BossVerde/Colpo/Colpo" + finalI + ".png", bulletModel.getDimension(), bulletModel.getDimension(), true));
         }
+        emptyImage=ThreadPool.getExecutor().submit(()->ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", bulletModel.getDimension()+50, bulletModel.getDimension()+50, true));
+
 
     }
 
