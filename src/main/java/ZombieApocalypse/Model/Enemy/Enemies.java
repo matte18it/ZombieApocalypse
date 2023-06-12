@@ -124,8 +124,8 @@ public class Enemies {
     public void generateRandomEnemies() {
         switch (Settings.diff){
             case EASY -> enemyNumber=m.nextInt(5,15);
-            case MEDIUM -> enemyNumber= m.nextInt(15,30);
-            case HARD ->  enemyNumber= m.nextInt(30,45);
+            case MEDIUM -> enemyNumber= m.nextInt(16,25);
+            case HARD ->  enemyNumber= m.nextInt(26,35);
         }
         int x,y;
         int c=0;

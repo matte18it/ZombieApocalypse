@@ -49,9 +49,19 @@ public class PlayWav {
     }
 
     //----- Suoni -----
-    public void playZombie(){
+    public void playGameOverSound(){
         //se la clip è vuota, la creo. Poi prendo il controllore del suono, setto il volume e avvio. Se non è nulla la faccio ripartire da capo
         //Faccio questo per ogni clip
+        if(clipGameOver == null)
+            clipGameOver = ResourcesLoader.getInstance().getAudioClip("/Audio/YouLose.wav");
+        else if(clipGameOver.getFramePosition() != 0)
+            clipGameOver.setFramePosition(0);
+
+        sound = (FloatControl) clipGameOver.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        clipGameOver.start();
+    }
+    public void playZombie(){
         if(clipZombie == null)
             clipZombie = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieSound.wav");
         else if(clipZombie.getFramePosition() != 0)
@@ -63,11 +73,8 @@ public class PlayWav {
     }
 
     public void playAmmoSound(){
-        if(clipAmmo == null)
-            clipAmmo = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
-        else if(clipAmmo.getFramePosition() != 0)
-            clipAmmo.setFramePosition(0);
-
+        //in alcune clip che mi servono a ripetizione le carico ogni volta
+        clipAmmo = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
         sound = (FloatControl) clipAmmo.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipAmmo.start();
@@ -78,17 +85,6 @@ public class PlayWav {
         sound = (FloatControl) clipButton.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipButton.start();
-    }
-
-    public void playGameOverSound(){
-        if(clipGameOver == null)
-            clipGameOver = ResourcesLoader.getInstance().getAudioClip("/Audio/YouLose.wav");
-        else if(clipGameOver.getFramePosition() != 0)
-            clipGameOver.setFramePosition(0);
-
-        sound = (FloatControl) clipGameOver.getControl(FloatControl.Type.MASTER_GAIN);
-        sound.setValue(GameData.soundVolume);
-        clipGameOver.start();
     }
 
     public void playGrenadeSound(){
