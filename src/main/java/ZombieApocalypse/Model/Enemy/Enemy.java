@@ -58,6 +58,8 @@ public  abstract class Enemy {
     public abstract boolean update();
 
     protected void setSize() {
+        wight=Enemies.getInstance().getWight(type);
+        height=Enemies.getInstance().getHeight(type);
         centerX=wight/2;
         centerY=height/2;
         hitBox=new Rectangle(x,y,wight, height);

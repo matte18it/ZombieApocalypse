@@ -98,6 +98,7 @@ public class Enemies {
     public void addFatZombie(int x, int y) {
         this.enemies.add(new FatZombie(x, y));
     }
+
     public void addKidZombie(int x, int y) {
         this.enemies.add(new KidZombie(x, y));
     }
@@ -134,7 +135,7 @@ public class Enemies {
 
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
-            if( Game.getInstance().getWorld().isSpawnable(x,y) && Game.getInstance().getWorld().isWalkable(x,y)&& Game.getInstance().getWorld().isWalkable(x,y+30) && Game.getInstance().getWorld().isWalkable(x+30,y)){
+            if(checkSpawn(x,y , EnemiesType.values()[t])){
                 c++;
                 switch (t){
                     case 0-> Enemies.getInstance().addSkinnyZombie(x,y);
@@ -146,6 +147,40 @@ public class Enemies {
                 }
             }
         }
+    }
+
+    private boolean checkSpawn(int x, int y, EnemiesType enem) {
+        boolean distanzaDalPlayer=Game.getInstance().getWorld().isSpawnable(x+(getWight(enem)/2),y+(getHeight(enem)/2));
+        if(distanzaDalPlayer){
+            for( int i=x; i<getWight(enem)+x; i++){
+                for(int j=y; j<getHeight(enem)+y; j++){
+                    if(!Game.getInstance().getWorld().isWalkable(i,j))
+                        return false;
+                }
+            } return true;
+
+        }else
+            return false;
+        }
+
+    public int getWight(EnemiesType type) {
+        switch (type){
+            case FATZOMBIE -> {return Settings.CELL_SIZEX+(Settings.CELL_SIZEX/2);}
+            case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {return Settings.CELL_SIZEX;}
+            case BOSS -> {return Settings.CELL_SIZEX*4;}
+            case KIDZOMBIE -> {return (Settings.CELL_SIZEX/2)+10;}
+        }
+        return 0;
+    }
+
+    public int getHeight(EnemiesType type) {
+        switch (type){
+            case FATZOMBIE -> {return Settings.CELL_SIZEY+(Settings.CELL_SIZEY/2);}
+            case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {return Settings.CELL_SIZEY;}
+            case BOSS -> {return Settings.CELL_SIZEY*4;}
+            case KIDZOMBIE -> {return (Settings.CELL_SIZEY/2)+10;}
+        }
+        return 0;
     }
 
 

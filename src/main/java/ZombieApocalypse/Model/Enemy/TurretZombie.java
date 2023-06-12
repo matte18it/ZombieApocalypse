@@ -14,8 +14,7 @@ public class TurretZombie extends Enemy{
 
     public TurretZombie(int x, int y) {
         super(x, y);
-        wight= Settings.CELL_SIZEX;
-        height=Settings.CELL_SIZEY;
+
         type= Enemies.EnemiesType.TURRETZOMBIE;
         healt=5;
         super.setSize();

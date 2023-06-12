@@ -12,9 +12,8 @@ import java.util.Random;
 public class Bandit extends Enemy{
 
     public Bandit(int x, int y) {
+        //wight height a altri paramentri gestiti dalla classe padre
         super(x, y);
-        wight= Settings.CELL_SIZEX;
-        height=Settings.CELL_SIZEY;
         type= Enemies.EnemiesType.BANDIT;
         healt=6;
         super.setSize();

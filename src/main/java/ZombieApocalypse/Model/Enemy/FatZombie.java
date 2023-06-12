@@ -13,8 +13,7 @@ public class FatZombie extends Enemy{
 
     public FatZombie(int x, int y) {
         super(x, y);
-        wight= Settings.CELL_SIZEX+(Settings.CELL_SIZEX/2);
-        height=Settings.CELL_SIZEY+(Settings.CELL_SIZEY/2);
+
         type= Enemies.EnemiesType.FATZOMBIE;
         healt=25;
         super.setSize();

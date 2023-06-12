@@ -12,8 +12,7 @@ public class SkinnyZombie extends Enemy{
 
     public SkinnyZombie(int x, int y) {
         super(x, y);
-        wight= Settings.CELL_SIZEX;
-        height=Settings.CELL_SIZEY;
+
         type= Enemies.EnemiesType.SKINNYZOMBIE;
         healt=6;
         super.setSize();

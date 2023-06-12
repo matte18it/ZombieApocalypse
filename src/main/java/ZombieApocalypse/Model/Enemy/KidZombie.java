@@ -13,8 +13,7 @@ public class KidZombie extends Enemy{
 
     public KidZombie(int x, int y) {
         super(x, y);
-        wight= (Settings.CELL_SIZEX/2)+10;
-        height=(Settings.CELL_SIZEY/2)+10;
+
         type= Enemies.EnemiesType.KIDZOMBIE;
         healt=4;
         super.setSize();

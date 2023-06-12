@@ -14,8 +14,7 @@ public class BombBandit extends Enemy{
 
     public BombBandit(int x, int y) {
         super(x, y);
-        wight= Settings.CELL_SIZEX;
-        height=Settings.CELL_SIZEY;
+
         type= Enemies.EnemiesType.BOMBBANDIT;
         healt=4;
         super.setSize();
