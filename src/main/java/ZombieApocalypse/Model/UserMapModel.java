@@ -26,7 +26,7 @@ public class UserMapModel {
         if(GameData.lang.equals(GameData.Language.EN)){
             if(Settings.diff == Settings.Difficulty.EASY)
                 view.getLblDescrizione().setText("<html>- Right difficulty for those who are new to the game.<br>" +
-                        "- Zombies: random number of zombies between 1 and 15.<br>" +
+                        "- Zombies: random number of zombies between 5 and 15.<br>" +
                         "- Medikit: heals 3 lives at a time.<br>" +
                         "- Grenade: double damage.<br>" +
                         "- Hits: double damage.</html>");
@@ -46,7 +46,7 @@ public class UserMapModel {
         else{
             if(Settings.diff == Settings.Difficulty.EASY)
                 view.getLblDescrizione().setText("<html>- Difficoltà giusta per chi è agli inizi col gioco.<br>" +
-                        "- Zombie: numero di zombie casuale compreso tra 1 e 15.<br>" +
+                        "- Zombie: numero di zombie casuale compreso tra 5 e 15.<br>" +
                         "- Medikit: cura 3 vite alla volta.<br>" +
                         "- Granata: danni raddoppiati.<br>" +
                         "- Colpi: danni raddoppiati.</html>");
