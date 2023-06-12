@@ -38,7 +38,7 @@ Random m=new Random();
             }
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
-            if(!(pistol && t==3) && !(shotGun && t==1) && Game.getInstance().getWorld().isSpawnableItem(x,y) && Game.getInstance().getWorld().isWalkable(x,y)){
+            if(!(pistol && t==3) && !(shotGun && t==1) &&  isSpawnable(x,y, ItemType.values()[t])){
                 c++;
                 Items.getInstance().dropItem(x,y, ItemType.values()[t]);
                 if(t==3 )
@@ -52,6 +52,42 @@ Random m=new Random();
 
 
     }
+
+    private boolean isSpawnable(int x, int y, ItemType value) {
+        boolean distanzaPlayer=Game.getInstance().getWorld().isSpawnableItem(x+(getWight(value))/2,y+(getHeight(value)/2));
+        if(distanzaPlayer){
+            for( int i=x; i<getWight(value)+x; i++){
+                for(int j=y; j<getHeight(value)+y; j++){
+                    if(!Game.getInstance().getWorld().isWalkable(i,j))
+                        return false;
+                }
+            } return true;
+
+        } return false;
+
+    }
+
+    public int getWight(ItemType e) {
+        switch (e){
+            case SHOTGUN -> {return Game.getInstance().getShotgunModel().getWidth();}
+            case PISTOL -> {return Game.getInstance().getPistolModel().getWidth(); }
+            case GRENADE -> {return Game.getInstance().getGrenadeModel().getWidth();}
+            case MEDKIT, RADIO, EMPTY -> {return 30; }
+            case AMMO1, SPELL, AMMO0 ->  {return 20;}
+
+        } return 0;}
+
+
+
+    public int getHeight(ItemType e) {
+        switch (e){
+            case SHOTGUN -> {return Game.getInstance().getShotgunModel().getHeight();}
+            case PISTOL -> {return Game.getInstance().getPistolModel().getHeight(); }
+            case GRENADE -> {return Game.getInstance().getGrenadeModel().getHeight();}
+            case MEDKIT, RADIO, EMPTY -> {return 30; }
+            case AMMO1, SPELL, AMMO0 ->  {return 20;}
+
+        } return 0;}
 
     public enum ItemType{ RADIO, SHOTGUN, GRENADE, PISTOL, MEDKIT, AMMO0, AMMO1, SPELL,EMPTY};
     private final ConcurrentLinkedDeque<Item> items=new ConcurrentLinkedDeque<>();
@@ -69,5 +105,5 @@ Random m=new Random();
 
     public void update(){
         items.removeIf(b -> !b.update());
-    }
-}
+    }}
+

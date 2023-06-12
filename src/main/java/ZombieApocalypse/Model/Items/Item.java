@@ -30,20 +30,12 @@ public  class Item {
     }
 public boolean taken=true;
     public Item(int x, int y, Items.ItemType e){
+        this.wight=Items.getInstance().getWight(e);
+        this.height=Items.getInstance().getHeight(e);
 
         this.x=x;
         this.y=y;
-        switch (e){
-            case SPELL -> {this.wight=20; this.height=20;}
-            case SHOTGUN -> {this.wight=Game.getInstance().getShotgunModel().getWidth(); this.height=Game.getInstance().getShotgunModel().getHeight();}
-            case PISTOL -> {this.wight=Game.getInstance().getPistolModel().getWidth(); this.height=Game.getInstance().getPistolModel().getHeight();}
-            case GRENADE -> {this.wight=Game.getInstance().getGrenadeModel().getWidth(); this.height=Game.getInstance().getGrenadeModel().getHeight();}
-            case MEDKIT -> {this.wight=30; this.height=30;}
-            case RADIO -> {this.wight=30; this.height=30;}
-            case AMMO0 -> {this.wight=20; this.height=20;}
-            case AMMO1 -> {this.wight=20; this.height=20;}
-            case EMPTY -> {this.wight=30; this.height=30;}
-        }
+
         this.view=new ItemView(e, wight, height);
         this.type=e;
         this.hitBox=new Rectangle(x,y,wight,height);
