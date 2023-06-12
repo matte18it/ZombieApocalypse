@@ -104,7 +104,7 @@ public class PlayerCharacter  {
     public void hit() {
         if(countHit==0){
             if(GameData.sound)
-                PlayWav.getInstance().playHurtSound();
+                PlayWav.getInstance().playHurt1Sound();
             hit=true;
             if(health>0){
                 health--;
