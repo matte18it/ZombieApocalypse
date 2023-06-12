@@ -358,9 +358,13 @@ public class Enemies {
             if(GameData.sound)
                 PlayWav.getInstance().playZombieHit();
         }
-        else if(b.type.equals(EnemiesType.BANDIT) || b.type.equals(EnemiesType.BOMBBANDIT)) {
+        else if(b.type.equals(EnemiesType.BANDIT)) {
             if (GameData.sound)
-                PlayWav.getInstance().playHurtSound();
+                PlayWav.getInstance().playHurt2Sound();
+        }
+        else if(b.type.equals(EnemiesType.BOMBBANDIT)){
+            if (GameData.sound)
+                PlayWav.getInstance().playHurt3Sound();
         }
     }
 }

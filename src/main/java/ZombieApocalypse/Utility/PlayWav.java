@@ -6,7 +6,11 @@ public class PlayWav {
     private static Clip clip = null;
     private static FloatControl music;
 
-    private static Clip clipSound = null;
+    private static Clip clipZombie = null, clipAmmo = null, clipButton = null, clipGameOver = null;
+    private static Clip clipGranata = null, clipHurt = null, clipHurt1 = null, clipHurt2 = null, clipHurt3 = null;
+    private static Clip clipKnife = null, clipMedikit = null, clipPotion = null, clipPump = null, clipRadio = null;
+    private static Clip clipPistola = null, clipWak = null, clipWin = null, clipDeath = null, clipZombieHit = null;
+    private static Clip clipYouWin = null, clipMission = null;
     private static FloatControl sound;
 
     private static PlayWav play = null;
@@ -37,128 +41,225 @@ public class PlayWav {
 
     //----- Suoni -----
     public void playZombie(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipZombie == null)
+            clipZombie = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieSound.wav");
+        else if(clipZombie.getFramePosition() != 0)
+            clipZombie.setFramePosition(0);
+
+        sound = (FloatControl) clipZombie.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipZombie.start();
     }
 
     public void playAmmoSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipAmmo == null)
+            clipAmmo = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
+        else if(clipAmmo.getFramePosition() != 0)
+            clipAmmo.setFramePosition(0);
+
+        sound = (FloatControl) clipAmmo.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipAmmo.start();
     }
 
     public void playButtonSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ButtonSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        clipButton = ResourcesLoader.getInstance().getAudioClip("/Audio/ButtonSound.wav");
+        sound = (FloatControl) clipButton.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipButton.start();
     }
 
     public void playGameOverSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/YouLose.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipGameOver == null)
+            clipGameOver = ResourcesLoader.getInstance().getAudioClip("/Audio/YouLose.wav");
+        else if(clipGameOver.getFramePosition() != 0)
+            clipGameOver.setFramePosition(0);
+
+        sound = (FloatControl) clipGameOver.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipGameOver.start();
     }
 
     public void playGrenadeSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/Grenade.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipGranata == null)
+            clipGranata = ResourcesLoader.getInstance().getAudioClip("/Audio/Grenade.wav");
+        else if(clipGranata.getFramePosition() != 0)
+            clipGranata.setFramePosition(0);
+
+        sound = (FloatControl) clipGranata.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipGranata.start();
     }
 
     public void playHurtSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipHurt == null)
+            clipHurt = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt.wav");
+        else if(clipHurt.getFramePosition() != 0)
+            clipHurt.setFramePosition(0);
+
+        sound = (FloatControl) clipHurt.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipHurt.start();
+    }
+
+    public void playHurt1Sound(){
+        if(clipHurt1 == null)
+            clipHurt1 = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt1.wav");
+        else if(clipHurt1.getFramePosition() != 0)
+            clipHurt1.setFramePosition(0);
+
+        sound = (FloatControl) clipHurt1.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        clipHurt1.start();
+    }
+
+    public void playHurt2Sound(){
+        if(clipHurt2 == null)
+            clipHurt2 = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt2.wav");
+        else if(clipHurt2.getFramePosition() != 0)
+            clipHurt2.setFramePosition(0);
+
+        sound = (FloatControl) clipHurt2.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        clipHurt2.start();
+    }
+
+    public void playHurt3Sound(){
+        if(clipHurt3 == null)
+            clipHurt3 = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt3.wav");
+        else if(clipHurt3.getFramePosition() != 0)
+            clipHurt3.setFramePosition(0);
+
+        sound = (FloatControl) clipHurt3.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        clipHurt3.start();
     }
 
     public void playKnifeSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/KnifeSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        clipKnife = ResourcesLoader.getInstance().getAudioClip("/Audio/KnifeSound.wav");
+        sound = (FloatControl) clipKnife.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipKnife.start();
     }
 
     public void playMedikitSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/MedikitSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipMedikit == null)
+            clipMedikit = ResourcesLoader.getInstance().getAudioClip("/Audio/MedikitSound.wav");
+        else if(clipMedikit.getFramePosition() != 0)
+            clipMedikit.setFramePosition(0);
+
+        sound = (FloatControl) clipMedikit.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipMedikit.start();
     }
 
     public void playPotionSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/PotionDrink.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipPotion == null)
+            clipPotion = ResourcesLoader.getInstance().getAudioClip("/Audio/PotionDrink.wav");
+        else if(clipPotion.getFramePosition() != 0)
+            clipPotion.setFramePosition(0);
+
+        sound = (FloatControl) clipPotion.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipPotion.start();
     }
 
     public void playPumpShot(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/PumpShot.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipPump == null)
+            clipPump = ResourcesLoader.getInstance().getAudioClip("/Audio/PumpShot.wav");
+        else if(clipPump.getFramePosition() != 0)
+            clipPump.setFramePosition(0);
+
+        sound = (FloatControl) clipPump.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipPump.start();
     }
 
     public void playRadioSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/RadioSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipRadio == null)
+            clipRadio = ResourcesLoader.getInstance().getAudioClip("/Audio/RadioSound.wav");
+        else if(clipRadio.getFramePosition() != 0)
+            clipRadio.setFramePosition(0);
+
+        sound = (FloatControl) clipRadio.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipRadio.start();
     }
 
     public void playShotPistola(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ShotPistola.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipPistola == null)
+            clipPistola = ResourcesLoader.getInstance().getAudioClip("/Audio/ShotPistola.wav");
+        else if(clipPistola.getFramePosition() != 0)
+            clipPistola.setFramePosition(0);
+
+        sound = (FloatControl) clipPistola.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipPistola.start();
     }
 
     public void playWalkSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipWak == null)
+            clipWak = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkSound.wav");
+        else if(clipWak.getFramePosition() != 0)
+            clipWak.setFramePosition(0);
+
+        sound = (FloatControl) clipWak.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipWak.start();
     }
 
     public void playWinSound(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/WinSound.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipWin == null)
+            clipWin = ResourcesLoader.getInstance().getAudioClip("/Audio/WinSound.wav");
+        else if(clipWin.getFramePosition() != 0)
+            clipWin.setFramePosition(0);
+
+        sound = (FloatControl) clipWin.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipWin.start();
     }
 
     public void playZombieDeath(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieDeath.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipDeath == null)
+            clipDeath = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieDeath.wav");
+        else if(clipDeath.getFramePosition() != 0)
+            clipDeath.setFramePosition(0);
+
+        sound = (FloatControl) clipDeath.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipDeath.start();
     }
 
     public void playZombieHit(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieHit.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipZombieHit == null)
+            clipZombieHit = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieHit.wav");
+        else if(clipZombieHit.getFramePosition() != 0)
+            clipZombieHit.setFramePosition(0);
+
+        sound = (FloatControl) clipZombieHit.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipZombieHit.start();
     }
 
     public void playYouWin(){
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/YouWin.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipYouWin == null)
+            clipYouWin = ResourcesLoader.getInstance().getAudioClip("/Audio/YouWin.wav");
+        else if(clipYouWin.getFramePosition() != 0)
+            clipYouWin.setFramePosition(0);
+
+        sound = (FloatControl) clipYouWin.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipYouWin.start();
     }
 
     public void playMissionComplete() {
-        clipSound = ResourcesLoader.getInstance().getAudioClip("/Audio/MissionComplete.wav");
-        sound = (FloatControl) clipSound.getControl(FloatControl.Type.MASTER_GAIN);
+        if(clipMission == null)
+            clipMission = ResourcesLoader.getInstance().getAudioClip("/Audio/MissionComplete.wav");
+        else if(clipMission.getFramePosition() != 0)
+            clipMission.setFramePosition(0);
+
+        sound = (FloatControl) clipMission.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipSound.start();
+        clipMission.start();
     }
 }
