@@ -1,0 +1,132 @@
+package ZombieApocalypse.Utility;
+
+import ZombieApocalypse.Model.Enemy.Enemies;
+import ZombieApocalypse.Model.Enemy.Enemy;
+import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.PlayerCharacter;
+
+public class CountPoint {
+    public static CountPoint setPoint = null;
+    private CountPoint(){}
+
+    public static CountPoint getInstance(){
+        if(setPoint == null)
+            setPoint = new CountPoint();
+
+        return setPoint;
+    }
+
+    public void setPoint(Enemy b){
+        int base = 0;
+        if(Settings.diff == Settings.Difficulty.EASY){
+            //Aumento in base alla difficoltà
+            base += 1;
+
+            //Aumento in base al tipo di nemico
+            if(b.type.equals(Enemies.EnemiesType.SKINNYZOMBIE)){
+                base += 1;
+            }
+            else if(b.type.equals(Enemies.EnemiesType.KIDZOMBIE)){
+                base += 5;
+            }
+            else if(b.type.equals(Enemies.EnemiesType.TURRETZOMBIE)){
+                base += 3;
+            }
+            else if(b.type.equals(Enemies.EnemiesType.FATZOMBIE)){
+                base += 6;
+            }
+            else if(b.type.equals(Enemies.EnemiesType.BANDIT)){
+                base += 4;
+            }
+            else if(b.type.equals(Enemies.EnemiesType.BOMBBANDIT)){
+                base += 2;
+            }
+
+            //Aumento in base alla vita
+            if(Game.getInstance().hasShotgun){
+                base += 1;
+            }
+            else if(Game.getInstance().hasPistol){
+                base += 2;
+            }
+            else if(Game.getInstance().hasKnife || Game.getInstance().hasGrenade){
+                base += 3;
+            }
+
+        }
+        else if(Settings.diff == Settings.Difficulty.MEDIUM){
+            //Aumento in base alla difficoltà
+            base += 3;
+
+            //Aumento in base al tipo di zombie ucciso
+            if(b.type.equals(Enemies.EnemiesType.SKINNYZOMBIE))
+                base += 6;
+            else if(b.type.equals(Enemies.EnemiesType.KIDZOMBIE))
+                base += 10;
+            else if(b.type.equals(Enemies.EnemiesType.TURRETZOMBIE))
+                base += 8;
+            else if(b.type.equals(Enemies.EnemiesType.FATZOMBIE))
+                base += 11;
+            else if(b.type.equals(Enemies.EnemiesType.BANDIT))
+                base += 9;
+            else if(b.type.equals(Enemies.EnemiesType.BOMBBANDIT))
+                base += 7;
+
+            //Aumento in base alla vita
+            if(Game.getInstance().hasShotgun){
+                base += 4;
+            }
+            else if(Game.getInstance().hasPistol){
+                base += 5;
+            }
+            else if(Game.getInstance().hasKnife || Game.getInstance().hasGrenade){
+                base += 6;
+            }
+
+        }
+        else if(Settings.diff == Settings.Difficulty.HARD){
+            //Aumento in base alla difficoltà
+            base += 5;
+
+            //Aumento in base al tipo di zombie ucciso
+            if(b.type.equals(Enemies.EnemiesType.SKINNYZOMBIE))
+                base += 10;
+            else if(b.type.equals(Enemies.EnemiesType.KIDZOMBIE))
+                base += 14;
+            else if(b.type.equals(Enemies.EnemiesType.TURRETZOMBIE))
+                base += 12;
+            else if(b.type.equals(Enemies.EnemiesType.FATZOMBIE))
+                base += 15;
+            else if(b.type.equals(Enemies.EnemiesType.BANDIT))
+                base += 13;
+            else if(b.type.equals(Enemies.EnemiesType.BOMBBANDIT))
+                base += 11;
+
+            //Aumento in base alla vita
+            if(Game.getInstance().hasShotgun){
+                base += 7;
+            }
+            else if(Game.getInstance().hasPistol){
+                base += 8;
+            }
+            else if(Game.getInstance().hasKnife || Game.getInstance().hasGrenade){
+                base += 10;
+            }
+
+        }
+        GameData.punti += base;
+        Game.getInstance().getMenuBar().updatePoint(GameData.punti);
+    }
+
+    public void setPointBoss(){
+        GameData.punti += 200;
+        Game.getInstance().getMenuBar().updatePoint(GameData.punti);
+    }
+
+    public void malusPoint(){
+        if(GameData.punti >= 20)
+            GameData.punti -= 20;
+        else
+            GameData.punti -= GameData.punti;
+    }
+}
