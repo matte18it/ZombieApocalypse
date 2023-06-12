@@ -3,6 +3,7 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
+import ZombieApocalypse.Utility.CountPoint;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
@@ -34,6 +35,7 @@ public class Boss extends Enemy{
         if(healt<=0 && countDeath<=8){
             countDeath++;
             dying=true;
+            CountPoint.getInstance().setPointBoss();
             return true;
             }
 

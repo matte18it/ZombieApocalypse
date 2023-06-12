@@ -1,10 +1,7 @@
 package ZombieApocalypse.Model;
 
 
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
-import ZombieApocalypse.Utility.ResourcesLoader;
-import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.Utility.*;
 import ZombieApocalypse.View.GameFrame;
 
 import javax.swing.*;
@@ -174,10 +171,12 @@ public class PlayerCharacter  {
                 Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
+                CountPoint.getInstance().malusPoint();
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
                         try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
+                        GameData.punti = 0;
                     }
                 });
                 GameFrame.menuLaunch();
@@ -196,9 +195,9 @@ public class PlayerCharacter  {
 
     private void saveData() throws IOException {
         int val1, val2, val3, val4;
-        //se i punti della partita sono maggiori del suo record, aggiorno
-        if(GameData.punti > GameData.recordPunti)
-            GameData.recordPunti = GameData.punti;
+
+        //incremento i punti
+        GameData.recordPunti += GameData.punti;
 
         //gestisco i dati
         if(GameData.music) val1 = 1; else val1 = 0;

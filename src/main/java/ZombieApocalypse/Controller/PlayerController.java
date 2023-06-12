@@ -3,10 +3,7 @@ import ZombieApocalypse.Loop.GameLoop;
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
-import ZombieApocalypse.Utility.ResourcesLoader;
-import ZombieApocalypse.Utility.ThreadPool;
+import ZombieApocalypse.Utility.*;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.GraphicPanel;
 
@@ -148,10 +145,12 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
+                CountPoint.getInstance().malusPoint();
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
                         try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
+                        GameData.punti = 0;
                     }
                 });
                 GameFrame.menuLaunch();
@@ -174,9 +173,9 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
 
     private void saveData() throws IOException {
         int val1, val2, val3, val4;
-        //se i punti della partita sono maggiori del suo record, aggiorno
-        if(GameData.punti > GameData.recordPunti)
-            GameData.recordPunti = GameData.punti;
+
+        //incremento i punti
+        GameData.recordPunti += GameData.punti;
 
         //gestisco i dati
         if(GameData.music) val1 = 1; else val1 = 0;

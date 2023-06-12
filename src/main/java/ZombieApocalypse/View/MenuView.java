@@ -1077,7 +1077,7 @@ public class MenuView extends JPanel implements Runnable{
             setNull();
         }
 
-        sfondo6.setText("" + GameData.nick + "(" + GameData.punti + " pt)");
+        sfondo6.setText("" + GameData.nick + "(" + GameData.recordPunti + " pt)");
         if(GameData.nick.length() < 14)
             sfondo6.setFont(font.deriveFont(Font.PLAIN, 15));
         else

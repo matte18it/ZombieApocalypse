@@ -37,6 +37,9 @@ public class GameFrame extends JPanel {
     public static UserMapView userView;
 
     public static void loadingLaunch(){
+        //setto il logo
+        frameGame.setIconImage(Toolkit.getDefaultToolkit().getImage(GameFrame.class.getClassLoader().getResource("LogoGame/LogoGame.png")));
+
         //setto le dimensioni
         dimension();
 
@@ -83,8 +86,10 @@ public class GameFrame extends JPanel {
     }
 
     public static void menuLaunch(){
+        //reset variabili game
         Settings.campainMapIndex = 1;
         Settings.diff = Settings.Difficulty.EASY;
+
         if(splashScreen != null && splashScreen.isShowing())
             frameGame.remove(splashScreen);
 

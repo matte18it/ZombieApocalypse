@@ -194,6 +194,7 @@ public class MenuController {
                     @Override
                     public void run() {
                         try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
+                        GameData.punti = 0;
                     }
                 });
             }
@@ -285,9 +286,9 @@ public class MenuController {
 
     private void saveData() throws IOException {
         int val1, val2, val3, val4;
-        //se i punti della partita sono maggiori del suo record, aggiorno
-        if(GameData.punti > GameData.recordPunti)
-            GameData.recordPunti = GameData.punti;
+
+        //incremento i punti
+        GameData.recordPunti += GameData.punti;
 
         //gestisco i dati
         if(GameData.music) val1 = 1; else val1 = 0;

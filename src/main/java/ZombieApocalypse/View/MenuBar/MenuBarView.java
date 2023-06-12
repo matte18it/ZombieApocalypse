@@ -224,7 +224,7 @@ public class MenuBarView extends JPanel {
             jLabelP = new JLabel("Points");
         jLabelP.setFont(font);
         jLabelP.setForeground(Color.GRAY);
-        pointLabel=new JLabel("0");
+        pointLabel=new JLabel(String.valueOf(GameData.punti));
         pointLabel.setFont(font);
         pointLabel.setForeground(Color.WHITE);
         c.insets=new Insets(0,40,0,0);

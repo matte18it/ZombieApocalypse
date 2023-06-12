@@ -18,6 +18,10 @@ public class MenuBarModel {
         menuBarView.updateTimeLable(t);
     }
 
+    public void updatePoint(int val){
+        menuBarView.updateScoreLable(val);
+    }
+
     public void removeHeart() {
             menuBarView.removeHeart();
     }
