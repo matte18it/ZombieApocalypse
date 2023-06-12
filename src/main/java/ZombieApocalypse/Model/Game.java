@@ -80,15 +80,14 @@ public class Game {
 
     //Da fare nel Game Loop
     public void update() {
+
         if(character.isMoving())
             character.move();
         if(character.hit)
             character.addHit();
         if(character.speedUp)
             character.addSpeed();
-        Bullets.getInstance().update();
-        Items.getInstance().update();
-        Enemies.getInstance().update();
+
     }
 
     public PlayerCharacter getPlayerCharacter() {

@@ -40,13 +40,13 @@ public class GraphicPanel extends JPanel {
         return shotgunView;
     }
     World world=Game.getInstance().getWorld();
-    private final int numeroImmagini=World.Block.values().length;
     private final Map<World.Block, Image> images=new Hashtable<>();
     public GraphicPanel()  {
         //setto il cursore personalizzato
         this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
+        int numeroImmagini = World.Block.values().length;
         World.Block[] enue=new World.Block[numeroImmagini];
-        for(int i=0; i<numeroImmagini; i++){
+        for(int i = 0; i< numeroImmagini; i++){
             enue[i]= World.Block.values()[i];
             images.put(enue[i], ResourcesLoader.getInstance().getImage("/AmbienteDiGioco/"+enue[i]+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true));
         }
@@ -172,6 +172,10 @@ Random m=new Random();
         if(Game.getInstance().hasGrenade){
             grenadeView.update();
             grenadeView.update(null);}
+
+        Bullets.getInstance().update();
+        Items.getInstance().update();
+        Enemies.getInstance().update();
 
         repaint();
     }

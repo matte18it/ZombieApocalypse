@@ -185,7 +185,7 @@ public class Enemies {
 
 
     public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};
-    private final ConcurrentLinkedDeque<Enemy> enemies=new ConcurrentLinkedDeque<>();
+    private final ArrayList<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
     public Enemies(){}
@@ -193,7 +193,7 @@ public class Enemies {
     public static ZombieApocalypse.Model.Enemy.Enemies getInstance(){return instance;}
 
 
-    public  ConcurrentLinkedDeque<Enemy> getEnemies(){return this.enemies;
+    public  ArrayList<Enemy> getEnemies(){return this.enemies;
     }
 
     public void update(){

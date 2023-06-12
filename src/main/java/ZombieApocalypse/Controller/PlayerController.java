@@ -1,6 +1,8 @@
 package ZombieApocalypse.Controller;
 import ZombieApocalypse.Loop.GameLoop;
+import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
@@ -211,6 +213,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     private int randomZombie = new Random().nextInt(300, 600);
     private int cdd=0;
     Future<?> f1;
+    private boolean firstRun=true;
 
     public void update(){
         try{
@@ -220,23 +223,25 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             Game.getInstance().update();
             f1= ThreadPool.getExecutor().submit(()->panel.update());
             count=0;
+            if(countZombie == randomZombie ){
+                countZombie = 0;
+                if(GameData.sound)
+                    PlayWav.getInstance().playZombie();
+            }
+            else
+                countZombie++;
         }if( Game.getInstance().getBackMenu() && count==0){
             Game.getInstance().update();
             f1= ThreadPool.getExecutor().submit(()->panel.update());
             count++;
+            return;
         }
         if(count==1){
             count=0;
             Game.getInstance().setBackMenu(false);
         }
 
-        if(countZombie == randomZombie){
-            countZombie = 0;
-            if(GameData.sound)
-                PlayWav.getInstance().playZombie();
-        }
-        else
-            countZombie++;
+
 
     }catch (ExecutionException | InterruptedException e){
 
