@@ -1,7 +1,7 @@
 # ZombieApocalypse
 Progetto UID
 
------EXIT_CODE----
+-----EXIT_CODE----\n
 0 chiusura da menù o con la keyboard q
 130 chiusura forzata del programma
 
