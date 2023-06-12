@@ -62,7 +62,7 @@ public class EditorBarController {
                 view.repaint();
             }
         });
-
+        //Quando il campo nome prende il focus caccio il placeholder, quando perde il focus lo rimetto se il campo è vuoto
         view.getTxtName().addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -85,7 +85,7 @@ public class EditorBarController {
                     }
             }
         });
-
+        //evento per mettere e cacciare le linee guida
         view.getLine().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -102,7 +102,7 @@ public class EditorBarController {
                 }
             }
         });
-
+        //evento per uscire e tornare al menu
         view.getExit().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -112,7 +112,7 @@ public class EditorBarController {
                 showDialog();
             }
         });
-
+        //evento per resettare la mappa a quella di default
         view.getReset().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -124,7 +124,7 @@ public class EditorBarController {
                 editorView.repaint();
             }
         });
-
+        //evento per salvare la mappa
         view.getSave().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -145,7 +145,8 @@ public class EditorBarController {
                 }
             }
         });
-
+        //evento per settare il bordo rosso al pulsante che rappresenta il tassello della terra.
+        //Faccio la stessa cosa con tutti gli altri tasselli
         view.getDirt0().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -487,6 +488,7 @@ public class EditorBarController {
     }
 
     private void showDialog() {
+        //dialog che serve per comunicare all'utente che uscendo tutti i dati salavti verranno eliminati
 
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
