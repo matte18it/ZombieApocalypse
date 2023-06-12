@@ -100,7 +100,7 @@ public class MenuController {
                 view.setMenu();
             }
         });
-
+        //evento per cambiare volume musica
         view.getMusica().addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -109,14 +109,14 @@ public class MenuController {
                     PlayWav.getInstance().setVolume(GameData.musicVolume);
             }
         });
-
+        //evento per cambiare volume suoni
         view.getSuoni().addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
                 GameData.soundVolume = view.getSuoni().getValue();
             }
         });
-
+        //evento per settare la musica a false o a true
         view.getMuteMusic().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -140,7 +140,7 @@ public class MenuController {
                 }
             }
         });
-
+        //evento per settare i suoni a false o a true
         view.getMuteSound().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -160,7 +160,7 @@ public class MenuController {
                 }
             }
         });
-
+        //evento per cambiare la lingua in italiano
         view.getIt().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -171,7 +171,7 @@ public class MenuController {
                 model.translateSettings();
             }
         });
-
+        //evento per cambiare la lingua in inglese
         view.getEn().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -182,7 +182,7 @@ public class MenuController {
                 model.translateSettings();
             }
         });
-
+        //evento per uscire dalle impostazioni
         view.getExitSettings().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -199,7 +199,7 @@ public class MenuController {
                 });
             }
         });
-
+        //evento per modalità mancino
         view.getBtnMancino().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -216,7 +216,7 @@ public class MenuController {
                 }
             }
         });
-
+        //evento per il logout
         view.getBtnLogout().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -226,7 +226,7 @@ public class MenuController {
                 model.showDialog();
             }
         });
-
+        //evento per andare avanti e settare la skin successiva
         view.getAvantiSkin().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -240,7 +240,7 @@ public class MenuController {
                 view.getSkinAttiva().setIcon(ResourcesLoader.getInstance().getImageIcon("/Player/Skin" + GameData.skinAttiva + "/PlayerAvanti0.png", 42, 48, false));
             }
         });
-
+        //evento per settare la skin precedente
         view.getDietroSkin().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -261,7 +261,7 @@ public class MenuController {
                 view.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
             }
         });
-
+        //evento per entrare nell'editor
         view.getBtnEditorMap().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -281,10 +281,13 @@ public class MenuController {
     }
 
     private void soundButton() {
+        //evento per far partire il suono dei pulsanti
         PlayWav.getInstance().playButtonSound();
     }
 
     private void saveData() throws IOException {
+        //con questa funzione chiamo lo script php sul server per salvare e aggiornare i dati del player nel db.
+
         int val1, val2, val3, val4;
 
         //incremento i punti

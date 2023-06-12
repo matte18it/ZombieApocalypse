@@ -36,6 +36,7 @@ public class EditorBarController {
     }
 
     public void addListener(){
+        //evento per passare a schermata 2
         view.getArrow1().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -48,7 +49,7 @@ public class EditorBarController {
                 view.repaint();
             }
         });
-
+        //evento per passare a schermata1
         view.getArrow2().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {

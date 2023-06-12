@@ -67,6 +67,7 @@ public class LoginController {
             }
         });
 
+        //quando la barra del nick prende il focus ed è presente l'errore del nick si elimina
         view.getNickname().addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -79,6 +80,7 @@ public class LoginController {
             }
         });
 
+        //stessa cosa succede se prende il focus il campo apssword
         view.getPassword().addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
