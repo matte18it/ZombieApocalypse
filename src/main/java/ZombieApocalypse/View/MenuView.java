@@ -17,10 +17,7 @@ import java.awt.geom.AffineTransform;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -384,13 +381,15 @@ public class MenuView extends JPanel implements Runnable{
         sfondoAbout.add(musicLabel);
 
         if(GameData.lang == GameData.Language.IT)
-            soundLabel = new JLabel("SUONI: suoni scaricati dal sito 'https://freesound.org'");
+            soundLabel = new JLabel("SUONI: suoni scaricati dal sito 'freesound.org'.");
         else
-            soundLabel = new JLabel("SOUND: sounds taken from 'https://freesound.org'");
+            soundLabel = new JLabel("SOUND: sounds taken from 'freesound.org'.");
         soundLabel.setFont(font.deriveFont(Font.PLAIN, 15));
         soundLabel.setForeground(Color.white);
         soundLabel.setBorder(new EmptyBorder(3, 25, 0, 0));
         sfondoAbout.add(soundLabel);
+
+        navigateListener();
 
         btnExitAbout.setIcon(loader.getImageIcon("/Login&Menu/sendButton.png", 197, 60, false));
         btnExitAbout.setHorizontalTextPosition(JButton.CENTER);
@@ -434,6 +433,45 @@ public class MenuView extends JPanel implements Runnable{
         sfondoAbout.add(layoutComands2);
         sfondoAbout.add(layoutComands3);
         aboutPanel.add(sfondoAbout);
+    }
+
+    private void navigateListener() {
+        soundLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                Desktop dt = Desktop.getDesktop();
+                try {
+                    dt.browse(URI.create("https://freesound.org"));
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        musicLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                Desktop dt = Desktop.getDesktop();
+                try {
+                    dt.browse(URI.create("https://szajnaworkshop.itch.io"));
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        graphicsLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                Desktop dt = Desktop.getDesktop();
+                try {
+                    dt.browse(URI.create("https://ittaimanero.itch.io"));
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
     private void setCommands(JLabel layoutComands, JLabel layoutComands2) {
