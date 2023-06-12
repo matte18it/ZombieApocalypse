@@ -14,7 +14,7 @@ import java.io.*;
 import java.util.Objects;
 
 public class EditorView extends JPanel {
-    public static int init = 0;
+    public static int init = 0;     //mi è utile per capire se l'utente arriva dal menu o dal user maps menu
     private EditorController controller;
     private EditorModel model;
 
@@ -26,7 +26,7 @@ public class EditorView extends JPanel {
 
     //Gestione dei blocchi disegnabili
     enum Block {TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
-    private final Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY];
+    private final Block[][] world = new Block[Settings.WORLD_SIZEX][Settings.WORLD_SIZEY]; //mondo di gioco
 
     public EditorView(){
         //setto il cursore
@@ -37,6 +37,7 @@ public class EditorView extends JPanel {
         //creo il controller
         controller = new EditorController(this, model);
 
+        //inizializzo la mappa
         this.setBackground(Color.BLACK);
         if(init == 0)
             initWorld();
@@ -46,6 +47,8 @@ public class EditorView extends JPanel {
     }
 
     private void loadWorld() {
+        //qua ci finisco se l'utente arriva dal menu user map
+        //infatti vado a fare un load della mappa che vuole modificare
         String[] builder;
         File file = new File("EditorMap/" + UserMapController.nomeFile + ".txt");
         try (BufferedReader in = new BufferedReader(new FileReader(file))) {
@@ -66,6 +69,7 @@ public class EditorView extends JPanel {
     }
 
     public void setTassello(int i, int j) {
+        //Qua disegno sulla mappa
         if(EditorBarView.bloccoAttivo == 0)
             world[i][j] = Block.TERRENO0;
         else if(EditorBarView.bloccoAttivo == 1)
@@ -133,10 +137,12 @@ public class EditorView extends JPanel {
         else if(EditorBarView.bloccoAttivo == 32)
             world[i][j] = Block.ROAD25;
 
+        //dopo invece faccio un repaint per visualizzare le modifiche
         repaint();
     }
 
     public void initWorld() {
+        //inizializzo il mondo di default, ci finisco se l'utente arriva dal menu
         for(int i = 0; i < world.length; i++) {
             for(int j = 0; j < world[i].length; j++) {
                 world[i][j] = Block.TERRENO0;
@@ -228,6 +234,7 @@ public class EditorView extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
+        //qua oltre che a disegnare il mondo di default disegno le linee guida
         super.paintComponent(g);
         g.clearRect(0, 1280, 0, 1280);
 

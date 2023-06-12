@@ -48,7 +48,7 @@ public class EditorBarModel {
     }
 
     private void writeOnFile(File f2) {
-        //questa funzione si occupa solo di scrivere su file
+        //questa funzione si occupa solo di scrivere su file la mappa
         try {
             FileWriter myWriter;
             myWriter = new FileWriter("EditorMap/" + f2.getName());
@@ -67,6 +67,9 @@ public class EditorBarModel {
     }
 
     private void showDialog(File f2) {
+        //dialog per informare il player che il nome inserito è già associato ad una mappa.
+        //continuando sovrascrive la mappa già presente
+
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
         UIManager.put("OptionPane.background",new Color(92,75,35));
@@ -153,6 +156,9 @@ public class EditorBarModel {
 
 
     public void clearBorder(){
+        //pulisco tutti i bordi dei pulsanti che indicano i blocchi.
+        //infatti l'utente può capire quale tassella sta usando anche perchè quella selezionata avrà un bordo rosso attorno
+
         view.getDirt0().setBorder(null);
         view.getDirt1().setBorder(null);
         view.getDirt2().setBorder(null);

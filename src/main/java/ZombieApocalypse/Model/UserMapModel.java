@@ -32,13 +32,13 @@ public class UserMapModel {
                         "- Hits: double damage.</html>");
             else if(Settings.diff == Settings.Difficulty.MEDIUM)
                 view.getLblDescrizione().setText("<html>- Right difficulty for those who want a more complex.<br>" +
-                        "- Zombies: random number of zombies between 15 and 30.<br>" +
+                        "- Zombies: random number of zombies between 16 and 25.<br>" +
                         "- Medikit: heals 2 lives at a time.<br>" +
                         "- Grenade: normal damage.<br>" +
                         "- Hits: normal damage.</htmL>");
             else if(Settings.diff == Settings.Difficulty.HARD)
                 view.getLblDescrizione().setText("<html>- Right difficulty for those who want a complex challenge.<br>" +
-                        "- Zombies: random number of zombies between 30 and 45.<br>" +
+                        "- Zombies: random number of zombies between 26 and 35.<br>" +
                         "- Medikit: heals 1 life at a time.<br>" +
                         "- Grenade: damage halved.<br>" +
                         "- Hits: damage halved.</html>");
@@ -52,13 +52,13 @@ public class UserMapModel {
                         "- Colpi: danni raddoppiati.</html>");
             else if(Settings.diff == Settings.Difficulty.MEDIUM)
                 view.getLblDescrizione().setText("<html>- Difficoltà giusta per chi vuole una sfida più complessa.<br>" +
-                        "- Zombie: numero di zombie casuale compreso tra 15 e 30.<br>" +
+                        "- Zombie: numero di zombie casuale compreso tra 16 e 25.<br>" +
                         "- Medikit: cura 2 vite alla volta.<br>" +
                         "- Granata: danni normali.<br>" +
                         "- Colpi: danni normali.</html>");
             else if(Settings.diff == Settings.Difficulty.HARD)
                 view.getLblDescrizione().setText("<html>- Difficoltà giusta per chi vuole una sfida complessa.<br>" +
-                        "- Zombie: numero di zombie casuale compreso tra 30 e 45.<br>" +
+                        "- Zombie: numero di zombie casuale compreso tra 26 e 35.<br>" +
                         "- Medikit: cura 1 vita alla volta.<br>" +
                         "- Granata: danni dimezzati.<br>" +
                         "- Colpi: danni dimezzati.</html>");

@@ -34,6 +34,7 @@ public class UserMapController {
     }
 
     public void addListener(){
+        //qua do l'evento ai bottoni sopra e sotto per visualizzare le altre mappe
         view.getBtnGiu().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -58,6 +59,7 @@ public class UserMapController {
                 }
             }
         });
+        //evento per cui il nome della mappa non può superare gli 11 caratteri
         view.getNameMap().addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -66,6 +68,7 @@ public class UserMapController {
                     e.consume();
             }
         });
+        //evento per tornare al menu
         view.getExitButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -75,6 +78,7 @@ public class UserMapController {
                 GameFrame.menuLaunch();
             }
         });
+        //evento per settare la difficoltà a easy
         view.getBtnEasy().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -88,6 +92,7 @@ public class UserMapController {
                 model.changeDifficulty();
             }
         });
+        //evento per settare la difficoltà a medium
         view.getBtnMedium().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -101,6 +106,7 @@ public class UserMapController {
                 model.changeDifficulty();
             }
         });
+        //evento per settare difficoltà a hard
         view.getBtnHard().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -114,6 +120,8 @@ public class UserMapController {
                 model.changeDifficulty();
             }
         });
+        //setta il testo della mappa a bianco. Infatti se l'utente mette un nome della mappa che non esiste il nome diventa rosso
+        //cliccando nuovamente il nome da rosso passa a nuovamente bianco
         view.getNameMap().addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -121,6 +129,7 @@ public class UserMapController {
                 view.getNameMap().setForeground(Color.white);
             }
         });
+        //evento per chiamare l'editor in formato load
         view.getLoadButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -138,6 +147,7 @@ public class UserMapController {
                 }
             }
         });
+        //evento per eliminare la mappa
         view.getDeleteButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -151,6 +161,7 @@ public class UserMapController {
                     view.getNameMap().setForeground(Color.red);
             }
         });
+        //evento per giocare la mappa selezionata
         view.getPlayButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -173,6 +184,7 @@ public class UserMapController {
     }
 
     private void showDialog() {
+        //dialog per far confermare all'utente l'eliminazione della mappa
 
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);

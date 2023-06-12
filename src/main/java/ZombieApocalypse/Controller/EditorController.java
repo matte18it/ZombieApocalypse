@@ -20,6 +20,7 @@ public class EditorController {
     }
 
     private void customCursor() {
+        //qua setto il cursore personalizzato in base alla tassella scelta dal player
         if(EditorBarView.bloccoAttivo == -1)
             view.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
         else if(EditorBarView.bloccoAttivo == 0)
@@ -92,6 +93,7 @@ public class EditorController {
     }
 
     public void addListener(){
+        //eventi per disegnare
         view.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {

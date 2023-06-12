@@ -3,9 +3,9 @@ package ZombieApocalypse.Utility;
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.PlayerCharacter;
 
 public class CountPoint {
+    //classe singleton per gestione dei punti
     public static CountPoint setPoint = null;
     private CountPoint(){}
 
@@ -17,6 +17,7 @@ public class CountPoint {
     }
 
     public void setPoint(Enemy b){
+        //per l'assegnazione dei punti tengo conto di tre parametri: difficoltà di gioco, tipo di nemico ucciso e tipo di arma con cui quel nemico è stato ucciso.
         int base = 0;
         if(Settings.diff == Settings.Difficulty.EASY){
             //Aumento in base alla difficoltà
@@ -119,11 +120,13 @@ public class CountPoint {
     }
 
     public void setPointBoss(){
+        //assegno i punti per aver sconfitto il boss
         GameData.punti += 200;
         Game.getInstance().getMenuBar().updatePoint(GameData.punti);
     }
 
     public void malusPoint(){
+        //assegno un malus se l'utente perde o torna al menu senza aver completato la campagna
         if(GameData.punti >= 20)
             GameData.punti -= 20;
         else

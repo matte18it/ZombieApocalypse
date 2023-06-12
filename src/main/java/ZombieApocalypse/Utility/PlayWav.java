@@ -3,15 +3,18 @@ package ZombieApocalypse.Utility;
 import javax.sound.sampled.*;
 
 public class PlayWav {
-    private static Clip clip = null;
-    private static FloatControl music;
+    //Classe singleton per gestione musica e suoni
 
+    private static Clip clip = null;        //variabile per la musica
+    private static FloatControl music;      //controllore utile per il volume
+
+    //clip per i suoni
     private static Clip clipZombie = null, clipAmmo = null, clipButton = null, clipGameOver = null;
     private static Clip clipGranata = null, clipHurt = null, clipHurt1 = null, clipHurt2 = null, clipHurt3 = null;
     private static Clip clipKnife = null, clipMedikit = null, clipPotion = null, clipPump = null, clipRadio = null;
     private static Clip clipPistola = null, clipWak = null, clipWin = null, clipDeath = null, clipZombieHit = null;
     private static Clip clipYouWin = null, clipMission = null;
-    private static FloatControl sound;
+    private static FloatControl sound;  //controllore dei suoni
 
     private static PlayWav play = null;
 
@@ -24,22 +27,40 @@ public class PlayWav {
 
     //----- Musica -----
     public void play(String path){
+        //carico la musica, la avvio e la setto in loop. Infine prendo il controllore della musica
         clip = ResourcesLoader.getInstance().getAudioClip(path);
         clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
         music = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
     }
-    public void stop(){ clip.stop(); }
+    public void stop(){
+        //stoppo la musica
+        clip.stop();
+    }
     public boolean isPlay(){
+        //restituisco se la musica è avviata oppure no
         if(clip != null)
             return clip.isRunning();
         return false;
     }
     public void setVolume(int value){
+        //setto volume della musica
         music.setValue(value);
     }
 
     //----- Suoni -----
+    public void playGameOverSound(){
+        //se la clip è vuota, la creo. Poi prendo il controllore del suono, setto il volume e avvio. Se non è nulla la faccio ripartire da capo
+        //Faccio questo per ogni clip
+        if(clipGameOver == null)
+            clipGameOver = ResourcesLoader.getInstance().getAudioClip("/Audio/YouLose.wav");
+        else if(clipGameOver.getFramePosition() != 0)
+            clipGameOver.setFramePosition(0);
+
+        sound = (FloatControl) clipGameOver.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        clipGameOver.start();
+    }
     public void playZombie(){
         if(clipZombie == null)
             clipZombie = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieSound.wav");
@@ -52,11 +73,8 @@ public class PlayWav {
     }
 
     public void playAmmoSound(){
-        if(clipAmmo == null)
-            clipAmmo = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
-        else if(clipAmmo.getFramePosition() != 0)
-            clipAmmo.setFramePosition(0);
-
+        //in alcune clip che mi servono a ripetizione le carico ogni volta
+        clipAmmo = ResourcesLoader.getInstance().getAudioClip("/Audio/AmmoSound.wav");
         sound = (FloatControl) clipAmmo.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipAmmo.start();
@@ -67,17 +85,6 @@ public class PlayWav {
         sound = (FloatControl) clipButton.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipButton.start();
-    }
-
-    public void playGameOverSound(){
-        if(clipGameOver == null)
-            clipGameOver = ResourcesLoader.getInstance().getAudioClip("/Audio/YouLose.wav");
-        else if(clipGameOver.getFramePosition() != 0)
-            clipGameOver.setFramePosition(0);
-
-        sound = (FloatControl) clipGameOver.getControl(FloatControl.Type.MASTER_GAIN);
-        sound.setValue(GameData.soundVolume);
-        clipGameOver.start();
     }
 
     public void playGrenadeSound(){

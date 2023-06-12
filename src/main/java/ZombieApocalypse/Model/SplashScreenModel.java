@@ -28,6 +28,7 @@ public class SplashScreenModel {
     }
 
     public static boolean checkFile() {
+        //qua faccio un check del file player.txt. Infatti se esiste faccio login automatico, sennò vado al login
         File file = new File("player.txt");
         Scanner myReader = null;
 
@@ -44,7 +45,7 @@ public class SplashScreenModel {
     }
 
     private static boolean getData(String path) throws  IOException{
-        //chiamo script per fare get dei dati
+        //chiamo script per fare get dei dati dal db se il file player.txt esiste
         URL sript = new URL(path);
         URLConnection conn = sript.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -105,6 +106,7 @@ public class SplashScreenModel {
     }
 
     private static void showDialog() {
+        //dialog personalizzato a tema Zombie Apocalypse utilissimo. Infatti se il player non è connesso a internet (requisito fondamentale dato che il db è online) lo comunica al player
 
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
