@@ -360,4 +360,8 @@ public class ResultsPanel {
     private void soundButton() {
         PlayWav.getInstance().playButtonSound();
     }
+    public void showError(String error, int exitStatus){
+        JOptionPane.showMessageDialog(null , error, "Error!", JOptionPane.ERROR_MESSAGE);
+        System.exit(exitStatus);
+    }
 }

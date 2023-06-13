@@ -15,6 +15,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class ResourcesLoader {
+    String resourcesError="Errore nella lettura delle Risorse   ";
+
     private static final ResourcesLoader instance = new ResourcesLoader();
     private ResourcesLoader() {}
     public static ResourcesLoader getInstance() {
@@ -25,7 +27,7 @@ public class ResourcesLoader {
             try{
                 font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream(path))).deriveFont(type,size);
             }catch (IOException | FontFormatException e){
-                System.exit(100);
+                ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 100);
             }
             return font;
     }
@@ -42,7 +44,7 @@ public class ResourcesLoader {
             image = new ImageIcon(logoS);
 
         }catch (NullPointerException e){
-            System.exit(101);
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 101);
         } return image;
     }
     public Image getImage(String name, int width, int height, boolean b){
@@ -53,37 +55,24 @@ public class ResourcesLoader {
             image=image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             else
                 image=image.getScaledInstance(width, height, Image.SCALE_FAST);
-        } catch (IOException  | IllegalArgumentException ex){ System.exit(102); }
+        } catch (IOException  | IllegalArgumentException e){
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 102); }
         return  image;
     }
     public Clip getAudioClip(String path){
         AudioInputStream audioIn;
-        Clip clip;
+        Clip clip=null;
         try {
             audioIn = AudioSystem.getAudioInputStream(getClass().getResourceAsStream(path));
             clip = AudioSystem.getClip();
             clip.open(audioIn);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            clip = null;
-            System.exit(103);
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 103);
+
         } return clip;
 
     }
-    public BufferedImage rotateImage(BufferedImage imageToRotate, double degrees) {
 
-        int widthOfImage = imageToRotate.getWidth();
-        int heightOfImage = imageToRotate.getHeight();
-        int typeOfImage = imageToRotate.getType();
-
-        BufferedImage newImageFromBuffer = new BufferedImage(widthOfImage, heightOfImage, typeOfImage);
-
-        Graphics2D graphics2D = newImageFromBuffer.createGraphics();
-
-        graphics2D.rotate(Math.toRadians(degrees), widthOfImage / 2, heightOfImage / 2);
-        graphics2D.drawImage(imageToRotate, null, 0, 0);
-
-        return newImageFromBuffer;
-    }
     public BufferedImage getBufferedImage(String s, int width, int height, boolean b) {
         BufferedImage image=null;
         BufferedImage dimg=null;
@@ -96,8 +85,8 @@ public class ResourcesLoader {
             g2d.dispose();
 
 
-        } catch (IOException  | IllegalArgumentException ex){
-            System.exit(102);
+        } catch (IOException  | IllegalArgumentException e){
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 104);
         }
         return  dimg;
     }
@@ -117,8 +106,14 @@ public class ResourcesLoader {
 
     public Cursor getCursor(String path, JPanel p1){
         Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Cursor cursor=null;
         Image image = ResourcesLoader.getInstance().getImage(path, 32, 32, false);
-        return toolkit.createCustomCursor(image , new Point(p1.getX(),  p1.getY()), "img");
+        try {
+            cursor=toolkit.createCustomCursor(image, new Point(p1.getX(), p1.getY()), "img");
+        }catch (IndexOutOfBoundsException | HeadlessException e){
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 105);
+        } return cursor;
+
     }
 
 

@@ -5,6 +5,7 @@ import ZombieApocalypse.View.GraphicPanel;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 public class PlayerController implements KeyListener, MouseMotionListener ,MouseListener {
@@ -14,6 +15,7 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
     private final Random randomVariable=new Random();
     private final int minTimeSoundZombie=300;
     private final int maxTimeSoundZombie=600;
+    //Gestione random del suono degli zombie
     private int randomZombie = randomVariable.nextInt(minTimeSoundZombie,maxTimeSoundZombie);
     Future<?> f1;
     public PlayerController(GraphicPanel panel) {
@@ -29,6 +31,10 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
         try{
             if(f1!=null)
                 f1.get();
+        }catch (CancellationException |ExecutionException | InterruptedException e){
+            System.out.println("Cancellazione, Interruzione o Errore dell'aggiornamento del GameLoop ->"+ e.getMessage());
+
+        }
             if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
                 Game.getInstance().update();
                 f1= ThreadPool.getExecutor().submit(()->panel.update());
@@ -54,9 +60,7 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
 
 
 
-        }catch (ExecutionException | InterruptedException e){
-
-        }}
+        }
     @Override
     public void keyPressed(KeyEvent e) {
         if(GameData.mancino) {
