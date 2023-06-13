@@ -166,7 +166,7 @@ public class ResultsPanel {
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
     }
-    public void setPause() {
+    public void showPause() {
         //schermata di pausa
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);

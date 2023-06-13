@@ -68,7 +68,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         if( e.getKeyCode()== VK_ESCAPE)
             if(!Game.getInstance().getPause()){
                 Game.getInstance().setPause(true);
-                ResultsPanel.getInstance().setPause();
+                ResultsPanel.getInstance().showPause();
             }
     }
 
