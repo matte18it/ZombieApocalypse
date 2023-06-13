@@ -39,7 +39,7 @@ public class SplashScreenModel {
 
             GameData.nick = myReader.nextLine();
             myReader.close();
-            try { if(getData("https://progettouid.altervista.org/ZombieApocalypse/getData.php?nickname=" + GameData.nick)) return true; } catch (IOException e) { showDialog(); }
+            try { if(getData("https://progettouid.altervista.org/ZombieApocalypse/getData.php?nickname=" + GameData.nick)); } catch (IOException e) { showDialog(); }
         }
 
     }
