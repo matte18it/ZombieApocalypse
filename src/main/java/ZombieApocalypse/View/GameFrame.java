@@ -50,8 +50,8 @@ public class GameFrame extends JPanel {
         frameGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //faccio un check del file 'player.txt' per effettuare il login automatico e avvio la splash screen
-        if(SplashScreenModel.checkFile())
-            launch();
+        SplashScreenModel.checkFile();
+        launch();
     }
 
     public static void launch() {
