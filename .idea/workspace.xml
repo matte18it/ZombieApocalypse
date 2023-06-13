@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="cambio armi pt 2">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bug Fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowBlu/Arrow1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowBlu/Arrow2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowBlu/Arrow3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowBlu/Arrow4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowBlu/Arrow5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowBlu/Arrow6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowRossa/Arrow1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowRossa/Arrow2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowRossa/Arrow3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowRossa/Arrow4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowRossa/Arrow5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowRossa/Arrow6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowVerde/Arrow1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowVerde/Arrow2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowVerde/Arrow3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowVerde/Arrow4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowVerde/Arrow5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowVerde/Arrow6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowViola/Arrow1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowViola/Arrow2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowViola/Arrow3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowViola/Arrow4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowViola/Arrow5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/Arrows/ArrowViola/Arrow6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletGrenade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,13 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00100" summary="Mappa Campagna 1">
-      <created>1686305294966</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1686305294966</updated>
     </task>
     <task id="LOCAL-00101" summary="Bug Fix">
       <created>1686316838346</created>
@@ -457,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686653555046</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="Bug Fix">
+      <created>1686662440311</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1686662440312</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -487,7 +463,6 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="Difficolta" />
     <MESSAGE value="Miglioramento Suoni" />
-    <MESSAGE value="Bug Fix" />
     <MESSAGE value="Punti" />
     <MESSAGE value="Commenti e bug fix" />
     <MESSAGE value="boss pt1" />
@@ -498,6 +473,7 @@
     <MESSAGE value="commit" />
     <MESSAGE value="cambio armi" />
     <MESSAGE value="cambio armi pt 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio armi pt 2" />
+    <MESSAGE value="Bug Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix" />
   </component>
 </project>
