@@ -1,35 +1,21 @@
 package ZombieApocalypse.Controller;
-import ZombieApocalypse.Loop.GameLoop;
-import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.*;
-import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.GraphicPanel;
-
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import static java.awt.event.KeyEvent.VK_ESCAPE;
-
-public class PlayerController implements KeyListener, MouseMotionListener, MouseListener {
-    //Gestisce i movimenti del player
-
+public class PlayerController implements KeyListener, MouseMotionListener ,MouseListener {
     private final GraphicPanel panel;
-    private ExecutorService executor = Executors.newSingleThreadExecutor();
-
+    private boolean lastRun=false;
+    private int countZombie = 0;
+    private final Random randomVariable=new Random();
+    private final int minTimeSoundZombie=300;
+    private final int maxTimeSoundZombie=600;
+    private int randomZombie = randomVariable.nextInt(minTimeSoundZombie,maxTimeSoundZombie);
+    Future<?> f1;
     public PlayerController(GraphicPanel panel) {
         this.panel = panel;
         panel.addMouseListener(new MouseAdapter() {
@@ -37,11 +23,40 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 //setto il cursore personalizzato
-                panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));
+                panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));}
+        });}
+    public void update(){
+        try{
+            if(f1!=null)
+                f1.get();
+            if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
+                Game.getInstance().update();
+                f1= ThreadPool.getExecutor().submit(()->panel.update());
+                if(lastRun)
+                    lastRun=false;
+                if(countZombie == randomZombie ){
+                    countZombie = 0;
+                    randomZombie=randomVariable.nextInt(minTimeSoundZombie, maxTimeSoundZombie);
+                    if(GameData.sound)
+                        PlayWav.getInstance().playZombie();
+                }
+                else
+                    countZombie++;
+            }if( Game.getInstance().getBackMenu() && !lastRun){
+                Game.getInstance().update();
+                f1= ThreadPool.getExecutor().submit(()->panel.update());
+                lastRun=true;
+                return;
             }
-        });
-    }
+            if(lastRun){
+                Game.getInstance().setBackMenu(false);
+            }
 
+
+
+        }catch (ExecutionException | InterruptedException e){
+
+        }}
     @Override
     public void keyPressed(KeyEvent e) {
         if(GameData.mancino) {
@@ -65,16 +80,12 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 case KeyEvent.VK_SPACE -> Game.getInstance().dropItem();
             }
         }
-        if( e.getKeyCode()== VK_ESCAPE)
+        if( e.getKeyCode()== KeyEvent.VK_ESCAPE)
             if(!Game.getInstance().getPause()){
                 Game.getInstance().setPause(true);
                 ResultsPanel.getInstance().showPause();
             }
     }
-
-    @Override
-    public void keyTyped(KeyEvent e) {}
-
     @Override
     public void keyReleased(KeyEvent e) {
         if(GameData.mancino) {
@@ -85,49 +96,10 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
                 Game.getInstance().stopMovement();
         }
     }
-    private int count=0;
-    private int countZombie = 0;
-    private int randomZombie = new Random().nextInt(300, 600);
-    private int cdd=0;
-    Future<?> f1;
-    private boolean firstRun=true;
-
-    public void update(){
-        try{
-        if(f1!=null)
-          f1.get();
-        if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
-            Game.getInstance().update();
-
-            f1= ThreadPool.getExecutor().submit(()->panel.update());
-
-
-            count=0;
-            if(countZombie == randomZombie ){
-                countZombie = 0;
-                if(GameData.sound)
-                    PlayWav.getInstance().playZombie();
-            }
-            else
-                countZombie++;
-        }if( Game.getInstance().getBackMenu() && count==0){
-                Game.getInstance().update();
-
-            f1= ThreadPool.getExecutor().submit(()->panel.update());
-
-            count++;
-            return;
-        }
-        if(count==1){
-            count=0;
-            Game.getInstance().setBackMenu(false);
-        }
 
 
 
-    }catch (ExecutionException | InterruptedException e){
 
-    }}
 
     @Override
     public void mouseDragged(MouseEvent e) {
@@ -146,6 +118,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         Game.getInstance().setLastMousePosition(e.getPoint());
 
     }
+
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -173,8 +146,10 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(MouseEvent e) {}
+    @Override
+    public void keyTyped(KeyEvent e) {}
 
-    }
+
 }
 
