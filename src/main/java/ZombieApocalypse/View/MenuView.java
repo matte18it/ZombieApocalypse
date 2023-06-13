@@ -1188,7 +1188,6 @@ public class MenuView extends JPanel implements Runnable{
         label.setBorder(new EmptyBorder(10, 10, 0, 0));
 
         JButton btnMenu;
-        JButton btnGo;
         if(GameData.lang.equals(GameData.Language.IT)) {
             btnMenu = new JButton("Conferma");
             label.setText("<html>Complimenti, ti trovi al primo posto della classifica!<br>Ti aspetta una sorpresa, controlla tra le skin! Continua a giocare per mantenere il primo posto!</html>");
