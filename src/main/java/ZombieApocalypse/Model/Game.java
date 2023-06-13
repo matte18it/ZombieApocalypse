@@ -215,7 +215,7 @@ public class Game {
     }
 
     public void setPistol() {
-        if(hasGrenade)
+        if(hasPistol)
             setKnife();
         else{
         hasGrenade=false;

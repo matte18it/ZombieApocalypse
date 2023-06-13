@@ -192,11 +192,10 @@ public class PlayWav {
     }
 
     public void playShotPistola(){
-        if(clipPistola == null)
-            clipPistola = ResourcesLoader.getInstance().getAudioClip("/Audio/ShotPistola.wav");
+        if(clipPistola==null)
+        clipPistola = ResourcesLoader.getInstance().getAudioClip("/Audio/ShotPistola.wav");
         else if(clipPistola.getFramePosition() != 0)
             clipPistola.setFramePosition(0);
-
         sound = (FloatControl) clipPistola.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipPistola.start();
