@@ -202,29 +202,38 @@ public class Game {
     }
 
     public void setShotgun() {
+        if(hasShotgun)
+            setKnife();
+        else {
          hasGrenade=false;
         hasPistol=false;
         hasKnife=false;
          hasShotgun=true;
-         shotgun.update(mousePoint);
+         shotgun.update(mousePoint);}
 
 
     }
 
     public void setPistol() {
+        if(hasGrenade)
+            setKnife();
+        else{
         hasGrenade=false;
         hasPistol=true;
         hasKnife=false;
         hasShotgun=false;
-        pistol.update(mousePoint);
+        pistol.update(mousePoint);}
     }
 
     public void setGrenade() {
+        if(hasGrenade)
+            setKnife();
+        else{
         hasGrenade=true;
         hasPistol=false;
         hasKnife=false;
         hasShotgun=false;
-        grenade.update(mousePoint);
+        grenade.update(mousePoint);}
     }
 
 
