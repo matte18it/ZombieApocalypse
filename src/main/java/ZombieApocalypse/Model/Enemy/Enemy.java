@@ -83,6 +83,7 @@ public  abstract class Enemy {
         hit=false;
     }
     public boolean stopAll=false;
+
     public boolean dying=false;
     Point gunPosition=new Point(0,0);
 

@@ -3,6 +3,7 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.CountPoint;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
@@ -27,6 +28,7 @@ public class TurretZombie extends Enemy{
         if(dying)
             return false;
         if (healt <= 0 ) {
+            CountPoint.getInstance().setPoint(Enemies.EnemiesType.TURRETZOMBIE);
             dying = true;
             int c = m.nextInt(4, 9);
             Items.getInstance().dropItem(x, y, Items.ItemType.values()[c]);

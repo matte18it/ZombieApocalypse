@@ -4,6 +4,7 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.CountPoint;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
@@ -28,6 +29,7 @@ public class BombBandit extends Enemy{
         if(dying)
             return false;
         if(healt<=0 ){
+            CountPoint.getInstance().setPoint(Enemies.EnemiesType.BOMBBANDIT);
             dying=true;
             int c=m.nextInt(4,9);
             Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
