@@ -1,6 +1,7 @@
 package ZombieApocalypse.Controller;
 
 import ZombieApocalypse.Model.LoginModel;
+import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.View.LoginView;
@@ -38,6 +39,8 @@ public class LoginController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 if(!view.isShow()){
                     view.setShow(true);
                     //Carattere per visualizzare la password
@@ -57,6 +60,8 @@ public class LoginController {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                if(GameData.sound)
+                    PlayWav.getInstance().playButtonSound();
                 try {
                     if((view.getNickname().getText().length() > 0) && (view.getPassword().getPassword().length > 0))
                         //Chiamata funzione
