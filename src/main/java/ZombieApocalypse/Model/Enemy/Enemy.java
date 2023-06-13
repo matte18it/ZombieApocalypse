@@ -46,6 +46,7 @@ public  abstract class Enemy {
     public int getHeight(){return height;}
     EnemyViewInterface view;
     public Enemies.EnemiesType type;
+    boolean die=false;
     Rectangle hitBox;
     public EnemyViewInterface getView(){
         return view;

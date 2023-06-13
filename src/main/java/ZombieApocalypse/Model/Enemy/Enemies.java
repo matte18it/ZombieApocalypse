@@ -191,6 +191,8 @@ public class Enemies {
                 }
             if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
+            if(b.type==EnemiesType.BOSS && b.dying)
+                enemyNumber--;
         }}
     }
     //Gestione dei suoni
