@@ -98,6 +98,10 @@ public class Game {
             }
             else
                 ResultsPanel.getInstance().showFinal();}
+        if(Game.getInstance().getPlayerLife() == 0){
+            Game.getInstance().setPause(false);
+            ResultsPanel.getInstance().showGameOver();
+        }
 
 
     }

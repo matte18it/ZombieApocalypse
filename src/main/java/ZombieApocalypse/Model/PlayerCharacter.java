@@ -114,10 +114,7 @@ public class PlayerCharacter  {
             if(health>0){
                 health--;
                 Game.getInstance().getMenuBar().removeHeart();
-                if(health == 0){
-                    Game.getInstance().setPause(false);
-                    ResultsPanel.getInstance().showGameOver();
-                }
+
             }
         }
     }
