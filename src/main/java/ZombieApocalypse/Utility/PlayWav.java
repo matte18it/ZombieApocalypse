@@ -9,7 +9,7 @@ public class PlayWav {
     private static FloatControl music;      //controllore utile per il volume
 
     //clip per i suoni
-    private static Clip clipZombie = null, clipAmmo = null, clipButton = null, clipGameOver = null;
+    private static Clip clipZombie = null, clipAmmo = null, clipButton = null, clipGameOver = null, walkRoad = null;
     private static Clip clipGranata = null, clipHurt = null, clipHurt1 = null, clipHurt2 = null, clipHurt3 = null;
     private static Clip clipKnife = null, clipMedikit = null, clipPotion = null, clipPump = null, clipRadio = null;
     private static Clip clipPistola = null, clipWak = null, clipWin = null, clipDeath = null, clipZombieHit = null;
@@ -89,11 +89,16 @@ public class PlayWav {
 
     public void playGrenadeSound(){
         clipGranata = ResourcesLoader.getInstance().getAudioClip("/Audio/Grenade.wav");
-
-
         sound = (FloatControl) clipGranata.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipGranata.start();
+    }
+
+    public void playWalkRoad(){
+        walkRoad = ResourcesLoader.getInstance().getAudioClip("/Audio/walkRoad.wav");
+        sound = (FloatControl) walkRoad.getControl(FloatControl.Type.MASTER_GAIN);
+        sound.setValue(GameData.soundVolume);
+        walkRoad.start();
     }
 
     public void playHurtSound(){
