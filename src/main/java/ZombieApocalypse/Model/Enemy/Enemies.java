@@ -157,6 +157,7 @@ public class Enemies {
                 }
             }
         } while (finalLevel){
+            enemyNumber++;
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
             if(checkSpawn(x, y, EnemiesType.BOSS)){

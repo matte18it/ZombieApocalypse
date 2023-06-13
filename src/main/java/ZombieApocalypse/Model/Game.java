@@ -80,8 +80,7 @@ public class Game {
 
 
     //Da fare nel Game Loop
-    public void update() {
-
+    public void update()  {
         if(character.isMoving())
             character.move();
         if(character.hit)

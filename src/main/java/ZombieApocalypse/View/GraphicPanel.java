@@ -23,6 +23,8 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
+import static java.lang.Thread.sleep;
+
 public class GraphicPanel extends JPanel {
     //Disegna il mondo
     private boolean firstLoad=true;
@@ -61,9 +63,7 @@ public class GraphicPanel extends JPanel {
         if(firstLoad){
             Items.getInstance().generateRandomItems();
             Enemies.getInstance().generateRandomEnemies(); firstLoad=false;}
-
         int r;
-
         super.paintComponent(g);
         for(int i = 0; i < world.getSizeX(); i++) {
             int x = i * Settings.CELL_SIZEX;

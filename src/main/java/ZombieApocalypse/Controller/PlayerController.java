@@ -98,7 +98,9 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
           f1.get();
         if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
             Game.getInstance().update();
+
             f1= ThreadPool.getExecutor().submit(()->panel.update());
+
 
             count=0;
             if(countZombie == randomZombie ){
@@ -109,8 +111,10 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
             else
                 countZombie++;
         }if( Game.getInstance().getBackMenu() && count==0){
-            Game.getInstance().update();
+                Game.getInstance().update();
+
             f1= ThreadPool.getExecutor().submit(()->panel.update());
+
             count++;
             return;
         }
