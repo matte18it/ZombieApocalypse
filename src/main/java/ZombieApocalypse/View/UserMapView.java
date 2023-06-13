@@ -221,6 +221,8 @@ public class UserMapView extends JPanel {
         }
         if(Settings.diff == Settings.Difficulty.EASY)
             btnEasy.setBorder(new LineBorder(Color.red));
+        else
+            btnEasy.setBorder(null);
         btnEasy.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/SendButton.png", 100, 50, false));
         btnEasy.setHorizontalTextPosition(JButton.CENTER);
         btnEasy.setVerticalTextPosition(JButton.CENTER);
@@ -238,6 +240,8 @@ public class UserMapView extends JPanel {
         panelSupport4.add(Box.createRigidArea(new Dimension(20, 10)), c4);
         if(Settings.diff == Settings.Difficulty.MEDIUM)
             btnMedium.setBorder(new LineBorder(Color.red));
+        else
+            btnMedium.setBorder(null);
         btnMedium.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/SendButton.png", 100, 50, false));
         btnMedium.setHorizontalTextPosition(JButton.CENTER);
         btnMedium.setVerticalTextPosition(JButton.CENTER);
@@ -255,6 +259,8 @@ public class UserMapView extends JPanel {
         panelSupport4.add(Box.createRigidArea(new Dimension(20, 10)), c4);
         if(Settings.diff == Settings.Difficulty.HARD)
             btnHard.setBorder(new LineBorder(Color.red));
+        else
+            btnHard.setBorder(null);
         btnHard.setIcon(ResourcesLoader.getInstance().getImageIcon("/EditorImage/SendButton.png", 100, 50, false));
         btnHard.setHorizontalTextPosition(JButton.CENTER);
         btnHard.setVerticalTextPosition(JButton.CENTER);

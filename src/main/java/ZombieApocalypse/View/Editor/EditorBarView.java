@@ -62,6 +62,7 @@ public class EditorBarView extends JPanel {
         controller = new EditorBarController(this, editorView, model);
         Page1();
         controller.addListener();
+        model.clearBorder();
     }
 
     private void initComponent() {
