@@ -16,10 +16,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -27,9 +25,8 @@ import java.util.concurrent.Executors;
 public class Enemies {
 
     public   void addSkinnyZombie(int x, int y) {
-        synchronized (enemies){
         this.enemies.add(new SkinnyZombie(x, y));}
-    }
+
 
 
     //Controllo della collisione con il player
@@ -52,9 +49,10 @@ public class Enemies {
         }}return true;
     }
     //Controllo della collisione con l'esplosione della granata (che è di forma rotonda)
-    public synchronized void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
+    public  void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
         Point p=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
+        synchronized (enemies){
         for (Enemy b : this.enemies) {
             enem.x = b.getX() + b.getCenterX();
             enem.y = b.getY() + b.getCenterY();
@@ -73,46 +71,48 @@ public class Enemies {
                 }
             }
 
-        }
+        }}
         }
 
     //Controllo della collisione con l'hitbox del coltello
 
-    public synchronized void checkHitBox(Rectangle hitBox, int damage) {
+    public  void checkHitBox(Rectangle hitBox, int damage) {
+        synchronized (enemies){
         for (Enemy b : this.enemies) {
             if (b.hitBox.intersects(hitBox)) {
                 hitSound(b);
                 b.gettingHit(damage);
             }
-        }
+        }}
     }
     //Controllo della collisione con i proiettili (deve restituire booleana per eliminare proiettili)
-    public synchronized boolean checkBulletHitBox(Rectangle hitBox, int damage) {
+    public  boolean checkBulletHitBox(Rectangle hitBox, int damage) {
+        synchronized (enemies){
         for (Enemy b : this.enemies) {
             if (b.hitBox.intersects(hitBox)) {
                 hitSound(b);
                 b.gettingHit(damage);
                 return true;
             }
-        }
+        }}
         return false;
     }
 
-    public synchronized void addFatZombie(int x, int y) {
+    public  void addFatZombie(int x, int y) {
         this.enemies.add(new FatZombie(x, y));
     }
 
-    public synchronized void addKidZombie(int x, int y) {
+    public  void addKidZombie(int x, int y) {
         this.enemies.add(new KidZombie(x, y));
     }
-    public synchronized void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
-    public synchronized void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
-    public synchronized void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
-    public synchronized void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
+    public  void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
+    public  void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
+    public  void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
+    public  void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
 
 
 
-    public synchronized boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
+    public  boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
         Rectangle hit=Game.getInstance().getPlayerCharacter().hitBox;
         if(hitBox.intersects(hit)){
             Game.getInstance().getPlayerCharacter().hit();
@@ -198,7 +198,7 @@ public class Enemies {
 
 
     public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};
-    private final ArrayList<Enemy> enemies=new ArrayList<>();
+    private final List<Enemy> enemies=new Vector<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
     public Enemies(){}
@@ -206,7 +206,7 @@ public class Enemies {
     public static ZombieApocalypse.Model.Enemy.Enemies getInstance(){return instance;}
 
 
-    public  ArrayList<Enemy> getEnemies(){return this.enemies;
+    public  List<Enemy> getEnemies(){return this.enemies;
     }
 
     public  void update(){
