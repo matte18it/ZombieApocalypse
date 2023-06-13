@@ -139,7 +139,7 @@ public class Enemies {
         int x,y;
         int c=0;
         int t;
-        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps;//1 ;
+        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps;
         while (c<enemyNumber ){
             t=m.nextInt(0, EnemiesType.values().length-2);
 
@@ -157,10 +157,10 @@ public class Enemies {
                 }
             }
         } while (finalLevel){
-            enemyNumber++;
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
             if(checkSpawn(x, y, EnemiesType.BOSS)){
+                enemyNumber++;
                 Enemies.getInstance().addBoss(x,y);
                 finalLevel=false;
             }
@@ -191,6 +191,7 @@ public class Enemies {
                 }
             if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
+
         }}
     }
     //Gestione dei suoni

@@ -39,8 +39,10 @@ int countRun =0;
             return true;
             }
 
-        if(countDeath>8)
-            return true;
+        if(countDeath>8){
+            return false;
+            }
+
 
 
         //Gestione delle Hit
