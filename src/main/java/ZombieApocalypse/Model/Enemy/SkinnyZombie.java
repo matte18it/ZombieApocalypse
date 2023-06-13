@@ -69,7 +69,7 @@ public class SkinnyZombie extends Enemy{
     }
 
     private void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+10, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Enemies.getInstance().isPlayer(x+10, y, type)){
             x=x+10;
             isMoving=true;
             hitBox.x=x;
@@ -77,7 +77,7 @@ public class SkinnyZombie extends Enemy{
     }
 
     private void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Enemies.getInstance().isPlayer(x-10, y,  type)){
             x=x-10;
             isMoving=true;
             hitBox.x=x;
@@ -85,7 +85,7 @@ public class SkinnyZombie extends Enemy{
     }
 
     private void moveDown() {
-        if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Enemies.getInstance().isPlayer(x, y + 10,  type)){
             y=y+10;
             isMoving=true;
             hitBox.y=y;
@@ -93,7 +93,7 @@ public class SkinnyZombie extends Enemy{
     }
 
     private void moveUp() {
-        if(Game.getInstance().getWorld().isWalkable(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x, y-10) && Enemies.getInstance().isPlayer(x, y-10, type)){
             y=y-10;
             isMoving=true;
             hitBox.y=y;

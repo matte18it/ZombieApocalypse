@@ -1,54 +1,62 @@
 package ZombieApocalypse.Model.Enemy;
-
-import ZombieApocalypse.Loop.TimeLoop;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.*;
-import ZombieApocalypse.View.GameFrame;
-
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.*;
 import java.util.List;
-import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class Enemies {
-
-    public   void addSkinnyZombie(int x, int y) {
-        this.enemies.add(new SkinnyZombie(x, y));}
-
-
-
+    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY}
+    private final List<Enemy> enemies=new Vector<>();
+    private static final Enemies instance=new Enemies();
+    public Enemies(){}
+    Random m=new Random();
+    public int enemyNumber=0;
+    public static Enemies getInstance(){return instance;}
+    public  List<Enemy> getEnemies(){return this.enemies;}
+    public int getWight(EnemiesType type) {
+        switch (type){
+            case FATZOMBIE -> {return Settings.CELL_SIZEX+(Settings.CELL_SIZEX/2);}
+            case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {return Settings.CELL_SIZEX;}
+            case BOSS -> {return Settings.CELL_SIZEX*4;}
+            case KIDZOMBIE -> {return (Settings.CELL_SIZEX/2)+10;}
+        }
+        return 0;
+    }
+    public int getHeight(EnemiesType type) {
+        switch (type){
+            case FATZOMBIE -> {return Settings.CELL_SIZEY+(Settings.CELL_SIZEY/2);}
+            case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {return Settings.CELL_SIZEY;}
+            case BOSS -> {return Settings.CELL_SIZEY*4;}
+            case KIDZOMBIE -> {return (Settings.CELL_SIZEY/2)+10;}
+        }
+        return 0;
+    }
     //Controllo della collisione con il player
     public  boolean checkCollision(int x, int y, int ceX, int ceY) {
-
         Point player=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
         synchronized (enemies){
-        Iterator var1=this.enemies.iterator();
-        while(var1.hasNext()){
-            Enemy b=(Enemy) var1.next();
-            enem.x=b.getX()+ b.centerX;
-            enem.y=b.getY()+b.centerY;
-            switch (b.type){
-                case BOSS -> {if(player.distance(enem)<80) return false;}
-                case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {if(player.distance(enem)<16) return false;}
-                case FATZOMBIE -> {if(player.distance(enem)<24) return false;}
-                case KIDZOMBIE -> {if(player.distance(enem)<13) return false;}
+            for (Enemy b : this.enemies) {
+                enem.x = b.getX() + b.centerX;
+                enem.y = b.getY() + b.centerY;
+                switch (b.type) {
+                    case BOSS -> {
+                        if (player.distance(enem) < 70) return false;
+                    }
+                    case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {
+                        if (player.distance(enem) < 16) return false;
+                    }
+                    case FATZOMBIE -> {
+                        if (player.distance(enem) < 24) return false;
+                    }
+                    case KIDZOMBIE -> {
+                        if (player.distance(enem) < 13) return false;
+                    }
+                }
             }
-        }}return true;
+        }return true;
     }
-    //Controllo della collisione con l'esplosione della granata (che è di forma rotonda)
+    //Controllo della collisione con l'esplosione della granata (in questo caso si tiene conto della distanza)
     public  void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
         Point p=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
@@ -70,12 +78,21 @@ public class Enemies {
                     if (p.distance(enem) < 15){ b.gettingHit(damage); hitSound(b);}
                 }
             }
-
         }}
         }
+//Controllo della distanza dal player
+    public boolean isPlayer(int x, int y, Enemies.EnemiesType enemiesType) {
+        Point enemy=new Point(x+(getWight(enemiesType)/2), y+(getHeight(enemiesType)/2));
+        Point player=Game.getInstance().getPlayerPosition();
+        switch (enemiesType){
+            default -> {if(enemy.distance(player)<20) return false;}
+            case BOSS -> {if(enemy.distance(player)<70) return false;}
 
-    //Controllo della collisione con l'hitbox del coltello
+        }
+        return true;
+    }
 
+    //Controllo della collisione con un hitbox, che attiva il danno del nemico
     public  void checkHitBox(Rectangle hitBox, int damage) {
         synchronized (enemies){
         for (Enemy b : this.enemies) {
@@ -97,32 +114,22 @@ public class Enemies {
         }}
         return false;
     }
-
-    public  void addFatZombie(int x, int y) {
-        this.enemies.add(new FatZombie(x, y));
-    }
-
-    public  void addKidZombie(int x, int y) {
-        this.enemies.add(new KidZombie(x, y));
-    }
+    public   void addSkinnyZombie(int x, int y) {this.enemies.add(new SkinnyZombie(x, y));}
+    public  void addFatZombie(int x, int y) {this.enemies.add(new FatZombie(x, y));}
+    public  void addKidZombie(int x, int y) {this.enemies.add(new KidZombie(x, y));}
     public  void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
     public  void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
     public  void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
     public  void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
-
-
-
-    public  boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
+    //Controlla l'hitBox con il proiettile sparato dal nemico
+    public  boolean checkBulletHitBoxPlayer(Rectangle hitBox) {
         Rectangle hit=Game.getInstance().getPlayerCharacter().hitBox;
         if(hitBox.intersects(hit)){
             Game.getInstance().getPlayerCharacter().hit();
             return true;
         } return false;
-
     }
-    Random m=new Random();
-    public int enemyNumber=0;
-
+    //Spawn dei nemici
     public void generateRandomEnemies() {
         switch (Settings.diff){
             case EASY -> enemyNumber=m.nextInt(5,15);
@@ -132,8 +139,7 @@ public class Enemies {
         int x,y;
         int c=0;
         int t;
-        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps ;
-
+        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps;//1 ;
         while (c<enemyNumber ){
             t=m.nextInt(0, EnemiesType.values().length-2);
 
@@ -150,7 +156,6 @@ public class Enemies {
                     case 5->Enemies.getInstance().addBombBandit(x,y);
                 }
             }
-
         } while (finalLevel){
             x=m.nextInt(0, Settings.WINDOW_SIZEX);
             y=m.nextInt(0, Settings.WINDOW_SIZEY);
@@ -158,10 +163,8 @@ public class Enemies {
                 Enemies.getInstance().addBoss(x,y);
                 finalLevel=false;
             }
-
         }
     }
-
     private boolean checkSpawn(int x, int y, EnemiesType enem) {
         boolean distanzaDalPlayer=Game.getInstance().getWorld().isSpawnable(x+(getWight(enem)/2),y+(getHeight(enem)/2));
         if(distanzaDalPlayer){
@@ -175,40 +178,6 @@ public class Enemies {
         }else
             return false;
         }
-
-    public int getWight(EnemiesType type) {
-        switch (type){
-            case FATZOMBIE -> {return Settings.CELL_SIZEX+(Settings.CELL_SIZEX/2);}
-            case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {return Settings.CELL_SIZEX;}
-            case BOSS -> {return Settings.CELL_SIZEX*4;}
-            case KIDZOMBIE -> {return (Settings.CELL_SIZEX/2)+10;}
-        }
-        return 0;
-    }
-
-    public int getHeight(EnemiesType type) {
-        switch (type){
-            case FATZOMBIE -> {return Settings.CELL_SIZEY+(Settings.CELL_SIZEY/2);}
-            case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {return Settings.CELL_SIZEY;}
-            case BOSS -> {return Settings.CELL_SIZEY*4;}
-            case KIDZOMBIE -> {return (Settings.CELL_SIZEY/2)+10;}
-        }
-        return 0;
-    }
-
-
-    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};
-    private final List<Enemy> enemies=new Vector<>();
-    private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
-
-    public Enemies(){}
-
-    public static ZombieApocalypse.Model.Enemy.Enemies getInstance(){return instance;}
-
-
-    public  List<Enemy> getEnemies(){return this.enemies;
-    }
-
     public  void update(){
         synchronized (enemies){
         Iterator<Enemy> e=enemies.iterator();
@@ -233,8 +202,7 @@ public class Enemies {
                 b.updateGunPosition();
         }}
     }
-
-
+    //Gestione dei suoni
     private void hitSound(Enemy b) {
         if(b.type.equals(EnemiesType.FATZOMBIE) || b.type.equals(EnemiesType.TURRETZOMBIE) || b.type.equals(EnemiesType.BOSS) || b.type.equals(EnemiesType.KIDZOMBIE) || b.type.equals(EnemiesType.SKINNYZOMBIE)){
             if(GameData.sound)
@@ -249,4 +217,5 @@ public class Enemies {
                 PlayWav.getInstance().playHurt3Sound();
         }
     }
+
 }

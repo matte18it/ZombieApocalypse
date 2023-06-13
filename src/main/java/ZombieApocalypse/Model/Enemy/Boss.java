@@ -50,7 +50,6 @@ int countRun =0;
             else
                 stopHit();
         }
-int i;
 
 
 
@@ -95,7 +94,6 @@ int i;
 
 
 
-
         if(p.distance(turret)>=300 && !run ){
 
             if(turret.y>p.y+50) {
@@ -119,7 +117,7 @@ int i;
 
 
 
-        }else if((p.distance(turret)>=100 || (turret.y>=p.y+-50 && turret.y<=p.y+50))&& !run){
+        }else if((p.distance(turret)>=80 || (turret.y>=p.y+-50 && turret.y<=p.y+50))&& !run){
             if(attack1)
                 stopAttack1();
             if(turret.y>p.y )
@@ -134,7 +132,7 @@ int i;
                 dir= Settings.movementDirection.UP;
 
 
-        }else if(p.distance(turret)<100){
+        }if(p.distance(turret)<80){
             if(run){
                 run=false;
                 countRun=0;
@@ -180,7 +178,7 @@ int i;
 
 
     private void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+(wight/2), y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x+wight+15, y) && Enemies.getInstance().isPlayer(x, y, type)){
             if(!run)
                 x=x+4;
             else
@@ -206,7 +204,7 @@ int i;
 
 
     private void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-(wight/2), y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x-15, y) && Enemies.getInstance().isPlayer(x , y,  type)){
             if(!run)
                 x=x-4;
             else
@@ -217,7 +215,7 @@ int i;
     }
 
     private void moveDown() {
-        if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x,y+height+15) && Enemies.getInstance().isPlayer(x, y ,  type)){
             if(!run)
                 y=y+4;
             else
@@ -228,7 +226,7 @@ int i;
     }
 
     private void moveUp() {
-        if(Game.getInstance().getWorld().isWalkable(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x, y-15) && Enemies.getInstance().isPlayer(x, y ,  type)){
             if(!run)
                 y=y-4;
             else

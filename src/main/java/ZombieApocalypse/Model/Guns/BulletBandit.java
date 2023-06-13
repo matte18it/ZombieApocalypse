@@ -21,7 +21,7 @@ public class BulletBandit extends Bullet{
             }
 
         if(!ending) {
-            if(Enemies.getInstance().checkBulletHitBoxPlayer(hitBox, damage)){
+            if(Enemies.getInstance().checkBulletHitBoxPlayer(hitBox)){
                 ending=true;
                 numFrame=0;
             }
