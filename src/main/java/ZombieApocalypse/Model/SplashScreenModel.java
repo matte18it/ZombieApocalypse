@@ -27,7 +27,7 @@ public class SplashScreenModel {
         this.view = view;
     }
 
-    public static boolean checkFile() {
+    public static void checkFile() {
         //qua faccio un check del file player.txt. Infatti se esiste faccio login automatico, sennò vado al login
         File file = new File("player.txt");
         Scanner myReader = null;
@@ -41,7 +41,7 @@ public class SplashScreenModel {
             myReader.close();
             try { if(getData("https://progettouid.altervista.org/ZombieApocalypse/getData.php?nickname=" + GameData.nick)) return true; } catch (IOException e) { showDialog(); }
         }
-        return false;
+
     }
 
     private static boolean getData(String path) throws  IOException{
