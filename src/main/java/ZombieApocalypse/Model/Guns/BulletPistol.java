@@ -10,7 +10,7 @@ public class BulletPistol extends Bullet{
         super(x,y,dimension, BulletType.PISTOL);
 
         totalFrame=30;
-        damage=5;
+        damage=2;
         switch (Settings.diff){
             case EASY -> damage=damage*2;
             case HARD -> damage=damage/2;

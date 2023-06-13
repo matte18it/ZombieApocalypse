@@ -15,7 +15,7 @@ public class Boss extends Enemy{
         super(x, y);
 
         type= Enemies.EnemiesType.BOSS;
-        healt=50;
+        healt=150;
 
         super.setSize();
     }
@@ -53,20 +53,51 @@ int countRun =0;
 int i;
 
 
- //Comando per sparare Attacco1:
-    //    attack1();
+
 
         Point p = Game.getInstance().getPlayerPosition();
         Point turret = new Point(x + centerX, y + centerY);
         int h;
+        h=m.nextInt(0,150);
+        if(h==0 && countRun==0 && p.distance(turret)>=200) {
+            run = true;
+            if(attack1)
+                stopAttack1();
+            if(attack2)
+                stopAttack2();
+            isMoving=true;
+                countRun++;
+                if(p.y>=y && p.y<=y+height && p.x<turret.x)
+                    moveLeft();
+                if(p.y>=y && p.y<=y+height && p.x>=turret.x)
+                    moveRight();
+                if(p.x>=x && p.x<=x+height && p.y>=turret.y)
+                    moveDown();
+                if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+                    moveUp();
+        }
+        if(countRun>0 && countRun<100){
+            countRun++;
+            switch (dir){
+                case RIGHT -> moveRight();
+                case LEFT -> moveLeft();
+                case DOWN -> moveDown();
+                case UP -> moveUp();
+            }
+        }
+        if(countRun==100){
+            countRun=0;
+            isMoving=false;
+            run=false;
+        }
+
 
 
 
 
 
         if(p.distance(turret)>=300 && !run ){
-            h=m.nextInt(0,1000000000);
-            if(h!=0 && !run){
+
             if(turret.y>p.y+50) {
                 moveUp();
                 stopAttack1();
@@ -80,43 +111,34 @@ int i;
                     dir= Settings.movementDirection.RIGHT;
                 isMoving=false;
 
-                attack1();}}else {
-                run=true;
-                if(attack1)
-                    stopAttack1();
-                if(attack2)
-                    stopAttack2();
-                isMoving=true;
-                if(countRun==0) {
-                    countRun++;
-                    if(p.y>=y && p.y<=y+height && p.x<turret.x)
-                        moveLeft();
-                    if(p.y>=y && p.y<=y+height && p.x>=turret.x)
-                        moveRight();
-                    if(p.x>=x && p.x<=x+height && p.y>=turret.y)
-                        moveDown();
-                    if(p.x>=x && p.x<=x+wight && p.y<turret.y)
-                        moveUp();
-                }
-
-            }
+                attack1();}
 
 
 
 
 
-        }else if(p.distance(turret)>=100 && !run){
+
+
+        }else if((p.distance(turret)>=100 || (turret.y>=p.y+-50 && turret.y<=p.y+50))&& !run){
             if(attack1)
                 stopAttack1();
-            if(p.y>=y && p.y<=y+height && p.x<turret.x)
-                moveLeft();
-            else if(p.y>=y && p.y<=y+height && p.x>=turret.x)
-                moveRight();
-            else if(p.x>=x && p.x<=x+height && p.y>=turret.y)
-                moveDown();
-            else if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+            if(turret.y>p.y )
                 moveUp();
-        }else if(!run){
+            else
+                moveDown();
+            if(turret.x>p.x)
+                moveLeft();
+            else
+                moveRight();
+            if(turret.y>=p.y+-50 && turret.y<=p.y+50)
+                dir= Settings.movementDirection.UP;
+
+
+        }else if(p.distance(turret)<100){
+            if(run){
+                run=false;
+                countRun=0;
+            }
             if(isMoving)
                 isMoving=false;
             attack2();}
@@ -138,20 +160,7 @@ int i;
     if(countAttack==9)
         stopAttack2();}
 
-        if(countRun>0 && countRun<100){
-            countRun++;
-            switch (dir){
-                case RIGHT -> moveRight();
-                case LEFT -> moveLeft();
-                case DOWN -> moveDown();
-                case UP -> moveUp();
-            }
-        }
-        if(countRun==100){
-            countRun=0;
-            isMoving=false;
-            run=false;
-        }
+
 
 
 
@@ -171,11 +180,11 @@ int i;
 
 
     private void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+20, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Game.getInstance().getWorld().isPlayer(x+(wight/2), y, centerX, centerY)){
             if(!run)
-                x=x+5;
+                x=x+4;
             else
-                x=x+10;
+                x=x+15;
             hitBox.x=x;
             isMoving=true;
             dir=Settings.movementDirection.RIGHT;} else  isMoving=false;
@@ -197,11 +206,11 @@ int i;
 
 
     private void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-10, y, centerX, centerY)){
+        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Game.getInstance().getWorld().isPlayer(x-(wight/2), y, centerX, centerY)){
             if(!run)
-                x=x-5;
+                x=x-4;
             else
-                x=x-10;
+                x=x-15;
             hitBox.x=x;
             isMoving=true;
             dir=Settings.movementDirection.LEFT;} else  isMoving=false;
@@ -210,9 +219,9 @@ int i;
     private void moveDown() {
         if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Game.getInstance().getWorld().isPlayer(x, y+10, centerX, centerY)){
             if(!run)
-                y=y+5;
+                y=y+4;
             else
-                y=y+10;
+                y=y+15;
             hitBox.y=y;
             isMoving=true;
             dir=Settings.movementDirection.DOWN;} else  isMoving=false;
@@ -221,9 +230,9 @@ int i;
     private void moveUp() {
         if(Game.getInstance().getWorld().isWalkable(x, y-10) && Game.getInstance().getWorld().isPlayer(x, y-10, centerX, centerY)){
             if(!run)
-                y=y-5;
+                y=y-4;
             else
-                y=y-10;
+                y=y-15;
             hitBox.y=y;
             isMoving=true;
         dir=Settings.movementDirection.UP;} else  isMoving=false;

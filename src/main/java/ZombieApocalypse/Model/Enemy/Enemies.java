@@ -42,7 +42,7 @@ public class Enemies {
             enem.x=b.getX()+ b.centerX;
             enem.y=b.getY()+b.centerY;
             switch (b.type){
-                case BOSS -> {if(player.distance(enem)<64) return false;}
+                case BOSS -> {if(player.distance(enem)<80) return false;}
                 case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {if(player.distance(enem)<16) return false;}
                 case FATZOMBIE -> {if(player.distance(enem)<24) return false;}
                 case KIDZOMBIE -> {if(player.distance(enem)<13) return false;}
@@ -130,7 +130,7 @@ public class Enemies {
         int x,y;
         int c=0;
         int t;
-        boolean finalLevel= Settings.campainMapIndex == 1;//Settings.campainMaps ;
+        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps ;
 
         while (c<enemyNumber ){
             t=m.nextInt(0, EnemiesType.values().length-2);
@@ -196,7 +196,7 @@ public class Enemies {
 
 
     public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};
-    private final ArrayList<Enemy> enemies=new ArrayList<>();
+    private final ConcurrentLinkedDeque<Enemy> enemies=new ConcurrentLinkedDeque<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
     public Enemies(){}
@@ -204,7 +204,7 @@ public class Enemies {
     public static ZombieApocalypse.Model.Enemy.Enemies getInstance(){return instance;}
 
 
-    public  ArrayList<Enemy> getEnemies(){return this.enemies;
+    public  ConcurrentLinkedDeque<Enemy> getEnemies(){return this.enemies;
     }
 
     public void update(){
