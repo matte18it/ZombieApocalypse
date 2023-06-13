@@ -88,10 +88,8 @@ public class PlayWav {
     }
 
     public void playGrenadeSound(){
-        if(clipGranata == null)
-            clipGranata = ResourcesLoader.getInstance().getAudioClip("/Audio/Grenade.wav");
-        else if(clipGranata.getFramePosition() != 0)
-            clipGranata.setFramePosition(0);
+        clipGranata = ResourcesLoader.getInstance().getAudioClip("/Audio/Grenade.wav");
+
 
         sound = (FloatControl) clipGranata.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
