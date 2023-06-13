@@ -1,6 +1,5 @@
 package ZombieApocalypse.View;
 
-import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Game;
@@ -10,22 +9,18 @@ import ZombieApocalypse.Model.Items.Item;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
-import ZombieApocalypse.Utility.ResultsPanel;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.Utility.ThreadPool;
-import ZombieApocalypse.View.Enemy.BossView;
 import ZombieApocalypse.View.Gun.*;
 import ZombieApocalypse.View.Player.CharacterView;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 import static java.lang.Thread.sleep;
 
-public class GraphicPanel extends JPanel {
+public class GraphicPanel extends JPanel implements Runnable {
     //Disegna il mondo
     private boolean firstLoad=true;
     private final CharacterView characterView = new CharacterView();
@@ -132,7 +127,7 @@ public class GraphicPanel extends JPanel {
 
         synchronized (Bullets.getInstance().getBullets()){
         for(Bullet b: Bullets.getInstance().getBullets()){
-            b.getView().loadUpdate();
+            b.getView().update();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
         }}
 
@@ -161,7 +156,7 @@ public class GraphicPanel extends JPanel {
 
 
     }
-    public void update() {
+    public void run() {
 
         characterView.getUpdate();
         //Sposto l'arma dove è il character senza girarla
@@ -178,8 +173,9 @@ public class GraphicPanel extends JPanel {
         Bullets.getInstance().update();
         Items.getInstance().update();
         Enemies.getInstance().update();
+        Thread t1=new Thread(this::repaint);
+        t1.start();
 
-        ThreadPool.getExecutor().submit(()->repaint());
     }
 
 

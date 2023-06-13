@@ -27,7 +27,7 @@ public class BulletShotgun extends Bullet{
         if(Game.getInstance().getBackMenu()){
             ending=true;
             numFrame=2;
-            getView().loadUpdate();
+            getView().update();
             return true;
             }
 

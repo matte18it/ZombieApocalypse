@@ -35,7 +35,7 @@ public class BossView implements EnemyViewInterface{
 
 
     private Image currentImage;
-    private final Future<Image>  emptyImage;
+    private final ThreadPool  emptyImage;
     Random m=new Random();
     Enemy enemyModel;
     public BossView(Enemy enemy) {
@@ -59,7 +59,7 @@ public class BossView implements EnemyViewInterface{
         attackLeft2=ThreadPool.executeCharacterAnimation(new CharacterAnimation(g+"/Attack2/Attack2Left", 6));
         deathLeft=ThreadPool.executeCharacterAnimation(new CharacterAnimation(g+"/Death/DeathLeft", 5));
         deathRight=ThreadPool.executeCharacterAnimation(new CharacterAnimation(g+"/Death/DeathRight", 5));
-        emptyImage= ThreadPool.getExecutor().submit(()->ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true));
+        emptyImage= new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true));
         try {
             currentImage= idleRight.get().getDefaultImage();
         }catch (ExecutionException| InterruptedException e){

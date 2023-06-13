@@ -5,11 +5,11 @@ import ZombieApocalypse.View.GraphicPanel;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
+
 public class PlayerController implements KeyListener, MouseMotionListener ,MouseListener {
     private final GraphicPanel panel;
+    //Run in più per aggiornare il panel al ritorno nel menu
     private boolean lastRun=false;
     private int countZombie = 0;
     private final Random randomVariable=new Random();
@@ -17,9 +17,10 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
     private final int maxTimeSoundZombie=600;
     //Gestione random del suono degli zombie
     private int randomZombie = randomVariable.nextInt(minTimeSoundZombie,maxTimeSoundZombie);
-    Future<?> f1;
+    Thread t1;
     public PlayerController(GraphicPanel panel) {
         this.panel = panel;
+        t1=new Thread(panel);
         panel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -29,15 +30,15 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
         });}
     public void update(){
         try{
-            if(f1!=null)
-                f1.get();
-        }catch (CancellationException |ExecutionException | InterruptedException e){
-            System.out.println("Cancellazione, Interruzione o Errore dell'aggiornamento del GameLoop ->"+ e.getMessage());
-
+            t1.join();
+        }catch (InterruptedException e){
+            ResultsPanel.getInstance().showError("Errore nel aggiornamento della grafica  ", 80, e);
         }
             if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
                 Game.getInstance().update();
-                f1= ThreadPool.getExecutor().submit(()->panel.update());
+                //lancio dell'update del GraphicPanel con un thread
+                t1=new Thread(panel);
+                t1.start();
                 if(lastRun)
                     lastRun=false;
                 if(countZombie == randomZombie ){
@@ -48,9 +49,11 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
                 }
                 else
                     countZombie++;
+                //Gestione del ritorno al menù
             }if( Game.getInstance().getBackMenu() && !lastRun){
                 Game.getInstance().update();
-                f1= ThreadPool.getExecutor().submit(()->panel.update());
+                t1=new Thread(panel);
+                t1.start();
                 lastRun=true;
                 return;
             }

@@ -9,35 +9,19 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class PistolView {
-    private final Future<GunAnimation> gunAnimation;
+    private final GunAnimation gunAnimation=new GunAnimation("Pistola",4, GunAnimation.GunType.PISTOL);
     public Image currentImage;
 
 
     public PistolView() {
-        gunAnimation= ThreadPool.executeGunAnimation(new GunAnimation("Pistola",4, GunAnimation.GunType.PISTOL));
 
-        try {
-            currentImage=gunAnimation.get().getDefaultImage();
-        }catch (ExecutionException | InterruptedException e){
-            e.printStackTrace();
-            System.exit(207);
-        }
+        currentImage=gunAnimation.getDefaultImage();
     }
 
     public void update(Point point) {
 
         Game.getInstance().getPistolModel().update(point);
-        try {
-            currentImage=gunAnimation.get().update(Game.getInstance().getPistolModel().angle);
-
-        }catch (ExecutionException | InterruptedException e){
-            e.printStackTrace();
-            System.exit(207);
-        }
-
-
-
-
+            currentImage=gunAnimation.update(Game.getInstance().getPistolModel().angle);
     }
     public Image getCurrentImage() {
         return currentImage;

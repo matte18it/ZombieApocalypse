@@ -2,15 +2,13 @@ package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Guns.Bullet;
 
-import java.util.concurrent.ExecutionException;
-
 public class BulletZombieView extends BulletView{
     public BulletZombieView(Bullet b) {
         super(b);
     }
 
 
-    public void update() throws ExecutionException, InterruptedException{
+    public void update() {
         if(bulletModel.menu){
             currentImage=emptyImage.get();
             return;

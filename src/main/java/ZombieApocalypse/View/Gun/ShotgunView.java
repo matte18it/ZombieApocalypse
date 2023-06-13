@@ -9,19 +9,13 @@ import java.util.concurrent.Future;
 
 
 public class ShotgunView {
-        private final Future<GunAnimation> gunAnimation;
+        private final GunAnimation gunAnimation= new GunAnimation("Fucile",4, GunAnimation.GunType.SHOTGUN);
         public Image currentImage;
 
 
         public ShotgunView() {
-            gunAnimation= ThreadPool.executeGunAnimation(new GunAnimation("Fucile",4, GunAnimation.GunType.SHOTGUN));
+                currentImage=gunAnimation.getDefaultImage();
 
-            try {
-                currentImage=gunAnimation.get().getDefaultImage();
-            }catch (ExecutionException | InterruptedException e){
-                e.printStackTrace();
-                System.exit(207);
-            }
         }
 
         public void update(Point point) {
@@ -29,13 +23,9 @@ public class ShotgunView {
             Game.getInstance().getShotgunModel().update(point);
 
             //Aggiorno immagine
-            try {
-                currentImage=gunAnimation.get().update(Game.getInstance().getShotgunModel().angle);
+                currentImage=gunAnimation.update(Game.getInstance().getShotgunModel().angle);
 
-            }catch (ExecutionException | InterruptedException e){
-                e.printStackTrace();
-                System.exit(207);
-            }
+
 
 
         }

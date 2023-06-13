@@ -2,8 +2,6 @@ package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Guns.Bullet;
 
-import java.util.concurrent.ExecutionException;
-
 public class BulletBossView extends BulletView{
     private final int rightIndex=0;
     private final int leftIndex=2;
@@ -18,7 +16,7 @@ public class BulletBossView extends BulletView{
     int count=0;
 
 
-    public void update() throws ExecutionException, InterruptedException {
+    public void update() {
 
         if(bulletModel.menu){
             currentImage=emptyImage.get();

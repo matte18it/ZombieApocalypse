@@ -27,7 +27,7 @@ public class ResourcesLoader {
             try{
                 font = Font.createFont(Font.TRUETYPE_FONT, new BufferedInputStream(getClass().getResourceAsStream(path))).deriveFont(type,size);
             }catch (IOException | FontFormatException e){
-                ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 100);
+                ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 100, e);
             }
             return font;
     }
@@ -44,7 +44,7 @@ public class ResourcesLoader {
             image = new ImageIcon(logoS);
 
         }catch (NullPointerException e){
-            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 101);
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 101, e);
         } return image;
     }
     public Image getImage(String name, int width, int height, boolean b){
@@ -56,7 +56,7 @@ public class ResourcesLoader {
             else
                 image=image.getScaledInstance(width, height, Image.SCALE_FAST);
         } catch (IOException  | IllegalArgumentException e){
-            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 102); }
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 102, e); }
         return  image;
     }
     public Clip getAudioClip(String path){
@@ -67,7 +67,7 @@ public class ResourcesLoader {
             clip = AudioSystem.getClip();
             clip.open(audioIn);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 103);
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 103, e);
 
         } return clip;
 
@@ -86,7 +86,7 @@ public class ResourcesLoader {
 
 
         } catch (IOException  | IllegalArgumentException e){
-            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 104);
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 104, e);
         }
         return  dimg;
     }
@@ -111,7 +111,7 @@ public class ResourcesLoader {
         try {
             cursor=toolkit.createCustomCursor(image, new Point(p1.getX(), p1.getY()), "img");
         }catch (IndexOutOfBoundsException | HeadlessException e){
-            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 105);
+            ResultsPanel.getInstance().showError(resourcesError+ e.getMessage(), 105, e);
         } return cursor;
 
     }
