@@ -99,6 +99,7 @@ public class PlayerController implements KeyListener, MouseMotionListener, Mouse
         if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
             Game.getInstance().update();
             f1= ThreadPool.getExecutor().submit(()->panel.update());
+
             count=0;
             if(countZombie == randomZombie ){
                 countZombie = 0;

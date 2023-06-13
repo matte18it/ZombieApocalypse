@@ -10,6 +10,7 @@ import ZombieApocalypse.Model.Items.Item;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
+import ZombieApocalypse.Utility.ResultsPanel;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.Utility.ThreadPool;
 import ZombieApocalypse.View.Enemy.BossView;
@@ -177,6 +178,7 @@ Random m=new Random();
         Bullets.getInstance().update();
         Items.getInstance().update();
         Enemies.getInstance().update();
+
 
         repaint();
     }

@@ -3,6 +3,7 @@ package ZombieApocalypse.Model;
 import ZombieApocalypse.Model.Enemy.Enemies;
 import ZombieApocalypse.Model.Guns.*;
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.ResultsPanel;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
@@ -87,6 +88,17 @@ public class Game {
             character.addHit();
         if(character.speedUp)
             character.addSpeed();
+        if(Enemies.getInstance().enemyNumber == 0 && !Game.getInstance().getBackMenu()){
+            Game.getInstance().setPause(true);
+            if(!Settings.isEditor){
+                if(Settings.nextCampaignMap())
+                    ResultsPanel.getInstance().showContinue();
+                else
+                    ResultsPanel.getInstance().showFinal();
+            }
+            else
+                ResultsPanel.getInstance().showFinal();}
+
 
     }
 

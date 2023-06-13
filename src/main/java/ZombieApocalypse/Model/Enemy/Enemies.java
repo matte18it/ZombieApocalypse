@@ -10,7 +10,7 @@ public class Enemies {
     private static final Enemies instance=new Enemies();
     public Enemies(){}
     Random m=new Random();
-    public int enemyNumber=0;
+    public int enemyNumber=-1;
     public static Enemies getInstance(){return instance;}
     public  List<Enemy> getEnemies(){return this.enemies;}
     public int getWight(EnemiesType type) {
@@ -186,18 +186,8 @@ public class Enemies {
             if(!b.update()){
                 e.remove();
                 enemyNumber--;
-                if(enemyNumber == 0 && !Game.getInstance().getBackMenu()){
-                    Game.getInstance().setPause(true);
-                    if(!Settings.isEditor){
-                        if(Settings.nextCampaignMap())
-                            ResultsPanel.getInstance().showContinue();
-                        else
-                            ResultsPanel.getInstance().showFinal();
-                    }
-                    else
-                        ResultsPanel.getInstance().showFinal();
+
                 }
-            }
             if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
         }}
