@@ -15,10 +15,10 @@ public class BulletGrenade extends Bullet{
         velocityY=15;
         dir=d;
         numFrame=0;
+        damage=12;
         switch (Settings.diff){
-            case EASY -> damage=15;
-            case MEDIUM -> damage=7;
-            case HARD -> damage=4;
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
         }
         totalFrame=tot/15;
     }

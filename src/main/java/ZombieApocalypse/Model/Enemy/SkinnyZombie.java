@@ -15,7 +15,7 @@ public class SkinnyZombie extends Enemy{
         super(x, y);
 
         type= Enemies.EnemiesType.SKINNYZOMBIE;
-        healt=6;
+        healt=5;
         super.setSize();
     }
 

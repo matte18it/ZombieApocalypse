@@ -51,11 +51,11 @@ public class GraphicPanel extends JPanel {
             enue[i]= World.Block.values()[i];
             images.put(enue[i], ResourcesLoader.getInstance().getImage("/AmbienteDiGioco/"+enue[i]+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true));
         }
+
         }
 
 
-
-Random m=new Random();
+    Random m=new Random();
     @Override
     protected void paintComponent(Graphics g) {
         if(firstLoad){
@@ -179,8 +179,7 @@ Random m=new Random();
         Items.getInstance().update();
         Enemies.getInstance().update();
 
-
-        repaint();
+        ThreadPool.getExecutor().submit(()->repaint());
     }
 
 

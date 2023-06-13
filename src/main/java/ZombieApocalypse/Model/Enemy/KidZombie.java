@@ -16,7 +16,7 @@ public class KidZombie extends Enemy{
         super(x, y);
 
         type= Enemies.EnemiesType.KIDZOMBIE;
-        healt=4;
+        healt=2;
         super.setSize();
     }
 
