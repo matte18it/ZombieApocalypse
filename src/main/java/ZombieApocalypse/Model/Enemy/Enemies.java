@@ -139,7 +139,7 @@ public class Enemies {
         int x,y;
         int c=0;
         int t;
-        boolean finalLevel= Settings.campainMapIndex ==1;//Settings.campainMaps;//1 ;
+        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps;
         while (c<enemyNumber ){
             t=m.nextInt(0, EnemiesType.values().length-2);
 
