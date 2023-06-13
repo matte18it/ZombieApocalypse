@@ -139,7 +139,7 @@ public class Enemies {
         int x,y;
         int c=0;
         int t;
-        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps;//1 ;
+        boolean finalLevel= Settings.campainMapIndex ==1;//Settings.campainMaps;//1 ;
         while (c<enemyNumber ){
             t=m.nextInt(0, EnemiesType.values().length-2);
 
@@ -191,8 +191,7 @@ public class Enemies {
                 }
             if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
-            if(b.type==EnemiesType.BOSS && b.dying)
-                enemyNumber--;
+
         }}
     }
     //Gestione dei suoni
