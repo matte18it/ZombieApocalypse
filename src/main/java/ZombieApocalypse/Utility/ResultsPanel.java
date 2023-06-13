@@ -30,6 +30,7 @@ public class ResultsPanel {
     }
 
     public void showContinue() {
+        //Schermata per livello completato
         if(GameData.sound)
             PlayWav.getInstance().playMissionComplete();
 
@@ -96,8 +97,8 @@ public class ResultsPanel {
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
     }
-
     public void showFinal() {
+        //Schermata di vittoria
         if(GameData.sound)
             PlayWav.getInstance().playYouWin();
 
@@ -165,8 +166,8 @@ public class ResultsPanel {
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
     }
-
-    public void setPause() {
+    public void showPause() {
+        //schermata di pausa
         Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
         UIManager.put("OptionPane.background",new Color(92,75,35));
@@ -261,6 +262,7 @@ public class ResultsPanel {
         dialog.setVisible(true);
     }
     public void showGameOver() {
+        //schermata di sconfitta (game over)
         if(GameData.sound)
             PlayWav.getInstance().playGameOverSound();
 
@@ -332,6 +334,7 @@ public class ResultsPanel {
     }
 
     private void saveData() throws IOException {
+        //script per salvare i dati
         int val1, val2, val3, val4;
 
         //incremento i punti
