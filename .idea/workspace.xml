@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="boss pt1">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="boss pt2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Boss.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletShotgun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/BulletShotgun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/Bullets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Items/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GraphicPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Enemy/Enemies.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletPistol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletPistol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletShotgun.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Model/Guns/BulletShotgun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/GraphicPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,13 +96,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00091" summary="Editor pt.5">
-      <created>1686242153584</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1686242153584</updated>
     </task>
     <task id="LOCAL-00092" summary="Editor pt.5">
       <created>1686244604342</created>
@@ -436,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686636578833</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="boss pt2">
+      <created>1686641329498</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1686641329498</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,7 +456,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Suoni Finale" />
     <MESSAGE value="turret zombie" />
     <MESSAGE value="commenti" />
     <MESSAGE value="turretZombie nerfato" />
@@ -477,6 +480,7 @@
     <MESSAGE value="Punti" />
     <MESSAGE value="Commenti e bug fix" />
     <MESSAGE value="boss pt1" />
-    <option name="LAST_COMMIT_MESSAGE" value="boss pt1" />
+    <MESSAGE value="boss pt2" />
+    <option name="LAST_COMMIT_MESSAGE" value="boss pt2" />
   </component>
 </project>

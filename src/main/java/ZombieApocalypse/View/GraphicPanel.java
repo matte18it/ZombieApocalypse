@@ -102,11 +102,12 @@ Random m=new Random();
             }}
 
 
-
+        synchronized (Items.class){
         for (Item b : Items.getInstance().getItems()) {
             b.getView().update();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
-        }
+        }}
+        synchronized (Enemies.class){
         for (Enemy b : Enemies.getInstance().getEnemies()) {
             b.getView().getUpdate();
             if (b.type == Enemies.EnemiesType.BANDIT) {
@@ -117,7 +118,7 @@ Random m=new Random();
 
 
 
-        }
+        }}
         if(Game.getInstance().getPlayerCharacter().speedUp ){
         g.setColor(Color.WHITE);
         float t= (float) Game.getInstance().getPlayerCharacter().countSpeed /60;
@@ -128,11 +129,11 @@ Random m=new Random();
 
 
 
-
+        synchronized (Bullets.class){
         for(Bullet b: Bullets.getInstance().getBullets()){
             b.getView().loadUpdate();
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getDimension(), b.getDimension(), null);
-        }
+        }}
 
 
 

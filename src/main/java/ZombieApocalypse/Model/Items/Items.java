@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Items {
-    public void dropItem(int x, int y, ItemType value) {
+    public synchronized void dropItem(int x, int y, ItemType value) {
         this.items.add(new Item(x, y, value));
     }
 Random m=new Random();
@@ -90,7 +90,7 @@ Random m=new Random();
         } return 0;}
 
     public enum ItemType{ RADIO, SHOTGUN, GRENADE, PISTOL, MEDKIT, AMMO0, AMMO1, SPELL,EMPTY};
-    private final ConcurrentLinkedDeque<Item> items=new ConcurrentLinkedDeque<>();
+    private final ArrayList<Item> items=new ArrayList<>();
     private static final Items instance=new Items();
 
     public Items(){}
@@ -100,7 +100,7 @@ Random m=new Random();
 
 
 
-    public  ConcurrentLinkedDeque<Item> getItems(){return this.items;
+    public  ArrayList<Item> getItems(){return this.items;
     }
 
     public void update(){

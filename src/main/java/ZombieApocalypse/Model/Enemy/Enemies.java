@@ -27,13 +27,13 @@ import java.util.concurrent.Executors;
 public class Enemies {
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
-    public void addSkinnyZombie(int x, int y) {
+    public  synchronized void addSkinnyZombie(int x, int y) {
         this.enemies.add(new SkinnyZombie(x, y));
     }
 
 
     //Controllo della collisione con il player
-    public boolean checkCollision(int x, int y, int ceX, int ceY) {
+    public synchronized boolean checkCollision(int x, int y, int ceX, int ceY) {
         Point player=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
         Iterator var1=this.enemies.iterator();
@@ -50,7 +50,7 @@ public class Enemies {
         }return true;
     }
     //Controllo della collisione con l'esplosione della granata (che è di forma rotonda)
-    public void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
+    public synchronized void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
         Point p=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
         for (Enemy b : this.enemies) {
@@ -76,7 +76,7 @@ public class Enemies {
 
     //Controllo della collisione con l'hitbox del coltello
 
-    public void checkHitBox(Rectangle hitBox, int damage) {
+    public synchronized void checkHitBox(Rectangle hitBox, int damage) {
         for (Enemy b : this.enemies) {
             if (b.hitBox.intersects(hitBox)) {
                 hitSound(b);
@@ -85,7 +85,7 @@ public class Enemies {
         }
     }
     //Controllo della collisione con i proiettili (deve restituire booleana per eliminare proiettili)
-    public boolean checkBulletHitBox(Rectangle hitBox, int damage) {
+    public synchronized boolean checkBulletHitBox(Rectangle hitBox, int damage) {
         for (Enemy b : this.enemies) {
             if (b.hitBox.intersects(hitBox)) {
                 hitSound(b);
@@ -96,21 +96,21 @@ public class Enemies {
         return false;
     }
 
-    public void addFatZombie(int x, int y) {
+    public synchronized void addFatZombie(int x, int y) {
         this.enemies.add(new FatZombie(x, y));
     }
 
-    public void addKidZombie(int x, int y) {
+    public synchronized void addKidZombie(int x, int y) {
         this.enemies.add(new KidZombie(x, y));
     }
-    public void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
-    public void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
-    public void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
-    public void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
+    public synchronized void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
+    public synchronized void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
+    public synchronized void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
+    public synchronized void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
 
 
 
-    public boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
+    public synchronized boolean checkBulletHitBoxPlayer(Rectangle hitBox, int damage) {
         Rectangle hit=Game.getInstance().getPlayerCharacter().hitBox;
         if(hitBox.intersects(hit)){
             Game.getInstance().getPlayerCharacter().hit();
@@ -196,7 +196,7 @@ public class Enemies {
 
 
     public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS,EMPTY};
-    private final ConcurrentLinkedDeque<Enemy> enemies=new ConcurrentLinkedDeque<>();
+    private final ArrayList<Enemy> enemies=new ArrayList<>();
     private static final ZombieApocalypse.Model.Enemy.Enemies instance=new ZombieApocalypse.Model.Enemy.Enemies();
 
     public Enemies(){}
@@ -204,10 +204,10 @@ public class Enemies {
     public static ZombieApocalypse.Model.Enemy.Enemies getInstance(){return instance;}
 
 
-    public  ConcurrentLinkedDeque<Enemy> getEnemies(){return this.enemies;
+    public  ArrayList<Enemy> getEnemies(){return this.enemies;
     }
 
-    public void update(){
+    public synchronized void update(){
         Iterator<Enemy> e=enemies.iterator();
         while (e.hasNext()){
             Enemy b=e.next();
