@@ -26,15 +26,18 @@ import java.util.concurrent.Executors;
 
 public class Enemies {
 
-    public  synchronized void addSkinnyZombie(int x, int y) {
-        this.enemies.add(new SkinnyZombie(x, y));
+    public   void addSkinnyZombie(int x, int y) {
+        synchronized (enemies){
+        this.enemies.add(new SkinnyZombie(x, y));}
     }
 
 
     //Controllo della collisione con il player
-    public synchronized boolean checkCollision(int x, int y, int ceX, int ceY) {
+    public  boolean checkCollision(int x, int y, int ceX, int ceY) {
+
         Point player=new Point(x+ ceX,y+ceY);
         Point enem=new Point();
+        synchronized (enemies){
         Iterator var1=this.enemies.iterator();
         while(var1.hasNext()){
             Enemy b=(Enemy) var1.next();
@@ -46,7 +49,7 @@ public class Enemies {
                 case FATZOMBIE -> {if(player.distance(enem)<24) return false;}
                 case KIDZOMBIE -> {if(player.distance(enem)<13) return false;}
             }
-        }return true;
+        }}return true;
     }
     //Controllo della collisione con l'esplosione della granata (che è di forma rotonda)
     public synchronized void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
@@ -206,7 +209,8 @@ public class Enemies {
     public  ArrayList<Enemy> getEnemies(){return this.enemies;
     }
 
-    public synchronized void update(){
+    public  void update(){
+        synchronized (enemies){
         Iterator<Enemy> e=enemies.iterator();
         while (e.hasNext()){
             Enemy b=e.next();
@@ -227,7 +231,7 @@ public class Enemies {
             }
             if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
-        }
+        }}
     }
 
 
