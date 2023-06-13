@@ -144,6 +144,7 @@ public class ResultsPanel {
                 dialog.dispose();
                 Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
+                Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
                 executor.execute(new Runnable() {
