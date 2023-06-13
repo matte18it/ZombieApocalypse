@@ -155,6 +155,7 @@ public class LoginView extends JPanel{
         btnSend.setFont(font);
         btnSend.setBorderPainted(false);
         btnSend.setFocusPainted(false);
+        btnSend.setContentAreaFilled(false);
         btnSend.setForeground(Color.WHITE);
         btnSend.setFont(font.deriveFont(Font.PLAIN, 30));
         btnSend.setMinimumSize(new Dimension(197, 60));
