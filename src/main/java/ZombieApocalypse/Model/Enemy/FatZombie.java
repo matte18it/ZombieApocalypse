@@ -2,6 +2,7 @@ package ZombieApocalypse.Model.Enemy;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
+import ZombieApocalypse.Utility.CountPoint;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
@@ -30,6 +31,7 @@ public class FatZombie extends Enemy{
             return false;
         //Gestione della Morte
         if(healt<=0){
+            CountPoint.getInstance().setPoint(Enemies.EnemiesType.FATZOMBIE);
             dying=true;
             int c=m.nextInt(4,9);
             Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
