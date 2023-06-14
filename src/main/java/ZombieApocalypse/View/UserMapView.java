@@ -5,7 +5,6 @@ import ZombieApocalypse.Model.UserMapModel;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
-import org.joda.time.DateTime;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

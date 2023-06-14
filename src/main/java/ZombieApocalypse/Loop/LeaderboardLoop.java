@@ -1,6 +1,5 @@
 package ZombieApocalypse.Loop;
 
-import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.MenuView;
 
 import java.io.IOException;

@@ -6,12 +6,9 @@ import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
-import ZombieApocalypse.View.GameFrame;
 
-import javax.sound.midi.SysexMessage;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

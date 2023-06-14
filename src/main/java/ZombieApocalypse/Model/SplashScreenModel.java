@@ -3,7 +3,6 @@ package ZombieApocalypse.Model;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.MenuView;
@@ -15,7 +14,6 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
@@ -38,6 +36,7 @@ public class SplashScreenModel {
             catch (FileNotFoundException e) { throw new RuntimeException(e); }
 
             GameData.nick = myReader.nextLine();
+            GameData.pass = myReader.nextLine();
             myReader.close();
             try { if(getData("https://progettouid.altervista.org/ZombieApocalypse/getData.php?nickname=" + GameData.nick)); } catch (IOException e) { showDialog(); }
         }
@@ -45,6 +44,8 @@ public class SplashScreenModel {
     }
 
     private static boolean getData(String path) throws  IOException{
+        //faccio un check per verificare correttezza credenziali
+
         //chiamo script per fare get dei dati dal db se il file player.txt esiste
         URL sript = new URL(path);
         URLConnection conn = sript.openConnection();

@@ -3,8 +3,6 @@ package ZombieApocalypse.View.Editor;
 import ZombieApocalypse.Controller.EditorController;
 import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Editor.EditorModel;
-import ZombieApocalypse.Model.UserMapModel;
-import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
 

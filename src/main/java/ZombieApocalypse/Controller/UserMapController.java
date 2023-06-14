@@ -1,20 +1,15 @@
 package ZombieApocalypse.Controller;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.LoginModel;
 import ZombieApocalypse.Model.UserMapModel;
-import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.GameFrame;
-import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.UserMapView;
 
-import javax.sound.sampled.Line;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;

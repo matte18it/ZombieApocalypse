@@ -1,8 +1,6 @@
 package ZombieApocalypse.Controller;
 
 import ZombieApocalypse.Model.Editor.EditorBarModel;
-import ZombieApocalypse.Model.Editor.EditorModel;
-import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
@@ -15,7 +13,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
 
 public class EditorBarController {
     private final EditorBarView view;
