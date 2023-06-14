@@ -1,14 +1,11 @@
 package ZombieApocalypse.Model;
 
-import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Enemy.Enemies;
-import ZombieApocalypse.Model.Enemy.SkinnyZombie;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
 import java.io.*;
 import java.util.Objects;
-import java.util.Random;
 
 public class World {
 
@@ -106,7 +103,7 @@ public class World {
         }
     }
     public boolean isEnemy(int x, int y, int cX, int cY){
-        return Enemies.getInstance().checkCollision(x,y, cX, cY) ;
+        return Enemies.getInstance().checkCollisionWithEnemies(x,y, cX, cY) ;
     }
 
 

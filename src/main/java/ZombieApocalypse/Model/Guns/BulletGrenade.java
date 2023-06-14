@@ -106,7 +106,7 @@ boolean stopAll=false;
             Game.getInstance().getPlayerCharacter().hit();
 
         } if(numFrame==11)
-                Enemies.getInstance().checkCollisionHit(x,y,dimension/2, dimension/2, damage);
+                Enemies.getInstance().checkHitWithExplosion(x,y,dimension/2, dimension/2, damage);
 
 
         }}

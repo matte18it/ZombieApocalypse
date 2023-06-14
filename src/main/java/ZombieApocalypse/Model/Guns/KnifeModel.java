@@ -1,7 +1,6 @@
 package ZombieApocalypse.Model.Guns;
 
 import ZombieApocalypse.Model.Enemy.Enemies;
-import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
@@ -31,7 +30,7 @@ public class KnifeModel extends GunModel{
         }
 
         attack=true;
-        Enemies.getInstance().checkHitBox(hitBox, damage);
+        Enemies.getInstance().checkEnemiesHit(hitBox, damage);
 
         }
 

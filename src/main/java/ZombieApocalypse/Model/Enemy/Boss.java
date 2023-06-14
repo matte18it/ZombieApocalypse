@@ -89,7 +89,7 @@ public class Boss extends Enemy{
                 isMoving=false;
                 attack1();}
             //2 pattern
-        }else if((player.distance(enemy)>=80 || (enemy.y>=player.y+-50 && enemy.y<=player.y+50))&& !run){
+        }else if((player.distance(enemy)>=80 || (enemy.y>=player.y-50 && enemy.y<=player.y+50))&& !run){
             if(attack1)
                 stopAttack1();
             if(enemy.y>player.y )
@@ -100,7 +100,7 @@ public class Boss extends Enemy{
                 moveLeft();
             else
                 moveRight();
-            if(enemy.y>=player.y+-50 && enemy.y<=player.y+50)
+            if(enemy.y>=player.y-50 && enemy.y<=player.y+50)
                 dir= Settings.movementDirection.UP;
             //3 pattern
         }if(player.distance(enemy)<80){

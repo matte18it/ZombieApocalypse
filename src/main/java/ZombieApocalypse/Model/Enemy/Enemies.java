@@ -5,14 +5,63 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 public class Enemies {
-    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS}
-    private final List<Enemy> enemies=new Vector<>();
     private static final Enemies instance=new Enemies();
     public Enemies(){}
-    Random m=new Random();
-    public int enemyNumber=-1;
     public static Enemies getInstance(){return instance;}
+    //Spawn dei nemici
+    public void generateRandomEnemies() {
+        switch (Settings.diff){
+            case EASY -> enemyNumber= random.nextInt(5,15);
+            case MEDIUM -> enemyNumber= random.nextInt(16,25);
+            case HARD ->  enemyNumber= random.nextInt(26,35);
+        }
+        int x,y;
+        int c=0;
+        int t;
+        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps; //gestione del boss
+        while (c<enemyNumber ){
+            t= random.nextInt(0, EnemiesType.values().length-2);
+
+            x= random.nextInt(0, Settings.WINDOW_SIZEX);
+            y= random.nextInt(0, Settings.WINDOW_SIZEY);
+            if(checkSpawn(x,y , EnemiesType.values()[t])){
+                c++;
+                switch (t){
+                    case 0-> Enemies.getInstance().addSkinnyZombie(x,y);
+                    case 1-> Enemies.getInstance().addFatZombie(x,y);
+                    case 2-> Enemies.getInstance().addKidZombie(x,y);
+                    case 3->Enemies.getInstance().addTurretZombie(x,y);
+                    case 4-> Enemies.getInstance().addBandit(x,y);
+                    case 5->Enemies.getInstance().addBombBandit(x,y);
+                }
+            }
+        } while (finalLevel){
+            x= random.nextInt(0, Settings.WINDOW_SIZEX);
+            y= random.nextInt(0, Settings.WINDOW_SIZEY);
+            if(checkSpawn(x, y, EnemiesType.BOSS)){
+                enemyNumber++;
+                Enemies.getInstance().addBoss(x,y);
+                finalLevel=false;
+            }
+        }
+    }
+    final Random random =new Random();
+    //Tipi di nemici
+    enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS}
+    //Elenco di nemici di cui fare l'update
+    private final List<Enemy> enemies=new Vector<>();
     public  List<Enemy> getEnemies(){return this.enemies;}
+    //funzioni add
+    public   void addSkinnyZombie(int x, int y) {this.enemies.add(new SkinnyZombie(x, y));}
+    public  void addFatZombie(int x, int y) {this.enemies.add(new FatZombie(x, y));}
+    public  void addKidZombie(int x, int y) {this.enemies.add(new KidZombie(x, y));}
+    public  void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
+    public  void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
+    public  void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
+    public  void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
+    //Gestione del numero di nemici per l'end game
+    public int enemyNumber=-1;
+    //Gestione di Altezza e Larghezza di ogni tipo di nemico
     public int getWight(EnemiesType type) {
         switch (type){
             case FATZOMBIE -> {return Settings.CELL_SIZEX+(Settings.CELL_SIZEX/2);}
@@ -32,13 +81,12 @@ public class Enemies {
         return 0;
     }
     //Controllo della collisione con il player
-    public  boolean checkCollision(int x, int y, int ceX, int ceY) {
-        Point player=new Point(x+ ceX,y+ceY);
-        Point enem=new Point();
+    public  boolean checkCollisionWithEnemies(int x, int y, int ceX, int ceY) {
+        Point player=new Point(x+ceX,y+ceY);
+        Point enem;
         synchronized (enemies){
             for (Enemy b : this.enemies) {
-                enem.x = b.getX() + b.centerX;
-                enem.y = b.getY() + b.centerY;
+                enem=b.getEnemyPosition();
                 switch (b.type) {
                     case BOSS -> {
                         if (player.distance(enem) < 70) return false;
@@ -57,25 +105,24 @@ public class Enemies {
         }return true;
     }
     //Controllo della collisione con l'esplosione della granata (in questo caso si tiene conto della distanza)
-    public  void checkCollisionHit(int x, int y, int ceX, int ceY, int damage) {
-        Point p=new Point(x+ ceX,y+ceY);
-        Point enem=new Point();
+    public  void checkHitWithExplosion(int x, int y, int ceX, int ceY, int damage) {
+        Point explosion=new Point(x+ ceX,y+ceY);
+        Point enem;
         synchronized (enemies){
         for (Enemy b : this.enemies) {
-            enem.x = b.getX() + b.getCenterX();
-            enem.y = b.getY() + b.getCenterY();
+            enem=b.getEnemyPosition();
             switch (b.type) {
                 case BOSS -> {
-                    if (p.distance(enem) < 120){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 120){ b.gettingHit(damage); hitSound(b);}
                 }
                 case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {
-                    if (p.distance(enem) < 30){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 30){ b.gettingHit(damage); hitSound(b);}
                 }
                 case FATZOMBIE -> {
-                    if (p.distance(enem) < 45){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 45){ b.gettingHit(damage); hitSound(b);}
                 }
                 case KIDZOMBIE -> {
-                    if (p.distance(enem) < 15){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 15){ b.gettingHit(damage); hitSound(b);}
                 }
             }
         }}
@@ -84,16 +131,14 @@ public class Enemies {
     public boolean isPlayer(int x, int y, Enemies.EnemiesType enemiesType) {
         Point enemy=new Point(x+(getWight(enemiesType)/2), y+(getHeight(enemiesType)/2));
         Point player=Game.getInstance().getPlayerPosition();
-        switch (enemiesType){
-            default -> {if(enemy.distance(player)<20) return false;}
-            case BOSS -> {if(enemy.distance(player)<70) return false;}
-
+        if (enemiesType == EnemiesType.BOSS) {
+            return !(enemy.distance(player) < 70);
+        } else {
+            return !(enemy.distance(player) < 20);
         }
-        return true;
     }
-
     //Controllo della collisione con un hitbox, che attiva il danno del nemico
-    public  void checkHitBox(Rectangle hitBox, int damage) {
+    public  void checkEnemiesHit(Rectangle hitBox, int damage) {
         synchronized (enemies){
         for (Enemy b : this.enemies) {
             if (b.hitBox.intersects(hitBox)) {
@@ -114,13 +159,7 @@ public class Enemies {
         }}
         return false;
     }
-    public   void addSkinnyZombie(int x, int y) {this.enemies.add(new SkinnyZombie(x, y));}
-    public  void addFatZombie(int x, int y) {this.enemies.add(new FatZombie(x, y));}
-    public  void addKidZombie(int x, int y) {this.enemies.add(new KidZombie(x, y));}
-    public  void addTurretZombie(int x,int y){this.enemies.add(new TurretZombie(x, y));}
-    public  void addBandit(int x,int y){this.enemies.add(new Bandit(x, y));}
-    public  void addBombBandit(int x,int y){this.enemies.add(new BombBandit(x, y));}
-    public  void addBoss(int x,int y){this.enemies.add(new Boss(x, y));}
+
     //Controlla l'hitBox con il proiettile sparato dal nemico
     public  boolean checkBulletHitBoxPlayer(Rectangle hitBox) {
         Rectangle hit=Game.getInstance().getPlayerCharacter().hitBox;
@@ -130,42 +169,8 @@ public class Enemies {
         } return false;
     }
     //Spawn dei nemici
-    public void generateRandomEnemies() {
-        switch (Settings.diff){
-            case EASY -> enemyNumber=m.nextInt(5,15);
-            case MEDIUM -> enemyNumber= m.nextInt(16,25);
-            case HARD ->  enemyNumber= m.nextInt(26,35);
-        }
-        int x,y;
-        int c=0;
-        int t;
-        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps;
-        while (c<enemyNumber ){
-            t=m.nextInt(0, EnemiesType.values().length-2);
 
-            x=m.nextInt(0, Settings.WINDOW_SIZEX);
-            y=m.nextInt(0, Settings.WINDOW_SIZEY);
-            if(checkSpawn(x,y , EnemiesType.values()[t])){
-                c++;
-                switch (t){
-                    case 0-> Enemies.getInstance().addSkinnyZombie(x,y);
-                    case 1-> Enemies.getInstance().addFatZombie(x,y);
-                    case 2-> Enemies.getInstance().addKidZombie(x,y);
-                    case 3->Enemies.getInstance().addTurretZombie(x,y);
-                    case 4-> Enemies.getInstance().addBandit(x,y);
-                    case 5->Enemies.getInstance().addBombBandit(x,y);
-                }
-            }
-        } while (finalLevel){
-            x=m.nextInt(0, Settings.WINDOW_SIZEX);
-            y=m.nextInt(0, Settings.WINDOW_SIZEY);
-            if(checkSpawn(x, y, EnemiesType.BOSS)){
-                enemyNumber++;
-                Enemies.getInstance().addBoss(x,y);
-                finalLevel=false;
-            }
-        }
-    }
+    //Controllo se la la posizione random è libera e lontana dal player
     private boolean checkSpawn(int x, int y, EnemiesType enem) {
         boolean distanzaDalPlayer=Game.getInstance().getWorld().isSpawnable(x+(getWight(enem)/2),y+(getHeight(enem)/2));
         if(distanzaDalPlayer){
@@ -179,6 +184,7 @@ public class Enemies {
         }else
             return false;
         }
+        //Aggiornamento dei singoli model dei nemici (ancora in vita)
     public  void update(){
         synchronized (enemies){
         Iterator<Enemy> e=enemies.iterator();
@@ -187,11 +193,9 @@ public class Enemies {
             if(!b.update()){
                 e.remove();
                 enemyNumber--;
-
                 }
             if(b.type==EnemiesType.BANDIT )
                 b.updateGunPosition();
-
         }}
     }
     //Gestione dei suoni
