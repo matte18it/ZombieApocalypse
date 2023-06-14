@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="pulizie di primavera pt 4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Loop/TimeLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Loop/TimeLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Bandit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Bandit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/BombBandit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/BombBandit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Boss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/FatZombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/FatZombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/KidZombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/KidZombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/SkinnyZombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/SkinnyZombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/TurretZombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/TurretZombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/GameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/Loop/GameLoop.class" afterDir="false" />
-    </list>
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="pulizie di primavera pt 6" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,20 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Gestione Mappe Player">
-      <created>1686419964638</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1686419964638</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Gestione Mappe Player">
-      <created>1686421283197</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1686421283197</updated>
     </task>
     <task id="LOCAL-00114" summary="Gestione Mappe Player">
       <created>1686422302333</created>
@@ -443,7 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686720576927</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="pulizie di primavera pt 5">
+      <created>1686725923823</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1686725923823</updated>
+    </task>
+    <task id="LOCAL-00162" summary="pulizie di primavera pt 6">
+      <created>1686727489352</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1686727489352</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,8 +446,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mappe Campagna" />
-    <MESSAGE value="mappa pt2" />
     <MESSAGE value="Gestione Mappe Player" />
     <MESSAGE value="Ottimizzazione gioco" />
     <MESSAGE value="Easter Eggs primo posto" />
@@ -484,6 +469,8 @@
     <MESSAGE value="pulizie di primavera pt 2" />
     <MESSAGE value="pulizie di primavera pt 3" />
     <MESSAGE value="pulizie di primavera pt 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulizie di primavera pt 4" />
+    <MESSAGE value="pulizie di primavera pt 5" />
+    <MESSAGE value="pulizie di primavera pt 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulizie di primavera pt 6" />
   </component>
 </project>

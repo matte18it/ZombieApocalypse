@@ -47,7 +47,7 @@ public class Enemies {
     }
     final Random random =new Random();
     //Tipi di nemici
-    enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS}
+    public enum EnemiesType{SKINNYZOMBIE, FATZOMBIE, KIDZOMBIE,TURRETZOMBIE,BANDIT,BOMBBANDIT, BOSS}
     //Elenco di nemici di cui fare l'update
     private final List<Enemy> enemies=new Vector<>();
     public  List<Enemy> getEnemies(){return this.enemies;}
