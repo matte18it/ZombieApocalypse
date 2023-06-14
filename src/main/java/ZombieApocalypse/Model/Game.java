@@ -52,7 +52,7 @@ public final class Game {
         character.stopMovement();
     }
     public int getPlayerLife() {return character.health;}
-    public Rectangle getPlayerHitBox(){return character.hitBox;};
+    public Rectangle getPlayerHitBox(){return character.hitBox;}
     public void playerHit(){character.hit();}
     public int getPlayerMaxLife() {return character.maxHealth;}
     public Settings.movementDirection getPlayerDirection() {return character.dir;}
@@ -129,6 +129,7 @@ public void attack() {  //gestione del click del mouse
     public boolean isWorldWalkable(int x, int y){
         return world.isWalkable(x,y);
     }
+    public boolean isWorldRoad(int x, int y){return world.isRoad(x,y);}
     public boolean isWorldSpawnableItem(int x, int y){
         return world.isSpawnableItem(x,y);
     }

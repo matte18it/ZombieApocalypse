@@ -15,6 +15,7 @@ public class World {
         else
             generateCampaignWorld();
     }
+
     //Tutti i blocchi disegnabili
     public enum Block {TERRENO0, TERRENO1, TERRENO2, TERRENO3, DIVISORIO1, WATER0, WATER1, WATER2, FLOWER1, FLOWER2, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, ROAD7, ROAD8, ROAD9, ROAD10, ROAD11, ROAD12, ROAD13, ROAD14, ROAD15, ROAD16, ROAD17, ROAD18, ROAD19, ROAD20, ROAD21, ROAD22, ROAD23, ROAD24, ROAD25}
     //Mondo e posizione del player
@@ -88,8 +89,19 @@ public class World {
         return false;
     }
     //I blocchi Walkable sono quelli dove il player e i nemici possono transitare
-     boolean isWalkable(int x, int y) {
-        return walkableType(x,y);
+     boolean isWalkable(int x, int y) {return walkableType(x,y);}
+    //I blocchi road sono quelli su cui è presente una strada
+    public boolean isRoad(int x, int y) {return roadType(x,y);}
+    private boolean roadType(int x, int y) {
+        if(x<0 || y<0)  //viene utilizzato perchè nel passaggio da coordinata
+            return false; //a posizone sulla matrice un numero negativo
+        //potrebbe essere approssimato a 0, facendo uscire il player
+        x=(x * Settings.WORLD_SIZEX) /Settings.WINDOW_SIZEX;
+        y= (y * Settings.WORLD_SIZEY) /Settings.WINDOW_SIZEY;
+        if(isValidPosition(x, y)){
+            return isWalkable(x,y) && world[x][y] != Block.TERRENO0 && world[x][y] != Block.TERRENO1 && world[x][y] != Block.TERRENO2 && world[x][y] != Block.TERRENO3  && world[x][y] != Block.FLOWER1 && world[x][y] != Block.FLOWER2;
+        }
+        return false;
     }
 
 

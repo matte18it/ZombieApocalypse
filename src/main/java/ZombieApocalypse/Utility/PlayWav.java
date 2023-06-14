@@ -1,5 +1,7 @@
 package ZombieApocalypse.Utility;
 
+import ZombieApocalypse.Model.Game;
+
 import javax.sound.sampled.*;
 
 public class PlayWav {
@@ -94,13 +96,6 @@ public class PlayWav {
         clipGranata.start();
     }
 
-    public void playWalkRoad(){
-        walkRoad = ResourcesLoader.getInstance().getAudioClip("/Audio/walkRoad.wav");
-        sound = (FloatControl) walkRoad.getControl(FloatControl.Type.MASTER_GAIN);
-        sound.setValue(GameData.soundVolume);
-        walkRoad.start();
-    }
-
     public void playHurtSound(){
         if(clipHurt == null)
             clipHurt = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt.wav");
@@ -185,16 +180,6 @@ public class PlayWav {
         clipPump.start();
     }
 
-    public void playRadioSound(){
-        if(clipRadio == null)
-            clipRadio = ResourcesLoader.getInstance().getAudioClip("/Audio/RadioSound.wav");
-        else if(clipRadio.getFramePosition() != 0)
-            clipRadio.setFramePosition(0);
-
-        sound = (FloatControl) clipRadio.getControl(FloatControl.Type.MASTER_GAIN);
-        sound.setValue(GameData.soundVolume);
-        clipRadio.start();
-    }
 
     public void playShotPistola(){
         if(clipPistola==null)
@@ -206,11 +191,16 @@ public class PlayWav {
         clipPistola.start();
     }
 
-    public void playWalkSound(){
+    public void playWalkSound(int x, int y){
+        if(Game.getInstance().isWorldRoad(x,y)){
+            walkRoad = ResourcesLoader.getInstance().getAudioClip("/Audio/walkRoad.wav");
+            sound = (FloatControl) walkRoad.getControl(FloatControl.Type.MASTER_GAIN);
+            sound.setValue(GameData.soundVolume);
+            walkRoad.start();}else{
         clipWak = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkSound.wav");
         sound = (FloatControl) clipWak.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
-        clipWak.start();
+        clipWak.start();}
     }
 
     public void playWinSound(){

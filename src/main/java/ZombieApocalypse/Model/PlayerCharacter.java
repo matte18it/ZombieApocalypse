@@ -109,16 +109,15 @@ import java.awt.*;
     }
     //Aggiornamento dei movimenti del player
     void move() {
-        soundWalk();
-        if(dir==Settings.movementDirection.RIGHT && Game.getInstance().isWorldWalkable(x+wight+(10*speed), y) && Game.getInstance().isEnemy(x+(10*speed), y, centerX, centerY) )
-            x += (10*speed);
-        else if(dir==Settings.movementDirection.LEFT && Game.getInstance().isWorldWalkable(x-(10*speed), y) && Game.getInstance().isEnemy(x-(10*speed), y,centerX,centerY))
-            x -= (10*speed);
-        else if(dir== Settings.movementDirection.UP && Game.getInstance().isWorldWalkable(x, y-(10*speed)) && Game.getInstance().isEnemy(x, y-(10*speed),centerX,centerY))
-            y -= (10*speed);
-        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().isWorldWalkable(x, y+height+(10*speed)) && Game.getInstance().isEnemy(x, y+(10*speed),centerX,centerY))
-            y += (10*speed);
-        else
+        if (dir == Settings.movementDirection.RIGHT && Game.getInstance().isWorldWalkable(x + wight + (10 * speed), y) && Game.getInstance().isEnemy(x + (10 * speed), y, centerX, centerY)) {
+            x += (10 * speed); soundWalk();
+        } else if (dir == Settings.movementDirection.LEFT && Game.getInstance().isWorldWalkable(x - (10 * speed), y) && Game.getInstance().isEnemy(x - (10 * speed), y, centerX, centerY)) {
+            x -= (10 * speed); soundWalk();
+        }else if(dir== Settings.movementDirection.UP && Game.getInstance().isWorldWalkable(x, y-(10*speed)) && Game.getInstance().isEnemy(x, y-(10*speed),centerX,centerY)) {
+            y -= (10 * speed); soundWalk();
+        }else if(dir==Settings.movementDirection.DOWN && Game.getInstance().isWorldWalkable(x, y+height+(10*speed)) && Game.getInstance().isEnemy(x, y+(10*speed),centerX,centerY)) {
+            y += (10 * speed); soundWalk();
+        }else
             movement=false;
         hitBox.x=x;
         hitBox.y=y;
@@ -129,7 +128,7 @@ import java.awt.*;
             muovo = false;
             if(muovo1){
                 muovo1 = false;
-                PlayWav.getInstance().playWalkSound();
+                PlayWav.getInstance().playWalkSound(x,y);
             }
             else
                 muovo1 = true;
