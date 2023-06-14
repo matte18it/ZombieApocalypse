@@ -6,14 +6,13 @@ import javax.sound.sampled.*;
 
 public class PlayWav {
     //Classe singleton per gestione musica e suoni
-
     private static Clip clip = null;        //variabile per la musica
     private static FloatControl music;      //controllore utile per il volume
 
     //clip per i suoni
     private static Clip clipZombie = null, clipAmmo = null, clipButton = null, clipGameOver = null, walkRoad = null;
     private static Clip clipGranata = null, clipHurt = null, clipHurt1 = null, clipHurt2 = null, clipHurt3 = null;
-    private static Clip clipKnife = null, clipMedikit = null, clipPotion = null, clipPump = null, clipRadio = null;
+    private static Clip clipKnife = null, clipMedikit = null, clipPotion = null, clipPump = null;
     private static Clip clipPistola = null, clipWak = null, clipWin = null, clipDeath = null, clipZombieHit = null;
     private static Clip clipYouWin = null, clipMission = null;
     private static FloatControl sound;  //controllore dei suoni
