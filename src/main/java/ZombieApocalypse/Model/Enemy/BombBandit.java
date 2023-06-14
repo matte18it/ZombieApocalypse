@@ -11,19 +11,8 @@ import java.awt.*;
 import java.util.Random;
 
 public class BombBandit extends Enemy{
-    int totalFrame;
-
-    public BombBandit(int x, int y) {
-        super(x, y);
-
-        type= Enemies.EnemiesType.BOMBBANDIT;
-        healt=4;
-        super.setSize();
-    }
-
-    //Per prova
-    Random m=new Random();
-    int count=0;
+    BombBandit(int x, int y) {super(x,y, Enemies.EnemiesType.BOMBBANDIT);}
+    private int count=0;
     public boolean update() {
         //Gestione della Morte
         if(dying)
@@ -31,7 +20,7 @@ public class BombBandit extends Enemy{
         if(healt<=0 ){
             CountPoint.getInstance().setPoint(Enemies.EnemiesType.BOMBBANDIT);
             dying=true;
-            int c=m.nextInt(4,9);
+            int c=random.nextInt(4,9);
             Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
             return true;
             }
@@ -47,51 +36,41 @@ public class BombBandit extends Enemy{
             else
                 stopHit();
         }
-        Point p= Game.getInstance().getPlayerPosition();
-        Point turret = new Point(x + centerX, y + centerY);
-
-
-        if(p.distance(turret)<300){
-
+        //Gestione dei Pattern
+        Point player= getPlayerPosition();
+        Point enemy = getEnemyPosition();
+        //2 pattern che si scambiamo a seconda della distanza con il player
+        //Pattern 1
+        if(player.distance(enemy)<300){
             isMoving=false;
-            if(p.y>=y && p.y<=y+height && p.x<turret.x)
+            if(player.y>=y && player.y<=y+height && player.x<enemy.x)
                 dir= Settings.movementDirection.LEFT;
-            if(p.y>=y && p.y<=y+height && p.x>=turret.x)
+            if(player.y>=y && player.y<=y+height && player.x>=enemy.x)
                 dir= Settings.movementDirection.RIGHT;
-            if(p.x>=x && p.x<=x+height && p.y>=turret.y)
+            if(player.x>=x && player.x<=x+height && player.y>=enemy.y)
                 dir= Settings.movementDirection.DOWN;
-            if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+            if(player.x>=x && player.x<=x+wight && player.y<enemy.y)
                 dir= Settings.movementDirection.UP;
             shoot();
+            //Pattern 2
         }else{
-
-        int f=m.nextInt(0,100);
+        int f=random.nextInt(0,100);
         if(f<20){
-        int i=m.nextInt(0,4);
+        int i=random.nextInt(0,4);
         switch (i){
-            case 0 ->{moveUp();}
-            case 1 ->{moveDown();}
-            case 2 ->{moveLeft();}
-            case 3 ->{moveRight();}
+            case 0 ->moveUp();
+            case 1 ->moveDown();
+            case 2 ->moveLeft();
+            case 3 ->moveRight();
         }  }else
             isMoving=false;}
-
-
-
-
-
-
         return true;}
-
-
-
-
     private void shoot() {
-        Point player = Game.getInstance().getPlayerPosition();
-        Point turret = new Point(x + centerX, y + centerY);
-        totalFrame= (int) player.distance(turret);
-        //Lancia la granata ogni 30 frame
-
+        Point player= getPlayerPosition();
+        Point enemy = getEnemyPosition();
+        //Calcola la distanza del lancio della Granata
+        int totalFrame = (int) player.distance(enemy);
+        //Lancia la granata ogni 40 frame
         if(count==40){
             switch (dir){
                 case RIGHT -> Bullets.getInstance().BulletGrenadeBandit(x+wight+2,y+5, Game.getInstance().getGrenadeModel().getWidth(), 0, Bullet.Direction.RIGHT, totalFrame);
@@ -102,40 +81,4 @@ public class BombBandit extends Enemy{
             } count=0;}
         count++;
         }
-
-
-
-
-    private void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Enemies.getInstance().isPlayer(x + 10, y,  type)){
-            x=x+10;
-            hitBox.x=x;
-            isMoving=true;
-            dir=Settings.movementDirection.RIGHT;}else isMoving=false;
-    }
-
-    private void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Enemies.getInstance().isPlayer(x - 10, y,  type)){
-            x=x-10;
-            hitBox.x=x;
-            isMoving=true;
-            dir=Settings.movementDirection.LEFT;}else isMoving=false;
-    }
-
-    private void moveDown() {
-        if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Enemies.getInstance().isPlayer(x, y + 10, type)){
-            y=y+10;
-            isMoving=true;
-            hitBox.y=y;
-            dir=Settings.movementDirection.DOWN;}else isMoving=false;
-    }
-
-    private void moveUp() {
-        if(Game.getInstance().getWorld().isWalkable(x, y-10) && Enemies.getInstance().isPlayer(x, y - 10, type)){
-            y=y-10;
-            isMoving=true;
-            hitBox.y=y;
-        dir=Settings.movementDirection.UP;} else isMoving=false;
-
-    }
 }

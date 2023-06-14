@@ -5,24 +5,11 @@ import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Utility.CountPoint;
 import ZombieApocalypse.Utility.Settings;
-
 import java.awt.*;
-import java.util.Random;
-
 public class Boss extends Enemy{
-
-    public Boss(int x, int y) {
-        super(x, y);
-
-        type= Enemies.EnemiesType.BOSS;
-        healt=150;
-
-        super.setSize();
-    }
-    boolean run=false;
-int countRun =0;
-    //Per prova
-    Random m=new Random();
+    Boss(int x, int y) {super(x, y, Enemies.EnemiesType.BOSS);}
+    //Gestione della corsa veloce
+    private int countRun =0;
     public boolean update() {
         //Gestione della Pausa del gioco
         if(Game.getInstance().getBackMenu()){
@@ -30,7 +17,6 @@ int countRun =0;
             return false;
         }
         //Gestione della Morte
-
         if(healt<=0 && countDeath<=8){
             countDeath++;
             dying=true;
@@ -38,13 +24,9 @@ int countRun =0;
                 CountPoint.getInstance().setPointBoss();
             return true;
             }
-
         if(countDeath>8){
             return false;
             }
-
-
-
         //Gestione delle Hit
         if(hit){
             if(countHit<10){
@@ -52,15 +34,14 @@ int countRun =0;
             else
                 stopHit();
         }
-
-
-
-
-        Point p = Game.getInstance().getPlayerPosition();
-        Point turret = new Point(x + centerX, y + centerY);
+        Point player=getPlayerPosition();
+        Point enemy = getEnemyPosition();
         int h;
-        h=m.nextInt(0,150);
-        if(h==0 && countRun==0 && p.distance(turret)>=200) {
+        h=random.nextInt(0,150);
+        //Gestione dei Pattern
+        //3 pattern e 1 random (corsa verso la posizione del player) che cambiano in base alla distanza dal player
+        //Pattern della corsa
+        if(h==0 && countRun==0 && player.distance(enemy)>=200) {
             run = true;
             if(attack1)
                 stopAttack1();
@@ -68,15 +49,16 @@ int countRun =0;
                 stopAttack2();
             isMoving=true;
                 countRun++;
-                if(p.y>=y && p.y<=y+height && p.x<turret.x)
+                if(player.y>=y && player.y<=y+height && player.x<enemy.x)
                     moveLeft();
-                if(p.y>=y && p.y<=y+height && p.x>=turret.x)
+                if(player.y>=y && player.y<=y+height && player.x>=enemy.x)
                     moveRight();
-                if(p.x>=x && p.x<=x+height && p.y>=turret.y)
+                if(player.x>=x && player.x<=x+height && player.y>=enemy.y)
                     moveDown();
-                if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+                if(player.x>=x && player.x<=x+wight && player.y<enemy.y)
                     moveUp();
         }
+        //Gestione della corsa
         if(countRun>0 && countRun<100){
             countRun++;
             switch (dir){
@@ -91,50 +73,37 @@ int countRun =0;
             isMoving=false;
             run=false;
         }
-
-
-
-
-
-        if(p.distance(turret)>=300 && !run ){
-
-            if(turret.y>p.y+50) {
+        //1 pattern
+        if(player.distance(enemy)>=300 && !run ){
+            if(enemy.y>player.y+50) {
                 moveUp();
                 stopAttack1();
-            }else if(turret.y<p.y-50) {
+            }else if(enemy.y<player.y-50) {
                 moveDown();
                 stopAttack1();
             }else{
-                if(turret.x>p.x)
+                if(enemy.x>player.x)
                     dir= Settings.movementDirection.LEFT;
                 else
                     dir= Settings.movementDirection.RIGHT;
                 isMoving=false;
-
                 attack1();}
-
-
-
-
-
-
-
-        }else if((p.distance(turret)>=80 || (turret.y>=p.y+-50 && turret.y<=p.y+50))&& !run){
+            //2 pattern
+        }else if((player.distance(enemy)>=80 || (enemy.y>=player.y+-50 && enemy.y<=player.y+50))&& !run){
             if(attack1)
                 stopAttack1();
-            if(turret.y>p.y )
+            if(enemy.y>player.y )
                 moveUp();
             else
                 moveDown();
-            if(turret.x>p.x)
+            if(enemy.x>player.x)
                 moveLeft();
             else
                 moveRight();
-            if(turret.y>=p.y+-50 && turret.y<=p.y+50)
+            if(enemy.y>=player.y+-50 && enemy.y<=player.y+50)
                 dir= Settings.movementDirection.UP;
-
-
-        }if(p.distance(turret)<80){
+            //3 pattern
+        }if(player.distance(enemy)<80){
             if(run){
                 run=false;
                 countRun=0;
@@ -142,7 +111,7 @@ int countRun =0;
             if(isMoving)
                 isMoving=false;
             attack2();}
-
+        //Gestione del attack1 (dalla distanza)
         if(attack1 ){
     if(countAttack<23 && countAttack>0)
         countAttack++;
@@ -150,8 +119,7 @@ int countRun =0;
         stopAttack1();
     if(countAttack==20)
         shoot();}
-
-
+        //Gestione di attack2 (ravvicinato)
         if(attack2){
     if(countAttack<9 && countAttack>0){
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
@@ -159,36 +127,18 @@ int countRun =0;
         countAttack++;}
     if(countAttack==9)
         stopAttack2();}
-
-
-
-
-
-
         return true;
     }
-
     private void shoot() {
+        //Gestione dello sparo
         switch (dir){
             case LEFT -> Bullets.getInstance().BulletBoss(x+30,y+35, 25, 0, Bullet.Direction.LEFT);
             case RIGHT -> Bullets.getInstance().BulletBoss(x+wight-50,y+35, 25, 0, Bullet.Direction.RIGHT);
             case UP -> Bullets.getInstance().BulletBoss(x+50,y,25, 0, Bullet.Direction.UP);
             case DOWN -> Bullets.getInstance().BulletBoss(x+50,y+50,25, 0, Bullet.Direction.DOWN);
-
         }
     }
-
-
-    private void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+15, y) && Enemies.getInstance().isPlayer(x, y, type)){
-            if(!run)
-                x=x+4;
-            else
-                x=x+15;
-            hitBox.x=x;
-            isMoving=true;
-            dir=Settings.movementDirection.RIGHT;} else  isMoving=false;
-    }
+    //Gestione dei 2 attacchi
     private void attack1() {
         if(countAttack==0){
             attack1=true;
@@ -203,39 +153,4 @@ int countRun =0;
     private void stopAttack2() {
         attack2=false;
         countAttack=0;}
-
-
-    private void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-15, y) && Enemies.getInstance().isPlayer(x , y,  type)){
-            if(!run)
-                x=x-4;
-            else
-                x=x-15;
-            hitBox.x=x;
-            isMoving=true;
-            dir=Settings.movementDirection.LEFT;} else  isMoving=false;
-    }
-
-    private void moveDown() {
-        if(Game.getInstance().getWorld().isWalkable(x,y+height+15) && Enemies.getInstance().isPlayer(x, y ,  type)){
-            if(!run)
-                y=y+4;
-            else
-                y=y+15;
-            hitBox.y=y;
-            isMoving=true;
-            dir=Settings.movementDirection.DOWN;} else  isMoving=false;
-    }
-
-    private void moveUp() {
-        if(Game.getInstance().getWorld().isWalkable(x, y-15) && Enemies.getInstance().isPlayer(x, y ,  type)){
-            if(!run)
-                y=y-4;
-            else
-                y=y-15;
-            hitBox.y=y;
-            isMoving=true;
-        dir=Settings.movementDirection.UP;} else  isMoving=false;
-
-    }
 }

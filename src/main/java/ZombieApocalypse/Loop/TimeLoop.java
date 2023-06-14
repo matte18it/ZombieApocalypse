@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class TimeLoop {
 
     private  ScheduledExecutorService executor;
-    public static long time=0;
+    public  long time=0;
     public  void start() {
         time=System.nanoTime();
         if(executor==null)

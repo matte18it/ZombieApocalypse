@@ -3,41 +3,24 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.CountPoint;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
-import ZombieApocalypse.Utility.Settings;
-
 import java.awt.*;
-import java.util.Random;
-
 public class FatZombie extends Enemy{
-
-    public FatZombie(int x, int y) {
-        super(x, y);
-
-        type= Enemies.EnemiesType.FATZOMBIE;
-        healt=25;
-        super.setSize();
-    }
-
-    //Per prova
-    Random m=new Random();
-    int countRun=0;
-
+    FatZombie(int x, int y) {super(x,y, Enemies.EnemiesType.FATZOMBIE);}
+    //Gestione della corsa
+    private int countRun=0;
     public boolean update() {
-        Point p=Game.getInstance().getPlayerPosition();
-        Point turret = new Point(x + centerX, y + centerY);
+        Point p=getPlayerPosition();
+        Point enemy = getEnemyPosition();
+        //Gestione della Morte
         if(dying)
             return false;
-        //Gestione della Morte
         if(healt<=0){
             CountPoint.getInstance().setPoint(Enemies.EnemiesType.FATZOMBIE);
             dying=true;
-            int c=m.nextInt(4,9);
+            int c=random.nextInt(4,9);
             Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
             return true;
             }
-
         //Gestione della Pausa del gioco
         if(Game.getInstance().getBackMenu()){
             stopAll=true;
@@ -53,21 +36,21 @@ public class FatZombie extends Enemy{
         //Gestione delle hit al Player
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
             Game.getInstance().getPlayerCharacter().hit();
-
-
-        if(p.distance(turret)<200){
+        //Gestione del pattern
+        if(p.distance(enemy)<200){
             if(countRun==0) {
                 countRun++;
-                if(p.y>=y && p.y<=y+height && p.x<turret.x)
+                if(p.y>=y && p.y<=y+height && p.x<enemy.x)
                     moveLeft();
-                if(p.y>=y && p.y<=y+height && p.x>=turret.x)
+                if(p.y>=y && p.y<=y+height && p.x>=enemy.x)
                     moveRight();
-                if(p.x>=x && p.x<=x+height && p.y>=turret.y)
+                if(p.x>=x && p.x<=x+height && p.y>=enemy.y)
                     moveDown();
-                if(p.x>=x && p.x<=x+wight && p.y<turret.y)
+                if(p.x>=x && p.x<=x+wight && p.y<enemy.y)
                     moveUp();
 
             }}
+        //Gestione della corsa
         if(countRun>0 && countRun<100){
             countRun++;
             switch (dir){
@@ -81,47 +64,6 @@ public class FatZombie extends Enemy{
             countRun=0;
             isMoving=false;
         }
-
-
-
-
         return true;
-    }
-
-    private void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+10, y) && Enemies.getInstance().isPlayer(x + 10, y,  type)){
-            x=x+5;
-            isMoving=true;
-            hitBox.x=x;
-
-            dir=Settings.movementDirection.RIGHT;}else {isMoving=false; countRun=0;}
-    }
-
-    private void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-10, y) && Enemies.getInstance().isPlayer(x - 10, y,  type)){
-            x=x-5;
-            isMoving=true;
-            hitBox.x=x;
-
-            dir=Settings.movementDirection.LEFT;}else {isMoving=false; countRun=0;}
-    }
-
-    private void moveDown() {
-        if(Game.getInstance().getWorld().isWalkable(x, y+height+10) && Enemies.getInstance().isPlayer(x, y + 10, type)){
-            y=y+5;
-            hitBox.y=y;
-
-            isMoving=true;
-            dir=Settings.movementDirection.DOWN;}else {isMoving=false; countRun=0;}
-    }
-
-    private void moveUp() {
-        if(Game.getInstance().getWorld().isWalkable(x, y-10) && Enemies.getInstance().isPlayer(x, y-10, type)){
-            y=y-5;
-            isMoving=true;
-            hitBox.y=y;
-
-            dir=Settings.movementDirection.UP;}else {isMoving=false; countRun=0;}
-
     }
 }

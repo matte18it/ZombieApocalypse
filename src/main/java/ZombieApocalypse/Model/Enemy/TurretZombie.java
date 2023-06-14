@@ -4,70 +4,60 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.CountPoint;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.Settings;
-
 import java.awt.*;
-import java.util.Random;
-
 public class TurretZombie extends Enemy{
 
-    public TurretZombie(int x, int y) {
-        super(x, y);
-
-        type= Enemies.EnemiesType.TURRETZOMBIE;
-        healt=5;
-        super.setSize();
-    }
-
-    //Per prova
-    double angle, angle2;
-    Random m=new Random();
+    public TurretZombie(int x, int y) {super(x,y, Enemies.EnemiesType.TURRETZOMBIE);}
+    //calcolo dell'angolo fra player e nemico
+    double angle;
     public boolean update() {
+        //Gestione della morte
         if(dying)
             return false;
         if (healt <= 0 ) {
             CountPoint.getInstance().setPoint(Enemies.EnemiesType.TURRETZOMBIE);
             dying = true;
-            int c = m.nextInt(4, 9);
+            int c = random.nextInt(4, 9);
             Items.getInstance().dropItem(x, y, Items.ItemType.values()[c]);
             return true;}
+        //Gestione del ritorno al menu
         if (Game.getInstance().getBackMenu()) {
             stopAll = true;
             return false;
         }
+        //Gestione delle hit
         if (hit) {
             if (countHit < 30) {
                 countHit++;
             } else
                 stopHit();
         }
+        //Gestione delle hit col player
         if (hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
             Game.getInstance().getPlayerCharacter().hit();
 
-
-        Point player = Game.getInstance().getPlayerPosition();
-        Point turret = new Point(x + centerX, y + centerY);
-        if(turret.distance(player)<300){
-        float xDistance = player.x- turret.x ;
-        float yDistance = player.y- turret.y ;
-
+        Point player = getPlayerPosition();
+        Point enemy = getEnemyPosition();
+        //Gestione dei Pattern
+        if(enemy.distance(player)<300){
+            //Calcolo dell'angolo per lo spostamento dello zombie
+        float xDistance = player.x- enemy.x ;
+        float yDistance = player.y- enemy.y ;
         angle = -Math.toDegrees(Math.atan2(yDistance, xDistance));
         if (angle < 0)
             angle = angle + 360;
-        xDistance = turret.x-player.x ;
-        yDistance =turret.y-player.y ;
-        angle2 = -Math.toDegrees(Math.atan2(yDistance, xDistance));
+        xDistance = enemy.x-player.x ;
+        yDistance =enemy.y-player.y ;
+        //Calcolo dell'angolo fra nemico e player per lo sparo
+            double angle2 = -Math.toDegrees(Math.atan2(yDistance, xDistance));
         if (angle2 < 0)
             angle2 = angle2 + 360;
-
-
         turretCount+=1;
         if(turretCount==15){
             Bullets.getInstance().zombieShot(x+centerX,y+centerY-5 , angle);
             turretCount=-1;}
-
+        //Spostamento di direzione dello zombie
         int i=checkDirection(angle2);
         switch (i){
             case 0-> moveLeft();
@@ -76,59 +66,33 @@ public class TurretZombie extends Enemy{
             case 3 -> moveUp();
         }}
                 else
-            isMoving=false;
-
-
-                return true;
+            isMoving=false; return true;
         }
-
-    private boolean checkAngle() {
-        if(angle>320 || angle<40)
-            return true;
-        if(angle>50 && angle<130)
-            return true;
-        if(angle>140 && angle<220)
-            return true;
-        if(angle>230 && angle<310)
-            return true;
-        return false;
-    }
-
     private int checkDirection(double angle) {
-        if((angle<60 && angle>=0) || (angle>=320)){
-            return 0;
-        }
-        if(angle<140 && angle>=60){
-            return 1;
-
-        }
-        if(angle<230 && angle>=140){
-            return 2;
-
-        }
-
+        if((angle<60 && angle>=0) || (angle>=320)){return 0;}
+        if(angle<140 && angle>=60){return 1;}
+        if(angle<230 && angle>=140){return 2;}
         return 3;
     }
-
-
-    private void moveRight() {
+    //il nemico non si muove quindi non serve aggiornare la posizione
+     void moveRight() {
             isMoving=true;
             dir=Settings.movementDirection.RIGHT;}
 
 
-    private void moveLeft() {
+     void moveLeft() {
             isMoving=true;
             dir=Settings.movementDirection.LEFT;}
 
 
-    private void moveDown() {
+     void moveDown() {
             isMoving=true;
             dir=Settings.movementDirection.DOWN;
     }
 
-    private void moveUp() {
+     void moveUp() {
             isMoving=true;
-        dir=Settings.movementDirection.UP;
+            dir=Settings.movementDirection.UP;
 
     }
 }
