@@ -86,6 +86,10 @@ public class GameFrame extends JPanel {
     }
 
     public static void menuLaunch(){
+        if(gameLoopObject!=null)
+            gameLoopObject.stop();
+        if(timeLoop!=null)
+            timeLoop.stop();
         //reset variabili game
         Settings.campainMapIndex = 1;
         Settings.diff = Settings.Difficulty.EASY;
@@ -240,10 +244,8 @@ public class GameFrame extends JPanel {
         frameGame.dispose();
         gameLoopObject.stop();
         ThreadPool.stop();
+        timeLoop.stop();
         System.exit(0);
-    }
-    public static void closeGame() {
-        gameLoopObject.stop();
     }
 
     private static void dimension() {

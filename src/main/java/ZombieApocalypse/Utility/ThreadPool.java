@@ -24,7 +24,7 @@ public class ThreadPool {
         try{
                 return future.get();
         }catch (CancellationException |ExecutionException | InterruptedException e){
-            ResultsPanel.getInstance().showError("Cancellazione, Interruzione o Errore nel caricamento di una risorsa tramite ThreadPool ->"+ e.getMessage(), 80, e);
+            ResultsPanel.getInstance().showError("Cancellazione, Interruzione o Errore nel caricamento di una risorsa tramite ThreadPool", 80, e);
         }
         return null;
     }

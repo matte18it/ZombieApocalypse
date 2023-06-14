@@ -31,7 +31,7 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
         try{
             graphicUpdatethread.join();
         }catch (InterruptedException e){
-            ResultsPanel.getInstance().showError("Errore nel aggiornamento della grafica  ", 80, e);
+            ResultsPanel.getInstance().showError("Errore nel aggiornamento della grafica", 80, e);
         }
             if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
                 Game.getInstance().update();
@@ -59,12 +59,11 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
             if(lastRun){
                 Game.getInstance().setBackMenu(false);
             }
-
-
-
         }
+//Gestione degli eventi: tastiera e movimenti del mouse
     @Override
     public void keyPressed(KeyEvent e) {
+        //Gestione del Mancinismo
         if(GameData.mancino) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_I -> Game.getInstance().startMovementUp();
@@ -102,16 +101,6 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
                 Game.getInstance().stopMovement();
         }
     }
-
-
-
-
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-
-    }
-
     @Override
     public void mouseMoved(MouseEvent e) {
         if(Game.getInstance().hasPistol)
@@ -120,42 +109,26 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
             panel.getShotgunView().update(e.getPoint());
         if(Game.getInstance().hasGrenade)
             panel.getGrenadeView().update(e.getPoint());
-
         Game.getInstance().setLastMousePosition(e.getPoint());
-
     }
-
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
-
     @Override
     public void mousePressed(MouseEvent e) {
-
         if(GameData.mancino && e.getButton()==MouseEvent.BUTTON3)
             Game.getInstance().attack();
         if(!GameData.mancino && e.getButton()==MouseEvent.BUTTON1)
             Game.getInstance().attack();
-
     }
-
     @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
+    public void mouseClicked(MouseEvent e) {}
     @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
+    public void mouseReleased(MouseEvent e) {}
+    @Override
+    public void mouseEntered(MouseEvent e) {}
     @Override
     public void mouseExited(MouseEvent e) {}
     @Override
     public void keyTyped(KeyEvent e) {}
-
-
+    @Override
+    public void mouseDragged(MouseEvent e) {}
 }
 
