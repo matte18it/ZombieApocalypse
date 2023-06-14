@@ -236,10 +236,8 @@ public class PlayWav {
     }
 
     public void playZombieHit(){
-        if(clipZombieHit == null)
-            clipZombieHit = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieHit.wav");
-        else if(clipZombieHit.getFramePosition() != 0)
-            clipZombieHit.setFramePosition(0);
+        clipZombieHit = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieHit.wav");
+
 
         sound = (FloatControl) clipZombieHit.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);

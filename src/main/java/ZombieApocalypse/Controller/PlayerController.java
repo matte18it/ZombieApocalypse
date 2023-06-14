@@ -33,7 +33,7 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
         }catch (InterruptedException e){
             ResultsPanel.getInstance().showError("Errore nel aggiornamento della grafica", 80, e);
         }
-            if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
+            if(Game.getInstance().getPause() && !Game.getInstance().getBackMenu()){
                 Game.getInstance().update();
                 //lancio dell'update del GraphicPanel con un thread
                 graphicUpdatethread =new Thread(panel::update);
@@ -86,7 +86,7 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
             }
         }
         if( e.getKeyCode()== KeyEvent.VK_ESCAPE)
-            if(!Game.getInstance().getPause()){
+            if(Game.getInstance().getPause()){
                 Game.getInstance().setPause(true);
                 ResultsPanel.getInstance().showPause();
             }

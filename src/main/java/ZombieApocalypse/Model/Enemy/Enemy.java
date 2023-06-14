@@ -51,7 +51,6 @@ public  abstract class Enemy {
     //Gestione dei movimenti del turretZombie
     public double turretCount=0;
     //Getters
-     int getCenterY() {return centerY;}
      public int getX() {return x;}
      public int getY() {return y;}
     public int getWight() {return wight;}
@@ -60,9 +59,6 @@ public  abstract class Enemy {
     Point getEnemyPosition(){return new Point(x + centerX, y + centerY);}
     public int getGunX() {return gunPosition.x;}
     public int getGunY() {return gunPosition.y;}
-    int getCenterX() {
-        return centerX;
-    }
     public EnemyViewInterface getView(){return view;}
     public void updateGunPosition() {}
     //Set iniziale dei parametri
@@ -94,8 +90,9 @@ public  abstract class Enemy {
      void moveRight() {
         if(Game.getInstance().getWorld().isWalkable(x+wight+numStep, y) && Enemies.getInstance().isPlayer(x + numStep, y,  type)){
             if(run)
-                numStep=numStep*3;
-            x=x+numStep;
+                x=x+(numStep*3);
+            else
+                x=x+numStep;
             hitBox.x=x;
             isMoving=true;
             dir=Settings.movementDirection.RIGHT;
@@ -105,8 +102,9 @@ public  abstract class Enemy {
      void moveLeft() {
         if(Game.getInstance().getWorld().isWalkable(x-numStep, y) && Enemies.getInstance().isPlayer(x - numStep, y,  type)){
             if(run)
-                numStep=numStep*3;
-            x=x-numStep;
+                x=x-(numStep*3);
+            else
+                x=x-numStep;
             hitBox.x=x;
             isMoving=true;
             dir=Settings.movementDirection.LEFT;
@@ -117,8 +115,9 @@ public  abstract class Enemy {
      void moveDown() {
         if(Game.getInstance().getWorld().isWalkable(x, y+height+numStep) && Enemies.getInstance().isPlayer(x, y + numStep, type)){
             if(run)
-                numStep=numStep*3;
-            y=y+numStep;
+                y=y+(numStep*3);
+            else
+                y=y+numStep;
             isMoving=true;
             hitBox.y=y;
             dir=Settings.movementDirection.DOWN;
@@ -128,8 +127,9 @@ public  abstract class Enemy {
      void moveUp() {
         if(Game.getInstance().getWorld().isWalkable(x, y-numStep) && Enemies.getInstance().isPlayer(x, y - numStep,  type)){
             if(run)
-                numStep=numStep*3;
-            y=y-numStep;
+                y=y-(numStep*3);
+            else
+                y=y-numStep;
             hitBox.y=y;
             isMoving=true;
             dir=Settings.movementDirection.UP;

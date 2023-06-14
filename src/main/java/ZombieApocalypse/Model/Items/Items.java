@@ -31,9 +31,9 @@ public class Items {
     public void generateRandomItems() {
         int count=0;
         switch (Settings.diff){
-            case EASY -> count=random.nextInt(10,18);
-            case MEDIUM -> count= random.nextInt(5,10);
-            case HARD ->  count= random.nextInt(3,5);
+            case EASY -> count=random.nextInt(15,20);
+            case MEDIUM -> count= random.nextInt(10,15);
+            case HARD ->  count= random.nextInt(5,10);
         }
         int x,y;
         int c=0;

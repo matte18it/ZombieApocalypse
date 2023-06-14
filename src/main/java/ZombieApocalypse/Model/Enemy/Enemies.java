@@ -113,16 +113,16 @@ public class Enemies {
             enem=b.getEnemyPosition();
             switch (b.type) {
                 case BOSS -> {
-                    if (explosion.distance(enem) < 120){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 200){ b.gettingHit(damage); hitSound(b);}
                 }
                 case BANDIT, BOMBBANDIT, SKINNYZOMBIE, TURRETZOMBIE -> {
-                    if (explosion.distance(enem) < 30){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 50){ b.gettingHit(damage); hitSound(b);}
                 }
                 case FATZOMBIE -> {
-                    if (explosion.distance(enem) < 45){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 65){ b.gettingHit(damage); hitSound(b);}
                 }
                 case KIDZOMBIE -> {
-                    if (explosion.distance(enem) < 15){ b.gettingHit(damage); hitSound(b);}
+                    if (explosion.distance(enem) < 20){ b.gettingHit(damage); hitSound(b);}
                 }
             }
         }}

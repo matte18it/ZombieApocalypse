@@ -86,9 +86,9 @@ private int count=0;
 
             if(explosion.distance(player)<dimension ){
             Game.getInstance().getPlayerCharacter().hit();
-
-        } if(numFrame==11)
-                Enemies.getInstance().checkHitWithExplosion(x,y,dimension/2, dimension/2, damage);
+        //I nemici non hanno un periodo di immortalitò, quindi divido il danno fra i frame
+        } if(numFrame>10 && numFrame<17)
+                Enemies.getInstance().checkHitWithExplosion(x,y,dimension/2, dimension/2, damage/6);
 
 
         }}
