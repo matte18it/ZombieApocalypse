@@ -11,19 +11,16 @@ import java.awt.*;
 public class ShotgunModel extends GunModel{
     int radius, xPosy, yPosy;
     public double angle=0;
-
     public ShotgunModel(){
         super(Settings.CELL_SIZEX,Settings.CELL_SIZEY-10, 5);
         radius=height-20;
         xPosy=width;
         yPosy=height-10;
-        angle=0;
         hitBox=new Rectangle(xPosy,yPosy,width,height);
         imagePosition=new Point(xPosy,yPosy);
-
-
     }
     public void attack() {
+        //posizionamento e creazione proiettili
         if(GameData.sound)
             PlayWav.getInstance().playPumpShot();
 
@@ -55,12 +52,14 @@ public class ShotgunModel extends GunModel{
 
     }
     public void  update(Point point){
+        //update dell'arma secondo il mouse
         int x, y;
         if(point==null){
             x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
             y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
             hitBox.x=x;
             hitBox.y=y;
+            //Inversione per permettere al GraphicPanel di disegnare orizzondale e verticale
             if(isUp()){
                 hitBox.height=width;
                 hitBox.width=height;
@@ -88,14 +87,8 @@ public class ShotgunModel extends GunModel{
         //Calcolo della nuova poszione dell'arma, con immagini rettangolari va ribilanciata
         xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength))-20;
         yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength))-10;
-
-
-
-
         //Aggiorno posizione
         imagePosition=new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy, Game.getInstance().getPlayerCharacter().getY()+yPosy);
-
-
     }
     //Ho bisogno di sapere se l'arma è in verticale o in orizzondale
     //Perchè wight e height si invertono nel Graphic Panel
@@ -105,14 +98,8 @@ public class ShotgunModel extends GunModel{
         }
         if(angle<140 && angle>=60){
             return true;
-
         }
-        if(angle<230 && angle>=140){
-            return false;
-
-        }
-
-        return true;
+        return !(angle < 230) || !(angle >= 140);
     }
 
 }

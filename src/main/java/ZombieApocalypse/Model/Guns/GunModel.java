@@ -1,8 +1,10 @@
 package ZombieApocalypse.Model.Guns;
 
+import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
-
 import java.awt.*;
+
+
 public abstract class GunModel {
     int damage;
     int width;
@@ -38,7 +40,8 @@ public abstract class GunModel {
     }
     public  void  update(Point point){}
     public  void  update(){}
-    public   boolean isUp(){return false;};
+    public   boolean isUp(){
+        return Game.getInstance().getPlayerCharacter().dir == Settings.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == Settings.movementDirection.DOWN;};
     public Bullet.Direction checkDirection(double angle){
         if((angle<60 && angle>=0) || (angle>=320)){
             return Bullet.Direction.RIGHT;

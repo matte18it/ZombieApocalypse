@@ -11,8 +11,6 @@ public class PistolModel extends GunModel{
     //Raggio del cerchio, più è piccolo più è grande il cerchio
     int radius, xPosy, yPosy;
     public double angle=0;
-
-
     public PistolModel(){
         super(Settings.CELL_SIZEX-15, Settings.CELL_SIZEY-10, 2);
         radius=height-30;
@@ -22,10 +20,10 @@ public class PistolModel extends GunModel{
         imagePosition=new Point(xPosy,yPosy);
     }
     public void attack() {
+        //Posizione di partenza del Bullet
         if(GameData.sound) {
             PlayWav.getInstance().playShotPistola();
         }
-
         attack=true;
         int x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
         int y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
@@ -40,8 +38,6 @@ public class PistolModel extends GunModel{
         }else if(dir== Bullet.Direction.DOWN){
             y=y+width;
             x=x+5;
-
-
         }  Bullets.getInstance().PistolShot(x, y, angle);
 
     }
@@ -52,6 +48,7 @@ public class PistolModel extends GunModel{
             y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
             hitBox.x=x;
             hitBox.y=y;
+            //Inversione per permettere al GraphicPanel di disegnare orizzondale e verticale
             if(isUp()){
                 hitBox.height=width;
                 hitBox.width=height;
@@ -98,23 +95,6 @@ public class PistolModel extends GunModel{
             return true;
 
         }
-        if(angle<230 && angle>=140){
-            return false;
-
-        }
-
-        return true;
-    }
-    public Bullet.Direction checkDirection(double angle){
-        if((angle<60 && angle>=0) || (angle>=320)){
-            return Bullet.Direction.RIGHT;
-        }
-        if(angle<140 && angle>=60){
-            return Bullet.Direction.UP;
-        }
-        if(angle<230 && angle>=140){
-            return Bullet.Direction.LEFT;
-        }
-        return Bullet.Direction.DOWN;
+        return !(angle < 230) || !(angle >= 140);
     }
 }

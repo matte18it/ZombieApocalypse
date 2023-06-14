@@ -17,7 +17,7 @@ public class GrenadeModel extends GunModel{
     public void update(){
         int x;
         int y;
-        //Posizionamento della granata secondo la posizione del player
+        //Posizionamento della granata secondo la posizione del player e la dir
         if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.DOWN){
             x= Game.getInstance().getPlayerCharacter().getX()+25;
             y=Game.getInstance().getPlayerCharacter().getY()+18;
@@ -39,6 +39,8 @@ public class GrenadeModel extends GunModel{
             imagePosition=new Point(x, y);
         }
     }
+
+
     public void update(Point e){
         //Aggiorna l'angolo di lancio per il mouse, che verra usato per il lancio della granata
         Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
