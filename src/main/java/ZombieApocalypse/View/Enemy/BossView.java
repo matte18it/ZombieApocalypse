@@ -65,10 +65,6 @@ public class BossView implements EnemyViewInterface{
 
 
     public void update()  {
-        if (enemyModel.stopAll) {
-            currentImage = emptyImage.get();
-            return;
-        }
         if (enemyModel.attack1) {
             if (enemyModel.countAttack % 2 != 0) {
                 switch (enemyModel.dir) {

@@ -10,9 +10,8 @@ import java.awt.*;
 import java.util.Random;
 
 public  abstract class Enemy {
-    //Gestione del movimento e pausa e morte
+    //Gestione del movimento  e morte
     public boolean isMoving=false;
-    public boolean stopAll=false;
     public boolean dying=false;
     boolean run=false;
     //Utilizzo della random nei pattern

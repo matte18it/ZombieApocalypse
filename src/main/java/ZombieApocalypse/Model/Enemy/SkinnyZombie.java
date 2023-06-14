@@ -21,7 +21,6 @@ public class SkinnyZombie extends Enemy{
             }
         //Gestione dalla Pausa del Gioco e del Menu
         if(Game.getInstance().getBackMenu()){
-            stopAll=true;
             return false;
         }
         //Gestione delle Hit

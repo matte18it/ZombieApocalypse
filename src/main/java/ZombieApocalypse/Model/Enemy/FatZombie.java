@@ -23,7 +23,6 @@ public class FatZombie extends Enemy{
             }
         //Gestione della Pausa del gioco
         if(Game.getInstance().getBackMenu()){
-            stopAll=true;
             return false;
         }
         //Gestione delle Hit

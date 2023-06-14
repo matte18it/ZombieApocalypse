@@ -22,7 +22,6 @@ public class KidZombie extends Enemy{
             }
         //Gestione della Pausa del gioco e del Menu
         if(Game.getInstance().getBackMenu()){
-            stopAll=true;
             return false;
         }
         //Gestione delle Hit

@@ -13,7 +13,6 @@ public class Boss extends Enemy{
     public boolean update() {
         //Gestione della Pausa del gioco
         if(Game.getInstance().getBackMenu()){
-            stopAll=true;
             return false;
         }
         //Gestione della Morte

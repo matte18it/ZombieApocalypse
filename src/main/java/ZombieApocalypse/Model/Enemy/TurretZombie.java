@@ -23,7 +23,6 @@ public class TurretZombie extends Enemy{
             return true;}
         //Gestione del ritorno al menu
         if (Game.getInstance().getBackMenu()) {
-            stopAll = true;
             return false;
         }
         //Gestione delle hit

@@ -71,10 +71,6 @@ public class EnemyView  implements  EnemyViewInterface{
             return;
         }
 
-        if(enemyModel.stopAll ){
-            currentImage=emptyImage.get();
-            return;
-        }
         if(enemyModel.hit){
             if(enemyModel.countHit%2==0){
                 if(enemyModel.dir== Settings.movementDirection.UP)

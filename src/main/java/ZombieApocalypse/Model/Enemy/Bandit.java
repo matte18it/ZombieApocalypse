@@ -23,7 +23,6 @@ class Bandit extends Enemy{
             }
         //Gestione del Ritorno al menu
         if(Game.getInstance().getBackMenu()){
-            stopAll=true;
             return false;
         }
         //Gestione delle Hit

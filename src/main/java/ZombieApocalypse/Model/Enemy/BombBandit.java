@@ -24,7 +24,6 @@ public class BombBandit extends Enemy{
             }
         //Gestione dalla Pausa del Gioco
         if(Game.getInstance().getBackMenu()){
-            stopAll=true;
             return false;
         }
         //Gestione delle Hit
