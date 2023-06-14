@@ -8,15 +8,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class BanditPistolView {
-    private final GunAnimation gunAnimation;
+    private final GunAnimation gunAnimation=new GunAnimation("Pistola",4, GunAnimation.GunType.PISTOL);
     public Image currentImage;
 
 
     public BanditPistolView() {
-        gunAnimation= new GunAnimation("Pistola",4, GunAnimation.GunType.PISTOL);
             currentImage=gunAnimation.getDefaultImage();
-
-
     }
 
     public void update(Enemy e)  {

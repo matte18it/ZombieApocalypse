@@ -6,14 +6,11 @@ import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Model.SplashScreenModel;
 import ZombieApocalypse.Model.World;
+import ZombieApocalypse.Utility.*;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 import ZombieApocalypse.Controller.PlayerController;
-import ZombieApocalypse.Utility.ResourcesLoader;
-import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
 
 import javax.swing.*;
 import java.awt.*;
@@ -242,6 +239,7 @@ public class GameFrame extends JPanel {
         //chiudo il programma
         frameGame.dispose();
         gameLoopObject.stop();
+        ThreadPool.stop();
         System.exit(0);
     }
     public static void closeGame() {

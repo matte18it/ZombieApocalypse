@@ -8,32 +8,19 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class GrenadeView {
-    private final Future<ItemAnimation> gunAnimation;
+    private final ItemAnimation gunAnimation=new ItemAnimation("Granata",4);;
     public Image currentImage;
 
 
     public GrenadeView() {
-        gunAnimation= ThreadPool.executeItemAnimation( new ItemAnimation("Granata",4));
-        try {
-            currentImage=gunAnimation.get().getDefaultImage();
-        }catch (ExecutionException | InterruptedException e){
-            e.printStackTrace();
-            System.exit(207);
-        }
+            currentImage=gunAnimation.getDefaultImage();
+
 
     }
 
     public void update() {
         Game.getInstance().getGrenadeModel().update();
-        try {
-            currentImage=gunAnimation.get().update();
-        }catch (ExecutionException | InterruptedException e){
-            e.printStackTrace();
-            System.exit(207);
-        }
-
-
-
+            currentImage=gunAnimation.update();
 
     }
 public void update(Point e){

@@ -20,7 +20,7 @@ import java.util.*;
 
 import static java.lang.Thread.sleep;
 
-public class GraphicPanel extends JPanel implements Runnable {
+public class GraphicPanel extends JPanel  {
     //Disegna il mondo
     private boolean firstLoad=true;
     private final CharacterView characterView = new CharacterView();
@@ -105,7 +105,7 @@ public class GraphicPanel extends JPanel implements Runnable {
         }}
         synchronized (Enemies.getInstance().getEnemies()){
         for (Enemy b : Enemies.getInstance().getEnemies()) {
-            b.getView().getUpdate();
+            b.getView().update();
             if (b.type == Enemies.EnemiesType.BANDIT) {
                 pistolBandit.update(b);
                 g.drawImage(pistolBandit.getCurrentImage(), b.getGunX(), b.getGunY(), Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);
@@ -156,9 +156,9 @@ public class GraphicPanel extends JPanel implements Runnable {
 
 
     }
-    public void run() {
+    public void update() {
 
-        characterView.getUpdate();
+        characterView.update();
         //Sposto l'arma dove è il character senza girarla
         if(Game.getInstance().hasPistol)
             pistolView.update(null);
@@ -173,8 +173,8 @@ public class GraphicPanel extends JPanel implements Runnable {
         Bullets.getInstance().update();
         Items.getInstance().update();
         Enemies.getInstance().update();
-        Thread t1=new Thread(this::repaint);
-        t1.start();
+        Thread repaintThread=new Thread(this::repaint);
+        repaintThread.start();
 
     }
 

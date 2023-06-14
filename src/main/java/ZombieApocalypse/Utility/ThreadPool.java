@@ -20,30 +20,14 @@ public class ThreadPool {
     }
     public ThreadPool(){};
 
-    public  ExecutorService getExecutor() {
-        return executor;
-    }
-
     public Image get(){
         try{
                 return future.get();
         }catch (CancellationException |ExecutionException | InterruptedException e){
-            ResultsPanel.getInstance().showError("Cancellazione, Interruzione o Errore nell'esecuzione di una task nella ThreadPool intregata ->"+ e.getMessage(), 80, e);
+            ResultsPanel.getInstance().showError("Cancellazione, Interruzione o Errore nel caricamento di una risorsa tramite ThreadPool ->"+ e.getMessage(), 80, e);
         }
         return null;
     }
-    public static Future<CharacterAnimation> executeCharacterAnimation(CharacterAnimation task) {
-        return  executor.submit(()->task);
-    }
-
-    public static Future<ItemAnimation> executeItemAnimation(ItemAnimation task) {
-        return  executor.submit(()->task);
-    }
-    public static Future<GunAttackAnimation> GunAttackAnimation(GunAttackAnimation task) {
-        return  executor.submit(()->task);
-    }
-
-
 
 
     public static void stop(){

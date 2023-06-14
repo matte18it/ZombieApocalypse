@@ -10,40 +10,28 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class KnifeView {
-    private final Future<ItemAnimation> gunAnimation;
-    private final Future<GunAttackAnimation> attackFrame;
-    private final Future<GunAttackAnimation> attackFrameReverse;
+    private final ItemAnimation gunAnimation=new ItemAnimation("Coltello",4);
+    private final GunAttackAnimation attackFrame=new GunAttackAnimation("AnimazioneColtello",4);
+    private final GunAttackAnimation attackFrameReverse=new GunAttackAnimation("AnimazioneColtelloReverse",4);
     public Image currentImage;
 
 
     public KnifeView() {
-        gunAnimation= ThreadPool.executeItemAnimation(new ItemAnimation("Coltello",4));
-        attackFrame= ThreadPool.GunAttackAnimation(new GunAttackAnimation("AnimazioneColtello",4));
-        attackFrameReverse= ThreadPool.GunAttackAnimation(new GunAttackAnimation("AnimazioneColtelloReverse",4));
+            currentImage=gunAnimation.getDefaultImage();
 
-        try {
-            currentImage=gunAnimation.get().getDefaultImage();
-        }catch (ExecutionException | InterruptedException e){
-            e.printStackTrace();
-            System.exit(207);
-        }
     }
 
     public void update() {
         Game.getInstance().getKnifeModel().update();
-        try {
             //Aggiorno immagine
             if( Game.getInstance().getKnifeModel().getAttack() ) {
                 if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.UP)
-                    currentImage=attackFrameReverse.get().update();
+                    currentImage=attackFrameReverse.update();
                 else
-                    currentImage = attackFrame.get().update();
+                    currentImage = attackFrame.update();
             } else
-                currentImage=gunAnimation.get().update();
-        }catch (ExecutionException | InterruptedException e){
-            e.printStackTrace();
-            System.exit(207);
-        }
+                currentImage=gunAnimation.update();
+
 
 
 

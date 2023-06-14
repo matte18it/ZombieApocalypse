@@ -5,7 +5,6 @@ import ZombieApocalypse.View.GraphicPanel;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-import java.util.concurrent.*;
 
 public class PlayerController implements KeyListener, MouseMotionListener ,MouseListener {
     private final GraphicPanel panel;
@@ -17,10 +16,10 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
     private final int maxTimeSoundZombie=600;
     //Gestione random del suono degli zombie
     private int randomZombie = randomVariable.nextInt(minTimeSoundZombie,maxTimeSoundZombie);
-    Thread t1;
+    Thread graphicUpdatethread;
     public PlayerController(GraphicPanel panel) {
         this.panel = panel;
-        t1=new Thread(panel);
+        graphicUpdatethread =new Thread(panel::update);
         panel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -30,15 +29,15 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
         });}
     public void update(){
         try{
-            t1.join();
+            graphicUpdatethread.join();
         }catch (InterruptedException e){
             ResultsPanel.getInstance().showError("Errore nel aggiornamento della grafica  ", 80, e);
         }
             if(!Game.getInstance().getPause()&& !Game.getInstance().getBackMenu()){
                 Game.getInstance().update();
                 //lancio dell'update del GraphicPanel con un thread
-                t1=new Thread(panel);
-                t1.start();
+                graphicUpdatethread =new Thread(panel::update);
+                graphicUpdatethread.start();
                 if(lastRun)
                     lastRun=false;
                 if(countZombie == randomZombie ){
@@ -52,8 +51,8 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
                 //Gestione del ritorno al menù
             }if( Game.getInstance().getBackMenu() && !lastRun){
                 Game.getInstance().update();
-                t1=new Thread(panel);
-                t1.start();
+                graphicUpdatethread =new Thread(panel::update);
+                graphicUpdatethread.start();
                 lastRun=true;
                 return;
             }
