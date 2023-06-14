@@ -18,14 +18,10 @@ public class BulletBossView extends BulletView{
 
     public void update() {
 
-        if(bulletModel.menu){
-            currentImage=emptyImage.get();
-            return;
-        }
 
         if(!bulletModel.ending) {
         if (count==3){
-            switch (bulletModel.dir){
+            switch (bulletModel.bulletDir){
                 case RIGHT -> currentImage = bullet[rightIndex+1].get();
                 case LEFT ->  currentImage = bullet[leftIndex+1].get();
                 case UP -> currentImage = bullet[upIndex+1].get();
@@ -33,7 +29,7 @@ public class BulletBossView extends BulletView{
             }
             count=0;}
         else{
-            switch (bulletModel.dir){
+            switch (bulletModel.bulletDir){
                 case RIGHT -> currentImage = bullet[rightIndex].get();
                 case LEFT ->  currentImage = bullet[leftIndex].get();
                 case UP -> currentImage = bullet[upIndex].get();

@@ -4,9 +4,7 @@ import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.CountPoint;
-
 import java.awt.*;
-import java.util.Random;
 class Bandit extends Enemy{
     private int count=0;
     Bandit(int x, int y) {
@@ -75,10 +73,10 @@ class Bandit extends Enemy{
         //Agiornamento della posizione dello sparo
         if(count==20){
             switch (dir){
-                case LEFT -> Bullets.getInstance().BulletBandit(x+wight+2,y+5, 10, 0, Bullet.Direction.RIGHT);
-                case UP ->  Bullets.getInstance().BulletBandit(x+wight-5,y+height, 10, 0, Bullet.Direction.DOWN);
-                case RIGHT -> Bullets.getInstance().BulletBandit(x-10,y+5, 10, 0, Bullet.Direction.LEFT);
-                case DOWN -> Bullets.getInstance().BulletBandit(x-2,y, 10, 0, Bullet.Direction.UP);
+                case LEFT -> Bullets.getInstance().BulletBandit(x+wight+2,y+5, Bullet.Direction.RIGHT);
+                case UP ->  Bullets.getInstance().BulletBandit(x+wight-5,y+height, Bullet.Direction.DOWN);
+                case RIGHT -> Bullets.getInstance().BulletBandit(x-10,y+5, Bullet.Direction.LEFT);
+                case DOWN -> Bullets.getInstance().BulletBandit(x-2,y, Bullet.Direction.UP);
             } count=0;}
         count++;
         }

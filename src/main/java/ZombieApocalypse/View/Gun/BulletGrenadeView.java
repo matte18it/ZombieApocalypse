@@ -8,9 +8,7 @@ public class BulletGrenadeView extends BulletView{
     }
 
     public void update() {
-        if(bulletModel.menu){
-            currentImage=emptyImage.get();
-                return;}
+
             if(!bulletModel.ending){
                 currentImage=grenade.get();
 

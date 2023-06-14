@@ -9,10 +9,7 @@ public class BulletPistolView extends BulletView{
     }
 
     public void update() {
-        if(bulletModel.menu){
-            currentImage=emptyImage.get();
-            return;
-        }
+
         if(!bulletModel.ending) {
             if (bulletModel.numFrame<1)
                 currentImage = bullet[0].get();
@@ -25,8 +22,7 @@ public class BulletPistolView extends BulletView{
                 currentImage=bullet[3].get();
             else if(bulletModel.numFrame==1)
                 currentImage=bullet[4].get();
-            else if(bulletModel.numFrame>=2)
-                currentImage=emptyImage.get();
+
         } }
 
 

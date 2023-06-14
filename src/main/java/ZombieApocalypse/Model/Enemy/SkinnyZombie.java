@@ -3,9 +3,7 @@ package ZombieApocalypse.Model.Enemy;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.CountPoint;
-import ZombieApocalypse.Utility.Settings;
 
-import java.util.Random;
 
 public class SkinnyZombie extends Enemy{
 

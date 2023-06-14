@@ -9,51 +9,34 @@ import ZombieApocalypse.Utility.Settings;
 import java.awt.*;
 
 public class BulletGrenade extends Bullet{
-    BulletGrenade(int x, int y, int dimension,double angle,  Direction d, int tot){
-        super(x,y,dimension, BulletType.GRENADE);
-        velocityX=15;
-        velocityY=15;
-        dir=d;
-        numFrame=0;
-        damage=12;
-        switch (Settings.diff){
-            case EASY -> damage=damage*2;
-            case HARD -> damage=damage/2;
-        }
+    BulletGrenade(int x, int y,  Direction d, int tot){
+        super(x,y, BulletType.GRENADE, d);
         totalFrame=tot/15;
     }
-
-
 private int count=0;
-boolean stopAll=false;
     boolean update(){
-        if(!stopAll){
-            if(Game.getInstance().getBackMenu()){
-            stopAll=true;
-            menu=true;
-            numFrame=25;
-            return true;
-        }
-
+        //Gestione del ritorno al menu
+        if(Game.getInstance().getBackMenu()){
+            return false;}
         if(!ending) {
+            //Gestione del movimento del proiettile
             count++;
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && count<totalFrame) {
-                if (dir == Direction.DOWN)
-                    this.y += this.velocityY;
-                if (dir == Direction.LEFT)
-                    this.x -= this.velocityX;
-                if (dir == Direction.UP)
-                    this.y -= this.velocityY;
-                if (dir == Direction.RIGHT)
-                    this.x += this.velocityX;
+                if (bulletDir == Direction.DOWN)
+                    this.y += this.velocity;
+                if (bulletDir == Direction.LEFT)
+                    this.x -= this.velocity;
+                if (bulletDir == Direction.UP)
+                    this.y -= this.velocity;
+                if (bulletDir == Direction.RIGHT)
+                    this.x += this.velocity;
 
-                return true;
             } else{
                 ending=true;
                 numFrame=0;
-                return true;
             }
-        }else{
+            return true;
+        }else{ //Gestione dell'esplosione
             checkcollision();
 
             if(numFrame<24){
@@ -93,9 +76,8 @@ boolean stopAll=false;
             else
                 return false;
         }
-    }else
-        return false;}
-
+    }
+//Controlllo della collisione con enemies e player
     private void checkcollision() {
         Point explosion=new Point(x+dimension/2,y+dimension/2);
         Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);

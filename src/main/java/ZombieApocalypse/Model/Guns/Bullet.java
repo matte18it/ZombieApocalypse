@@ -1,60 +1,97 @@
 package ZombieApocalypse.Model.Guns;
 
+import ZombieApocalypse.Model.Game;
+import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.Gun.*;
 
 import java.awt.*;
-
 public abstract class Bullet {
-     int velocityX;
-     int velocityY;
-     public boolean menu=false;
-    public enum Direction{UP,DOWN,LEFT,RIGHT};
-    public enum BulletType{PISTOL, SHOTGUN, ZOMBIE, GRENADE, BOSS};
-    private  final BulletView bulletView;
+    //Gestione della velocità del proiettile
+     int velocity;
+     //gestione del ritorno al menù
+     public boolean ending=false;
+     //direzione del proiettile
+     public enum Direction {UP,DOWN,LEFT,RIGHT}
+    public Direction bulletDir;
+    //Tipo di proiettile
+    public enum BulletType{PISTOL, SHOTGUN, ZOMBIE, GRENADE, BOSS}
+     public BulletType type;
+    //view del proiettile
+    private BulletView bulletView;
     Rectangle hitBox;
      int x;
      int y;
     int dimension;
-     public Bullet.Direction dir;
-    public int numFrame=0;
-    int totalFrame;
-    public boolean ending=false;
     int damage;
-    public BulletType type;
-
-
-    Bullet(int x, int y, int dimension, BulletType bulletType){
+    public int numFrame=0;
+    //numero di frame in cui il proiettile deve muoversi
+    int totalFrame;
+    public int getX() {return this.x;}
+    public final BulletView getView(){return bulletView;}
+    public int getY() {return this.y;}
+    public int getDimension() {return this.dimension;}
+    abstract boolean update();
+    Bullet(int x, int y,  BulletType bulletType, Direction bulletDir){
+        this.bulletDir = bulletDir;
         type=bulletType;
         this.x=x;
         this.y=y;
-        this.dimension=dimension;
-        this.velocityX=10;
-        this.velocityY=10;
-        hitBox=new Rectangle(x, y, dimension, dimension);
         switch (type){
-            case ZOMBIE -> bulletView=new BulletZombieView(this);
-            case GRENADE -> bulletView=new BulletGrenadeView(this);
-            case BOSS -> bulletView=new BulletBossView(this);
-            default -> bulletView=new BulletPistolView(this);
+            case PISTOL -> setPistol();
+            case ZOMBIE -> setZombie();
+            case GRENADE -> setGrenade();
+            case SHOTGUN -> setShotgun();
+            case BOSS -> setBoss();
         }
+        hitBox=new Rectangle(x, y, dimension, dimension);
+    }
+    //Inizializazzione dei tipi di proiettili
+    private void setBoss() {
+        this.dimension=25;
+        totalFrame=80;
+        velocity=10;
+        bulletView=new BulletBossView(this);
+    }
+
+    private void setShotgun() {
+        this.dimension=18;
+        totalFrame=8;
+        damage=4;
+        switch (Settings.diff){
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
         }
-    public int getX() {
-        return this.x;
-    }
-    public final BulletView getView(){
-        return bulletView;
+        velocity=10;
+        bulletView=new BulletPistolView(this);
     }
 
-    public int getY() {
-        return this.y;
+    private void setGrenade() {
+        this.dimension=Game.getInstance().getGrenadeModel().getWidth();
+        damage=12;
+        switch (Settings.diff){
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
+        }
+        velocity=15;
+        bulletView=new BulletGrenadeView(this);
     }
 
-    public int getDimension() {
-        return this.dimension;
+    private void setPistol(){
+        this.dimension=10;
+        totalFrame=30;
+        damage=4;
+        switch (Settings.diff){
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
+        }
+        velocity=10;
+        bulletView=new BulletPistolView(this);}
+
+    private void setZombie() {
+        this.dimension = 10;
+        totalFrame = 20;
+        velocity = 10;
+        bulletView = new BulletZombieView(this);
     }
-
-    abstract boolean update();
-
-
 }
 

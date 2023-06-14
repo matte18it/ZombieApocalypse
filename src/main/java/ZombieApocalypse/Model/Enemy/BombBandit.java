@@ -6,9 +6,7 @@ import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.CountPoint;
 import ZombieApocalypse.Utility.Settings;
-
 import java.awt.*;
-import java.util.Random;
 
 public class BombBandit extends Enemy{
     BombBandit(int x, int y) {super(x,y, Enemies.EnemiesType.BOMBBANDIT);}
@@ -73,10 +71,10 @@ public class BombBandit extends Enemy{
         //Lancia la granata ogni 40 frame
         if(count==40){
             switch (dir){
-                case RIGHT -> Bullets.getInstance().BulletGrenadeBandit(x+wight+2,y+5, Game.getInstance().getGrenadeModel().getWidth(), 0, Bullet.Direction.RIGHT, totalFrame);
-                case DOWN ->  Bullets.getInstance().BulletGrenadeBandit(x+wight-5,y+height, Game.getInstance().getGrenadeModel().getWidth(), 0, Bullet.Direction.DOWN, totalFrame);
-                case LEFT -> Bullets.getInstance().BulletGrenadeBandit(x-10,y+5, Game.getInstance().getGrenadeModel().getWidth(), 0, Bullet.Direction.LEFT, totalFrame);
-                case UP -> Bullets.getInstance().BulletGrenadeBandit(x-2,y, Game.getInstance().getGrenadeModel().getWidth(), 0, Bullet.Direction.UP, totalFrame);
+                case RIGHT -> Bullets.getInstance().BulletGrenadeBandit(x+wight+2,y+5, Bullet.Direction.RIGHT, totalFrame);
+                case DOWN ->  Bullets.getInstance().BulletGrenadeBandit(x+wight-5,y+height,  Bullet.Direction.DOWN, totalFrame);
+                case LEFT -> Bullets.getInstance().BulletGrenadeBandit(x-10,y+5, Bullet.Direction.LEFT, totalFrame);
+                case UP -> Bullets.getInstance().BulletGrenadeBandit(x-2,y, Bullet.Direction.UP, totalFrame);
 
             } count=0;}
         count++;

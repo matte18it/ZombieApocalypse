@@ -83,6 +83,7 @@ public  abstract class Enemy {
             case FATZOMBIE -> {numStep=5; healt=25;}
             case SKINNYZOMBIE -> {numStep=10; healt=5;}
             case TURRETZOMBIE -> {numStep=0; healt=5;}
+            default -> {numStep=0; healt=0;}
         }
         hitBox=new Rectangle(x,y,wight, height);
         if(type== Enemies.EnemiesType.BOSS)

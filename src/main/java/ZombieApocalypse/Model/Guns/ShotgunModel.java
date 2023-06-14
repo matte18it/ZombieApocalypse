@@ -43,13 +43,13 @@ public class ShotgunModel extends GunModel{
             x = x + 5;
 
         }   if(dir== Bullet.Direction.UP || dir==Bullet.Direction.DOWN){
-            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.RIGHT);
-            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.CENTER );
-            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.LEFT );}
+            Bullets.getInstance().ShotgunShot(x, y,  angle, BulletShotgun.Type.RIGHT);
+            Bullets.getInstance().ShotgunShot(x, y,  angle, BulletShotgun.Type.CENTER );
+            Bullets.getInstance().ShotgunShot(x, y,  angle, BulletShotgun.Type.LEFT );}
             else{
-            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.RIGHT);
-            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.CENTER);
-            Bullets.getInstance().ShotgunShot(x, y, 18, angle, BulletShotgun.Type.LEFT);
+            Bullets.getInstance().ShotgunShot(x, y,  angle, BulletShotgun.Type.RIGHT);
+            Bullets.getInstance().ShotgunShot(x, y,  angle, BulletShotgun.Type.CENTER);
+            Bullets.getInstance().ShotgunShot(x, y,  angle, BulletShotgun.Type.LEFT);
 
         }
 

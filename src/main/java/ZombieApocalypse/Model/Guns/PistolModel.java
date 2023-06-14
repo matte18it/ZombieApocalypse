@@ -45,7 +45,7 @@ public class PistolModel extends GunModel{
             x=x+5;
 
 
-        }  Bullets.getInstance().PistolShot(x, y, 10, angle);
+        }  Bullets.getInstance().PistolShot(x, y, angle);
 
     }
     public void  update(Point point){

@@ -28,7 +28,7 @@ public class GrenadeModel extends GunModel{
         Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
         Bullet.Direction dir = checkDirection(angle);
 
-        Bullets.getInstance().GrenadeLaunch(center.x, center.y, 21,  0, dir, (int)center.distance(mouse));
+        Bullets.getInstance().GrenadeLaunch(center.x, center.y,    dir, (int)center.distance(mouse));
 
 
     }

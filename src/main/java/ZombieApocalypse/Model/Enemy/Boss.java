@@ -132,10 +132,10 @@ public class Boss extends Enemy{
     private void shoot() {
         //Gestione dello sparo
         switch (dir){
-            case LEFT -> Bullets.getInstance().BulletBoss(x+30,y+35, 25, 0, Bullet.Direction.LEFT);
-            case RIGHT -> Bullets.getInstance().BulletBoss(x+wight-50,y+35, 25, 0, Bullet.Direction.RIGHT);
-            case UP -> Bullets.getInstance().BulletBoss(x+50,y,25, 0, Bullet.Direction.UP);
-            case DOWN -> Bullets.getInstance().BulletBoss(x+50,y+50,25, 0, Bullet.Direction.DOWN);
+            case LEFT -> Bullets.getInstance().BulletBoss(x+30,y+35,   Bullet.Direction.LEFT);
+            case RIGHT -> Bullets.getInstance().BulletBoss(x+wight-50,y+35,   Bullet.Direction.RIGHT);
+            case UP -> Bullets.getInstance().BulletBoss(x+50,y,  Bullet.Direction.UP);
+            case DOWN -> Bullets.getInstance().BulletBoss(x+50,y+50,  Bullet.Direction.DOWN);
         }
     }
     //Gestione dei 2 attacchi

@@ -5,84 +5,73 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
 
 public class BulletShotgun extends Bullet{
+    //Gestione dei tre tipi di proiettile dello shotgun
+    //Ognuno si deve muovere in una direzione diversa
     public enum Type{CENTER, LEFT, RIGHT};
     Type bulletType;
-
-    BulletShotgun(int x, int y, int dimension, double angle, Type t){
-        super(x,y,dimension, BulletType.SHOTGUN);
-            totalFrame=8;
+    BulletShotgun(int x, int y, double angle, Type t){
+        super(x,y, BulletType.SHOTGUN, Game.getInstance().getShotgunModel().checkDirection(angle));
             bulletType=t;
-            damage=4;
-            switch (Settings.diff){
-                case EASY -> damage=damage*2;
-                case HARD -> damage=damage/2;
-            }
-            dir=Game.getInstance().getShotgunModel().checkDirection(angle);
-
     }
 
 
     boolean update(){
+        //distanza fra ogni proiettile
         int lateral=3;
+        //Gestione del ritorno al menù
         if(Game.getInstance().getBackMenu()){
-            ending=true;
-            numFrame=2;
-            getView().update();
-            return true;
-            }
-
+            return false;}
         if(!ending) {
+            //Gestione del hitbox con i nemici
             if(Enemies.getInstance().checkBulletHitBox(hitBox, damage)){
                 ending=true;
                 numFrame=0;
-
             }
-
+            //Gestione del movimento
             if (this.getX() > 0 && this.getX() < Settings.WINDOW_SIZEX && this.y > 0 && this.y < Settings.WINDOW_SIZEY && numFrame<totalFrame) {
-                if (dir == Direction.DOWN){
+                if (bulletDir == Direction.DOWN){
                     if(bulletType==Type.LEFT){
                         this.x-=lateral;
                     }
                     else if(bulletType==Type.RIGHT){
                         this.x+=lateral;
                     }
-                        this.y += this.velocityY;}
-                if (dir == Direction.LEFT){
+                        this.y += this.velocity;}
+                if (bulletDir == Direction.LEFT){
                     if(bulletType==Type.LEFT){
                         this.y += lateral;
                     }
                     else if(bulletType==Type.RIGHT){
                         this.y-= lateral;
                 }
-                    this.x -= this.velocityX;}
-                if (dir == Direction.UP){
+                    this.x -= this.velocity;}
+                if (bulletDir == Direction.UP){
                     if(bulletType==Type.LEFT){
                         this.x-=lateral;
                     }
                     else if(bulletType==Type.RIGHT){
                         this.x+=lateral;
                 }
-                        this.y -= this.velocityY;
+                        this.y -= this.velocity;
                 }
-                if (dir == Direction.RIGHT){
+                if (bulletDir == Direction.RIGHT){
                     if(bulletType==Type.LEFT){
                         this.y -= lateral;
                     }
                     else if(bulletType==Type.RIGHT){
                         this.y+= lateral;
                 }
-                        this.x += this.velocityX;}
+                        this.x += this.velocity;}
                 hitBox.x = x;
                 hitBox.y = y;
                 numFrame++;
-                return true;
             } else{
                 ending=true;
                 numFrame=0;
-                return true;
             }
+            return true;
         }else{
-            if(numFrame<2){
+            if(numFrame<2){  //Gestione dell'animazione di fine
                 numFrame++;
                 return true;}
             else
