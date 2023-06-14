@@ -1,37 +1,34 @@
 package ZombieApocalypse.Model.Guns;
 
-import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
 
 import java.awt.*;
-
 public abstract class GunModel {
-     int damage;
+    int damage;
     int width;
     int height;
-    //Raggio del cerchio, più è piccolo più è grande il cerchio
-    int radius;
+    Rectangle hitBox;
     int centerX;
     int centerY;
-    int xPosy;
-    int yPosy;
     boolean attack=false;
-    public double angle=0;
-    public Point imagePosition;
-    public Rectangle hitBox;
-
+    public Point imagePosition=new Point(0,0);
+    GunModel(int width, int height, int damage){
+        this.width=width;
+        this.height=height;
+        switch (Settings.diff){
+            case EASY -> damage=damage*2;
+            case HARD -> damage=damage/2;
+        }
+        this.damage=damage;
+        centerX=width/2;
+        centerY=height/2;
+    }
     public boolean getAttack() {
         return attack;
     }
-
-
-
     public abstract void attack();
     public void stopAttack() {
         attack=false;
-    }
-    public double getAngle(){
-        return angle;
     }
     public int getHeight(){
         return height;
@@ -39,28 +36,20 @@ public abstract class GunModel {
     public int getWidth(){
         return width;
     }
-    public  void  update(Point point){};
-    public  void  update(){};
-
-    public abstract  boolean isUp();
+    public  void  update(Point point){}
+    public  void  update(){}
+    public   boolean isUp(){return false;};
     public Bullet.Direction checkDirection(double angle){
         if((angle<60 && angle>=0) || (angle>=320)){
             return Bullet.Direction.RIGHT;
         }
         if(angle<140 && angle>=60){
             return Bullet.Direction.UP;
-
         }
         if(angle<230 && angle>=140){
             return Bullet.Direction.LEFT;
-
         }
-
         return Bullet.Direction.DOWN;
     }
 
-    protected void setCenter() {
-        centerX=width/2;
-        centerY=height/2;
-    }
 }

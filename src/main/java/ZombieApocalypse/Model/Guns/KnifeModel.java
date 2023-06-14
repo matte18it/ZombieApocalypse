@@ -12,15 +12,9 @@ import static ZombieApocalypse.Model.Game.*;
 public class KnifeModel extends GunModel{
 
     public KnifeModel(){
-        width= Settings.CELL_SIZEX-5;
-        height=Settings.CELL_SIZEY/2;
-        imagePosition=new Point(0,0);
+        super(Settings.CELL_SIZEX-5, Settings.CELL_SIZEY/2, 4);
         hitBox=new Rectangle(imagePosition.x, imagePosition.y, width,height);
-        damage=4;
-        switch (Settings.diff){
-            case EASY -> damage=damage*2;
-            case HARD -> damage=damage/2;
-        }
+
 
 
     }

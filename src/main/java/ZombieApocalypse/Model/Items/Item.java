@@ -40,11 +40,12 @@ public  class Item {
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox) ){
              if(Game.getInstance().getMenuBar().collect() && (type!= Items.ItemType.AMMO0 && type!= Items.ItemType.AMMO1)){
                     Game.getInstance().getMenuBar().addItem(type);
+                    return false;
         }
          if (Game.getInstance().getMenuBar().collectAmmo(type) && (type== Items.ItemType.AMMO0 || type== Items.ItemType.AMMO1)) {
                 Game.getInstance().getMenuBar().addAmmo(type);
+                return false;
             }
-         return false;
         }
         return !Game.getInstance().getBackMenu();
     }}

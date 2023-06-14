@@ -1,68 +1,47 @@
 package ZombieApocalypse.Model.Guns;
-
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Utility.Settings;
-
 import java.awt.*;
-
 public class GrenadeModel extends GunModel{
-    Point mouse;
+    double angle=0;
+    Point mouse=new Point(0,0);
     public GrenadeModel(){
-        damage=10;
-        switch (Settings.diff){
-            case EASY -> damage=damage*2;
-            case HARD -> damage=damage/2;
-        }
-        width= 21;
-        height=21;
-        mouse=new Point(0,0);
-
-        imagePosition=new Point(0,0);
-
-        super.setCenter();
+        super(21,21, 10);
     }
     public void attack() {
+        //Lancio la granata, calcolo a quale distanza devo lanciarla
         Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
         Bullet.Direction dir = checkDirection(angle);
-
-        Bullets.getInstance().GrenadeLaunch(center.x, center.y,    dir, (int)center.distance(mouse));
-
-
+        Bullets.getInstance().GrenadeLaunch(center.x, center.y,dir, (int)center.distance(mouse));
     }
     public void update(){
         int x;
         int y;
+        //Posizionamento della granata secondo la posizione del player
         if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.DOWN){
-            x=Game.getInstance().getPlayerCharacter().getX()+(Game.getInstance().getPlayerCharacter().wight/2)+5;
-            y=Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().height-15;
+            x= Game.getInstance().getPlayerCharacter().getX()+25;
+            y=Game.getInstance().getPlayerCharacter().getY()+18;
             imagePosition=new Point(x, y);
-
-
         }
         if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.UP){
             x=Game.getInstance().getPlayerCharacter().getX()-7;
             y=Game.getInstance().getPlayerCharacter().getY()-1;
             imagePosition=new Point(x, y);
-
         }
         if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.LEFT){
-            x=Game.getInstance().getPlayerCharacter().getX()-centerX-5;
-            y=Game.getInstance().getPlayerCharacter().getY()+centerY-5;
+            x=Game.getInstance().getPlayerCharacter().getX()-15;
+            y=Game.getInstance().getPlayerCharacter().getY()+5;
             imagePosition=new Point(x, y);
-
-
         }
         if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.RIGHT){
-            x=Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().wight-5;
-            y=Game.getInstance().getPlayerCharacter().getY()+centerY-5;
+            x=Game.getInstance().getPlayerCharacter().getX()+35;
+            y=Game.getInstance().getPlayerCharacter().getY()+5;
             imagePosition=new Point(x, y);
-
         }
     }
     public void update(Point e){
+        //Aggiorna l'angolo di lancio per il mouse, che verra usato per il lancio della granata
         Point center=new Point(imagePosition.x+centerX, imagePosition.y+centerY);
-
         if (e!=null)
             mouse=e;
         while (center.distance(mouse)>300) {
@@ -84,9 +63,4 @@ public class GrenadeModel extends GunModel{
             angle=angle+360;
     }
 
-
-    public boolean isUp() {
-        return Game.getInstance().getPlayerCharacter().dir == Settings.movementDirection.UP || Game.getInstance().getPlayerCharacter().dir == Settings.movementDirection.DOWN;
-
-    }
 }

@@ -9,17 +9,17 @@ import java.awt.*;
 
 
 public class ShotgunModel extends GunModel{
+    int radius, xPosy, yPosy;
+    public double angle=0;
+
     public ShotgunModel(){
-        width= Settings.CELL_SIZEX;
-        height=Settings.CELL_SIZEY-10;
-        damage=5;
+        super(Settings.CELL_SIZEX,Settings.CELL_SIZEY-10, 5);
         radius=height-20;
         xPosy=width;
         yPosy=height-10;
         angle=0;
         hitBox=new Rectangle(xPosy,yPosy,width,height);
         imagePosition=new Point(xPosy,yPosy);
-        super.setCenter();
 
 
     }

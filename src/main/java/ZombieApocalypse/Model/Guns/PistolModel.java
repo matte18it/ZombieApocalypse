@@ -8,21 +8,18 @@ import ZombieApocalypse.Utility.Settings;
 import java.awt.*;
 
 public class PistolModel extends GunModel{
+    //Raggio del cerchio, più è piccolo più è grande il cerchio
+    int radius, xPosy, yPosy;
+    public double angle=0;
 
 
     public PistolModel(){
-        width= Settings.CELL_SIZEX-15;
-        height=Settings.CELL_SIZEY-10;
+        super(Settings.CELL_SIZEX-15, Settings.CELL_SIZEY-10, 2);
         radius=height-30;
-        damage=2;
         xPosy=width+10;
         yPosy=height-10;
-        angle=0;
-        super.setCenter();
         hitBox=new Rectangle(xPosy,yPosy,width,height);
         imagePosition=new Point(xPosy,yPosy);
-
-
     }
     public void attack() {
         if(GameData.sound) {
@@ -107,5 +104,17 @@ public class PistolModel extends GunModel{
         }
 
         return true;
+    }
+    public Bullet.Direction checkDirection(double angle){
+        if((angle<60 && angle>=0) || (angle>=320)){
+            return Bullet.Direction.RIGHT;
+        }
+        if(angle<140 && angle>=60){
+            return Bullet.Direction.UP;
+        }
+        if(angle<230 && angle>=140){
+            return Bullet.Direction.LEFT;
+        }
+        return Bullet.Direction.DOWN;
     }
 }
