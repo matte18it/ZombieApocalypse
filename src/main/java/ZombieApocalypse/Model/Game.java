@@ -17,8 +17,7 @@ public class Game {
     private  World world=new World();
     public void reloadWorld(){
         world=new World();
-
-        Game.getInstance().getPlayerCharacter().chooseCoordinate();
+        character.chooseCoordinate();
     }
 
 

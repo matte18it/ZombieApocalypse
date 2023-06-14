@@ -27,7 +27,7 @@ public  class Item {
     public ItemView getView(){
         return view;
     }
-    public Item(int x, int y, Items.ItemType e){
+    Item(int x, int y, Items.ItemType e){
         this.wight=Items.getInstance().getWight(e);
         this.height=Items.getInstance().getHeight(e);
         this.x=x;

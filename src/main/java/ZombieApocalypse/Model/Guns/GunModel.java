@@ -6,7 +6,7 @@ import ZombieApocalypse.Utility.Settings;
 import java.awt.*;
 
 public abstract class GunModel {
-    public int damage;
+     int damage;
     int width;
     int height;
     //Raggio del cerchio, più è piccolo più è grande il cerchio

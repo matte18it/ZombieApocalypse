@@ -8,8 +8,6 @@ import java.awt.*;
 
 public class GrenadeModel extends GunModel{
     Point mouse;
-
-
     public GrenadeModel(){
         damage=10;
         switch (Settings.diff){
