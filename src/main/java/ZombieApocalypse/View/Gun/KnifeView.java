@@ -20,10 +20,14 @@ public class KnifeView {
         Game.getInstance().getKnifeModel().update();
             //Aggiorno immagine
             if( Game.getInstance().getKnifeModel().getAttack() ) {
+                Game.getInstance().getKnifeModel().updateAttack();
                 if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP)
                     currentImage=attackFrameReverse.update();
                 else
                     currentImage = attackFrame.update();
+                if(Game.getInstance().getKnifeModel().countAttack==3){
+                    Game.getInstance().getKnifeModel().stopAttack();
+                }
             } else
                 currentImage=gunAnimation.update();
     }

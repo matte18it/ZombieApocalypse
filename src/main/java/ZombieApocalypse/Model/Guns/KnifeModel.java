@@ -16,10 +16,12 @@ public class KnifeModel extends GunModel{
 
         hitBox=new Rectangle(imagePosition.x, imagePosition.y, width,height);
     }
+    public int countAttack=0;
     public void attack() {
         if(GameData.sound) {
             PlayWav.getInstance().playKnifeSound();
         }
+        countAttack=0;
         attack=true;
         Enemies.getInstance().checkEnemiesHit(hitBox, damage);
     }
@@ -63,6 +65,11 @@ public class KnifeModel extends GunModel{
             hitBox.y=y;
             hitBox.height=height;
             hitBox.width=width;
-        }} }
+        }}
+
+    public void updateAttack() { //Gestione delle animazioni di attacco
+        countAttack++;
+    }
+}
 
 
