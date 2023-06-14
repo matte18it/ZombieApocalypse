@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bug Fix pt.1">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="Bug Fix pt.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.txt" beforeDir="false" afterPath="$PROJECT_DIR$/player.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/SplashScreenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/SplashScreenModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,13 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Gestione Mappe Player">
-      <created>1686421283197</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1686421283197</updated>
     </task>
     <task id="LOCAL-00114" summary="Gestione Mappe Player">
       <created>1686422302333</created>
@@ -434,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686731805612</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Bug Fix pt.2">
+      <created>1686732579532</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1686732579532</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -450,7 +450,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mappa pt2" />
     <MESSAGE value="Gestione Mappe Player" />
     <MESSAGE value="Ottimizzazione gioco" />
     <MESSAGE value="Easter Eggs primo posto" />
@@ -475,6 +474,7 @@
     <MESSAGE value="pulizie di primavera pt 3" />
     <MESSAGE value="pulizie di primavera pt 4" />
     <MESSAGE value="Bug Fix pt.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix pt.1" />
+    <MESSAGE value="Bug Fix pt.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix pt.2" />
   </component>
 </project>
