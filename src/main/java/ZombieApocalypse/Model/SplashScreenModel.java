@@ -44,7 +44,6 @@ public class SplashScreenModel {
     }
 
     private static boolean getData(String path) throws  IOException{
-
         //faccio un check per verificare correttezza credenziali
         URL check = new URL("https://progettouid.altervista.org/ZombieApocalypse/checkPlayer.php?nickname=" + GameData.nick + "&password=" + GameData.pass);
         URLConnection connCheck = check.openConnection();
