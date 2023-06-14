@@ -18,7 +18,7 @@ public class Enemies {
         int x,y;
         int c=0;
         int t;
-        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps; //gestione del boss
+        boolean finalLevel= Settings.campainMapIndex ==Settings.campainMaps;//gestione del boss
         while (c<enemyNumber ){
             t= random.nextInt(0, EnemiesType.values().length-2);
 

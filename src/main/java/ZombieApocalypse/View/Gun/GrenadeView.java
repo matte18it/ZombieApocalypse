@@ -1,27 +1,21 @@
 package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Utility.ThreadPool;
-
 import java.awt.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 public class GrenadeView {
-    private final ItemAnimation gunAnimation=new ItemAnimation("Granata",4);;
+    //Animazione della granata
+    private final ItemAnimation itemAnimation =new ItemAnimation("Granata",4);;
     public Image currentImage;
 
-
     public GrenadeView() {
-            currentImage=gunAnimation.getDefaultImage();
-
-
+            currentImage= itemAnimation.getDefaultImage();
     }
-
+//aggiornamento senza mouse: si basa sulla posizione del player
+//aggiornamento con mouse: si basa su un movimento del mouse
     public void update() {
-        Game.getInstance().getGrenadeModel().update();
-            currentImage=gunAnimation.update();
-
+        Game.getInstance().getGrenadeModel().update();  //il model aggiorna il punto
+            currentImage= itemAnimation.update();
     }
 public void update(Point e){
         Game.getInstance().getGrenadeModel().update(e);

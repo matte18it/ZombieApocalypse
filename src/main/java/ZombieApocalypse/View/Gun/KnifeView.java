@@ -13,13 +13,9 @@ public class KnifeView {
     private final GunAttackAnimation attackFrame=new GunAttackAnimation("AnimazioneColtello",4);
     private final GunAttackAnimation attackFrameReverse=new GunAttackAnimation("AnimazioneColtelloReverse",4);
     public Image currentImage;
-
-
     public KnifeView() {
             currentImage=gunAnimation.getDefaultImage();
-
     }
-
     public void update() {
         Game.getInstance().getKnifeModel().update();
             //Aggiorno immagine
@@ -30,10 +26,6 @@ public class KnifeView {
                     currentImage = attackFrame.update();
             } else
                 currentImage=gunAnimation.update();
-
-
-
-
     }
     public Image getCurrentImage() {
         return currentImage;

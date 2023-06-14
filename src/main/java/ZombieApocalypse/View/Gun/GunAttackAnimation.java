@@ -9,11 +9,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class GunAttackAnimation {
-    //Carica le animazioni richieste
-
+    //Gestisce l'aniamzione di attacco del coltello
     private final ArrayList<ThreadPool> images = new ArrayList<>();
     private int index = 0;
-
     public GunAttackAnimation(String action, int numberOfElement) {
         ThreadPool temp=null;
         for (int i = 0; i < numberOfElement; i++) {
@@ -22,23 +20,14 @@ public class GunAttackAnimation {
             images.add(temp);
         }
     }
-
-
-
     public Image getDefaultImage() {
         return images.get(0).get();
     }
-
     public Image update() {
         if(index==images.size()-1){
             if(Game.getInstance().hasKnife)
                 Game.getInstance().getKnifeModel().stopAttack();
-            if(Game.getInstance().hasPistol)
-                Game.getInstance().getPistolModel().stopAttack();
-            if( Game.getInstance().hasShotgun)
-                Game.getInstance().getShotgunModel().stopAttack();
         }
-
         index = (index+1) % images.size();
         return images.get(index).get();
     }

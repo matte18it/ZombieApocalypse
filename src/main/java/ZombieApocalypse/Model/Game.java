@@ -96,6 +96,8 @@ public void attack() {  //gestione del click del mouse
         if(hasShotgun)
             setKnife();
         else {
+            if(knife.getAttack())  //senza il coltello continuerebbe l'animazione quando verrebbe preso
+                knife.stopAttack();
             hasGrenade=false;
             hasPistol=false;
             hasKnife=false;
@@ -106,6 +108,8 @@ public void attack() {  //gestione del click del mouse
         if(hasPistol)
             setKnife();
         else{
+            if(knife.getAttack())
+                knife.stopAttack();
             hasGrenade=false;
             hasPistol=true;
             hasKnife=false;
@@ -116,6 +120,8 @@ public void attack() {  //gestione del click del mouse
         if(hasGrenade)
             setKnife();
         else{
+            if(knife.getAttack())
+                knife.stopAttack();
             hasGrenade=true;
             hasPistol=false;
             hasKnife=false;

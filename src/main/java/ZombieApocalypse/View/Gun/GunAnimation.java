@@ -6,16 +6,11 @@ import ZombieApocalypse.Utility.ThreadPool;
 
 import java.awt.*;
 import java.util.ArrayList;
-
 public class GunAnimation  {
-
+//Gestione dell'immagine di Shotgun, Pistol e Granata
     private final ArrayList<ThreadPool> images = new ArrayList<>();
-
     private int index = 0;
-    enum GunType{SHOTGUN, GRENADE, PISTOL};
-
-
-
+    enum GunType{SHOTGUN, GRENADE, PISTOL}
     public GunAnimation(String action, int numberOfElement, GunType e) {
         ThreadPool instance=null;
         for (int i=0; i<numberOfElement; i++) {
@@ -27,12 +22,9 @@ public class GunAnimation  {
             if(e==GunType.GRENADE)
                 instance=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenadeModel().getWidth(),  Game.getInstance().getGrenadeModel().getHeight(), true));
             images.add(instance);
-
     }}
-
-
-
     public Image update(double angle) {
+        //in base a dove si trova il mouse rispetto al player la view deve restituire un'immagine
         if((angle<60 && angle>=0) || (angle>=320)){
             index=0;
             return images.get(index).get();
@@ -54,7 +46,6 @@ public class GunAnimation  {
         }
         return getDefaultImage();
     }
-
     public Image getDefaultImage() {
         return images.get(0).get();
     }

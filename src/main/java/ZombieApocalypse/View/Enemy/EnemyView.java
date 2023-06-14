@@ -6,14 +6,10 @@ import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.Utility.ThreadPool;
 import ZombieApocalypse.View.CharacterAnimation;
-
-import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-
 public class EnemyView  implements  EnemyViewInterface{
+    //Animazioni disponibili per gli enemy
     private  final CharacterAnimation runAnimationUp;
     private  final CharacterAnimation runAnimationLeft;
     private  final CharacterAnimation runAnimationDown;
@@ -24,14 +20,13 @@ public class EnemyView  implements  EnemyViewInterface{
     private  final CharacterAnimation hitRight;
     Enemies.EnemiesType type;
     private Image currentImage;
-    private final ThreadPool emptyImage;
     private final ThreadPool bloodImage;
     Enemy enemyModel;
     public EnemyView(Enemies.EnemiesType value, Enemy enemy){
         Random m=new Random();
         enemyModel=enemy;
         this.type=value;
-        if(enemyModel.type== Enemies.EnemiesType.TURRETZOMBIE) {
+        if(enemyModel.type== Enemies.EnemiesType.TURRETZOMBIE) { //load per TurretZombie
             runAnimationUp = new CharacterAnimation("Nemici/"+type+"/"+type+"Indietro",4);
             runAnimationDown =new CharacterAnimation("Nemici/"+type+"/"+type+"Avanti",4);
             runAnimationLeft =new CharacterAnimation("Nemici/"+type+"/"+type+"Sinistra",4);
@@ -41,7 +36,7 @@ public class EnemyView  implements  EnemyViewInterface{
             hitLeft=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoSinistra",3);
             hitRight=new CharacterAnimation("Nemici/"+type+"/"+type+"DannoDestra",3);
 
-        }else{
+        }else{ //load per tutti gli alti nemici
             runAnimationUp = new CharacterAnimation("Nemici/" + type + "/" + type + "Indietro", 3);
             runAnimationDown =new CharacterAnimation("Nemici/" + type + "/" + type + "Avanti", 3);
             runAnimationLeft =new CharacterAnimation("Nemici/" + type + "/" + type + "Sinistra", 3);
@@ -54,24 +49,13 @@ public class EnemyView  implements  EnemyViewInterface{
         }
 
         bloodImage= new ThreadPool(ResourcesLoader.getInstance().getImage("/Blood/Sangue"+m.nextInt(0,3)+".png", enemyModel.getWight(), enemyModel.getHeight(), true));
-        emptyImage= new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/EMPTY.png", enemyModel.getWight(), enemyModel.getHeight(), true));
-
-
     }
-
-
-
-
-
-
-
     public void update()  {
-        if(enemyModel.dying){
+        if(enemyModel.dying){  //animazione morte
             currentImage=bloodImage.get();
             return;
         }
-
-        if(enemyModel.hit){
+        if(enemyModel.hit){  //Animazione della hit
             if(enemyModel.countHit%2==0){
                 if(enemyModel.dir== Settings.movementDirection.UP)
                     currentImage=hitUp.update();
@@ -82,7 +66,7 @@ public class EnemyView  implements  EnemyViewInterface{
                 else if(enemyModel.dir== Settings.movementDirection.LEFT)
                     currentImage=hitLeft.update();
                 }
-        }else{
+        }else{ //Animazione del movimento (diversa per il TurretZombie)
             if(enemyModel.type== Enemies.EnemiesType.TURRETZOMBIE){
                 if(enemyModel.isMoving && (enemyModel.turretCount==0 ||enemyModel.turretCount==5 ||enemyModel.turretCount==10 ||enemyModel.turretCount==15)){
                     if(enemyModel.dir== Settings.movementDirection.UP)
@@ -106,7 +90,7 @@ public class EnemyView  implements  EnemyViewInterface{
 
                 }
 
-            }else{
+            }else{ //Animazione del movimento
         if(enemyModel.isMoving){
             if(enemyModel.dir== Settings.movementDirection.UP)
                 currentImage=runAnimationUp.update();
@@ -126,11 +110,8 @@ public class EnemyView  implements  EnemyViewInterface{
                 currentImage=runAnimationRight.getDefaultImage();
             else if(enemyModel.dir== Settings.movementDirection.LEFT)
                 currentImage=runAnimationLeft.getDefaultImage();
-
         }}}
-
     }
-
     public Image getCurrentImage() {
         return currentImage;
     }
