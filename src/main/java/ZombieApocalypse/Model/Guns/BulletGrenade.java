@@ -80,12 +80,12 @@ private int count=0;
 //Controlllo della collisione con enemies e player
     private void checkcollision() {
         Point explosion=new Point(x+dimension/2,y+dimension/2);
-        Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
+        Point player=Game.getInstance().getPlayerPosition();
 
         if(numFrame<22 && numFrame>10){
 
             if(explosion.distance(player)<dimension ){
-            Game.getInstance().getPlayerCharacter().hit();
+            Game.getInstance().playerHit();
         //I nemici non hanno un periodo di immortalitò, quindi divido il danno fra i frame
         } if(numFrame>10 && numFrame<17)
                 Enemies.getInstance().checkHitWithExplosion(x,y,dimension/2, dimension/2, damage/6);

@@ -162,9 +162,9 @@ public class Enemies {
 
     //Controlla l'hitBox con il proiettile sparato dal nemico
     public  boolean checkBulletHitBoxPlayer(Rectangle hitBox) {
-        Rectangle hit=Game.getInstance().getPlayerCharacter().hitBox;
+        Rectangle hit=Game.getInstance().getPlayerHitBox();
         if(hitBox.intersects(hit)){
-            Game.getInstance().getPlayerCharacter().hit();
+            Game.getInstance().playerHit();
             return true;
         } return false;
     }
@@ -172,11 +172,11 @@ public class Enemies {
 
     //Controllo se la la posizione random è libera e lontana dal player
     private boolean checkSpawn(int x, int y, EnemiesType enem) {
-        boolean distanzaDalPlayer=Game.getInstance().getWorld().isSpawnable(x+(getWight(enem)/2),y+(getHeight(enem)/2));
+        boolean distanzaDalPlayer=Game.getInstance().isWorldSpawnableEnemy(x+(getWight(enem)/2),y+(getHeight(enem)/2));
         if(distanzaDalPlayer){
             for( int i=x; i<getWight(enem)+x; i++){
                 for(int j=y; j<getHeight(enem)+y; j++){
-                    if(!Game.getInstance().getWorld().isWalkable(i,j))
+                    if(!Game.getInstance().isWorldWalkable(i,j))
                         return false;
                 }
             } return true;

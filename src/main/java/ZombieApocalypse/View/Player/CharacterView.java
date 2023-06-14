@@ -1,7 +1,6 @@
 package ZombieApocalypse.View.Player;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.Utility.ThreadPool;
@@ -46,10 +45,10 @@ public class CharacterView {
 
     public void update() {
         //E' stato colpito? cambia immagine
-        if(Game.getInstance().getPlayerCharacter().getHit()) {
+        if(Game.getInstance().getPlayerHit()) {
 
-            if (Game.getInstance().getPlayerCharacter().countHit % 2 == 0) {
-                if(Game.getInstance().getPlayerCharacter().isMoving()){
+            if (Game.getInstance().getPlayerCountHit() % 2 == 0) {
+                if(Game.getInstance().isPlayerMoving()){
                 if (Game.getInstance().getPlayerDirection() == Settings.movementDirection.UP)
                     currentImage = hitUp.update();
                 else if (Game.getInstance().getPlayerDirection() == Settings.movementDirection.DOWN)
@@ -63,7 +62,7 @@ public class CharacterView {
                 currentImage=hitUp.update();}
 
         }else{
-            if(Game.getInstance().getPlayerCharacter().isMoving()){
+            if(Game.getInstance().isPlayerMoving()){
             if( Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP)
                 currentImage = runAnimationUp.update();
             else if(  Game.getInstance().getPlayerDirection()== Settings.movementDirection.DOWN)

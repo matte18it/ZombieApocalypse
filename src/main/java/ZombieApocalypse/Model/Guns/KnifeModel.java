@@ -28,9 +28,9 @@ public class KnifeModel extends GunModel{
     public void update(){
         int x;
         int y;
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.DOWN){
-            x= Game.getInstance().getPlayerCharacter().getX()+(Game.getInstance().getPlayerCharacter().wight/2)+5;
-            y= Game.getInstance().getPlayerCharacter().getY()+ Game.getInstance().getPlayerCharacter().height-15;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.DOWN){
+            x= Game.getInstance().getPlayerX()+(Game.getInstance().getPlayerWight()/2)+5;
+            y= Game.getInstance().getPlayerY()+ Game.getInstance().getPlayerHeight()-15;
             imagePosition=new Point(x, y);
             hitBox.x=x;
             hitBox.y=y;
@@ -38,27 +38,27 @@ public class KnifeModel extends GunModel{
             hitBox.height=width;
             hitBox.width=height;
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.UP){
-            x= Game.getInstance().getPlayerCharacter().getX()-1;
-            y= Game.getInstance().getPlayerCharacter().getY()-18;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP){
+            x= Game.getInstance().getPlayerX()-1;
+            y= Game.getInstance().getPlayerY()-18;
             imagePosition=new Point(x, y);
             hitBox.x=x;
             hitBox.y=y;
             hitBox.height=width;
             hitBox.width=height;
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.LEFT){
-            x= Game.getInstance().getPlayerCharacter().getX()- Game.getInstance().getPlayerCharacter().wight+12;
-            y= Game.getInstance().getPlayerCharacter().getY()+(Game.getInstance().getPlayerCharacter().height/2)-3;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.LEFT){
+            x= Game.getInstance().getPlayerX()- Game.getInstance().getPlayerWight()+12;
+            y= Game.getInstance().getPlayerY()+(Game.getInstance().getPlayerHeight()/2)-3;
             imagePosition=new Point(x, y);
             hitBox.x=x;
             hitBox.y=y;
             hitBox.height=height;
             hitBox.width=width;
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.RIGHT){
-            x= Game.getInstance().getPlayerCharacter().getX()+ Game.getInstance().getPlayerCharacter().wight-5;
-            y= Game.getInstance().getPlayerCharacter().getY()+(Game.getInstance().getPlayerCharacter().height/2)-3;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.RIGHT){
+            x= Game.getInstance().getPlayerX()+ Game.getInstance().getPlayerWight()-5;
+            y= Game.getInstance().getPlayerY()+(Game.getInstance().getPlayerHeight()/2)-3;
             imagePosition=new Point(x, y);
             hitBox.x=x;
             hitBox.y=y;

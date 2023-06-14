@@ -1,51 +1,67 @@
 package ZombieApocalypse.Model;
-
-
 import ZombieApocalypse.Utility.*;
-import ZombieApocalypse.View.GameFrame;
-
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-
-public class PlayerCharacter  {
-    private ExecutorService executor = Executors.newSingleThreadExecutor();
-
+ public  class PlayerCharacter  {
     //Gestisce il player e i suoi movimenti
     int x ;
-    boolean muovo = true, muovo1 = true;
     int y ;
+    final int wight;
+    final int height;
+    final int centerX;
+    final int centerY;
+     Rectangle hitBox;
+    //Vita e massima vita
     final int maxHealth=6;
-    public int countHit;
-
-    public void addHit() {
+    int health;
+    //gestione del suono
+    boolean muovo = true, muovo1 = true;
+     int countHit;
+     boolean speedUp=false;
+     int countSpeed=300;
+     boolean movement = false;
+     boolean hit=false;
+     int speed=1;
+     PlayerCharacter(){
+         wight=Settings.CELL_SIZEX;
+         height=Settings.CELL_SIZEY;
+         centerX=wight/2;
+         centerY=height/2;
+         health=6;
+         hitBox=new Rectangle(x,y,wight,height);
+     }
+     //Decide le coordinate iniziale del player
+     void chooseCoordinate() {
+         Point p=Game.getInstance().selectPlayerSpawn();
+         x=p.x;
+         y=p.y;
+     }
+    //Gestione delle hit
+     void addHit() {
         countHit++;
         if(countHit==30) {
             stopHit();
         }
     }
+    Settings.movementDirection dir= Settings.movementDirection.RIGHT;   //Direzione iniziale
+    //Gestione della pozione di velocità
+     void speedUp(){
+        if(countSpeed==300){
+            speedUp=true;
+            speed=3;}
+        else
+            countSpeed=countSpeed+300;
 
-    public Settings.movementDirection dir= Settings.movementDirection.RIGHT;   //Direzione iniziale
-    int health;
-    int speed=1;
-    boolean movement = false;
-    boolean hit=false;
-    public int wight;
-    public int height;
-    public int centerX;
-    public int centerY;
-
-    public Rectangle hitBox;
+    }
+     void stopSpeed(){
+        speedUp=false;
+        countSpeed=300;
+        speed=1;
+    }
+     void addSpeed(){
+        countSpeed--;
+        if(countSpeed==0)
+            stopSpeed();
+    }
 
     void startMovementUp() {
         movement = true;
@@ -67,46 +83,8 @@ public class PlayerCharacter  {
     void stopMovement() {
         movement = false;
     }
-
-    public boolean isMoving() {
-        return movement;
-    }
-    public boolean getHit() {
-        return hit;
-    }
-    public void stopHit() {
-        hit=false;
-        countHit=0;
-    }
-
-
-
-    int getMaxHealth(){
-        return maxHealth;
-    }
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-
-
-
-    PlayerCharacter(){
-        wight=Settings.CELL_SIZEX;
-        height=Settings.CELL_SIZEY;
-        centerX=wight/2;
-        centerY=height/2;
-
-        health=6;
-        hitBox=new Rectangle(x,y,wight,height);
-    }
-
-
-    public void hit() {
+    //Gestione delle hit
+    void hit() {
         if(countHit==0){
             if(GameData.sound)
                 PlayWav.getInstance().playHurt1Sound();
@@ -118,53 +96,34 @@ public class PlayerCharacter  {
             }
         }
     }
-
-    public void cure(){
+     void stopHit() {
+        hit=false;
+        countHit=0;
+    }
+     //Gestione della cura
+     void cure(){
         if(health<maxHealth){
             health++;
         Game.getInstance().getMenuBar().addHeart();}
 
     }
-    public void speedUp(){
-        if(countSpeed==300){
-            speedUp=true;
-            speed=3;}
-        else
-            countSpeed=countSpeed+300;
-
-    }
-    public void stopSpeed(){
-        speedUp=false;
-        countSpeed=300;
-        speed=1;
-    }
-    public void addSpeed(){
-        countSpeed--;
-        if(countSpeed==0)
-            stopSpeed();
-    }
-    public boolean speedUp=false;
-    public int countSpeed=300;
-
-
-    public void move() {
+    //Aggiornamento dei movimenti del player
+    void move() {
         soundWalk();
-
-        if(dir==Settings.movementDirection.RIGHT && Game.getInstance().getWorld().isWalkable(getX()+wight+(10*speed), getY()) && Game.getInstance().getWorld().isEnemy(getX()+(10*speed), getY(), centerX, centerY) )
+        if(dir==Settings.movementDirection.RIGHT && Game.getInstance().isWorldWalkable(x+wight+(10*speed), y) && Game.getInstance().isEnemy(x+(10*speed), y, centerX, centerY) )
             x += (10*speed);
-        else if(dir==Settings.movementDirection.LEFT && Game.getInstance().getWorld().isWalkable(getX()-(10*speed), getY()) && Game.getInstance().getWorld().isEnemy(getX()-(10*speed), getY(),centerX,centerY))
+        else if(dir==Settings.movementDirection.LEFT && Game.getInstance().isWorldWalkable(x-(10*speed), y) && Game.getInstance().isEnemy(x-(10*speed), y,centerX,centerY))
             x -= (10*speed);
-        else if(dir== Settings.movementDirection.UP && Game.getInstance().getWorld().isWalkable(getX(), getY()-(10*speed)) && Game.getInstance().getWorld().isEnemy(getX(), getY()-(10*speed),centerX,centerY))
+        else if(dir== Settings.movementDirection.UP && Game.getInstance().isWorldWalkable(x, y-(10*speed)) && Game.getInstance().isEnemy(x, y-(10*speed),centerX,centerY))
             y -= (10*speed);
-        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().getWorld().isWalkable(getX(), getY()+height+(10*speed)) && Game.getInstance().getWorld().isEnemy(getX(), getY()+(10*speed),centerX,centerY))
+        else if(dir==Settings.movementDirection.DOWN && Game.getInstance().isWorldWalkable(x, y+height+(10*speed)) && Game.getInstance().isEnemy(x, y+(10*speed),centerX,centerY))
             y += (10*speed);
         else
             movement=false;
-
-
         hitBox.x=x;
         hitBox.y=y;
     }
+    //Gestione del Suono
     private void soundWalk() {
         if(GameData.sound && muovo) {
             muovo = false;
@@ -180,10 +139,6 @@ public class PlayerCharacter  {
         }
     }
 
-    public void chooseCoordinate() {
-        Point p=Game.getInstance().getWorld().selectPlayerPosition();
-        x=p.x;
-        y=p.y;
-    }
+
 }
 

@@ -25,8 +25,8 @@ public class PistolModel extends GunModel{
             PlayWav.getInstance().playShotPistola();
         }
         attack=true;
-        int x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
-        int y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
+        int x=Game.getInstance().getPlayerX()+xPosy;
+        int y=Game.getInstance().getPlayerY()+yPosy;
         Bullet.Direction dir=checkDirection(angle);
         if(dir== Bullet.Direction.UP) {
             y=y-width+15;
@@ -44,8 +44,8 @@ public class PistolModel extends GunModel{
     public void  update(Point point){
         int x, y;
         if(point==null){
-            x=Game.getInstance().getPlayerCharacter().getX()+xPosy;
-            y=Game.getInstance().getPlayerCharacter().getY()+yPosy;
+            x=Game.getInstance().getPlayerX()+xPosy;
+            y=Game.getInstance().getPlayerY()+yPosy;
             hitBox.x=x;
             hitBox.y=y;
             //Inversione per permettere al GraphicPanel di disegnare orizzondale e verticale
@@ -60,8 +60,8 @@ public class PistolModel extends GunModel{
             imagePosition=new Point(x, y);
             return ;}
 
-        float xDistance = point.x - Game.getInstance().getPlayerCharacter().getX();   //Distanza punto x
-        float yDistance = point.y - Game.getInstance().getPlayerCharacter().getY();     //Distanza punto y
+        float xDistance = point.x - Game.getInstance().getPlayerX();   //Distanza punto x
+        float yDistance = point.y - Game.getInstance().getPlayerY();     //Distanza punto y
         //Questo metodo converte le coordinate rettangolari (x,y) in coordinate polari (r,theta) e ritorna theta
         angle = -Math.toDegrees(Math.atan2(yDistance, xDistance));
         //Le coordinate sotto lo zero diventano negative, a noi ci servono sempre positive
@@ -81,7 +81,7 @@ public class PistolModel extends GunModel{
 
 
         //Aggiorno posizione
-        imagePosition=new Point(Game.getInstance().getPlayerCharacter().getX()+xPosy, Game.getInstance().getPlayerCharacter().getY()+yPosy);
+        imagePosition=new Point(Game.getInstance().getPlayerX()+xPosy, Game.getInstance().getPlayerY()+yPosy);
 
 
     }

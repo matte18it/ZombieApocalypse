@@ -79,10 +79,10 @@ public class BulletGrenadeBandit extends Bullet{
 //Controllo della collisione con il player (perchè è la granata del nemico)
     private void checkcollision() {
         Point explosion=new Point(x+dimension/2,y+dimension/2);
-        Point player=new Point(Game.getInstance().getPlayerCharacter().getX()+Game.getInstance().getPlayerCharacter().centerX, Game.getInstance().getPlayerCharacter().getY()+Game.getInstance().getPlayerCharacter().centerY);
+        Point player=Game.getInstance().getPlayerPosition();
         if(numFrame<22 && numFrame>5){
         if(explosion.distance(player)<dimension ){
-            Game.getInstance().getPlayerCharacter().hit();
+            Game.getInstance().playerHit();
         }
     }}
 }

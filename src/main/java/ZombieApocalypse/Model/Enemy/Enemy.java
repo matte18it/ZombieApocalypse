@@ -46,6 +46,10 @@ public  abstract class Enemy {
         countHit=0;
         hit=false;
     }
+    //Controllo delle hitbox con il player
+    void checkHitBox(){
+    if (hitBox.intersects(Game.getInstance().getPlayerHitBox()))
+            Game.getInstance().playerHit();}
     //gestione della morte
      public int countDeath=0;
     //Gestione dei movimenti del turretZombie
@@ -88,7 +92,7 @@ public  abstract class Enemy {
     }
     //Gestione dei movimenti del nemico
      void moveRight() {
-        if(Game.getInstance().getWorld().isWalkable(x+wight+numStep, y) && Enemies.getInstance().isPlayer(x + numStep, y,  type)){
+        if(Game.getInstance().isWorldWalkable(x+wight+numStep, y) && Enemies.getInstance().isPlayer(x + numStep, y,  type)){
             if(run)
                 x=x+(numStep*3);
             else
@@ -100,7 +104,7 @@ public  abstract class Enemy {
             isMoving=false;
     }
      void moveLeft() {
-        if(Game.getInstance().getWorld().isWalkable(x-numStep, y) && Enemies.getInstance().isPlayer(x - numStep, y,  type)){
+        if(Game.getInstance().isWorldWalkable(x-numStep, y) && Enemies.getInstance().isPlayer(x - numStep, y,  type)){
             if(run)
                 x=x-(numStep*3);
             else
@@ -113,7 +117,7 @@ public  abstract class Enemy {
     }
 
      void moveDown() {
-        if(Game.getInstance().getWorld().isWalkable(x, y+height+numStep) && Enemies.getInstance().isPlayer(x, y + numStep, type)){
+        if(Game.getInstance().isWorldWalkable(x, y+height+numStep) && Enemies.getInstance().isPlayer(x, y + numStep, type)){
             if(run)
                 y=y+(numStep*3);
             else
@@ -125,7 +129,7 @@ public  abstract class Enemy {
             isMoving=false;
     }
      void moveUp() {
-        if(Game.getInstance().getWorld().isWalkable(x, y-numStep) && Enemies.getInstance().isPlayer(x, y - numStep,  type)){
+        if(Game.getInstance().isWorldWalkable(x, y-numStep) && Enemies.getInstance().isPlayer(x, y - numStep,  type)){
             if(run)
                 y=y-(numStep*3);
             else

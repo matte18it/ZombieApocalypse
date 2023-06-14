@@ -32,8 +32,7 @@ public class TurretZombie extends Enemy{
                 stopHit();
         }
         //Gestione delle hit col player
-        if (hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-            Game.getInstance().getPlayerCharacter().hit();
+        checkHitBox();
 
         Point player = getPlayerPosition();
         Point enemy = getEnemyPosition();

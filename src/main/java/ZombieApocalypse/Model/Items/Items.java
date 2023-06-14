@@ -63,11 +63,11 @@ public class Items {
     }
 //controlla se la posizione generata random è libera
     private boolean isSpawnable(int x, int y, ItemType value) {
-        boolean distanzaPlayer=Game.getInstance().getWorld().isSpawnableItem(x+(getWight(value))/2,y+(getHeight(value)/2));
+        boolean distanzaPlayer=Game.getInstance().isWorldSpawnableItem(x+(getWight(value))/2,y+(getHeight(value)/2));
         if(distanzaPlayer){
             for( int i=x; i<getWight(value)+x; i++){
                 for(int j=y; j<getHeight(value)+y; j++){
-                    if(!Game.getInstance().getWorld().isWalkable(i,j))
+                    if(!Game.getInstance().isWorldWalkable(i,j))
                         return false;
                 }
             } return true;

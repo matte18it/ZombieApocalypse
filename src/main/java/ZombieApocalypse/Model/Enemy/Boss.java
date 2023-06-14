@@ -121,8 +121,7 @@ public class Boss extends Enemy{
         //Gestione di attack2 (ravvicinato)
         if(attack2){
     if(countAttack<9 && countAttack>0){
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-          Game.getInstance().getPlayerCharacter().hit();
+        checkHitBox();
         countAttack++;}
     if(countAttack==9)
         stopAttack2();}

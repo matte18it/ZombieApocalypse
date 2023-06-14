@@ -37,7 +37,7 @@ public  class Item {
         this.hitBox=new Rectangle(x,y,wight,height);
     }
     public boolean update() {
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox) ){
+        if(hitBox.intersects(Game.getInstance().getPlayerHitBox()) ){
              if(Game.getInstance().getMenuBar().collect() && (type!= Items.ItemType.AMMO0 && type!= Items.ItemType.AMMO1)){
                     Game.getInstance().getMenuBar().addItem(type);
                     return false;

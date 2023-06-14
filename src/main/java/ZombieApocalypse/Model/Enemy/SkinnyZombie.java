@@ -30,8 +30,7 @@ public class SkinnyZombie extends Enemy{
                 stopHit();
         }
         //Gestione delle hit con il Player
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-            Game.getInstance().getPlayerCharacter().hit();
+        checkHitBox();
 
         //Gestione del pattern: Movimenti Random
         int f=random.nextInt(0,100);

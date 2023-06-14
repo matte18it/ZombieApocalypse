@@ -31,8 +31,7 @@ public class KidZombie extends Enemy{
                 stopHit();
         }
         //Gestione delle hit al Player
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-            Game.getInstance().getPlayerCharacter().hit();
+        checkHitBox();
         //Gestione dei Pattern
         if(p.distance(enemy)<200){
             if(enemy.x>p.x)

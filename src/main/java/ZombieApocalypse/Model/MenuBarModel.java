@@ -49,7 +49,7 @@ public class MenuBarModel {
             case HARD -> numVite=1;
         }
         for(int i=0; i<numVite; i++){
-            Game.getInstance().getPlayerCharacter().cure();
+            Game.getInstance().playerCure();
         }
 
         setLabelEmpty(b);

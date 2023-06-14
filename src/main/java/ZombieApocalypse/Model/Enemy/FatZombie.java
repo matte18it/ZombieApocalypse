@@ -32,8 +32,7 @@ public class FatZombie extends Enemy{
                 stopHit();
         }
         //Gestione delle hit al Player
-        if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
-            Game.getInstance().getPlayerCharacter().hit();
+        checkHitBox();
         //Gestione del pattern
         if(p.distance(enemy)<250){
             if(countRun==0) {

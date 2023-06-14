@@ -18,24 +18,24 @@ public class GrenadeModel extends GunModel{
         int x;
         int y;
         //Posizionamento della granata secondo la posizione del player e la dir
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.DOWN){
-            x= Game.getInstance().getPlayerCharacter().getX()+25;
-            y=Game.getInstance().getPlayerCharacter().getY()+18;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.DOWN){
+            x= Game.getInstance().getPlayerX()+25;
+            y=Game.getInstance().getPlayerY()+18;
             imagePosition=new Point(x, y);
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.UP){
-            x=Game.getInstance().getPlayerCharacter().getX()-7;
-            y=Game.getInstance().getPlayerCharacter().getY()-1;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP){
+            x=Game.getInstance().getPlayerX()-7;
+            y=Game.getInstance().getPlayerY()-1;
             imagePosition=new Point(x, y);
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.LEFT){
-            x=Game.getInstance().getPlayerCharacter().getX()-15;
-            y=Game.getInstance().getPlayerCharacter().getY()+5;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.LEFT){
+            x=Game.getInstance().getPlayerX()-15;
+            y=Game.getInstance().getPlayerY()+5;
             imagePosition=new Point(x, y);
         }
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.RIGHT){
-            x=Game.getInstance().getPlayerCharacter().getX()+35;
-            y=Game.getInstance().getPlayerCharacter().getY()+5;
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.RIGHT){
+            x=Game.getInstance().getPlayerX()+35;
+            y=Game.getInstance().getPlayerY()+5;
             imagePosition=new Point(x, y);
         }
     }
@@ -56,8 +56,8 @@ public class GrenadeModel extends GunModel{
             else
                 mouse.y--;
         }
-        float xDistance = mouse.x - Game.getInstance().getPlayerCharacter().getX();   //Distanza punto x
-        float yDistance = mouse.y - Game.getInstance().getPlayerCharacter().getY();     //Distanza punto y
+        float xDistance = mouse.x - Game.getInstance().getPlayerX();   //Distanza punto x
+        float yDistance = mouse.y - Game.getInstance().getPlayerY();     //Distanza punto y
         //Questo metodo converte le coordinate rettangolari (x,y) in coordinate polari (r,theta) e ritorna theta
         angle = -Math.toDegrees(Math.atan2(yDistance, xDistance));
         //Le coordinate sotto lo zero diventano negative, a noi ci servono sempre positive

@@ -1,7 +1,6 @@
 package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.Utility.ThreadPool;
@@ -35,16 +34,16 @@ public class ItemAnimation {
 
 
     public Image update() {
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.DOWN){
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.DOWN){
             index=3;
             return images.get(index).get();}
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.UP){
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP){
             index=2;
             return images.get(index).get();}
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.LEFT){
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.LEFT){
             index=1;
             return images.get(index).get();}
-        if(Game.getInstance().getPlayerCharacter().dir== Settings.movementDirection.RIGHT){
+        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.RIGHT){
             index=0;
             return images.get(index).get();}
         return null;

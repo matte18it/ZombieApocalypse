@@ -37,7 +37,7 @@ public class GraphicPanel extends JPanel  {
     public ShotgunView getShotgunView() {
         return shotgunView;
     }
-    World world=Game.getInstance().getWorld();
+    private final World.Block[][] worldMatrix=Game.getInstance().getWorld();
     private final Map<World.Block, Image> images=new Hashtable<>();
     public GraphicPanel()  {
         //setto il cursore personalizzato
@@ -48,10 +48,7 @@ public class GraphicPanel extends JPanel  {
             enue[i]= World.Block.values()[i];
             images.put(enue[i], ResourcesLoader.getInstance().getImage("/AmbienteDiGioco/"+enue[i]+".png", Settings.CELL_SIZEX, Settings.CELL_SIZEY, true));
         }
-
         }
-
-
     Random m=new Random();
     @Override
     protected void paintComponent(Graphics g) {
@@ -60,23 +57,23 @@ public class GraphicPanel extends JPanel  {
             Enemies.getInstance().generateRandomEnemies(); firstLoad=false;}
         int r;
         super.paintComponent(g);
-        for(int i = 0; i < world.getSizeX(); i++) {
+        for(int i = 0; i < worldMatrix.length; i++) {
             int x = i * Settings.CELL_SIZEX;
-            for(int j = 0; j < world.getSizeY(); j++) {
+            for(int j = 0; j < worldMatrix[i].length; j++) {
                 int y = j * Settings.CELL_SIZEY;
-                if(world.world[i][j]== World.Block.WATER0 || world.world[i][j]== World.Block.WATER1 || world.world[i][j]== World.Block.WATER2){
+                if(worldMatrix[i][j]== World.Block.WATER0 || worldMatrix[i][j]== World.Block.WATER1 || worldMatrix[i][j]== World.Block.WATER2){
                     r=m.nextInt(0, 100);
                     if(r<5){
-                        switch (world.world[i][j]){
-                            case WATER0 -> world.world[i][j]= World.Block.WATER1;
-                            case WATER1 -> world.world[i][j]= World.Block.WATER2;
-                            case WATER2 -> world.world[i][j]= World.Block.WATER0;
+                        switch (worldMatrix[i][j]){
+                            case WATER0 -> worldMatrix[i][j]= World.Block.WATER1;
+                            case WATER1 -> worldMatrix[i][j]= World.Block.WATER2;
+                            case WATER2 -> worldMatrix[i][j]= World.Block.WATER0;
                         }
                     }
 
 
                 }
-                    g.drawImage(images.get(world.world[i][j]), x, y, null);
+                    g.drawImage(images.get(worldMatrix[i][j]), x, y, null);
 
                 }
 
@@ -115,9 +112,9 @@ public class GraphicPanel extends JPanel  {
 
 
         }}
-        if(Game.getInstance().getPlayerCharacter().speedUp ){
+        if(Game.getInstance().getPlayerSpeedUp() ){
         g.setColor(Color.WHITE);
-        float t= (float) Game.getInstance().getPlayerCharacter().countSpeed /60;
+        float t= (float) Game.getInstance().getPlayerCountSpeed() /60;
             String h = String.format("%.2f", t);
         g.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
         String c="SpeedUp: "+String.valueOf(h);
@@ -151,7 +148,7 @@ public class GraphicPanel extends JPanel  {
 
         }
 
-        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerCharacter().getX(), Game.getInstance().getPlayerCharacter().getY(), characterView.width, characterView.height, null);
+        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerX(), Game.getInstance().getPlayerY(), characterView.width, characterView.height, null);
 
 
 

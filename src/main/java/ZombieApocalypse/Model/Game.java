@@ -6,7 +6,7 @@ import ZombieApocalypse.Utility.ResultsPanel;
 import ZombieApocalypse.Utility.Settings;
 import ZombieApocalypse.View.MenuBar.MenuBarView;
 import java.awt.*;
-public class Game {
+public final class Game {
     //Gestisce gli aspetti del gioco
     private static Game instance = new Game();
     private Game() {}
@@ -30,7 +30,16 @@ public class Game {
     private MenuBarModel menuBar;
     private Point mousePoint=new Point(0,0);
     //Gestione del Player
-    public PlayerCharacter getPlayerCharacter() {return character;}
+    public int getPlayerX(){ return character.x;}
+    public int getPlayerY(){ return character.y;}
+    public int getPlayerWight(){return character.wight;}
+    public int getPlayerHeight(){return character.height;}
+    public void playerCure(){character.cure();}
+    public boolean getPlayerHit(){return character.hit;}
+    public boolean isPlayerMoving(){return character.movement;}
+    public int getPlayerCountHit(){return character.countHit;}
+    public boolean getPlayerSpeedUp(){return character.speedUp;}
+    public int getPlayerCountSpeed(){return character.countSpeed;}
     public void startMovementRight() {character.startMovementRight();}
     public void startMovementUp() {character.startMovementUp();}
     public void startMovementDown() {
@@ -43,12 +52,14 @@ public class Game {
         character.stopMovement();
     }
     public int getPlayerLife() {return character.health;}
-    public int getPlayerMaxLife() {return character.getMaxHealth();}
+    public Rectangle getPlayerHitBox(){return character.hitBox;};
+    public void playerHit(){character.hit();}
+    public int getPlayerMaxLife() {return character.maxHealth;}
     public Settings.movementDirection getPlayerDirection() {return character.dir;}
     public void speedUpPlayer() {
         character.speedUp();
     }
-    public Point getPlayerPosition() {return new Point(character.getX()+character.centerX, character.getY()+character.centerY);}
+    public Point getPlayerPosition() {return new Point(character.x+character.centerX, character.y+character.centerY);}
 //Gestione delle Armi e input del mouse
     public KnifeModel getKnifeModel(){
     return knife;
@@ -112,8 +123,23 @@ public void attack() {  //gestione del click del mouse
             grenade.update(mousePoint);}
     }
     //Gestione del Mondo
-    public World getWorld(){
-        return world;
+    public World.Block[][] getWorld(){
+        return world.world;
+    }
+    public boolean isWorldWalkable(int x, int y){
+        return world.isWalkable(x,y);
+    }
+    public boolean isWorldSpawnableItem(int x, int y){
+        return world.isSpawnableItem(x,y);
+    }
+    public boolean isWorldSpawnableEnemy(int x, int y){
+        return world.isSpawnable(x,y);
+    }
+    public boolean isEnemy(int x, int y, int cX, int cY){
+        return world.isEnemy(x,y , cX, cY);
+    }
+    public Point selectPlayerSpawn(){
+        return world.selectPlayerPosition();
     }
     public void reloadWorld(){ //Reload ad ogni cambio mappa
         world=new World();
@@ -133,9 +159,7 @@ public void attack() {  //gestione del click del mouse
         return backMenu;
     }
     //Update del timeLoop
-    public void updateTime(long time) {
-            menuBar.updateTimeLable(time);
-    }
+    public void updateTime(long time) {menuBar.updateTimeLable(time);}
     //Gestione della MenuBar
     public void setMenuBar(MenuBarView m){
         menuBar=new MenuBarModel(m);
@@ -162,8 +186,8 @@ public void attack() {  //gestione del click del mouse
         b=false;}
 
         if(value!= Items.ItemType.EMPTY){
-            if(world.isWalkable(character.getX()+character.wight+10, character.getY())){
-                Items.getInstance().dropItem(character.getX()+character.wight+10, character.getY(), value);
+            if(world.isWalkable(character.x+character.wight+10, character.y)){
+                Items.getInstance().dropItem(character.x+character.wight+10, character.y, value);
                 menuBar.setLabelEmpty(b);
                 if(value== Items.ItemType.SHOTGUN || value== Items.ItemType.PISTOL || value==Items.ItemType.GRENADE)
                     setKnife();
@@ -171,7 +195,7 @@ public void attack() {  //gestione del click del mouse
     }}
     //Update del Game, e controllo schermata di vittoria
     public void update()  {
-        if(character.isMoving())
+        if(character.movement)
             character.move();
         if(character.hit)
             character.addHit();
