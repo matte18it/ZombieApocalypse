@@ -3,7 +3,6 @@ package ZombieApocalypse.Model;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.MenuView;
@@ -15,7 +14,6 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
@@ -38,6 +36,7 @@ public class SplashScreenModel {
             catch (FileNotFoundException e) { throw new RuntimeException(e); }
 
             GameData.nick = myReader.nextLine();
+            GameData.pass = myReader.nextLine();
             myReader.close();
             try { if(getData("https://progettouid.altervista.org/ZombieApocalypse/getData.php?nickname=" + GameData.nick)); } catch (IOException e) { showDialog(); }
         }
@@ -45,7 +44,17 @@ public class SplashScreenModel {
     }
 
     private static boolean getData(String path) throws  IOException{
-        //chiamo script per fare get dei dati dal db se il file player.txt esiste
+
+        //faccio un check per verificare correttezza credenziali
+        URL check = new URL("https://progettouid.altervista.org/ZombieApocalypse/checkPlayer.php?nickname=" + GameData.nick + "&password=" + GameData.pass);
+        URLConnection connCheck = check.openConnection();
+        BufferedReader incheck = new BufferedReader(new InputStreamReader(connCheck.getInputStream()));
+        if(incheck.readLine().equals("0")){
+            GameData.nick = null; GameData.pass = null;
+            return false;
+        }
+
+        //chiamo script per fare get dei dati dal db se il file player.txt esiste e se le credenziali sono corrette
         URL sript = new URL(path);
         URLConnection conn = sript.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));

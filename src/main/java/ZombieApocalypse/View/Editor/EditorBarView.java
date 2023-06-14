@@ -3,7 +3,6 @@ package ZombieApocalypse.View.Editor;
 import ZombieApocalypse.Controller.EditorBarController;
 import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Model.Editor.EditorBarModel;
-import ZombieApocalypse.Model.Editor.EditorModel;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;

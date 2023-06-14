@@ -2,7 +2,6 @@ package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.View.Editor.EditorView;
 import ZombieApocalypse.View.UserMapView;
 import org.joda.time.DateTime;
 

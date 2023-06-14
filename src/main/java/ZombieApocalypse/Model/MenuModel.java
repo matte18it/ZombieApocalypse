@@ -2,7 +2,6 @@ package ZombieApocalypse.Model;
 
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.ResourcesLoader;
-import ZombieApocalypse.View.LoginView;
 import ZombieApocalypse.View.MenuView;
 
 import javax.swing.*;

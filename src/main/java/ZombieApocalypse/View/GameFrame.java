@@ -1,11 +1,7 @@
 package ZombieApocalypse.View;
-import ZombieApocalypse.Controller.UserMapController;
 import ZombieApocalypse.Loop.*;
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Model.Items.Items;
-import ZombieApocalypse.Model.PlayerCharacter;
 import ZombieApocalypse.Model.SplashScreenModel;
-import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.*;
 import ZombieApocalypse.View.Editor.EditorBarView;
 import ZombieApocalypse.View.Editor.EditorView;
@@ -14,7 +10,6 @@ import ZombieApocalypse.Controller.PlayerController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 
 public class GameFrame extends JPanel {
     private static PlayWav playMenuMusic = PlayWav.getInstance();   //variabile per la musica

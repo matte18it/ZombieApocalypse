@@ -1,7 +1,6 @@
 package ZombieApocalypse.Model.Editor;
 
 import ZombieApocalypse.View.Editor.EditorView;
-import ZombieApocalypse.View.LoginView;
 
 public class EditorModel {
     private EditorView view;

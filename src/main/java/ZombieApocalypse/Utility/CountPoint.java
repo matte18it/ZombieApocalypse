@@ -1,7 +1,6 @@
 package ZombieApocalypse.Utility;
 
 import ZombieApocalypse.Model.Enemy.Enemies;
-import ZombieApocalypse.Model.Enemy.Enemy;
 import ZombieApocalypse.Model.Game;
 
 public class CountPoint {

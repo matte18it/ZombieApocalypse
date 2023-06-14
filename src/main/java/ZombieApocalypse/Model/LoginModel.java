@@ -8,10 +8,8 @@ import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Scanner;
 
 public class LoginModel {
 
@@ -43,6 +41,8 @@ public class LoginModel {
                     myObj.createNewFile();
                     FileWriter myWriter = new FileWriter("player.txt");
                     myWriter.write(GameData.nick);
+                    myWriter.write(System.getProperty("line.separator"));
+                    myWriter.write(GameData.pass);
                     myWriter.close();
                 } catch (IOException e) { e.printStackTrace(); }
                 getData("https://progettouid.altervista.org/ZombieApocalypse/getData.php?nickname=" + GameData.nick);
