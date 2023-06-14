@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="pulizie pt13">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" afterDir="false" />
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="pulizie">
       <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/PlayWav.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,20 +88,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Difficolta">
-      <created>1686496956003</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1686496956003</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Difficolta">
-      <created>1686497290631</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1686497290631</updated>
     </task>
     <task id="LOCAL-00127" summary="Miglioramento Suoni">
       <created>1686559531812</created>
@@ -435,7 +418,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686764405514</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="suono walk">
+      <created>1686765158677</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1686765158678</updated>
+    </task>
+    <task id="LOCAL-00175" summary="pulizie">
+      <created>1686765432097</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1686765432097</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -451,8 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Commenti e bug fix" />
-    <MESSAGE value="boss pt1" />
     <MESSAGE value="boss pt2" />
     <MESSAGE value="thread pt3" />
     <MESSAGE value="thread final?" />
@@ -476,6 +471,8 @@
     <MESSAGE value="pulizie pt11" />
     <MESSAGE value="pulizie pt12" />
     <MESSAGE value="pulizie pt13" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulizie pt13" />
+    <MESSAGE value="suono walk" />
+    <MESSAGE value="pulizie" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulizie" />
   </component>
 </project>

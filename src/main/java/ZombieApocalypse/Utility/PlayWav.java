@@ -11,9 +11,9 @@ public class PlayWav {
 
     //clip per i suoni
     private static Clip clipZombie = null, clipAmmo = null, clipButton = null, clipGameOver = null, walkRoad = null;
-    private static Clip clipGranata = null, clipHurt = null, clipHurt1 = null, clipHurt2 = null, clipHurt3 = null;
+    private static Clip clipGranata = null,  clipHurt1 = null, clipHurt2 = null, clipHurt3 = null;
     private static Clip clipKnife = null, clipMedikit = null, clipPotion = null, clipPump = null;
-    private static Clip clipPistola = null, clipWak = null, clipWin = null, clipDeath = null, clipZombieHit = null;
+    private static Clip clipPistola = null, clipWak = null,   clipZombieHit = null;
     private static Clip clipYouWin = null, clipMission = null;
     private static FloatControl sound;  //controllore dei suoni
 
@@ -93,17 +93,6 @@ public class PlayWav {
         sound = (FloatControl) clipGranata.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipGranata.start();
-    }
-
-    public void playHurtSound(){
-        if(clipHurt == null)
-            clipHurt = ResourcesLoader.getInstance().getAudioClip("/Audio/Hurt.wav");
-        else if(clipHurt.getFramePosition() != 0)
-            clipHurt.setFramePosition(0);
-
-        sound = (FloatControl) clipHurt.getControl(FloatControl.Type.MASTER_GAIN);
-        sound.setValue(GameData.soundVolume);
-        clipHurt.start();
     }
 
     public void playHurt1Sound(){
@@ -200,28 +189,6 @@ public class PlayWav {
         sound = (FloatControl) clipWak.getControl(FloatControl.Type.MASTER_GAIN);
         sound.setValue(GameData.soundVolume);
         clipWak.start();}
-    }
-
-    public void playWinSound(){
-        if(clipWin == null)
-            clipWin = ResourcesLoader.getInstance().getAudioClip("/Audio/WinSound.wav");
-        else if(clipWin.getFramePosition() != 0)
-            clipWin.setFramePosition(0);
-
-        sound = (FloatControl) clipWin.getControl(FloatControl.Type.MASTER_GAIN);
-        sound.setValue(GameData.soundVolume);
-        clipWin.start();
-    }
-
-    public void playZombieDeath(){
-        if(clipDeath == null)
-            clipDeath = ResourcesLoader.getInstance().getAudioClip("/Audio/ZombieDeath.wav");
-        else if(clipDeath.getFramePosition() != 0)
-            clipDeath.setFramePosition(0);
-
-        sound = (FloatControl) clipDeath.getControl(FloatControl.Type.MASTER_GAIN);
-        sound.setValue(GameData.soundVolume);
-        clipDeath.start();
     }
 
     public void playZombieHit(){
