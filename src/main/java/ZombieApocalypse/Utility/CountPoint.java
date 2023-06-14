@@ -115,13 +115,13 @@ public class CountPoint {
 
         }
         GameData.punti += base;
-        Game.getInstance().getMenuBar().updatePoint(GameData.punti);
+        Game.getInstance().updateBarPoint(GameData.punti);
     }
 
     public void setPointBoss(){
         //assegno i punti per aver sconfitto il boss
         GameData.punti += 200;
-        Game.getInstance().getMenuBar().updatePoint(GameData.punti);
+        Game.getInstance().updateBarPoint(GameData.punti);
     }
 
     public void malusPoint(){

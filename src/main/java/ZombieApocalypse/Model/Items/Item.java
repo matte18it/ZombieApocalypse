@@ -38,12 +38,12 @@ public  class Item {
     }
     public boolean update() {
         if(hitBox.intersects(Game.getInstance().getPlayerHitBox()) ){
-             if(Game.getInstance().getMenuBar().collect() && (type!= Items.ItemType.AMMO0 && type!= Items.ItemType.AMMO1)){
-                    Game.getInstance().getMenuBar().addItem(type);
+             if(Game.getInstance().iCanCollect() && (type!= Items.ItemType.AMMO0 && type!= Items.ItemType.AMMO1)){
+                    Game.getInstance().addItemInMenuBar(type);
                     return false;
         }
-         if (Game.getInstance().getMenuBar().collectAmmo(type) && (type== Items.ItemType.AMMO0 || type== Items.ItemType.AMMO1)) {
-                Game.getInstance().getMenuBar().addAmmo(type);
+         if (Game.getInstance().iCanCollectAmmo(type) && (type== Items.ItemType.AMMO0 || type== Items.ItemType.AMMO1)) {
+                Game.getInstance().collectAmmo(type);
                 return false;
             }
         }

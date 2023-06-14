@@ -91,7 +91,7 @@ import java.awt.*;
             hit=true;
             if(health>0){
                 health--;
-                Game.getInstance().getMenuBar().removeHeart();
+                Game.getInstance().removeHeart();
 
             }
         }
@@ -104,7 +104,7 @@ import java.awt.*;
      void cure(){
         if(health<maxHealth){
             health++;
-        Game.getInstance().getMenuBar().addHeart();}
+        Game.getInstance().addHeart();}
 
     }
     //Aggiornamento dei movimenti del player

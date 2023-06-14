@@ -164,11 +164,30 @@ public void attack() {  //gestione del click del mouse
     public void setMenuBar(MenuBarView m){
         menuBar=new MenuBarModel(m);
     }
-    public MenuBarModel getMenuBar(){
-        return menuBar;
+    public void updateBarPoint(int val){
+        menuBar.updatePoint(val);
+    }
+    public void collectAmmo(Items.ItemType type){
+        menuBar.addAmmo(type);
+    }
+    public boolean iCanCollect(){
+        return menuBar.collect();
+    }
+    public boolean iCanCollectAmmo(Items.ItemType type){
+        return menuBar.collectAmmo(type);
+    }
+    public void addItemInMenuBar(Items.ItemType type){
+        menuBar.addItem(type);
+    }
+    public void addHeart(){
+        menuBar.addHeart();
+    }
+    public void removeHeart(){
+        menuBar.removeHeart();
     }
     //Utilizzo degli Item della menu bar, true : slot di Sinistra sennò di destra
     boolean itemUsed;
+
     public void useLeftItem() {
         itemUsed=true;
         menuBar.useItem(itemUsed);
