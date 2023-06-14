@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="pulizie">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="pulizie pt9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Enemy/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Guns/KnifeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/BossView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyViewInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Enemy/EnemyViewInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BanditPistolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BanditPistolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletBossView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletBossView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletGrenadeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletGrenadeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletPistolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletPistolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletZombieView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/BulletZombieView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GrenadeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GrenadeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAttackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/GunAttackAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/KnifeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/Gun/KnifeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Enemy/EnemyView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ZombieApocalypse/View/Enemy/EnemyView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +88,55 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
+    </task>
+    <task id="LOCAL-00121" summary="GameOver Panel">
+      <created>1686493882517</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1686493882517</updated>
+    </task>
+    <task id="LOCAL-00122" summary="bug fix">
+      <created>1686494264570</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1686494264570</updated>
+    </task>
+    <task id="LOCAL-00123" summary="bug fix">
+      <created>1686496269376</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1686496269377</updated>
+    </task>
+    <task id="LOCAL-00124" summary="bug fix">
+      <created>1686496501126</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1686496501126</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Difficolta">
+      <created>1686496956003</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1686496956003</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Difficolta">
+      <created>1686497290631</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1686497290631</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Miglioramento Suoni">
+      <created>1686559531812</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1686559531813</updated>
     </task>
     <task id="LOCAL-00128" summary="Miglioramento Suoni">
       <created>1686559986992</created>
@@ -400,56 +432,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686744229844</updated>
     </task>
-    <task id="LOCAL-00170" summary="pulizie pt10">
-      <created>1686756473130</created>
-      <option name="number" value="00170" />
-      <option name="presentableId" value="LOCAL-00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1686756473130</updated>
-    </task>
-    <task id="LOCAL-00171" summary="pulizie pt11">
-      <created>1686761655624</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1686761655624</updated>
-    </task>
-    <task id="LOCAL-00172" summary="pulizie pt12">
-      <created>1686762154907</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1686762154908</updated>
-    </task>
-    <task id="LOCAL-00173" summary="pulizie pt13">
-      <created>1686764405514</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1686764405514</updated>
-    </task>
-    <task id="LOCAL-00174" summary="suono walk">
-      <created>1686765158677</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1686765158678</updated>
-    </task>
-    <task id="LOCAL-00175" summary="pulizie">
-      <created>1686765432097</created>
-      <option name="number" value="00175" />
-      <option name="presentableId" value="LOCAL-00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1686765432097</updated>
-    </task>
-    <task id="LOCAL-00176" summary="pulizie">
-      <created>1686765914391</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1686765914391</updated>
-    </task>
-    <option name="localTasksCounter" value="177" />
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,6 +448,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="GameOver Panel" />
+    <MESSAGE value="Difficolta" />
+    <MESSAGE value="Miglioramento Suoni" />
+    <MESSAGE value="Punti" />
+    <MESSAGE value="Commenti e bug fix" />
+    <MESSAGE value="boss pt1" />
     <MESSAGE value="boss pt2" />
     <MESSAGE value="thread pt3" />
     <MESSAGE value="thread final?" />
@@ -484,12 +473,6 @@
     <MESSAGE value="pulizie di primavera pt 8" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="pulizie pt9" />
-    <MESSAGE value="pulizie pt10" />
-    <MESSAGE value="pulizie pt11" />
-    <MESSAGE value="pulizie pt12" />
-    <MESSAGE value="pulizie pt13" />
-    <MESSAGE value="suono walk" />
-    <MESSAGE value="pulizie" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulizie" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulizie pt9" />
   </component>
 </project>
