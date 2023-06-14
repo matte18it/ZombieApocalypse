@@ -17,8 +17,7 @@ public class FatZombie extends Enemy{
         if(healt<=0){
             CountPoint.getInstance().setPoint(Enemies.EnemiesType.FATZOMBIE);
             dying=true;
-            int c=random.nextInt(4,9);
-            Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
+            Items.getInstance().enemyDrop(x,y);
             return true;
             }
         //Gestione della Pausa del gioco
@@ -36,7 +35,7 @@ public class FatZombie extends Enemy{
         if(hitBox.intersects(Game.getInstance().getPlayerCharacter().hitBox))
             Game.getInstance().getPlayerCharacter().hit();
         //Gestione del pattern
-        if(p.distance(enemy)<200){
+        if(p.distance(enemy)<250){
             if(countRun==0) {
                 countRun++;
                 if(p.y>=y && p.y<=y+height && p.x<enemy.x)
@@ -45,12 +44,11 @@ public class FatZombie extends Enemy{
                     moveRight();
                 if(p.x>=x && p.x<=x+height && p.y>=enemy.y)
                     moveDown();
-                if(p.x>=x && p.x<=x+wight && p.y<enemy.y)
+                if(p.x>=x && p.x<=x+wight && p.y<enemy.y )
                     moveUp();
-
             }}
         //Gestione della corsa
-        if(countRun>0 && countRun<100){
+        if(countRun>0 && countRun<50){
             countRun++;
             switch (dir){
                 case RIGHT -> moveRight();
@@ -59,7 +57,7 @@ public class FatZombie extends Enemy{
                 case UP -> moveUp();
             }
         }
-        if(countRun==100){
+        if(countRun==50){
             countRun=0;
             isMoving=false;
         }

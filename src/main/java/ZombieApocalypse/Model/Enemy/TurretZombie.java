@@ -18,8 +18,7 @@ public class TurretZombie extends Enemy{
         if (healt <= 0 ) {
             CountPoint.getInstance().setPoint(Enemies.EnemiesType.TURRETZOMBIE);
             dying = true;
-            int c = random.nextInt(4, 9);
-            Items.getInstance().dropItem(x, y, Items.ItemType.values()[c]);
+            Items.getInstance().enemyDrop(x,y);
             return true;}
         //Gestione del ritorno al menu
         if (Game.getInstance().getBackMenu()) {

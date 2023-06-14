@@ -18,8 +18,7 @@ public class BombBandit extends Enemy{
         if(healt<=0 ){
             CountPoint.getInstance().setPoint(Enemies.EnemiesType.BOMBBANDIT);
             dying=true;
-            int c=random.nextInt(4,9);
-            Items.getInstance().dropItem(x,y, Items.ItemType.values()[c]);
+            Items.getInstance().enemyDrop(x,y);
             return true;
             }
         //Gestione dalla Pausa del Gioco

@@ -64,7 +64,6 @@ public class MenuBarModel {
         switch (value){
             case MEDKIT -> medKit(b);
             case SPELL -> spell(b);
-            case RADIO -> radio(b);
             case SHOTGUN -> shotGun(b);
             case PISTOL -> pistol(b);
             case GRENADE -> grenade(b);
@@ -84,13 +83,6 @@ public class MenuBarModel {
         Game.getInstance().setShotgun();
     }
 
-    private void radio(boolean b) {
-        if(GameData.sound)
-            PlayWav.getInstance().playWinSound();
-
-
-        setLabelEmpty(b);   //Da implementare la logica
-    }
 
     private void spell(boolean b) {
         if(GameData.sound)
