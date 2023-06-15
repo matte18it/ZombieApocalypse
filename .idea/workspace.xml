@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="fine">
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCE4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCEUNITA1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/AmbienteDiGioco/FENCEUNITA2.png" beforeDir="false" />
-    </list>
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="fine" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,13 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00134" summary="Commenti e bug fix">
-      <created>1686585329865</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1686585329865</updated>
     </task>
     <task id="LOCAL-00135" summary="Commenti e bug fix">
       <created>1686585954876</created>
@@ -437,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686810108815</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="fine">
+      <created>1686810378685</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1686810378685</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

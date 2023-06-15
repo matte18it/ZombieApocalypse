@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 public class ResultsPanel {
     //classe per la gestione delle schermate di vittoria, sconfitta e pausa
     public static ResultsPanel results = null;
-    private ExecutorService executor = Executors.newSingleThreadExecutor();
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     private ResultsPanel(){}
     public static ResultsPanel getInstance(){
