@@ -8,7 +8,7 @@ public class KidZombie extends Enemy{
 
      KidZombie(int x, int y) {super(x,y, Enemies.EnemiesType.KIDZOMBIE);}
     public boolean update() {
-        Point p=getPlayerPosition();
+        Point p=Game.getInstance().getPlayer().getPosition();
         Point enemy = getEnemyPosition();
         //Gestione della Morte
         if(dying)

@@ -32,7 +32,7 @@ class Bandit extends Enemy{
                 stopHit();
         }
         //Gestione del Pattern di movimento
-        Point player = getPlayerPosition();
+        Point player = Game.getInstance().getPlayer().getPosition();
         Point bandit = getEnemyPosition();
         //2 pattern che si scambiamo a seconda della distanza con il player
         //Pattern 1

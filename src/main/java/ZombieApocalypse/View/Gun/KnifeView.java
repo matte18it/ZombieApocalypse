@@ -21,7 +21,7 @@ public class KnifeView {
             //Aggiorno immagine
             if( Game.getInstance().getKnifeModel().getAttack() ) {
                 Game.getInstance().getKnifeModel().updateAttack();
-                if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP)
+                if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.UP)
                     currentImage=attackFrameReverse.update();
                 else
                     currentImage = attackFrame.update();

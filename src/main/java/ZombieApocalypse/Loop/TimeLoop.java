@@ -18,7 +18,7 @@ public class TimeLoop {
         if(executor==null)
             executor = Executors.newSingleThreadScheduledExecutor();
         try{
-            executor.scheduleAtFixedRate(() -> Game.getInstance().updateTime(time),
+            executor.scheduleAtFixedRate(() -> Game.getInstance().getMenuBar().updateTimeLable(time),
                     0, 1000, TimeUnit.MILLISECONDS);
         }catch (RejectedExecutionException | NullPointerException | IllegalArgumentException e){
             ResultsPanel.getInstance().showError("Errore nell'aggiornamento del Timer", 82, e);

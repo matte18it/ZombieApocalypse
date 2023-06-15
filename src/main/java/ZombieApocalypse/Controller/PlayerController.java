@@ -66,20 +66,20 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
         //Gestione del Mancinismo
         if(GameData.mancino) {
             switch (e.getKeyCode()) {
-                case KeyEvent.VK_I -> Game.getInstance().startMovementUp();
-                case KeyEvent.VK_L -> Game.getInstance().startMovementRight();
-                case KeyEvent.VK_J -> Game.getInstance().startMovementLeft();
-                case KeyEvent.VK_K -> Game.getInstance().startMovementDown();
+                case KeyEvent.VK_I -> Game.getInstance().getPlayer().startMovementUp();
+                case KeyEvent.VK_L -> Game.getInstance().getPlayer().startMovementRight();
+                case KeyEvent.VK_J -> Game.getInstance().getPlayer().startMovementLeft();
+                case KeyEvent.VK_K -> Game.getInstance().getPlayer().startMovementDown();
                 case KeyEvent.VK_U -> Game.getInstance().useLeftItem();
                 case KeyEvent.VK_O -> Game.getInstance().useRightItem();
                 case KeyEvent.VK_SPACE -> Game.getInstance().dropItem();
             }
         }else {
             switch (e.getKeyCode()) {
-                case KeyEvent.VK_W -> Game.getInstance().startMovementUp();
-                case KeyEvent.VK_D -> Game.getInstance().startMovementRight();
-                case KeyEvent.VK_A -> Game.getInstance().startMovementLeft();
-                case KeyEvent.VK_S -> Game.getInstance().startMovementDown();
+                case KeyEvent.VK_W -> Game.getInstance().getPlayer().startMovementUp();
+                case KeyEvent.VK_D -> Game.getInstance().getPlayer().startMovementRight();
+                case KeyEvent.VK_A -> Game.getInstance().getPlayer().startMovementLeft();
+                case KeyEvent.VK_S -> Game.getInstance().getPlayer().startMovementDown();
                 case KeyEvent.VK_Q -> Game.getInstance().useLeftItem();
                 case KeyEvent.VK_E -> Game.getInstance().useRightItem();
                 case KeyEvent.VK_SPACE -> Game.getInstance().dropItem();
@@ -95,10 +95,10 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
     public void keyReleased(KeyEvent e) {
         if(GameData.mancino) {
             if (e.getKeyCode() == KeyEvent.VK_I || e.getKeyCode() == KeyEvent.VK_J || e.getKeyCode() == KeyEvent.VK_K || e.getKeyCode() == KeyEvent.VK_L)
-                Game.getInstance().stopMovement();
+                Game.getInstance().getPlayer().stopMovement();
         }else {
             if (e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_D || e.getKeyCode() == KeyEvent.VK_A)
-                Game.getInstance().stopMovement();
+                Game.getInstance().getPlayer().stopMovement();
         }
     }
     @Override

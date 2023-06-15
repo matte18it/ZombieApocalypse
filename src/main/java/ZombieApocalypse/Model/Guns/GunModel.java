@@ -41,7 +41,7 @@ public abstract class GunModel {
     public  void  update(Point point){}
     public  void  update(){}
     public   boolean isUp(){
-        return Game.getInstance().getPlayerDirection() == Settings.movementDirection.UP || Game.getInstance().getPlayerDirection() == Settings.movementDirection.DOWN;};
+        return Game.getInstance().getPlayer().getDir() == Settings.movementDirection.UP || Game.getInstance().getPlayer().getDir() == Settings.movementDirection.DOWN;};
     public Bullet.Direction checkDirection(double angle){
         if((angle<60 && angle>=0) || (angle>=320)){
             return Bullet.Direction.RIGHT;

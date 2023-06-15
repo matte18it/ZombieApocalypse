@@ -45,40 +45,39 @@ public class CharacterView {
 
     public void update() {
         //E' stato colpito? cambia immagine
-        if(Game.getInstance().getPlayerHit()) {
+        if(Game.getInstance().getPlayer().getHit()) {
 
-            if (Game.getInstance().getPlayerCountHit() % 2 == 0) {
-                if(Game.getInstance().isPlayerMoving()){
-                if (Game.getInstance().getPlayerDirection() == Settings.movementDirection.UP)
+            if (Game.getInstance().getPlayer().getCountHit() % 2 == 0) {
+                if(Game.getInstance().getPlayer().getMovement()){
+                if (Game.getInstance().getPlayer().getDir() == Settings.movementDirection.UP)
                     currentImage = hitUp.update();
-                else if (Game.getInstance().getPlayerDirection() == Settings.movementDirection.DOWN)
+                else if (Game.getInstance().getPlayer().getDir() == Settings.movementDirection.DOWN)
                     currentImage = hitDown.update();
-                else if (Game.getInstance().getPlayerDirection() == Settings.movementDirection.LEFT)
+                else if (Game.getInstance().getPlayer().getDir() == Settings.movementDirection.LEFT)
                     currentImage = hitLeft.update();
-                else if (Game.getInstance().getPlayerDirection() == Settings.movementDirection.RIGHT)
+                else if (Game.getInstance().getPlayer().getDir() == Settings.movementDirection.RIGHT)
                     currentImage = hitRight.update();
 
-            } else
-                currentImage=hitUp.update();}
+            } else currentImage=hitUp.update();}
 
         }else{
-            if(Game.getInstance().isPlayerMoving()){
-            if( Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP)
+            if(Game.getInstance().getPlayer().getMovement()){
+            if( Game.getInstance().getPlayer().getDir()== Settings.movementDirection.UP)
                 currentImage = runAnimationUp.update();
-            else if(  Game.getInstance().getPlayerDirection()== Settings.movementDirection.DOWN)
+            else if(  Game.getInstance().getPlayer().getDir()== Settings.movementDirection.DOWN)
                 currentImage = runAnimationDown.update();
-            else if(  Game.getInstance().getPlayerDirection()== Settings.movementDirection.LEFT)
+            else if(  Game.getInstance().getPlayer().getDir()== Settings.movementDirection.LEFT)
                 currentImage = runAnimationLeft.update();
-            else if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.RIGHT)
+            else if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.RIGHT)
                 currentImage = runAnimationRight.update();
            } else{
-                if( Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP)
+                if( Game.getInstance().getPlayer().getDir()== Settings.movementDirection.UP)
                     currentImage = runAnimationUp.getDefaultImage();
-                else if(  Game.getInstance().getPlayerDirection()== Settings.movementDirection.DOWN)
+                else if(  Game.getInstance().getPlayer().getDir()== Settings.movementDirection.DOWN)
                     currentImage = runAnimationDown.getDefaultImage();
-                else if(  Game.getInstance().getPlayerDirection()== Settings.movementDirection.LEFT)
+                else if(  Game.getInstance().getPlayer().getDir()== Settings.movementDirection.LEFT)
                     currentImage = runAnimationLeft.getDefaultImage();
-                else if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.RIGHT)
+                else if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.RIGHT)
                     currentImage = runAnimationRight.getDefaultImage();
 
             }

@@ -180,7 +180,7 @@ public class PlayWav {
     }
 
     public void playWalkSound(int x, int y){
-        if(Game.getInstance().isWorldRoad(x,y)){
+        if(Game.getInstance().getWorld().isRoad(x,y)){
             walkRoad = ResourcesLoader.getInstance().getAudioClip("/Audio/WalkRoad.wav");
             sound = (FloatControl) walkRoad.getControl(FloatControl.Type.MASTER_GAIN);
             sound.setValue(GameData.soundVolume);

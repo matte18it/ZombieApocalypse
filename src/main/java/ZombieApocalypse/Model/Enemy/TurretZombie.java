@@ -34,7 +34,7 @@ public class TurretZombie extends Enemy{
         //Gestione delle hit col player
         checkHitBox();
 
-        Point player = getPlayerPosition();
+        Point player = Game.getInstance().getPlayer().getPosition();
         Point enemy = getEnemyPosition();
         //Gestione dei Pattern
         if(enemy.distance(player)<300){

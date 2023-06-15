@@ -130,7 +130,7 @@ public class Enemies {
 //Controllo della distanza dal player
     public boolean isPlayer(int x, int y, Enemies.EnemiesType enemiesType) {
         Point enemy=new Point(x+(getWight(enemiesType)/2), y+(getHeight(enemiesType)/2));
-        Point player=Game.getInstance().getPlayerPosition();
+        Point player=Game.getInstance().getPlayer().getPosition();
         if (enemiesType == EnemiesType.BOSS) {
             return !(enemy.distance(player) < 70);
         } else {
@@ -162,9 +162,9 @@ public class Enemies {
 
     //Controlla l'hitBox con il proiettile sparato dal nemico
     public  boolean checkBulletHitBoxPlayer(Rectangle hitBox) {
-        Rectangle hit=Game.getInstance().getPlayerHitBox();
+        Rectangle hit=Game.getInstance().getPlayer().getHitBox();
         if(hitBox.intersects(hit)){
-            Game.getInstance().playerHit();
+            Game.getInstance().getPlayer().hit();
             return true;
         } return false;
     }
@@ -172,11 +172,11 @@ public class Enemies {
 
     //Controllo se la la posizione random è libera e lontana dal player
     private boolean checkSpawn(int x, int y, EnemiesType enem) {
-        boolean distanzaDalPlayer=Game.getInstance().isWorldSpawnableEnemy(x+(getWight(enem)/2),y+(getHeight(enem)/2));
+        boolean distanzaDalPlayer=Game.getInstance().getWorld().isSpawnable(x+(getWight(enem)/2),y+(getHeight(enem)/2));
         if(distanzaDalPlayer){
             for( int i=x; i<getWight(enem)+x; i++){
                 for(int j=y; j<getHeight(enem)+y; j++){
-                    if(!Game.getInstance().isWorldWalkable(i,j))
+                    if(!Game.getInstance().getWorld().isWalkable(i,j))
                         return false;
                 }
             } return true;

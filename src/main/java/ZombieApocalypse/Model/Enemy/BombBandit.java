@@ -33,7 +33,7 @@ public class BombBandit extends Enemy{
                 stopHit();
         }
         //Gestione dei Pattern
-        Point player= getPlayerPosition();
+        Point player= Game.getInstance().getPlayer().getPosition();
         Point enemy = getEnemyPosition();
         //2 pattern che si scambiamo a seconda della distanza con il player
         //Pattern 1
@@ -47,7 +47,7 @@ public class BombBandit extends Enemy{
                 dir= Settings.movementDirection.DOWN;
             if(player.x>=x && player.x<=x+wight && player.y<enemy.y)
                 dir= Settings.movementDirection.UP;
-            shoot();
+            shoot(player, enemy);
             //Pattern 2
         }else{
         int f=random.nextInt(0,100);
@@ -61,9 +61,7 @@ public class BombBandit extends Enemy{
         }  }else
             isMoving=false;}
         return true;}
-    private void shoot() {
-        Point player= getPlayerPosition();
-        Point enemy = getEnemyPosition();
+    private void shoot(Point player, Point enemy) {
         //Calcola la distanza del lancio della Granata
         int totalFrame = (int) player.distance(enemy);
         //Lancia la granata ogni 40 frame

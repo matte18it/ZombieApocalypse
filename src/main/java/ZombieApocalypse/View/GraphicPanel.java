@@ -37,7 +37,7 @@ public class GraphicPanel extends JPanel  {
     public ShotgunView getShotgunView() {
         return shotgunView;
     }
-    private final World.Block[][] worldMatrix=Game.getInstance().getWorld();
+    private final World.Block[][] worldMatrix=Game.getInstance().getWorld().getMatrix();
     private final Map<World.Block, Image> images=new Hashtable<>();
     public GraphicPanel()  {
         //setto il cursore personalizzato
@@ -112,9 +112,9 @@ public class GraphicPanel extends JPanel  {
 
 
         }}
-        if(Game.getInstance().getPlayerSpeedUp() ){
+        if(Game.getInstance().getPlayer().getSpeedUp() ){
         g.setColor(Color.WHITE);
-        float t= (float) Game.getInstance().getPlayerCountSpeed() /60;
+        float t= (float) Game.getInstance().getPlayer().getCountSpeed() /60;
             String h = String.format("%.2f", t);
         g.setFont(ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN));
         String c="SpeedUp: "+String.valueOf(h);
@@ -148,7 +148,7 @@ public class GraphicPanel extends JPanel  {
 
         }
 
-        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayerX(), Game.getInstance().getPlayerY(), characterView.width, characterView.height, null);
+        g.drawImage(characterView.getCurrentImage(), Game.getInstance().getPlayer().getX(), Game.getInstance().getPlayer().getY(), characterView.width, characterView.height, null);
 
 
 

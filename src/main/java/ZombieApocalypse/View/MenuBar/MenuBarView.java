@@ -46,7 +46,7 @@ public class MenuBarView extends JPanel {
 
 
         //Pannello della Salute
-        healthLabel=new JLabel[Game.getInstance().getPlayerMaxLife()];
+        healthLabel=new JLabel[Game.getInstance().getPlayer().maxHealth];
         JPanel healthAmmoPanel=new JPanel();
         healthAmmoPanel.setLayout(new GridBagLayout());
         healthAmmoPanel.setMaximumSize(new Dimension(300, Settings.MENU_BAR_HEIGHT));
@@ -68,7 +68,7 @@ public class MenuBarView extends JPanel {
         JPanel array=new JPanel();
         array.setLayout(new BoxLayout(array, BoxLayout.X_AXIS));
         array.setBackground(Color.BLACK);
-        for(int i=0; i<Game.getInstance().getPlayerMaxLife(); i++){
+        for(int i=0; i<Game.getInstance().getPlayer().maxHealth; i++){
             healthLabel[i]=new JLabel();
             array.add(healthLabel[i]);
         }
@@ -268,18 +268,18 @@ public class MenuBarView extends JPanel {
         add(timePanel);
     }
     public void addHeart(){
-        healthLabel[Game.getInstance().getPlayerLife()-1].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
+        healthLabel[Game.getInstance().getPlayer().getHealth()-1].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
     }
     public void removeHeart(){
-        healthLabel[Game.getInstance().getPlayerLife()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
+        healthLabel[Game.getInstance().getPlayer().getHealth()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
     }
 
 
 
     public void setBar() {
-        heart=Game.getInstance().getPlayerLife();
-        for(int i=0; i<Game.getInstance().getPlayerMaxLife(); i++){
-            if(i<Game.getInstance().getPlayerLife())
+        heart=Game.getInstance().getPlayer().getHealth();
+        for(int i=0; i<Game.getInstance().getPlayer().maxHealth; i++){
+            if(i<Game.getInstance().getPlayer().getHealth())
             healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
             else
                 healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));

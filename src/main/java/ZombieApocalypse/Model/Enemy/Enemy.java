@@ -48,8 +48,8 @@ public  abstract class Enemy {
     }
     //Controllo delle hitbox con il player
     void checkHitBox(){
-    if (hitBox.intersects(Game.getInstance().getPlayerHitBox()))
-            Game.getInstance().playerHit();}
+    if (hitBox.intersects(Game.getInstance().getPlayer().getHitBox()))
+            Game.getInstance().getPlayer().hit();}
     //gestione della morte
      public int countDeath=0;
     //Gestione dei movimenti del turretZombie
@@ -59,7 +59,6 @@ public  abstract class Enemy {
      public int getY() {return y;}
     public int getWight() {return wight;}
     public int getHeight(){return height;}
-    Point getPlayerPosition(){return Game.getInstance().getPlayerPosition();}
     Point getEnemyPosition(){return new Point(x + centerX, y + centerY);}
     public int getGunX() {return gunPosition.x;}
     public int getGunY() {return gunPosition.y;}
@@ -92,7 +91,7 @@ public  abstract class Enemy {
     }
     //Gestione dei movimenti del nemico
      void moveRight() {
-        if(Game.getInstance().isWorldWalkable(x+wight+numStep, y) && Enemies.getInstance().isPlayer(x + numStep, y,  type)){
+        if(Game.getInstance().getWorld().isWalkable(x+wight+numStep, y) && Enemies.getInstance().isPlayer(x + numStep, y,  type)){
             if(run)
                 x=x+(numStep*3);
             else
@@ -104,7 +103,7 @@ public  abstract class Enemy {
             isMoving=false;
     }
      void moveLeft() {
-        if(Game.getInstance().isWorldWalkable(x-numStep, y) && Enemies.getInstance().isPlayer(x - numStep, y,  type)){
+        if(Game.getInstance().getWorld().isWalkable(x-numStep, y) && Enemies.getInstance().isPlayer(x - numStep, y,  type)){
             if(run)
                 x=x-(numStep*3);
             else
@@ -117,7 +116,7 @@ public  abstract class Enemy {
     }
 
      void moveDown() {
-        if(Game.getInstance().isWorldWalkable(x, y+height+numStep) && Enemies.getInstance().isPlayer(x, y + numStep, type)){
+        if(Game.getInstance().getWorld().isWalkable(x, y+height+numStep) && Enemies.getInstance().isPlayer(x, y + numStep, type)){
             if(run)
                 y=y+(numStep*3);
             else
@@ -129,7 +128,7 @@ public  abstract class Enemy {
             isMoving=false;
     }
      void moveUp() {
-        if(Game.getInstance().isWorldWalkable(x, y-numStep) && Enemies.getInstance().isPlayer(x, y - numStep,  type)){
+        if(Game.getInstance().getWorld().isWalkable(x, y-numStep) && Enemies.getInstance().isPlayer(x, y - numStep,  type)){
             if(run)
                 y=y-(numStep*3);
             else

@@ -33,7 +33,7 @@ public class Boss extends Enemy{
             else
                 stopHit();
         }
-        Point player=getPlayerPosition();
+        Point player=Game.getInstance().getPlayer().getPosition();
         Point enemy = getEnemyPosition();
         int h;
         h=random.nextInt(0,150);

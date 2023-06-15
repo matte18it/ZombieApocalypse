@@ -15,29 +15,29 @@ public class MenuBarModel {
         this.menuBarView=m;
     }
     //Aggiornamento del tempo nella view
-     void updateTimeLable(long time) {
+     public void updateTimeLable(long time) {
         long timeElapsed=System.nanoTime()-time;
         long t=timeElapsed/1000000000;
         menuBarView.updateTimeLable(t);
     }
     //aggiornamento del punteggo
-     void updatePoint(int val){
+     public void updatePoint(int val){
         menuBarView.updateScoreLable(val);
     }
 //Rimozione di un cuore "pieno"
-     void removeHeart() {
+     public void removeHeart() {
             menuBarView.removeHeart();
     }
 //Aggiunta di un cuore "pieno"
-     void addHeart() {
+     public void addHeart() {
             menuBarView.addHeart();
     }
 //Aggiunta di un item nella MenuBar
-     void addItem(Items.ItemType type) {
+     public void addItem(Items.ItemType type) {
         menuBarView.add(type);
     }
     //Controlla se uno dei due slot è libero
-     boolean collect() {
+    public boolean collect() {
         return (menuBarView.spaceToCollect());
     }
     //Gestione dell'utilizzo di un'oggetto presente in uno slot nella menuBar
@@ -65,7 +65,7 @@ public class MenuBarModel {
             case HARD -> numVite=1;
         }
         for(int i=0; i<numVite; i++){
-            Game.getInstance().playerCure();
+            Game.getInstance().getPlayer().cure();
         }
         setLabelEmpty(b);
     }
@@ -79,39 +79,39 @@ public class MenuBarModel {
     private void spell(boolean b) {
         if(GameData.sound)
             PlayWav.getInstance().playPotionSound();
-        Game.getInstance().speedUpPlayer();
+        Game.getInstance().getPlayer().speedUp();
         setLabelEmpty(b);
     }
     //Ritorna cosa è presente nello slot
-     Items.ItemType getLabel1() {
+     public Items.ItemType getLabel1() {
         return menuBarView.gunLable1Type();
     }
-     Items.ItemType getLabel2() {
+     public Items.ItemType getLabel2() {
         return menuBarView.gunLable2Type();
     }
 //Setta lo slot vouto
-     void setLabelEmpty(boolean b) {
+     public void setLabelEmpty(boolean b) {
         if(b)
             menuBarView.setGunLable1(Items.ItemType.EMPTY);
         else
             menuBarView.setGunLable2(Items.ItemType.EMPTY);
     }
     //Gestione dei proiettili
-     void addAmmo(Items.ItemType type) {
+     public void addAmmo(Items.ItemType type) {
         switch (type){
             case AMMO0 -> menuBarView.addAmmo(ammo[0]);
             case AMMO1 -> menuBarView.addAmmo(ammo[1]);
         }
     }
-     int numBullet() {
+     public int numBullet() {
         return  menuBarView.getAmmo();
     }
 
-     void removeAmmo(int i) {
+     public void removeAmmo(int i) {
         menuBarView.useAmmo(i);
     }
 
-     boolean collectAmmo(Items.ItemType type) {
+     public boolean collectAmmo(Items.ItemType type) {
         int t=numBullet();
         switch (type){
             case AMMO0 -> t=t+ammo[0];

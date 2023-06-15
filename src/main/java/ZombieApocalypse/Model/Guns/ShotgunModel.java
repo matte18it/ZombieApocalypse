@@ -25,8 +25,8 @@ public class ShotgunModel extends GunModel{
             PlayWav.getInstance().playPumpShot();
 
         attack=true;
-        int x=Game.getInstance().getPlayerX()+xPosy;
-        int y=Game.getInstance().getPlayerY()+yPosy;
+        int x=Game.getInstance().getPlayer().getX()+xPosy;
+        int y=Game.getInstance().getPlayer().getY()+yPosy;
         Bullet.Direction dir=checkDirection(angle);
         if(dir== Bullet.Direction.UP) {
             y=y-width+15;
@@ -55,8 +55,8 @@ public class ShotgunModel extends GunModel{
         //update dell'arma secondo il mouse
         int x, y;
         if(point==null){
-            x=Game.getInstance().getPlayerX()+xPosy;
-            y=Game.getInstance().getPlayerY()+yPosy;
+            x=Game.getInstance().getPlayer().getX()+xPosy;
+            y=Game.getInstance().getPlayer().getY()+yPosy;
             hitBox.x=x;
             hitBox.y=y;
             //Inversione per permettere al GraphicPanel di disegnare orizzondale e verticale
@@ -71,8 +71,8 @@ public class ShotgunModel extends GunModel{
             imagePosition=new Point(x, y);
             return ;}
 
-        float xDistance = point.x - Game.getInstance().getPlayerX();   //Distanza punto x
-        float yDistance = point.y - Game.getInstance().getPlayerY();     //Distanza punto y
+        float xDistance = point.x - Game.getInstance().getPlayer().getX();   //Distanza punto x
+        float yDistance = point.y - Game.getInstance().getPlayer().getY();     //Distanza punto y
         //Questo metodo converte le coordinate rettangolari (x,y) in coordinate polari (r,theta) e ritorna theta
         angle = -Math.toDegrees(Math.atan2(yDistance, xDistance));
         //Le coordinate sotto lo zero diventano negative, a noi ci servono sempre positive
@@ -88,7 +88,7 @@ public class ShotgunModel extends GunModel{
         xPosy = Math.round((float) (centerX + Math.cos(rads) * fullLength))-20;
         yPosy = Math.round((float) (centerY - Math.sin(rads) * fullLength))-10;
         //Aggiorno posizione
-        imagePosition=new Point(Game.getInstance().getPlayerX()+xPosy, Game.getInstance().getPlayerY()+yPosy);
+        imagePosition=new Point(Game.getInstance().getPlayer().getX()+xPosy, Game.getInstance().getPlayer().getY()+yPosy);
     }
     //Ho bisogno di sapere se l'arma è in verticale o in orizzondale
     //Perchè wight e height si invertono nel Graphic Panel

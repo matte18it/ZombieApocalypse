@@ -34,16 +34,16 @@ public class ItemAnimation {
 
 
     public Image update() {
-        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.DOWN){
+        if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.DOWN){
             index=3;
             return images.get(index).get();}
-        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.UP){
+        if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.UP){
             index=2;
             return images.get(index).get();}
-        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.LEFT){
+        if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.LEFT){
             index=1;
             return images.get(index).get();}
-        if(Game.getInstance().getPlayerDirection()== Settings.movementDirection.RIGHT){
+        if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.RIGHT){
             index=0;
             return images.get(index).get();}
         return null;
