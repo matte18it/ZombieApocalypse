@@ -9,19 +9,13 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ItemAnimation {
-
+    //Gestione delle immagini di granata e coltello
     private final ArrayList<ThreadPool> images = new ArrayList<>();
-
     private int index = 0;
-
-
-
     public ItemAnimation(String action, int numberOfElement) {
         ThreadPool temp=null;
         for (int i=0; i<numberOfElement; i++) {
             String path=action+i;
-            if(Game.getInstance().hasPistol)
-                temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistol().getWidth(), Game.getInstance().getPistol().getHeight(), true));
             if(Game.getInstance().hasGrenade)
                 temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenade().getWidth(),  Game.getInstance().getGrenade().getHeight(), true));
             if(Game.getInstance().hasKnife)
@@ -31,9 +25,7 @@ public class ItemAnimation {
         }
 
     }
-
-
-    public Image update() {
+    public Image update() { //update dell'immagine secondo la posizione del player
         if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.DOWN){
             index=3;
             return images.get(index).get();}
@@ -48,7 +40,6 @@ public class ItemAnimation {
             return images.get(index).get();}
         return null;
     }
-
     public Image getDefaultImage() {
         return images.get(0).get();
     }
