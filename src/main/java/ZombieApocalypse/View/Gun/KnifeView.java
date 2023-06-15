@@ -2,11 +2,8 @@ package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.Utility.ThreadPool;
 
 import java.awt.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 public class KnifeView {
     private final ItemAnimation gunAnimation=new ItemAnimation("Coltello",4);
@@ -17,16 +14,16 @@ public class KnifeView {
             currentImage=gunAnimation.getDefaultImage();
     }
     public void update() {
-        Game.getInstance().getKnifeModel().update();
+        Game.getInstance().getKnife().update();
             //Aggiorno immagine
-            if( Game.getInstance().getKnifeModel().getAttack() ) {
-                Game.getInstance().getKnifeModel().updateAttack();
+            if( Game.getInstance().getKnife().getAttack() ) {
+                Game.getInstance().getKnife().updateAttack();
                 if(Game.getInstance().getPlayer().getDir()== Settings.movementDirection.UP)
                     currentImage=attackFrameReverse.update();
                 else
                     currentImage = attackFrame.update();
-                if(Game.getInstance().getKnifeModel().countAttack==3){
-                    Game.getInstance().getKnifeModel().stopAttack();
+                if(Game.getInstance().getKnife().getCountAttack()==3){
+                    Game.getInstance().getKnife().stopAttack();
                 }
             } else
                 currentImage=gunAnimation.update();

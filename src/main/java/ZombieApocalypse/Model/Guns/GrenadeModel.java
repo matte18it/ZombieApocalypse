@@ -3,7 +3,7 @@ import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.Settings;
 import java.awt.*;
 public class GrenadeModel extends GunModel{
-    double angle=0;
+    private double angle=0;
     Point mouse=new Point(0,0);
     public GrenadeModel(){
         super(21,21, 10);

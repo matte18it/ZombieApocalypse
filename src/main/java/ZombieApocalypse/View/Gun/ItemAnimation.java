@@ -21,11 +21,11 @@ public class ItemAnimation {
         for (int i=0; i<numberOfElement; i++) {
             String path=action+i;
             if(Game.getInstance().hasPistol)
-                temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), true));
+                temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistol().getWidth(), Game.getInstance().getPistol().getHeight(), true));
             if(Game.getInstance().hasGrenade)
-                temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenadeModel().getWidth(),  Game.getInstance().getGrenadeModel().getHeight(), true));
+                temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenade().getWidth(),  Game.getInstance().getGrenade().getHeight(), true));
             if(Game.getInstance().hasKnife)
-                temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getKnifeModel().getWidth(),  Game.getInstance().getKnifeModel().getHeight(), true));
+                temp=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getKnife().getWidth(),  Game.getInstance().getKnife().getHeight(), true));
 
             images.add(temp);
         }

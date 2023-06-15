@@ -7,7 +7,7 @@ import ZombieApocalypse.Utility.Settings;
 public class BulletZombie extends Bullet{
 
     BulletZombie(int x, int y,  double angle){
-        super(x,y, BulletType.ZOMBIE, Game.getInstance().getPistolModel().checkDirection(angle));
+        super(x,y, BulletType.ZOMBIE, Game.getInstance().getPistol().checkDirection(angle));
     }
 
 

@@ -66,7 +66,7 @@ public abstract class Bullet {
     }
 
     private void setGrenade() {
-        this.dimension=Game.getInstance().getGrenadeModel().getWidth();
+        this.dimension=Game.getInstance().getGrenade().getWidth();
         damage=12;
         switch (Settings.diff){
             case EASY -> damage=damage*2;

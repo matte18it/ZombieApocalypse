@@ -9,8 +9,8 @@ import java.awt.*;
 
 
 public class ShotgunModel extends GunModel{
-    int radius, xPosy, yPosy;
-    public double angle=0;
+    private int radius, xPosy, yPosy;
+    private double angle=0;
     public ShotgunModel(){
         super(Settings.CELL_SIZEX,Settings.CELL_SIZEY-10, 5);
         radius=height-20;
@@ -102,4 +102,7 @@ public class ShotgunModel extends GunModel{
         return !(angle < 230) || !(angle >= 140);
     }
 
+    public double getAngle() {
+        return angle;
+    }
 }

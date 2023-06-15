@@ -10,7 +10,6 @@ import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Model.World;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.Utility.ThreadPool;
 import ZombieApocalypse.View.Gun.*;
 import ZombieApocalypse.View.Player.CharacterView;
 
@@ -82,16 +81,16 @@ public class GraphicPanel extends JPanel  {
 
 
         if(Game.getInstance().hasPistol){
-        if(Game.getInstance().getPistolModel().isUp()){
-            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getPistolModel().imagePosition.x, Game.getInstance().getPistolModel().imagePosition.y, Game.getInstance().getPistolModel().getHeight(), Game.getInstance().getPistolModel().getWidth(), null);
+        if(Game.getInstance().getPistol().isUp()){
+            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getPistol().getImagePosition().x, Game.getInstance().getPistol().getImagePosition().y, Game.getInstance().getPistol().getHeight(), Game.getInstance().getPistol().getWidth(), null);
         }else{
-            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getPistolModel().imagePosition.x, Game.getInstance().getPistolModel().imagePosition.y, Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);
+            g.drawImage(pistolView.getCurrentImage(), Game.getInstance().getPistol().getImagePosition().x, Game.getInstance().getPistol().getImagePosition().y, Game.getInstance().getPistol().getWidth(), Game.getInstance().getPistol().getHeight(), null);
         }}
         if(Game.getInstance().hasShotgun){
-            if(Game.getInstance().getShotgunModel().isUp()){
-                g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getHeight(), Game.getInstance().getShotgunModel().getWidth(), null);
+            if(Game.getInstance().getShotgun().isUp()){
+                g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgun().getImagePosition().x, Game.getInstance().getShotgun().getImagePosition().y, Game.getInstance().getShotgun().getHeight(), Game.getInstance().getShotgun().getWidth(), null);
             }else{
-                g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgunModel().imagePosition.x, Game.getInstance().getShotgunModel().imagePosition.y, Game.getInstance().getShotgunModel().getWidth(), Game.getInstance().getShotgunModel().getHeight(), null);
+                g.drawImage(shotgunView.getCurrentImage(), Game.getInstance().getShotgun().getImagePosition().x, Game.getInstance().getShotgun().getImagePosition().y, Game.getInstance().getShotgun().getWidth(), Game.getInstance().getShotgun().getHeight(), null);
             }}
 
 
@@ -105,7 +104,7 @@ public class GraphicPanel extends JPanel  {
             b.getView().update();
             if (b.type == Enemies.EnemiesType.BANDIT) {
                 pistolBandit.update(b);
-                g.drawImage(pistolBandit.getCurrentImage(), b.getGunX(), b.getGunY(), Game.getInstance().getPistolModel().getWidth(), Game.getInstance().getPistolModel().getHeight(), null);
+                g.drawImage(pistolBandit.getCurrentImage(), b.getGunX(), b.getGunY(), Game.getInstance().getPistol().getWidth(), Game.getInstance().getPistol().getHeight(), null);
             }
             g.drawImage(b.getView().getCurrentImage(), b.getX(), b.getY(), b.getWight(), b.getHeight(), null);
 
@@ -133,18 +132,18 @@ public class GraphicPanel extends JPanel  {
 
 
         if(Game.getInstance().hasKnife){
-            if(Game.getInstance().getKnifeModel().isUp())
-                g.drawImage(knife.getCurrentImage(), Game.getInstance().getKnifeModel().imagePosition.x,Game.getInstance().getKnifeModel().imagePosition.y, Game.getInstance().getKnifeModel().getHeight(), Game.getInstance().getKnifeModel().getWidth(), null);
+            if(Game.getInstance().getKnife().isUp())
+                g.drawImage(knife.getCurrentImage(), Game.getInstance().getKnife().getImagePosition().x,Game.getInstance().getKnife().getImagePosition().y, Game.getInstance().getKnife().getHeight(), Game.getInstance().getKnife().getWidth(), null);
             else
-                g.drawImage(knife.getCurrentImage(), Game.getInstance().getKnifeModel().imagePosition.x,Game.getInstance().getKnifeModel().imagePosition.y, Game.getInstance().getKnifeModel().getWidth(), Game.getInstance().getKnifeModel().getHeight(), null);
+                g.drawImage(knife.getCurrentImage(), Game.getInstance().getKnife().getImagePosition().x,Game.getInstance().getKnife().getImagePosition().y, Game.getInstance().getKnife().getWidth(), Game.getInstance().getKnife().getHeight(), null);
 
         }
         if(Game.getInstance().hasGrenade){
 
-            if(Game.getInstance().getGrenadeModel().isUp())
-                g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenadeModel().imagePosition.x, Game.getInstance().getGrenadeModel().imagePosition.y, Game.getInstance().getGrenadeModel().getHeight(), Game.getInstance().getGrenadeModel().getWidth(), null);
+            if(Game.getInstance().getGrenade().isUp())
+                g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenade().getImagePosition().x, Game.getInstance().getGrenade().getImagePosition().y, Game.getInstance().getGrenade().getHeight(), Game.getInstance().getGrenade().getWidth(), null);
             else
-                g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenadeModel().imagePosition.x, Game.getInstance().getGrenadeModel().imagePosition.y, Game.getInstance().getGrenadeModel().getWidth(), Game.getInstance().getGrenadeModel().getHeight(), null);
+                g.drawImage(grenadeView.getCurrentImage(), Game.getInstance().getGrenade().getImagePosition().x, Game.getInstance().getGrenade().getImagePosition().y, Game.getInstance().getGrenade().getWidth(), Game.getInstance().getGrenade().getHeight(), null);
 
         }
 

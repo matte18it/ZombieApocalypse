@@ -16,11 +16,11 @@ public class GunAnimation  {
         for (int i=0; i<numberOfElement; i++) {
             String path=action+i;
             if(e==GunType.SHOTGUN)
-                instance= new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getShotgunModel().getWidth(),  Game.getInstance().getShotgunModel().getHeight(),  true));
+                instance= new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getShotgun().getWidth(),  Game.getInstance().getShotgun().getHeight(),  true));
             if(e==GunType.PISTOL)
-                instance= new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistolModel().getWidth(),  Game.getInstance().getPistolModel().getHeight(),  true));
+                instance= new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getPistol().getWidth(),  Game.getInstance().getPistol().getHeight(),  true));
             if(e==GunType.GRENADE)
-                instance=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenadeModel().getWidth(),  Game.getInstance().getGrenadeModel().getHeight(), true));
+                instance=new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/"+path+".png", Game.getInstance().getGrenade().getWidth(),  Game.getInstance().getGrenade().getHeight(), true));
             images.add(instance);
     }}
     public Image update(double angle) {

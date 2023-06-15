@@ -34,16 +34,16 @@ public final class Game {
         return character;
     }
 //Gestione delle Armi e input del mouse
-    public KnifeModel getKnifeModel(){
+    public KnifeModel getKnife(){
     return knife;
 }
-    public ShotgunModel getShotgunModel(){
+    public ShotgunModel getShotgun(){
         return shotgun;
     }
-    public GrenadeModel getGrenadeModel() {
+    public GrenadeModel getGrenade() {
     return grenade;
 }
-    public PistolModel getPistolModel() {return pistol;}
+    public PistolModel getPistol() {return pistol;}
     public void setLastMousePosition(Point e) {mousePoint=e;}//Si salva l'ultima posizione del mouse per riprenderla al cambio arma
 public void attack() {  //gestione del click del mouse
     if(hasPistol && menuBar.numBullet()>0 ){

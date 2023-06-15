@@ -9,8 +9,8 @@ import java.awt.*;
 
 public class PistolModel extends GunModel{
     //Raggio del cerchio, più è piccolo più è grande il cerchio
-    int radius, xPosy, yPosy;
-    public double angle=0;
+    private  int radius, xPosy, yPosy;
+    private  double angle=0;
     public PistolModel(){
         super(Settings.CELL_SIZEX-15, Settings.CELL_SIZEY-10, 2);
         radius=height-30;
@@ -97,4 +97,5 @@ public class PistolModel extends GunModel{
         }
         return !(angle < 230) || !(angle >= 140);
     }
+    public double getAngle(){return angle;}
 }

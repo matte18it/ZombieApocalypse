@@ -13,7 +13,7 @@ public abstract class GunModel {
     int centerX;
     int centerY;
     boolean attack=false;
-    public Point imagePosition=new Point(0,0);
+     Point imagePosition=new Point(0,0);
     GunModel(int width, int height, int damage){
         this.width=width;
         this.height=height;
@@ -55,4 +55,7 @@ public abstract class GunModel {
         return Bullet.Direction.DOWN;
     }
 
+    public Point getImagePosition() {
+        return imagePosition;
+    }
 }

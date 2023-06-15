@@ -10,7 +10,7 @@ public class BulletShotgun extends Bullet{
     public enum Type{CENTER, LEFT, RIGHT};
     Type bulletType;
     BulletShotgun(int x, int y, double angle, Type t){
-        super(x,y, BulletType.SHOTGUN, Game.getInstance().getShotgunModel().checkDirection(angle));
+        super(x,y, BulletType.SHOTGUN, Game.getInstance().getShotgun().checkDirection(angle));
             bulletType=t;
     }
 

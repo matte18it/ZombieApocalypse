@@ -1,11 +1,8 @@
 package ZombieApocalypse.View.Gun;
 
 import ZombieApocalypse.Model.Game;
-import ZombieApocalypse.Utility.ThreadPool;
 
 import java.awt.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 
 public class ShotgunView {
@@ -20,10 +17,10 @@ public class ShotgunView {
 
         public void update(Point point) {
 
-            Game.getInstance().getShotgunModel().update(point);
+            Game.getInstance().getShotgun().update(point);
 
             //Aggiorno immagine
-                currentImage=gunAnimation.update(Game.getInstance().getShotgunModel().angle);
+                currentImage=gunAnimation.update(Game.getInstance().getShotgun().getAngle());
 
 
 

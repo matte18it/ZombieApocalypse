@@ -42,7 +42,7 @@ public abstract class BulletView {
         for (int i = 0; i < 6; i++) {
             bullet[i] = new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/Esplosione" + i + ".png", bulletModel.getDimension()+(i *10), bulletModel.getDimension()+(i *10), true));
         }
-        grenade = new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/Granata0.png", Game.getInstance().getGrenadeModel().getWidth(), Game.getInstance().getGrenadeModel().getHeight(), true));
+        grenade = new ThreadPool(ResourcesLoader.getInstance().getImage("/ArmieOggetti/Granata0.png", Game.getInstance().getGrenade().getWidth(), Game.getInstance().getGrenade().getHeight(), true));
     }
 
     private void loadBulletPistol() {

@@ -77,17 +77,17 @@ public class Items {
     //altezza e larghezza di ogni item
     public int getWight(ItemType e) {
         switch (e){
-            case SHOTGUN -> {return Game.getInstance().getShotgunModel().getWidth();}
-            case PISTOL -> {return Game.getInstance().getPistolModel().getWidth(); }
-            case GRENADE -> {return Game.getInstance().getGrenadeModel().getWidth();}
+            case SHOTGUN -> {return Game.getInstance().getShotgun().getWidth();}
+            case PISTOL -> {return Game.getInstance().getPistol().getWidth(); }
+            case GRENADE -> {return Game.getInstance().getGrenade().getWidth();}
             case MEDKIT -> {return 30; }
             case AMMO1, SPELL, AMMO0 ->  {return 20;}
         } return 0;}
     public int getHeight(ItemType e) {
         switch (e){
-            case SHOTGUN -> {return Game.getInstance().getShotgunModel().getHeight();}
-            case PISTOL -> {return Game.getInstance().getPistolModel().getHeight(); }
-            case GRENADE -> {return Game.getInstance().getGrenadeModel().getHeight();}
+            case SHOTGUN -> {return Game.getInstance().getShotgun().getHeight();}
+            case PISTOL -> {return Game.getInstance().getPistol().getHeight(); }
+            case GRENADE -> {return Game.getInstance().getGrenade().getHeight();}
             case MEDKIT -> {return 30; }
             case AMMO1, SPELL, AMMO0 ->  {return 20;}
         } return 0;}

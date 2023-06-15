@@ -14,11 +14,11 @@ public class GrenadeView {
 //aggiornamento senza mouse: si basa sulla posizione del player
 //aggiornamento con mouse: si basa su un movimento del mouse
     public void update() {
-        Game.getInstance().getGrenadeModel().update();  //il model aggiorna il punto
+        Game.getInstance().getGrenade().update();  //il model aggiorna il punto
             currentImage= itemAnimation.update();
     }
 public void update(Point e){
-        Game.getInstance().getGrenadeModel().update(e);
+        Game.getInstance().getGrenade().update(e);
 }
     public Image getCurrentImage() {
         return currentImage;
