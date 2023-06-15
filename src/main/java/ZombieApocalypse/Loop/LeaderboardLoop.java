@@ -1,5 +1,6 @@
 package ZombieApocalypse.Loop;
 
+import ZombieApocalypse.Utility.ResultsPanel;
 import ZombieApocalypse.View.MenuView;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class LeaderboardLoop {
             return;
         executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(() -> {
-                    try { view.updateLeaderboard(); } catch (MalformedURLException e) { throw new RuntimeException(e); } catch (IOException e) { throw new RuntimeException(e);}
+                    try { view.updateLeaderboard(); } catch (MalformedURLException e) { throw new RuntimeException(e); } catch (IOException e) { ResultsPanel.getInstance().showConnectionError(); }
                 },
                 0, 1, TimeUnit.MINUTES);
     }

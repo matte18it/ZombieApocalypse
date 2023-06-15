@@ -3,10 +3,7 @@ package ZombieApocalypse.Controller;
 import ZombieApocalypse.Loop.LeaderboardLoop;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.MenuModel;
-import ZombieApocalypse.Utility.GameData;
-import ZombieApocalypse.Utility.PlayWav;
-import ZombieApocalypse.Utility.ResourcesLoader;
-import ZombieApocalypse.Utility.Settings;
+import ZombieApocalypse.Utility.*;
 import ZombieApocalypse.View.GameFrame;
 import ZombieApocalypse.View.MenuView;
 
@@ -194,8 +191,7 @@ public class MenuController {
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
-                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
-                        GameData.punti = 0;
+                        try { saveData(); } catch (IOException ex) { ResultsPanel.getInstance().showConnectionError(); } finally { GameData.punti = 0; }
                     }
                 });
             }

@@ -5,6 +5,7 @@ import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.Utility.PlayWav;
 import ZombieApocalypse.Utility.ResourcesLoader;
 import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.ResultsPanel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -315,7 +316,7 @@ public class MenuView extends JPanel implements Runnable{
 
         panelMenu.add(bg, c);
         //serve per aggiornare la classifica
-        try { updateLeaderboard(); } catch (IOException e) { throw new RuntimeException(e); }
+        try { updateLeaderboard(); } catch (IOException e) { System.out.println("No internet connection detected!"); }
     }
 
     public void setAbout() {
@@ -878,7 +879,7 @@ public class MenuView extends JPanel implements Runnable{
 
         settingsPanel.add(sfondoSettings);
 
-        try { updateLeaderboard(); } catch (IOException e) { throw new RuntimeException(e); }
+        try { updateLeaderboard(); } catch (IOException e) { System.out.println("No internet connection detected!"); }
     }
 
     private Hashtable<Integer, JLabel> setTable() {

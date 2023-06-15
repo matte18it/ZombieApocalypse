@@ -151,7 +151,7 @@ public class SplashScreenModel {
         }
         else {
             btnMenu = new JButton("Try Again");
-            label.setText("<html>No internet connection at all!<br>To play 'Zombie Apocalypse' you need a stable internet network. Connect to a stable internet network and try again!</html>");
+            label.setText("<html>No internet connection detected!<br>To play 'Zombie Apocalypse' you need a stable internet network. Connect to a stable internet network and try again!</html>");
         }
 
         btnMenu.setIcon(ResourcesLoader.getInstance().getImageIcon("/Login&Menu/sendButton.png", 230, 60, false));
