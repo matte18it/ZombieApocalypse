@@ -1,5 +1,6 @@
 package ZombieApocalypse.Controller;
 
+import ZombieApocalypse.Loop.LeaderboardLoop;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Model.MenuModel;
 import ZombieApocalypse.Utility.GameData;

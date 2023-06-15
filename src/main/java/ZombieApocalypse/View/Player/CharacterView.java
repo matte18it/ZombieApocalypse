@@ -3,17 +3,10 @@ package ZombieApocalypse.View.Player;
 import ZombieApocalypse.Model.Game;
 import ZombieApocalypse.Utility.GameData;
 import ZombieApocalypse.Utility.Settings;
-import ZombieApocalypse.Utility.ThreadPool;
 import ZombieApocalypse.View.CharacterAnimation;
-
 import java.awt.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-
 public class CharacterView {
-    //Gestisce la connessione fra Gameloop e Player
-
+    //Gestisce la animazioni del player
     private  final CharacterAnimation runAnimationUp;
     private final CharacterAnimation runAnimationLeft;
     private final CharacterAnimation runAnimationDown;
@@ -40,13 +33,11 @@ public class CharacterView {
 
             currentImage= runAnimationUp.getCurrentImage();
 
-
     }
 
     public void update() {
-        //E' stato colpito? cambia immagine
-        if(Game.getInstance().getPlayer().getHit()) {
-
+        if(Game.getInstance().getPlayer().getHit()) {  //hit
+                //aggiornamento un frame si e uno no
             if (Game.getInstance().getPlayer().getCountHit() % 2 == 0) {
                 if(Game.getInstance().getPlayer().getMovement()){
                 if (Game.getInstance().getPlayer().getDir() == Settings.movementDirection.UP)

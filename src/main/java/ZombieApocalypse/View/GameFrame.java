@@ -10,9 +10,8 @@ import ZombieApocalypse.Controller.PlayerController;
 
 import javax.swing.*;
 import java.awt.*;
-
 public class GameFrame extends JPanel {
-    private static PlayWav playMenuMusic = PlayWav.getInstance();   //variabile per la musica
+    private static final PlayWav playMenuMusic = PlayWav.getInstance();   //variabile per la musica
     public static JFrame frameGame = new JFrame("Splash Screen");       //frame principale del gioco
     public static GameLoop gameLoopObject;          //loop di gioco
     private static LeaderboardLoop leaderboardLoop; //loop che gestisce l'aggiornamento della classifica
@@ -27,14 +26,11 @@ public class GameFrame extends JPanel {
     public static EditorView editor;                //interfaccia dell'editor
     public static EditorBarView editorBar;          //barra inferiore dell'editor
     public static UserMapView userView;             //interfaccia delle mappe utente
-
     public static void loadingLaunch(){
         //setto le dimensioni
         dimension();
-
         //creo la splash screen
         splashScreen = new SplashScreenView();
-
         //aggiungo al frame tutti i componenti della splash screen
         frameGame.add(splashScreen);
         frameGame.setUndecorated(true);
@@ -45,12 +41,10 @@ public class GameFrame extends JPanel {
         SplashScreenModel.checkFile();
         launch();
     }
-
     public static void launch() {
         splashScreen.bar.setIcon(ResourcesLoader.getInstance().getImageIcon("/SplashScreen/bar.png", 276, 7, false));
         SplashScreenModel.loadInterface();
     }
-
     public static void loginLaunch(){
         //qui ci arrivo se il file 'player.txt' non è presente e non posso effettuare il login automatico
         frameGame.remove(splashScreen);
@@ -82,9 +76,7 @@ public class GameFrame extends JPanel {
 
     public static void menuLaunch(){
         if(gameLoopObject!=null)
-            gameLoopObject.stop();
-        if(timeLoop!=null)
-            timeLoop.stop();
+            close();
         //reset variabili game
         Settings.campainMapIndex = 1;
         Settings.diff = Settings.Difficulty.EASY;
@@ -235,12 +227,9 @@ public class GameFrame extends JPanel {
     }
 
     public static void close() {
-        //chiudo il programma
-        frameGame.dispose();
+        //chiudo i loop presenti nel gioco
         gameLoopObject.stop();
-        ThreadPool.stop();
         timeLoop.stop();
-        System.exit(0);
     }
 
     private static void dimension() {
