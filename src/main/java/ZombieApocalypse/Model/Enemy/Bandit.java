@@ -4,6 +4,9 @@ import ZombieApocalypse.Model.Guns.Bullet;
 import ZombieApocalypse.Model.Guns.Bullets;
 import ZombieApocalypse.Model.Items.Items;
 import ZombieApocalypse.Utility.CountPoint;
+import ZombieApocalypse.Utility.GameData;
+import ZombieApocalypse.Utility.PlayWav;
+
 import java.awt.*;
 class Bandit extends Enemy{
     private int count=0;
@@ -70,6 +73,8 @@ class Bandit extends Enemy{
     private void shoot() {
         //Agiornamento della posizione dello sparo
         if(count==20){
+            if(GameData.sound)
+                PlayWav.getInstance().playShotPistola();
             switch (dir){
                 case LEFT -> Bullets.getInstance().BulletBandit(x+wight+2,y+5, Bullet.Direction.RIGHT);
                 case UP ->  Bullets.getInstance().BulletBandit(x+wight-5,y+height, Bullet.Direction.DOWN);
