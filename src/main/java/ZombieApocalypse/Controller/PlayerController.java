@@ -59,6 +59,7 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
             }
             if(lastRun){
                 Game.getInstance().setBackMenu(false);
+                Game.getInstance().refresh();
             }
         }
 //Gestione degli eventi: tastiera e movimenti del mouse

@@ -78,7 +78,6 @@ public class ResultsPanel {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 dialog.dispose();
-                Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
                 if(PlayWav.getInstance().isPlay())
                     PlayWav.getInstance().stop();
@@ -142,7 +141,6 @@ public class ResultsPanel {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 dialog.dispose();
-                Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
                 Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
@@ -235,7 +233,6 @@ public class ResultsPanel {
                 if(GameData.sound)
                     soundButton();
                 dialog.dispose();
-                Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
                 Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
@@ -305,7 +302,6 @@ public class ResultsPanel {
                 if(GameData.sound)
                     PlayWav.getInstance().playButtonSound();
                 dialog.dispose();
-                Game.getInstance().refresh();
                 Game.getInstance().setPause(false);
                 Game.getInstance().setBackMenu(true);
                 if(PlayWav.getInstance().isPlay())
