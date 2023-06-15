@@ -1,6 +1,5 @@
 package ZombieApocalypse.Utility;
 
-import javax.swing.*;
 import java.awt.*;
 
 import java.util.concurrent.*;

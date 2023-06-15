@@ -13,29 +13,28 @@ import java.awt.*;
 import static ZombieApocalypse.Utility.GameData.nick;
 
 public class MenuBarView extends JPanel {
-    Font font= ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
-
-     MenuBarAnimation menuBarAnimation=new MenuBarAnimation();
-     int heart;
-    JLabel playerName;
-    JLabel ammoLabel;
-    JLabel addAmmoLabel;
-    Items.ItemType typeGunLabel1;
-    Items.ItemType typeGunLabel2;
-     JLabel [] healthLabel;
-    JLabel pointLabel;
-     JLabel timeLabel;
-     JLabel gunLabel1;
-    JLabel gunLabel2;
-    public MenuBarView(){
+    private final MenuBarAnimation menuBarAnimation=new MenuBarAnimation();
+    private final JLabel ammoLabel; //munizioni
+    private final JLabel addAmmoLabel;  //numero di munizioni aggiunte
+    private Items.ItemType typeGunLabel1; //valore presente nello slot di sinistra
+    private Items.ItemType typeGunLabel2; //valore presente nello slot di destra
+     private final JLabel [] healthLabel;  //array di cuori
+    private final JLabel pointLabel;  //punteggio
+     private final JLabel timeLabel; //tempo
+     private final JLabel gunLabel1; //immagine presente nello slot di sinistra
+    private final JLabel gunLabel2; //immagine presente nello slot di sinistra
+    private boolean addAmmo=false; //gestione dell'animazione di aggiunta munizioni
+    private int count=0; //gestione dell'animazione di aggiunta munizioni
+    public MenuBarView(){  //Creazione della MenuBar
         //setto il cursore personalizzato
         this.setCursor(ResourcesLoader.getInstance().getCursor("/GameGeneral/crosshair.png", this));
-
         //Crea tre Jpanel
         //Nel primo metto Vita e Munizioni con quattro label
         //nel secondo lo Score
         //nel terzo il tempo
-        playerName=new JLabel(nick);
+        JLabel playerName = new JLabel(nick);
+        //Gestione della barra in basso presente in game
+        Font font = ResourcesLoader.getInstance().getFont("/Font/PixelFont.otf", 20, Font.PLAIN);
         playerName.setFont(font);
         playerName.setForeground(Color.WHITE);
         setMaximumSize(new Dimension(Settings.WINDOW_SIZEX, Settings.MENU_BAR_HEIGHT));
@@ -44,14 +43,12 @@ public class MenuBarView extends JPanel {
         setBackground(Color.BLACK);
         setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 
-
         //Pannello della Salute
         healthLabel=new JLabel[Game.getInstance().getPlayer().maxHealth];
         JPanel healthAmmoPanel=new JPanel();
         healthAmmoPanel.setLayout(new GridBagLayout());
         healthAmmoPanel.setMaximumSize(new Dimension(300, Settings.MENU_BAR_HEIGHT));
         healthAmmoPanel.setMinimumSize(new Dimension(300, Settings.MENU_BAR_HEIGHT));
-
         GridBagConstraints c=new GridBagConstraints();
         healthAmmoPanel.setBackground(Color.BLACK);
         JLabel jLabelH;
@@ -267,17 +264,14 @@ public class MenuBarView extends JPanel {
         add(pointPanel);
         add(timePanel);
     }
+    //aggiunta e rimozione di un cuore
     public void addHeart(){
         healthLabel[Game.getInstance().getPlayer().getHealth()-1].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
     }
     public void removeHeart(){
         healthLabel[Game.getInstance().getPlayer().getHealth()].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
     }
-
-
-
-    public void setBar() {
-        heart=Game.getInstance().getPlayer().getHealth();
+    public void setBar() { //set cuori e i due slot vuoti
         for(int i=0; i<Game.getInstance().getPlayer().maxHealth; i++){
             if(i<Game.getInstance().getPlayer().getHealth())
             healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.FULLHEART, 30, 25));
@@ -290,7 +284,7 @@ public class MenuBarView extends JPanel {
         typeGunLabel2 = Items.ItemType.EMPTY;
         timeLabel.setForeground(Color.WHITE);
     }
-    public  void updateTimeLable(long t){
+    public  void update(long t){ //update del tempo e dell'aggiunta di munizioni
         if(addAmmo){
         if(count!=2)
             count++;
@@ -302,14 +296,15 @@ public class MenuBarView extends JPanel {
 
         timeLabel.setText(String.valueOf(t));
     }
+    //update del punteggio
     public  void updateScoreLable(long t){
         pointLabel.setText(String.valueOf(t));
     }
-
+//verifica se è possibile raccogliere l'item
     public boolean spaceToCollect() {
         return typeGunLabel1==Items.ItemType.EMPTY || typeGunLabel2==Items.ItemType.EMPTY;
     }
-
+//aggiunge l'item ad uno slot libero
     public void add(Items.ItemType i) {
         if(typeGunLabel1==Items.ItemType.EMPTY){
             gunLabel1.setIcon(menuBarAnimation.setIcon(i, 65, 55));
@@ -317,13 +312,8 @@ public class MenuBarView extends JPanel {
         if(typeGunLabel2==Items.ItemType.EMPTY){
             gunLabel2.setIcon(menuBarAnimation.setIcon(i, 65, 55));
         typeGunLabel2=i;}
-
-
-
     }
-
-
-
+    //tipi presenti negli slot
     public Items.ItemType gunLable1Type() {
         return typeGunLabel1;
     }
@@ -335,18 +325,15 @@ public class MenuBarView extends JPanel {
     public void setGunLable1(Items.ItemType itemType) {
         typeGunLabel1=itemType;
         gunLabel1.setIcon(menuBarAnimation.setIcon(typeGunLabel1, 65, 55));
-
     }
-
     public void setGunLable2(Items.ItemType itemType) {
         typeGunLabel2=itemType;
         gunLabel2.setIcon(menuBarAnimation.setIcon(typeGunLabel2, 65, 55));
     }
+    //Gestione delle munizioni
     public int getAmmo(){
         return Integer.parseInt(ammoLabel.getText());
     }
-private boolean addAmmo=false;
-    private int count=0;
     public void addAmmo(int i) {
         if(GameData.sound)
             PlayWav.getInstance().playAmmoSound();
@@ -354,7 +341,7 @@ private boolean addAmmo=false;
         int t= Integer.parseInt(ammoLabel.getText());
         t=t+i;
         ammoLabel.setText(String.valueOf(t));
-        addAmmoLabel.setText(String.valueOf("+"+i));
+        addAmmoLabel.setText("+" + i);
         addAmmo=true;
         count=0;
     }

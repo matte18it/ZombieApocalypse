@@ -18,7 +18,7 @@ public class MenuBarModel {
      public void updateTimeLable(long time) {
         long timeElapsed=System.nanoTime()-time;
         long t=timeElapsed/1000000000;
-        menuBarView.updateTimeLable(t);
+        menuBarView.update(t);
     }
     //aggiornamento del punteggo
      public void updatePoint(int val){
