@@ -1,5 +1,6 @@
 package ZombieApocalypse.Utility;
 
+import javax.swing.*;
 import java.awt.*;
 
 import java.util.concurrent.*;
@@ -11,7 +12,6 @@ public class ThreadPool {
     public ThreadPool(Image task) {
         future=executor.submit(()->task);
     }
-    public ThreadPool(){}
     public Image get(){
         try{
                 return future.get(); //mi assicuro che il risultato sia disponibile
