@@ -68,7 +68,7 @@ public class World {
                 if(world[i][j]!=Block.WATER0 && world[i][j]!=Block.WATER1  && world[i][j]!=Block.WATER2 && world[i][j]!=Block.DIVISORIO1)
                     return new Point(i*Settings.CELL_SIZEX, j*Settings.CELL_SIZEY);
             }
-        }ResultsPanel.getInstance().showError("Impossibile trovare una posizione disponibile per il Player", 83,new Exception());
+        }ResultsPanel.getInstance().showError("Impossibile trovare una posizione disponibile per il Player", 109,new Exception());
         return null;
     }
      boolean isEnemy(int x, int y, int cX, int cY){ //Controlla la posizione dei nemici
