@@ -16,10 +16,8 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
     private final int maxTimeSoundZombie=600;
     //Gestione random del suono degli zombie
     private int randomZombie = randomVariable.nextInt(minTimeSoundZombie,maxTimeSoundZombie);
-    Thread graphicUpdatethread;
     public PlayerController(GraphicPanel panel) {
         this.panel = panel;
-        graphicUpdatethread =new Thread(panel::update);
         panel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -28,17 +26,10 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
                 panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));}
         });}
     public void update(){
-        if(graphicUpdatethread.isAlive()){
-        try{
-            graphicUpdatethread.join();
-        }catch (InterruptedException e){
-            ResultsPanel.getInstance().showError("Errore nel aggiornamento della grafica", 80, e);
-        }}
             if(Game.getInstance().getPause() && !Game.getInstance().getBackMenu()){
                 Game.getInstance().update();
                 //lancio dell'update del GraphicPanel con un thread
-                graphicUpdatethread =new Thread(panel::update);
-                graphicUpdatethread.start();
+                panel.update();
                 if(lastRun)
                     lastRun=false;
                 if(countZombie == randomZombie ){
@@ -52,14 +43,12 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
                 //Gestione del ritorno al menù
             }if( Game.getInstance().getBackMenu() && !lastRun){
                 Game.getInstance().update();
-                graphicUpdatethread =new Thread(panel::update);
-                graphicUpdatethread.start();
+                panel.update();
                 lastRun=true;
                 return;
             }
             if(lastRun){
                 Game.getInstance().setBackMenu(false);
-                Game.getInstance().refresh();
             }
         }
 //Gestione degli eventi: tastiera e movimenti del mouse

@@ -9,7 +9,7 @@ import java.awt.*;
     public final int height;
     public final int centerX;
     public final int centerY;
-     private Rectangle hitBox;
+     private final Rectangle hitBox;
     //Vita e massima vita
     public final int maxHealth=6;
     private int health;
