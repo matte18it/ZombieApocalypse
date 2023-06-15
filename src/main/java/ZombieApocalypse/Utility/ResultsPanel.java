@@ -150,8 +150,7 @@ public class ResultsPanel {
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
-                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
-                        GameData.punti = 0;
+                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); } finally { GameData.punti = 0; }
                     }
                 });
                 GameFrame.menuLaunch();
@@ -245,8 +244,7 @@ public class ResultsPanel {
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
-                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
-                        GameData.punti = 0;
+                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); } finally { GameData.punti = 0; }
                     }
                 });
                 GameFrame.menuLaunch();
@@ -316,8 +314,7 @@ public class ResultsPanel {
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
-                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); }
-                        GameData.punti = 0;
+                        try { saveData(); } catch (IOException ex) { throw new RuntimeException(ex); } finally { GameData.punti = 0; }
                     }
                 });
                 GameFrame.menuLaunch();
