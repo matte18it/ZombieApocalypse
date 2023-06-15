@@ -59,7 +59,7 @@ public class World {
      public boolean isSpawnableItem(int x, int y) { //controlla la posizione del Item allo spawn
         Point enemy=new Point(x, y);
         Point player=Game.getInstance().getPlayer().getPosition();
-         return !(player.distance(enemy) < 50);
+         return !(player.distance(enemy) < 80);
      }
 
      Point selectPlayerPosition() { //Trova una posizione dove il player può nascere

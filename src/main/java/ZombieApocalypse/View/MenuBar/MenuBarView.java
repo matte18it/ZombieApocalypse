@@ -16,8 +16,8 @@ public class MenuBarView extends JPanel {
     private final MenuBarAnimation menuBarAnimation=new MenuBarAnimation();
     private final JLabel ammoLabel; //munizioni
     private final JLabel addAmmoLabel;  //numero di munizioni aggiunte
-    private Items.ItemType typeGunLabel1; //valore presente nello slot di sinistra
-    private Items.ItemType typeGunLabel2; //valore presente nello slot di destra
+    private Items.ItemType typeGunLabel1=Items.ItemType.EMPTY; //valore presente nello slot di sinistra
+    private Items.ItemType typeGunLabel2=Items.ItemType.EMPTY; //valore presente nello slot di destra
      private final JLabel [] healthLabel;  //array di cuori
     private final JLabel pointLabel;  //punteggio
      private final JLabel timeLabel; //tempo
@@ -279,9 +279,7 @@ public class MenuBarView extends JPanel {
                 healthLabel[i].setIcon(menuBarAnimation.setIcon(MenuBarAnimation.Icon.EMPTYHEART, 30, 25));
         }
         gunLabel1.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 65, 55));
-        typeGunLabel1 = Items.ItemType.EMPTY;
         gunLabel2.setIcon(menuBarAnimation.setIcon(Items.ItemType.EMPTY, 65, 55));
-        typeGunLabel2 = Items.ItemType.EMPTY;
         timeLabel.setForeground(Color.WHITE);
     }
     public  void update(long t){ //update del tempo e dell'aggiunta di munizioni

@@ -161,8 +161,8 @@ public class GameFrame extends JPanel {
         frameGame.setTitle("Game");
 
         menuBarView = new MenuBarView();
-        menuBarView.setBar();
         Game.getInstance().setMenuBar(menuBarView);
+        menuBarView.setBar();
         graphicPanel = new GraphicPanel();
         frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
 
