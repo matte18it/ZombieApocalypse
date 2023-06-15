@@ -161,6 +161,7 @@ public class GameFrame extends JPanel {
         frameGame.setTitle("Game");
 
         menuBarView = new MenuBarView();
+        menuBarView.setBar();
         Game.getInstance().setMenuBar(menuBarView);
         graphicPanel = new GraphicPanel();
         frameGame.setLayout(new BoxLayout(frameGame.getContentPane(), BoxLayout.PAGE_AXIS));
@@ -177,7 +178,6 @@ public class GameFrame extends JPanel {
         graphicPanel.addMouseListener(playerController);
         graphicPanel.addKeyListener(playerController);
         gameLoopObject = new GameLoop(playerController);
-        menuBarView.setBar();
         timeLoop=new TimeLoop();
 
         gameLoopObject.start();

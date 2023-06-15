@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="pulizie">
+    <list default="true" id="73bd63ef-af00-4bd6-a386-8876e60cfd0d" name="Changes" comment="fine">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/ResultsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Utility/ResultsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Controller/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZombieApocalypse/View/GameFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/ZombieApocalypse/Model/World.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -89,69 +94,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684579305743</updated>
-    </task>
-    <task id="LOCAL-00128" summary="Miglioramento Suoni">
-      <created>1686559986992</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1686559986992</updated>
-    </task>
-    <task id="LOCAL-00129" summary="Bug Fix">
-      <created>1686560935123</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1686560935123</updated>
-    </task>
-    <task id="LOCAL-00130" summary="Bug Fix">
-      <created>1686564478833</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1686564478833</updated>
-    </task>
-    <task id="LOCAL-00131" summary="Bug Fix">
-      <created>1686567292280</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1686567292280</updated>
-    </task>
-    <task id="LOCAL-00132" summary="Bug Fix">
-      <created>1686573176429</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1686573176429</updated>
-    </task>
-    <task id="LOCAL-00133" summary="Punti">
-      <created>1686577966773</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1686577966773</updated>
-    </task>
-    <task id="LOCAL-00134" summary="Commenti e bug fix">
-      <created>1686585329865</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1686585329865</updated>
-    </task>
-    <task id="LOCAL-00135" summary="Commenti e bug fix">
-      <created>1686585954876</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1686585954876</updated>
-    </task>
-    <task id="LOCAL-00136" summary="Commenti e bug fix">
-      <created>1686587411346</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1686587411346</updated>
     </task>
     <task id="LOCAL-00137" summary="Commenti e bug fix">
       <created>1686588100426</created>
@@ -433,7 +375,70 @@
       <option name="project" value="LOCAL" />
       <updated>1686765914391</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="pulizie">
+      <created>1686806271552</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1686806271552</updated>
+    </task>
+    <task id="LOCAL-00178" summary="pulizie">
+      <created>1686806912741</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1686806912741</updated>
+    </task>
+    <task id="LOCAL-00179" summary="pulizie">
+      <created>1686807702057</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1686807702057</updated>
+    </task>
+    <task id="LOCAL-00180" summary="pulizie">
+      <created>1686808060764</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1686808060764</updated>
+    </task>
+    <task id="LOCAL-00181" summary="pulizie">
+      <created>1686808943073</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1686808943073</updated>
+    </task>
+    <task id="LOCAL-00182" summary="fine">
+      <created>1686810108815</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1686810108815</updated>
+    </task>
+    <task id="LOCAL-00183" summary="fine">
+      <created>1686810378685</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1686810378685</updated>
+    </task>
+    <task id="LOCAL-00184" summary="fine">
+      <created>1686811427526</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1686811427526</updated>
+    </task>
+    <task id="LOCAL-00185" summary="fine">
+      <created>1686811688080</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1686811688080</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +454,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="boss pt2" />
     <MESSAGE value="thread pt3" />
     <MESSAGE value="thread final?" />
     <MESSAGE value="boss pt 3" />
@@ -474,6 +478,7 @@
     <MESSAGE value="pulizie pt13" />
     <MESSAGE value="suono walk" />
     <MESSAGE value="pulizie" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulizie" />
+    <MESSAGE value="fine" />
+    <option name="LAST_COMMIT_MESSAGE" value="fine" />
   </component>
 </project>

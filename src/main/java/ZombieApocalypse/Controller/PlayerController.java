@@ -28,11 +28,12 @@ public class PlayerController implements KeyListener, MouseMotionListener ,Mouse
                 panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ResourcesLoader.getInstance().getBufferedImage("/GameGeneral/crosshair.png", 32, 32, false), new Point(20, 20), "Cursor"));}
         });}
     public void update(){
+        if(graphicUpdatethread.isAlive()){
         try{
             graphicUpdatethread.join();
         }catch (InterruptedException e){
             ResultsPanel.getInstance().showError("Errore nel aggiornamento della grafica", 80, e);
-        }
+        }}
             if(Game.getInstance().getPause() && !Game.getInstance().getBackMenu()){
                 Game.getInstance().update();
                 //lancio dell'update del GraphicPanel con un thread

@@ -147,7 +147,7 @@ public void attack() {  //gestione del click del mouse
         b=false;}
 
         if(value!= Items.ItemType.EMPTY){
-            if(world.isWalkable(character.getX()+character.wight+10, character.getY())){
+            if(world.isWalkable(character.getX()+character.wight+30, character.getY())){
                 Items.getInstance().dropItem(character.getX()+character.wight+10, character.getY(), value);
                 menuBar.setLabelEmpty(b);
                 if(value== Items.ItemType.SHOTGUN || value== Items.ItemType.PISTOL || value==Items.ItemType.GRENADE)
