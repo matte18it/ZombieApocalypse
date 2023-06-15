@@ -16,6 +16,8 @@ import java.net.URLConnection;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static java.lang.Thread.sleep;
+
 public class ResultsPanel {
     //classe per la gestione delle schermate di vittoria, sconfitta e pausa
     public static ResultsPanel results = null;
