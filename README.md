@@ -9,12 +9,6 @@ Progetto UID
 
 -----ERROR_CODE-----
 
--> Errori da 100-104 sono ERRORI di lettura delle Risorse. In particolare:
-
-• 100 lettura del Font
-
-• 101 lettura di un'icona
-
-• 102 lettura di un'immagine
-
-• 103 lettura di un file audio
+-> Errori da 100-105 sono ERRORI di lettura delle Risorse.
+-> Errori da 79-82 sono ERRORI di esecuzione di task.
+-> Errori da 107-109 sono ERRORI di caricamento del mondo di gioco
