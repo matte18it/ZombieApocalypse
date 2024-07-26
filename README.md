@@ -10,11 +10,13 @@ Il progetto universitario "Zombie Apocalypse" è un ambizioso gioco d'azione in 
 "Zombie Apocalypse" non solo promette un'esperienza di gioco avvincente e ricca di sfide, ma offre anche strumenti avanzati per la personalizzazione e la creazione, ampliando le possibilità di interazione e coinvolgimento nella community di giocatori.
 
 # ⚠️ CODICI ERRORI ⚠️
------EXIT_CODE----- 
-• 0 chiusura da menù
-• 130 chiusura forzata del programma
+<h3>EXIT CODE</h3>
+<ul>
+  <li>0 chiusura da menù</li>
+  <li>130 chiusura forzata del programma</li>
+</ul>
 
------ERROR_CODE-----
+<h3>ERROR CODE</h3>
 • Errori da 100-105 sono ERRORI di lettura delle Risorse
 • Errori da 79-82 sono ERRORI di esecuzione di task
 • Errori da 107-109 sono ERRORI di caricamento del mondo di gioco
