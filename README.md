@@ -17,9 +17,11 @@ Il progetto universitario "Zombie Apocalypse" è un ambizioso gioco d'azione in 
 </ul>
 
 <h3>ERROR CODE</h3>
-• Errori da 100-105 sono ERRORI di lettura delle Risorse
-• Errori da 79-82 sono ERRORI di esecuzione di task
-• Errori da 107-109 sono ERRORI di caricamento del mondo di gioco
+<ul>
+  <li>Errori da 100-105 sono ERRORI di lettura delle Risorse</li>
+  <li>Errori da 79-82 sono ERRORI di esecuzione di task</li>
+  <li>Errori da 107-109 sono ERRORI di caricamento del mondo di gioco</li>
+</ul>
 
 # ❗️DISCLAIMER❗️
 Questo progetto è stato sviluppato come parte del corso "User Interfaces Design" presso il Dipartimento di Matematica e Informatica (DeMaCS) dell'Università della Calabria. Essendo un lavoro universitario, potrebbe contenere qualche errore o imprecisione. Accogliamo con piacere qualsiasi feedback e suggerimento per migliorare! Il progetto è stato sviluppato dagli studenti:
