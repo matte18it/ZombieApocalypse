@@ -25,5 +25,7 @@ Il progetto universitario "Zombie Apocalypse" è un ambizioso gioco d'azione in 
 
 # ❗️DISCLAIMER❗️
 Questo progetto è stato sviluppato come parte del corso "User Interfaces Design" presso il Dipartimento di Matematica e Informatica (DeMaCS) dell'Università della Calabria. Essendo un lavoro universitario, potrebbe contenere qualche errore o imprecisione. Accogliamo con piacere qualsiasi feedback e suggerimento per migliorare! Il progetto è stato sviluppato dagli studenti:
-  • Canino Matteo
-  • Napoli Pierfrancesco
+<ul>
+  <li>Canino Matteo</li>
+  <li>Napoli Pierfrancesco</li>
+</ul>
