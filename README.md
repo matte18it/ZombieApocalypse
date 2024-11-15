@@ -9,19 +9,12 @@ Il progetto universitario "Zombie Apocalypse" è un ambizioso gioco d'azione in 
 <strong>Personalizzazione e Impostazioni:</strong> Gli utenti possono modificare le proprie impostazioni di gioco per ottimizzare l'esperienza e adattarla alle proprie preferenze.
 "Zombie Apocalypse" non solo promette un'esperienza di gioco avvincente e ricca di sfide, ma offre anche strumenti avanzati per la personalizzazione e la creazione, ampliando le possibilità di interazione e coinvolgimento nella community di giocatori.
 
-# ⚠️ CODICI ERRORI ⚠️
-<h3>EXIT CODE</h3>
-<ul>
-  <li>0 chiusura da menù</li>
-  <li>130 chiusura forzata del programma</li>
-</ul>
-
-<h3>ERROR CODE</h3>
-<ul>
-  <li>Errori da 100-105 sono ERRORI di lettura delle Risorse</li>
-  <li>Errori da 79-82 sono ERRORI di esecuzione di task</li>
-  <li>Errori da 107-109 sono ERRORI di caricamento del mondo di gioco</li>
-</ul>
+# 📼 Demo Video 📼
+<div align="center">
+  <a href="https://youtu.be/qzqJb-Qtl6E">
+    <img src="https://img.youtube.com/vi/qzqJb-Qtl6E/0.jpg" alt="Guarda il video su YouTube" width="600">
+  </a>
+</div>
 
 # ❗️DISCLAIMER❗️
 Questo progetto è stato sviluppato come parte del corso "User Interfaces Design" presso il Dipartimento di Matematica e Informatica (DeMaCS) dell'Università della Calabria. Essendo un lavoro universitario, potrebbe contenere qualche errore o imprecisione. Accogliamo con piacere qualsiasi feedback e suggerimento per migliorare! Il progetto è stato sviluppato dagli studenti:
